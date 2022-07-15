@@ -49,7 +49,7 @@ homepage:
     - title: クラウドストレージプールをバックアップに使用する
       url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
     - title: 検索統合サービスを設定する
-      url: "/product_feature_guides/storagegrid-search-integration-service.html"
+      url: "/product-feature-guides/storagegrid-search-integration-service.html"
   - title: ツールおよびアプリケーションガイド
     links:
     - title: Cloudera Hadoop S3Aコネクタを使用します
