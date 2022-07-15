@@ -1,0 +1,48 @@
+---
+permalink: product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html 
+sidebar: sidebar 
+keywords: cloud storage pool, azure, microsoft azure, azure blob storage 
+summary: StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。 
+---
+= Azure Blob Storage用のクラウドストレージプールを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。
+
+.必要なもの
+* StorageGRID 11.6が設定されました。
+* 外部のAzureコンテナはすでにセットアップされています。
+
+
+.手順
+. Grid Managerで、* ILM *>*ストレージプール*に移動します。
+. ページのクラウドストレージプールセクションで、 * 作成 * を選択します。
++
+クラウドストレージプールの作成ポップアップが表示されます。
+
+. 表示名を入力します。
+. プロバイダタイプドロップダウンリストから「* Azure Blob Storage *」を選択します。
+. クラウドストレージプールに使用するS3バケットのURIを入力します。
++
+次の2つの形式を使用できます。
+
++
+https://host:port`
+
++
+http://host:port`
+
+. Azureコンテナ名を入力します。
++
+指定する名前はAzureコンテナ名と完全に一致する必要があります。一致していないと、クラウドストレージプールの作成は失敗します。クラウドストレージプールの保存後にこの値を変更することはできません。
+
+. 必要に応じて、Azureコンテナに関連付けられたアカウント名と認証用のアカウントキーを入力します。
+. ドロップダウンから[* Do not verify Certificate*（証明書を検証しない*）]を選択します。
+. [ 保存（ Save ） ] をクリックします。
+
+
+Azure Blob Storage用のクラウドストレージプールが作成されていることを確認します。

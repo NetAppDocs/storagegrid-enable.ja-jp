@@ -1,0 +1,51 @@
+---
+permalink: product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html 
+sidebar: sidebar 
+keywords: cloud storage pool, aws, S3, amazon web services, google cloud 
+summary: StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。 
+---
+= AWSまたはGoogle Cloud用のクラウドストレージプールを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。
+
+.必要なもの
+* StorageGRID 11.6が設定されました。
+* AWSまたはGoogle Cloudで外部のS3バケットをすでにセットアップしておきます。
+
+
+.手順
+. Grid Managerで、* ILM *>*ストレージプール*に移動します。
+. ページのクラウドストレージプールセクションで、 * 作成 * を選択します。
++
+クラウドストレージプールの作成ポップアップが表示されます。
+
+. 表示名を入力します。
+. [Provider Type]ドロップダウンリストから[*Amazon S3*]を選択します。
++
+このプロバイダタイプはAWS S3またはGoogle Cloudに対応しています。
+
+. クラウドストレージプールに使用するS3バケットのURIを入力します。
++
+次の2つの形式を使用できます。
+
++
+https://host:port`
+
++
+http://host:port`
+
+. S3バケット名を入力します。
++
+指定する名前はS3バケットの名前と完全に一致する必要があります。一致していないと、クラウドストレージプールの作成が失敗します。クラウドストレージプールの保存後にこの値を変更することはできません。
+
+. 必要に応じて、アクセスキーIDとシークレットアクセスキーを入力します。
+. ドロップダウンから[* Do not verify Certificate*（証明書を検証しない*）]を選択します。
+. [ 保存（ Save ） ] をクリックします。
+
+
+Amazon S3またはGoogle Cloud用のクラウドストレージプールが作成されていることを確認します。

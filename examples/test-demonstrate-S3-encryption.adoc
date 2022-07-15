@@ -1,0 +1,187 @@
+---
+permalink: examples/test-demonstrate-S3-encryption.html 
+sidebar: sidebar 
+keywords: cli, aws, S3, encryption, SSE, SSE-C, SSE-S3, api 
+summary: StorageGRID とS3 APIには、保存データを暗号化するためのさまざまな方法が用意されています。 
+---
+= StorageGRID でS3暗号化オプションをテストして実証
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID とS3 APIには、保存データを暗号化するためのさまざまな方法が用意されています。詳細については、を参照してください https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html["StorageGRID の暗号化方式を確認します"^]。
+
+このガイドでは、S3 APIの暗号化メソッドについて説明します。
+
+
+
+== サーバー側の暗号化（SSE）
+
+SSEを使用すると、クライアントがオブジェクトを格納し、StorageGRID で管理される一意のキーで暗号化できます。オブジェクトが要求されると、StorageGRID に格納されたキーによってオブジェクトが復号化されます。
+
+
+
+=== SSEの例
+
+* SSEを持つオブジェクトを配置します
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket>  --key <file> --body "<file>" --server-side-encryption AES256 --endpoint-url https://s3.example.com
+----
+* オブジェクトのヘッダーで暗号化を確認します
++
+[source, console]
+----
+aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2022-05-02T19:03:03+00:00",
+    "ContentLength": 47,
+    "ETag": "\"82e8bfb872e778a4687a26e6c0b36bc1\"",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
+----
+* オブジェクトを取得します
++
+[source, console]
+----
+aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
+----
+
+
+
+
+== ユーザ指定のキーによるサーバ側の暗号化（SSE-C）
+
+SSEを使用すると、クライアントがオブジェクトを格納し、クライアントがオブジェクトで提供する一意のキーでオブジェクトを暗号化できます。オブジェクトが要求されたときに、オブジェクトを復号化して返すために同じキーを指定する必要があります。
+
+
+
+=== SSE-Cの例
+
+* テストまたはデモ目的で暗号化キーを作成できます
++
+** 暗号化キーを作成します
++
+[source, console]
+----
+openssl enc -aes-128-cbc -pass pass:secret -P`
+----
++
+[listing]
+----
+salt=E9DBB6603C7B3D2A
+key=23832BAC16516152E560F933F261BF03
+iv =71E87C0F6EC3C45921C2754BA131A315
+----
+
+
+* 生成されたキーを持つオブジェクトを配置します
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket> --key <file> --body "file" --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
+----
+* オブジェクトの先頭に追加します
++
+[source, console]
+----
+aws s3api head-object --bucket <bucket> --key <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+            {
+                "AcceptRanges": "bytes",
+                "LastModified": "2022-05-02T19:20:02+00:00",
+                "ContentLength": 47,
+                "ETag": "\"f92ef20ab87e0e13951d9bee862e9f9a\"",
+                "ContentType": "binary/octet-stream",
+                "Metadata": {},
+                "SSECustomerAlgorithm": "AES256",
+                "SSECustomerKeyMD5": "rjGuMdjLpPV1eRuotNaPMQ=="
+            }
+----
+
+
+
+NOTE: 暗号化キーを指定しないと、「The error occurred (404) when calling the HeadObject operation: not found"」(ヘッダオブジェクト操作:見つかりません)というエラーが表示されます。
+
+* オブジェクトを取得します
++
+[source, console]
+----
+aws s3api get-object --bucket <bucket> --key <file> <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
+----
+
+
+
+NOTE: 暗号化キーを指定しないと、「An error occurred（InvalidRequest）when calling the GetObject operation：the object was stored using a form of Server Side Encryption」というエラーが表示されます。オブジェクトを読み出すには、正しいパラメータを指定する必要があります。"
+
+
+
+== バケットサーバ側の暗号化（SSE-C）
+
+SSE-Cを使用すると、バケットに格納されているすべてのオブジェクトのデフォルトの暗号化動作をクライアントで定義できます。オブジェクトはStorageGRID で管理される一意のキーで暗号化されます。オブジェクトが要求されると、StorageGRID に格納されているキーによってオブジェクトが復号化されます。
+
+
+
+=== バケットSSE-Cの例
+
+* 新しいバケットを作成し、デフォルトの暗号化ポリシーを設定
++
+** 新しいバケットを作成する
++
+[source, console]
+----
+aws s3api create-bucket --bucket <bucket> --region us-east-1 --endpoint-url https://s3.example.com
+----
+** PUT Bucket encryptionの設定
++
+[source, console]
+----
+aws s3api put-bucket-encryption --bucket <bucket> --server-side-encryption-configuration '{"Rules": [{"ApplyServerSideEncryptionByDefault": {"SSEAlgorithm": "AES256"}}]}' --endpoint-url https://s3.example.com
+----
+
+
+* オブジェクトをバケットに配置します
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket> --key <file> --body "file" --endpoint-url https://s3.example.com
+----
+* オブジェクトの先頭に追加します
++
+[source, console]
+----
+aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+{
+"AcceptRanges": "bytes",
+"LastModified": "2022-05-02T20:16:23+00:00",
+"ContentLength": 47,
+"ETag": "\"82e8bfb872e778a4687a26e6c0b36bc1\"",
+"ContentType": "binary/octet-stream",
+"ServerSideEncryption": "AES256",
+"Metadata": {}
+}
+----
+* オブジェクトを取得します
++
+[source, console]
+----
+aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
+----
+

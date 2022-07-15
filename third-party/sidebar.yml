@@ -1,0 +1,17 @@
+---
+section: third-party
+title: 検証済みのサードパーティソリューション
+entries:
+- title: 概要
+  pdf-filename: 検証済みのサードパーティソリューション-概要
+  url: "/third-party/index.html"
+- title: StorageGRID 11.6
+  url: "/third-party/116-3rd-party-list.html"
+- title: StorageGRID 11.5
+  url: "/third-party/115-3rd-party-list.html"
+- title: StorageGRID 11.4
+  url: "/third-party/114-3rd-party-list.html"
+- title: StorageGRID 11.3
+  url: "/third-party/113-3rd-party-list.html"
+- title: StorageGRID 11.2
+  url: "/third-party/112-3rd-party-list.html"

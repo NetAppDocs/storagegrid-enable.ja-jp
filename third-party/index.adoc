@@ -1,0 +1,15 @@
+---
+permalink: third-party/index.html 
+sidebar: sidebar 
+keywords: third-party applications, storagegrid 
+summary: ネットアップはパートナー様と協力して、これらのソリューションをStorageGRID で使用できるように検証しました。このセクションの情報を参照して、検証済みのソリューションを確認し、必要に応じて追加の手順を入手してください。 
+---
+= 検証済みのサードパーティソリューション：概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+ネットアップはパートナー様と協力して、これらのソリューションをStorageGRID で使用できるように検証しました。このセクションの情報を参照して、検証済みのソリューションを確認し、必要に応じて追加の手順を入手してください。
+
+ネットアップの業界最高水準のテスト済みソリューションを構築すると、力を合わせてネットアップのポートフォリオを強化し、市場認知度を高め、売上を拡大できます。 https://www.netapp.com/partners/#become["今すぐアライアンスパートナーになりましょう"^]。

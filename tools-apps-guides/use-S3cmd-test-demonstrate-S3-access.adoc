@@ -1,0 +1,88 @@
+---
+permalink: tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html 
+sidebar: sidebar 
+keywords: cli, aws, S3, s3cmd, api 
+summary: S3cmdは、S3処理用の無償のコマンドラインツールおよびクライアントです。S3cmdを使用して、StorageGRID でS3へのアクセスをテストおよび実証できます。 
+---
+= S3cmdを使用して、StorageGRID でS3アクセスをテストおよび実証します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3cmdは、S3処理用の無償のコマンドラインツールおよびクライアントです。s3cmdを使用して、StorageGRID でのS3アクセスをテストして実証できます。
+
+
+
+== S3cmdをインストールして構成します
+
+ワークステーションまたはサーバにS3cmdをインストールするには、からダウンロードします https://s3tools.org/s3cmd["コマンドラインS3クライアント"^]。s3cmdは、トラブルシューティング用のツールとして、各StorageGRID ノードにあらかじめインストールされています。
+
+
+
+== 初期設定手順
+
+. s3cmd --設定
+. 残りのキーには、access-keyとsecret_keyだけを指定してデフォルトのままにします。
+. 指定したクレデンシャルでアクセスをテストします[Y/n]：n（失敗するため、テストをバイパスする）
+. 設定を保存しますか？[y/N] y
++
+.. 設定を「/root/.s3cfg」に保存しました。
+
+
+. s3cfgで、「=」記号のあとにhost_baseフィールドとhost_bucketフィールドを空にします。
++
+.. host_base=
+.. host_bucket=
+
+
+
+
+====
+
+NOTE: 手順4でhost_baseとhost_bucketを指定した場合は、CLIで--hostのエンドポイントを指定する必要はありません。例
+
+....
+            host_base = 192.168.1.91:8082
+            host_bucket = bucketX.192.168.1.91:8082
+            s3cmd ls s3://bucketX --no-check-certificate
+....
+====
+
+
+== 基本的なコマンドの例
+
+* *バケットを作成：*
++
+s3cmd mb s3：//s3cmdbucket --host=<endpoint>：<port>--no-check-certificate-`
+
+* *すべてのバケットを表示：*
++
+s3cmd ls --host=<endpoint>：<port>--no-check-certificate'
+
+* *すべてのバケットとその内容を表示：*
++
+s3cmd la --host=<endpoint>：<port>-- no-check-certificate'
+
+* *特定のバケット内のオブジェクトをリストします。*
++
+s3cmd ls s3：//<bucket>--host=<endpoint>：<port>--no-check-certificate-`
+
+* *バケットを削除：*
++
+s3cmd rb s3：//s3cmdbucket --host=<endpoint>：<port>--no-check-certificate'
+
+* *オブジェクトを置きなさい:*
++
+s3cmd put <file>s3://<bucket>--host=<endpoint>:<port>--no-check-certificate`
+
+* *オブジェクトを取得：*
++
+s3cmd get s3：//<バケット>/<オブジェクト><ファイル>--host=<endpoint>：<port>--no-check-certificate'
+
+* *オブジェクトを削除：*
++
+s3cmd del s3：//<bucket>/<object>--host=<endpoint>：<port>：-no-check-certificate-`
+
+

@@ -1,0 +1,48 @@
+---
+permalink: third-party/113-3rd-party-list.html 
+sidebar: sidebar 
+keywords: 11.3, third-party applications, storagegrid,ISV 
+summary: StorageGRID 11.3で検証済みのサードパーティソリューション 
+---
+= StorageGRID 11.3は、検証済みのサードパーティソリューションです
+:allow-uri-read: 
+
+
+[role="lead"]
+StorageGRID 11.3では、次のサードパーティソリューションが検証されています。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。
+
+
+
+== StorageGRID で検証済みのサードパーティソリューション
+
+これらのソリューションは、それぞれのパートナーと協力してテストされています。
+
+* Actifio
+* カンテモ
+* Citrixコンテンツコラボレーション
+* Commvault 11.
+* CTERAポータル6.
+* ダレト
+* Data Dynamics StorageXのように入力します
+* DefendX
+* Interica
+* Komprise
+* 良いですね
+* Nasuni
+* OpenText Documentum 16.4
+* CyanGate Cloudを使用したOpenText Media Management 16.5
+* Panzura
+* Point Archival Gateway 2.0の場合
+* Point Storage Manager 6.4
+* プリミティブストリーム
+* Quantum StorNext 5.4.0.1
+* RUBRIK CDM 5.0.1 p1-1342
+* シグニエント
+* Splunk Smartstore
+* ニスエンタープライズ6.0.4
+* Veeam 9.5.4
+* Veritas Enterprise Vault 11の略
+* Veritas Enterprise Vault 12.
+* Veritas NetBackup 8.0
+* ビディズパイン
+

@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="03a51c290895d5f1a6828b0491c2a44a" category="summary">このサイトに対する最近の変更点を以下に示します。</block>
+  <block id="490414e0366b091220802d406e52c076" category="doc">新機能</block>
+  <block id="8b69c0257aaf35a9ec0a1259d54ff096" category="paragraph">本ドキュメントでは、環境でアプリケーションやツールを有効にし、StorageGRID で機能をテストする方法について説明します。ここでは、製品ドキュメントに加えて、StorageGRID との評価および統合に関する次のステップを示すサンプルとクックブックを紹介します。</block>
+  <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">リリース。</block>
+  <block id="ad0b6652f18f25a574f9f4900521e06b" category="cell">変更内容</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
+  <block id="36552b079970ffb2dd1314115af76c4b" category="paragraph">11.6</block>
+  <block id="b8c1c014b9752469294df284a3fc13cc" category="paragraph">初版リリースStorageGRID リリース11.1-11.6向けのガイドと検証済みのサードパーティソリューションリストが含まれています。</block>
+  <block id="213bf2ec1d0bd70bddfd4c935885677a" category="summary">StorageGRID 11.3で検証済みのサードパーティソリューション</block>
+  <block id="0147e507e7b15a9ed1a38c66a279beb6" category="doc">StorageGRID 11.3は、検証済みのサードパーティソリューションです</block>
+  <block id="7190c305424285fe4256ab8cdf614311" category="paragraph">StorageGRID 11.3では、次のサードパーティソリューションが検証されています。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。</block>
+  <block id="ae0059acd69f3c963f558e0836885ebd" category="section-title">StorageGRID で検証済みのサードパーティソリューション</block>
+  <block id="76ad060973d3a7496e879a9a4e27c43b" category="paragraph">これらのソリューションは、それぞれのパートナーと協力してテストされています。</block>
+  <block id="84fc43d78afb43b9be9fd32800c39e14" category="list-text">Actifio</block>
+  <block id="8026ca17ba2e3a987c9fc1ebbfa3b2f2" category="list-text">カンテモ</block>
+  <block id="bfe4a98ea39df43ecba3c8d81fcc406a" category="list-text">Citrixコンテンツコラボレーション</block>
+  <block id="9f261daecd1acf3f272449558565c275" category="list-text">Commvault 11.</block>
+  <block id="9c7bdce226629cb4a20d49af20efddcf" category="list-text">CTERAポータル6.</block>
+  <block id="845c7d7e641b871eaa30a5ea02be05e5" category="list-text">ダレト</block>
+  <block id="3f781d47f2e5d89a93134863d08f310b" category="list-text">Data Dynamics StorageXのように入力します</block>
+  <block id="608d7a3725a65397d284fed2077eca9c" category="list-text">DefendX</block>
+  <block id="7a0544f18be9ec8b7501804c3f19c86c" category="list-text">Interica</block>
+  <block id="04f35663b44ba178a51b9ba61068586f" category="list-text">Komprise</block>
+  <block id="99df5bd357117615d75315f590990b3a" category="list-text">良いですね</block>
+  <block id="878104a806df63b5f965361247b7a859" category="list-text">Nasuni</block>
+  <block id="14567310e264c20e4722d80d29f2ca18" category="list-text">OpenText Documentum 16.4</block>
+  <block id="a0446088f8be69cb1f7ca15146abf100" category="list-text">CyanGate Cloudを使用したOpenText Media Management 16.5</block>
+  <block id="3e9ddaaf6a6f980a64ddec983d935475" category="list-text">Panzura</block>
+  <block id="10f5ba42ae6dbd321e57bede0c83ec2a" category="list-text">Point Archival Gateway 2.0の場合</block>
+  <block id="c28db35a9854d4fa7280c032d2eae288" category="list-text">Point Storage Manager 6.4</block>
+  <block id="bc038212039876aff8158c4afb937ef2" category="list-text">プリミティブストリーム</block>
+  <block id="d36bb4409abcdf753c1103a769bf94a9" category="list-text">Quantum StorNext 5.4.0.1</block>
+  <block id="c758745dbf39c7b4da86cae8edf2ec63" category="list-text">RUBRIK CDM 5.0.1 p1-1342</block>
+  <block id="f27bd3342419229be7da8dd9234adbd4" category="list-text">シグニエント</block>
+  <block id="83b20ea3ae67e47021c38e81e4f589ca" category="list-text">Splunk Smartstore</block>
+  <block id="3c03c9aa39f09aa3bf70c853404ab185" category="list-text">ニスエンタープライズ6.0.4</block>
+  <block id="01d16ea73fb659ea507974db4f28b791" category="list-text">Veeam 9.5.4</block>
+  <block id="683c5d7a06c262f5e2e17cbb84869a3d" category="list-text">Veritas Enterprise Vault 11の略</block>
+  <block id="1f61ef960fbeb10906bd09932e1faa5e" category="list-text">Veritas Enterprise Vault 12.</block>
+  <block id="aa92d10a39cb2c4707a61d62d73be93f" category="list-text">Veritas NetBackup 8.0</block>
+  <block id="2bfecc5738e4f19170da7b6787f2aac4" category="list-text">ビディズパイン</block>
+  <block id="e1b55d6b6904a9bbd61463de2b1306c9" category="summary">StorageGRID 11.5で検証済みのサードパーティソリューション</block>
+  <block id="5c77045b793e49a2c9356629fa42247c" category="doc">StorageGRID 11.5で検証済みのサードパーティソリューション</block>
+  <block id="a3c271786c8eb7cf6e9beebf6c8792f6" category="paragraph">次の他社製ソリューションは、StorageGRID 11.5で使用することが検証されています。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。</block>
+  <block id="0f678aab91e44750e132ec71d8e8b27d" category="list-text">Moonwalk Universalの略</block>
+  <block id="e8089c684949d337dcfc2355146ea8ee" category="list-text">OpenText Documentum 21.4</block>
+  <block id="cfbf45bf3636e57e75d2d19e94581808" category="list-text">OpenText InfoArchive 16 EP7</block>
+  <block id="95e97cbf382fde28370be90f19cb74b7" category="list-text">Veeam 11の統合によって</block>
+  <block id="6edef17a1a8c1377d059d1da9e0875fa" category="list-text">Vertica 10.x</block>
+  <block id="5c89f8abd30585311811b6067eeaf96d" category="section-title">StorageGRID で検証済みの、オブジェクトロック機能を備えたサードパーティ製ソリューション</block>
+  <block id="6876ee74f7cdb6259933dce90e333623" category="summary">StorageGRID 11.2で検証済みのサードパーティ製ソリューション</block>
+  <block id="f0579cc7b6353a01b20e6af293042053" category="doc">StorageGRID 11.2で検証済みのサードパーティ製ソリューション</block>
+  <block id="02baabb078f56a4b2eaed00d5476df83" category="paragraph">以下の他社製ソリューションは、StorageGRID 11.2で検証済みです。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。</block>
+  <block id="5b334f642369a1ed86af886a70b9a70a" category="summary">StorageGRID 11.4で検証済みのサードパーティソリューション</block>
+  <block id="bf535f2769af42cb4a0ef69bf5605f50" category="doc">StorageGRID 11.4検証済みのサードパーティソリューション</block>
+  <block id="e9a092b9753e7fc3b79569222be951af" category="paragraph">次のサードパーティソリューションは、StorageGRID 11.4で使用することが検証されています。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。</block>
+  <block id="598a701d550c449b8c8b6fbf28ac59f7" category="summary">StorageGRID 11.6に対して検証済みのサードパーティソリューション</block>
+  <block id="95cf74ab542e1ad06be5bdbad0153b3e" category="doc">StorageGRID 11.6検証済みのサードパーティソリューション</block>
+  <block id="fbc9e339224fe0b0576e98b4bab07ea8" category="paragraph">StorageGRID 11.6では、以下のサードパーティソリューションの使用が検証されています。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。</block>
+  <block id="bb2bd99338b18762ef6953ad2cbfafc7" category="list-text">Apache Kafka です</block>
+  <block id="59c21e020bd89c6971219d3b6d98e955" category="list-text">FUJIFILMオブジェクトアーカイブ</block>
+  <block id="09af2487255bbc1b9747ab2c0f958375" category="list-text">GitHubエンタープライズサーバ</block>
+  <block id="391115de0fbff45e2374fc17057efc2a" category="list-text">IBM FileNetの順にクリックします</block>
+  <block id="156393fd2d6d5720c9c89cf61b4b63af" category="list-text">IBM Spectrum Protect Plusのサポート</block>
+  <block id="ec8f51b51cf3e627e98adab6a9707073" category="list-text">Microsoft SQL Server Big Data Clustersの略</block>
+  <block id="003600b94a5f1f52b3d6bc2e8863271a" category="list-text">PixitMedia ngenea.</block>
+  <block id="e53636996ad9257c31aa596f6c267dbd" category="list-text">ストレージが簡単になりました</block>
+  <block id="dbaa460bd61bfe1c91c1c136338013e6" category="list-text">Veritas Enterprise Vault 14の略</block>
+  <block id="f1ef2cbfa857a0d2a7b845499f219ef8" category="list-text">Weka v3.10以降</block>
+  <block id="58440fea435f9474a314a8f58636ba4e" category="list-text">eMAM</block>
+  <block id="1c4333b49a7b43ae27f876070a712cb8" category="list-text">CommVault 11 Feature Release 26</block>
+  <block id="d78ff41b8e44ae00b917e9776f3ecd41" category="summary">ネットアップはパートナー様と協力して、これらのソリューションをStorageGRID で使用できるように検証しました。このセクションの情報を参照して、検証済みのソリューションを確認し、必要に応じて追加の手順を入手してください。</block>
+  <block id="4a5b1a544c031534fcf2fa85a625ce63" category="doc">検証済みのサードパーティソリューション：概要</block>
+  <block id="df245b9cfd302a8af7987f33f6ed60df" category="inline-link">今すぐアライアンスパートナーになりましょう</block>
+  <block id="98e55b10201a07cc0419d8c723a34cf1" category="paragraph">ネットアップの業界最高水準のテスト済みソリューションを構築すると、力を合わせてネットアップのポートフォリオを強化し、市場認知度を高め、売上を拡大できます。<block ref="c243ccaaa8a956e841065a878a76ac60" category="inline-link-rx"></block>。</block>
+  <block id="a1224e8e1d42e54574d1b861a3df5f2f" category="summary">NetApp StorageGRID は、ソフトウェアで定義されるオブジェクトストレージスイートで、パブリッククラウド、プライベートクラウド、ハイブリッドマルチクラウドの各環境で幅広いユースケースをサポートします。StorageGRID は、自動化されたライフサイクル管理などの業界をリードする革新的なテクノロジを使用して、非構造化データを長期にわたってマルチ用途で保存、保護、保持します。</block>
+  <block id="696ea9ebe2a9f57bb062aba5c1d58b10" category="doc">環境でStorageGRID を有効にする方法</block>
+  <block id="932b23c9adc6de8aea5fed582f4afb76" category="summary">S3cmdは、S3処理用の無償のコマンドラインツールおよびクライアントです。S3cmdを使用して、StorageGRID でS3へのアクセスをテストおよび実証できます。</block>
+  <block id="450d1a071fcbc323ff4710aa7452fdd5" category="doc">S3cmdを使用して、StorageGRID でS3アクセスをテストおよび実証します</block>
+  <block id="1905fbd5d74fe86a969eaff7ff00f7fc" category="paragraph">S3cmdは、S3処理用の無償のコマンドラインツールおよびクライアントです。s3cmdを使用して、StorageGRID でのS3アクセスをテストして実証できます。</block>
+  <block id="744511f8f2fbc194c76d0d79673bfae6" category="section-title">S3cmdをインストールして構成します</block>
+  <block id="afb33c859ca6b8231970317fad403dd6" category="inline-link">コマンドラインS3クライアント</block>
+  <block id="43ce8a46c220f7e1200c26cf9fdda89e" category="paragraph">ワークステーションまたはサーバにS3cmdをインストールするには、からダウンロードします<block ref="7378b19c1bb6e55a9a8910d8ad3a0679" category="inline-link-rx"></block>。s3cmdは、トラブルシューティング用のツールとして、各StorageGRID ノードにあらかじめインストールされています。</block>
+  <block id="aeb3ce9dba65427ab03cba1cf27c246b" category="section-title">初期設定手順</block>
+  <block id="524f45072627111da5b21bda68e3200d" category="list-text">s3cmd --設定</block>
+  <block id="71b08894081527233da8439cba4e157c" category="list-text">残りのキーには、access-keyとsecret_keyだけを指定してデフォルトのままにします。</block>
+  <block id="f87598afee396ede6fded5c127f5710b" category="list-text">指定したクレデンシャルでアクセスをテストします[Y/n]：n（失敗するため、テストをバイパスする）</block>
+  <block id="8f8b232ac491b44abd4e3c73095be26f" category="list-text">設定を保存しますか？[y/N] y</block>
+  <block id="20fc045a3cb98f5d53190a084eab5777" category="list-text">設定を「/root/.s3cfg」に保存しました。</block>
+  <block id="2a0dc1b5996fa32c9cff4613164a9fa7" category="list-text">s3cfgで、「=」記号のあとにhost_baseフィールドとhost_bucketフィールドを空にします。</block>
+  <block id="d6a40235079422dc94593513bb262a4f" category="list-text">host_base=</block>
+  <block id="deffd87ba6416775ccd717de678a52f6" category="list-text">host_bucket=</block>
+  <block id="0c4b929b440945de149593225ef4d11a" category="admonition">手順4でhost_baseとhost_bucketを指定した場合は、CLIで--hostのエンドポイントを指定する必要はありません。例</block>
+  <block id="24bf95be39d5b143037e293fd845755a" category="section-title">基本的なコマンドの例</block>
+  <block id="40ff4deace0a58ba7da244066c61b419" category="list-text">*バケットを作成：*</block>
+  <block id="2b55d1dacc7066c55f775211c6d2d6fb" category="paragraph">s3cmd mb s3：//s3cmdbucket --host=&lt;endpoint&gt;：&lt;port&gt;--no-check-certificate-`</block>
+  <block id="b3cfb276af36f62a54a7575fde41c5c3" category="list-text">*すべてのバケットを表示：*</block>
+  <block id="5a9e189ea6aff52db6c42ed8dc13a581" category="paragraph">s3cmd ls --host=&lt;endpoint&gt;：&lt;port&gt;--no-check-certificate'</block>
+  <block id="a500560628b5b26184ccd1c5bb710ad7" category="list-text">*すべてのバケットとその内容を表示：*</block>
+  <block id="e39715fa32da966d21a67b6f4b657375" category="paragraph">s3cmd la --host=&lt;endpoint&gt;：&lt;port&gt;-- no-check-certificate'</block>
+  <block id="a0e8caa1006eb0cb202216f58d3ef3bc" category="list-text">*特定のバケット内のオブジェクトをリストします。*</block>
+  <block id="99cf6d132b68c3ee42ec1c2868670095" category="paragraph">s3cmd ls s3：//&lt;bucket&gt;--host=&lt;endpoint&gt;：&lt;port&gt;--no-check-certificate-`</block>
+  <block id="1253bae3769a3e203047d32867d8d8b5" category="list-text">*バケットを削除：*</block>
+  <block id="33baac546bf69d3cba8e4e55809362c2" category="paragraph">s3cmd rb s3：//s3cmdbucket --host=&lt;endpoint&gt;：&lt;port&gt;--no-check-certificate'</block>
+  <block id="4baf4031f964504db7c312e4eb5032f9" category="list-text">*オブジェクトを置きなさい:*</block>
+  <block id="99ada43576cbc748a543ef56c15239fd" category="paragraph">s3cmd put &lt;file&gt;s3://&lt;bucket&gt;--host=&lt;endpoint&gt;:&lt;port&gt;--no-check-certificate`</block>
+  <block id="cf50e7bb0c83a17917775f6502fd592c" category="list-text">*オブジェクトを取得：*</block>
+  <block id="7afaf73cd0748a5fd70da28b10e8f9e3" category="paragraph">s3cmd get s3：//&lt;バケット&gt;/&lt;オブジェクト&gt;&lt;ファイル&gt;--host=&lt;endpoint&gt;：&lt;port&gt;--no-check-certificate'</block>
+  <block id="11ce41b9c95136feb022ed6b7dc35f56" category="list-text">*オブジェクトを削除：*</block>
+  <block id="85977fbb9d2313217f8fcad9ab99ec24" category="paragraph">s3cmd del s3：//&lt;bucket&gt;/&lt;object&gt;--host=&lt;endpoint&gt;：&lt;port&gt;：-no-check-certificate-`</block>
+  <block id="bb59d42d40970acdd091a1d9e3013ed1" category="summary">このガイドでは、NetApp StorageGRID のパブリックストレージを使用してVertica Eon Modeデータベースを作成する手順 について説明します。</block>
+  <block id="3944f79e14bd534dce03dc9377e507b2" category="doc">NetApp StorageGRID を共有ストレージとして使用したVertica Eonモードのデータベース</block>
+  <block id="0b79795d3efc95b9976c7c5b933afce2" category="section-title">はじめに</block>
+  <block id="1351a64c902bed1342b8e0b3b15016e1" category="paragraph">Verticaは分析データベース管理ソフトウェアです。大量のデータを処理するように設計されたカラム型ストレージ・プラットフォームであり'従来の負荷の高いシナリオでは非常に高速なクエリー・パフォーマンスを実現しますVerticaデータベースは、EonまたはEnterpriseのいずれかのモードで動作します。両方のモードをオンプレミスまたはクラウドに導入できます。</block>
+  <block id="0ff6ef083e5937ae37d85f7e32b9c415" category="paragraph">EonモードとEnterpriseモードは、主にデータの保存場所によって異なります。</block>
+  <block id="742f8282711edec5deb4f1c27cba460b" category="list-text">Eonモードのデータベースは、データ用に共有ストレージを使用します。これはVerticaがお勧めします。</block>
+  <block id="10b13e2ff5733c9c1736ca88a58fce37" category="list-text">Enterprise Modeデータベースでは、データベースを構成するノードのファイルシステムにデータがローカルに格納されます。</block>
+  <block id="da071698872dd5a11fcfcdc6e87ce00b" category="section-title">Eon Modeアーキテクチャ</block>
+  <block id="eacdb46886950f67125163a0ac7c547b" category="paragraph">Eonモードでは、計算リソースがデータベースの共有ストレージレイヤから分離され、コンピューティングとストレージを別々に拡張できます。EonモードのVerticaは、さまざまなワークロードに対応し、コンピューティングリソースとストレージリソースを別々に使用してワークロードを分離するように最適化されています。</block>
+  <block id="c9537751a44904cbd1595766ea947357" category="paragraph">Eon Modeは、パブリックストレージと呼ばれる共有オブジェクトストアにデータを格納します。パブリックストレージとは、オンプレミスまたはAmazon S3上にホストされるS3バケットです。</block>
+  <block id="ae79effc6d45e14ea71e610bb3d9669c" category="image-alt">Vertica Eonモードクラスタと共有ストレージ</block>
+  <block id="d9bdcaa0d990474197d196d3848befca" category="section-title">共有ストレージ</block>
+  <block id="f208cb9b2076d8b42eb21a99f5e12b86" category="paragraph">Eonモードでは、データをローカルに格納する代わりに、すべてのデータとカタログ（メタデータ）に単一の共有ストレージロケーションを使用します。共有ストレージとは、データベースの一元管理されたストレージの場所で、データベースノード間で共有されるものです。</block>
+  <block id="d00864c661d9eea6d6bc179f2c282e45" category="paragraph">共有ストレージには次のプロパティがあります。</block>
+  <block id="e7bc675af5b1688f139c70343df7051b" category="list-text">クラウドまたはオンプレミスのオブジェクトストレージ内の共有ストレージは、個々のマシンのディスク上のストレージよりも耐障害性が高く、ストレージ障害によるデータ損失の影響を受けにくくなっています。</block>
+  <block id="e1a644db903707c56d177424599944ca" category="list-text">すべてのデータは、同じパスを使用して任意のノードで読み取ることができます。</block>
+  <block id="363e9f9d5ab59fe87846e1fa6280937c" category="list-text">ノードのディスクスペースによる容量制限はありません。</block>
+  <block id="e41c3434b54256834c20bb764ccb3dfb" category="list-text">データは通信環境に保管されるため、変化するニーズに合わせてクラスタを柔軟に拡張できます。データがノードにローカルに格納されていた場合は、ノードを追加または削除するときに、ノード間で移動するデータが大量に必要になります。これを行うには、削除対象のノードから移動するか、新しく作成したノードに移動する必要があります。</block>
+  <block id="2aa2d7b479eff89354f5a5d47c966c7b" category="section-title">デポ</block>
+  <block id="69b552cd0cc8cd7cedbb740166c2b67d" category="paragraph">共有ストレージの欠点の1つは速度です。共有クラウド上の場所からデータにアクセスする場合、ローカルディスクからデータを読み取る場合よりも時間がかかります。また、多数のノードが一度にデータを読み取っている場合、共有ストレージへの接続がボトルネックになる可能性があります。データアクセス速度を向上させるために、Eon Modeデータベース内のノードは、デポと呼ばれるデータのローカルディスクキャッシュを保持します。クエリを実行するとき、ノードはまず、必要なデータがデポにあるかどうかをチェックします。存在する場合は、データのローカルコピーを使用してクエリが完了します。データがデポにない場合、ノードは共有ストレージからデータを取得し、デポにコピーを保存します。</block>
+  <block id="adefcaa5a25e4b7dd144fc0f19c1cfcd" category="section-title">NetApp StorageGRID の推奨事項</block>
+  <block id="770d5275891c4480deae83e407a6f54f" category="paragraph">Verticaは、データベースのデータをオブジェクトストレージに何千（数百万）もの圧縮オブジェクトとして格納します（1オブジェクトあたり200～500MB）。ユーザーがデータベースクエリを実行すると、Verticaはバイト範囲GET呼び出しを使用して、圧縮されたオブジェクトから選択したデータ範囲を並列に取得します。バイト範囲GETはそれぞれ約8KBです。</block>
+  <block id="041a4ffdefdbba3e879952330449b52f" category="paragraph">10TBのデータベースデポのユーザクエリテストでは、1秒あたり4、000~ 10、000個のGET（バイト範囲GET）要求がグリッドに送信されました。SG6060アプライアンスを使用してこのテストを実行した場合、アプライアンスノードあたりのCPU利用率は（20~30%程度）が低いため、CPU時間の2/3でI/Oを待機していますSGF6024では、I/O待機時間のごく一部（0%~ 0.5%）が確認されます。</block>
+  <block id="ee5b06737289123ef2b5504214d0a959" category="paragraph">IOPSは小さいが高いことから、レイテンシの要件は非常に低い（平均値は0.01秒未満）ため、オブジェクトストレージサービスにはSFG6024を使用することを推奨します。非常に大きなデータベースサイズにSG6060が必要な場合は、お客様はデポサイジングのVerticaアカウントチームと協力して、照会中のデータセットをサポートする必要があります。</block>
+  <block id="69eb0bfa315677fb31292eb1879ef1e2" category="paragraph">管理ノードとAPIゲートウェイノードの場合は、お客様がSG100またはSG1000を使用できます。選択する内容は、ユーザのクエリ要求の並列サイズとデータベースサイズによって異なります。他社製ロードバランサを使用する場合は、ハイパフォーマンスが要求されるワークロードに専用のロードバランサを使用することを推奨します。StorageGRID のサイジングについては、ネットアップアカウントチームにお問い合わせください。</block>
+  <block id="75a344cafb10d96419edf5a61e63c7c0" category="paragraph">StorageGRID 構成に関するその他の推奨事項は次のとおりです。</block>
+  <block id="5b0c5b5e09678e4458f93ea143915cd4" category="list-text">*グリッドトポロジ*。同じグリッドサイトにある他のストレージアプライアンスモデルとSGF6024を混在させないでください。長期アーカイブ保護にSG6060を使用する場合は、アクティブデータベース用に専用のグリッドロードバランサを使用してSGF6024の負荷を専用のグリッドサイト（物理サイトまたは論理サイト）に配置し、パフォーマンスを向上させます。同じサイトに異なるモデルのアプライアンスを混在させると、サイト全体のパフォーマンスが低下します。</block>
+  <block id="a8b59be6737824c8ebdf70e871ae770b" category="list-text">*データ保護*。レプリケートコピーを使用して保護します。アクティブデータベースにはイレイジャーコーディングを使用しないでください。イレイジャーコーディングを使用することで、アクセス頻度の低いデータベースを長期にわたって保護できます。</block>
+  <block id="37b5ca073879940e05a508cb8e173209" category="list-text">*グリッド圧縮を有効にしないでください*。Verticaは、オブジェクトを圧縮してからオブジェクトストレージに格納します。グリッド圧縮を有効にしてもストレージ使用量はこれ以上削減されず、バイト範囲のGETパフォーマンスが大幅に低下します。</block>
+  <block id="e0a0f5ab016a2e63cf33ff41b6c64f8d" category="list-text">* HTTPとHTTPS S3エンドポイント接続*。ベンチマークテストでは、VerticaクラスタからStorageGRID ロードバランサエンドポイントへのHTTP S3接続を使用した場合、パフォーマンスが約5%向上しました。この選択は、顧客のセキュリティ要件に基づいて行う必要があります。</block>
+  <block id="4b28b0ac82f7df42e45ed03d7ec68cbe" category="paragraph">Vertica構成に関する推奨事項は次のとおりです。</block>
+  <block id="12e901de5151934289876684be69dbd3" category="list-text">* Verticaデータベースのデフォルトデポ設定は、読み取りおよび書き込み操作で有効(値=1)になっています。*パフォーマンスを向上させるために、これらのデポ設定を有効にしておくことを強く推奨します。</block>
+  <block id="dd75d17318890d52ab1d8e037befc36f" category="inline-xref">ストリーミング制限を無効にしています</block>
+  <block id="b5cea23fe7560dccda4bff6fe086b074" category="list-text">*ストリーミング制限を無効にします。*設定の詳細については、を参照してください <block ref="622e251fe1340a5a963a60975f5cfd66" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a49ece59a164bea53c1c444816a1423e" category="section-title">StorageGRID 上の共有ストレージを使用してオンプレミスモードをインストールする</block>
+  <block id="c120fe39689790c17f819d12b1470734" category="inline-link-macro">オンプレミスにEonモードデータベースをインストールします</block>
+  <block id="60c5f0d9d4093b532349fb2c84a2f907" category="paragraph">以下のセクションでは、StorageGRID 上に共同ストレージを使用してオンプレミスにEonモードをインストールするための手順 について説明します。オンプレミスのSimple Storage Service（S3）互換オブジェクトストレージを設定する手順 は、Vertica guideの手順 に似ています。 <block ref="291481b0beedb487e265883c3de1da25" category="inline-link-macro-rx"></block>。</block>
+  <block id="18d45b04dd1a7895a2c977550f8911d7" category="paragraph">機能テストには次のセットアップを使用しました。</block>
+  <block id="afdaec41fcd7f8ba541d0750dcbd6960" category="list-text">StorageGRID 11.4.0.4</block>
+  <block id="c6624074e9b8a278bfe04013c96fc36e" category="list-text">Vertica 10.1.0</block>
+  <block id="e2faa2feaa265e01fe33c216af9efb3d" category="list-text">Verticaノードをクラスタに構成するために、CentOS 7.x OSを搭載した3台の仮想マシン（VM）。このセットアップは、Verticaプロダクションデータベースクラスタではなく、機能テストのみを対象としています。</block>
+  <block id="fe8be754482a7a11d9d5a2d53443cedc" category="paragraph">これらの3つのノードにはSecure Shell（SSH）キーが設定されており、クラスタ内のノード間でパスワードを設定することなくSSHを使用できます。</block>
+  <block id="f5d7d5da5cd7e937a30a5f247eee8768" category="section-title">NetApp StorageGRID で必要な情報</block>
+  <block id="784d884ec512d4e088d2a6cb0c7a12ec" category="paragraph">StorageGRID 上で共有ストレージを使用してオンプレミスにEonモードをインストールするには、次の前提条件情報が必要です。</block>
+  <block id="9ce37b571d32bd29d59a6463c83b9056" category="list-text">StorageGRID S3エンドポイントのIPアドレスまたは完全修飾ドメイン名（FQDN）とポート番号。HTTPSを使用する場合は、StorageGRID S3エンドポイントに実装されているカスタムの認証局（CA）または自己署名SSL証明書を使用します。</block>
+  <block id="222a56bb23dfff9aa9774dd9c3e4ee56" category="list-text">バケット名。このパラメータは、あらかじめ存在し、空である必要があります。</block>
+  <block id="fdae6c2e4ab36d6033d962c50f414ccb" category="list-text">バケットへの読み取り/書き込みアクセスが可能なアクセスキーIDとシークレットアクセスキー。</block>
+  <block id="98c67820d16a1b9909ecb5354f6822a6" category="section-title">S3エンドポイントにアクセスするための認証ファイルを作成します</block>
+  <block id="beaa6107ac08a69977170ef5066ba7d5" category="paragraph">S3エンドポイントにアクセスする許可ファイルを作成する際には、次の前提条件が適用されます。</block>
+  <block id="7a83bfd6cbc9c75248c5c1aa0561e094" category="list-text">Verticaがインストールされている。</block>
+  <block id="52bb7b8803b5d17a4da99db7aba31c93" category="list-text">クラスタをセットアップして設定し、データベースを作成できる状態にします。</block>
+  <block id="aa3fedd0a7a12417c91b0d938a4d2f1d" category="paragraph">S3エンドポイントにアクセスするための認証ファイルを作成するには、次の手順を実行します。</block>
+  <block id="b87e30a2e9d3e21c51073e1db74466e2" category="list-text">「admintools」を実行してEon Modeデータベースを作成するVerticaノードにログインします。</block>
+  <block id="302df0b551a339ce9b649c1c77f6f22f" category="paragraph">デフォルトのユーザーは'dbadmin'で'Verticaクラスタのインストール時に作成されます</block>
+  <block id="32307e5a5d0dcaf9f32db0202471f86a" category="list-text">テキスト・エディタを使用して'/HOME/dbadminディレクトリの下にファイルを作成しますファイル名には'たとえばsg_auth.confなど'任意の名前を指定できます</block>
+  <block id="c13f6f849620f8cc13bc4474d9555200" category="list-text">S3エンドポイントが標準のHTTPポート80またはHTTPSポート443を使用している場合は、ポート番号を省略します。HTTPSを使用するには、次の値を設定します。</block>
+  <block id="3068a18f4c22a22b0a2ecd5b1416a5ec" category="list-text">`awsenablehttps=1'それ以外の場合は'0`に値を設定します</block>
+  <block id="116bd825db022c3159b1677a3dc64f06" category="list-text">`awsauth=&lt;s3 access key ID&gt;：&lt;secret access key&gt;`</block>
+  <block id="1d33a1b42749a2480d0f6640c5ff2e84" category="list-text">`awsendpoint=&lt; StorageGRID s3 endpoint&gt;:&lt;port&gt;`</block>
+  <block id="e6e1ee0e7535b2e405ebb8e300b98120" category="paragraph">StorageGRID S3エンドポイントのHTTPS接続にカスタムCA証明書または自己署名SSL証明書を使用するには、証明書の完全なファイルパスとファイル名を指定します。このファイルは、各Verticaノード上の同じ場所にあり、すべてのユーザーに読み取り権限が与えられている必要があります。StorageGRID S3エンドポイントのSSL証明書が一般に知られているCAによって署名されている場合は、この手順を省略します。</block>
+  <block id="696e259f94c7ad1305f19356063ef22a" category="paragraph">-awscafile=&lt;filepath/filename&gt;`</block>
+  <block id="0d1ac53170a5118fa04c541efad5bb4d" category="paragraph">たとえば、次のサンプルファイルを参照してください。</block>
+  <block id="fc77af791d1dc32525fcc72feee625e1" category="admonition">本番環境では、一般に知られているCAによって署名されたサーバ証明書をStorageGRID S3ロードバランサエンドポイントに実装する必要があります。</block>
+  <block id="59826e109f3e784088f86690d77d3668" category="section-title">すべてのVerticaノードのデポパスを選択します</block>
+  <block id="b4129381183bb3a2dcc258f9cf71eee3" category="paragraph">デポストレージパスの各ノードにディレクトリを選択または作成します。デポストレージパスパラメータに指定するディレクトリには、次のものが必要です。</block>
+  <block id="a77408fa769995f6c1b1614db78cd9d3" category="list-text">クラスタ内のすべてのノードで同じパス（例：/home/dbadmin/depot）</block>
+  <block id="a3505e1f8f85c906e127d552d198d4ed" category="list-text">dbadminユーザによる読み書きが可能になります</block>
+  <block id="05a29aef1a17d794559074061ce7180e" category="list-text">十分なストレージ</block>
+  <block id="a11c22527e5b1ee68fbaab45fce06809" category="inline-link-macro">EonモードデータベースのVertica Clusterのサイジング</block>
+  <block id="00dadf185ad569b9ff9af5c62063d2ec" category="paragraph">デフォルトでは、Verticaはデポ保存用のディレクトリを含むファイルシステム領域の60%を使用します。'create-db'コマンドの--depot-size'引数を使用すると、デポのサイズを制限できます。を参照してください <block ref="5ed72ba4f95868ac00a71daae1b19940" category="inline-link-macro-rx"></block> Verticaの一般的なサイジングガイドラインについては、こちらをご覧ください。Vertica Account Managerにお問い合わせください。</block>
+  <block id="298b1561e22818ad31df6e4836a6aca2" category="paragraph">'admintools create-db'ツールは'存在しない場合に備えて'デポパスを作成しようとします</block>
+  <block id="4536a0f0846353aa5de6714204bd897a" category="section-title">オンプレミスデータベースの作成</block>
+  <block id="6ed9ef1283f8a665ad7dbfe450f4616c" category="paragraph">オンプレミスデータベースを作成するには、次の手順を実行します。</block>
+  <block id="c8fac0ae7f28a985c6f7041e704cb9e9" category="list-text">データベースを作成するには'admintools create-db'ツールを使用します</block>
+  <block id="ba1f54172ea851b435ebad930979214e" category="paragraph">この例で使用されている引数の簡単な説明を次に示します。すべての必須引数とオプション引数の詳細については、Verticaのドキュメントを参照してください。</block>
+  <block id="d560ea5a8e684843d3e61026f97988ea" category="inline-xref">「S3エンドポイントにアクセスするための認証ファイルの作成」</block>
+  <block id="49231ccf7e1f2892d02e363b3996f6b1" category="list-text">-x &lt;で作成された認証ファイルのパス/ファイル名 <block ref="ff01d755c02cf9eac8acabe776f4ae31" category="inline-xref-macro-rx"></block> &gt;。</block>
+  <block id="f405bc9fea0f983aec86bf3b39598931" category="paragraph">認証の詳細は、正常に作成された後、データベース内に保存されます。S3シークレットキーの公開を回避するために、このファイルを削除できます。</block>
+  <block id="8bb92892cb170f0a2e9faa38b08707d2" category="list-text">--son/storagegrid-sstorage -location &lt;s3：//storagegrid bucketname&gt;</block>
+  <block id="730286a138b893db744ec9b6d5eb53cc" category="list-text">-s &lt;このデータベースに使用するVerticaノードのカンマ区切りリスト&gt;</block>
+  <block id="ff3ce7ef8f8faa42ab218e0e6a952005" category="list-text">-d &lt;作成するデータベースの名前&gt;</block>
+  <block id="cbfebf618a39b6eebd458ebccb35811d" category="list-text">-p &lt;この新しいデータベースに設定するパスワード&gt;。たとえば、次のコマンド例を参照してください。</block>
+  <block id="f0f9a3849fe5730a2c9d6f1fec222ca3" category="paragraph">データベースのノード数によっては、新しいデータベースの作成に数分かかることがあります。データベースを初めて作成するときに、ライセンス契約に同意するように求められます。</block>
+  <block id="3b8065a08e54f4e0956f3b822ffb8a91" category="paragraph">たとえば'次のサンプル認証ファイルと'create db'コマンドを参照してください</block>
+  <block id="011babd6bb6bec44f7f5c42f6c3e7a38" category="cell">オブジェクトのサイズ（バイト）</block>
+  <block id="e6ada8a15e80a48f024520ab8ffb24a5" category="cell">バケット/オブジェクトキーの完全パス</block>
+  <block id="8f283c17785e8043629e6a7e1d721498" category="paragraph">61`</block>
+  <block id="194ed05748ef16c0095eca9bbdccfd15" category="paragraph">`s3://Vertica/051/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a07/026d63ae9d4a33237bf0e2cf2a794a00a0000000000000021a07_00.dfd`</block>
+  <block id="729c949b77c1b640517910da82d0009e" category="paragraph">145`</block>
+  <block id="02dde8fef0da052a66cc199f0d934f95" category="paragraph">`s3://Vertica/2c4/026d63ae9d4a33237bf0e2cf2a794a794a794a000000000000000021a3d/026d63ae9d4a33237bf0e2cf2a794a794a00a000000000021a3_0.dfd`</block>
+  <block id="436383be1a5ea8f6f9a05e8b93c69d9d" category="paragraph">146 `</block>
+  <block id="70e1bd6136404a49a88f7fb3dd3465c3" category="paragraph">`s3://Vertica/33C/026d63ae9d4a33237bf0e2cf2a794a0000000021a1d/ 026d63ae9d4a33237bf0e2cf2a794a00000000000021a1d_0.dfd`</block>
+  <block id="715eac993d42a26a194f16062429238e" category="paragraph">「40」</block>
+  <block id="29cbdad4e0c6e39f8d84a0d5416eb1e8" category="paragraph">`s3://Vertica/382/026d63ae9d4a33237bf0e2cf2a794a794a0000000021a31/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a31_0.dfs`</block>
+  <block id="4ddd669e9e695a865f4ee77b92335a6b" category="paragraph">`s3://Vertica/42f/026d63ae9d4a33237bf0e2cf2a794a794a00000000211/026d63ae9d4a33237bf0e2cf2a794a0000000000000021a_0.dfd`</block>
+  <block id="a0531813d4911f4468a61b1a8b8be492" category="paragraph">34`</block>
+  <block id="f99e684ff65b8e3fa1b1115a8e4f6455" category="paragraph">`s3://Vertica/472/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a25/026d63ae9d4a33237bf0e2cf2a794a000000000000000021a25_0.df`</block>
+  <block id="964578668d432e948ebd36046dbb63a0" category="paragraph">41.</block>
+  <block id="0d8920cf1f46e7225ad12a12aa3ef7fa" category="paragraph">`s3://Vertica/476/026d63ae9d4a33237bf0e2cf2a794a794a00000000000021a2d/026d63ae9d4a33237bf0e2c2cf2a794a00a00000000000021a2_0.dfd`</block>
+  <block id="ee33f05ae2d631fbc7214baa242bbe6b" category="paragraph">`s3://Vertica/52A/026d63ae9d4a33237bf0e2cf2a794a794a0000000021a5d/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a5d_0.df`</block>
+  <block id="54070e15a029f7447e1ecebc3d82b773" category="paragraph">「131」</block>
+  <block id="66f64ef6cf860c2f0ce6a5a2c23761e3" category="paragraph">`s3://Vertica/5d2/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a19/026d63ae9d4a33237bf0e2cf2a794a00a0000000000000021a19_0.df`</block>
+  <block id="bd8b3b2174b3dc482b0c5e38e6cddac3" category="paragraph">「91」</block>
+  <block id="162c559c21f5cc69fe9ebd819fde72e2" category="paragraph">`s3://Vertica/5f7/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a11/026d63ae9d4a33237bf0e2cf2a794a00a00000000000021a11_0.df`</block>
+  <block id="dc16a418b068800db4274918cfb8cbd5" category="paragraph">「118」</block>
+  <block id="c891ece8fdff5a56142befae63efdf59" category="paragraph">`s3://Vertica/82D/026d63ae9d4a33237bf0e2cf2a794a794a0000000021a15/026d63ae9d4a33237bf0e2cf2a794a0000000000000021a15_0.df`</block>
+  <block id="cfcfa2b8b73ab4ebd558c0c1fef3ddb5" category="paragraph">「115」</block>
+  <block id="a153a0e9f0ae1d6ee55d81dc814a6b1a" category="paragraph">`s3://Vertica/922/026d63ae9d4a33237bf0e2cf2a794a794a0000000021a61/026d63ae9d4a33237bf0e2cf2a794a0000000000000021a61_0.df`</block>
+  <block id="df6e76b7db7e1995b581978628f232d2" category="paragraph">「33」</block>
+  <block id="adf4c765585112bb17f45e76f9d9d590" category="paragraph">`s3://Vertica/ACD/ 026d63ae9d4a33237bf0e2cf2a794a794a000000000021a29/026d63ae9d4a33237bf0e2cf2a794a794a00000000000021a29_0.dfs`</block>
+  <block id="5bad592e6f7fea9a405f17f8f9340030" category="paragraph">「133」</block>
+  <block id="87316eaa24ad32afbe0ef544c6bca09a" category="paragraph">`s3://Vertica/b98/026d63ae9d4a33237bf0e2cf2a794a794a00a00000000000021a4d/026d63ae9d4a33237bf0e2cf2a794a794a00a000000000021a4d_0.df`</block>
+  <block id="82923f5350a7cf37b21ea38721c005a9" category="paragraph">「38」</block>
+  <block id="614c8126b9e7031460260b44d16aeeee" category="paragraph">`s3://Vertica/db3/026d63ae9d4a33237bf0e2cf2a794a794a000000000021a49/026d63ae9d4a33237bf0e2cf2a794a00a0000000000000021a49_0.df`</block>
+  <block id="ccc61782f821297d4d0f1d6adc8c005b" category="paragraph">`s3://Vertica/eba/ 026d63ae9d4a33237bf0e2cf2a794a794a000000000021a59/026d63ae9d4a33237bf0e2cf2a794a794a0000000021a59_0.dfdfs.dfs</block>
+  <block id="0688523b1b9b233c01258f78a3b678d1" category="paragraph">21521920`</block>
+  <block id="5bd0f2c4067288be395e7abd381a1c08" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a000000000000215e2/026d63ae9d4a33237bf0e2c2cf2a794a000000215e2.tar`</block>
+  <block id="bc9b86685d9566e8f05dc5bf8d3a1fbc" category="paragraph">6865408`</block>
+  <block id="d38e8ffa6625a5a4b6bad1c1d7382fb5" category="paragraph">`s3://vertica/metodat/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a0000000021602/026d63ae9d4a33237bf0e2c2cf2a794a0000000000000021602.tar`</block>
+  <block id="af6664da5e630dd702d05572ececa175" category="paragraph">「204217344」</block>
+  <block id="de27bd64b0a8f6533689f4b16da6bfb0" category="paragraph">`s3://vertica/metodata/mart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a0000000021610/026d63ae9d4a33237bf0e2c2cf2a794a00a000000000000000021610.tar`</block>
+  <block id="9ef62a917e9958765d5bcb465a51ac57" category="paragraph">16109056`</block>
+  <block id="3783651d1a6b717d08885cf53bd7d16e" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a00000000217e0/026d63ae9d4a33237bf0e2c2cf2a794a0000000000217e0.tar`</block>
+  <block id="c3d8042b5920b9834cdc8c607700579b" category="paragraph">12853248`</block>
+  <block id="cb5e272ca193ebaf253184d8cfc81f6c" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a0000000000000021800/026d63ae9d4a33237bf0e2c2cf2a794a00a0000000000000000000000218.tar`</block>
+  <block id="9f99944286c11b6b1d4ae4f3afeaccce" category="paragraph">「8937984」と入力します</block>
+  <block id="5c7d0ca56c0f98a44c9694b3b23638a6" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a00000000002187a/026d63ae9d4a33237bf0e2c2cf2a794a00a00002187a.tar`</block>
+  <block id="953a580241e2775e0639090df2123983" category="paragraph">「56260`606060860」</block>
+  <block id="b91fb7e8554567dee7fd85bf527a5d61" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a00000000000000218b2/026d63ae9d4a33237bf0e2c2cf2a794a0000000000218b2.tar`</block>
+  <block id="2eab01f0a4f4ba0111890349a5f85444" category="paragraph">「53947904」</block>
+  <block id="f27cf13b696134d286beb7542a5b8ee9" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a00000000000000219ba/026d63ae9d4a33237bf0e2c2cf2a794a0000000000219ba.tar`</block>
+  <block id="5b1513e00fa72794bd306e4661c0d8af" category="paragraph">44932`608</block>
+  <block id="66e66fba54c58c7cfab3b8c11a8b73a3" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a000000000000219de/026d63ae9d4a33237bf0e2c2cf2a794a00000000000000219de.tar`</block>
+  <block id="82901f02268c81d3e27980ba5e0b77d5" category="paragraph">「256306688」</block>
+  <block id="7914ba13e7d387d65c9411aeea0e0892" category="paragraph">`s3://vertica/metadata/VMart/Librarys/026d63ae9d4a33237bf0e2c2cf2a794a00a00000000000021a6e/026d63ae9d4a33237bf0e2c2cf2a794a000000000000000021a6e.tar`</block>
+  <block id="bf40bf1f33abeba0c5f6118b0b478254" category="paragraph">「8062464`」</block>
+  <block id="89fe14ef338a0aad387cf40439c765d3" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a0000000021e34/026d63ae9d4a33237bf0e2c2cf2a794a00000000000000000021e34.tar`</block>
+  <block id="f09043d36889d1d269a7e6511fafff88" category="paragraph">「20024832」</block>
+  <block id="9f4bb57d3119e159eda6dc91b421e12c" category="paragraph">`s3://vertica/metadata/VMart/Library/Libraryd63ae9d4a33237bf0e2c2cf2a794a00a0000000021e70/026d63ae9d4a33237bf0e2c2cf2a794a00000000000000000021e70.tar`</block>
+  <block id="75dc180047a4a65cc91cdc34bafd5f13" category="paragraph">「10444」</block>
+  <block id="5fe8f5a5faaf24b63d974fff8f45ad49" category="paragraph">`s3://vertica/metadata/VMart/cluster _config.json</block>
+  <block id="cb455610261549601a968727f75e173c" category="paragraph">「823266」</block>
+  <block id="734d9f32a69fc76666aa927960e1ba72" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Checks/C13_13/chkpt_1.cat.gz`</block>
+  <block id="fdbaf1b0ee4e02044e36d36dd4518eb0" category="paragraph">「254」</block>
+  <block id="1fd58d19f264e720bbbb53577d7a2e49" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Checks/C13_13/Completed`</block>
+  <block id="0dde90dd52d8ff73123cc9260d7786ec" category="paragraph">「2958」</block>
+  <block id="13a8345978900e79a14d95d85370d8e4" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Checkpoints /C2_2/chkpt_1.cat.gz`</block>
+  <block id="ef3a67b278f31bdbebbe75fa5f8c0d8f" category="paragraph">231`</block>
+  <block id="6d2efa8379c2fd39a36d84564be5a1b4" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Checks/C2_2/Completed`</block>
+  <block id="2912813aa00f32add6928d2cd9f830d6" category="paragraph">「822521」</block>
+  <block id="f141618d089b11b78013a4fad88af223" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Checks/C4_4/chkpt_1.cat.gz`</block>
+  <block id="6c6fe7b656c6c32a26871dfb19f4b7b3" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Checks/C4_4/Completed`</block>
+  <block id="703d5c404aa85c4c6a2e4cd844293b36" category="paragraph">746513`</block>
+  <block id="4640693ffd9b0eb61a5ee402925c804c" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_14_g14.cat`</block>
+  <block id="bd064eec6e4122c37fd1528794b1faec" category="paragraph">「2596」</block>
+  <block id="6fa963a88e2173bc42c4994cd74cf77e" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_3_g3.cat.gz`</block>
+  <block id="f1b0090937d01be346c5db6567a13320" category="paragraph">821065`</block>
+  <block id="84e5609dfad6367600760692fafa2463" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_4_g4.cat.gz`</block>
+  <block id="5b767a2a9f98b85fae682314aaeb580a" category="paragraph">6440`</block>
+  <block id="738665eaf340c6f336e0ac44a1fbd7f1" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_5_g5.cat`</block>
+  <block id="1ff46952208a49a43363ce080cfdfc26" category="paragraph">「8518」</block>
+  <block id="960d9a61ddbe51dee57ad226374094a3" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_8_g8.cat`</block>
+  <block id="2911e600bbad981e24b3e2a2b3a03f82" category="paragraph">「 0 」</block>
+  <block id="cc11cb8ec5bc5124b58731d343024acf" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0016/Catalog/859703b06a3456d95d0be28575a673/tiered_catalog.cat`</block>
+  <block id="e5f72d0ac30042b1e1228050cf4db009" category="paragraph">822922`</block>
+  <block id="fe509c64685e0e86b37d4a4168383981" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0017/Catalog/859703b06a3456d95d0be28575a673/Checkpoints /Checkpoints /C14-7/chkpt_1.cat.gz`</block>
+  <block id="c874813a1ab759170832ad00490add5b" category="paragraph">「232」</block>
+  <block id="a7b6a33ea6804bc24f95087a2767144a" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0017/Catalog/859703b06a3456d95d0be28575a673/Checkpoints /Checkpoints /C14-7/Completed`</block>
+  <block id="607ce6df5f7416ceecf46b2565cf78b6" category="paragraph">822930`</block>
+  <block id="f16dd1621cefe9daf11aa717c6f5ff3c" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0017/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_14_g7.cat.gz`</block>
+  <block id="1a4a32022249a74ade4da57bc540ae45" category="paragraph">755033`</block>
+  <block id="ee70ce19fcb6a37181f0f2a1b295cac2" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0017/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_15_g8.cat`</block>
+  <block id="ef88602de03096d5337e01c415fb757e" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0017/Catalog/859703b06a3456d95d0be28575a673/tiered_catalog.cat`</block>
+  <block id="cfa501ab966cb7076ab4bea35887c268" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0018/Catalog/859703b06a3456d95d0be28575a673/Checkpoints /Checkpoints /C14-7/chkpt_1.cat.gz`</block>
+  <block id="0efaef21765abae97f8823284089d92e" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0018/Catalog/859703b06a3456d95d0be28575a673/Checkpoints /Checkpoints /C14-7/Completed`</block>
+  <block id="f8a27da0cd8f29eeb5dec4c51b6ddaed" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0018/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_14_g7.cat.gz`</block>
+  <block id="9137c061f66498d02d0a5dae8cd11fb7" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0018/Catalog/859703b06a3456d95d0be28575a673/Txnlogs/txn_15_g8.cat`</block>
+  <block id="6c4e066b2f26281da7b7403d03d8a904" category="paragraph">`s3://vertica/metadata/VMart/nodes/v _vmart_node0018/Catalog/859703b06a3456d95d0be28575a673/tiered_catalog.cat`</block>
+  <block id="377e8de315163c073e4c65030a631ab8" category="paragraph">この手順 は、他のオンプレミスオブジェクトストレージのVertica guideに基づいており、StorageGRID に適用する必要があります。</block>
+  <block id="7a62369a8bc7139feef72cf70ca75b13" category="list-text">データベースを作成したら'AWSStreamingConnectionPercentage'設定パラメータを0に設定して無効にしますこの設定は、共同ストレージを使用したオンプレミス環境でのEonモードのインストールには不要です。この設定パラメータは、Verticaがストリーミング読み取りに使用するオブジェクトストアへの接続数を制御します。クラウド環境では、この設定が有効な場合、オブジェクトストアからのストリーミングデータが使用可能なすべてのファイルハンドルを使い使わないようにすることができます。他のオブジェクトストア処理に使用できるファイルハンドルが残っています。オンプレミスのオブジェクトストアのレイテンシが低いため、このオプションは不要です。</block>
+  <block id="9bbb476c1b20d451a6b1efc6d9f3c996" category="list-text">パラメータ値を更新するには'vsql'文を使用しますパスワードは、「オンプレミスデータベースの作成」で設定したデータベースパスワードです。たとえば、次の出力例を参照してください。</block>
+  <block id="bbbc233057e904f5095141454e43564f" category="section-title">デポの設定を確認してい</block>
+  <block id="fd9c0f2a65006cc20a093358569ff9c4" category="paragraph">Verticaデータベースのデフォルトデポ設定は、読み取りおよび書き込み操作に対して有効(値=1)です。パフォーマンスを向上させるために、これらのデポ設定を有効にしておくことを強く推奨します。</block>
+  <block id="1844bf3855f7b6c5d660568fcf9d8381" category="section-title">サンプルデータのロード（オプション）</block>
+  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">こちらをご覧ください</block>
+  <block id="6be5fbd5ae75780985c67dc6ceac5c11" category="paragraph">このデータベースをテスト用に使用し、削除する場合は、サンプルデータをテスト用にこのデータベースにロードできます。Verticaには、各Verticaノードの「/opt/vertica/examples/VMart _Schema/」にあるサンプルデータセットVMartが付属しています。このサンプルデータセットの詳細については、を参照してください <block ref="a43712dd91d6373beb0a27dc61f34970" category="inline-link-macro-rx"></block>。</block>
+  <block id="b3b0c649f69631d0d5f8abca04e393df" category="paragraph">サンプルデータをロードするには、次の手順を実行します。</block>
+  <block id="30cd3777be39c484720b1ce07e97b8a4" category="list-text">いずれかのVerticaノードにdbadminとしてログインします。cd /opt/vertica/examples/VMart _Schema/</block>
+  <block id="7ec0cfc5ec14c9333b6810bbf84fe541" category="list-text">サンプルデータをデータベースにロードし、手順cとdでプロンプトが表示されたらデータベースのパスワードを入力します。</block>
+  <block id="a8900c6772f9006786fee28bf50ff58e" category="list-text">「cd /opt/vertica/examples/VMart _Schema'」と入力します</block>
+  <block id="c43a7b61de777223de68bb230032f64f" category="list-text">「./vmart_gen」</block>
+  <block id="16c970dcd26069436e93acae9cef7ad7" category="list-text">vsql &lt;vmart_define_schema.sql</block>
+  <block id="08af76b6687df620bd989c053338f859" category="list-text">「vsql &lt;vmart_load_data.sql」</block>
+  <block id="89e26598cb765dcbe94f71e860e94c64" category="list-text">事前定義された複数のSQLクエリがあります。そのうちの一部を実行して、テストデータがデータベースに正常にロードされたことを確認できます。たとえば、「vsql &lt;vmart_queries1.sql」のようになります</block>
+  <block id="4bb047f8c530785002e490ef17fa725e" category="section-title">追加情報の参照先</block>
+  <block id="7d5b957cd473f6eaf5ad335a9c63c4ff" category="paragraph">このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。</block>
+  <block id="dc09a61f5267f59b07d945a7843dd0ff" category="inline-link-macro">NetApp StorageGRID 11.4製品ドキュメント</block>
+  <block id="3bba50322e3e61749a153f6c0f61881b" category="list-text"><block ref="3bba50322e3e61749a153f6c0f61881b" category="inline-link-macro-rx"></block></block>
+  <block id="8a9cd131f57d065d753803a90387c310" category="inline-link-macro">StorageGRID データシート</block>
+  <block id="d6ed371e4ca6112ef8dca75d49381711" category="list-text"><block ref="d6ed371e4ca6112ef8dca75d49381711" category="inline-link-macro-rx"></block></block>
+  <block id="0e25eb5c75f8069f3e7864cc794fc73f" category="inline-link-macro">Vertica 10.1製品マニュアル</block>
+  <block id="8f6785fde2797084dc5e67b73921c890" category="list-text"><block ref="8f6785fde2797084dc5e67b73921c890" category="inline-link-macro-rx"></block></block>
+  <block id="f6a738f75f76f62a241636eca02cd87d" category="section-title">バージョン履歴</block>
+  <block id="34b6cd75171affba6957e308dcbd92be" category="cell">バージョン</block>
+  <block id="44749712dbec183e983dcd78a7736c41" category="cell">日付</block>
+  <block id="8002bc13927c65b5f265b031079ce1d4" category="cell">ドキュメントのバージョン履歴</block>
+  <block id="3798985ee5e15c84c4263815d5a4d0b7" category="paragraph">バージョン 1.0 以降</block>
+  <block id="d802637b72ebddd27cf9b28f9f198763" category="paragraph">2021年9月</block>
+  <block id="ea9349a37bfee247df0f87cbcacca796" category="paragraph">初版リリース</block>
+  <block id="0a7fcea811cb899434230e06e3477b84" category="summary">Hadoopを使用すると、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタ間で大規模なデータセットを分散処理できます。Hadoopは、単一のサーバから数千のマシンにスケールアップするように設計されており、各マシンにローカルのコンピューティングとストレージを提供しています。</block>
+  <block id="e28a2374ec10c84082a75afb2254f4e2" category="doc">StorageGRID でCloudera Hadoop S3Aコネクタを使用します</block>
+  <block id="69cfaca1831444acadd7835297b7d501" category="paragraph">Hadoopは、データサイエンティストに今しばらくの間愛用されてきました。Hadoopでは、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタにまたがる大規模なデータセットを分散処理できます。Hadoopは、ローカルのコンピューティングとストレージを所有するマシンごとに、単一のサーバから数千のマシンにスケールアップするように設計されています。</block>
+  <block id="ae19997258b86e93601b9072dd73b100" category="section-title">S3AをHadoopワークフローに使用する理由</block>
+  <block id="edb332fdf13a795cb04d8673475e7002" category="paragraph">データ量の増加に伴い、新しいマシンにコンピューティングとストレージを個別に追加するアプローチは非効率的になっています。リソースを効率的に使用し、インフラを管理するという課題は、リニアに拡張する必要があります。</block>
+  <block id="ab8402eb6a573e76dfe21f21689c9ae9" category="paragraph">このような課題に対処するために、Hadoop S3AクライアントはS3オブジェクトストレージに対する高性能なI/Oを提供します。S3Aを使用してHadoopワークフローを実装することで、オブジェクトストレージをデータリポジトリとして活用でき、コンピューティングとストレージを分離することができます。これにより、コンピューティングとストレージを別々に拡張できます。コンピューティングリソースとストレージを分離することで、コンピューティングジョブに適切な量のリソースを割り当て、データセットのサイズに基づいて容量を提供することもできます。そのため、Hadoopワークフローの総所有コストを削減することができます。</block>
+  <block id="95c00c41a442070ea0794b977de417b8" category="section-title">StorageGRID を使用するようにS3Aコネクタを構成します</block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">前提条件</block>
+  <block id="d26ba44c410bd88ab784003c4e881389" category="list-text">StorageGRID S3エンドポイントのURL、テナントS3アクセスキー、およびHadoop S3A接続テスト用のシークレットキー。</block>
+  <block id="6762ef556fff500baba3e28bdce2febb" category="list-text">クラスタ内の各ホストに対するClouderaクラスタとrootまたはsudo権限を付与して、Javaパッケージをインストールします。</block>
+  <block id="0f00c0e9578f0ff277a08d08ef376836" category="paragraph">2022年4月時点で、StorageGRID 11.0.14とCloudera 7.1.7のJava 11.0.14が、11.5および11.6に対してテストされました。ただし、Javaのバージョン番号は新規インストール時と異なる場合があります。</block>
+  <block id="4064bf12468c8bc6d21b4c1c947f9ed1" category="section-title">Javaパッケージをインストールします</block>
+  <block id="3408188787a55fb9708798cddbce37b0" category="inline-link">Clouderaサポートマトリックス</block>
+  <block id="e9be8954eba184e4880371339e422a20" category="list-text">を確認します<block ref="31da88a07df8e391e811822caa135aca" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="162479463df046cb4a74da2008354eed" category="inline-link">Java 11.xパッケージ</block>
+  <block id="4c2d03bf2e98573fa9436705b37a57a1" category="list-text">をダウンロードします<block ref="60b96115cb33d167b5449475d0ab85e0" category="inline-link-rx"></block> Clouderaクラスタオペレーティングシステムと同じです。このパッケージをクラスタ内の各ホストにコピーします。この例では、CentOSにrpmパッケージを使用しています。</block>
+  <block id="149f40ea9f9ffb02d7eeba792298fe1e" category="list-text">各ホストにrootとしてログインするか、sudo権限を持つアカウントを使ってログインします。各ホストで次の手順を実行します。</block>
+  <block id="52afb08cb748c04055be489c0b9a888e" category="list-text">パッケージをインストールします。</block>
+  <block id="88499cbc0c83e386e53fdb36804337d9" category="list-text">Javaがインストールされている場所を確認します。複数のバージョンがインストールされている場合は、新しくインストールしたバージョンをデフォルトに設定します。</block>
+  <block id="b26c64ac085c28a1738346e2ec4d1520" category="list-text">この行を/etc/profile'の末尾に追加しますパスは、上記の選択のパスと一致する必要があります。</block>
+  <block id="5f88743172c002de2f07047875fd2634" category="list-text">次のコマンドを実行して、プロファイルを有効にします。</block>
+  <block id="3659ebed6f89d43e919d92d8a4f7279e" category="section-title">Cloudera HDFS S3A構成</block>
+  <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">* 手順 *</block>
+  <block id="c1d889a86b4ee1f584c957eb2c6788a5" category="list-text">Cloudera Manager GUIで、クラスタ（Clusters）&gt; HDFSを選択し、構成（Configuration）を選択します。</block>
+  <block id="47f7c5aaea9ec9316850eea3fb28134a" category="list-text">カテゴリでAdvancedを選択し、下にスクロールして「core-site .xml」用のクラスタ全体のAdvanced Configuration Snippet（Safety Valve）を探します。</block>
+  <block id="0f4af84337510994f3225d2912229b08" category="list-text">（+）記号をクリックし、次の値ペアを追加します。</block>
+  <block id="49ee3087348e8d44e1feda1917443987" category="cell">名前</block>
+  <block id="689202409e48743b914713f96d93947c" category="cell">価値</block>
+  <block id="7755119082c17ec5a3af74f22d8f3aeb" category="paragraph">fs.s3a.access.key</block>
+  <block id="b7be29f43cb131b105a1709a4f9c9a47" category="paragraph">_&lt;tenant StorageGRID のs3アクセスキー__</block>
+  <block id="cf2f74e5c9b775c0484e6cbc43fad16f" category="paragraph">fs.s3a.secret.key</block>
+  <block id="519b3534e0953e9f790740bb65fa9c85" category="paragraph">_&lt;tenant s3 secret key from StorageGRID &gt;_</block>
+  <block id="44b80c022f07d7386faad66ac455d150" category="paragraph">FS.s3a.connection.ssl.enabled</block>
+  <block id="e7c95635ca48bb5a8924d326b1bb75b3" category="paragraph">[true or false]（このエントリがない場合のデフォルトはhttps）</block>
+  <block id="57f2049492fc15207b8727a44d9de577" category="paragraph">FS.s3a.endpoint</block>
+  <block id="62c6bd01433e2f02e630f1c410723151" category="paragraph">_ StorageGRID S3エンドポイント：port&gt;_</block>
+  <block id="1a95b45b39a6285f9154d0687dc81b19" category="paragraph">FS.s3a.impl</block>
+  <block id="2227817813f0b981f0f8fdd5a9deaffa" category="paragraph">org.apache.hadoop .fs.s3a.S3AFileSystem</block>
+  <block id="f5a9c1cd529c584fa53b0a52eb61dcd3" category="paragraph">FS.s3a.path.style.access</block>
+  <block id="e935d7bd3d4a49248bd3ef5e65504984" category="paragraph">[true or false]（このエントリがない場合のデフォルトの仮想ホスト形式）</block>
+  <block id="0d5c3854a6a39265583df58f1d37b3a2" category="paragraph">*サンプルスクリーンショット*</block>
+  <block id="b956fcc114b2bdd5a14d25ccea32b2ea" category="image-alt">S3A構成</block>
+  <block id="13a78f349c69274252fa8cde26ca554d" category="list-text">[Save Changes]ボタンをクリックします。HDFSメニューバーからStale Configurationアイコンを選択し、次のページでRestart Stale Servicesを選択して、Restart Nowを選択します。</block>
+  <block id="1e9d3fb4b7267b5c4de2a7f67956da90" category="image-alt">Hadoopの古いサービスアイコンを再起動します</block>
+  <block id="68dbc18976f73773bc2d5deb27f4780f" category="section-title">StorageGRID へのS3A接続をテストします</block>
+  <block id="a13db3eed845386ceaab26fb7644f80a" category="section-title">基本的な接続テストを実行します</block>
+  <block id="8a494f649ac7828977d5f96db63466eb" category="paragraph">Clouderaクラスタのいずれかのホストにログインし、「hadoop fs s-ls s3a：//_&lt;bucket-name&gt;_/`」と入力します。</block>
+  <block id="0dfddb891adaa02cdfc088a098890620" category="paragraph">次の例では、パスsyleと既存のHDFSテストバケットおよびテストオブジェクトを使用します。</block>
+  <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">トラブルシューティング</block>
+  <block id="d42e8fbcf79f7de1303918aafa7d9fa7" category="section-title">シナリオ 1</block>
+  <block id="6dec63b261842f0351dbe18a56aa7703" category="paragraph">StorageGRID へのHTTPS接続を使用し、15分後に「handshake_failure」エラーを取得します。</block>
+  <block id="fe585fc6e6e5b4d2d51d9d6e24fe5d87" category="paragraph">*理由：StorageGRID への接続に古いTLS暗号スイートまたはサポートされていないTLS暗号スイートを使用しているJRE／JDKの旧バージョン。</block>
+  <block id="f37ed697750770b7a12ad7e08848a5f2" category="paragraph">*エラーメッセージの例*</block>
+  <block id="2f463c682630a0a4549da5e367566421" category="paragraph">*解決策: JDK 11.x以降がインストールされていることを確認し'デフォルトのJavaライブラリに設定しますを参照してください <block ref="16e523618132c52360c79287d334eb35" category="inline-xref-macro-rx"></block> 詳細については、を参照してください。</block>
+  <block id="0f85bc5e180a369ebccc65db2ddf9288" category="section-title">シナリオ2：</block>
+  <block id="2cd1296de7ffb189828b5d1d8f8c74db" category="paragraph">StorageGRID に接続できませんでした。エラーメッセージ「要求されたターゲットへの有効な証明書パスが見つかりませんでした」が表示されます。</block>
+  <block id="608bb8a9d2247ad73a54f0b36e35e529" category="paragraph">*理由：* StorageGRID S3エンドポイントサーバ証明書がJavaプログラムで信頼されていません。</block>
+  <block id="71f31feeda8d8d4f38fbd0e77d82c5a9" category="paragraph">エラーメッセージの例：</block>
+  <block id="3233e5ff1af3df3490648806d2e307fb" category="paragraph">*解決策：ネットアップは、既知のパブリック証明書署名機関が発行するサーバ証明書を使用して、認証がセキュアであることを確認することを推奨しています。または、Javaの信頼ストアにカスタムのCA証明書またはサーバ証明書を追加します。</block>
+  <block id="70135898629d17d48ccbf801de69bd60" category="paragraph">StorageGRID カスタムCA証明書またはサーバ証明書をJava信頼ストアに追加するには、次の手順を実行します。</block>
+  <block id="45eab7349f288790d0a805a261f1e633" category="list-text">既存のデフォルトのJava cacertsファイルをバックアップします。</block>
+  <block id="96a3c1cb03afb8a8fdc408548dea3311" category="list-text">StorageGRID S3エンドポイント証明書をJava信頼ストアにインポートします。</block>
+  <block id="ddbb2c51fdb8d9c867287e4815a4bc07" category="section-title">トラブルシューティングのヒント</block>
+  <block id="92530c0f71b6f0c67f81127b722a268b" category="list-text">Hadoopログレベルを引き上げてデバッグします。</block>
+  <block id="7434b0a8c7df6a944a97a97dab787fa2" category="paragraph">'export hadoop root_logger = hadoop .root.logger = debug、console'</block>
+  <block id="fb10d0d432199779c224d4da6d5acf10" category="list-text">コマンドを実行し、ログメッセージをerror.logに送信します。</block>
+  <block id="c774f55d8bba0b0011caed823df573f4" category="paragraph">「hadoop fs s-ls s3a：//_&lt;bucket-name&gt;__ error.log</block>
+  <block id="5acb44ecb8d9d7e55b00e2a97ca3c4f5" category="summary">ここでは、NetApp StorageGRID の各リリースの完全なドキュメントを示します。</block>
+  <block id="d55a0f29052225dac98466ee9b92f4a1" category="doc">NetApp StorageGRID のドキュメント</block>
+  <block id="22c5de521c44ad2015e5ce711b46bebf" category="paragraph">NetApp StorageGRID の各リリースの完全なドキュメントは、次の場所にあります。</block>
+  <block id="dc2c61abf0171b5abd61211f37552e18" category="inline-link">StorageGRID 11.6</block>
+  <block id="1f24789c68b06d446e0ebee3e2b81c66" category="list-text"><block ref="1f24789c68b06d446e0ebee3e2b81c66" category="inline-link-rx"></block></block>
+  <block id="c7bb2251d54b13e3891aea37cdb54cd1" category="inline-link">StorageGRID 11.5</block>
+  <block id="1a433578de1b07641fbd7e4fa310d058" category="list-text"><block ref="1a433578de1b07641fbd7e4fa310d058" category="inline-link-rx"></block></block>
+  <block id="32e750dc43168f85f193ec7b20f6e5c4" category="inline-link">StorageGRID 11.4</block>
+  <block id="ab11b93693987b00bd58948f5b72c34a" category="list-text"><block ref="ab11b93693987b00bd58948f5b72c34a" category="inline-link-rx"></block></block>
+  <block id="37ef4cafeb8ccc9607db85cd3fab57f8" category="inline-link">StorageGRID 11.3</block>
+  <block id="c18e44cb0cb6bc2f462d1e006c443b06" category="list-text"><block ref="c18e44cb0cb6bc2f462d1e006c443b06" category="inline-link-rx"></block></block>
+  <block id="13947b810d54d07e62ef2873b8620fe7" category="inline-link">StorageGRID 11.2</block>
+  <block id="fa96f2375d9c1354445489d7c5ab86dc" category="list-text"><block ref="fa96f2375d9c1354445489d7c5ab86dc" category="inline-link-rx"></block></block>
+  <block id="7c9bea5c137c35be356406479a949aef" category="summary">Object Lockは、オブジェクトが削除または上書きされないようにWORMモデルを提供します。StorageGRID によるオブジェクトロックの実装では、規制要件を満たし、オブジェクト保持のリーガルホールドとコンプライアンスモードをサポートし、バケットのデフォルト保持ポリシーをサポートするように、Cohassetが評価されます。</block>
+  <block id="33978f74a8897c3da7935e1ac3118552" category="doc">StorageGRID でS3オブジェクトロックをテストして実証</block>
+  <block id="1d1d2f802d9cc6b6eb57739286faf4b3" category="paragraph">Object Lockは、オブジェクトが削除または上書きされないようにWORMモデルを提供します。StorageGRID によるオブジェクトロックの実装では、規制要件を満たし、オブジェクト保持のリーガルホールドとコンプライアンスモードをサポートし、バケットのデフォルト保持ポリシーをサポートするように、Cohassetが評価されます。</block>
+  <block id="56971a583f52c8e863bd76946fd7e4df" category="paragraph">このガイドでは、S3オブジェクトロックAPIについて説明します。</block>
+  <block id="1e3a85ebb1c233113bf042fe963e7cf5" category="section-title">リーガルホールド</block>
+  <block id="deb6fc774008b995e323cca66b1facaf" category="list-text">オブジェクトロックリーガルホールドは、オブジェクトに適用される単純なオン/オフステータスです。</block>
+  <block id="93c9236e0c41f2878728edae2046ae50" category="list-text">GET処理で検証します。</block>
+  <block id="147baac1f38a06bbf4e892a7420f03bb" category="list-text">リーガルホールドをオフにします</block>
+  <block id="ef1f6350727f7558bf0dcb99de8b43a4" category="section-title">Complianceモード</block>
+  <block id="ca03998a8a72276e144b390281ede11f" category="list-text">オブジェクトの保持には、タイムスタンプがretain untilを使用します。</block>
+  <block id="f50bafdbea3b79e2d9f5fdd9a5add716" category="list-text">保持ステータスを確認</block>
+  <block id="71b2566ef5a1fcd229a2d9785ed41db7" category="section-title">デフォルトの保持</block>
+  <block id="7dd96a99846895f9e3a3b91e8b8ec0fa" category="list-text">オブジェクト単位のAPIで定義された保持期限を日数と年数で設定します。</block>
+  <block id="25b92ba9ae0e5c3886d5397a33f4ce21" category="list-text">オブジェクトをバケットに配置します</block>
+  <block id="4aa3f3b4e7b7410ce27736bcc6748358" category="list-text">バケットで設定された保持期間がオブジェクトの保持タイムスタンプに変換されます。</block>
+  <block id="6a0f60b1ed8b19b1d7db3515b6695da6" category="section-title">保持期間が定義されているオブジェクトの削除をテストします</block>
+  <block id="d0cdc49fa0022b266468f0e306c00e54" category="paragraph">オブジェクトロックは、バージョン管理の上に構築されます。保持期間はオブジェクトのバージョンで定義されます。保持が定義されているオブジェクトを削除しようとしたときに、バージョンが指定されていない場合は、削除マーカーがオブジェクトの現在のバージョンとして作成されます。</block>
+  <block id="42ae4cc4d992b73b098cf1a15b7b156f" category="list-text">保持期間が定義されたオブジェクトを削除します</block>
+  <block id="80f89ef3a56a59415fb7de5ec8de5095" category="list-text">バケット内のオブジェクトをリストします</block>
+  <block id="b4f9a7eae41a98dfb0771f92707d7f68" category="list-text">オブジェクトがリストされていないことに注意してください。</block>
+  <block id="cc3153459e96342ef7d219589d19f208" category="list-text">削除マーカーとロックされた元のバージョンを表示するには、バージョンをリストします</block>
+  <block id="8697c94dccfe3cbc3ee4e7cd58a5022a" category="list-text">ロックされているオブジェクトのバージョンを削除します</block>
+  <block id="ce2702286f63f4ae6103107902322a34" category="summary">StorageGRID とS3 APIには、保存データを暗号化するためのさまざまな方法が用意されています。</block>
+  <block id="9c1f8aaacc1a56ce4e9a0dad8b9f85d5" category="doc">StorageGRID でS3暗号化オプションをテストして実証</block>
+  <block id="a8e93751c131aa808a9eafa1b8e11286" category="inline-link">StorageGRID の暗号化方式を確認します</block>
+  <block id="d303cdd8f1d3ee1dde4e3ada41998deb" category="paragraph">StorageGRID とS3 APIには、保存データを暗号化するためのさまざまな方法が用意されています。詳細については、を参照してください<block ref="54fa7d466db811b97852dfc564ca4383" category="inline-link-rx"></block>。</block>
+  <block id="492f68a8c44fdeeefd5fdfecd42dbccc" category="paragraph">このガイドでは、S3 APIの暗号化メソッドについて説明します。</block>
+  <block id="8851edf36d0b5638c8a4f6ac64923370" category="section-title">サーバー側の暗号化（SSE）</block>
+  <block id="0eb4ff54e584f9eaf62705a77663a748" category="paragraph">SSEを使用すると、クライアントがオブジェクトを格納し、StorageGRID で管理される一意のキーで暗号化できます。オブジェクトが要求されると、StorageGRID に格納されたキーによってオブジェクトが復号化されます。</block>
+  <block id="941f37e6c0faf75d7632b45e2853416d" category="section-title">SSEの例</block>
+  <block id="63e43077ce3ba881fa5ae9806e2d3e5f" category="list-text">SSEを持つオブジェクトを配置します</block>
+  <block id="6aa955f0cbda4b4e5c5d34ea6d859a7c" category="list-text">オブジェクトのヘッダーで暗号化を確認します</block>
+  <block id="a4214b559bb4db0e923b33d1d6f2d0ff" category="list-text">オブジェクトを取得します</block>
+  <block id="9e334fc718c77d2698ec6aaa3259bb80" category="section-title">ユーザ指定のキーによるサーバ側の暗号化（SSE-C）</block>
+  <block id="18bc90d6da56c6a0ca8a43370fb89730" category="paragraph">SSEを使用すると、クライアントがオブジェクトを格納し、クライアントがオブジェクトで提供する一意のキーでオブジェクトを暗号化できます。オブジェクトが要求されたときに、オブジェクトを復号化して返すために同じキーを指定する必要があります。</block>
+  <block id="aaf850473d937d172559cb570dab234d" category="section-title">SSE-Cの例</block>
+  <block id="1e7708d7f60a3422da31ffb25df4f214" category="list-text">テストまたはデモ目的で暗号化キーを作成できます</block>
+  <block id="422423cacc3731aece78081dcce4a364" category="list-text">暗号化キーを作成します</block>
+  <block id="684f8aafe1c1f1de5e081831230eabd7" category="list-text">生成されたキーを持つオブジェクトを配置します</block>
+  <block id="06154eb3744171105830473b1636041a" category="list-text">オブジェクトの先頭に追加します</block>
+  <block id="e5f9c75d403887203c2b7b0f94663953" category="admonition">暗号化キーを指定しないと、「The error occurred (404) when calling the HeadObject operation: not found"」(ヘッダオブジェクト操作:見つかりません)というエラーが表示されます。</block>
+  <block id="9dd97e164ee8102cf66ded8b2e6365f9" category="list-text">オブジェクトを取得します</block>
+  <block id="25800fc2c4fb712f003b8dde72f89e9b" category="admonition">暗号化キーを指定しないと、「An error occurred（InvalidRequest）when calling the GetObject operation：the object was stored using a form of Server Side Encryption」というエラーが表示されます。オブジェクトを読み出すには、正しいパラメータを指定する必要があります。"</block>
+  <block id="b7aaef273d10ecbd096947fb1bedf595" category="section-title">バケットサーバ側の暗号化（SSE-C）</block>
+  <block id="c61a8c52ec13232670b3fcf3aa61ecb1" category="paragraph">SSE-Cを使用すると、バケットに格納されているすべてのオブジェクトのデフォルトの暗号化動作をクライアントで定義できます。オブジェクトはStorageGRID で管理される一意のキーで暗号化されます。オブジェクトが要求されると、StorageGRID に格納されているキーによってオブジェクトが復号化されます。</block>
+  <block id="af888980113838f4be36b5dc77e84a11" category="section-title">バケットSSE-Cの例</block>
+  <block id="8256c537cf6e9ece3847813951e9fdfb" category="list-text">新しいバケットを作成し、デフォルトの暗号化ポリシーを設定</block>
+  <block id="2c63f6f1bb6a77a8a7fd5977aead1d84" category="list-text">新しいバケットを作成する</block>
+  <block id="8117fcb97cf86729cfbe315fb7c069c7" category="list-text">PUT Bucket encryptionの設定</block>
+  <block id="87edd78cd55896c283c8e2897bc9ba41" category="summary">このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。</block>
+  <block id="c86030d76e5f59c53ee3bc844dccdbd2" category="doc">StorageGRID 検索統合サービスを設定する</block>
+  <block id="f14bf9907ae948f8af2bfd00dbd85f09" category="paragraph">このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。</block>
+  <block id="24aceb5c24cf5a3bbe879def9dd06dd3" category="paragraph">StorageGRID は、3種類のプラットフォームサービスをサポートしています。</block>
+  <block id="fde5ed7646cf684c0972be9a066f6914" category="list-text">* StorageGRID CloudMirrorレプリケーション*。StorageGRID バケットから指定された外部のデスティネーションに特定のオブジェクトをミラーリングします。</block>
+  <block id="8e304e3c51ae41ba284a04741c9b3ffd" category="list-text">*通知*。バケット単位のイベント通知：オブジェクトに対して実行された特定の処理に関する通知を、指定された外部のAmazon Simple Notification Service（Amazon SNS）に送信します。</block>
+  <block id="6829b0de5985e8a1d0e7cdb7a6f93842" category="list-text">*検索統合サービス*。外部サービスを使用してメタデータを検索または分析できるように、指定されたElasticsearchインデックスにSimple Storage Service（S3）オブジェクトメタデータを送信します。</block>
+  <block id="95309527f7dabbe3fe32e0802fc9852c" category="inline-link">プラットフォームサービスの使用に関する考慮事項</block>
+  <block id="a45c124a240baea662f0da5e22df0d82" category="paragraph">プラットフォームサービスは、テナントマネージャのUIを使用してS3テナントによって設定されます。詳細については、を参照してください<block ref="4ebe502af7f5bafb1d6a5d8f629eaf76" category="inline-link-rx"></block>。</block>
+  <block id="59544fa9157551ea504a21302a6951ec" category="inline-link">StorageGRID 11.6テナントガイド</block>
+  <block id="05cc541a01f9762a12d5264d6eb03ae8" category="paragraph">このドキュメントは、の補足資料として機能します<block ref="eeb341388640105e8957a286cb4738c0" category="inline-link-rx"></block> およびに、検索統合サービス用のエンドポイントとバケットの設定手順と例を示します。ここで紹介するAmazon Web Services（AWS）またはオンプレミスのElasticsearchセットアップの手順は、基本的なテストやデモ目的にのみ使用します。</block>
+  <block id="615d163ca568994b3435939b26db5805" category="paragraph">対象読者は、Grid Manager、テナントマネージャに精通している必要があり、S3ブラウザにアクセスして、StorageGRID 検索統合テストの基本的なアップロード（PUT）処理とダウンロード（GET）処理を実行できます。</block>
+  <block id="f612053df248affdc8387fca6d9bee0a" category="section-title">テナントを作成し、プラットフォームサービスを有効にします</block>
+  <block id="27daf95e5e10f8ac74651d4d9130e719" category="list-text">Grid Managerを使用してS3テナントを作成し、表示名を入力してS3プロトコルを選択する。</block>
+  <block id="fbfe9415a29f758b59248cc814fe3c18" category="list-text">[アクセス許可]ページで、[プラットフォームサービスを許可する]オプションを選択します。必要に応じて、他の権限を選択します。</block>
+  <block id="f9472d6ac345c05d3cc61568620086f6" category="image-alt">権限のスクリーンショットを選択します</block>
+  <block id="9b0222bb86df62edf8f9a4fd84ba7bdf" category="list-text">テナントのrootユーザの初期パスワードを設定するか、グリッドでフェデレーションが有効になっている場合は、テナントアカウントを設定するためのrootアクセス権限を持つフェデレーテッドグループを選択します。</block>
+  <block id="b363f2379a05efb18c601af7e4e70d90" category="list-text">[ルートとしてサインイン]をクリックし、[バケット：バケットの作成と管理]を選択します。</block>
+  <block id="27c6c9b9ce32fafa453c2df32dcbedd9" category="paragraph">Tenant Managerのページが表示されます。</block>
+  <block id="9fd75fca62b65c4af75fe743c1571eef" category="list-text">Tenant Managerで、My Access Keysを選択してS3アクセスキーを作成およびダウンロードし、あとでテストを実施します。</block>
+  <block id="0ec9b083d174497de65ea36e8f62118c" category="section-title">Amazon OpenSearchとの検索統合サービス</block>
+  <block id="d3a3d7e6d3be793f5878e195a0502f20" category="section-title">Amazon OpenSearch（旧Elasticsearch）サービスのセットアップ</block>
+  <block id="ca543db8f60ee6d618b2fce4e398ff9d" category="inline-xref-macro">検索統合サービスをオンプレミスのElasticsearchと利用できます</block>
+  <block id="91ca81266b2f6987e787fc132213833b" category="paragraph">この手順 は、テスト/デモ目的でのみOpenSearchサービスをすばやく簡単にセットアップするために使用します。検索統合サービスにオンプレミスのElasticsearchを使用している場合は、を参照してください <block ref="7949c0a8df6276ef905e1f32c3cd38da" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7a39dc4b754c9843c8b8e82e129df95a" category="admonition">OpenSearchサービスに登録するには、有効なAWSコンソールログイン、アクセスキー、シークレットアクセスキー、および権限が必要です。</block>
+  <block id="04465e32e50f755028937109f8195d88" category="inline-link-macro">AWS OpenSearchサービス開始前の準備</block>
+  <block id="f072124705611ed25ec02b7577163209" category="list-text">の手順に従って、新しいドメインを作成します <block ref="db5f7712c2bd05f059f1113f251a8653" category="inline-link-macro-rx"></block>次の場合を除きます。</block>
+  <block id="29d9d092d398fb44d9f8798062efa761" category="list-text">手順 4ドメイン名：sgdemo</block>
+  <block id="5ac3c34060203d7e326e3102ecdaba60" category="list-text">手順10：きめ細かなアクセスコントロール：「きめ細かなアクセスコントロールを有効にする」オプションの選択を解除します。</block>
+  <block id="016ccae457dbedb93f0de7d4602d6c4b" category="list-text">手順12.アクセスポリシー：Configure Level Access Policyを選択し、JSONタブを選択して次の例を使用してアクセスポリシーを変更します。</block>
+  <block id="4f6a3e5d8a887d3c8d485fbcacc2fb47" category="list-text">強調表示されたテキストを、AWS Identity and Access Management（IAM）IDとユーザ名に置き換えます。</block>
+  <block id="53e9754db1787f07e19e5680b1b0b11e" category="list-text">強調表示されているテキスト（IPアドレス）を、AWSコンソールへのアクセスに使用したローカルコンピュータのパブリックIPアドレスに置き換えます。</block>
+  <block id="ff323c6f0c5ceb97eed49121babcec0f" category="inline-link"><block ref="ff323c6f0c5ceb97eed49121babcec0f" category="inline-link-rx"></block></block>
+  <block id="b001a21bb86d7507e75c22c5e0711e4d" category="list-text">ブラウザタブを開き、に移動します<block ref="d59cf0c4ab596379c6604694ab2ef059" category="inline-link-rx"></block> をクリックして、パブリックIPを検索してください。</block>
+  <block id="f8f40f877af3c3d201008b8c5be2c37d" category="image-alt">検索統合のスクリーンショット</block>
+  <block id="29053e2d92070487f785eef51e730dc4" category="list-text">ドメインがアクティブになるまで15～20分待ちます。</block>
+  <block id="f0eda7032507e6d5560f84391d733351" category="image-alt">ドメインスクリーンショットをアクティブ化してい</block>
+  <block id="28424454f1de84544a80fe8c1c48775c" category="list-text">OpenSearch Dashboards URLをクリックして、新しいタブでドメインを開き、ダッシュボードにアクセスします。access deniedエラーが表示された場合は、アクセスポリシーのソースIPアドレスがコンピュータのパブリックIPに正しく設定されていて、ドメインダッシュボードへのアクセスが許可されていることを確認します。</block>
+  <block id="b53d0b4902659d8d2f913cad2204dafa" category="list-text">ダッシュボードの開始ページで、自分で探索（Explore on your own）を選択します。メニューから、[管理]-&gt;[開発ツール]を選択します</block>
+  <block id="64529406325d80102a66bca5577acc93" category="list-text">Dev Tools -&gt; Consoleで、StorageGRID オブジェクトメタデータの保存にインデックスを使用する「Put &lt;index&gt;」と入力します。次の例では、インデックス名「メタデータ」を使用します。小さい三角形の記号をクリックして、PUTコマンドを実行します。次のスクリーンショットの例に示すように、正しい結果が右側のパネルに表示されます。</block>
+  <block id="d109971fa7c388dc06d7b1809b235b8d" category="image-alt">インデックスのスクリーンショットにPUTコマンドを使用する</block>
+  <block id="e10dd1b001fba4bfb5226f32dff82bfb" category="list-text">インデックスがAmazon OpenSearch UIのsgdomain &gt; Indicesの下に表示されていることを確認します。</block>
+  <block id="efe6f3e30e8b2c5483ffdf27a0654511" category="image-alt">Verifying - The indexスクリーンショット</block>
+  <block id="2b3c30e7f44f2aac501d2e83c6219832" category="section-title">プラットフォームサービスエンドポイントの設定</block>
+  <block id="8c4ec52c2351d47f61041ea0f6d68abc" category="paragraph">プラットフォームサービスエンドポイントを設定するには、次の手順を実行します。</block>
+  <block id="2f79efe541087dee090636fcc45a179f" category="list-text">Tenant Managerで、ストレージ（S3）&gt;プラットフォームサービスのエンドポイントに移動します。</block>
+  <block id="b34d3c3f94b41d3571f8ca1f3cddd7e5" category="list-text">[エンドポイントの作成]をクリックし、次のように入力して、[続行]をクリックします。</block>
+  <block id="a6dbfe22a145135ffcb921b9d47c971b" category="list-text">表示名の例は「AWS- OpenSearch」です</block>
+  <block id="c8ebb37d076b51461df1832842943a56" category="list-text">手順 フィールドの前の「URI」の手順2の下のスクリーンショットのドメインエンドポイント。</block>
+  <block id="62ac5878f5ad652b348bf756180bd23b" category="list-text">URNフィールドで前の手順 の手順2で使用したドメインARNの末尾に'/&lt;index&gt;/_docを追加します</block>
+  <block id="55d2f2cd1ece54b1c4d553e157cfa3a2" category="paragraph">この例では、URNはarn：aws：es：us-east -1：211234567890：domain/sgdemo/sgmedata/_docになります。</block>
+  <block id="f8a9b600f50cc5b60751952c56d0f3fc" category="image-alt">エンドポイント-詳細なスクリーンショット</block>
+  <block id="3c56a593460a6f84bfc344ffe6150097" category="list-text">Amazon OpenSearchのsgdomainにアクセスするには、認証タイプとしてAccess Keyを選択し、Amazon S3のアクセスキーとシークレットキーを入力します。次のページに移動するには、[続行]をクリックします。</block>
+  <block id="aa0f9a4ba593122d011f03e2316ce19b" category="image-alt">「エンドポイントへの接続の認証」のスクリーンショット</block>
+  <block id="d078b4431fcc80fbee2cd9a3c87293b1" category="list-text">エンドポイントを確認するには、Use Operating System CA Certificate and Test and Create Endpointを選択します。検証に成功すると、次の図のようなエンドポイント画面が表示されます。検証に失敗した場合は、URNのパスの末尾に「/&lt;index&gt;/_doc」が含まれていて、AWSアクセスキーとシークレットキーが正しいことを確認してください。</block>
+  <block id="fe28f79fc55095a8e58030809820fe42" category="image-alt">プラットフォームサービスエンドポイントのスクリーンショット</block>
+  <block id="9d7ff9ab7c49eef4133e233cbed1198b" category="section-title">オンプレミスのElasticsearchセットアップ</block>
+  <block id="a7d37b98c9dd326efe3690654fe9d37f" category="paragraph">この手順 は、テスト目的でのみDockerを使用するElasticsearchとKibanaオンプレミスを迅速にセットアップするためのものです。ElasticsearchサーバとKibanaサーバがすでに存在する場合は、ステップ5に進みます。</block>
+  <block id="5061a9f622798427aca0d360cc138888" category="inline-link-macro">Dockerインストール手順 の略</block>
+  <block id="d180e3941d65b33ef407bed8ae52ddc8" category="inline-link-macro">CentOS Dockerは手順 をインストールする</block>
+  <block id="80f7fe607a20803747ad9b40d526935c" category="list-text">これを実行します <block ref="3b1e055afa87d3b585871c5e6a6e5a09" category="inline-link-macro-rx"></block> Dockerをインストールするため。を使用します <block ref="bac8b475dc6eefa0e27bba4925d480b4" category="inline-link-macro-rx"></block> このセットアップでは、</block>
+  <block id="8244486218d0bcf97251923ef2f0be45" category="list-text">リブート後にDockerを起動するには、次のように入力します。</block>
+  <block id="2bcd57548845273190401d9ba79767a3" category="list-text">「vm.max_map_count」値を262144に設定します。</block>
+  <block id="43433bec04d909d718c7800aa96f1beb" category="list-text">リブート後も設定を維持するには、次のように入力します。</block>
+  <block id="67003ee2f4042eb1f705313a4dc58cfd" category="inline-link-macro">Elasticsearchクイックスタートガイド</block>
+  <block id="1c046e86c75e8fd764a3285f110da4d7" category="list-text">に従ってください <block ref="f2c2be7ac1a239dac97b7af8519d2c7b" category="inline-link-macro-rx"></block> ElasticsearchとKibana Dockerを自己管理のためのセクションでインストールして実行できます。この例では、バージョン8.1をインストールしました。</block>
+  <block id="193e2040e8163613cb1974450d2af29c" category="admonition">Elasticsearchが作成したユーザ名/パスワードとトークンをメモしておきます。これらのトークンは、Kibana UIおよびStorageGRID プラットフォームエンドポイント認証を開始するために必要です。</block>
+  <block id="a7d9a6a3c74bd9faac38bc1bb130a796" category="image-alt">検索統合検索検索検索検索のelasticscreenscreenscreen</block>
+  <block id="332f50821b852451ef88ea9dbe07a0dc" category="list-text">Kibana Dockerコンテナが起動すると、コンソールにURLリンク「\ https://0.0.0.0:5601`」が表示されます。0.0.0.0を、URL内のサーバIPアドレスと置き換えます。</block>
+  <block id="90ec7e4d1719c2a884a27d95126c0f0f" category="list-text">ユーザ名「elastic」と、前述の手順でElasticによって生成されたパスワードを使用して、Kibana UIにログインします。</block>
+  <block id="9e4e15cd3018d0529612a23324c26d35" category="list-text">初めてログインする場合は、ダッシュボードのようこそページで、自分でエクスプローラ（Explore on your own）を選択します。メニューから、Management &gt; Dev Toolsを選択します。</block>
+  <block id="7ce90614c51c6b29f6b2ef2391c41a72" category="list-text">Dev Tools Console画面で、StorageGRID オブジェクトメタデータの保存にこのインデックスを使用する「Put &lt;index&gt;」と入力します。この例では'インデックス名sgmetadataを使用します小さい三角形の記号をクリックして、PUTコマンドを実行します。次のスクリーンショットの例に示すように、正しい結果が右側のパネルに表示されます。</block>
+  <block id="6b2c56310234326372b84f2537bfb34b" category="image-alt">PUTコマンドの実行のスクリーンショット</block>
+  <block id="d2c398101283b85a574ecda90393e5b0" category="paragraph">プラットフォームサービスのエンドポイントを設定するには、次の手順を実行します。</block>
+  <block id="6988d11970dc632c6cbaea778ec31ebd" category="list-text">Tenant Managerで、ストレージ（S3）&gt;プラットフォームサービスのエンドポイントに移動します</block>
+  <block id="2411ab8836570fc720961d9ca4d31170" category="list-text">表示名の例: elastic`</block>
+  <block id="c3ab52d125350a189f9be76434bf5565" category="list-text">URI:`\https://&lt;elasticsearch-server-ipまたはhostname&gt;:9200`</block>
+  <block id="97fbbb5c5782ba00d7871db3cbbcaadc" category="list-text">urn:`urn:&lt;何か&gt;:es:::&lt;se-unique text&gt;/&lt;index-name&gt;/_doc`ここで、index-nameはKibanaコンソールで使用した名前です。例:`urn:local:es::sgmd/sgmetadata/_doc`</block>
+  <block id="c21a9f9baede4b3ff45e83c1195d954e" category="image-alt">プラットフォームサービスエンドポイントの詳細のスクリーンショット</block>
+  <block id="9c530e0250b2365dd2bc6de7cd8226af" category="list-text">認証タイプとしてBasic HTTPを選択し、Elasticsearchのインストールプロセスによって生成されたユーザ名「elastic」とパスワードを入力します。次のページに移動するには、[続行]をクリックします。</block>
+  <block id="90686e747228f4ffd85f26a78549d504" category="image-alt">プラットフォームサービスエンドポイントの認証のスクリーンショット</block>
+  <block id="16dab22118d1bb9c774fc20b7eff75bf" category="list-text">エンドポイントを確認するには、Do not verify Certificate and Test and Create Endpointを選択します。検証に成功すると、次のスクリーンショットと同様のエンドポイント画面が表示されます。検証が失敗した場合は、URN、URI、およびユーザ名とパスワードのエントリが正しいことを確認してください。</block>
+  <block id="18f6fe973b6c5651f69da53d3aafaf5c" category="image-alt">エンドポイントが検証されました</block>
+  <block id="e20dd85152fb7211af43f55d94499b76" category="section-title">バケット検索統合サービスの設定</block>
+  <block id="874357ee35df6a54445e352c3dbb57e2" category="paragraph">プラットフォームサービスエンドポイントの作成後、次の手順では、オブジェクトの作成、削除、またはそのメタデータ/タグの更新が行われるたびに定義済みのエンドポイントにオブジェクトメタデータを送信するように、このサービスをバケットレベルで設定します。</block>
+  <block id="69f509c71b61364d5893d46c8b9dba26" category="paragraph">Tenant Managerを使用して検索統合を設定し、カスタムのStorageGRID 設定XMLをバケットに次のように適用できます。</block>
+  <block id="0e9ce58fdfd458e352fcd0b7403656ca" category="list-text">Tenant Managerで、Storage（S3）&gt; Bucketsに移動します</block>
+  <block id="6492a87a353e042bb5a4f6ac7f70ce04" category="list-text">Create Bucket（バケットの作成）をクリックし、バケット名（例：sgmetadatatest'）を入力して、デフォルトのus-east-1リージョンを受け入れます。</block>
+  <block id="147431664d9610b7596ebb51b74d698d" category="list-text">[Continue]&gt;[Create Bucket]をクリックします。</block>
+  <block id="cbdfd9b1c3376777ffe0bd1bb6f31691" category="list-text">バケットの概要ページを表示するには、バケット名をクリックし、プラットフォームサービスを選択します。</block>
+  <block id="ff02db931d00676bbd2e49c8d66ba260" category="list-text">[検索統合を有効にする]ダイアログボックスを選択します。表示されたXMLボックスに、この構文を使用して設定XMLを入力します。</block>
+  <block id="f1c5bfdd87a5f745188dfcf269154c5e" category="paragraph">強調表示されたURNは、定義したプラットフォームサービスエンドポイントと一致する必要があります。別のブラウザタブを開いてTenant Managerにアクセスし、定義済みのプラットフォームサービスエンドポイントからURNをコピーできます。</block>
+  <block id="ee4590422d317c3015f14170526c3977" category="paragraph">この例ではプレフィックスを使用していません。つまり、このバケット内のすべてのオブジェクトのメタデータが、前に定義したElasticsearchエンドポイントに送信されます。</block>
+  <block id="26add7d33fe03962af376f500b33916e" category="list-text">S3 Browserを使用して、テナントアクセス/シークレットキーを使用してStorageGRID に接続し、テストオブジェクトを「sgmetadata-test」バケットにアップロードし、タグまたはカスタムメタデータをオブジェクトに追加します。</block>
+  <block id="09b447705582a66ef41783e259fb6a78" category="image-alt">テストオブジェクトのアップロードのスクリーンショット</block>
+  <block id="174949bad1f8938630874b6623815f20" category="list-text">Kibana UIを使用して、オブジェクトメタデータがsgmetadataのインデックスにロードされたことを確認します。</block>
+  <block id="e3fdae847eec4a409ba0a70f299d8ee3" category="list-text">メニューから、Management &gt; Dev Toolsを選択します。</block>
+  <block id="d322ac9e51a4b7cf746cfe0af7c0445c" category="list-text">左側のコンソールパネルにサンプルクエリを貼り付け、三角形の記号をクリックして実行します。</block>
+  <block id="49806491d4539bc7e2a5b05d737ab750" category="paragraph">次の例のスクリーンショットでは、クエリ1のサンプル結果に4つのレコードが表示されています。これはバケット内のオブジェクトの数に一致します。</block>
+  <block id="65201bc39dd240892dab55de46e2a0bb" category="image-alt">クエリ1のサンプル結果のスクリーンショット</block>
+  <block id="53573d96c3d967152d1c791a2e79dcb5" category="paragraph">次のスクリーンショットのクエリ2のサンプル結果は、タグタイプがjpgの2つのレコードを示しています。</block>
+  <block id="1962b22fc9378586da892a0bc564acda" category="image-alt">クエリ2のサンプル</block>
+  <block id="110f5c1e103a95f521005d2b098ea662" category="inline-link">プラットフォームサービスとは</block>
+  <block id="05bcb775989a8e045997b61b4712bd11" category="list-text"><block ref="05bcb775989a8e045997b61b4712bd11" category="inline-link-rx"></block></block>
+  <block id="68482d23bcdb3015258243e1b9aacf51" category="inline-link">StorageGRID 11.6 ドキュメント</block>
+  <block id="e33f6ccf77d0d8efe2a762267b6fd088" category="list-text"><block ref="e33f6ccf77d0d8efe2a762267b6fd088" category="inline-link-rx"></block></block>
+  <block id="12934b080defe99c475857cf35fc736b" category="summary">StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。</block>
+  <block id="5726c3e825fdb258e1525c22d51442ea" category="doc">AWSまたはGoogle Cloud用のクラウドストレージプールを作成します</block>
+  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">必要なもの</block>
+  <block id="3ed256c1f351a8fcb6f88836f9344657" category="list-text">StorageGRID 11.6が設定されました。</block>
+  <block id="d3c15aac7a26c8e69f0d3a923ebea0d3" category="list-text">AWSまたはGoogle Cloudで外部のS3バケットをすでにセットアップしておきます。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
+  <block id="e0d561a0d43acc9575b7bc753d813e5c" category="list-text">Grid Managerで、* ILM *&gt;*ストレージプール*に移動します。</block>
+  <block id="19ac403a0d6c78e78c0d289e7331185e" category="list-text">ページのクラウドストレージプールセクションで、 * 作成 * を選択します。</block>
+  <block id="d97d852e8166f1982454eda55e5c517b" category="paragraph">クラウドストレージプールの作成ポップアップが表示されます。</block>
+  <block id="27bc4f94bb55216da5446bb2fdb8ced0" category="list-text">表示名を入力します。</block>
+  <block id="b9a5f574231e2fdc69a9ccace21be039" category="list-text">[Provider Type]ドロップダウンリストから[*Amazon S3*]を選択します。</block>
+  <block id="b99241459e3ab67c1795a54b1eadb85a" category="paragraph">このプロバイダタイプはAWS S3またはGoogle Cloudに対応しています。</block>
+  <block id="28e89d4189931a40a6eaa1548a6f0da4" category="list-text">クラウドストレージプールに使用するS3バケットのURIを入力します。</block>
+  <block id="4f2400827753dc0695dede1947e79e86" category="paragraph">次の2つの形式を使用できます。</block>
+  <block id="a0678dbf696ee57402a994b15a017fed" category="paragraph">https://host:port`</block>
+  <block id="bcca4a11cec95b0dcec0633cf0aa2e53" category="paragraph">http://host:port`</block>
+  <block id="773a527b6815140da355b051effea746" category="list-text">S3バケット名を入力します。</block>
+  <block id="4bec2393e5f6d93abd85adfa9ee9f170" category="paragraph">指定する名前はS3バケットの名前と完全に一致する必要があります。一致していないと、クラウドストレージプールの作成が失敗します。クラウドストレージプールの保存後にこの値を変更することはできません。</block>
+  <block id="d539647e4ced58d3f54c2a4ce23c5708" category="list-text">必要に応じて、アクセスキーIDとシークレットアクセスキーを入力します。</block>
+  <block id="1486b2fc2d7628bc94918b17dd1e2dbc" category="list-text">ドロップダウンから[* Do not verify Certificate*（証明書を検証しない*）]を選択します。</block>
+  <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">[ 保存（ Save ） ] をクリックします。</block>
+  <block id="7c73eae507b98bafb559cd915f7f9750" category="paragraph">Amazon S3またはGoogle Cloud用のクラウドストレージプールが作成されていることを確認します。</block>
+  <block id="b80a3dfef6be295438d7e805b11c4bc9" category="summary">StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。</block>
+  <block id="749b3ee0b1315337c79533871bba825a" category="doc">Azure Blob Storage用のクラウドストレージプールを作成します</block>
+  <block id="861ae314cc8e000e48d818fcd75a2966" category="paragraph">StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。</block>
+  <block id="0106fb5b56f13c91c190596b35b034a4" category="list-text">外部のAzureコンテナはすでにセットアップされています。</block>
+  <block id="8bb07513ee1970ee4c61dec825ef35cc" category="list-text">プロバイダタイプドロップダウンリストから「* Azure Blob Storage *」を選択します。</block>
+  <block id="fdcdebdb8587867805e6b14c39279411" category="list-text">Azureコンテナ名を入力します。</block>
+  <block id="d4bed7a2666bc07a1fdf0b1b0a0d76ba" category="paragraph">指定する名前はAzureコンテナ名と完全に一致する必要があります。一致していないと、クラウドストレージプールの作成は失敗します。クラウドストレージプールの保存後にこの値を変更することはできません。</block>
+  <block id="f7c6315a28b94e99eab96017afd099b2" category="list-text">必要に応じて、Azureコンテナに関連付けられたアカウント名と認証用のアカウントキーを入力します。</block>
+  <block id="77d01b70f1590b2dce595a6504470002" category="paragraph">Azure Blob Storage用のクラウドストレージプールが作成されていることを確認します。</block>
+  <block id="aaeeb364be922e789a908072881b88ea" category="summary">バックアップ用にクラウドストレージプールにオブジェクトを移動するILMルールを作成できます。</block>
+  <block id="85020881afe59b6c9413c4d50d2a26d0" category="doc">クラウドストレージプールをバックアップに使用する</block>
+  <block id="4b0e54b770307ad63bdf2f9e861d65d8" category="paragraph">バックアップ用にクラウドストレージプールにオブジェクトを移動するILMルールを作成できます。</block>
+  <block id="9c23d5280c083a21f3e88f979b42a529" category="list-text">Grid Managerで、* ILM *&gt;* Rules *&gt;* Create *の順に移動します。</block>
+  <block id="ce8eebfe6fafce433c006d354edaf1a1" category="list-text">概要 を入力します。</block>
+  <block id="329e9e5f00527442ffb8ddb0d1d33273" category="list-text">ルールをトリガーする基準を入力します。</block>
+  <block id="5a378b18f7bf0c4cabc6c655cd2f535e" category="list-text">「 * 次へ * 」をクリックします。</block>
+  <block id="67e0764defc4dc09f19960feb173f810" category="list-text">オブジェクトをストレージノードにレプリケートします。</block>
+  <block id="971a29d2c438993347d735d425c2a162" category="list-text">配置ルールを追加します。</block>
+  <block id="39c7ca89a1c72a8fd424c69cd35616bc" category="list-text">オブジェクトをクラウドストレージプールにレプリケートします</block>
+  <block id="d00aaeae3c5233d689ab6c1fa3391d6c" category="paragraph">保持図に、バックアップ用にStorageGRID とクラウドストレージプールにローカルに格納されているオブジェクトが示されていることを確認します。</block>
+  <block id="eccd0905bbb9877cfd0ba7f4cc26a3c6" category="paragraph">ILMルールがトリガーされたときにクラウドストレージプールにコピーが存在し、オブジェクトのリストアを実行せずにローカルでオブジェクトを読み出すことができることを確認します。</block>
+  <block id="c27ce751e131719af380702f6711a49d" category="sidebar">StorageGRID を有効にする方法</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
+  <block id="3778f3873debfe11e2ace6bb6af1e417" category="sidebar">StorageGRID のドキュメント</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
+  <block id="7b99b0e0bb2f7f24ff67fbcc39f899f1" category="sidebar">検証済みのサードパーティソリューション</block>
+  <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">概要</block>
+  <block id="bc7a074f94cb3e6b09ba943468b03bd0" category="sidebar">製品機能ガイド</block>
+  <block id="e02e6c7dee6578ec85d1e57d9e5d7505" category="sidebar">AWSまたはGoogle向けのクラウドストレージプールを作成</block>
+  <block id="f1f92d294ec1c6f6fdea0f29b7e96f97" category="sidebar">Azure BLOBストレージ用のクラウドストレージプールを作成します</block>
+  <block id="1cf458dbfa770c9c7189b79723753358" category="sidebar">検索統合サービスを設定する</block>
+  <block id="408cdd6548bf39b1766ce095fd112e06" category="sidebar">ツールおよびアプリケーションガイド</block>
+  <block id="d83a76224c587ea0af02d9f6d8ee0099" category="sidebar">Cloudera Hadoop S3Aコネクタを使用します</block>
+  <block id="c305708b9554a582b18cd4563fac118b" category="sidebar">Vertica Eon Modeデータベースを共同ストレージで作成します</block>
+  <block id="71a42bc38b535445f495ee32a46355ba" category="sidebar">S3cmdを使用してS3アクセスをテストおよび実証します</block>
+  <block id="e8aaf062a960aeba132419a40c4e85ef" category="sidebar">手順とAPIの例</block>
+  <block id="a82a0897ec719037339f7e557ccdc5b3" category="sidebar">S3暗号化をテストして実証</block>
+  <block id="d1fc85d07fb8abfaa8142a6bddefd16f" category="sidebar">S3オブジェクトのロックをテストして実証</block>
+  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">デモチュートリアル</block>
+  <block id="37a22f48989cdc6e7e3429f09be3fc5c" category="sidebar">StorageGRID ビデオライブラリ</block>
+  <block id="f8e43c2f779dd11ddf192ae101019ea1" category="sidebar">ネットアップラーニングサービス</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">リソースの追加</block>
+  <block id="5c8fba8e6a4b1c808cb6fcd601dd89ce" category="sidebar">StorageGRID のサポートページ</block>
+  <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="sidebar">ネットアップの Interoperability Matrix Tool （ IMT ）</block>
+  <block id="8ef596bf4eb7277f78ad1d7ad4cc04de" category="sidebar">StorageGRID ナレッジベース</block>
+  <block id="c2d388654878e1108f99fdeaa465fcac" category="sidebar">ネットアップのブログ</block>
+  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">ネットアップコミュニティ</block>
+  <block id="024f3a8ba5709643c2f09c8eabccae87" category="sidebar">検証済みのサードパーティソリューション-概要</block>
+  <block id="f4bf6c62a8784f065cebbacf57a1c62c" category="sidebar">S3オブジェクトロックのテストと実証</block>
+</blocks>

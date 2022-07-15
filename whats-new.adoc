@@ -1,0 +1,26 @@
+---
+permalink: whats-new.html 
+sidebar: sidebar 
+keywords: whats new, third-party applications, storagegrid, Guides, cookbooks 
+summary: このサイトに対する最近の変更点を以下に示します。 
+---
+= 新機能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本ドキュメントでは、環境でアプリケーションやツールを有効にし、StorageGRID で機能をテストする方法について説明します。ここでは、製品ドキュメントに加えて、StorageGRID との評価および統合に関する次のステップを示すサンプルとクックブックを紹介します。
+
+[cols="1a,4a"]
+|===
+| リリース。 | 変更内容 
+
+
+ a| 
+11.6
+ a| 
+初版リリースStorageGRID リリース11.1-11.6向けのガイドと検証済みのサードパーティソリューションリストが含まれています。
+
+|===

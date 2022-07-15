@@ -1,0 +1,96 @@
+---
+settings:
+  name: How to enable StorageGRID in your environment
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: false
+    harmony_enabled: false
+  search: storagegrid-116
+  langs: ja-jp,us-en,zh-cn,zh-tw,ko-kr
+sidebar:
+  entries:
+  - title: StorageGRID を有効にする方法
+    url: "/index.html"
+  - title: 新機能
+    url: "/whats-new.html"
+  - section: third-party
+  - section: product-feature-guides
+  - section: tools-apps-guides
+  - section: examples
+  - title: StorageGRID のドキュメント
+    url: "/storagegrid-documentation.html"
+homepage:
+  tiles:
+  - title: はじめに
+    links:
+    - title: 新機能
+      url: "/whats-new.html"
+  - title: 検証済みのサードパーティソリューション
+    links:
+    - title: 概要
+      url: "/third-party/index.html"
+    - title: StorageGRID 11.6
+      url: "/third-party/116-3rd-party-list.html"
+    - title: StorageGRID 11.5
+      url: "/third-party/115-3rd-party-list.html"
+    - title: StorageGRID 11.4
+      url: "/third-party/114-3rd-party-list.html"
+    - title: StorageGRID 11.3
+      url: "/third-party/113-3rd-party-list.html"
+    - title: StorageGRID 11.2
+      url: "/third-party/112-3rd-party-list.html"
+  - title: 製品機能ガイド
+    links:
+    - title: AWSまたはGoogle向けのクラウドストレージプールを作成
+      url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"
+    - title: Azure BLOBストレージ用のクラウドストレージプールを作成します
+      url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
+    - title: クラウドストレージプールをバックアップに使用する
+      url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
+    - title: 検索統合サービスを設定する
+      url: "/product_feature_guides/storagegrid-search-integration-service.html"
+  - title: ツールおよびアプリケーションガイド
+    links:
+    - title: Cloudera Hadoop S3Aコネクタを使用します
+      url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"
+    - title: Vertica Eon Modeデータベースを共同ストレージで作成します
+      url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
+    - title: S3cmdを使用してS3アクセスをテストおよび実証します
+      url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
+  - title: 手順とAPIの例
+    links:
+    - title: S3暗号化をテストして実証
+      url: "/examples/test-demonstrate-S3-encryption.html"
+    - title: S3オブジェクトのロックをテストして実証
+      url: "/examples/test-demonstrate-S3-object-lock.html"
+  - title: デモチュートリアル
+    links:
+    - title: StorageGRID ビデオライブラリ
+      url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
+    - title: ネットアップラーニングサービス
+      url: https://www.netapp.com/support-and-training/netapp-university/
+  - title: リソースの追加
+    links:
+    - title: StorageGRID のサポートページ
+      url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/downloads-tab
+    - title: ネットアップの Interoperability Matrix Tool （ IMT ）
+      url: https://mysupport.netapp.com/matrix
+    - title: StorageGRID ナレッジベース
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID
+    - title: ネットアップのブログ
+      url: https://netapp.com/blog/
+    - title: ネットアップコミュニティ
+      url: https://community.netapp.com/t5/Object-Storage/bd-p/object-storage
+  - title: StorageGRID のドキュメント
+    links:
+    - title: StorageGRID 11.6
+      url: https://docs.netapp.com/us-en/storagegrid-116/index.html
+    - title: StorageGRID 11.5
+      url: https://docs.netapp.com/sgws-115/index.jsp
+    - title: StorageGRID 11.4
+      url: https://docs.netapp.com/sgws-114/index.jsp
+    - title: StorageGRID 11.3
+      url: https://docs.netapp.com/sgws-113/index.jsp
+    - title: StorageGRID 11.2
+      url: https://docs.netapp.com/sgws-112/index.jsp

@@ -1,0 +1,222 @@
+---
+permalink: examples/test-demonstrate-S3-object-lock.html 
+sidebar: sidebar 
+keywords: cli, aws, S3, object lock, compliance, worm, api 
+summary: Object Lockは、オブジェクトが削除または上書きされないようにWORMモデルを提供します。StorageGRID によるオブジェクトロックの実装では、規制要件を満たし、オブジェクト保持のリーガルホールドとコンプライアンスモードをサポートし、バケットのデフォルト保持ポリシーをサポートするように、Cohassetが評価されます。 
+---
+= StorageGRID でS3オブジェクトロックをテストして実証
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Object Lockは、オブジェクトが削除または上書きされないようにWORMモデルを提供します。StorageGRID によるオブジェクトロックの実装では、規制要件を満たし、オブジェクト保持のリーガルホールドとコンプライアンスモードをサポートし、バケットのデフォルト保持ポリシーをサポートするように、Cohassetが評価されます。
+
+このガイドでは、S3オブジェクトロックAPIについて説明します。
+
+
+
+== リーガルホールド
+
+* オブジェクトロックリーガルホールドは、オブジェクトに適用される単純なオン/オフステータスです。
++
+[source, console]
+----
+aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Status=ON --endpoint-url https://s3.company.com
+----
+* GET処理で検証します。
++
+[source, console]
+----
+aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
+----
++
+[listing]
+----
+{
+    "LegalHold": {
+        "Status": "ON"
+    }
+}
+----
+* リーガルホールドをオフにします
++
+[source, console]
+----
+aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Status=OFF --endpoint-url https://s3.company.com
+----
+* GET処理で検証します。
++
+[source, console]
+----
+aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
+----
++
+[listing]
+----
+{
+    "LegalHold": {
+        "Status": "OFF"
+    }
+}
+----
+
+
+
+
+== Complianceモード
+
+* オブジェクトの保持には、タイムスタンプがretain untilを使用します。
++
+[source, console]
+----
+aws s3api put-object-retention --bucket <bucket> --key <file> --retention '{"Mode":"COMPLIANCE", "RetainUntilDate": "2025-06-10T16:00:00"}' --endpoint-url https://s3.company.com
+----
+* 保持ステータスを確認
++
+[source, console]
+----
+aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
++
+----
++
+[listing]
+----
+{
+    "Retention": {
+        "Mode": "COMPLIANCE",
+        "RetainUntilDate": "2025-06-10T16:00:00+00:00"
+    }
+}
+----
+
+
+
+
+== デフォルトの保持
+
+* オブジェクト単位のAPIで定義された保持期限を日数と年数で設定します。
++
+[source, console]
+----
+aws s3api put-object-lock-configuration --bucket <bucket> --object-lock-configuration '{"ObjectLockEnabled": "Enabled", "Rule": { "DefaultRetention": { "Mode": "COMPLIANCE", "Days": 10 }}}' --endpoint-url https://s3.company.com
+----
+* 保持ステータスを確認
++
+[source, console]
+----
+aws s3api get-object-lock-configuration --bucket <bucket> --endpoint-url https://s3.company.com
+----
++
+[listing]
+----
+{
+    "ObjectLockConfiguration": {
+        "ObjectLockEnabled": "Enabled",
+        "Rule": {
+            "DefaultRetention": {
+                "Mode": "COMPLIANCE",
+                "Days": 10
+            }
+        }
+    }
+}
+----
+* オブジェクトをバケットに配置します
++
+[source, console]
+----
+aws s3api put-object --bucket <bucket> --key <file> --body "file" --endpoint-url https://s3.example.com
+----
+* バケットで設定された保持期間がオブジェクトの保持タイムスタンプに変換されます。
++
+[source, console]
+----
+aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
+----
++
+[listing]
+----
+{
+    "Retention": {
+        "Mode": "COMPLIANCE",
+        "RetainUntilDate": "2022-03-02T15:22:47.202000+00:00"
+    }
+}
+----
+
+
+
+
+== 保持期間が定義されているオブジェクトの削除をテストします
+
+オブジェクトロックは、バージョン管理の上に構築されます。保持期間はオブジェクトのバージョンで定義されます。保持が定義されているオブジェクトを削除しようとしたときに、バージョンが指定されていない場合は、削除マーカーがオブジェクトの現在のバージョンとして作成されます。
+
+* 保持期間が定義されたオブジェクトを削除します
++
+[source, console]
+----
+aws s3api delete-object --bucket <bucket> --key <file> --endpoint-url https://s3.example.com
+----
+* バケット内のオブジェクトをリストします
++
+[source, console]
+----
+aws s3api list-objects --bucket <bucket> --endpoint-url https://s3.example.com
+----
++
+** オブジェクトがリストされていないことに注意してください。
+
+
+* 削除マーカーとロックされた元のバージョンを表示するには、バージョンをリストします
++
+[source, console]
+----
+aws s3api list-object-versions --bucket <bucket> --prefix <file> --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+{
+    "Versions": [
+        {
+            "ETag": "\"82e8bfb872e778a4687a26e6c0b36bc1\"",
+            "Size": 47,
+            "StorageClass": "STANDARD",
+            "Key": "file.txt",
+            "VersionId": "RDVDMjYwMTQtQkNDQS0xMUVDLThGOEUtNjQ3NTAwQzAxQTk1",
+            "IsLatest": false,
+            "LastModified": "2022-04-15T14:46:29.734000+00:00",
+            "Owner": {
+                "DisplayName": "Tenant01",
+                "ID": "56622399308951294926"
+            }
+        }
+    ],
+    "DeleteMarkers": [
+        {
+            "Owner": {
+                "DisplayName": "Tenant01",
+                "ID": "56622399308951294926"
+            },
+            "Key": "file01.txt",
+            "VersionId": "QjVDQzgzOTAtQ0FGNi0xMUVDLThFMzgtQ0RGMjAwQjk0MjM1",
+            "IsLatest": true,
+            "LastModified": "2022-05-03T15:35:50.248000+00:00"
+        }
+    ]
+}
+----
+* ロックされているオブジェクトのバージョンを削除します
++
+[source, console]
+----
+aws s3api delete-object  --bucket <bucket> --key <file> --version-id "<VersionId>" --endpoint-url https://s3.example.com
+----
++
+[listing]
+----
+An error occurred (AccessDenied) when calling the DeleteObject operation: Access Denied
+----
+
