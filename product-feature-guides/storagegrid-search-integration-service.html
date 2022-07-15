@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>StorageGRID 検索統合サービスを設定する</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="StorageGRID 検索統合サービスを設定する" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html" />
+	<meta property="og:description" content="このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/storagegrid-enable/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。">
+  <meta name="keywords" content=" Amazon OpenSearch Service, on-premises, Elasticsearch"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/storagegrid-enable/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/storagegrid-enable/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/storagegrid-enable/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/storagegrid-enable/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/storagegrid-enable/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/storagegrid-enable/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/storagegrid-enable/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/storagegrid-enable/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/storagegrid-enable/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/storagegrid-enable/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/storagegrid-enable/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/storagegrid-enable/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/storagegrid-enable/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/storagegrid-enable/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/storagegrid-enable/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/storagegrid-enable/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/storagegrid-enable/js/na-search.js'></script><script src='/ja-jp/storagegrid-enable/js/na-pagenav.js'></script><link rel='stylesheet' href='/ja-jp/storagegrid-enable/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/storagegrid-enable/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/storagegrid-enable/js/na-utility.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/clouddocs.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/storagegrid-enable/js/toc.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/ja-jp/storagegrid-enable/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/jszip.min.js'></script>
+  <script src='/ja-jp/storagegrid-enable/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/storagegrid-enable/issues/new?body=Page%3A%20[StorageGRID 検索統合サービスを設定する](https://docs.netapp.com/ja-jp/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/storagegrid-enable/images/discuss-sm.svg" alt="" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/storagegrid-enable/blob/main/product-feature-guides/storagegrid-search-integration-service.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/storagegrid-enable/images/edit-sm.svg" alt="" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/storagegrid-enable/images/article-sm.svg" alt="" class="github-icon" />寄稿者向けガイド</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/storagegrid-enable/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索"
+          data-no-results-found="{query}に該当する結果はありません"
+          data-did-you-mean="{suggestion} を検索"
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?"
+          data-results-found="{hitCount} 件見つかりました"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">日本語</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ja-jp/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/index.html">
+        StorageGRID を有効にする方法
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/whats-new.html">
+        新機能
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 検証済みのサードパーティソリューション</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/third-party/index.html">
+        概要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/third-party/116-3rd-party-list.html">
+        StorageGRID 11.6
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/third-party/115-3rd-party-list.html">
+        StorageGRID 11.5
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/third-party/114-3rd-party-list.html">
+        StorageGRID 11.4
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/third-party/113-3rd-party-list.html">
+        StorageGRID 11.3
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/third-party/112-3rd-party-list.html">
+        StorageGRID 11.2
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 製品機能ガイド</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html">
+        AWSまたはGoogle Cloud用のクラウドストレージプールを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html">
+        Azure BLOBストレージ用のクラウドストレージプールを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/product-feature-guidesuse-a-cloud-storage-pool-for-backup.html">
+        クラウドストレージプールをバックアップに使用する
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/product-feature-guides/storagegrid-search-integration-service.html">
+        検索統合サービスを設定する
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ツールおよびアプリケーションガイド</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html">
+        Cloudera Hadoop S3Aコネクタを使用します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html">
+        S3cmdを使用してS3アクセスをテストおよび実証します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html">
+        Vertica Eon Modeデータベースを共同ストレージで作成します
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 手順とAPIの例</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/examples/test-demonstrate-S3-encryption.html">
+        S3暗号化をテストして実証
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/examples/test-demonstrate-S3-object-lock.html">
+        S3オブジェクトロックのテストと実証
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/storagegrid-enable/storagegrid-documentation.html">
+        StorageGRID のドキュメント
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/storagegrid-enable/">How&nbsp;to&nbsp;enable&nbsp;StorageGRID&nbsp;in&nbsp;your&nbsp;environment</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">StorageGRID 検索統合サービスを設定する</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-07-15 18:59:20 +0000">07/15/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>StorageGRID は、3種類のプラットフォームサービスをサポートしています。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* StorageGRID CloudMirrorレプリケーション*。StorageGRID バケットから指定された外部のデスティネーションに特定のオブジェクトをミラーリングします。</p>
+</li>
+<li>
+<p><strong>通知</strong>。バケット単位のイベント通知：オブジェクトに対して実行された特定の処理に関する通知を、指定された外部のAmazon Simple Notification Service（Amazon SNS）に送信します。</p>
+</li>
+<li>
+<p><strong>検索統合サービス</strong>。外部サービスを使用してメタデータを検索または分析できるように、指定されたElasticsearchインデックスにSimple Storage Service（S3）オブジェクトメタデータを送信します。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>プラットフォームサービスは、テナントマネージャのUIを使用してS3テナントによって設定されます。詳細については、を参照してください <a href="https://docs.netapp.com/us-en/storagegrid-116/tenant/considerations-for-using-platform-services.html" target="_blank" rel="noopener">"プラットフォームサービスの使用に関する考慮事項"</a>。</p>
+</div>
+<div class="paragraph">
+<p>このドキュメントは、の補足資料として機能します <a href="https://docs.netapp.com/us-en/storagegrid-116/tenant/index.html" target="_blank" rel="noopener">"StorageGRID 11.6テナントガイド"</a> およびに、検索統合サービス用のエンドポイントとバケットの設定手順と例を示します。ここで紹介するAmazon Web Services（AWS）またはオンプレミスのElasticsearchセットアップの手順は、基本的なテストやデモ目的にのみ使用します。</p>
+</div>
+<div class="paragraph">
+<p>対象読者は、Grid Manager、テナントマネージャに精通している必要があり、S3ブラウザにアクセスして、StorageGRID 検索統合テストの基本的なアップロード（PUT）処理とダウンロード（GET）処理を実行できます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テナントを作成しプラットフォームサービスを有効にします">テナントを作成し、プラットフォームサービスを有効にします</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Grid Managerを使用してS3テナントを作成し、表示名を入力してS3プロトコルを選択する。</p>
+</li>
+<li>
+<p>[アクセス許可]ページで、[プラットフォームサービスを許可する]オプションを選択します。必要に応じて、他の権限を選択します。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-select-permissions.png" alt="権限のスクリーンショットを選択します">
+</div>
+</div>
+</li>
+<li>
+<p>テナントのrootユーザの初期パスワードを設定するか、グリッドでフェデレーションが有効になっている場合は、テナントアカウントを設定するためのrootアクセス権限を持つフェデレーテッドグループを選択します。</p>
+</li>
+<li>
+<p>[ルートとしてサインイン]をクリックし、[バケット：バケットの作成と管理]を選択します。</p>
+<div class="paragraph">
+<p>Tenant Managerのページが表示されます。</p>
+</div>
+</li>
+<li>
+<p>Tenant Managerで、My Access Keysを選択してS3アクセスキーを作成およびダウンロードし、あとでテストを実施します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="amazon-opensearchとの検索統合サービス">Amazon OpenSearchとの検索統合サービス</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="amazon-opensearch旧elasticsearchサービスのセットアップ">Amazon OpenSearch（旧Elasticsearch）サービスのセットアップ</h3>
+<div class="paragraph">
+<p>この手順 は、テスト/デモ目的でのみOpenSearchサービスをすばやく簡単にセットアップするために使用します。検索統合サービスにオンプレミスのElasticsearchを使用している場合は、を参照してください <a href="#search-integration-services-with-on-premises-elasticsearch">検索統合サービスをオンプレミスのElasticsearchと利用できます</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-enable/images/note.svg" alt="注記">
+</td>
+<td class="content">
+OpenSearchサービスに登録するには、有効なAWSコンソールログイン、アクセスキー、シークレットアクセスキー、および権限が必要です。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>の手順に従って、新しいドメインを作成します <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gsgcreate-domain.html" target="_blank" rel="noopener">"AWS OpenSearchサービス開始前の準備"</a>次の場合を除きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>手順 4ドメイン名：sgdemo</p>
+</li>
+<li>
+<p>手順10：きめ細かなアクセスコントロール：「きめ細かなアクセスコントロールを有効にする」オプションの選択を解除します。</p>
+</li>
+<li>
+<p>手順12.アクセスポリシー：Configure Level Access Policyを選択し、JSONタブを選択して次の例を使用してアクセスポリシーを変更します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>強調表示されたテキストを、AWS Identity and Access Management（IAM）IDとユーザ名に置き換えます。</p>
+</li>
+<li>
+<p>強調表示されているテキスト（IPアドレス）を、AWSコンソールへのアクセスに使用したローカルコンピュータのパブリックIPアドレスに置き換えます。</p>
+</li>
+<li>
+<p>ブラウザタブを開き、に移動します <a href="https://checkip.amazonaws.com/" target="_blank" rel="noopener">"https://checkip.amazonaws.com"</a> をクリックして、パブリックIPを検索してください。</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+        "Effect": "Allow",
+        "Principal":
+        {"AWS": "arn:aws:iam:: nnnnnn:user/xyzabc"},
+        "Action": "es:*",
+        "Resource": "arn:aws:es:us-east-1:nnnnnn:domain/sgdemo/*"
+        },
+        {
+        "Effect": "Allow",
+        "Principal": {"AWS": "*"},
+        "Action": [
+        "es:ESHttp*"
+                ],
+        "Condition": {
+            "IpAddress": {
+                "aws:SourceIp": [ "nnn.nnn.nn.n/nn"
+                    ]
+                }
+        },
+        "Resource": "arn:aws:es:us-east-1:nnnnnn:domain/sgdemo/*"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-search-integration-amazon-opensearch.png" alt="検索統合のスクリーンショット">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ドメインがアクティブになるまで15～20分待ちます。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-activating-domain.png" alt="ドメインスクリーンショットをアクティブ化してい">
+</div>
+</div>
+</li>
+<li>
+<p>OpenSearch Dashboards URLをクリックして、新しいタブでドメインを開き、ダッシュボードにアクセスします。access deniedエラーが表示された場合は、アクセスポリシーのソースIPアドレスがコンピュータのパブリックIPに正しく設定されていて、ドメインダッシュボードへのアクセスが許可されていることを確認します。</p>
+</li>
+<li>
+<p>ダッシュボードの開始ページで、自分で探索（Explore on your own）を選択します。メニューから、[管理]&#8594;[開発ツール]を選択します</p>
+</li>
+<li>
+<p>Dev Tools &#8594; Consoleで、StorageGRID オブジェクトメタデータの保存にインデックスを使用する「Put &lt;index&gt;」と入力します。次の例では、インデックス名「メタデータ」を使用します。小さい三角形の記号をクリックして、PUTコマンドを実行します。次のスクリーンショットの例に示すように、正しい結果が右側のパネルに表示されます。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-using-put-command-for-index.png" alt="インデックスのスクリーンショットにPUTコマンドを使用する">
+</div>
+</div>
+</li>
+<li>
+<p>インデックスがAmazon OpenSearch UIのsgdomain &gt; Indicesの下に表示されていることを確認します。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-verifying-the-index.png" alt="Verifying - The indexスクリーンショット">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="プラットフォームサービスエンドポイントの設定">プラットフォームサービスエンドポイントの設定</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラットフォームサービスエンドポイントを設定するには、次の手順を実行します。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tenant Managerで、ストレージ（S3）&gt;プラットフォームサービスのエンドポイントに移動します。</p>
+</li>
+<li>
+<p>[エンドポイントの作成]をクリックし、次のように入力して、[続行]をクリックします。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>表示名の例は「AWS- OpenSearch」です</p>
+</li>
+<li>
+<p>手順 フィールドの前の「URI」の手順2の下のスクリーンショットのドメインエンドポイント。</p>
+</li>
+<li>
+<p>URNフィールドで前の手順 の手順2で使用したドメインARNの末尾に'/&lt;index&gt;/_docを追加します</p>
+<div class="paragraph">
+<p>この例では、URNはarn：aws：es：us-east -1：211234567890：domain/sgdemo/sgmedata/_docになります。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-enter-end-points-details.png" alt="エンドポイント-詳細なスクリーンショット">
+</div>
+</div>
+</li>
+<li>
+<p>Amazon OpenSearchのsgdomainにアクセスするには、認証タイプとしてAccess Keyを選択し、Amazon S3のアクセスキーとシークレットキーを入力します。次のページに移動するには、[続行]をクリックします。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-authenticate-connections-to-endpoints.png" alt="「エンドポイントへの接続の認証」のスクリーンショット">
+</div>
+</div>
+</li>
+<li>
+<p>エンドポイントを確認するには、Use Operating System CA Certificate and Test and Create Endpointを選択します。検証に成功すると、次の図のようなエンドポイント画面が表示されます。検証に失敗した場合は、URNのパスの末尾に「/&lt;index&gt;/_doc」が含まれていて、AWSアクセスキーとシークレットキーが正しいことを確認してください。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-platform-service-endpoints.png" alt="プラットフォームサービスエンドポイントのスクリーンショット">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="検索統合サービスをオンプレミスのelasticsearchと利用できます">検索統合サービスをオンプレミスのElasticsearchと利用できます</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="オンプレミスのelasticsearchセットアップ">オンプレミスのElasticsearchセットアップ</h3>
+<div class="paragraph">
+<p>この手順 は、テスト目的でのみDockerを使用するElasticsearchとKibanaオンプレミスを迅速にセットアップするためのものです。ElasticsearchサーバとKibanaサーバがすでに存在する場合は、ステップ5に進みます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>これを実行します <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener">"Dockerインストール手順 の略"</a> Dockerをインストールするため。を使用します <a href="https://docs.docker.com/engine/install/centos/" target="_blank" rel="noopener">"CentOS Dockerは手順 をインストールする"</a> このセットアップでは、</p>
+<div class="openblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>リブート後にDockerを起動するには、次のように入力します。</p>
+<div class="openblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>sudo systemctl enable docker</pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>「vm.max_map_count」値を262144に設定します。</p>
+<div class="openblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>sysctl -w vm.max_map_count=262144</pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>リブート後も設定を維持するには、次のように入力します。</p>
+<div class="openblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>echo 'vm.max_map_count=262144' &gt;&gt; /etc/sysctl.conf</pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>に従ってください <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html" target="_blank" rel="noopener">"Elasticsearchクイックスタートガイド"</a> ElasticsearchとKibana Dockerを自己管理のためのセクションでインストールして実行できます。この例では、バージョン8.1をインストールしました。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-enable/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+Elasticsearchが作成したユーザ名/パスワードとトークンをメモしておきます。これらのトークンは、Kibana UIおよびStorageGRID プラットフォームエンドポイント認証を開始するために必要です。
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-search-integration-elasticsearch.png" alt="検索統合検索検索検索検索のelasticscreenscreenscreen">
+</div>
+</div>
+</li>
+<li>
+<p>Kibana Dockerコンテナが起動すると、コンソールにURLリンク「\ <a href="https://0.0.0.0:5601`」が表示されます。0.0.0.0を、URL内のサーバIPアドレスと置き換えます。" class="bare">https://0.0.0.0:5601`」が表示されます。0.0.0.0を、URL内のサーバIPアドレスと置き換えます。</a></p>
+</li>
+<li>
+<p>ユーザ名「elastic」と、前述の手順でElasticによって生成されたパスワードを使用して、Kibana UIにログインします。</p>
+</li>
+<li>
+<p>初めてログインする場合は、ダッシュボードのようこそページで、自分でエクスプローラ（Explore on your own）を選択します。メニューから、Management &gt; Dev Toolsを選択します。</p>
+</li>
+<li>
+<p>Dev Tools Console画面で、StorageGRID オブジェクトメタデータの保存にこのインデックスを使用する「Put &lt;index&gt;」と入力します。この例では&#8217;インデックス名sgmetadataを使用します小さい三角形の記号をクリックして、PUTコマンドを実行します。次のスクリーンショットの例に示すように、正しい結果が右側のパネルに表示されます。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-execute-put-command.png" alt="PUTコマンドの実行のスクリーンショット">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="プラットフォームサービスエンドポイントの設定-2">プラットフォームサービスエンドポイントの設定</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラットフォームサービスのエンドポイントを設定するには、次の手順を実行します。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tenant Managerで、ストレージ（S3）&gt;プラットフォームサービスのエンドポイントに移動します</p>
+</li>
+<li>
+<p>[エンドポイントの作成]をクリックし、次のように入力して、[続行]をクリックします。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>表示名の例: elastic`</p>
+</li>
+<li>
+<p>URI:`\https://&lt;elasticsearch-server-ipまたはhostname&gt;:9200`</p>
+</li>
+<li>
+<p>urn:`urn:&lt;何か&gt;:es:::&lt;se-unique text&gt;/&lt;index-name&gt;/_doc`ここで、index-nameはKibanaコンソールで使用した名前です。例:`urn:local:es::sgmd/sgmetadata/_doc`</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-platform-service-endpoint-details.png" alt="プラットフォームサービスエンドポイントの詳細のスクリーンショット">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>認証タイプとしてBasic HTTPを選択し、Elasticsearchのインストールプロセスによって生成されたユーザ名「elastic」とパスワードを入力します。次のページに移動するには、[続行]をクリックします。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-platform-service-endpoint-authentication-type.png" alt="プラットフォームサービスエンドポイントの認証のスクリーンショット">
+</div>
+</div>
+</li>
+<li>
+<p>エンドポイントを確認するには、Do not verify Certificate and Test and Create Endpointを選択します。検証に成功すると、次のスクリーンショットと同様のエンドポイント画面が表示されます。検証が失敗した場合は、URN、URI、およびユーザ名とパスワードのエントリが正しいことを確認してください。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-successfully-verified-endpoint.png" alt="エンドポイントが検証されました">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="バケット検索統合サービスの設定">バケット検索統合サービスの設定</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラットフォームサービスエンドポイントの作成後、次の手順では、オブジェクトの作成、削除、またはそのメタデータ/タグの更新が行われるたびに定義済みのエンドポイントにオブジェクトメタデータを送信するように、このサービスをバケットレベルで設定します。</p>
+</div>
+<div class="paragraph">
+<p>Tenant Managerを使用して検索統合を設定し、カスタムのStorageGRID 設定XMLをバケットに次のように適用できます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tenant Managerで、Storage（S3）&gt; Bucketsに移動します</p>
+</li>
+<li>
+<p>Create Bucket（バケットの作成）をクリックし、バケット名（例：sgmetadatatest'）を入力して、デフォルトのus-east-1リージョンを受け入れます。</p>
+</li>
+<li>
+<p>[Continue]&gt;[Create Bucket]をクリックします。</p>
+</li>
+<li>
+<p>バケットの概要ページを表示するには、バケット名をクリックし、プラットフォームサービスを選択します。</p>
+</li>
+<li>
+<p>[検索統合を有効にする]ダイアログボックスを選択します。表示されたXMLボックスに、この構文を使用して設定XMLを入力します。</p>
+<div class="paragraph">
+<p>強調表示されたURNは、定義したプラットフォームサービスエンドポイントと一致する必要があります。別のブラウザタブを開いてTenant Managerにアクセスし、定義済みのプラットフォームサービスエンドポイントからURNをコピーできます。</p>
+</div>
+<div class="paragraph">
+<p>この例ではプレフィックスを使用していません。つまり、このバケット内のすべてのオブジェクトのメタデータが、前に定義したElasticsearchエンドポイントに送信されます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;MetadataNotificationConfiguration&gt;
+    &lt;Rule&gt;
+        &lt;ID&gt;Rule-1&lt;/ID&gt;
+        &lt;Status&gt;Enabled&lt;/Status&gt;
+        &lt;Prefix&gt;&lt;/Prefix&gt;
+        &lt;Destination&gt;
+            &lt;Urn&gt; urn:local:es:::sgmd/sgmetadata/_doc&lt;/Urn&gt;
+        &lt;/Destination&gt;
+    &lt;/Rule&gt;
+&lt;/MetadataNotificationConfiguration&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>S3 Browserを使用して、テナントアクセス/シークレットキーを使用してStorageGRID に接続し、テストオブジェクトを「sgmetadata-test」バケットにアップロードし、タグまたはカスタムメタデータをオブジェクトに追加します。</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-upload-test-objects.png" alt="テストオブジェクトのアップロードのスクリーンショット">
+</div>
+</div>
+</li>
+<li>
+<p>Kibana UIを使用して、オブジェクトメタデータがsgmetadataのインデックスにロードされたことを確認します。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>メニューから、Management &gt; Dev Toolsを選択します。</p>
+</li>
+<li>
+<p>左側のコンソールパネルにサンプルクエリを貼り付け、三角形の記号をクリックして実行します。</p>
+<div class="paragraph">
+<p>次の例のスクリーンショットでは、クエリ1のサンプル結果に4つのレコードが表示されています。これはバケット内のオブジェクトの数に一致します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET sgmetadata/_search
+{
+    "query": {
+        "match_all": { }
+}
+}</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../media/storagegrid-search-integration-service/sg-sis-query1-sample-result.png" alt="クエリ1のサンプル結果のスクリーンショット">
+</div>
+</div>
+<div class="paragraph">
+<p>次のスクリーンショットのクエリ2のサンプル結果は、タグタイプがjpgの2つのレコードを示しています。</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET sgmetadata/_search
+{
+    "query": {
+        "match": {
+            "tags.type": {
+                "query" : "jpg" }
+                }
+            }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+
+image::../media/storagegrid-search-integration-service/sg-sis-query-two-sample.png[クエリ2のサンプル]</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="追加情報の参照先">追加情報の参照先</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/storagegrid-116/tenant/what-platform-services-are.html" target="_blank" rel="noopener">"プラットフォームサービスとは"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/storagegrid-116/index.html" target="_blank" rel="noopener">"StorageGRID 11.6 ドキュメント"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">利用条件</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Web サイトについてのフィードバックを</span>
+              <a target="_self" href="javascript:netapp_mailto()">お寄せください</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/ja-jp/announcements/">お知らせ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ja-jp/storagegrid-enable/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/storagegrid-enable/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/storagegrid-enable/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/storagegrid-enable/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/storagegrid-enable/js/www-ntap.js'></script>
+    <script src='/ja-jp/storagegrid-enable/js/tabbed-blocks.js'></script>
+    <script src='/ja-jp/storagegrid-enable/js/sidebar.js'></script>
+  </body></html>
