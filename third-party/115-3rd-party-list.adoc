@@ -49,6 +49,7 @@ summary: StorageGRID 11.5で検証済みのサードパーティソリューシ�
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * ビディズパイン
+* Virtalica StorageFabricの詳細を参照してください
 
 
 

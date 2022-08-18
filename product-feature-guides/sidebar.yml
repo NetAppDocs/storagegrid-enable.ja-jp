@@ -7,6 +7,6 @@ entries:
 - title: Azure BLOBストレージ用のクラウドストレージプールを作成します
   url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
 - title: クラウドストレージプールをバックアップに使用する
-  url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
+  url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
 - title: 検索統合サービスを設定する
   url: "/product-feature-guides/storagegrid-search-integration-service.html"

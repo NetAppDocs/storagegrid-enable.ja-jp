@@ -1,0 +1,125 @@
+---
+permalink: tools-apps-guides/elk-instructions.html 
+sidebar: sidebar 
+keywords: ELK, log analytics, log analysis, StorageGRID troubleshooting 
+summary: StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ここでは、ログメッセージパターン、Kibanaクエリ、グラフ、およびダッシュボードサンプルをフィルタリングして定義するLogstashの設定例を紹介します。このサンプルを使用すると、StorageGRID のログ管理と分析をすばやく開始できます。 
+---
+= エルクスタックを使用したStorageGRID ログ分析
+:allow-uri-read: 
+
+
+[role="lead"]
+StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください https://www.netapp.tv/details/29396["エルク・ビデオを使用したStorageGRID ログ解析"] サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
+
+
+
+== 要件
+
+* StorageGRID 11.6.0.2以降
+* Elk（Elasticsearch、Logstash、Kibana）7.1x以降がインストールされており、動作中です
+
+
+
+
+== サンプルファイル
+
+* link:../media/elk-config/elk7-sample.zip["Logstash 7.xサンプルファイルパッケージをダウンロードします"] +*MD5チェックサム*148c23d0021d9a4bb4a6c0287464deab +*SHA256チェックサム*f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8be3d522adf2d6
+* link:../media/elk-config/elk8-sample.zip["Logstash 8.xサンプルファイルパッケージをダウンロードします"] +*MD5チェックサム*e11bae3a662f87c310ef363d0fe06835+* SHA256チェックサム*5c670755742cfdfd5aa723a596ba087e0153a65bcaef3934afdb682f61cd278d
+
+
+
+
+== 前提条件
+
+読者はStorageGRID およびElkの用語および操作に精通しています。
+
+
+
+== 指示
+
+grokパターンで定義される名前の違いにより、2つのサンプルバージョンが提供されます。+たとえば、Logstash設定ファイルのSYSLOGBASE grokパターンでは、インストールされているLogstashのバージョンによってフィールド名が異なります。
+
+[listing]
+----
+match => {"message" => '<%{POSINT:syslog_pri}>%{SYSLOGBASE} %{GREEDYDATA:msg-details}'}
+----
+* Logstash 7.17サンプル*
+
+image::../media/elk-config/logstash-7.17.fields-sample.png[Logstash 7.17サンプル]
+
+*ログスタシュ8.23サンプル*
+
+image::../media/elk-config/logstash-8.x.fields-sample.png[Logstash 8.23サンプル]
+
+* 手順 *
+
+. インストールされているエルクバージョンに基づいて、提供されたサンプルを解凍します。+サンプル・フォルダには'Logstash configサンプルが2つ含まれています+*sglog-2-file.conf :この構成ファイルは'データ変換を行わずにLogstash上のファイルにStorageGRID ログ・メッセージを出力しますこの機能を使用すると、LogstashがStorageGRID メッセージを受信していることを確認したり、StorageGRID ログパターンを理解したりできます。+* sglog-2-es.conf：*この構成ファイルは、さまざまなパターンやフィルタを使用してStorageGRID ログメッセージを変換します。この例には、パターンまたはフィルタに基づいてメッセージをドロップするDROPステートメントが含まれています。インデックスを作成するために出力がElasticsearchに送信されます。+ファイル内の指示に従って、選択した構成ファイルをカスタマイズします。
+. カスタマイズした構成ファイルをテストします。
++
+[listing]
+----
+/usr/share/logstash/bin/logstash --config.test_and_exit -f <config-file-path/file>
+----
++
+返される最後の行が次の行に似ている場合、構成ファイルに構文エラーはありません。
+
++
+[listing]
+----
+[LogStash::Runner] runner - Using config.test_and_exit mode. Config Validation Result: OK. Exiting Logstash
+----
+. カスタマイズされたconfファイルをLogstashサーバのconfig:/etc/logstash/conf.d+にコピーします/etc/logstash/logstash.ymlでconfig.reload.automaticを有効にしていない場合は'Logstashサービスを再起動しますそれ以外の場合は、設定のリロード間隔が経過するのを待ちます。
++
+[listing]
+----
+ grep reload /etc/logstash/logstash.yml
+# Periodically check if the configuration has changed and reload the pipeline
+config.reload.automatic: true
+config.reload.interval: 5s
+----
+. /var/log/logstash/logstash-plain.logを確認し、Logstashを新しい設定ファイルで起動する際にエラーがないことを確認します。
+. TCPポートが開始され、リスンしていることを確認する。+この例では、TCPポート5000が使用されています。
++
+[listing]
+----
+netstat -ntpa | grep 5000
+tcp6       0      0 :::5000                 :::*                    LISTEN      25744/java
+----
+. StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。を参照してください https://www.netapp.tv/details/29396["デモビデオ"] を参照してください。
+. 定義されたTCPポートへのStorageGRID ノード接続を許可するには、Logstashサーバ上でファイアウォールを設定または無効にする必要があります。
+. Kibana GUIから、[Management]->[Dev Tools]を選択します。Consoleページで、次のgetコマンドを実行して、Elasticsearch上に新しいインデックスが作成されていることを確認します。
++
+[listing]
+----
+GET /_cat/indices/*?v=true&s=index
+----
+. Kibana GUIから、索引パターン（Elk 7.x）またはデータビュー（Elk 8.x）を作成します。
+. Kibana GUIから、上部中央にある検索ボックスに「saved objects」と入力します。+[保存済みオブジェクト]ページで、[インポート]を選択します。[インポートオプション]で、[競合時にアクションを要求]を選択します。
++
+image::../media/elk-config/kibana-import-options.png[Kibanaの輸入オプション]
+
++
+elk <version>-query-chart-sample.ndjsonをインポートします。+競合を解決するよう求められたら、手順8で作成したインデックスパターンまたはデータビューを選択します。
+
++
+image::../media/elk-config/kibana-import-conflict.png[キバナ紛争]
+
++
+次のKibanaオブジェクトがインポートされます。 +*クエリ*+* audit-msg-s3rq -lm+* bycast log s3関連メッセージ+* loglevel warningまたはabove +* failed security event +* Chart *+* s3要求数bycast.log +* HTTP status code +* audit breakdown by type +* average s3応答 上記のグラフを使用した、時間+*ダッシュボード*+* S3要求ダッシュボード。
+
+
+
+これで、Kibanaを使用してStorageGRID ログ分析を実行する準備ができました。
+
+
+
+== その他のリソース
+
+* https://coralogix.com/blog/syslog-101-everything-you-need-to-know-to-get-started/["syslog101"]
+* https://www.elastic.co/what-is/elk-stack["エルクスタックとは何ですか"]
+* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns["grokパターンリスト"]
+* https://logz.io/blog/logstash-grok/["初心者向けのLogstashガイド: Grok"]
+* https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/["ログスタシュの実践的なガイド：syslogの詳細"]
+* https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibanaガイド–ドキュメントを参照してください"]
+* https://docs.netapp.com/us-en/storagegrid-116/audit/index.html["StorageGRID 監査ログメッセージリファレンスです"]
+

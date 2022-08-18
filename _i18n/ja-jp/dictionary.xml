@@ -626,4 +626,62 @@
   <block id="024f3a8ba5709643c2f09c8eabccae87" category="sidebar">検証済みのサードパーティソリューション-概要</block>
   <block id="f4bf6c62a8784f065cebbacf57a1c62c" category="sidebar">S3オブジェクトロックのテストと実証</block>
   <block id="401b6d44d3c927f0424adce982cc6506" category="list-text">Veritas Enterprise Vault 14.2.2</block>
+  <block id="51e1f53c9c33ce7f260e99f66853181d" category="summary">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ここでは、ログメッセージパターン、Kibanaクエリ、グラフ、およびダッシュボードサンプルをフィルタリングして定義するLogstashの設定例を紹介します。このサンプルを使用すると、StorageGRID のログ管理と分析をすばやく開始できます。</block>
+  <block id="ba8b98c81be3d04d10309b1945f41b3c" category="doc">エルクスタックを使用したStorageGRID ログ分析</block>
+  <block id="febdad8f949c4133d32f6ec0e8b0ca1c" category="inline-link">エルク・ビデオを使用したStorageGRID ログ解析</block>
+  <block id="b165bee40a44e630afb8a902059ed458" category="paragraph">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください<block ref="1c3903c549bd0599ac0ebb1c424871aa" category="inline-link-rx"></block> サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。</block>
+  <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">要件</block>
+  <block id="b30496f397e70350f3c0324082c41741" category="list-text">StorageGRID 11.6.0.2以降</block>
+  <block id="b8dc02d4e6fb27304a65c0d58fbdf121" category="list-text">Elk（Elasticsearch、Logstash、Kibana）7.1x以降がインストールされており、動作中です</block>
+  <block id="9db4c047fbc2df77e904876ca407a10a" category="section-title">サンプルファイル</block>
+  <block id="7d62fedde871da77290cb136048ab8ae" category="inline-link-macro">Logstash 7.xサンプルファイルパッケージをダウンロードします</block>
+  <block id="7f736656dd8100c22291010843e5658f" category="list-text"><block ref="f317985ee56adafb12c2258472a6183e" category="inline-link-macro-rx"></block> +*MD5チェックサム*148c23d0021d9a4bb4a6c0287464deab +*SHA256チェックサム*f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8be3d522adf2d6</block>
+  <block id="69cc1f5bcff32557cde6f7f5b4b365ed" category="inline-link-macro">Logstash 8.xサンプルファイルパッケージをダウンロードします</block>
+  <block id="a87365d5d3e0619dfacb72153399871c" category="list-text"><block ref="61afb638ef1cfaa2ac62beb76c59b80b" category="inline-link-macro-rx"></block> +*MD5チェックサム*e11bae3a662f87c310ef363d0fe06835+* SHA256チェックサム*5c670755742cfdfd5aa723a596ba087e0153a65bcaef3934afdb682f61cd278d</block>
+  <block id="cdcccab01175eb4e232499c66bfa50af" category="section-title">前提条件</block>
+  <block id="430bacfb127efaca8a86b36b918f14b8" category="paragraph">読者はStorageGRID およびElkの用語および操作に精通しています。</block>
+  <block id="c742c5a36b6307267bb709355feb2c41" category="section-title">指示</block>
+  <block id="eac3387862d4c7d3f970561bfc3f7c02" category="paragraph">grokパターンで定義される名前の違いにより、2つのサンプルバージョンが提供されます。+たとえば、Logstash設定ファイルのSYSLOGBASE grokパターンでは、インストールされているLogstashのバージョンによってフィールド名が異なります。</block>
+  <block id="4f709f3097a2dcda180a37ee47844c13" category="paragraph">* Logstash 7.17サンプル*</block>
+  <block id="4f81ab746526b7ac4b040718ec7acade" category="image-alt">Logstash 7.17サンプル</block>
+  <block id="91106d0591f097e8bbf222df7706bd2d" category="paragraph">*ログスタシュ8.23サンプル*</block>
+  <block id="c59ad685927ef7bba94abe95eaa87376" category="image-alt">Logstash 8.23サンプル</block>
+  <block id="bb8122fb7f8c30744fed84c9462b305d" category="list-text">インストールされているエルクバージョンに基づいて、提供されたサンプルを解凍します。+サンプル・フォルダには'Logstash configサンプルが2つ含まれています+*sglog-2-file.conf :この構成ファイルは'データ変換を行わずにLogstash上のファイルにStorageGRID ログ・メッセージを出力しますこの機能を使用すると、LogstashがStorageGRID メッセージを受信していることを確認したり、StorageGRID ログパターンを理解したりできます。+* sglog-2-es.conf：*この構成ファイルは、さまざまなパターンやフィルタを使用してStorageGRID ログメッセージを変換します。この例には、パターンまたはフィルタに基づいてメッセージをドロップするDROPステートメントが含まれています。インデックスを作成するために出力がElasticsearchに送信されます。+ファイル内の指示に従って、選択した構成ファイルをカスタマイズします。</block>
+  <block id="3ed4288764d66f2a65f7b85b652b32d3" category="list-text">カスタマイズした構成ファイルをテストします。</block>
+  <block id="4c6585842bcd6ea99d8f33b205b2620e" category="paragraph">返される最後の行が次の行に似ている場合、構成ファイルに構文エラーはありません。</block>
+  <block id="49e1ff176740ef27a71315d47a28cec0" category="list-text">カスタマイズされたconfファイルをLogstashサーバのconfig:/etc/logstash/conf.d+にコピーします/etc/logstash/logstash.ymlでconfig.reload.automaticを有効にしていない場合は'Logstashサービスを再起動しますそれ以外の場合は、設定のリロード間隔が経過するのを待ちます。</block>
+  <block id="1e2849b34515b73b14e350b3cfc6a222" category="list-text">/var/log/logstash/logstash-plain.logを確認し、Logstashを新しい設定ファイルで起動する際にエラーがないことを確認します。</block>
+  <block id="25b182c5b3173c341b5471a371174d7d" category="list-text">TCPポートが開始され、リスンしていることを確認する。+この例では、TCPポート5000が使用されています。</block>
+  <block id="225e60e541052bd49fdac4b77ffecbc9" category="inline-link">デモビデオ</block>
+  <block id="fa1074da41258119adddd6a31eb40641" category="list-text">StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。を参照してください<block ref="144d48037e96a9804672c6dc7123d436" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="defe6f8b45f596c620301bef8fdfbee9" category="list-text">定義されたTCPポートへのStorageGRID ノード接続を許可するには、Logstashサーバ上でファイアウォールを設定または無効にする必要があります。</block>
+  <block id="9391523be65dad63e7fad8e0d28ee818" category="list-text">Kibana GUIから、[Management]-&gt;[Dev Tools]を選択します。Consoleページで、次のgetコマンドを実行して、Elasticsearch上に新しいインデックスが作成されていることを確認します。</block>
+  <block id="30d46e8002bdd5c520a62523d772ebca" category="list-text">Kibana GUIから、索引パターン（Elk 7.x）またはデータビュー（Elk 8.x）を作成します。</block>
+  <block id="291020c626f44ee2ce32684bc3a13980" category="list-text">Kibana GUIから、上部中央にある検索ボックスに「saved objects」と入力します。+[保存済みオブジェクト]ページで、[インポート]を選択します。[インポートオプション]で、[競合時にアクションを要求]を選択します。</block>
+  <block id="d5a554fb68642d807aee43887546b43a" category="image-alt">Kibanaの輸入オプション</block>
+  <block id="42451b291f11e82724f65b3c852cca1d" category="paragraph">elk &lt;version&gt;-query-chart-sample.ndjsonをインポートします。+競合を解決するよう求められたら、手順8で作成したインデックスパターンまたはデータビューを選択します。</block>
+  <block id="bc1a8499a0350f03b4ca75964eaad9cb" category="image-alt">キバナ紛争</block>
+  <block id="d304b6866d45389dd644b1c1788bfd5a" category="paragraph">次のKibanaオブジェクトがインポートされます。 +*クエリ*+* audit-msg-s3rq -lm+* bycast log s3関連メッセージ+* loglevel warningまたはabove +* failed security event +* Chart *+* s3要求数bycast.log +* HTTP status code +* audit breakdown by type +* average s3応答 上記のグラフを使用した、時間+*ダッシュボード*+* S3要求ダッシュボード。</block>
+  <block id="367c071ddbe8d1248ceb63f940e9b3cc" category="paragraph">これで、Kibanaを使用してStorageGRID ログ分析を実行する準備ができました。</block>
+  <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="section-title">その他のリソース</block>
+  <block id="925a38c6c8bc1c84ae702d840efa1ef4" category="inline-link">syslog101</block>
+  <block id="43b4ce193ce75a7c51a41a392da0e953" category="list-text"><block ref="43b4ce193ce75a7c51a41a392da0e953" category="inline-link-rx"></block></block>
+  <block id="36df17c33644048e4c07c17be01b2524" category="inline-link">エルクスタックとは何ですか</block>
+  <block id="2403480f61f37fce13a75f67d092ed18" category="list-text"><block ref="2403480f61f37fce13a75f67d092ed18" category="inline-link-rx"></block></block>
+  <block id="19d3c10a857b63064e06411baf1285b1" category="inline-link">grokパターンリスト</block>
+  <block id="7c6102b1302815b75a46740d436c93fc" category="list-text"><block ref="7c6102b1302815b75a46740d436c93fc" category="inline-link-rx"></block></block>
+  <block id="13fc1087c795f112d8979eb5e2780e5c" category="inline-link">初心者向けのLogstashガイド: Grok</block>
+  <block id="a39eed6135a0acdcad49fe799eb1bd27" category="list-text"><block ref="a39eed6135a0acdcad49fe799eb1bd27" category="inline-link-rx"></block></block>
+  <block id="1482da3b9a25b116ee5827795ac8fbbd" category="inline-link">ログスタシュの実践的なガイド：syslogの詳細</block>
+  <block id="9a51320cc75988e79a130ea7dc86875c" category="list-text"><block ref="9a51320cc75988e79a130ea7dc86875c" category="inline-link-rx"></block></block>
+  <block id="3a280b4922aa9eb7ce4c328f7f7dbbb3" category="inline-link">Kibanaガイド–ドキュメントを参照してください</block>
+  <block id="ffe5d2718c9048b9edb4a4a97d96e90f" category="list-text"><block ref="ffe5d2718c9048b9edb4a4a97d96e90f" category="inline-link-rx"></block></block>
+  <block id="98d2f29265a464a9765db0d88f294336" category="inline-link">StorageGRID 監査ログメッセージリファレンスです</block>
+  <block id="baba0109751acb7c22b021c76b6d7b51" category="list-text"><block ref="baba0109751acb7c22b021c76b6d7b51" category="inline-link-rx"></block></block>
+  <block id="288e0e9ab8b8ac8737afefecf16f61fd" category="list-text">デレミオ</block>
+  <block id="e07088b3eedf498bf832f9346b0e3c02" category="list-text">Reveille v10 build 220706以上</block>
+  <block id="edf1439075a83a447fb8b630ddc9c8de" category="list-text">雪の結晶</block>
+  <block id="e6a211de1fc20ed87589cd9c30f29ac3" category="list-text">Virtalica StorageFabricの詳細を参照してください</block>
+  <block id="e2b1887bff53094ff4de31a5b6be8203" category="sidebar">ログ分析には、Elasticsearch、Logstash、Kibanaを使用します</block>
+  <block id="958e51c613c42a5edd4e8f06fad6128b" category="sidebar">エルクスタックを使用したStorageGRID ログ分析|ネットアップTV</block>
 </blocks>

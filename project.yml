@@ -47,7 +47,7 @@ homepage:
     - title: Azure BLOBストレージ用のクラウドストレージプールを作成します
       url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
     - title: クラウドストレージプールをバックアップに使用する
-      url: product-feature-guides/use-a-cloud-storage-pool-for-backup.html
+      url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
     - title: 検索統合サービスを設定する
       url: "/product-feature-guides/storagegrid-search-integration-service.html"
   - title: ツールおよびアプリケーションガイド
@@ -58,6 +58,8 @@ homepage:
       url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
     - title: S3cmdを使用してS3アクセスをテストおよび実証します
       url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
+    - title: ログ分析には、Elasticsearch、Logstash、Kibanaを使用します
+      url: "/tools-apps-guides/elk-instructions.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証
@@ -70,6 +72,8 @@ homepage:
       url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
     - title: ネットアップラーニングサービス
       url: https://www.netapp.com/support-and-training/netapp-university/
+    - title: エルクスタックを使用したStorageGRID ログ分析|ネットアップTV
+      url: https://www.netapp.tv/details/29396
   - title: リソースの追加
     links:
     - title: StorageGRID のサポートページ

@@ -26,6 +26,8 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * ダレト
 * Data Dynamics StorageXのように入力します
 * DefendX
+* デレミオ
+* eMAM
 * FUJIFILMオブジェクトアーカイブ
 * GitHubエンタープライズサーバ
 * IBM FileNetの順にクリックします
@@ -46,8 +48,10 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * Point Storage Manager 6.4
 * プリミティブストリーム
 * Quantum StorNext 5.4.0.1
+* Reveille v10 build 220706以上
 * RUBRIK CDM 5.0.1 p1-1342
 * シグニエント
+* 雪の結晶
 * Splunk Smartstore
 * ストレージが簡単になりました
 * ニスエンタープライズ6.0.4
@@ -56,8 +60,8 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * ビディズパイン
+* Virtalica StorageFabricの詳細を参照してください
 * Weka v3.10以降
-* eMAM
 
 
 
