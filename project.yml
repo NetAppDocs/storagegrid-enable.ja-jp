@@ -60,6 +60,8 @@ homepage:
       url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
     - title: ログ分析には、Elasticsearch、Logstash、Kibanaを使用します
       url: "/tools-apps-guides/elk-instructions.html"
+    - title: PrometheusとGrafanaを使用して指標の保持を拡張します
+      url: "/tools-apps-guides/federate-prometheus.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証

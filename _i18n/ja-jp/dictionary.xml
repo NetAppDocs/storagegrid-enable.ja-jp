@@ -684,4 +684,93 @@
   <block id="e6a211de1fc20ed87589cd9c30f29ac3" category="list-text">Virtalica StorageFabricの詳細を参照してください</block>
   <block id="e2b1887bff53094ff4de31a5b6be8203" category="sidebar">ログ分析には、Elasticsearch、Logstash、Kibanaを使用します</block>
   <block id="958e51c613c42a5edd4e8f06fad6128b" category="sidebar">エルクスタックを使用したStorageGRID ログ分析|ネットアップTV</block>
+  <block id="a55559222587bd5f2986759b8e95387a" category="summary">このテクニカルレポートでは、外部のPrometheusサービスおよびGrafanaサービスでNetApp StorageGRID 11.6を設定する詳しい手順を説明します。</block>
+  <block id="ec88743b2ce92a6f481315232bded2cc" category="doc">PrometheusとGrafanaを使用して指標の保持を拡張します</block>
+  <block id="19e3e1c7497754486f9fce5eaded999d" category="paragraph">StorageGRID は、Prometheusを使用して指標を保存し、組み込みのGrafanaダッシュボードでこれらの指標を視覚化します。Prometheus指標には、クライアントアクセス証明書を設定し、指定されたクライアントのPrometheusアクセスを有効にすることで、StorageGRID から安全にアクセスできます。現在、この指標データの保持期間は管理ノードのストレージ容量によって制限されています。これらの指標のカスタマイズされた可視化を実現するために、新しいPrometheusサーバとGrafanaサーバを導入し、新しいサーバでStorageGRIDWebscaleインスタンスから指標をスクラビングするように設定し、重要な指標を使用したダッシュボードを構築します。で収集されたPrometheus指標の詳細を確認できます<block ref="b4322fd604ba4ce3b6c052facca6761f" category="inline-link-rx"></block>。</block>
+  <block id="4ea04e03e09a38c155d3e71e1fb7de4c" category="section-title">Prometheusをフェデレーションする</block>
+  <block id="4d27d8d41585fe5291670dc3d60f75a7" category="section-title">ラボの詳細</block>
+  <block id="85bef63997bbb31cf4fa40eff8acef2b" category="paragraph">この例では、StorageGRID 11.6ノードとDebian 11サーバのすべての仮想マシンを使用します。StorageGRID 管理インターフェイスには、公開されている信頼されたCA証明書が設定されています。この例では、StorageGRID システムやDebian Linuxのインストールと設定は行われません。PrometheusとGrafanaでサポートされている、任意のLinuxフレーバーを使用できます。PrometheusとGrafanaはどちらも、Dockerコンテナ、ソースからビルド、またはコンパイル済みのバイナリとしてインストールできます。この例では、PrometheusバイナリとGrafanaバイナリの両方を同じDebianサーバに直接インストールします。から基本的なインストール手順をダウンロードして実行します<block ref="89724ccad5c62d1626a6c4f814f7ad92" category="inline-link-rx"></block> および<block ref="14b4aeaebc6939fe5db011cfca13bded" category="inline-link-rx"></block> それぞれ。</block>
+  <block id="e6c56f2ad47108b72210c45d114ab981" category="section-title">Prometheusクライアントアクセス用にStorageGRID を設定する</block>
+  <block id="a5b8a4af4e814e777e9666e98c1489b1" category="paragraph">StorageGRID IDに格納されているPrometheus指標にアクセスするには、秘密鍵を使用してクライアント証明書を生成またはアップロードし、クライアントの権限を有効にする必要があります。StorageGRID 管理インターフェイスにはSSL証明書が必要です。この証明書は、信頼されたCAによってPrometheusサーバによって信頼されているか、自己署名されている場合は手動で信頼されている必要があります。詳細については、を参照してください<block ref="10adb8f93432a6d42dbae4551371be78" category="inline-link-rx"></block>。</block>
+  <block id="76f344ac7fba487473f1b7a1890e9f8e" category="list-text">StorageGRID 管理インターフェイスの左下にある「configuration」を選択し、2番目の列にある「Security」で「Certificates」をクリックします。</block>
+  <block id="6672f37bb0822d570acc565c15cb698f" category="list-text">[証明書]ページで[クライアント]タブを選択し、[追加]ボタンをクリックします。</block>
+  <block id="2f33cc1441b10d118155c459b7c0ec4f" category="list-text">アクセスを許可するクライアントの名前を指定し、この証明書を使用します。「Allow Prometheus」の前の「Permissions」のボックスをクリックし、「Continue」ボタンをクリックします。</block>
+  <block id="e59f14e1cf84d2b0c36bfe68a98c16ed" category="image-alt">証明書の名前</block>
+  <block id="b47c072e73067166591337127c6332cf" category="list-text">CA署名証明書がある場合は、[証明書のアップロード]のラジオボタンを選択できますが、この場合は、[証明書の生成]のラジオボタンを選択して、StorageGRID がクライアント証明書を生成できるようにします。入力する必須フィールドが表示されます。クライアントサーバのFQDN、サーバのIP、件名、有効日数を入力します。「生成」ボタンをクリックします。</block>
+  <block id="efdc2e922559f9410d73ad5e9763cfe1" category="image-alt">証明書の詳細</block>
+  <block id="512a2185a4d8f29cd92f5eeca5299428" category="list-text">証明書のPEMファイルと秘密鍵のPEMファイルをダウンロードします。</block>
+  <block id="950d1a08b94affeab69ad5298853bcab" category="image-alt">証明書のダウンロード</block>
+  <block id="c7d534d2e8c571fc60886fffffaed71d" category="section-title">LinuxサーバでPrometheusインストールを準備</block>
+  <block id="1a1198e75df118c29ed3f2cfe6f42314" category="paragraph">Prometheusをインストールする前に、Prometheusユーザとディレクトリ構造を使用して環境を準備し、指標の格納場所の容量を設定します。</block>
+  <block id="53012110a3b12b6dbece7a2d3329563c" category="list-text">Prometheusユーザを作成します。</block>
+  <block id="75ad7bfc7b05da8e590553a1ba59d00e" category="list-text">Prometheus、クライアント証明書、指標データのディレクトリを作成します。</block>
+  <block id="cf93e27e07f84a6f34c0baad77d73502" category="list-text">私はext4ファイルシステムでのメトリック保持のために使用するディスクをフォーマットしました。</block>
+  <block id="dba914a2be67f5826db730febd483dbb" category="list-text">そのあと、Prometheusのmetricsディレクトリにファイルシステムをマウントしました。</block>
+  <block id="1db6657920c882fe516dc56a8fc42ae0" category="list-text">指標データに使用するディスクのUUIDを取得します。</block>
+  <block id="de5a7b5d75aef0f9aa929a3ffdd7bf91" category="list-text">/etc/fstabにエントリを追加してマウントをリブート後も/dev/sdbのUUIDを使用して維持するようにします。</block>
+  <block id="e7184db422126b9a8ae98daa3ef08b00" category="section-title">Prometheusをインストールして設定する</block>
+  <block id="51006cba71ff2e50795b3bf3c2b2e223" category="paragraph">これでサーバの準備ができました。Prometheusのインストールを開始して、サービスを設定できます。</block>
+  <block id="c99b7eb31cdbd3d09abc27ebdcb5325d" category="list-text">Prometheusインストールパッケージを展開します</block>
+  <block id="6d1af4201bd8173d4f87201195065c96" category="list-text">バイナリを/usr/local/binにコピーし、前の手順で作成したPrometheusユーザに所有権を変更します</block>
+  <block id="22971a12624067801ed27bf22a1a43d4" category="list-text">コンソールとライブラリを/etc/Prometheusにコピーします</block>
+  <block id="c0b8e90b4197c0bc1a63ab18dad551cb" category="list-text">以前にStorageGRID からダウンロードしたクライアント証明書と秘密鍵のPEMファイルを/etc/prometheus/certsにコピーします</block>
+  <block id="6fd6fe03d0bae048f49350a7b29d2b20" category="list-text">Prometheus設定YAMLファイルを作成します</block>
+  <block id="650d2cc27d4f8021f93af373465ebb1d" category="list-text">次の構成を挿入します。ジョブ名には、任意の名前を指定できます。「-targets：[']]」を管理ノードのFQDNに変更し、証明書と秘密鍵のファイル名を変更した場合は、tls_configセクションを更新して一致させてください。次に、ファイルを保存します。グリッド管理インターフェイスで自己署名証明書を使用している場合は、証明書をダウンロードして一意の名前のクライアント証明書に格納し、tls_configセクションadd ca_file：/etc/prometheus/cert/UIcert.pemに格納します</block>
+  <block id="adbbb69e4573c242198e942a4c984a56" category="list-text">この例では、alertmanager、cassandra、node、およびStorageGRID で始まるすべての指標を収集しています。Prometheus指標の詳細については、を参照してください<block ref="b4322fd604ba4ce3b6c052facca6761f" category="inline-link-rx"></block>。</block>
+  <block id="2a83272e8be3a9939618ae5d54c15280" category="paragraph">グリッド管理インターフェイスで自己署名証明書が使用されている場合は、証明書をダウンロードして一意の名前でクライアント証明書に格納します。tls_configセクションで、クライアント証明書と秘密鍵の行の上に証明書を追加します</block>
+  <block id="9d5f73c80f9dcd64a2b4f51ed7df1c74" category="list-text">Prometheus内のすべてのファイルとディレクトリの所有権と、/var/lib/prometPrometheusユーザへの所有権を変更する</block>
+  <block id="94394bcffb3c751d1a1c75adf1dd3339" category="list-text">/etc/systemd/systemにPrometheusサービスファイルを作成します</block>
+  <block id="1c83729b0147981bd53a386123e950b2" category="list-text">次の行を挿入します。#--storage.tsd.dretention.time=1y#というメトリックデータの保持期間を1年に設定します。また、ストレージの制限に基づいて保持期間を設定する場合も、#--storage.tsdb.retentionsize=300GiB#を使用することもできます。指標の保持を設定できるのは、この場所だけです。</block>
+  <block id="c44e8fe3436b496aa03fa98464a357bb" category="list-text">システムdサービスをリロードして新しいPrometheusサービスを登録します。その後、Prometheusサービスを開始して有効にします。</block>
+  <block id="a95dc294578d84798aa85e589b1d7169" category="list-text">サービスが正常に実行されていることを確認します</block>
+  <block id="efb4923d4171f8bbe31a74fc17e7a4ea" category="list-text">PrometheusサーバのUIにアクセスできるようになります<block ref="9c036ae021e9b80558a889223ee0da28" category="inline-link-rx"></block> およびUIを参照してください</block>
+  <block id="6246893720a6bc3db5f56c322fc01d95" category="image-alt">PrometheusのUIページ</block>
+  <block id="bc9d8c8501595ac689577e371305dd0c" category="list-text">「Status」ターゲットのPrometheusで設定したStorageGRID エンドポイントのステータスを確認できます</block>
+  <block id="ef446049ce3cd8c094f34cb3047e10d7" category="image-alt">Prometheusのステータスメニュー</block>
+  <block id="b46ccb7031f632fe5680ae39d381aac5" category="image-alt">Prometheusターゲットページ</block>
+  <block id="d438cb3ada618e17e8da5458906319f6" category="list-text">[グラフ]ページで、テストクエリを実行し、データが正常にスクレイピングされていることを確認できます。たとえば、クエリバーに「storagegrid_node_name utilization _percentage」と入力し、実行ボタンをクリックします。</block>
+  <block id="a4b484847ff4cdaf28ddb0fbdebf7234" category="image-alt">Prometheusクエリが実行される</block>
+  <block id="4b9bf479d75eb40b84a86c9d4d9829c6" category="section-title">Grafanaをインストールして設定します</block>
+  <block id="d6c4e0d91ac95c90048b7b552f962b83" category="paragraph">Prometheusがインストールされて機能したので、Grafanaのインストールとダッシュボードの設定に進みます</block>
+  <block id="28946a57c620a6d61330c3ec2b855ea1" category="section-title">Grafanaの分析</block>
+  <block id="886d386fd41ddae5268cb47bd2c0f6f7" category="list-text">Grafanaの最新のエンタープライズエディションをインストールします</block>
+  <block id="2b486298e7630814372aec36baee859f" category="list-text">安定版リリース用に次のリポジトリを追加します。</block>
+  <block id="166a21daf7286fbeb21167b5802de660" category="list-text">リポジトリを追加した後。</block>
+  <block id="2557b3cde7450f332315bc10e61bdba8" category="list-text">systemdサービスをリロードして新しいgrafanaサービスを登録します。次に、Grafanaサービスを開始して有効にします。</block>
+  <block id="c96bdac515037faefe395a7292cce691" category="list-text">Grafanaがインストールされて実行されるようになりました。ブラウザでHTTP：//prometheus-server：3000にアクセスすると、Grafanaのログインページが表示されます。</block>
+  <block id="b5ed0857233fefc7884d300cb79511cc" category="list-text">デフォルトのログインクレデンシャルはadmin / adminであり、新しいパスワードを要求されたときに設定する必要があります。</block>
+  <block id="a201e49270e34f12f6f8e8e17b7f63b4" category="section-title">StorageGRID に対応したGrafanaダッシュボードを作成します</block>
+  <block id="8fa4555fc2e45c8e0b51029500b0ed27" category="paragraph">GrafanaとPrometheusがインストールされて実行されている状態で、データソースを作成してダッシュボードを構築することで、この2つを接続する時間が発生します</block>
+  <block id="4824e95e765437e0267119c28a2ebf58" category="list-text">左側のペインで[構成]を展開し、[データソース]を選択して、[データソースの追加]ボタンをクリックします</block>
+  <block id="5ab8c2d2b825ee44ae77e39f44377ef6" category="list-text">Prometheusは、最も人気のあるデータソースの1つです。検出されていない場合は、検索バーで「Prometheus」を特定します。</block>
+  <block id="bef2ae359538161990ca7f4f33bcbb9b" category="list-text">PrometheusインスタンスのURLとスクラビング間隔をPrometheusの間隔と一致するように入力して、Prometheusソースを設定します。Prometheusでアラートマネージャを設定しなかったため、アラートセクションも無効にしました。</block>
+  <block id="a40cb233948efde79195641883d0e611" category="image-alt">grafana Prometheus設定</block>
+  <block id="b84470c739701819ce6f044fb322a73b" category="list-text">目的の設定を入力したら、下にスクロールして[保存してテスト]をクリックします。</block>
+  <block id="a4d1cacdf98710f66261bf842712805f" category="list-text">設定テストが正常に完了したら、[EXPLOR]ボタンをクリックします。</block>
+  <block id="0dbc8986f05d1af0419dde8bc4a17614" category="list-text">「調査」ウィンドウで、Prometheusで「storagegrid_node_name」に対してテストしたものと同じ指標を使用し、「Run query」ボタンをクリックします</block>
+  <block id="65408cc1057e1983691b2ab33f411afc" category="image-alt">Graafana Prometheus指標の詳細を確認する</block>
+  <block id="59c74787b5c8d94700e0808eb7f7080d" category="list-text">データソースを設定したら、ダッシュボードを作成します。</block>
+  <block id="2dbede5ad9fd60cdbd41384214e737a8" category="list-text">左側のペインで[ダッシュボード]を展開し、[+新しいダッシュボード]を選択します。</block>
+  <block id="9b8670951f7b4684c224ee7c839d456e" category="list-text">「新規パネルを追加」を選択します。</block>
+  <block id="0679a10db91cc04805eaf260fa1cf908" category="list-text">メトリックを選択して新しいパネルを設定します。もう一度「storagegrid_node_name」を使用し、パネルのタイトルを入力し、下部に「Options」を展開して凡例をカスタムに変更し、「｛｛instance｝｝」と入力してノード名を定義します。右側のペインの「Standard options」set "Unit」を「Misc-100%」に設定します。[適用]をクリックして、パネルをダッシュボードに保存します。</block>
+  <block id="5a2f263537e34f8a641847b07c2dbb3a" category="image-alt">グラファナパネルを設定します</block>
+  <block id="171b2836c7ab4655438b8b81bc7d0d7f" category="list-text">必要な指標ごとにこのようなダッシュボードを構築し続けることもできますが、幸運にも、StorageGRID にはダッシュボードがすでに用意されており、カスタムダッシュボードにコピーすることができます。</block>
+  <block id="0045460d4b8ee6e2ccf21ba85bb61aa2" category="list-text">StorageGRID 管理インターフェイスの左側のペインで、[サポート]を選択し、[ツール]列の下部にある[指標]をクリックします。</block>
+  <block id="dacb92a5479161b14f63fe1bc9ae9551" category="list-text">指標内で、中央の列の上部にある「グリッド」リンクを選択します。</block>
+  <block id="d41d9476c523c25b4f286c1fb9f71af1" category="image-alt">StorageGRID 指標</block>
+  <block id="bcb5b82ee118287323cbbcf5705d51fd" category="list-text">グリッドダッシュボードで、「Storage Used - Object Metadata」パネルを選択します。メニューをドロップダウンするには、パネルタイトルの小さな下向き矢印と末尾をクリックします。このメニューから「Inspect」と「Panel JSON」を選択します。</block>
+  <block id="3283a20d4b70f7f18e4ffa4329564dec" category="image-alt">StorageGRID ダッシュボード</block>
+  <block id="bdfde960a4b9f7a6f52bc1bbcfb809ea" category="list-text">JSONコードをコピーしてウィンドウを閉じます。</block>
+  <block id="0ae78f538d8850bb1adf673ad3d9b9de" category="image-alt">StorageGRID JSON</block>
+  <block id="dd5507576d8e651777535414a2a4d89c" category="list-text">新しいダッシュボードで、アイコンをクリックして新しいパネルを追加します。</block>
+  <block id="b87847301cad106c92101bdca1149176" category="image-alt">グラファナ追加パネル</block>
+  <block id="e7db75cfcf6183907b6f092041507fab" category="list-text">変更を加えずに新しいパネルを適用します</block>
+  <block id="28117e550ca797c69346cfabb47d4275" category="list-text">StorageGRID パネルと同様に、JSONを確認します。JSONコードをすべて削除し、StorageGRID パネルからコピーしたコードに置き換えます。</block>
+  <block id="243663c8bbd4a1adc19a8656ea49f52a" category="image-alt">グラファナ検査パネル</block>
+  <block id="045121a7dd658eca0fb920eae2865bc5" category="list-text">新しいパネルを編集すると、右側に「移行」ボタンを含む移行メッセージが表示されます。ボタンをクリックして、[適用]ボタンをクリックします。</block>
+  <block id="57a8b8008e71c9674e7cceda50fba182" category="image-alt">グラファナ編集パネルメニュー</block>
+  <block id="f810aaf1536bfcba66e5b92d051c04df" category="image-alt">Graafana編集パネル</block>
+  <block id="4d3250551177a4d9cd85c16745cc024a" category="list-text">すべてのパネルを所定の位置に配置し、必要に応じて構成したら、右上のディスクアイコンをクリックしてダッシュボードを保存し、名前を付けます。</block>
+  <block id="6f8b794f3246b0c1e1780bb4d4d5dc53" category="section-title">まとめ</block>
+  <block id="3c381cb8a7d35d21cb305dce81f773fb" category="paragraph">カスタマイズ可能なデータ保持機能とストレージ容量を備えたPrometheusサーバを導入しました。そのため、運用に最も関連性の高い指標を使用して独自のダッシュボードを構築し続けることができます。で収集されたPrometheus指標の詳細を確認できます<block ref="b4322fd604ba4ce3b6c052facca6761f" category="inline-link-rx"></block>。</block>
 </blocks>
