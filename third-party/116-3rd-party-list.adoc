@@ -35,6 +35,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * Interica
 * Komprise
 * Microsoft SQL Server Big Data Clustersの略
+* モデル9.
 * Moonwalk Universalの略
 * 良いですね
 * Nasuni
