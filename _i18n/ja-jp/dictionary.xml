@@ -775,4 +775,5 @@
   <block id="3c381cb8a7d35d21cb305dce81f773fb" category="paragraph">カスタマイズ可能なデータ保持機能とストレージ容量を備えたPrometheusサーバを導入しました。そのため、運用に最も関連性の高い指標を使用して独自のダッシュボードを構築し続けることができます。で収集されたPrometheus指標の詳細を確認できます<block ref="b4322fd604ba4ce3b6c052facca6761f" category="inline-link-rx"></block>。</block>
   <block id="7045f46ad76322e4dc3af49b0bb57c27" category="list-text">モデル9.</block>
   <block id="d5b38301ef87d6a23fb50fbf5a064be8" category="list-text">Modzy</block>
+  <block id="d48885bf40ed8b15489c6b02ba7daa08" category="list-text">Diskoverデータ</block>
 </blocks>
