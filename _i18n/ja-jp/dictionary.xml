@@ -556,7 +556,6 @@
   <block id="e33f6ccf77d0d8efe2a762267b6fd088" category="list-text"><block ref="e33f6ccf77d0d8efe2a762267b6fd088" category="inline-link-rx"></block></block>
   <block id="12934b080defe99c475857cf35fc736b" category="summary">StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。</block>
   <block id="5726c3e825fdb258e1525c22d51442ea" category="doc">AWSまたはGoogle Cloud用のクラウドストレージプールを作成します</block>
-  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">必要なもの</block>
   <block id="3ed256c1f351a8fcb6f88836f9344657" category="list-text">StorageGRID 11.6が設定されました。</block>
   <block id="d3c15aac7a26c8e69f0d3a923ebea0d3" category="list-text">AWSまたはGoogle Cloudで外部のS3バケットをすでにセットアップしておきます。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
@@ -776,4 +775,6 @@
   <block id="7045f46ad76322e4dc3af49b0bb57c27" category="list-text">モデル9.</block>
   <block id="d5b38301ef87d6a23fb50fbf5a064be8" category="list-text">Modzy</block>
   <block id="d48885bf40ed8b15489c6b02ba7daa08" category="list-text">Diskoverデータ</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">必要なもの</block>
+  <block id="9db3241b54bebb9425e6b4d63d712bb2" category="paragraph-title">想定される結果です</block>
 </blocks>
