@@ -1,0 +1,384 @@
+---
+permalink: product-feature-guides/port-remap.html 
+sidebar: sidebar 
+keywords: port remap, port redirect, port, remap, redirect 
+summary: ポート再マッピングの使用方法 
+---
+= ポート再マッピングの使用方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+さまざまな理由で、着信ポートまたは発信ポートの再マッピングが必要になることがあります。従来のCLBロードバランササービスから現在のnginxサービスロードバランサエンドポイントに移行し、同じポートを維持してクライアントへの影響を軽減する場合、管理ノードクライアントネットワークのクライアントS3にポート443を使用する場合、またはファイアウォールの制限に使用する場合があります。
+
+
+
+== ポートの再マッピングを使用して、S3クライアントをCLBからNGINXに移行します
+
+StorageGRID 11.3より前のリリースでは、ゲートウェイノードに含まれているロードバランササービスはConnection Load Balancer（CLB）です。StorageGRID 11.3では、HTTPトラフィックのロードバランシングを実現する機能豊富な統合解決策 として、NGINXサービスが導入されました。CLBサービスは現在のリリースのStorageGRID でも引き続き使用できるため、新しいロードバランサエンドポイントの設定でポート8082を再利用することはできません。この問題を回避するために、8082インバウンドポートが10443に再マッピングされます。これにより、ゲートウェイのポート8082に着信するすべてのHTTPS要求は、CLBサービスをバイパスしてNGINXサービスに接続し、ポート10443にリダイレクトされます。以下の手順はVMwareを対象としていますが、PORT_REMAP機能はすべてのインストール方法に適用され、ベアメタル環境とアプライアンスでも同様のプロセスを使用できます。
+
+
+
+=== VMware仮想マシンゲートウェイノードの導入
+
+次の手順は、StorageGRID Open Virtualization Format（OVF）を使用してゲートウェイノードをVMとしてVMware vSphere 7に導入するStorageGRID 環境を対象としています。このプロセスでは、VMを破壊的に削除し、同じ名前と構成でVMを再導入します。VMの電源をオンにする前に、vAppプロパティを変更してポートを再マッピングし、VMの電源をオンにしてノードのリカバリプロセスに従います。
+
+
+
+==== 前提条件
+
+* StorageGRID 11.3以降を実行している
+* インストールされているStorageGRID バージョンのVMwareインストールファイルをダウンロードし、アクセスできるようにしておきます。
+* VMの電源オン/オフ、VMおよびvAppの設定の変更、vCenterからのVMの削除、OVFによるVMの導入を行う権限を持つvCenterアカウントが必要です。
+* ロードバランサエンドポイントを作成しておきます
++
+** ポートが目的のリダイレクトポートに設定されている
+** エンドポイントのSSL証明書がCLBサービス用の[Configuration]/[Server Certificates]/[Object Storage API Service Endpoints Server Certificate]にインストールされているものと同じであるか、クライアントが証明書の変更を承認できる。
+
+
+
+
+[NOTE]
+====
+ If your existing certificate is self-signed, you cannot reuse it in the new endpoint. You must generate a new self-signed certificate when creating the endpoint and configure the clients to accept the new certificate.
+====
+
+
+==== 最初のゲートウェイノードを削除します
+
+最初のゲートウェイノードを削除するには、次の手順を実行します。
+
+. グリッドに複数のノードがある場合は、開始するゲートウェイノードを選択します。
+. 必要に応じて、すべてのDNSラウンドロビンエンティティまたはロードバランサプールからノードIPを削除します。
+. Time-To-Live（TTL）と開いているセッションが期限切れになるまで待ちます。
+. VMノードの電源をオフにします。
+. ディスクからVMノードを削除します。
+
+
+
+
+==== 交換用ゲートウェイノードを導入します
+
+交換用ゲートウェイノードを導入するには、次の手順を実行します。
+
+. サポートサイトからダウンロードしたインストールパッケージから.ovf、.mf、.vmdkファイルを選択して、OVFから新しいVMを導入します。
++
+** vsphere-gateway.mf
+** vSphere-gateway.ovf
+** NetApp-sg-11.4.0-20200721.1338.d3969b3.vmdk
+
+
+. 導入が完了したら、VMのリストからVMを選択し、[Configure]タブ[vApp Options]を選択します。
++
+image:port-remap/vapp_options.png["[vApp options]タブ"]
+
+. [Properties]セクションまで下にスクロールし、PORT_REMAP_INBOUNDプロパティを選択します
++
+image:port-remap/remap_inbound.png["インバウンドのポート再マッピング"]
+
+. [プロパティ]リストの一番上までスクロールし、[編集]をクリックします
++
+image:port-remap/edit_button.png["[編集]ボタン"]
+
+. [タイプ]タブを選択し、[ユーザー設定可能]チェックボックスがオンになっていることを確認して、[保存]をクリックします。
++
+image:port-remap/type_tab.png["[Type]タブ"]
+
+. 「PORT_REMAP_INBOUND」プロパティが選択された状態で、[Properties]リストの上部にある[Set Value]をクリックします。
++
+image:port-remap/edit_button.png["[値の設定]ボタン"]
+
+. [Property Value]フィールドに、ネットワーク（グリッド、管理者、またはクライアント）、TCP、元のポート（8082）、および新しいポート（10443）をそれぞれの値の間にを含めて入力します（次の図を参照）。
++
+image:port-remap/value.png["プロパティ値"]
+
+. 複数のネットワークを使用している場合は、カンマ（,）を使用してネットワークの文字列を区切ります（例：grid/tcp/8082/10443、admin/tcp/8082/10443、client/tcp/8082/10443）
+
+
+
+
+==== ゲートウェイノードをリカバリ
+
+ゲートウェイノードをリカバリするには、次の手順を実行します。
+
+. グリッド管理UIの[Maintenance/Recovery]セクションに移動します。
++
+image:port-remap/maint_menu.png["[Maintenance]メニュー"]
+
+. VMノードの電源をオンにし、ノードがグリッド管理UIの[Maintenance/Recovery Pending Nodes]セクションに表示されるまで待ちます。
++
+image:port-remap/recover_pend.png["リカバリを保留中です"]
+
++
+[NOTE]
+====
+ For information and directions for node recovery, see the https://docs.netapp.com/sgws-114/topic/com.netapp.doc.sg-maint/GUID-7E22B1B9-4169-4800-8727-75F25FC0FFB1.html[Recovery and Maintenance guide]
+====
+. ノードのリカバリが完了したら、すべてのDNSラウンドロビンエンティティまたはロードバランサプール（該当する場合）にIPを含めることができます。
++
+これで、ポート8082のHTTPSセッションはポート10443に接続されます
+
+
+
+
+
+== 管理ノードでクライアントS3アクセス用のポート443を再マッピングします
+
+StorageGRID システムでの管理ノード、または管理ノードを含むHAグループのデフォルトの設定は、ポート443と80が管理およびテナントマネージャUI用に予約されており、ロードバランサエンドポイントには使用できません。これへの解決策 では、ポートの再マッピング機能を使用して、インバウンドポート443をロードバランサエンドポイントとして設定される新しいポートにリダイレクトします。完了したクライアントS3トラフィックでポート443を使用できるようになると、グリッド管理UIにはポート8443経由でのみアクセスでき、テナント管理UIにはポート9443経由でのみアクセスできるようになります。ポートの再マッピング機能は、ノードのインストール時にのみ設定できます。グリッド内のアクティブノードのポートの再マッピングを実装するには、そのノードをインストール前の状態にリセットする必要があります。これは破壊的な手順 であり、設定の変更後にノードをリカバリすることも含まれます。
+
+
+
+=== ログとデータベースをバックアップします
+
+管理ノードには、監査ログ、Prometheus指標のほか、属性、アラーム、アラートに関する履歴情報が格納されます。管理ノードが複数あるということは、このデータのコピーが複数あることを意味します。グリッドに管理ノードが複数ない場合は、このプロセスの最後でノードがリカバリされたあとにリストアできるように、このデータを保持しておく必要があります。グリッドに別の管理ノードがある場合は、リカバリプロセス中にそのノードからデータをコピーできます。グリッド内に別の管理ノードがない場合は、ノードを破棄する前に、次の手順に従ってデータをコピーできます。
+
+
+
+==== 監査ログをコピーする
+
+. 管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@_grid_node_IP_`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド `ssh-add`
+.. に記載されているSSHアクセスパスワードを入力します `Passwords.txt` ファイル。
++
+ When you are logged in as root, the prompt changes from `$` to `#`.
+
+
+. すべての監査ログファイルを別のグリッドノードの一時的な場所にコピーするディレクトリを作成します。lets use_storage_node_01_：
++
+.. `ssh admin@_storage_node_01_IP_`
+.. `mkdir -p /var/local/tmp/saved-audit-logs`
+
+
+. 管理ノードに戻り、AMSサービスを停止して新しいログファイルが作成されないようにします。 `service ams stop`
+. audit.log ファイルの名前を変更して、リカバリした管理ノードへのコピー時に既存のファイルが上書きされないようにします。
++
+.. audit.log の名前を、 yyyy-mm-dd.txt.1 などの一意の番号の付いたファイル名に変更します。たとえば、監査ログファイルの名前を2015-10-25.txt.1に変更できます
++
+[source, console]
+----
+cd /var/local/audit/export
+ls -l
+mv audit.log 2015-10-25.txt.1
+----
+
+
+. AMSサービスを再起動します。 `service ams start`
+. すべての監査ログファイルをコピーします。 `scp * admin@_storage_node_01_IP_:/var/local/tmp/saved-audit-logs`
+
+
+
+
+==== Prometheusデータをコピー
+
+
+NOTE: Prometheus データベースのコピーには 1 時間以上かかる場合があります。管理ノードでサービスが停止している間は、Grid Managerの一部の機能が使用できなくなります。
+
+. Prometheusデータを別のグリッドノードの一時的な場所にコピーするディレクトリを作成します。この場合もuser_storage_node_01_：
++
+.. ストレージノードにログインします。
++
+... 次のコマンドを入力します。 `ssh admin@_storage_node_01_IP_`
+... に記載されているパスワードを入力します `Passwords.txt` ファイル。
+... mkdir -p /var/local/tmp/prometheus
+
+
+
+
+. 管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@_admin_node_IP_`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド `ssh-add`
+.. に記載されているSSHアクセスパスワードを入力します `Passwords.txt` ファイル。
++
+ When you are logged in as root, the prompt changes from `$` to `#`.
+
+
+. 管理ノードから、Prometheusサービスを停止します。 `service prometheus stop`
++
+.. ソース管理ノードのPrometheusデータベースをストレージノードのバックアップ先ノードにコピーします。 `/rsync -azh --stats "/var/local/mysql_ibdata/prometheus/data" "_storage_node_01_IP_:/var/local/tmp/prometheus/"`
+
+
+. ソース管理ノードでPrometheusサービスを再起動します.`service prometheus start`
+
+
+
+
+==== 履歴情報をバックアップします
+
+履歴情報はMySQLデータベースに保存されます。データベースのコピーをダンプするには、ネットアップのユーザとパスワードが必要です。グリッド内に別の管理ノードがある場合は、この手順は必要なく、リカバリプロセス中に残りの管理ノードからデータベースをクローニングできます。
+
+. 管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@_admin_node_IP_`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド `ssh-add`
+.. に記載されているSSHアクセスパスワードを入力します `Passwords.txt` ファイル。
++
+ When you are logged in as root, the prompt changes from `$` to `#`.
+
+
+. 管理ノードでStorageGRID サービスを停止し、NTPとMySQLを起動します
++
+.. すべてのサービスを停止します。 `service servermanager stop`
+.. NTPサービスを再開します。 `service ntp start`.. MySQLサービスを再起動します。 `service mysql start`
+
+
+. miデータベースを/var/local/tmpにダンプします
++
+.. 次のコマンドを入力します。 `mysqldump –u _username_ –p _password_ mi > /var/local/tmp/mysql-mi.sql`
+
+
+. MySQLダンプファイルを別のノードにコピーします。ここでは_storage_node_01を使用します。
+`scp /var/local/tmp/mysql-mi.sql _storage_node_01_IP_:/var/local/tmp/mysql-mi.sql`
++
+.. 他のサーバにパスワードなしでアクセスする必要がなくなった場合は、 SSH エージェントから秘密鍵を削除します。入力するコマンド `ssh-add -D`
+
+
+
+
+
+
+=== 管理ノードをリビルドします
+
+グリッド内の別の管理ノードに必要なすべてのデータとログのバックアップコピーが作成されたか、一時的な場所に格納されたので、次にアプライアンスをリセットしてポートの再マッピングを設定します。
+
+. アプライアンスをリセットすると、アプライアンスは事前にインストールされた状態に戻り、ホスト名、IP、およびネットワーク設定のみが保持されます。すべてのデータが失われるため、重要な情報のバックアップが確実に作成されます。
++
+.. 次のコマンドを入力します。 `sgareinstall`
++
+[source, console]
+----
+root@sg100-01:~ # sgareinstall
+WARNING: All StorageGRID Webscale services on this node will be shut down.
+WARNING: Data stored on this node may be lost.
+WARNING: You will have to reinstall StorageGRID Webscale to this node.
+
+After running this command and waiting a few minutes for the node to reboot,
+browse to one of the following URLs to reinstall StorageGRID Webscale on
+this node:
+
+    https://10.193.174.192:8443
+    https://10.193.204.192:8443
+    https://169.254.0.1:8443
+
+Are you sure you want to continue (y/n)? y
+Renaming SG installation flag file.
+Initiating a reboot to trigger the StorageGRID Webscale appliance installation wizard.
+
+----
+
+
+. しばらくするとアプライアンスがリブートし、ノードのPGE UIにアクセスできるようになります。
+. [Configure Networking]にアクセスします
++
+image:port-remap/remap_link.png["[ポートの再マッピング]を選択します"]
+
+. 目的のネットワーク、プロトコル、方向、およびポートを選択し、[Add Rule]ボタンをクリックします。
++
+
+NOTE: グリッドネットワーク上のインバウンドポート443を再マッピングすると、インストールおよび拡張手順が中断されます。グリッドネットワークのポート443を再マッピングすることは推奨されません。
+
++
+image:port-remap/app_remap.png["ポートの再マッピングをネットワークに追加します"]
+
+. 必要なポートの再マッピングが追加されている場合は、ホームタブに戻り、[Start Installation]ボタンをクリックします。
+
+
+で管理ノードのリカバリ手順を実行できるようになりました link:https://docs.netapp.com/us-en/storagegrid-116/maintain/recovering-from-admin-node-failures.html["製品ドキュメント"]
+
+
+
+== データベースとログをリストアします
+
+管理ノードのリカバリが完了したら、指標、ログ、履歴情報をリストアできます。グリッドに別の管理ノードがある場合は、に従ってください link:https://docs.netapp.com/us-en/storagegrid-116/maintain/recovering-from-admin-node-failures.html["製品ドキュメント"] _prometheus-clone-db.sh_and_mi-clone-db.sh_scriptsを使用する。これが唯一の管理ノードであり、このデータをバックアップすることを選択した場合は、次の手順に従って情報を復元できます。
+
+
+
+=== 監査ログをコピーして元に戻します
+
+. 管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@_grid_node_IP_`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド `ssh-add`
+.. に記載されているSSHアクセスパスワードを入力します `Passwords.txt` ファイル。
++
+ When you are logged in as root, the prompt changes from `$` to `#`.
+
+
+. 保持されている監査ログファイルをリカバリされた管理ノードにコピーします。 `scp admin@_grid_node_IP_:/var/local/tmp/saved-audit-logs/YYYY* .`
+. セキュリティ上の理由により、監査ログがリカバリされた管理ノードにコピーされたことを確認したら、監査ログを障害グリッドノードから削除します。
+. リカバリされた管理ノードで、監査ログファイルのユーザとグループの設定を更新します。 `chown ams-user:bycast *`
+
+
+監査共有への既存のクライアントアクセスもリストアする必要があります。詳細については、 StorageGRID の管理手順を参照してください。
+
+
+
+=== Prometheus指標をリストア
+
+
+NOTE: Prometheus データベースのコピーには 1 時間以上かかる場合があります。管理ノードでサービスが停止している間は、Grid Managerの一部の機能が使用できなくなります。
+
+. 管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@_grid_node_IP_`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド `ssh-add`
+.. に記載されているSSHアクセスパスワードを入力します `Passwords.txt` ファイル。
++
+ When you are logged in as root, the prompt changes from `$` to `#`.
+
+
+. 管理ノードから、Prometheusサービスを停止します。 `service prometheus stop`
++
+.. 一時的なバックアップ場所から管理ノードにPrometheusデータベースをコピーします。 `/rsync -azh --stats "_backup_node_:/var/local/tmp/prometheus/" "/var/local/mysql_ibdata/prometheus/"`
+.. データが正しいパスにあり、完全であることを確認します `ls /var/local/mysql_ibdata/prometheus/data/`
+
+
+. ソース管理ノードでPrometheusサービスを再起動します.`service prometheus start`
+
+
+
+
+=== 履歴情報をリストアします
+
+. 管理ノードにログインします。
++
+.. 次のコマンドを入力します。 `ssh admin@_grid_node_IP_`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. 次のコマンドを入力してrootに切り替えます。 `su -`
+.. に記載されているパスワードを入力します `Passwords.txt` ファイル。
+.. SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド `ssh-add`
+.. に記載されているSSHアクセスパスワードを入力します `Passwords.txt` ファイル。
++
+ When you are logged in as root, the prompt changes from `$` to `#`.
+
+
+. 代替ノードからMySQLダンプファイルをコピーします。 `scp grid_node_IP_:/var/local/tmp/mysql-mi.sql /var/local/tmp/mysql-mi.sql`
+. 管理ノードでStorageGRID サービスを停止し、NTPとMySQLを起動します
++
+.. すべてのサービスを停止します。 `service servermanager stop`
+.. NTPサービスを再開します。 `service ntp start`.. MySQLサービスを再起動します。 `service mysql start`
+
+
+. miデータベースを削除し、新しい空のデータベースを作成します。 `mysql -u _username_ -p _password_ -A mi -e "drop database mi; create database mi;"`
+. データベースダンプからMySQLデータベースをリストアします。 `mysql -u _username_ -p _password_ -A mi < /var/local/tmp/mysql-mi.sql`
+. 他のすべてのサービスを再起動します `service servermanager start`
+

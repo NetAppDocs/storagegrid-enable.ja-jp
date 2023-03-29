@@ -50,6 +50,10 @@ homepage:
       url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
     - title: 検索統合サービスを設定する
       url: "/product-feature-guides/storagegrid-search-integration-service.html"
+    - title: ノードクローンに関する考慮事項とパフォーマンス
+      url: "/product-feature-guides/node-clone.html"
+    - title: ポート再マッピングの使用方法
+      url: "/product-feature-guides/port-remap.html"
   - title: ツールおよびアプリケーションガイド
     links:
     - title: Cloudera Hadoop S3Aコネクタを使用します
@@ -62,12 +66,16 @@ homepage:
       url: "/tools-apps-guides/elk-instructions.html"
     - title: PrometheusとGrafanaを使用して指標の保持を拡張します
       url: "/tools-apps-guides/federate-prometheus.html"
+    - title: StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します
+      url: "/tools-apps-guides/use-datadog-snmp.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証
       url: "/examples/test-demonstrate-S3-encryption.html"
     - title: S3オブジェクトのロックをテストして実証
       url: "/examples/test-demonstrate-S3-object-lock.html"
+    - title: バケットポリシーとグループポリシーの例
+      url: "/examples/bucket-policy-examples.html"
   - title: デモチュートリアル
     links:
     - title: StorageGRID ビデオライブラリ

@@ -1,0 +1,121 @@
+---
+permalink: tools-apps-guides/use-datadog-snmp.html 
+sidebar: sidebar 
+keywords: datadog, snmp 
+summary: StorageGRID SNMPメトリクスとトラップを収集するようにDatadog HQを構成します。 
+---
+= Datadog SNMP構成
+:allow-uri-read: 
+
+
+[role="lead"]
+StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します。
+
+
+
+== Datadogを構成します
+
+Datadogは、メトリクス、ビジュアライゼーション、アラートを提供する監視解決策 です。次の構成は、StorageGRID システムのローカルに配置されたUbuntu 22.04.1ホスト上のLinuxエージェントバージョン7.43.1で実装されました。
+
+
+
+=== StorageGRID MIBファイルから生成されたDatadogプロファイルおよびトラップファイル
+
+Datadogは、製品MIBファイルをSNMPメッセージのマッピングに必要なdatadog参照ファイルに変換する方法を提供します。
+
+見つかった命令に従って生成されたDatadogトラップ解決マッピング用のこのStorageGRID YAMLファイル https://docs.datadoghq.com/network_monitoring/devices/snmp_traps/?tab=yaml["こちらをご覧ください"^]。+このファイルを/etc/datadog-agent/conf.d/snmp.d/traps_db/+に配置します
+
+* link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml["トラップYAMLファイルをダウンロードします"] [+]
++
+** * MD5チェックサム* 42e27e4210719945a46172b98c379517以降
+** * SHA256チェックサム* d0fe5c8e6ca3c902d054f854b70a85f928cba8b7c76391d356f05d2cf73b6887以降
+
+
+
+
+見つかった命令に従って生成されたDatadogメトリクスマッピング用のこのStorageGRID プロファイルYAMLファイル https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/["こちらをご覧ください"^]。+このファイルを/etc/datadog-agent/conf.d/snmp.d/profiles/+に配置します
+
+* link:../media/datadog/netapp-storagegrid.yaml["プロファイルYAMLファイルをダウンロードします"] [+]
++
+** * MD5チェックサム* 72bb7784f4801adda4e0c3ea77df19aa+
+** * SHA256チェックサム* b6b7fadd33063422a8bb8e39b3ead8ab349ee0229926eadc8585f0087b8cee+
+
+
+
+
+
+
+=== メトリクスのSNMP Datadog構成
+
+メトリックのSNMPの設定は、2つの方法で管理できます。自動検出を設定するには、StorageGRID システムを含むネットワークアドレス範囲を指定するか、個 々 のデバイスのIPを定義します。設定の場所は、決定内容によって異なります。自動検出は、datadogエージェントのYAMLファイルで定義されます。明示的なデバイス定義は、SNMP設定YAMLファイルで設定されます。以下に、同じStorageGRID システムのそれぞれの例を示します。
+
+
+
+==== 自動検出
+
+設定は/etc/datadog-agent/datadog.yamlにあります
+
+[source, yaml]
+----
+listeners:
+  - name: snmp
+snmp_listener:
+  workers: 100  # number of workers used to discover devices concurrently
+  discovery_interval: 3600  # interval between each autodiscovery in seconds
+  loader: core  # use core check implementation of SNMP integration. recommended
+  use_device_id_as_hostname: true  # recommended
+  configs:
+    - network_address: 10.0.0.0/24  # CIDR subnet
+      snmp_version: 2
+      port: 161
+      community_string: 'st0r@gegrid'  # enclose with single quote
+      profile: netapp-storagegrid
+----
+
+
+==== 個 々 のデバイス
+
+/etc/datadog-agent/conf.d/snmp.d/conf.yaml
+
+[source, yaml]
+----
+init_config:
+  loader: core  # use core check implementation of SNMP integration. recommended
+  use_device_id_as_hostname: true  # recommended
+instances:
+- ip_address: '10.0.0.1'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'  # enclose with single quote
+- ip_address: '10.0.0.2'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'
+- ip_address: '10.0.0.3'
+  profile: netapp-storagegrid
+ community_string: 'st0r@gegrid'
+- ip_address: '10.0.0.4'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'
+----
+
+
+=== トラップのSNMP設定
+
+SNMPトラップの構成は、datadog構成YAMLファイル/etc/datadog-agent/datadog.yamlで定義されています
+
+[source, yaml]
+----
+network_devices:
+  namespace:  # optional, defaults to “default”.
+  snmp_traps:
+    enabled: true
+    port: 9162 # on which ports to listen for traps
+    community_strings: # which community strings to allow for v2 traps
+      - st0r@gegrid
+----
+
+
+=== StorageGRID のSNMP設定例
+
+StorageGRID システムのSNMPエージェントは、[Configuration]タブの[Monitoring]列にあります。SNMPを有効にし、必要な情報を入力します。トラップを構成する場合は、[Traps Destinations]を選択し、トラップ構成を含むDatadogエージェントホストの宛先を作成します。
+
+image::../media/datadog/sg_snmp_conf.png[StorageGRID SNMPの設定]

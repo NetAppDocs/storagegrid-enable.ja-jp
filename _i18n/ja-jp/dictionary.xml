@@ -778,4 +778,232 @@
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">必要なもの</block>
   <block id="9db3241b54bebb9425e6b4d63d712bb2" category="paragraph-title">想定される結果です</block>
   <block id="e3cd39cab4140108c69a9666712a418b" category="list-text">Veritas NetBackup 10.1.1以降</block>
+  <block id="bb1497981ff73cef48984bbf2d12f88d" category="summary">StorageGRID SNMPメトリクスとトラップを収集するようにDatadog HQを構成します。</block>
+  <block id="1d93d7550158f858bd468fbde662a33b" category="doc">Datadog SNMP構成</block>
+  <block id="eb2afb3c5447bd1a294d03f85bdbf78f" category="paragraph">StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します。</block>
+  <block id="254e743ae1bb1477fc76b5f265d1b669" category="section-title">Datadogを構成します</block>
+  <block id="8ba5d4dc38f50df01cecfabd149412dd" category="paragraph">Datadogは、メトリクス、ビジュアライゼーション、アラートを提供する監視解決策 です。次の構成は、StorageGRID システムのローカルに配置されたUbuntu 22.04.1ホスト上のLinuxエージェントバージョン7.43.1で実装されました。</block>
+  <block id="44719a19440665d12ba92afc2fa7ee3a" category="section-title">StorageGRID MIBファイルから生成されたDatadogプロファイルおよびトラップファイル</block>
+  <block id="af2ae71ceff4ddeec277e30874556f23" category="paragraph">Datadogは、製品MIBファイルをSNMPメッセージのマッピングに必要なdatadog参照ファイルに変換する方法を提供します。</block>
+  <block id="9555064e7f86713428cb59d575ff3094" category="paragraph">見つかった命令に従って生成されたDatadogトラップ解決マッピング用のこのStorageGRID YAMLファイル<block ref="f343456bb923e7885796647eeadd3d6e" category="inline-link-rx"></block>。+このファイルを/etc/datadog-agent/conf.d/snmp.d/traps_db/+に配置します</block>
+  <block id="75ba4473ac4c25785bc326af04575c33" category="inline-link-macro">トラップYAMLファイルをダウンロードします</block>
+  <block id="3e53958fa504c3583e8828bcb2bf3916" category="list-text"><block ref="461124e25f1a3166dde077560e5de2e8" category="inline-link-macro-rx"></block> [+]</block>
+  <block id="f8270aacb253f160ebc0e425a2587b7b" category="list-text">* MD5チェックサム* 42e27e4210719945a46172b98c379517以降</block>
+  <block id="93d38624cd5c44ecfa7169d96b24a075" category="list-text">* SHA256チェックサム* d0fe5c8e6ca3c902d054f854b70a85f928cba8b7c76391d356f05d2cf73b6887以降</block>
+  <block id="92fd2ccb250e828423815a378d8d3826" category="paragraph">見つかった命令に従って生成されたDatadogメトリクスマッピング用のこのStorageGRID プロファイルYAMLファイル<block ref="3045d5a4d00639b5530941114ac5cf83" category="inline-link-rx"></block>。+このファイルを/etc/datadog-agent/conf.d/snmp.d/profiles/+に配置します</block>
+  <block id="d2dd3c2a17a766ace1b1579f47e2fb56" category="inline-link-macro">プロファイルYAMLファイルをダウンロードします</block>
+  <block id="2cfc11f4b4bdccb2c0363e65e6ef371b" category="list-text"><block ref="170544ba2681432bd143113cc39acf47" category="inline-link-macro-rx"></block> [+]</block>
+  <block id="08a71a3ef2942911802e950874c5f3e5" category="list-text">* MD5チェックサム* 72bb7784f4801adda4e0c3ea77df19aa+</block>
+  <block id="06724753af3a8dde065ac4a183962269" category="list-text">* SHA256チェックサム* b6b7fadd33063422a8bb8e39b3ead8ab349ee0229926eadc8585f0087b8cee+</block>
+  <block id="445562a58e90a6652889435ed9ad0c4e" category="section-title">メトリクスのSNMP Datadog構成</block>
+  <block id="d06e2ca98a9d51ff9586ddb7e12ca3ca" category="paragraph">メトリックのSNMPの設定は、2つの方法で管理できます。自動検出を設定するには、StorageGRID システムを含むネットワークアドレス範囲を指定するか、個 々 のデバイスのIPを定義します。設定の場所は、決定内容によって異なります。自動検出は、datadogエージェントのYAMLファイルで定義されます。明示的なデバイス定義は、SNMP設定YAMLファイルで設定されます。以下に、同じStorageGRID システムのそれぞれの例を示します。</block>
+  <block id="b5fac60116712074e4581a0451a7d934" category="section-title">自動検出</block>
+  <block id="aa456ba5b2a0193fe062645b5f7e8d06" category="paragraph">設定は/etc/datadog-agent/datadog.yamlにあります</block>
+  <block id="f3fe7f4238c77636cfd3cb9045c1d862" category="section-title">個 々 のデバイス</block>
+  <block id="494f3f84f8f27f7e6a534b587f59eb86" category="paragraph">/etc/datadog-agent/conf.d/snmp.d/conf.yaml</block>
+  <block id="8ee614ce7a2c762cd130b8e12208891f" category="section-title">トラップのSNMP設定</block>
+  <block id="d22624c97bdf44f40377df61b6463bc6" category="paragraph">SNMPトラップの構成は、datadog構成YAMLファイル/etc/datadog-agent/datadog.yamlで定義されています</block>
+  <block id="629386ff1e9bf6511474fca8de181896" category="section-title">StorageGRID のSNMP設定例</block>
+  <block id="2a9f8de2dc701df774b911de893f1dcc" category="paragraph">StorageGRID システムのSNMPエージェントは、[Configuration]タブの[Monitoring]列にあります。SNMPを有効にし、必要な情報を入力します。トラップを構成する場合は、[Traps Destinations]を選択し、トラップ構成を含むDatadogエージェントホストの宛先を作成します。</block>
+  <block id="3bcc2a20e293e30e57142a6f40a3f3b9" category="image-alt">StorageGRID SNMPの設定</block>
+  <block id="db5cf800912823f17ae08432336e8fc1" category="summary">ポート再マッピングの使用方法</block>
+  <block id="acaf7e6854a9128b9491ba362d72abd1" category="doc">ポート再マッピングの使用方法</block>
+  <block id="f58678d019bf671b6804715b8a92be9f" category="paragraph">さまざまな理由で、着信ポートまたは発信ポートの再マッピングが必要になることがあります。従来のCLBロードバランササービスから現在のnginxサービスロードバランサエンドポイントに移行し、同じポートを維持してクライアントへの影響を軽減する場合、管理ノードクライアントネットワークのクライアントS3にポート443を使用する場合、またはファイアウォールの制限に使用する場合があります。</block>
+  <block id="4a0a1689981e56bfe0cae3cedb6a2794" category="section-title">ポートの再マッピングを使用して、S3クライアントをCLBからNGINXに移行します</block>
+  <block id="bbaaf9c22d5e2039997011dbc346f453" category="paragraph">StorageGRID 11.3より前のリリースでは、ゲートウェイノードに含まれているロードバランササービスはConnection Load Balancer（CLB）です。StorageGRID 11.3では、HTTPトラフィックのロードバランシングを実現する機能豊富な統合解決策 として、NGINXサービスが導入されました。CLBサービスは現在のリリースのStorageGRID でも引き続き使用できるため、新しいロードバランサエンドポイントの設定でポート8082を再利用することはできません。この問題を回避するために、8082インバウンドポートが10443に再マッピングされます。これにより、ゲートウェイのポート8082に着信するすべてのHTTPS要求は、CLBサービスをバイパスしてNGINXサービスに接続し、ポート10443にリダイレクトされます。以下の手順はVMwareを対象としていますが、PORT_REMAP機能はすべてのインストール方法に適用され、ベアメタル環境とアプライアンスでも同様のプロセスを使用できます。</block>
+  <block id="7726cb4ae51497b918d06ab5c00bcc41" category="section-title">VMware仮想マシンゲートウェイノードの導入</block>
+  <block id="32c57c85de9742d548e025b40fcb450b" category="paragraph">次の手順は、StorageGRID Open Virtualization Format（OVF）を使用してゲートウェイノードをVMとしてVMware vSphere 7に導入するStorageGRID 環境を対象としています。このプロセスでは、VMを破壊的に削除し、同じ名前と構成でVMを再導入します。VMの電源をオンにする前に、vAppプロパティを変更してポートを再マッピングし、VMの電源をオンにしてノードのリカバリプロセスに従います。</block>
+  <block id="7c8213913912043a5b5fc24ca449cb0c" category="list-text">StorageGRID 11.3以降を実行している</block>
+  <block id="c502d2640b4493815312b1ec133633e4" category="list-text">インストールされているStorageGRID バージョンのVMwareインストールファイルをダウンロードし、アクセスできるようにしておきます。</block>
+  <block id="9c64cd89435575e44f429843d544ef5f" category="list-text">VMの電源オン/オフ、VMおよびvAppの設定の変更、vCenterからのVMの削除、OVFによるVMの導入を行う権限を持つvCenterアカウントが必要です。</block>
+  <block id="8815fdf6ff2c55e7296dffb2aec14521" category="list-text">ロードバランサエンドポイントを作成しておきます</block>
+  <block id="a66196ce653d06d45221584bf8852afb" category="list-text">ポートが目的のリダイレクトポートに設定されている</block>
+  <block id="31d78e3c03fd7966ea974e218ee9e7e0" category="list-text">エンドポイントのSSL証明書がCLBサービス用の[Configuration]/[Server Certificates]/[Object Storage API Service Endpoints Server Certificate]にインストールされているものと同じであるか、クライアントが証明書の変更を承認できる。</block>
+  <block id="bcb202433930795c39aeaaaac1732e14" category="section-title">最初のゲートウェイノードを削除します</block>
+  <block id="8b492c89f3e9eadb813da7cd99b82545" category="paragraph">最初のゲートウェイノードを削除するには、次の手順を実行します。</block>
+  <block id="9088243625c17cecb6cc9cbb8fab3cdb" category="list-text">グリッドに複数のノードがある場合は、開始するゲートウェイノードを選択します。</block>
+  <block id="f578499a6a5d4e99e51260ea6f901c94" category="list-text">必要に応じて、すべてのDNSラウンドロビンエンティティまたはロードバランサプールからノードIPを削除します。</block>
+  <block id="7c756592f17f71e15e66ceae005b5721" category="list-text">Time-To-Live（TTL）と開いているセッションが期限切れになるまで待ちます。</block>
+  <block id="5c2e6ff175e76bb9e990068801b548a8" category="list-text">VMノードの電源をオフにします。</block>
+  <block id="478ceb19860ae182e1eebf6d11e90791" category="list-text">ディスクからVMノードを削除します。</block>
+  <block id="e753b6d0c296afcb396f7c9d7092ef0b" category="section-title">交換用ゲートウェイノードを導入します</block>
+  <block id="e9bdcbe25d437987ed75a39aadaaecae" category="paragraph">交換用ゲートウェイノードを導入するには、次の手順を実行します。</block>
+  <block id="f02589424168a3ac3057a3a896c3be98" category="list-text">サポートサイトからダウンロードしたインストールパッケージから.ovf、.mf、.vmdkファイルを選択して、OVFから新しいVMを導入します。</block>
+  <block id="7b22456f38890563bcb235553bd7d9ee" category="list-text">vsphere-gateway.mf</block>
+  <block id="dbdfc6d64b5d051e203939b63154bddb" category="list-text">vSphere-gateway.ovf</block>
+  <block id="67e5f0e53462232f2aa589a464eea4b8" category="list-text">NetApp-sg-11.4.0-20200721.1338.d3969b3.vmdk</block>
+  <block id="579b803b8e20891c89683e797fdbd01f" category="list-text">導入が完了したら、VMのリストからVMを選択し、[Configure]タブ[vApp Options]を選択します。</block>
+  <block id="07ab08f304d7cfe4d3d5ea13bbde9f1d" category="inline-image-macro">[vApp options]タブ</block>
+  <block id="d24354c28f6eda12a84300886d0bae91" category="paragraph"><block ref="d24354c28f6eda12a84300886d0bae91" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c9fc6d8e3be4de1d4c27b9f0b82c5e2a" category="list-text">[Properties]セクションまで下にスクロールし、PORT_REMAP_INBOUNDプロパティを選択します</block>
+  <block id="9e24f5887a5bfec21b66a7a9bf2c2e9e" category="inline-image-macro">インバウンドのポート再マッピング</block>
+  <block id="b234cd8b9202dfa24815cd14203cde1a" category="paragraph"><block ref="b234cd8b9202dfa24815cd14203cde1a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="44149ca1e58524f8537ae00b2d6e4b99" category="list-text">[プロパティ]リストの一番上までスクロールし、[編集]をクリックします</block>
+  <block id="fb1b9b4a3c929c6a466a1452400315f4" category="inline-image-macro">[編集]ボタン</block>
+  <block id="dcb0bfe5be50507cbd364a2d0fdfd056" category="paragraph"><block ref="dcb0bfe5be50507cbd364a2d0fdfd056" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e8c86fd50178cb280113dfa414bfaef" category="list-text">[タイプ]タブを選択し、[ユーザー設定可能]チェックボックスがオンになっていることを確認して、[保存]をクリックします。</block>
+  <block id="71f961422f32dab92bd408435e59e11f" category="inline-image-macro">[Type]タブ</block>
+  <block id="9c15e570ff0d3a398f314911048e34f6" category="paragraph"><block ref="9c15e570ff0d3a398f314911048e34f6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="083e7091efe8fb649ee9fb0c0870917c" category="list-text">「PORT_REMAP_INBOUND」プロパティが選択された状態で、[Properties]リストの上部にある[Set Value]をクリックします。</block>
+  <block id="58a9fe2002d87ad86a952f2aa06b652f" category="inline-image-macro">[値の設定]ボタン</block>
+  <block id="2f4bfe6caa4a2e3bf8657b624787ecf2" category="paragraph"><block ref="2f4bfe6caa4a2e3bf8657b624787ecf2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7cabe4a6c37ea2ab4c5afff39965feca" category="list-text">[Property Value]フィールドに、ネットワーク（グリッド、管理者、またはクライアント）、TCP、元のポート（8082）、および新しいポート（10443）をそれぞれの値の間にを含めて入力します（次の図を参照）。</block>
+  <block id="c8e309d9efc8bcc3c0a6de4a0a6bde89" category="inline-image-macro">プロパティ値</block>
+  <block id="03a85f67d3528d13af543e9104884bf5" category="paragraph"><block ref="03a85f67d3528d13af543e9104884bf5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b755dc1994e1391a0aff77ad323c4d58" category="list-text">複数のネットワークを使用している場合は、カンマ（,）を使用してネットワークの文字列を区切ります（例：grid/tcp/8082/10443、admin/tcp/8082/10443、client/tcp/8082/10443）</block>
+  <block id="a053ed3549ecf3e6087e7328aeace847" category="section-title">ゲートウェイノードをリカバリ</block>
+  <block id="0e495d4bce7b9fde6238de8cfff28959" category="paragraph">ゲートウェイノードをリカバリするには、次の手順を実行します。</block>
+  <block id="7679db7e2b0055ab46be43f42a01bf23" category="list-text">グリッド管理UIの[Maintenance/Recovery]セクションに移動します。</block>
+  <block id="e46a0719f8df97ff4d12f03dd8ce959c" category="inline-image-macro">[Maintenance]メニュー</block>
+  <block id="6724e2cab4809a16c4c5d1a71c4efc8a" category="paragraph"><block ref="6724e2cab4809a16c4c5d1a71c4efc8a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c086be1149c183dc763a11cf3ad5faea" category="list-text">VMノードの電源をオンにし、ノードがグリッド管理UIの[Maintenance/Recovery Pending Nodes]セクションに表示されるまで待ちます。</block>
+  <block id="b91ce83799a5a14738726ef1b7dbd9f7" category="inline-image-macro">リカバリを保留中です</block>
+  <block id="1a47c5b4c56facc13874c121e4100dcc" category="paragraph"><block ref="1a47c5b4c56facc13874c121e4100dcc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bf30086dfd38bd897ca450b6573d0874" category="list-text">ノードのリカバリが完了したら、すべてのDNSラウンドロビンエンティティまたはロードバランサプール（該当する場合）にIPを含めることができます。</block>
+  <block id="6b6336923a8b76c43c7d0a3bd89a11ce" category="paragraph">これで、ポート8082のHTTPSセッションはポート10443に接続されます</block>
+  <block id="eca02f566d0b3032cdf4b10c546bf899" category="section-title">管理ノードでクライアントS3アクセス用のポート443を再マッピングします</block>
+  <block id="5ed2b115742b0eff3aa61d09c627a761" category="paragraph">StorageGRID システムでの管理ノード、または管理ノードを含むHAグループのデフォルトの設定は、ポート443と80が管理およびテナントマネージャUI用に予約されており、ロードバランサエンドポイントには使用できません。これへの解決策 では、ポートの再マッピング機能を使用して、インバウンドポート443をロードバランサエンドポイントとして設定される新しいポートにリダイレクトします。完了したクライアントS3トラフィックでポート443を使用できるようになると、グリッド管理UIにはポート8443経由でのみアクセスでき、テナント管理UIにはポート9443経由でのみアクセスできるようになります。ポートの再マッピング機能は、ノードのインストール時にのみ設定できます。グリッド内のアクティブノードのポートの再マッピングを実装するには、そのノードをインストール前の状態にリセットする必要があります。これは破壊的な手順 であり、設定の変更後にノードをリカバリすることも含まれます。</block>
+  <block id="18c1a696eb608448df297bede4857b98" category="section-title">ログとデータベースをバックアップします</block>
+  <block id="014c03da469f3067ccc3ff9bebacc715" category="paragraph">管理ノードには、監査ログ、Prometheus指標のほか、属性、アラーム、アラートに関する履歴情報が格納されます。管理ノードが複数あるということは、このデータのコピーが複数あることを意味します。グリッドに管理ノードが複数ない場合は、このプロセスの最後でノードがリカバリされたあとにリストアできるように、このデータを保持しておく必要があります。グリッドに別の管理ノードがある場合は、リカバリプロセス中にそのノードからデータをコピーできます。グリッド内に別の管理ノードがない場合は、ノードを破棄する前に、次の手順に従ってデータをコピーできます。</block>
+  <block id="b51ed4bc19034de7a115af8950bb1e14" category="section-title">監査ログをコピーする</block>
+  <block id="b49d416c5f1ef8021854b13b24ab8093" category="list-text">管理ノードにログインします。</block>
+  <block id="c7aa9be1c8fd37c075edba3a4073253f" category="list-text">次のコマンドを入力します。<block ref="893fbdaf85496f428ec5ee3fb396b601" prefix=" " category="inline-code"></block></block>
+  <block id="700a38780f22dd0bcf544970e8d449e6" category="list-text">に記載されているパスワードを入力します<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> ファイル。</block>
+  <block id="aacfb09e5ff36425a74a452ef6b304fb" category="list-text">次のコマンドを入力してrootに切り替えます。<block ref="305eb7199fe9189e006b2d60d7221664" prefix=" " category="inline-code"></block></block>
+  <block id="d5ed36cf573fac8e8c5a8bb8d1be3d4b" category="list-text">SSH エージェントに SSH 秘密鍵を追加します。入力するコマンド<block ref="3f7bb7914b751ca9467e926e5ad5c306" prefix=" " category="inline-code"></block></block>
+  <block id="c0e5dff85f9da9a642946e884fdc4f4a" category="list-text">に記載されているSSHアクセスパスワードを入力します<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> ファイル。</block>
+  <block id="28a6869f1b6015dcee0791c0407f14b2" category="list-text">すべての監査ログファイルを別のグリッドノードの一時的な場所にコピーするディレクトリを作成します。lets use_storage_node_01_：</block>
+  <block id="0a61743bb33ab598f7fde50d348546b0" category="list-text"><block ref="70a89925f7bd7f97d974d84f8e94caec" prefix="" category="inline-code"></block></block>
+  <block id="a42ba8884ec16cd9952837d8ec5309cc" category="list-text"><block ref="aa394b245c0bf48947593a677f05d8d6" prefix="" category="inline-code"></block></block>
+  <block id="e1083ceccf1ce237984866a9d2fc9267" category="list-text">管理ノードに戻り、AMSサービスを停止して新しいログファイルが作成されないようにします。<block ref="7746f9f32013186f9d484d9201f0ab64" prefix=" " category="inline-code"></block></block>
+  <block id="8acc534ecf057b9ef50d01827f7d07cb" category="list-text">audit.log ファイルの名前を変更して、リカバリした管理ノードへのコピー時に既存のファイルが上書きされないようにします。</block>
+  <block id="f2d95467df0c137dbcfd23af2c4ac061" category="list-text">audit.log の名前を、 yyyy-mm-dd.txt.1 などの一意の番号の付いたファイル名に変更します。たとえば、監査ログファイルの名前を2015-10-25.txt.1に変更できます</block>
+  <block id="d5ec7f781f03902f72576ed5d4973025" category="list-text">AMSサービスを再起動します。<block ref="ae8918f1e1a4da1db2bc24c7571b1a06" prefix=" " category="inline-code"></block></block>
+  <block id="540fe4d620139f77d8a99273336086b6" category="list-text">すべての監査ログファイルをコピーします。<block ref="da5b29edacd9088471c331eb4f58fc3e" prefix=" " category="inline-code"></block></block>
+  <block id="9f195229ea460e36d2a4e12c22a35e14" category="section-title">Prometheusデータをコピー</block>
+  <block id="cc670fc4a71e44ccb42fd7b0de6174d0" category="admonition">Prometheus データベースのコピーには 1 時間以上かかる場合があります。管理ノードでサービスが停止している間は、Grid Managerの一部の機能が使用できなくなります。</block>
+  <block id="7310684c8dcbbfaabdf20201a8358cd2" category="list-text">Prometheusデータを別のグリッドノードの一時的な場所にコピーするディレクトリを作成します。この場合もuser_storage_node_01_：</block>
+  <block id="0da0fdfdce25fb3258c8606dd3c98a96" category="list-text">ストレージノードにログインします。</block>
+  <block id="e3e3892db3fe841f9e2b77b7e3818040" category="list-text">次のコマンドを入力します。<block ref="70a89925f7bd7f97d974d84f8e94caec" prefix=" " category="inline-code"></block></block>
+  <block id="f81680a45409f9d92d776cda7d01fffd" category="list-text">mkdir -p /var/local/tmp/prometheus</block>
+  <block id="94975e4b13e4b0a18c40a960c94db2a8" category="list-text">次のコマンドを入力します。<block ref="aeb11d865bcf0a27bb503f64cd61cb76" prefix=" " category="inline-code"></block></block>
+  <block id="20d93dfee3e8f8ae30d5b9a4f8efa05b" category="list-text">管理ノードから、Prometheusサービスを停止します。<block ref="b9b286406d96941553a3bebbe76c28bd" prefix=" " category="inline-code"></block></block>
+  <block id="d12ee7875165dfef46eee53bc35da76b" category="list-text">ソース管理ノードのPrometheusデータベースをストレージノードのバックアップ先ノードにコピーします。<block ref="598c3ef030113ed40ad1803686162013" prefix=" " category="inline-code"></block></block>
+  <block id="1ed2f8c537da823e46ad98b460d5d692" category="list-text">ソース管理ノードでPrometheusサービスを再起動します<block ref="b48ed4a1625d38512cd50d69778280dd" prefix="." category="inline-code"></block></block>
+  <block id="ad9f13c5d36c9f45b4e07d4467312b13" category="section-title">履歴情報をバックアップします</block>
+  <block id="40df7a99a836d18d1b5d034d8fcb27a8" category="paragraph">履歴情報はMySQLデータベースに保存されます。データベースのコピーをダンプするには、ネットアップのユーザとパスワードが必要です。グリッド内に別の管理ノードがある場合は、この手順は必要なく、リカバリプロセス中に残りの管理ノードからデータベースをクローニングできます。</block>
+  <block id="3efbc9cf8ba869958267ac5011fe55e1" category="list-text">管理ノードでStorageGRID サービスを停止し、NTPとMySQLを起動します</block>
+  <block id="71c1a198ee24c736ef0a4a6df4372089" category="list-text">すべてのサービスを停止します。<block ref="e83661e5ce1c75f30a71cf8416b27985" prefix=" " category="inline-code"></block></block>
+  <block id="02330fc2569188fc76ebc99072cff940" category="list-text">NTPサービスを再開します。<block ref="4c55c6ee391e66baa62612dc411cec8f" prefix=" " category="inline-code"></block>.. MySQLサービスを再起動します。<block ref="3cc0f2d0774d9775766d87414c4abca7" prefix=" " category="inline-code"></block></block>
+  <block id="3a690a8e59bdafa2a85ce89baf8e5d01" category="list-text">miデータベースを/var/local/tmpにダンプします</block>
+  <block id="bde616ae3c777920f0bcc1ed12db00d5" category="list-text">次のコマンドを入力します。<block ref="6d6e7f126bda96413a8f3ea19ac835d3" prefix=" " category="inline-code"></block></block>
+  <block id="199d0f3fb4293bac252ec8967ddd7d96" category="list-text">MySQLダンプファイルを別のノードにコピーします。ここでは_storage_node_01を使用します。<block ref="a2fc9066a3870628039495b25ae9a581" prefix=" " category="inline-code"></block></block>
+  <block id="771556d7cb27e2cb35e5f32feb21d918" category="list-text">他のサーバにパスワードなしでアクセスする必要がなくなった場合は、 SSH エージェントから秘密鍵を削除します。入力するコマンド<block ref="967573583b668b75c5fc1ee963c90dcf" prefix=" " category="inline-code"></block></block>
+  <block id="7d472759bb91ca188e73eca550264098" category="section-title">管理ノードをリビルドします</block>
+  <block id="395778abed17f7247a6f475834cb20b3" category="paragraph">グリッド内の別の管理ノードに必要なすべてのデータとログのバックアップコピーが作成されたか、一時的な場所に格納されたので、次にアプライアンスをリセットしてポートの再マッピングを設定します。</block>
+  <block id="b58725c9e70484536a8104e6968330f9" category="list-text">アプライアンスをリセットすると、アプライアンスは事前にインストールされた状態に戻り、ホスト名、IP、およびネットワーク設定のみが保持されます。すべてのデータが失われるため、重要な情報のバックアップが確実に作成されます。</block>
+  <block id="570eece822439c557c87aceefc36c83e" category="list-text">次のコマンドを入力します。<block ref="571dba577857f204f77672c0f6ac8adb" prefix=" " category="inline-code"></block></block>
+  <block id="994ff1bbb04f124b59b3dd4a433092d0" category="list-text">しばらくするとアプライアンスがリブートし、ノードのPGE UIにアクセスできるようになります。</block>
+  <block id="e0c8d6ece2eaab52ccd3626588818424" category="list-text">[Configure Networking]にアクセスします</block>
+  <block id="ef4629263d4d3026510ab03b348385aa" category="inline-image-macro">[ポートの再マッピング]を選択します</block>
+  <block id="2bc8e44de2063c0bd15ca5716f63f7e0" category="paragraph"><block ref="2bc8e44de2063c0bd15ca5716f63f7e0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d1860aedee67c6087f6eae17d49c67d" category="list-text">目的のネットワーク、プロトコル、方向、およびポートを選択し、[Add Rule]ボタンをクリックします。</block>
+  <block id="914553520d8387b82a2e431e0b5e6fa3" category="admonition">グリッドネットワーク上のインバウンドポート443を再マッピングすると、インストールおよび拡張手順が中断されます。グリッドネットワークのポート443を再マッピングすることは推奨されません。</block>
+  <block id="9cf22d7237e8977b5bb6bc54a7354822" category="inline-image-macro">ポートの再マッピングをネットワークに追加します</block>
+  <block id="a93f7571d3de7b14fc5d89b0ece8d2f0" category="paragraph"><block ref="a93f7571d3de7b14fc5d89b0ece8d2f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1b08be650ccd06f880223bd76fffb99f" category="list-text">必要なポートの再マッピングが追加されている場合は、ホームタブに戻り、[Start Installation]ボタンをクリックします。</block>
+  <block id="b8891129cb3bcf5e407a67d926f3bd1e" category="inline-link-macro">製品ドキュメント</block>
+  <block id="15f0a90501b756c24e6d343c84e4078a" category="paragraph">で管理ノードのリカバリ手順を実行できるようになりました <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block></block>
+  <block id="1adf202b129f9e83a673c523cd7da7db" category="section-title">データベースとログをリストアします</block>
+  <block id="2e81f3580bf75e530e45d917ff610977" category="paragraph">管理ノードのリカバリが完了したら、指標、ログ、履歴情報をリストアできます。グリッドに別の管理ノードがある場合は、に従ってください <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block> _prometheus-clone-db.sh_and_mi-clone-db.sh_scriptsを使用する。これが唯一の管理ノードであり、このデータをバックアップすることを選択した場合は、次の手順に従って情報を復元できます。</block>
+  <block id="2342c57da462f804cdb591ec0ca6ceaa" category="section-title">監査ログをコピーして元に戻します</block>
+  <block id="a2a3a502b45fb89ba1d9303936a7e686" category="list-text">保持されている監査ログファイルをリカバリされた管理ノードにコピーします。<block ref="6dcbbb26d45053e5f47d0b73dcecfc94" prefix=" " category="inline-code"></block></block>
+  <block id="bb0c9dd565ff22196c9f53b7afafbfe7" category="list-text">セキュリティ上の理由により、監査ログがリカバリされた管理ノードにコピーされたことを確認したら、監査ログを障害グリッドノードから削除します。</block>
+  <block id="189e459b7ed177b1cc4b563548d35288" category="list-text">リカバリされた管理ノードで、監査ログファイルのユーザとグループの設定を更新します。<block ref="abee3d65b7b57cee8c94fded57a55207" prefix=" " category="inline-code"></block></block>
+  <block id="51e28758f5f753869640ff2adc89a740" category="paragraph">監査共有への既存のクライアントアクセスもリストアする必要があります。詳細については、 StorageGRID の管理手順を参照してください。</block>
+  <block id="cff2429f8c7d0ffe88a80318e06ad501" category="section-title">Prometheus指標をリストア</block>
+  <block id="eaa4cd36290d05ba867b2ea202a10368" category="list-text">一時的なバックアップ場所から管理ノードにPrometheusデータベースをコピーします。<block ref="718131237ea05acf6992f18ac2f8aedb" prefix=" " category="inline-code"></block></block>
+  <block id="35fbd282b6be1c639d18dbbfee5a515a" category="list-text">データが正しいパスにあり、完全であることを確認します<block ref="a6e471816e977d8c8b3ad6e50bb665a7" prefix=" " category="inline-code"></block></block>
+  <block id="95851e41012b92671405610713f9be07" category="section-title">履歴情報をリストアします</block>
+  <block id="2e3176cf0ca0cad27315d04ff4f1f330" category="list-text">代替ノードからMySQLダンプファイルをコピーします。<block ref="6fea65c037f881565c5d3978a7621ab1" prefix=" " category="inline-code"></block></block>
+  <block id="5d6b7577e78ea8622551d7d8b594739f" category="list-text">miデータベースを削除し、新しい空のデータベースを作成します。<block ref="3fd0ac1b867547f517ff52c8a34404b7" prefix=" " category="inline-code"></block></block>
+  <block id="04f7cb6c96995efd4544d9aea7d367e7" category="list-text">データベースダンプからMySQLデータベースをリストアします。<block ref="f974d0852a2926a4c22e84a291796005" prefix=" " category="inline-code"></block></block>
+  <block id="791d173d918d01c3efa10c1659c765b6" category="list-text">他のすべてのサービスを再起動します<block ref="a43fd6d3adcec2efeeccefc813e98004" prefix=" " category="inline-code"></block></block>
+  <block id="62cd2922fb38a43eb8ae93c468da88ca" category="summary">ノードクローンのパフォーマンスとベストプラクティス</block>
+  <block id="747e53224e14f8ffd8f420441eeacdfb" category="doc">ノードクローン</block>
+  <block id="39d1cd38bd99e33fd79bc582303ae95b" category="paragraph">ノードクローンに関する考慮事項とパフォーマンス</block>
+  <block id="fe01737f428d9c9f4d4b2b11bac8f0ac" category="section-title">ノードクローンに関する考慮事項</block>
+  <block id="fd9609261971e45a6f20f4eef4e556ec" category="paragraph">ノードクローンを使用すると、機器更改（Tech Refresh）の際に既存のアプライアンスノードをすばやく交換したり、容量を増やしたり、StorageGRID システムのパフォーマンスを向上させたりできます。ノードクローンは、KMSを使用したノード暗号化への変換や、ストレージノードをDDP8からDDP16に変更する場合にも役立ちます。</block>
+  <block id="801e380cd60cbc46ace287ac94d8df7f" category="list-text">ソースノードの使用済み容量は、クローンプロセスの完了に必要な時間とは関係ありません。ノードクローンは、ノードの空きスペースを含むノードのフルコピーです。</block>
+  <block id="6551b5fd023b8131e66c5c1d8fa14218" category="list-text">ソースアプライアンスとデスティネーションアプライアンスのPGEバージョンが同じである必要があります</block>
+  <block id="0b3c750dc36564d8a9d0f002d6abbb31" category="list-text">デスティネーションノードの容量は常にソースノードよりも大きくする必要があります</block>
+  <block id="aac6d98bf2c7ac3800b9172fc2a67404" category="list-text">新しいデスティネーションアプライアンスのドライブサイズがソースよりも大きいことを確認します</block>
+  <block id="eeb6a1581fc15133d1c3602cc34fd461" category="list-text">デスティネーションアプライアンスのドライブサイズが同じで、DDP8用に設定されている場合は、DDP16用にデスティネーションを設定できます。ソースがすでにDDP16用に設定されている場合、ノードのクローニングは実行できません。</block>
+  <block id="639a958d74ef218710689b55aa4ef73e" category="list-text">SG5660またはSG5760アプライアンスからSG6060アプライアンスに移行する場合、SG5x60には容量ドライブが60本搭載されていますが、SG6060には58本しか搭載されていません。</block>
+  <block id="4d1c46cee1bdcec65653b2e2163398e0" category="list-text">ノードのクローニングプロセスでは、クローニングプロセスの実行中はソースノードがグリッドに対してオフラインになっている必要があります。この間に追加のノードがオフラインになると、クライアントサービスに影響する可能性があります。</block>
+  <block id="83d1a0f23bb258b2a270a1d6f7ff51d7" category="list-text">ストレージノードをオフラインにできるのは15日間だけです。クローニングプロセスの推定日数が15日に近い場合、または15日を超える場合は、拡張と運用停止の手順を使用します。</block>
+  <block id="efde8725bd1e96e2479c137c19099fae" category="list-text">拡張シェルフを搭載したSG6060では、正しいシェルフドライブサイズの時間をベースアプライアンスの時間に追加して、フルクローン期間を取得する必要があります。</block>
+  <block id="fec00ca7ab315b679cc642c66a770bd8" category="section-title">ノードクローンのパフォーマンスを見積もります</block>
+  <block id="517e3359377bb6a7ea9488482299838f" category="paragraph">次の表に、ノードクローンの所要時間の推定値を示します。条件は状況によって異なるため、*太字*で示されたエントリは、ノードが停止した場合に15日を超えるリスクがあります。</block>
+  <block id="39ab52e8aaafa95380d3f56ccd8095d9" category="section-title">DDP8</block>
+  <block id="bb4e622c7d3edd2670cd4402fda0dfce" category="section-title">SG5612 -&gt;任意</block>
+  <block id="a88a341631b814f619579143455d7353" category="cell">ネットワークインターフェイスの速度</block>
+  <block id="690f7bdfae387972bf437193506dbb33" category="cell">4TBドライブサイズ</block>
+  <block id="a6994b6b2103b87f98052b644780d5a0" category="cell">8TBドライブサイズ</block>
+  <block id="7d409920d4d29e64eca4583c4c9878e4" category="cell">10TBドライブサイズ</block>
+  <block id="53a214e589c7b00227e50e2e4652edf7" category="cell">12TBドライブサイズ</block>
+  <block id="315ee247762dbc69dfb6d29e7839c677" category="cell">16TBドライブサイズ</block>
+  <block id="961dc732adc5c5176ec88ea3d066b357" category="cell">18TBのドライブサイズ</block>
+  <block id="4ac1352d5b927390a1b2f14dac0647d9" category="paragraph">10Gb</block>
+  <block id="0d730df753ae6a369323fe6dc1641eb2" category="paragraph">1 日</block>
+  <block id="2b5c88bc8c875f79745514e9af2f348f" category="paragraph">2日</block>
+  <block id="0f9222aa150538e6d20d3870ea6dec57" category="paragraph">2.5日</block>
+  <block id="14cad5137a2254d53fde198d52e70109" category="paragraph">3日</block>
+  <block id="6c32f983ee38ad5089298aa659cd011c" category="paragraph">4日</block>
+  <block id="a5dffc518be58d2936a993ee100d71b6" category="paragraph">4.5日</block>
+  <block id="e5d3435cf14793a49310fa8d85bcc4a1" category="paragraph">25GB</block>
+  <block id="885e215d2d15d2ac1b34e5b8d416f86a" category="section-title">SG5712 -&gt;任意</block>
+  <block id="97fce1ba98948ee51fbf31978af80696" category="section-title">SG5660 -&gt; SG5760を選択してください</block>
+  <block id="9958432b6417f293cb0d15128b08e42f" category="paragraph">3日間</block>
+  <block id="366adabd6f1babc8138db3063adaf869" category="paragraph">6日</block>
+  <block id="374616a0b786e9bffadc7f28e68d6c59" category="paragraph">7 日</block>
+  <block id="51ab732b98b519b5e54ce60864cc8d69" category="paragraph">8.5日</block>
+  <block id="b00a84012a03b35beb30466d8baa4a1c" category="paragraph">11.5日</block>
+  <block id="194ae66ddb8567ab63da3b82c925fa03" category="paragraph">* 13日*</block>
+  <block id="85c75ace300325f8e407a841eb055d37" category="section-title">SG5660 -&gt; SG6060</block>
+  <block id="61cab577ce1bed82e1b5d7caacb7456b" category="paragraph">2.5日</block>
+  <block id="bf30897fe2ce34b7e9f89291e20d9eae" category="paragraph">5.5日</block>
+  <block id="e5fd76b3288061d2c2638ccc41688416" category="paragraph">6.5日</block>
+  <block id="281f41b6564c9e63e16d67b1c07a46e5" category="paragraph">9日</block>
+  <block id="38efedfd69ad005a6e0b0393682636db" category="paragraph">10日間</block>
+  <block id="e727fed489e8b7eecf1901196ec3ede9" category="paragraph">2日間</block>
+  <block id="6383598717ae8ac458dc988dff77c800" category="paragraph">5日</block>
+  <block id="79e241fd6b320cbb41d67b028ec6f1c0" category="paragraph">8日間</block>
+  <block id="c6a6ab48074fa03db6df437c1f27b415" category="section-title">SG5760 -&gt; SG5760</block>
+  <block id="4c0768167e7e249808ed4bd4ad28b2ed" category="section-title">SG5760 -&gt; SG6060</block>
+  <block id="2a8a1b5738432b51afcd4dcbbbfe1434" category="paragraph">1.5日</block>
+  <block id="9e6b8df1cd23e71938af979057e5144a" category="paragraph">3.5日</block>
+  <block id="bf0581629b559d1033e12e37f31bb0d7" category="section-title">SG6060 -&gt; SG6060</block>
+  <block id="7da42b5478786d91e64cb31ec52e2511" category="paragraph">9.5日</block>
+  <block id="d2bfdb3de60e1c2f154e5f9fa5a1dfc1" category="section-title">DDP16</block>
+  <block id="00471150fc4d84adcd57392d7a47a3cb" category="paragraph">3.5日</block>
+  <block id="85ba217056d3540506dc11016ec224e3" category="paragraph">12.5日</block>
+  <block id="69a1b13f0c02f82aace898a3521485c7" category="paragraph">* 14日*</block>
+  <block id="383aea8468a529b339b755e27b1d4668" category="paragraph">7.5日</block>
+  <block id="9ff416b798a88ec4bfb30f4f045aada5" category="paragraph">11日だ</block>
+  <block id="ed01ec12331788a408398b059da47a39" category="paragraph">10.5日</block>
+  <block id="ec3751d915801591991ca3553c2fa5a7" category="section-title">拡張シェルフ（ソースアプライアンスの各シェルフについて、上記のSG6060に追加）</block>
+  <block id="fc1e2d26b4330f83ecfffe3439410229" category="summary">バケットポリシーとグループポリシー（IAMポリシー）の例を次に示します。</block>
+  <block id="3f2327c90ede247dca9387ef500bf746" category="doc">バケットポリシーとグループポリシー（IAM）の例</block>
+  <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">グループポリシー（IAM）</block>
+  <block id="06c73db3763c74cabb8ece8e96fe7c5d" category="section-title">ホームディレクトリ形式のバケットアクセス</block>
+  <block id="0a86daa722ca043525363e55dce2f201" category="paragraph">このポリシーでは、users usernameという名前のバケット内のオブジェクトへのアクセスのみがユーザに許可されます。</block>
+  <block id="8569c05df75ec9b148a67ed5998ad8b0" category="section-title">オブジェクトロックバケットの作成を拒否します</block>
+  <block id="9cea9229d238df9d490e17e9c09f43d4" category="paragraph">このポリシーを適用すると、ユーザはバケットでオブジェクトロックを有効にしてバケットを作成できなくなります。</block>
+  <block id="01a232853896677ed5b2f61bbd35128f" category="paragraph">このポリシーはStorageGRID UIでは適用されず、S3 APIでのみ適用されます。</block>
+  <block id="6d16e4029056ceaf0b44cac8903e3f2e" category="section-title">バケットを読み取り専用アクセス権を持つ単一ユーザに制限します</block>
+  <block id="c49b1c74a2176733b070d19773700eb6" category="paragraph">このポリシーでは、1人のユーザにバケットへの読み取り専用アクセスを許可し、他のすべてのユーザへのアクセスを明示的に拒否します。評価を迅速に行うには、ポリシーの先頭にDenyステートメントをグループ化することを推奨します。</block>
+  <block id="a6bea44dd82287d3b479cc898439fad9" category="sidebar">ノードクローンに関する考慮事項とパフォーマンス</block>
+  <block id="e5b8a0443d27d612e7426f6f3f8681c2" category="sidebar">StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します</block>
+  <block id="45c8288f990abd9a185e596536152688" category="sidebar">バケットポリシーとグループポリシーの例</block>
 </blocks>

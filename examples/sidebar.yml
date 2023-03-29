@@ -6,3 +6,5 @@ entries:
   url: "/examples/test-demonstrate-S3-encryption.html"
 - title: S3オブジェクトロックのテストと実証
   url: "/examples/test-demonstrate-S3-object-lock.html"
+- title: バケットポリシーとグループポリシーの例
+  url: "/examples/bucket-policy-examples.html"

@@ -12,3 +12,5 @@ entries:
   url: "/tools-apps-guides/elk-instructions.html"
 - title: PrometheusとGrafanaを使用して指標の保持を拡張します
   url: "/tools-apps-guides/federate-prometheus.html"
+- title: StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します
+  url: "/tools-apps-guides/use-datadog-snmp.html"
