@@ -37,7 +37,7 @@ summary: StorageGRID 11.4で検証済みのサードパーティソリューシ�
 * Point Storage Manager 6.4
 * プリミティブストリーム
 * Quantum StorNext 5.4.0.1
-* RUBRIK CDM 5.0.1 p1-1342
+* Rubrik CDMの略
 * シグニエント
 * Splunk Smartstore
 * ニスエンタープライズ6.0.4
