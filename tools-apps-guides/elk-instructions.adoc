@@ -8,6 +8,8 @@ summary: StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ロ
 :allow-uri-read: 
 
 
+Angela Cheng_
+
 [role="lead"]
 StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください https://www.netapp.tv/details/29396["エルク・ビデオを使用したStorageGRID ログ解析"] サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
 

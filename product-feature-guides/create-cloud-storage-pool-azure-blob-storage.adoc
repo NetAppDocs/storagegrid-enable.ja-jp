@@ -6,9 +6,9 @@ summary: StorageGRID オブジェクトを外部のAzureコンテナに移動す
 ---
 = Azure Blob Storage用のクラウドストレージプールを作成します
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Jonathan Wong_
 
 [role="lead"]
 StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。

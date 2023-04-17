@@ -6,9 +6,9 @@ summary: S3cmdは、S3処理用の無償のコマンドラインツールおよ�
 ---
 = S3cmdを使用して、StorageGRID でS3アクセスをテストおよび実証します
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Aron Klein_
 
 [role="lead"]
 S3cmdは、S3処理用の無償のコマンドラインツールおよびクライアントです。s3cmdを使用して、StorageGRID でのS3アクセスをテストして実証できます。

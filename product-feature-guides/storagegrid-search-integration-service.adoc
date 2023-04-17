@@ -6,9 +6,9 @@ summary: このガイドでは、Amazon StorageGRID 11.6検索統合サービス
 ---
 = StorageGRID 検索統合サービスを設定する
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+Angela Cheng_
 
 [role="lead"]
 このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。

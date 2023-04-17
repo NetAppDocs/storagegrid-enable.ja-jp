@@ -8,6 +8,8 @@ summary: このテクニカルレポートでは、外部のPrometheusサービ�
 :allow-uri-read: 
 
 
+_Aron Klein_
+
 [role="lead"]
 このテクニカルレポートでは、外部のPrometheusサービスおよびGrafanaサービスでNetApp StorageGRID 11.6を設定する詳しい手順を説明します。
 

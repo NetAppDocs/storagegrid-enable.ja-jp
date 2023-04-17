@@ -14,3 +14,5 @@ entries:
   url: "/tools-apps-guides/federate-prometheus.html"
 - title: StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します
   url: "/tools-apps-guides/use-datadog-snmp.html"
+- title: rcloneを使用して、StorageGRID 上のオブジェクトを移行、PUT、および削除します
+  url: "/tools-apps-guides/use-rclone-migrate-delete.html"

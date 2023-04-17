@@ -6,9 +6,9 @@ summary: StorageGRID オブジェクトを外部のS3バケットに移動する
 ---
 = AWSまたはGoogle Cloud用のクラウドストレージプールを作成します
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Jonathan Wong_
 
 [role="lead"]
 StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。

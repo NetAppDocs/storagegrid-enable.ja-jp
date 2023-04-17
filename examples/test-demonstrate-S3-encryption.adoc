@@ -6,9 +6,9 @@ summary: StorageGRID とS3 APIには、保存データを暗号化するため�
 ---
 = StorageGRID でS3暗号化オプションをテストして実証
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Aron Klein_
 
 [role="lead"]
 StorageGRID とS3 APIには、保存データを暗号化するためのさまざまな方法が用意されています。詳細については、を参照してください https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html["StorageGRID の暗号化方式を確認します"^]。

@@ -8,6 +8,8 @@ summary: StorageGRID SNMPメトリクスとトラップを収集するようにD
 :allow-uri-read: 
 
 
+_Aron Klein_
+
 [role="lead"]
 StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します。
 

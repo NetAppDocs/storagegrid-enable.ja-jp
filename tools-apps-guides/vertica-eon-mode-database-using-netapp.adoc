@@ -6,9 +6,9 @@ summary: このガイドでは、NetApp StorageGRID のパブリックストレ�
 ---
 = NetApp StorageGRID を共有ストレージとして使用したVertica Eonモードのデータベース
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+Angela Cheng_
 
 [role="lead"]
 このガイドでは、NetApp StorageGRID のパブリックストレージを使用してVertica Eon Modeデータベースを作成する手順 について説明します。

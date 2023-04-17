@@ -6,9 +6,9 @@ summary: バックアップ用にクラウドストレージプールにオブ�
 ---
 = クラウドストレージプールをバックアップに使用する
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
+
+_Jonathan Wong_
 
 [role="lead"]
 バックアップ用にクラウドストレージプールにオブジェクトを移動するILMルールを作成できます。
