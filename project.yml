@@ -12,20 +12,16 @@ sidebar:
   entries:
   - title: StorageGRID を有効にする方法
     url: "/index.html"
-  - title: 新機能
-    url: "/whats-new.html"
   - section: third-party
   - section: product-feature-guides
   - section: tools-apps-guides
   - section: examples
+  - title: ブログの投稿
+    url: "/blogs.html"
   - title: StorageGRID のドキュメント
     url: "/storagegrid-documentation.html"
 homepage:
   tiles:
-  - title: はじめに
-    links:
-    - title: 新機能
-      url: "/whats-new.html"
   - title: 検証済みのサードパーティソリューション
     links:
     - title: 概要
@@ -78,6 +74,10 @@ homepage:
       url: "/examples/test-demonstrate-S3-object-lock.html"
     - title: バケットポリシーとグループポリシーの例
       url: "/examples/bucket-policy-examples.html"
+  - title: ブログの投稿
+    links:
+    - title: StorageGRID ブログ
+      url: "/blogs.html"
   - title: デモチュートリアル
     links:
     - title: StorageGRID ビデオライブラリ

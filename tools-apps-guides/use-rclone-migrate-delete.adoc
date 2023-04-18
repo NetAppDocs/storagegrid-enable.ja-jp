@@ -324,6 +324,10 @@ e/n/d/r/c/s/q> q
 #rclone mkdir sgdemo：test01
 
 ====
++
+
+NOTE: SSL証明書を無視する必要がある場合は、--no-check-certificateを使用します。
+
 * *すべてのバケットを表示：*
 +
 `rclone lsd remote:`
