@@ -1096,4 +1096,5 @@
   <block id="85037d90107af2b45fca2bb43a9f291e" category="summary">StorageGRID 11.7で検証済みの他社製ソリューション</block>
   <block id="b46c07776ecb7ae8067bc1552a439f7b" category="doc">StorageGRID 11.7で検証済みのサードパーティソリューション</block>
   <block id="9480cbe24fa04a10e30355eb0f12d82c" category="sidebar">StorageGRID 11.7.</block>
+  <block id="89188812a26ecaeff35e35d0bffb0d62" category="paragraph">以下のサードパーティソリューションは、StorageGRID 11.7での使用が検証済みです。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。</block>
 </blocks>
