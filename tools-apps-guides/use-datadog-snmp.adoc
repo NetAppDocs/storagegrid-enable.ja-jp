@@ -25,7 +25,7 @@ Datadogは、メトリクス、ビジュアライゼーション、アラート�
 
 Datadogは、製品MIBファイルをSNMPメッセージのマッピングに必要なdatadog参照ファイルに変換する方法を提供します。
 
-見つかった命令に従って生成されたDatadogトラップ解決マッピング用のこのStorageGRID YAMLファイル https://docs.datadoghq.com/network_monitoring/devices/snmp_traps/?tab=yaml["こちらをご覧ください"^]。+このファイルを/etc/datadog-agent/conf.d/snmp.d/traps_db/+に配置します
+見つかった命令に従って生成されたDatadogトラップ解決マッピング用のこのStorageGRID YAMLファイル https://["こちらをご覧ください"^]。+このファイルを/etc/datadog-agent/conf.d/snmp.d/traps_db/+に配置します
 
 * link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml["トラップYAMLファイルをダウンロードします"] [+]
 +
@@ -35,7 +35,7 @@ Datadogは、製品MIBファイルをSNMPメッセージのマッピングに必
 
 
 
-見つかった命令に従って生成されたDatadogメトリクスマッピング用のこのStorageGRID プロファイルYAMLファイル https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/["こちらをご覧ください"^]。+このファイルを/etc/datadog-agent/conf.d/snmp.d/profiles/+に配置します
+見つかった命令に従って生成されたDatadogメトリクスマッピング用のこのStorageGRID プロファイルYAMLファイル https://["こちらをご覧ください"^]。+このファイルを/etc/datadog-agent/conf.d/snmp.d/profiles/+に配置します
 
 * link:../media/datadog/netapp-storagegrid.yaml["プロファイルYAMLファイルをダウンロードします"] [+]
 +

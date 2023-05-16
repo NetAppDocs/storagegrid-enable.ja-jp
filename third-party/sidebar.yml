@@ -5,6 +5,8 @@ entries:
 - title: 概要
   pdf-filename: 検証済みのサードパーティソリューション-概要
   url: "/third-party/index.html"
+- title: StorageGRID 11.7.
+  url: "/third-party/117-3rd-party-list.html"
 - title: StorageGRID 11.6
   url: "/third-party/116-3rd-party-list.html"
 - title: StorageGRID 11.5
