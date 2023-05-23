@@ -39,8 +39,8 @@ Hadoopは、データサイエンティストに今しばらくの間愛用さ�
 
 === Javaパッケージをインストールします
 
-. を確認します https://["Clouderaサポートマトリックス"^] を参照してください。
-. をダウンロードします https://["Java 11.xパッケージ"^] Clouderaクラスタオペレーティングシステムと同じです。このパッケージをクラスタ内の各ホストにコピーします。この例では、CentOSにrpmパッケージを使用しています。
+. を確認します https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html["Clouderaサポートマトリックス"^] を参照してください。
+. をダウンロードします https://www.oracle.com/java/technologies/downloads/["Java 11.xパッケージ"^] Clouderaクラスタオペレーティングシステムと同じです。このパッケージをクラスタ内の各ホストにコピーします。この例では、CentOSにrpmパッケージを使用しています。
 . 各ホストにrootとしてログインするか、sudo権限を持つアカウントを使ってログインします。各ホストで次の手順を実行します。
 +
 .. パッケージをインストールします。

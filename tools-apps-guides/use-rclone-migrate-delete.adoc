@@ -17,7 +17,7 @@ rcloneは、S3処理用の無料のコマンドラインツールでクライア
 
 == rcloneをインストールして設定します
 
-rcloneをワークステーションまたはサーバにインストールするには、からダウンロードします https://["rclone.org"^]。
+rcloneをワークステーションまたはサーバにインストールするには、からダウンロードします https://rclone.org/downloads/["rclone.org"^]。
 
 
 

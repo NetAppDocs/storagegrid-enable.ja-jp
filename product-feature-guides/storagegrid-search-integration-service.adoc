@@ -24,9 +24,9 @@ StorageGRID は、3種類のプラットフォームサービスをサポート�
 * *検索統合サービス*。外部サービスを使用してメタデータを検索または分析できるように、指定されたElasticsearchインデックスにSimple Storage Service（S3）オブジェクトメタデータを送信します。
 
 
-プラットフォームサービスは、テナントマネージャのUIを使用してS3テナントによって設定されます。詳細については、を参照してください https://["プラットフォームサービスの使用に関する考慮事項"^]。
+プラットフォームサービスは、テナントマネージャのUIを使用してS3テナントによって設定されます。詳細については、を参照してください https://docs.netapp.com/us-en/storagegrid-116/tenant/considerations-for-using-platform-services.html["プラットフォームサービスの使用に関する考慮事項"^]。
 
-このドキュメントは、の補足資料として機能します https://["StorageGRID 11.6テナントガイド"^] およびに、検索統合サービス用のエンドポイントとバケットの設定手順と例を示します。ここで紹介するAmazon Web Services（AWS）またはオンプレミスのElasticsearchセットアップの手順は、基本的なテストやデモ目的にのみ使用します。
+このドキュメントは、の補足資料として機能します https://docs.netapp.com/us-en/storagegrid-116/tenant/index.html["StorageGRID 11.6テナントガイド"^] およびに、検索統合サービス用のエンドポイントとバケットの設定手順と例を示します。ここで紹介するAmazon Web Services（AWS）またはオンプレミスのElasticsearchセットアップの手順は、基本的なテストやデモ目的にのみ使用します。
 
 対象読者は、Grid Manager、テナントマネージャに精通している必要があり、S3ブラウザにアクセスして、StorageGRID 検索統合テストの基本的なアップロード（PUT）処理とダウンロード（GET）処理を実行できます。
 
@@ -68,7 +68,7 @@ NOTE: OpenSearchサービスに登録するには、有効なAWSコンソール�
 +
 *** 強調表示されたテキストを、AWS Identity and Access Management（IAM）IDとユーザ名に置き換えます。
 *** 強調表示されているテキスト（IPアドレス）を、AWSコンソールへのアクセスに使用したローカルコンピュータのパブリックIPアドレスに置き換えます。
-*** ブラウザタブを開き、に移動します https://["https://checkip.amazonaws.com"^] をクリックして、パブリックIPを検索してください。
+*** ブラウザタブを開き、に移動します https://checkip.amazonaws.com/["https://checkip.amazonaws.com"^] をクリックして、パブリックIPを検索してください。
 +
 [source, json]
 ----
@@ -321,6 +321,6 @@ image::../media/storagegrid-search-integration-service/sg-sis-query-two-sample.p
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
 
-* https://["プラットフォームサービスとは"^]
-* https://["StorageGRID 11.6 ドキュメント"^]
+* https://docs.netapp.com/us-en/storagegrid-116/tenant/what-platform-services-are.html["プラットフォームサービスとは"^]
+* https://docs.netapp.com/us-en/storagegrid-116/index.html["StorageGRID 11.6 ドキュメント"^]
 

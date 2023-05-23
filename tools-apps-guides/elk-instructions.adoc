@@ -11,7 +11,7 @@ summary: StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ロ
 Angela Cheng_
 
 [role="lead"]
-StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください https://["エルク・ビデオを使用したStorageGRID ログ解析"] サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
+StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください https://www.netapp.tv/details/29396["エルク・ビデオを使用したStorageGRID ログ解析"] サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
 
 
 
@@ -87,7 +87,7 @@ config.reload.interval: 5s
 netstat -ntpa | grep 5000
 tcp6       0      0 :::5000                 :::*                    LISTEN      25744/java
 ----
-. StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。を参照してください https://["デモビデオ"] を参照してください。
+. StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。を参照してください https://www.netapp.tv/details/29396["デモビデオ"] を参照してください。
 . 定義されたTCPポートへのStorageGRID ノード接続を許可するには、Logstashサーバ上でファイアウォールを設定または無効にする必要があります。
 . Kibana GUIから、[Management]->[Dev Tools]を選択します。Consoleページで、次のgetコマンドを実行して、Elasticsearch上に新しいインデックスが作成されていることを確認します。
 +
@@ -117,11 +117,11 @@ image::../media/elk-config/kibana-import-conflict.png[キバナ紛争]
 
 == その他のリソース
 
-* https://["syslog101"]
-* https://["エルクスタックとは何ですか"]
-* https://["grokパターンリスト"]
-* https://["初心者向けのLogstashガイド: Grok"]
-* https://["ログスタシュの実践的なガイド：syslogの詳細"]
-* https://["Kibanaガイド–ドキュメントを参照してください"]
-* https://["StorageGRID 監査ログメッセージリファレンスです"]
+* https://coralogix.com/blog/syslog-101-everything-you-need-to-know-to-get-started/["syslog101"]
+* https://www.elastic.co/what-is/elk-stack["エルクスタックとは何ですか"]
+* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns["grokパターンリスト"]
+* https://logz.io/blog/logstash-grok/["初心者向けのLogstashガイド: Grok"]
+* https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/["ログスタシュの実践的なガイド：syslogの詳細"]
+* https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibanaガイド–ドキュメントを参照してください"]
+* https://docs.netapp.com/us-en/storagegrid-116/audit/index.html["StorageGRID 監査ログメッセージリファレンスです"]
 
