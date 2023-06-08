@@ -24,6 +24,7 @@ StorageGRID 11.3では、次のサードパーティソリューションが検�
 * Commvault 11.
 * CTERAポータル6.
 * ダレト
+* ダタドビ
 * Data Dynamics StorageXのように入力します
 * DefendX
 * Interica

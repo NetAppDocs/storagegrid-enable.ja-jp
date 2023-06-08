@@ -24,6 +24,7 @@ summary: StorageGRID 11.5で検証済みのサードパーティソリューシ�
 * Commvault 11.
 * CTERAポータル6.
 * ダレト
+* ダタドビ
 * Data Dynamics StorageXのように入力します
 * DefendX
 * Interica
