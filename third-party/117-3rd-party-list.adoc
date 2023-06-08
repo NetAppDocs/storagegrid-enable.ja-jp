@@ -19,6 +19,7 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 
 * Actifio
 * Apache Kafka です
+* ブリッジストール
 * カンテモ
 * Citrixコンテンツコラボレーション
 * Commvault 11.
@@ -79,4 +80,29 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * Veeam 11の統合によって
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1以降
+
+
+
+
+== StorageGRIDでサポートされているサードパーティソリューション
+
+これらのソリューションはテスト済みです。
+
+* アーチウェア
+* アクシスコミュニケーションズ
+* コングルーシティ360
+* DataFrameworksの略
+* EcoDigital DIVAプラットフォーム
+* Encoding.com
+* FUJIFILMオブジェクトアーカイブ
+* GE Centricity Enterprise Archiveの略
+* ハイランド・アクオ
+* IBM Aspera
+* マイルストーンシステム
+* ONSSI
+* REACHエンジン
+* SilverTrak
+* SoftNAS
+* QSTAR
+* ベラシア
 

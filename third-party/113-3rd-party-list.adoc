@@ -18,6 +18,7 @@ StorageGRID 11.3では、次のサードパーティソリューションが検�
 これらのソリューションは、それぞれのパートナーと協力してテストされています。
 
 * Actifio
+* ブリッジストール
 * カンテモ
 * Citrixコンテンツコラボレーション
 * Commvault 11.
@@ -45,4 +46,29 @@ StorageGRID 11.3では、次のサードパーティソリューションが検�
 * Veritas Enterprise Vault 12.
 * Veritas NetBackup 8.0
 * ビディズパイン
+
+
+
+
+== StorageGRIDでサポートされているサードパーティソリューション
+
+これらのソリューションはテスト済みです。
+
+* アーチウェア
+* アクシスコミュニケーションズ
+* コングルーシティ360
+* DataFrameworksの略
+* EcoDigital DIVAプラットフォーム
+* Encoding.com
+* FUJIFILMオブジェクトアーカイブ
+* GE Centricity Enterprise Archiveの略
+* ハイランド・アクオ
+* IBM Aspera
+* マイルストーンシステム
+* ONSSI
+* REACHエンジン
+* SilverTrak
+* SoftNAS
+* QSTAR
+* ベラシア
 
