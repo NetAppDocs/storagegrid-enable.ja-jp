@@ -995,9 +995,7 @@
   <block id="3f2327c90ede247dca9387ef500bf746" category="doc">バケットポリシーとグループポリシー（IAM）の例</block>
   <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">グループポリシー（IAM）</block>
   <block id="06c73db3763c74cabb8ece8e96fe7c5d" category="section-title">ホームディレクトリ形式のバケットアクセス</block>
-  <block id="0a86daa722ca043525363e55dce2f201" category="paragraph">このポリシーでは、users usernameという名前のバケット内のオブジェクトへのアクセスのみがユーザに許可されます。</block>
   <block id="8569c05df75ec9b148a67ed5998ad8b0" category="section-title">オブジェクトロックバケットの作成を拒否します</block>
-  <block id="9cea9229d238df9d490e17e9c09f43d4" category="paragraph">このポリシーを適用すると、ユーザはバケットでオブジェクトロックを有効にしてバケットを作成できなくなります。</block>
   <block id="01a232853896677ed5b2f61bbd35128f" category="paragraph">このポリシーはStorageGRID UIでは適用されず、S3 APIでのみ適用されます。</block>
   <block id="6d16e4029056ceaf0b44cac8903e3f2e" category="section-title">バケットを読み取り専用アクセス権を持つ単一ユーザに制限します</block>
   <block id="c49b1c74a2176733b070d19773700eb6" category="paragraph">このポリシーでは、1人のユーザにバケットへの読み取り専用アクセスを許可し、他のすべてのユーザへのアクセスを明示的に拒否します。評価を迅速に行うには、ポリシーの先頭にDenyステートメントをグループ化することを推奨します。</block>
@@ -1134,4 +1132,11 @@
   <block id="29007b92e2b6688072358d8f25529d24" category="paragraph"><block ref="29007b92e2b6688072358d8f25529d24" category="inline-link-rx"></block></block>
   <block id="d31ba7e4c6f469a6c88f05aac3e0e91c" category="list-text">ダタドビ</block>
   <block id="8727881150b0ace8b598a648cdfcd4e1" category="sidebar">NetApp StorageGRID は、ソフトウェアで定義されるオブジェクトストレージスイートで、パブリック、プライベート、ハイブリッドのマルチクラウド環境での幅広いユースケースに対応します。StorageGRID はAmazon S3 APIをネイティブでサポートし、自動化されたライフサイクル管理などの業界をリードする革新的なテクノロジを提供して、非構造化データを長期にわたってコスト効率よく格納、保護、保持します。</block>
+  <block id="a88f9b6efeacfebaca582083cb9bd819" category="paragraph">このグループポリシーでは、users usernameという名前のバケット内のオブジェクトへのアクセスのみがユーザに許可されます。</block>
+  <block id="a16b735f7d349dcc23b45a7a101460f3" category="paragraph">このグループポリシーでは、ユーザがバケットを作成してそのバケットでオブジェクトロックを有効にすることはできません。</block>
+  <block id="5ccd1d9b602b536952729ea6084688f1" category="section-title">オブジェクトロックの保持制限</block>
+  <block id="e2fc2c3ef79779a5164b3961924241c1" category="paragraph">このバケットポリシーでは、Object-Lockの保持期間が10日以下に制限されます</block>
+  <block id="578c6a63b7f6efe56f08f3f9c3c5a690" category="section-title">ユーザーによるオブジェクトの削除をversionIdで制限します</block>
+  <block id="151d6c6a5174c6a3f739cdb8ec8d1ce5" category="paragraph">このグループポリシーは、versionIdでバージョン管理オブジェクトを削除することをユーザに制限します</block>
+  <block id="d5c59b735ec0b06ade2e2d7c842dfe9e" category="paragraph">このバケットポリシーは、ユーザ（ユーザID「56622399308951294926」で識別）がversionIdでバージョン管理オブジェクトを削除することを制限します</block>
 </blocks>
