@@ -60,7 +60,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * Splunk Smartstore
 * ストレージが簡単になりました
 * ニスエンタープライズ6.0.4
-* Veeam 11の統合によって
+* Veeam 12
 * Veritas Enterprise Vault 14の略
 * Veritas NetBackup 8.0
 * Vertica 10.x
@@ -78,7 +78,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * CommVault 11 Feature Release 26
 * IBM FileNetの順にクリックします
 * OpenText Documentum 21.4
-* Veeam 11の統合によって
+* Veeam 12
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1以降
 
