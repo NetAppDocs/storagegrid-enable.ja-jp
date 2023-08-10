@@ -18,6 +18,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 これらのソリューションは、それぞれのパートナーと協力してテストされています。
 
 * Actifio
+* アルクシオ
 * Apache Kafka です
 * ブリッジストール
 * カンテモ
@@ -55,10 +56,12 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * Quantum StorNext 5.4.0.1
 * Reveille v10 build 220706以上
 * Rubrik CDMの略
+* s3a
 * シグニエント
 * 雪の結晶
 * Splunk Smartstore
 * ストレージが簡単になりました
+* トリノ
 * ニスエンタープライズ6.0.4
 * Veeam 12
 * Veritas Enterprise Vault 14の略
