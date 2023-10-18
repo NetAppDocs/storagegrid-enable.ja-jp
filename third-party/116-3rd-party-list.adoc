@@ -59,6 +59,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * s3a
 * シグニエント
 * 雪の結晶
+* Spectra Logic On-Prem Glacier
 * Splunk Smartstore
 * ストレージが簡単になりました
 * トリノ

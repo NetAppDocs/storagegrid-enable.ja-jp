@@ -59,6 +59,7 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * s3a
 * シグニエント
 * 雪の結晶
+* Spectra Logic On-Prem Glacier
 * Splunk Smartstore
 * ストレージが簡単になりました
 * トリノ
