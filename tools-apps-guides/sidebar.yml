@@ -7,7 +7,7 @@ entries:
 - title: S3cmdを使用してS3アクセスをテストおよび実証します
   url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"
 - title: Vertica Eon Modeデータベースを共同ストレージで作成します
-  url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"
+  url: "/tools-apps-guides/vertica-eon-mode-database-using-storagegrid.html"
 - title: ログ分析には、Elasticsearch、Logstash、Kibanaを使用します
   url: "/tools-apps-guides/elk-instructions.html"
 - title: PrometheusとGrafanaを使用して指標の保持を拡張します
