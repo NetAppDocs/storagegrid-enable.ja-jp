@@ -49,6 +49,8 @@ indexpage:
       url: "/tools-apps-guides/use-datadog-snmp.html"
     - title: rcloneを使用して、StorageGRID 上のオブジェクトを移行、PUT、および削除します
       url: "/tools-apps-guides/use-rclone-migrate-delete.html"
+    - title: StorageGRIDでVeeam Backup and Replicationを使用
+      url: "/tools-apps-guides/veeam-br.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証
