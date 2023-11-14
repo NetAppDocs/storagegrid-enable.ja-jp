@@ -1,0 +1,94 @@
+---
+permalink: tools-apps-guides/configure-Dremio-StorageGRID.html 
+sidebar: sidebar 
+keywords: Dremio, StorageGRID, lakehouse, object storage, s3 
+summary: StorageGRIDを使用したDremioデータソースの設定 
+---
+= StorageGRIDを使用したDremioデータソースの設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:firstname:  Angela
+:authorinitials:  C
+:lastname: Cheng 
+:author:  Angela Cheng 
+:authors:  Angela Cheng 
+
+
+[role="lead"]
+Dremioは、クラウドベースやオンプレミスのオブジェクトストレージなど、多様なデータソースをサポートしています。  StorageGRIDをオブジェクトストレージデータソースとして使用するようにDremioを設定できます。
+
+
+
+== Dremioデータソースの設定
+
+
+
+=== 前提条件
+
+* StorageGRID S3エンドポイントURL、テナントs3アクセスキーID、シークレットアクセスキー。
+* StorageGRID構成の推奨事項：圧縮を無効にします（デフォルトでは無効）。  [+]
+Dremioは、Byte range GETを使用して、クエリ中に同じオブジェクト内から異なるバイト範囲を同時に取得します。  バイト範囲要求の一般的なサイズは1MBです。圧縮オブジェクトを使用すると、バイト範囲GETのパフォーマンスが低下します。
+
+
+
+
+=== Dremioガイド
+
+https://docs.dremio.com/current/sonar/data-sources/object/s3/["Amazon S3への接続- S3互換ストレージの設定"^]。
+
+
+
+== 指示
+
+. [Dremio Datasets]ページで、[+]をクリックしてソースを追加し、[Amazon S3]を選択します。
+. この新しいデータソースの名前（StorageGRID S3のテナントアクセスキーIDとシークレットアクセスキー）を入力します。
+. StorageGRID S3エンドポイントへの接続にhttpsを使用する場合は、[Encrypt connection]チェックボックスをオンにします。[+]
+このs3エンドポイントで自己署名CA証明書を使用する場合は、Dremioのガイド手順に従って、このCA証明書をDremioサーバの<JAVA_HOME>/jre/lib/security+に追加します。
+*サンプルスクリーンショット*
++
+image::../media/dremio/dremio-add-source-general.png[新規ソース-全般]
+
+. [詳細オプション]をクリックし、[互換モードを有効にする]をオンにします。
+. [Connection properties]で、[+ Add Properties]をクリックして、これらのs3aプロパティを追加します。
+. fs.s3a.connection.maximumデフォルトは100です。  s3データセットに100列以上の大きな寄木細工ファイルが含まれている場合は、100より大きい値を入力する必要があります。  この設定については、Dremioのガイドを参照してください。
++
+[cols="2a,3a"]
+|===
+| 名前 | 価値 
+
+
+ a| 
+FS.s3a.endpoint
+ a| 
+_ StorageGRID S3エンドポイント：port>_
+
+
+
+ a| 
+FS.s3a.path.style.access
+ a| 
+正しいです
+
+
+
+ a| 
+fs.s3a.connection.maximum
+ a| 
+_< 100より大きい値>_
+
+|===
++
+*サンプルスクリーンショット*
+
++
+image::../media/dremio/dremio-add-source-advanced.png[新しいソース-詳細オプション]
+
+. 組織またはアプリケーションの要件に応じて、その他のDremioオプションを設定します。
+. [Save]ボタンをクリックして新しいデータソースを作成します。
+. StorageGRIDデータソースが正常に追加されると、バケットのリストが左側のパネルに表示されます。[+]
+*サンプルスクリーンショット*
++
+image::../media/dremio/dremio-source-added.png[新しいデータソースの追加]
+
+
