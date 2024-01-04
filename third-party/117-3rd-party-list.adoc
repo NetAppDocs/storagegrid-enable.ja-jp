@@ -101,6 +101,7 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * Encoding.com
 * FUJIFILMオブジェクトアーカイブ
 * GE Centricity Enterprise Archiveの略
+* Gitlab
 * ハイランド・アクオ
 * IBM Aspera
 * マイルストーンシステム
