@@ -1,15 +1,16 @@
 ---
-permalink: third-party/117-3rd-party-list.html 
+permalink: third-party/118-3rd-party-list.html 
 sidebar: sidebar 
 keywords: 11.7, third-party applications, storagegrid, ISV 
-summary: StorageGRID 11.7で検証済みの他社製ソリューション 
+summary: StorageGRID 11.8で検証済みの他社製ソリューション 
 ---
-= StorageGRID 11.7で検証済みのサードパーティソリューション
+= StorageGRID 11.8検証済みのサードパーティソリューション
 :allow-uri-read: 
 
 
 [role="lead"]
-以下のサードパーティソリューションは、StorageGRID 11.7での使用が検証済みです。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。
+以下のサードパーティソリューションは、StorageGRID 11.8での使用が検証済みです。[+]
+お探しの解決策が表示されない場合は、NetAppのアカウント担当者にお問い合わせください。
 
 
 
