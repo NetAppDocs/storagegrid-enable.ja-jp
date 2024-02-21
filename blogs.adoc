@@ -5,6 +5,7 @@ keywords: storagegrid, blogs
 summary: ネットアップのStorageGRID ブログをいくつかご紹介します。 
 ---
 = ネットアップのStorageGRID ブログ
+:hardbreaks:
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

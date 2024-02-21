@@ -830,31 +830,23 @@
   <block id="67e5f0e53462232f2aa589a464eea4b8" category="list-text">NetApp-sg-11.4.0-20200721.1338.d3969b3.vmdk</block>
   <block id="579b803b8e20891c89683e797fdbd01f" category="list-text">導入が完了したら、VMのリストからVMを選択し、[Configure]タブ[vApp Options]を選択します。</block>
   <block id="07ab08f304d7cfe4d3d5ea13bbde9f1d" category="inline-image-macro">[vApp options]タブ</block>
-  <block id="d24354c28f6eda12a84300886d0bae91" category="paragraph"><block ref="d24354c28f6eda12a84300886d0bae91" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c9fc6d8e3be4de1d4c27b9f0b82c5e2a" category="list-text">[Properties]セクションまで下にスクロールし、PORT_REMAP_INBOUNDプロパティを選択します</block>
   <block id="9e24f5887a5bfec21b66a7a9bf2c2e9e" category="inline-image-macro">インバウンドのポート再マッピング</block>
-  <block id="b234cd8b9202dfa24815cd14203cde1a" category="paragraph"><block ref="b234cd8b9202dfa24815cd14203cde1a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="44149ca1e58524f8537ae00b2d6e4b99" category="list-text">[プロパティ]リストの一番上までスクロールし、[編集]をクリックします</block>
   <block id="fb1b9b4a3c929c6a466a1452400315f4" category="inline-image-macro">[編集]ボタン</block>
-  <block id="dcb0bfe5be50507cbd364a2d0fdfd056" category="paragraph"><block ref="dcb0bfe5be50507cbd364a2d0fdfd056" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0e8c86fd50178cb280113dfa414bfaef" category="list-text">[タイプ]タブを選択し、[ユーザー設定可能]チェックボックスがオンになっていることを確認して、[保存]をクリックします。</block>
   <block id="71f961422f32dab92bd408435e59e11f" category="inline-image-macro">[Type]タブ</block>
-  <block id="9c15e570ff0d3a398f314911048e34f6" category="paragraph"><block ref="9c15e570ff0d3a398f314911048e34f6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="083e7091efe8fb649ee9fb0c0870917c" category="list-text">「PORT_REMAP_INBOUND」プロパティが選択された状態で、[Properties]リストの上部にある[Set Value]をクリックします。</block>
   <block id="58a9fe2002d87ad86a952f2aa06b652f" category="inline-image-macro">[値の設定]ボタン</block>
-  <block id="2f4bfe6caa4a2e3bf8657b624787ecf2" category="paragraph"><block ref="2f4bfe6caa4a2e3bf8657b624787ecf2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7cabe4a6c37ea2ab4c5afff39965feca" category="list-text">[Property Value]フィールドに、ネットワーク（グリッド、管理者、またはクライアント）、TCP、元のポート（8082）、および新しいポート（10443）をそれぞれの値の間にを含めて入力します（次の図を参照）。</block>
   <block id="c8e309d9efc8bcc3c0a6de4a0a6bde89" category="inline-image-macro">プロパティ値</block>
-  <block id="03a85f67d3528d13af543e9104884bf5" category="paragraph"><block ref="03a85f67d3528d13af543e9104884bf5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b755dc1994e1391a0aff77ad323c4d58" category="list-text">複数のネットワークを使用している場合は、カンマ（,）を使用してネットワークの文字列を区切ります（例：grid/tcp/8082/10443、admin/tcp/8082/10443、client/tcp/8082/10443）</block>
   <block id="a053ed3549ecf3e6087e7328aeace847" category="section-title">ゲートウェイノードをリカバリ</block>
   <block id="0e495d4bce7b9fde6238de8cfff28959" category="paragraph">ゲートウェイノードをリカバリするには、次の手順を実行します。</block>
   <block id="7679db7e2b0055ab46be43f42a01bf23" category="list-text">グリッド管理UIの[Maintenance/Recovery]セクションに移動します。</block>
   <block id="e46a0719f8df97ff4d12f03dd8ce959c" category="inline-image-macro">[Maintenance]メニュー</block>
-  <block id="6724e2cab4809a16c4c5d1a71c4efc8a" category="paragraph"><block ref="6724e2cab4809a16c4c5d1a71c4efc8a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c086be1149c183dc763a11cf3ad5faea" category="list-text">VMノードの電源をオンにし、ノードがグリッド管理UIの[Maintenance/Recovery Pending Nodes]セクションに表示されるまで待ちます。</block>
   <block id="b91ce83799a5a14738726ef1b7dbd9f7" category="inline-image-macro">リカバリを保留中です</block>
-  <block id="1a47c5b4c56facc13874c121e4100dcc" category="paragraph"><block ref="1a47c5b4c56facc13874c121e4100dcc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bf30086dfd38bd897ca450b6573d0874" category="list-text">ノードのリカバリが完了したら、すべてのDNSラウンドロビンエンティティまたはロードバランサプール（該当する場合）にIPを含めることができます。</block>
   <block id="6b6336923a8b76c43c7d0a3bd89a11ce" category="paragraph">これで、ポート8082のHTTPSセッションはポート10443に接続されます</block>
   <block id="eca02f566d0b3032cdf4b10c546bf899" category="section-title">管理ノードでクライアントS3アクセス用のポート443を再マッピングします</block>
@@ -902,11 +894,9 @@
   <block id="994ff1bbb04f124b59b3dd4a433092d0" category="list-text">しばらくするとアプライアンスがリブートし、ノードのPGE UIにアクセスできるようになります。</block>
   <block id="e0c8d6ece2eaab52ccd3626588818424" category="list-text">[Configure Networking]にアクセスします</block>
   <block id="ef4629263d4d3026510ab03b348385aa" category="inline-image-macro">[ポートの再マッピング]を選択します</block>
-  <block id="2bc8e44de2063c0bd15ca5716f63f7e0" category="paragraph"><block ref="2bc8e44de2063c0bd15ca5716f63f7e0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1d1860aedee67c6087f6eae17d49c67d" category="list-text">目的のネットワーク、プロトコル、方向、およびポートを選択し、[Add Rule]ボタンをクリックします。</block>
   <block id="914553520d8387b82a2e431e0b5e6fa3" category="admonition">グリッドネットワーク上のインバウンドポート443を再マッピングすると、インストールおよび拡張手順が中断されます。グリッドネットワークのポート443を再マッピングすることは推奨されません。</block>
   <block id="9cf22d7237e8977b5bb6bc54a7354822" category="inline-image-macro">ポートの再マッピングをネットワークに追加します</block>
-  <block id="a93f7571d3de7b14fc5d89b0ece8d2f0" category="paragraph"><block ref="a93f7571d3de7b14fc5d89b0ece8d2f0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1b08be650ccd06f880223bd76fffb99f" category="list-text">必要なポートの再マッピングが追加されている場合は、ホームタブに戻り、[Start Installation]ボタンをクリックします。</block>
   <block id="b8891129cb3bcf5e407a67d926f3bd1e" category="inline-link-macro">製品ドキュメント</block>
   <block id="15f0a90501b756c24e6d343c84e4078a" category="paragraph">で管理ノードのリカバリ手順を実行できるようになりました <block ref="c237ceedd52c48d2a2c789bd64cdcbb1" category="inline-link-macro-rx"></block></block>
@@ -1001,12 +991,8 @@
   <block id="e5b8a0443d27d612e7426f6f3f8681c2" category="sidebar">StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します</block>
   <block id="45c8288f990abd9a185e596536152688" category="sidebar">バケットポリシーとグループポリシーの例</block>
   <block id="38d38399d4a7514463d665125ae50a4a" category="list-text">Rubrik CDMの略</block>
-  <block id="bd1d0553bdfeecc93cebcd45f1a220e4" category="paragraph">_Aron Klein_</block>
-  <block id="ef5b2819cd8ee32cf57797475fc6ac0b" category="paragraph">_Jonathan Wong_</block>
-  <block id="80c122176ee490cc5a86d6ffa18ab689" category="paragraph">Angela Cheng_</block>
   <block id="5edf8edbb4c16aa5184e63b04c0b8b6d" category="summary">rcloneは、S3処理用の無料のコマンドラインツールでクライアントです。rcloneを使用して、StorageGRID 上のオブジェクトデータを移行、コピー、および削除できます。</block>
   <block id="16bf3dc54feeb86e32811292a7567606" category="doc">rcloneを使用して、StorageGRID 上のオブジェクトを移行、PUT、および削除します</block>
-  <block id="4518583de94dd09da7a8f8e98ec98386" category="paragraph">_Siegfried HeppとAron Klein_</block>
   <block id="8fc8ce37b13be17581bdf9362c7e50b2" category="paragraph">rcloneは、S3処理用の無料のコマンドラインツールでクライアントです。rcloneを使用して、StorageGRID 上のオブジェクトデータを移行、コピー、および削除できます。rcloneには、次の例に示すように、「purge」機能を使用して空でなくてもバケットを削除する機能が含まれています。</block>
   <block id="9f164cf2b6160300227f2205a159f653" category="section-title">rcloneをインストールして設定します</block>
   <block id="15b28fa90c8a5a6ac00ece9ba66eeae6" category="inline-link">rclone.org</block>
@@ -1122,7 +1108,6 @@
   <block id="14d782d4b4bcaf927ddb317c08f8c416" category="list-text"><block ref="14d782d4b4bcaf927ddb317c08f8c416" category="inline-link-macro-rx"></block></block>
   <block id="85517cd70ba2a2e551e4f0c99c6e56d7" category="summary">このガイドでは、NetApp StorageGRIDの構成と、Veeam Backup &amp; Replicationの一部を中心に説明します。本ドキュメントは、Linuxシステムに精通し、Veeam Backup &amp; Replicationと組み合わせてNetApp StorageGRIDシステムの保守または実装を担当するストレージ管理者およびネットワーク管理者を対象としています。</block>
   <block id="5a80f6f017611133cae300eeb1b8838f" category="doc">Veeam Backup &amp; Replicationを使用した導入に関するStorageGRIDのベストプラクティス</block>
-  <block id="118df32a81dd2fdb06e6ccff0f984121" category="paragraph">_Oliver HaenselとAron Klein_</block>
   <block id="3e8343417cb49b5fac72e19c07a7e1b7" category="paragraph">ストレージ管理者は、可用性、迅速なリカバリの目標を達成し、ニーズに合わせて拡張し、データの長期保存に関するポリシーを自動化するソリューションを使用して、データの増加を管理したいと考えています。これらのソリューションは、損失や悪意のある攻撃からも保護する必要があります。VeeamとNetAppは提携して、オンプレミスのオブジェクトストレージ向けのVeeam Backup &amp; RecoveryとNetApp StorageGRIDを組み合わせたデータ保護解決策を作成しました。</block>
   <block id="cb88016fd6a4561b0ba47d4d2349e01a" category="paragraph">VeeamとNetApp StorageGRIDが連携して動作する使いやすい解決策を提供することで、急速なデータ量の増大や世界的な規制強化のニーズに対応できます。クラウドベースのオブジェクトストレージは、耐障害性、拡張性、運用効率、コスト効率に優れていることで知られており、バックアップのターゲットとして最適です。本ドキュメントでは、Veeam Backup解決策およびStorageGRIDシステムの構成に関するガイダンスと推奨事項を提供します。</block>
   <block id="3f2a8b3ac5243a078416a91ba12f5677" category="paragraph">Veeamのオブジェクトワークロードによって、小規模オブジェクトのPUT、DELETE、LIST処理が同時に多数作成されます。書き換えや削除の防止を有効にすると、保持期間の設定やバージョンの表示に関する要求がオブジェクトストアに追加されます。バックアップジョブのプロセスでは、日次変更のためにオブジェクトが書き込まれます。その後、新しい書き込みが完了すると、バックアップの保持ポリシーに基づいてオブジェクトが削除されます。バックアップジョブのスケジュールは、ほとんどの場合重複します。その結果、バックアップウィンドウの大部分がオブジェクトストアに50分の50のPUT / DELETEワークロードで構成されます。タスクスロットの設定を使用して同時処理数をVeeamで調整し、バックアップジョブのブロックサイズを増やしてオブジェクトサイズを増やし、複数オブジェクトの削除要求に含まれるオブジェクト数を減らします。 また、ジョブを完了する最大期間を選択することで、解決策のパフォーマンスとコストが最適化されます。</block>
@@ -1161,49 +1146,32 @@
   <block id="6a91fddc67312e23440e7297f57a6e75" category="section-title">導入のキーポイント</block>
   <block id="0dc64850ea098a695ef04ad4917575f8" category="paragraph">不変性が必要な場合は、StorageGRIDシステムでオブジェクトロックが有効になっていることを確認します。管理UIの[Configuration]/[S3][Object Lock]にあるオプションを選択します。</block>
   <block id="21e26b17ef37d6789ef963babce3bcf7" category="inline-image-macro">Grid全体でのオブジェクトロックの有効化</block>
-  <block id="9eb0c7fe294867f4025650c8c0709e57" category="paragraph"><block ref="9eb0c7fe294867f4025650c8c0709e57" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a1d354bcc841b4fd7414aa3b5cc067b9" category="paragraph">バケットを変更不可のバックアップに使用する場合は、バケットの作成時に[Enable S3 Object Lock]を選択します。これにより、バケットのバージョン管理が自動的に有効になります。オブジェクト保持期間はVeeamによって明示的に設定されるため、デフォルトの保持期間は無効のままにします。Veeamで変更不可のバックアップが作成されていない場合は、[Versioning]と[S3 Object Lock]を選択しないでください。</block>
   <block id="a01314a14731335aa7b83dabe139b1bc" category="inline-image-macro">バケットでオブジェクトロックを有効にする</block>
-  <block id="fe418f43b0dec57499cf347d109f86b1" category="paragraph"><block ref="fe418f43b0dec57499cf347d109f86b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="913ca82ae339f347d099d594b95fc5d0" category="paragraph">バケットが作成されたら、作成したバケットの詳細ページに移動します。整合性レベルを選択します。</block>
   <block id="0bb9673c8d3a007a2aec60e0eb872235" category="inline-image-macro">バケットオプション</block>
-  <block id="0bd39904534d738466d23700af014b93" category="paragraph"><block ref="0bd39904534d738466d23700af014b93" category="inline-image-macro-rx" type="image"></block></block>
   <block id="81f068f3d3e42253d4aad514fd607d9d" category="paragraph">Veeamでは、S3バケットに対して強力な整合性が必要です。そのため、Veeamが複数の場所からデータにアクセスするマルチサイト環境の場合は、「strong-global」を選択します。Veeamのバックアップとリストアを単一サイトでのみ実行する場合は、整合性レベルを「strong-site」に設定する必要があります。変更を保存します。</block>
   <block id="b47fa19cf7fc1f946539cdca83a310f6" category="inline-image-macro">バケットの整合性</block>
-  <block id="e60d52b4e43de4ee2416f9b9d4c543ae" category="paragraph"><block ref="e60d52b4e43de4ee2416f9b9d4c543ae" category="inline-image-macro-rx" type="image"></block></block>
   <block id="33cb018e166847decbe1831bcbda0dfe" category="paragraph">StorageGRIDは、すべての管理ノードおよび専用のゲートウェイノードで統合されたロードバランササービスを提供します。このロードバランサを使用する多くの利点の1つは、トラフィック分類ポリシー（QoS）を設定できることです。主に、他のクライアントワークロードへのアプリケーションの影響を制限したり、他のクライアントワークロードよりもワークロードを優先したりするために使用されますが、監視に役立つ追加の指標収集のボーナスも提供します。</block>
   <block id="be01644f81aa9785fd9a47a133f6b06b" category="paragraph">[Configuration]タブで、[Traffic Classification]を選択し、新しいポリシーを作成します。ルールに名前を付け、タイプとしてバケットまたはテナントを選択します。バケットまたはテナントの名前を入力します。QoSが必要な場合は制限を設定しますが、ほとんどの実装では、制限を設定しないでください。</block>
   <block id="ffa056c913f2233a9d6c17d77ec6c2ea" category="inline-image-macro">TCポリシーの作成</block>
-  <block id="27b29720bc7935776a8007b13c881a1e" category="paragraph"><block ref="27b29720bc7935776a8007b13c881a1e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="05241239c2e205951eabc51d0b39de96" category="section-title">Veeamの統合によって</block>
   <block id="1747f94b0479dd6f64566f9def184149" category="paragraph">StorageGRIDアプライアンスのモデルと数によっては、バケットで同時に実行できる処理数の制限を選択して設定する必要があります。</block>
   <block id="e0c5284488d876ff3c0ab4615c30f264" category="inline-image-macro">Veeamの同時タスクの制限</block>
-  <block id="feb1270f2d249021c93d4845a9be6d8d" category="paragraph"><block ref="feb1270f2d249021c93d4845a9be6d8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="583ffa11c93d679d28e4223a3a34e9e4" category="paragraph">Veeamコンソールのバックアップジョブ設定に関するVeeamのドキュメントに従って、ウィザードを開始します。VMを追加したら、SOBRリポジトリを選択します。</block>
   <block id="2269301dc6504a2bb4291697a42d6372" category="inline-image-macro">バックアップジョブ</block>
-  <block id="f80bb521fa0915867adb4ac2385f431a" category="paragraph"><block ref="f80bb521fa0915867adb4ac2385f431a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="09b5418e51b83d62c4785d219e745382" category="paragraph">[詳細設定]をクリックし、ストレージ最適化設定を4 MB以上に変更します。圧縮機能と重複排除機能を有効にします。要件に応じてゲスト設定を変更し、バックアップジョブのスケジュールを設定します。</block>
-  <block id="1a267127d1c75146fba631f5be6cc720" category="inline-image-macro">自動生成されたコンピュータ概要のスクリーンショット（幅= 320、高さ= 375）</block>
-  <block id="a6b3c8ce8a0f7b47961a71ca8f691360" category="paragraph"><block ref="a6b3c8ce8a0f7b47961a71ca8f691360" category="inline-image-macro-rx" type="image"></block></block>
   <block id="680a28709f4f4046002e60fa297d351a" category="section-title">StorageGRID の監視</block>
   <block id="3843e063a231c099f5416c34c95f4042" category="paragraph">VeeamとStorageGRIDの連携によるパフォーマンスの全体像を把握するには、最初のバックアップの保持期限が切れるまで待つ必要があります。これまで、Veeamのワークロードは主にPUT処理で構成され、削除は行われていませんでした。バックアップデータの有効期限が近づいてクリーンアップを実行すると、オブジェクトストアに一貫した使用状況が表示され、必要に応じてVeeamで設定を調整できます。</block>
   <block id="b2f0530b7f3eff1d4dbe439b30663ed9" category="paragraph">StorageGRIDには、[Support]タブの[Metrics]ページにあるシステムの動作を監視するための便利なチャートが用意されています。主にS3の[Overview]、[ILM]、[Traffic Classification Policy]（ポリシーが作成されている場合）の各ダッシュボードを確認します。S3の[Overview]ダッシュボードには、S3の処理率、レイテンシ、要求応答に関する情報が表示されます。</block>
-  <block id="231b32850a7fef5c4be77eedcd54b7c4" category="inline-image-macro">S3の概要の料金</block>
-  <block id="b5d405519c83b44b871a7fb2a7401500" category="paragraph">S3の速度とアクティブな要求を確認すると、各ノードで処理されている負荷の量と、タイプ別の要求の総数を確認できます。
-<block ref="09a4b2cfcdf675e5f1f1ab0e8d545c44" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1f8f94c350e86ecbf5f8b0933d9dd0b2" category="paragraph">[Average Duration]チャートには、各ノードの要求タイプごとの平均所要時間が表示されます。これはリクエストの平均遅延で、追加の調整が必要か、StorageGRIDシステムがより多くの負荷を引き受ける余地があることを示しているかもしれません。</block>
   <block id="dfb4d9aca7ff63a8b59297daaa36013e" category="inline-image-macro">S3の概要期間</block>
-  <block id="1be387f78502bd155ac8b9f6243be096" category="paragraph"><block ref="1be387f78502bd155ac8b9f6243be096" category="inline-image-macro-rx" type="image"></block></block>
   <block id="97e697a60f8fc93ff1b8ab5d2fecf264" category="paragraph">[Total Completed Requests]チャートでは、リクエストをタイプコードと応答コード別に表示できます。応答に200（OK）以外の応答が表示された場合、これは、StorageGRIDシステムのような問題が503（スローダウン）応答を送信しており、追加の調整が必要になるか、負荷が増加するためにシステムを拡張する時間が来たことを示している可能性があります。</block>
   <block id="b49a867e529855d0406df931c97b5128" category="inline-image-macro">S3概要要求</block>
-  <block id="4d53d2d4fecbf45d3f80638358f5d314" category="paragraph"><block ref="4d53d2d4fecbf45d3f80638358f5d314" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a1350656a4a8103a53007527e1543062" category="paragraph">[ILM]ダッシュボードでは、StorageGRIDシステムの削除のパフォーマンスを監視できます。StorageGRIDでは、各ノードで同期削除と非同期削除を組み合わせて使用し、すべての要求の全体的なパフォーマンスを最適化しようとします。</block>
   <block id="2bd51718453d33063e1d9ab37fca0aef" category="inline-image-macro">ILMによる削除</block>
-  <block id="49ce7b2f13d2e86a8ac31b5b7c9f0698" category="paragraph"><block ref="49ce7b2f13d2e86a8ac31b5b7c9f0698" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b95f246819e27a4486f140cce28a5ca9" category="paragraph">トラフィック分類ポリシーを使用すると、ロードバランサ要求のスループット、レート、期間、およびVeeamが送受信するオブジェクトサイズに関するメトリックを表示できます。</block>
   <block id="0163b2e276a1d083b8a419a32c771680" category="inline-image-macro">トラフィック分類ポリシーのメトリック</block>
-  <block id="ed456358a6cded4a701707d28ed42b9c" category="paragraph"><block ref="ed456358a6cded4a701707d28ed42b9c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2c03d0abe3f02a4e8010af61356f3a13" category="paragraph"><block ref="2c03d0abe3f02a4e8010af61356f3a13" category="inline-image-macro-rx" type="image"></block></block>
   <block id="41626bdee063e6c3bb48894a7b384438" category="list-text"><block ref="81bbc4df100e2c72e0ac40c7f4e45348" category="inline-link-macro-rx"></block></block>
   <block id="112e3eabbbb552d94c0e006c23999aa3" category="sidebar">StorageGRIDでVeeam Backup and Replicationを使用</block>
   <block id="2e296ce530e2049ec036a4c14f33b6d8" category="paragraph">特定の解決策のサイジングと要件によっては、同時に実行できるタスクを制限する必要があります。デフォルト設定では、CPUコアごとに1つのリポジトリタスクスロットを指定し、タスクスロットごとに最大64の同時タスクスロットを指定します。たとえば、サーバに2つのCPUコアがある場合、オブジェクトストアには合計128個の同時スレッドが使用されます。これには、PUT、GET、およびBATCH Deleteが含まれます。タスクスロットに控えめな制限を選択して開始し、Veeamバックアップが新しいバックアップの安定した状態と期限切れになるバックアップ・データに達したら、この値を調整することをお勧めします。NetAppアカウントチームと協力して、希望する時間枠とパフォーマンスに合わせてStorageGRIDシステムを適切にサイジングしてください。最適な解決策を提供するには、タスクスロットの数とスロットあたりのタスクの制限を調整する必要がある場合があります。</block>
@@ -1290,4 +1258,12 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="0c116dd1f4daf14c460a0c77a9e0e674" category="inline-link">StorageGRID 11.8</block>
   <block id="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="list-text"><block ref="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="inline-link-rx"></block></block>
   <block id="fca3b43498fce810dfcc0f52e38e42a6" category="list-text"><block ref="fca3b43498fce810dfcc0f52e38e42a6" category="inline-link-rx"></block></block>
+  <block id="e9868d7697657696cac82d1e0b5159e2" category="paragraph">_アロンクライン著_</block>
+  <block id="f1b702f1ec8f237dcd7b5c954b6d27b8" category="paragraph">Angela Cheng著_</block>
+  <block id="3ffee984625220881b57c95936a54d55" category="paragraph">ジークフリート・ヘップとアロン・クライン著_</block>
+  <block id="f2c634ca704e26f96be1723db6dda32a" category="image-alt">概要が自動的に生成されたコンピュータのスクリーンショット</block>
+  <block id="54887fd2fb284c696f5a78f49abeb0b0" category="paragraph">S3の速度とアクティブな要求を確認すると、各ノードで処理されている負荷の量と、タイプ別の要求の総数を確認できます。
+image：：s3_over_rates.png [S3 Overview Rates]</block>
+  <block id="de8e421137ae87b94e3b716c2ac38854" category="paragraph">_ Oliver HaenselとAron Klein著_</block>
+  <block id="9224315283279b10c8f6eac37416df31" category="paragraph">_ジョナサン・ウォン著_</block>
 </blocks>

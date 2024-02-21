@@ -5,10 +5,11 @@ keywords: node clone, clone, clone performance, performance
 summary: ノードクローンのパフォーマンスとベストプラクティス 
 ---
 = ノードクローン
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Aron Klein_
 
 [role="lead"]
 ノードクローンに関する考慮事項とパフォーマンス
@@ -509,3 +510,4 @@ _Aron Klein_
 7 日
 
 |===
+_アロンクライン著_

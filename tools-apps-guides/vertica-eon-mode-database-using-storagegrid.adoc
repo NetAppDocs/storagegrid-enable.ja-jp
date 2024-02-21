@@ -5,10 +5,11 @@ keywords: Vertica Eon Mode database
 summary: このガイドでは、NetApp StorageGRID のパブリックストレージを使用してVertica Eon Modeデータベースを作成する手順 について説明します。 
 ---
 = NetApp StorageGRID を共有ストレージとして使用したVertica Eonモードのデータベース
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/vertica-eon/
 
-
-Angela Cheng_
 
 [role="lead"]
 このガイドでは、NetApp StorageGRID のパブリックストレージを使用してVertica Eon Modeデータベースを作成する手順 について説明します。
@@ -33,7 +34,7 @@ Eonモードでは、計算リソースがデータベースの共有ストレ�
 
 Eon Modeは、パブリックストレージと呼ばれる共有オブジェクトストアにデータを格納します。パブリックストレージとは、オンプレミスまたはAmazon S3上にホストされるS3バケットです。
 
-image::../media/vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eonモードクラスタと共有ストレージ]
+image::sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eonモードクラスタと共有ストレージ]
 
 
 
@@ -714,3 +715,4 @@ DATABASE | UseDepotForWrites | 1
 初版リリース
 
 |===
+Angela Cheng著_

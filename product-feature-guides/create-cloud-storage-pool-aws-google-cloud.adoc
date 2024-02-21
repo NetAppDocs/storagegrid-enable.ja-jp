@@ -5,10 +5,11 @@ keywords: cloud storage pool, aws, S3, amazon web services, google cloud
 summary: StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。 
 ---
 = AWSまたはGoogle Cloud用のクラウドストレージプールを作成します
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Jonathan Wong_
 
 [role="lead"]
 StorageGRID オブジェクトを外部のS3バケットに移動する場合は、クラウドストレージプールを使用できます。外部バケットはAmazon S3（AWS）またはGoogle Cloudに属することができます。
@@ -50,3 +51,5 @@ http://host:port`
 
 .想定される結果です
 Amazon S3またはGoogle Cloud用のクラウドストレージプールが作成されていることを確認します。
+
+_ジョナサン・ウォン著_

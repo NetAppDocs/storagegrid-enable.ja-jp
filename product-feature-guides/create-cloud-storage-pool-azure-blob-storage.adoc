@@ -5,10 +5,11 @@ keywords: cloud storage pool, azure, microsoft azure, azure blob storage
 summary: StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。 
 ---
 = Azure Blob Storage用のクラウドストレージプールを作成します
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Jonathan Wong_
 
 [role="lead"]
 StorageGRID オブジェクトを外部のAzureコンテナに移動する場合は、クラウドストレージプールを使用できます。
@@ -47,3 +48,5 @@ http://host:port`
 
 .想定される結果です
 Azure Blob Storage用のクラウドストレージプールが作成されていることを確認します。
+
+_ジョナサン・ウォン著_

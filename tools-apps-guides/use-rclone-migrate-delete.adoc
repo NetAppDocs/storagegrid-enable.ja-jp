@@ -5,10 +5,11 @@ keywords: cli, aws, S3, rclone, api
 summary: rcloneは、S3処理用の無料のコマンドラインツールでクライアントです。rcloneを使用して、StorageGRID 上のオブジェクトデータを移行、コピー、および削除できます。 
 ---
 = rcloneを使用して、StorageGRID 上のオブジェクトを移行、PUT、および削除します
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-_Siegfried HeppとAron Klein_
 
 [role="lead"]
 rcloneは、S3処理用の無料のコマンドラインツールでクライアントです。rcloneを使用して、StorageGRID 上のオブジェクトデータを移行、コピー、および削除できます。rcloneには、次の例に示すように、「purge」機能を使用して空でなくてもバケットを削除する機能が含まれています。
@@ -455,3 +456,5 @@ Elapsed time:        10.2s
  2023/04/14 09:40:51 Failed to ls: directory not found
 ====
 
+
+ジークフリート・ヘップとアロン・クライン著_

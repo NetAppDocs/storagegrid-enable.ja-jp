@@ -5,10 +5,11 @@ keywords: hadoop, cloudera, s3a
 summary: Hadoopを使用すると、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタ間で大規模なデータセットを分散処理できます。Hadoopは、単一のサーバから数千のマシンにスケールアップするように設計されており、各マシンにローカルのコンピューティングとストレージを提供しています。 
 ---
 = StorageGRID でCloudera Hadoop S3Aコネクタを使用します
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/hadoop-s3a/
 
-
-Angela Cheng_
 
 [role="lead"]
 Hadoopは、データサイエンティストに今しばらくの間愛用されてきました。Hadoopでは、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタにまたがる大規模なデータセットを分散処理できます。Hadoopは、ローカルのコンピューティングとストレージを所有するマシンごとに、単一のサーバから数千のマシンにスケールアップするように設計されています。
@@ -140,11 +141,11 @@ FS.s3a.path.style.access
 *サンプルスクリーンショット*
 
 +
-image::../media/hadoop-s3a/hadoop-s3a-configuration.png[S3A構成]
+image::hadoop-s3a-configuration.png[S3A構成]
 
 . [Save Changes]ボタンをクリックします。HDFSメニューバーからStale Configurationアイコンを選択し、次のページでRestart Stale Servicesを選択して、Restart Nowを選択します。
 +
-image::../media/hadoop-s3a/hadoop-restart-stale-service-icon.png[Hadoopの古いサービスアイコンを再起動します]
+image::hadoop-restart-stale-service-icon.png[Hadoopの古いサービスアイコンを再起動します]
 
 
 
@@ -255,3 +256,5 @@ keytool -import -trustcacerts -keystore $JAVA_HOME/lib/security/cacerts -storepa
 「hadoop fs s-ls s3a：//_<bucket-name>__ error.log
 
 
+
+Angela Cheng著_

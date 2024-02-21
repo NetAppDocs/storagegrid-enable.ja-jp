@@ -5,7 +5,10 @@ keywords: iam, bucket policy, group policy, policy
 summary: バケットポリシーとグループポリシー（IAMポリシー）の例を次に示します。 
 ---
 = バケットポリシーとグループポリシー（IAM）の例
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]

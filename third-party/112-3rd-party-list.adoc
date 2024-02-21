@@ -5,7 +5,10 @@ keywords: 11.2, third-party applications, storagegrid, ISV
 summary: StorageGRID 11.2で検証済みのサードパーティ製ソリューション 
 ---
 = StorageGRID 11.2で検証済みのサードパーティ製ソリューション
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]
