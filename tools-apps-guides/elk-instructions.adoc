@@ -8,7 +8,7 @@ summary: StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ロ
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/elk-config/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -48,11 +48,11 @@ match => {"message" => '<%{POSINT:syslog_pri}>%{SYSLOGBASE} %{GREEDYDATA:msg-det
 ----
 * Logstash 7.17サンプル*
 
-image::logstash-7.17.fields-sample.png[Logstash 7.17サンプル]
+image::elk-config/logstash-7.17.fields-sample.png[Logstash 7.17サンプル]
 
 *ログスタシュ8.23サンプル*
 
-image::logstash-8.x.fields-sample.png[Logstash 8.23サンプル]
+image::elk-config/logstash-8.x.fields-sample.png[Logstash 8.23サンプル]
 
 * 手順 *
 
@@ -99,13 +99,13 @@ GET /_cat/indices/*?v=true&s=index
 . Kibana GUIから、索引パターン（Elk 7.x）またはデータビュー（Elk 8.x）を作成します。
 . Kibana GUIから、上部中央にある検索ボックスに「saved objects」と入力します。+[保存済みオブジェクト]ページで、[インポート]を選択します。[インポートオプション]で、[競合時にアクションを要求]を選択します。
 +
-image::kibana-import-options.png[Kibanaの輸入オプション]
+image::elk-config/kibana-import-options.png[Kibanaの輸入オプション]
 
 +
 elk <version>-query-chart-sample.ndjsonをインポートします。+競合を解決するよう求められたら、手順8で作成したインデックスパターンまたはデータビューを選択します。
 
 +
-image::kibana-import-conflict.png[キバナ紛争]
+image::elk-config/kibana-import-conflict.png[キバナ紛争]
 
 +
 次のKibanaオブジェクトがインポートされます。 +*クエリ*+* audit-msg-s3rq -lm+* bycast log s3関連メッセージ+* loglevel warningまたはabove +* failed security event +* Chart *+* s3要求数bycast.log +* HTTP status code +* audit breakdown by type +* average s3応答 上記のグラフを使用した、時間+*ダッシュボード*+* S3要求ダッシュボード。

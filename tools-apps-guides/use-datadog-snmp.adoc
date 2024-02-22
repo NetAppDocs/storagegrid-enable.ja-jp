@@ -8,7 +8,7 @@ summary: StorageGRID SNMPメトリクスとトラップを収集するようにD
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/datadog/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -121,6 +121,6 @@ network_devices:
 
 StorageGRID システムのSNMPエージェントは、[Configuration]タブの[Monitoring]列にあります。SNMPを有効にし、必要な情報を入力します。トラップを構成する場合は、[Traps Destinations]を選択し、トラップ構成を含むDatadogエージェントホストの宛先を作成します。
 
-image::sg_snmp_conf.png[StorageGRID SNMPの設定]
+image::datadog/sg_snmp_conf.png[StorageGRID SNMPの設定]
 
 _アロンクライン著_

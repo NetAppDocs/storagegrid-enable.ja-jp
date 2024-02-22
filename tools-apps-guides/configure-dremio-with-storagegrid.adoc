@@ -1,5 +1,5 @@
 ---
-permalink: tools-apps-guides/configure-Dremio-StorageGRID.html 
+permalink: tools-apps-guides/configure-dremio-storagegrid.html 
 sidebar: sidebar 
 keywords: Dremio, StorageGRID, lakehouse, object storage, s3 
 summary: StorageGRIDを使用したDremioデータソースの設定 
@@ -8,7 +8,7 @@ summary: StorageGRIDを使用したDremioデータソースの設定
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/dremio/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -43,7 +43,7 @@ https://docs.dremio.com/current/sonar/data-sources/object/s3/["Amazon S3への�
 このs3エンドポイントで自己署名CA証明書を使用する場合は、Dremioのガイド手順に従って、このCA証明書をDremioサーバの<JAVA_HOME>/jre/lib/security+に追加します。
 *サンプルスクリーンショット*
 +
-image::dremio-add-source-general.png[新規ソース-全般]
+image::dremio/dremio-add-source-general.png[新規ソース-全般]
 
 . [詳細オプション]をクリックし、[互換モードを有効にする]をオンにします。
 . [Connection properties]で、[+ Add Properties]をクリックして、これらのs3aプロパティを追加します。
@@ -78,14 +78,14 @@ _< 100より大きい値>_
 *サンプルスクリーンショット*
 
 +
-image::dremio-add-source-advanced.png[新しいソース-詳細オプション]
+image::dremio/dremio-add-source-advanced.png[新しいソース-詳細オプション]
 
 . 組織またはアプリケーションの要件に応じて、その他のDremioオプションを設定します。
 . [Save]ボタンをクリックして新しいデータソースを作成します。
 . StorageGRIDデータソースが正常に追加されると、バケットのリストが左側のパネルに表示されます。[+]
 *サンプルスクリーンショット*
 +
-image::dremio-source-added.png[新しいデータソースの追加]
+image::dremio/dremio-source-added.png[新しいデータソースの追加]
 
 
 

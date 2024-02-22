@@ -19,4 +19,4 @@ entries:
 - title: StorageGRIDでVeeam Backup and Replicationを使用
   url: "/tools-apps-guides/veeam-br.html"
 - title: StorageGRIDを使用したDremioの設定
-  url: "/tools-apps-guides/configure-Dremio-StorageGRID.html"
+  url: "/tools-apps-guides/configure-dremio-storagegrid.html"
