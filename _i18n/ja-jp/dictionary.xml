@@ -319,9 +319,7 @@
   <block id="ea9349a37bfee247df0f87cbcacca796" category="paragraph">初版リリース</block>
   <block id="0a7fcea811cb899434230e06e3477b84" category="summary">Hadoopを使用すると、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタ間で大規模なデータセットを分散処理できます。Hadoopは、単一のサーバから数千のマシンにスケールアップするように設計されており、各マシンにローカルのコンピューティングとストレージを提供しています。</block>
   <block id="e28a2374ec10c84082a75afb2254f4e2" category="doc">StorageGRID でCloudera Hadoop S3Aコネクタを使用します</block>
-  <block id="69cfaca1831444acadd7835297b7d501" category="paragraph">Hadoopは、データサイエンティストに今しばらくの間愛用されてきました。Hadoopでは、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタにまたがる大規模なデータセットを分散処理できます。Hadoopは、ローカルのコンピューティングとストレージを所有するマシンごとに、単一のサーバから数千のマシンにスケールアップするように設計されています。</block>
   <block id="ae19997258b86e93601b9072dd73b100" category="section-title">S3AをHadoopワークフローに使用する理由</block>
-  <block id="edb332fdf13a795cb04d8673475e7002" category="paragraph">データ量の増加に伴い、新しいマシンにコンピューティングとストレージを個別に追加するアプローチは非効率的になっています。リソースを効率的に使用し、インフラを管理するという課題は、リニアに拡張する必要があります。</block>
   <block id="ab8402eb6a573e76dfe21f21689c9ae9" category="paragraph">このような課題に対処するために、Hadoop S3AクライアントはS3オブジェクトストレージに対する高性能なI/Oを提供します。S3Aを使用してHadoopワークフローを実装することで、オブジェクトストレージをデータリポジトリとして活用でき、コンピューティングとストレージを分離することができます。これにより、コンピューティングとストレージを別々に拡張できます。コンピューティングリソースとストレージを分離することで、コンピューティングジョブに適切な量のリソースを割り当て、データセットのサイズに基づいて容量を提供することもできます。そのため、Hadoopワークフローの総所有コストを削減することができます。</block>
   <block id="95c00c41a442070ea0794b977de417b8" category="section-title">StorageGRID を使用するようにS3Aコネクタを構成します</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">前提条件</block>
@@ -1083,7 +1081,6 @@
   <block id="21b17c7b7d71861473c6337e153ea6ea" category="paragraph"><block ref="21b17c7b7d71861473c6337e153ea6ea" category="inline-link-rx"></block></block>
   <block id="29007b92e2b6688072358d8f25529d24" category="paragraph"><block ref="29007b92e2b6688072358d8f25529d24" category="inline-link-rx"></block></block>
   <block id="d31ba7e4c6f469a6c88f05aac3e0e91c" category="list-text">ダタドビ</block>
-  <block id="8727881150b0ace8b598a648cdfcd4e1" category="sidebar">NetApp StorageGRID は、ソフトウェアで定義されるオブジェクトストレージスイートで、パブリック、プライベート、ハイブリッドのマルチクラウド環境での幅広いユースケースに対応します。StorageGRID はAmazon S3 APIをネイティブでサポートし、自動化されたライフサイクル管理などの業界をリードする革新的なテクノロジを提供して、非構造化データを長期にわたってコスト効率よく格納、保護、保持します。</block>
   <block id="a88f9b6efeacfebaca582083cb9bd819" category="paragraph">このグループポリシーでは、users usernameという名前のバケット内のオブジェクトへのアクセスのみがユーザに許可されます。</block>
   <block id="a16b735f7d349dcc23b45a7a101460f3" category="paragraph">このグループポリシーでは、ユーザがバケットを作成してそのバケットでオブジェクトロックを有効にすることはできません。</block>
   <block id="5ccd1d9b602b536952729ea6084688f1" category="section-title">オブジェクトロックの保持制限</block>
@@ -1266,4 +1263,7 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="9224315283279b10c8f6eac37416df31" category="paragraph">_ジョナサン・ウォン著_</block>
   <block id="8cd84a7eff267a91caead66f5ac5a7d2" category="paragraph">S3の速度とアクティブな要求を確認すると、各ノードで処理されている負荷の量と、タイプ別の要求の総数を確認できます。
 image：：veeam-bp/s3_over_rates.png [S3 Overview rates]</block>
+  <block id="66dc7cd0b0a02168bc30f9fcad8cdbb3" category="paragraph">Hadoopは、しばらくの間データサイエンティストのお気に入りでした。Hadoopでは、シンプルなプログラミングフレームワークを使用して、複数のコンピュータクラスタにまたがる大規模なデータセットを分散処理できます。Hadoopは、ローカルのコンピューティングとストレージを所有するマシンごとに、単一のサーバから数千のマシンにスケールアップするように設計されています。</block>
+  <block id="afa1796bcfe5f602d94a2ed1d5b82a74" category="paragraph">データ量の増加に伴い、新しいマシンにコンピューティングとストレージを個別に追加するアプローチは非効率的になっています。リニアに拡張すると、リソースの効率的な使用やインフラの管理が難しくなります。</block>
+  <block id="1ed32842544e52d59a55b4b962d478b4" category="sidebar">NetApp StorageGRID は、ソフトウェアで定義されるオブジェクトストレージスイートで、パブリッククラウド、プライベートクラウド、ハイブリッドマルチクラウドの各環境で幅広いユースケースをサポートします。StorageGRID はAmazon S3 APIをネイティブでサポートし、自動化されたライフサイクル管理などの業界をリードする革新的なテクノロジを提供して、非構造化データを長期にわたってコスト効率よく格納、保護、保持します。</block>
 </blocks>
