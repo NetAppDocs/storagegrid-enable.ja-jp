@@ -38,7 +38,7 @@ StorageGRID は、3種類のプラットフォームサービスをサポート�
 . Grid Managerを使用してS3テナントを作成し、表示名を入力してS3プロトコルを選択する。
 . [アクセス許可]ページで、[プラットフォームサービスを許可する]オプションを選択します。必要に応じて、他の権限を選択します。
 +
-image::storagegrid-search-integration-service/sg-sis-select-permissions.png[権限のスクリーンショットを選択します]
+image:storagegrid-search-integration-service/sg-sis-select-permissions.png["権限のスクリーンショットを選択します"]
 
 . テナントのrootユーザの初期パスワードを設定するか、グリッドでフェデレーションが有効になっている場合は、テナントアカウントを設定するためのrootアクセス権限を持つフェデレーテッドグループを選択します。
 . [ルートとしてサインイン]をクリックし、[バケット：バケットの作成と管理]を選択します。
@@ -102,7 +102,7 @@ NOTE: OpenSearchサービスに登録するには、有効なAWSコンソール�
 }
 ----
 +
-image::storagegrid-search-integration-service/sg-sis-search-integration-amazon-opensearch.png[検索統合のスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-search-integration-amazon-opensearch.png["検索統合のスクリーンショット"]
 
 
 
@@ -110,17 +110,17 @@ image::storagegrid-search-integration-service/sg-sis-search-integration-amazon-o
 
 . ドメインがアクティブになるまで15～20分待ちます。
 +
-image::storagegrid-search-integration-service/sg-sis-activating-domain.png[ドメインスクリーンショットをアクティブ化してい]
+image:storagegrid-search-integration-service/sg-sis-activating-domain.png["ドメインスクリーンショットをアクティブ化してい"]
 
 . OpenSearch Dashboards URLをクリックして、新しいタブでドメインを開き、ダッシュボードにアクセスします。access deniedエラーが表示された場合は、アクセスポリシーのソースIPアドレスがコンピュータのパブリックIPに正しく設定されていて、ドメインダッシュボードへのアクセスが許可されていることを確認します。
 . ダッシュボードの開始ページで、自分で探索（Explore on your own）を選択します。メニューから、[管理]->[開発ツール]を選択します
 . Dev Tools -> Consoleで、StorageGRID オブジェクトメタデータの保存にインデックスを使用する「Put <index>」と入力します。次の例では、インデックス名「メタデータ」を使用します。小さい三角形の記号をクリックして、PUTコマンドを実行します。次のスクリーンショットの例に示すように、正しい結果が右側のパネルに表示されます。
 +
-image::storagegrid-search-integration-service/sg-sis-using-put-command-for-index.png[インデックスのスクリーンショットにPUTコマンドを使用する]
+image:storagegrid-search-integration-service/sg-sis-using-put-command-for-index.png["インデックスのスクリーンショットにPUTコマンドを使用する"]
 
 . インデックスがAmazon OpenSearch UIのsgdomain > Indicesの下に表示されていることを確認します。
 +
-image::storagegrid-search-integration-service/sg-sis-verifying-the-index.png[Verifying - The indexスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-verifying-the-index.png["Verifying - The indexスクリーンショット"]
 
 
 
@@ -140,17 +140,17 @@ image::storagegrid-search-integration-service/sg-sis-verifying-the-index.png[Ver
 この例では、URNはarn：aws：es：us-east -1：211234567890：domain/sgdemo/sgmedata/_docになります。
 
 +
-image::storagegrid-search-integration-service/sg-sis-enter-end-points-details.png[エンドポイント-詳細なスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-enter-end-points-details.png["エンドポイント-詳細なスクリーンショット"]
 
 
 
 . Amazon OpenSearchのsgdomainにアクセスするには、認証タイプとしてAccess Keyを選択し、Amazon S3のアクセスキーとシークレットキーを入力します。次のページに移動するには、[続行]をクリックします。
 +
-image::storagegrid-search-integration-service/sg-sis-authenticate-connections-to-endpoints.png[「エンドポイントへの接続の認証」のスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-authenticate-connections-to-endpoints.png["「エンドポイントへの接続の認証」のスクリーンショット"]
 
 . エンドポイントを確認するには、Use Operating System CA Certificate and Test and Create Endpointを選択します。検証に成功すると、次の図のようなエンドポイント画面が表示されます。検証に失敗した場合は、URNのパスの末尾に「/<index>/_doc」が含まれていて、AWSアクセスキーとシークレットキーが正しいことを確認してください。
 +
-image::storagegrid-search-integration-service/sg-sis-platform-service-endpoints.png[プラットフォームサービスエンドポイントのスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-platform-service-endpoints.png["プラットフォームサービスエンドポイントのスクリーンショット"]
 
 
 
@@ -198,14 +198,14 @@ sudo systemctl start docker
 TIP: Elasticsearchが作成したユーザ名/パスワードとトークンをメモしておきます。これらのトークンは、Kibana UIおよびStorageGRID プラットフォームエンドポイント認証を開始するために必要です。
 
 +
-image::storagegrid-search-integration-service/sg-sis-search-integration-elasticsearch.png[検索統合検索検索検索検索のelasticscreenscreenscreen]
+image:storagegrid-search-integration-service/sg-sis-search-integration-elasticsearch.png["検索統合検索検索検索検索のelasticscreenscreenscreen"]
 
 . Kibana Dockerコンテナが起動すると、コンソールにURLリンク「\ https://0.0.0.0:5601`」が表示されます。0.0.0.0を、URL内のサーバIPアドレスと置き換えます。
 . ユーザ名「elastic」と、前述の手順でElasticによって生成されたパスワードを使用して、Kibana UIにログインします。
 . 初めてログインする場合は、ダッシュボードのようこそページで、自分でエクスプローラ（Explore on your own）を選択します。メニューから、Management > Dev Toolsを選択します。
 . Dev Tools Console画面で、StorageGRID オブジェクトメタデータの保存にこのインデックスを使用する「Put <index>」と入力します。この例では'インデックス名sgmetadataを使用します小さい三角形の記号をクリックして、PUTコマンドを実行します。次のスクリーンショットの例に示すように、正しい結果が右側のパネルに表示されます。
 +
-image::storagegrid-search-integration-service/sg-sis-execute-put-command.png[PUTコマンドの実行のスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-execute-put-command.png["PUTコマンドの実行のスクリーンショット"]
 
 
 
@@ -222,17 +222,17 @@ image::storagegrid-search-integration-service/sg-sis-execute-put-command.png[PUT
 ** URI:`\https://<elasticsearch-server-ipまたはhostname>:9200`
 ** urn:`urn:<何か>:es:::<se-unique text>/<index-name>/_doc`ここで、index-nameはKibanaコンソールで使用した名前です。例:`urn:local:es::sgmd/sgmetadata/_doc`
 +
-image::storagegrid-search-integration-service/sg-sis-platform-service-endpoint-details.png[プラットフォームサービスエンドポイントの詳細のスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-platform-service-endpoint-details.png["プラットフォームサービスエンドポイントの詳細のスクリーンショット"]
 
 
 
 . 認証タイプとしてBasic HTTPを選択し、Elasticsearchのインストールプロセスによって生成されたユーザ名「elastic」とパスワードを入力します。次のページに移動するには、[続行]をクリックします。
 +
-image::storagegrid-search-integration-service/sg-sis-platform-service-endpoint-authentication-type.png[プラットフォームサービスエンドポイントの認証のスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-platform-service-endpoint-authentication-type.png["プラットフォームサービスエンドポイントの認証のスクリーンショット"]
 
 . エンドポイントを確認するには、Do not verify Certificate and Test and Create Endpointを選択します。検証に成功すると、次のスクリーンショットと同様のエンドポイント画面が表示されます。検証が失敗した場合は、URN、URI、およびユーザ名とパスワードのエントリが正しいことを確認してください。
 +
-image::storagegrid-search-integration-service/sg-sis-successfully-verified-endpoint.png[エンドポイントが検証されました]
+image:storagegrid-search-integration-service/sg-sis-successfully-verified-endpoint.png["エンドポイントが検証されました"]
 
 
 
@@ -271,7 +271,7 @@ Tenant Managerを使用して検索統合を設定し、カスタムのStorageGR
 ----
 . S3 Browserを使用して、テナントアクセス/シークレットキーを使用してStorageGRID に接続し、テストオブジェクトを「sgmetadata-test」バケットにアップロードし、タグまたはカスタムメタデータをオブジェクトに追加します。
 +
-image::storagegrid-search-integration-service/sg-sis-upload-test-objects.png[テストオブジェクトのアップロードのスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-upload-test-objects.png["テストオブジェクトのアップロードのスクリーンショット"]
 
 . Kibana UIを使用して、オブジェクトメタデータがsgmetadataのインデックスにロードされたことを確認します。
 +
@@ -291,7 +291,7 @@ GET sgmetadata/_search
 }
 ----
 +
-image::storagegrid-search-integration-service/sg-sis-query1-sample-result.png[クエリ1のサンプル結果のスクリーンショット]
+image:storagegrid-search-integration-service/sg-sis-query1-sample-result.png["クエリ1のサンプル結果のスクリーンショット"]
 
 +
 次のスクリーンショットのクエリ2のサンプル結果は、タグタイプがjpgの2つのレコードを示しています。
@@ -310,7 +310,7 @@ GET sgmetadata/_search
 }
 ----
 +
-image::storagegrid-search-integration-service/sg-sis-query-two-sample.png[クエリ2のサンプル]
+image:storagegrid-search-integration-service/sg-sis-query-two-sample.png["クエリ2のサンプル"]
 
 
 

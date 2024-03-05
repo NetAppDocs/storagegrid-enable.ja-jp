@@ -34,7 +34,7 @@ Eonモードでは、計算リソースがデータベースの共有ストレ�
 
 Eon Modeは、パブリックストレージと呼ばれる共有オブジェクトストアにデータを格納します。パブリックストレージとは、オンプレミスまたはAmazon S3上にホストされるS3バケットです。
 
-image::vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eonモードクラスタと共有ストレージ]
+image:vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png["Vertica Eonモードクラスタと共有ストレージ"]
 
 
 

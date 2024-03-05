@@ -73,27 +73,27 @@ StorageGRID 11.3より前のリリースでは、ゲートウェイノードに�
 
 . 導入が完了したら、VMのリストからVMを選択し、[Configure]タブ[vApp Options]を選択します。
 +
-image::port-remap/vapp_options.png[[vApp options]タブ]
+image:port-remap/vapp_options.png["[vApp options]タブ"]
 
 . [Properties]セクションまで下にスクロールし、PORT_REMAP_INBOUNDプロパティを選択します
 +
-image::port-remap/remap_inbound.png[インバウンドのポート再マッピング]
+image:port-remap/remap_inbound.png["インバウンドのポート再マッピング"]
 
 . [プロパティ]リストの一番上までスクロールし、[編集]をクリックします
 +
-image::port-remap/edit_button.png[[編集]ボタン]
+image:port-remap/edit_button.png["[編集]ボタン"]
 
 . [タイプ]タブを選択し、[ユーザー設定可能]チェックボックスがオンになっていることを確認して、[保存]をクリックします。
 +
-image::port-remap/type_tab.png[[Type]タブ]
+image:port-remap/type_tab.png["[Type]タブ"]
 
 . 「PORT_REMAP_INBOUND」プロパティが選択された状態で、[Properties]リストの上部にある[Set Value]をクリックします。
 +
-image::port-remap/edit_button.png[[値の設定]ボタン]
+image:port-remap/edit_button.png["[値の設定]ボタン"]
 
 . [Property Value]フィールドに、ネットワーク（グリッド、管理者、またはクライアント）、TCP、元のポート（8082）、および新しいポート（10443）をそれぞれの値の間にを含めて入力します（次の図を参照）。
 +
-image::port-remap/value.png[プロパティ値]
+image:port-remap/value.png["プロパティ値"]
 
 . 複数のネットワークを使用している場合は、カンマ（,）を使用してネットワークの文字列を区切ります（例：grid/tcp/8082/10443、admin/tcp/8082/10443、client/tcp/8082/10443）
 
@@ -106,11 +106,11 @@ image::port-remap/value.png[プロパティ値]
 
 . グリッド管理UIの[Maintenance/Recovery]セクションに移動します。
 +
-image::port-remap/maint_menu.png[[Maintenance]メニュー]
+image:port-remap/maint_menu.png["[Maintenance]メニュー"]
 
 . VMノードの電源をオンにし、ノードがグリッド管理UIの[Maintenance/Recovery Pending Nodes]セクションに表示されるまで待ちます。
 +
-image::port-remap/recover_pend.png[リカバリを保留中です]
+image:port-remap/recover_pend.png["リカバリを保留中です"]
 
 +
 [NOTE]
@@ -284,7 +284,7 @@ Initiating a reboot to trigger the StorageGRID Webscale appliance installation w
 . しばらくするとアプライアンスがリブートし、ノードのPGE UIにアクセスできるようになります。
 . [Configure Networking]にアクセスします
 +
-image::port-remap/remap_link.png[[ポートの再マッピング]を選択します]
+image:port-remap/remap_link.png["[ポートの再マッピング]を選択します"]
 
 . 目的のネットワーク、プロトコル、方向、およびポートを選択し、[Add Rule]ボタンをクリックします。
 +
@@ -292,7 +292,7 @@ image::port-remap/remap_link.png[[ポートの再マッピング]を選択しま
 NOTE: グリッドネットワーク上のインバウンドポート443を再マッピングすると、インストールおよび拡張手順が中断されます。グリッドネットワークのポート443を再マッピングすることは推奨されません。
 
 +
-image::port-remap/app_remap.png[ポートの再マッピングをネットワークに追加します]
+image:port-remap/app_remap.png["ポートの再マッピングをネットワークに追加します"]
 
 . 必要なポートの再マッピングが追加されている場合は、ホームタブに戻り、[Start Installation]ボタンをクリックします。
 

@@ -43,4 +43,8 @@ summary: ネットアップのStorageGRID ブログをいくつかご紹介し�
 * 9月1日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Leveraging-Cloud-Insights-to-Monitor-and-Collect-Logs-Using-Fluent-Bit/ba-p/447301["Fluent Bitを使用したCloud Insightsによるログの監視と収集"^]
 * 10月17日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Moving-on-from-Hadoop-Modernizing-Data-Analytics-with-Dremio-and-StorageGRID/ba-p/448335["Hadoopからの移行：DremioとStorageGRIDによるデータ分析の刷新"^]
 * 11月7日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Spectra-Logic-On-Prem-Glacier-with-StorageGRID/ba-p/448686["Spectra Logic On-Prem GlacierとStorageGRID"^]
+* 12月12日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Big-data-analytics-on-StorageGRID-Dremio-performs-23-times-faster-than-Apache/ba-p/449695["StorageGRIDでのビッグデータ分析：DremioのパフォーマンスはApache Hiveの23倍"^]
+* 2月2日：  https://community.netapp.com/t5/Tech-ONTAP-Blogs/Announcing-the-StorageGRID-lakeFS-Solution-Brief/ba-p/450611["StorageGRID + lakeFS解決策概要の発表"^]
+* 2月16日： https://www.netapp.com/blog/storagegrid-11-8-enhanced-security-and-simplicity/["StorageGRID 11.8の紹介：セキュリティ、簡易性、ユーザエクスペリエンスの強化"^]
+* 2月16日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/Introducing-StorageGRID-11-8/ba-p/450762["StorageGRID 11.8の概要"^]
 

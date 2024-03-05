@@ -115,25 +115,25 @@ StorageGRIDは、レプリケーションとイレイジャーコーディング
 
 不変性が必要な場合は、StorageGRIDシステムでオブジェクトロックが有効になっていることを確認します。管理UIの[Configuration]/[S3][Object Lock]にあるオプションを選択します。
 
-image::veeam-bp/obj_lock_en.png[Grid全体でのオブジェクトロックの有効化]
+image:veeam-bp/obj_lock_en.png["Grid全体でのオブジェクトロックの有効化"]
 
 バケットを変更不可のバックアップに使用する場合は、バケットの作成時に[Enable S3 Object Lock]を選択します。これにより、バケットのバージョン管理が自動的に有効になります。オブジェクト保持期間はVeeamによって明示的に設定されるため、デフォルトの保持期間は無効のままにします。Veeamで変更不可のバックアップが作成されていない場合は、[Versioning]と[S3 Object Lock]を選択しないでください。
 
-image::veeam-bp/obj_lock_bucket.png[バケットでオブジェクトロックを有効にする]
+image:veeam-bp/obj_lock_bucket.png["バケットでオブジェクトロックを有効にする"]
 
 バケットが作成されたら、作成したバケットの詳細ページに移動します。整合性レベルを選択します。
 
-image::veeam-bp/bucket_consist_1.png[バケットオプション]
+image:veeam-bp/bucket_consist_1.png["バケットオプション"]
 
 Veeamでは、S3バケットに対して強力な整合性が必要です。そのため、Veeamが複数の場所からデータにアクセスするマルチサイト環境の場合は、「strong-global」を選択します。Veeamのバックアップとリストアを単一サイトでのみ実行する場合は、整合性レベルを「strong-site」に設定する必要があります。変更を保存します。
 
-image::veeam-bp/bucket_consist_2.png[バケットの整合性]
+image:veeam-bp/bucket_consist_2.png["バケットの整合性"]
 
 StorageGRIDは、すべての管理ノードおよび専用のゲートウェイノードで統合されたロードバランササービスを提供します。このロードバランサを使用する多くの利点の1つは、トラフィック分類ポリシー（QoS）を設定できることです。主に、他のクライアントワークロードへのアプリケーションの影響を制限したり、他のクライアントワークロードよりもワークロードを優先したりするために使用されますが、監視に役立つ追加の指標収集のボーナスも提供します。
 
 [Configuration]タブで、[Traffic Classification]を選択し、新しいポリシーを作成します。ルールに名前を付け、タイプとしてバケットまたはテナントを選択します。バケットまたはテナントの名前を入力します。QoSが必要な場合は制限を設定しますが、ほとんどの実装では、制限を設定しないでください。
 
-image::veeam-bp/tc_policy.png[TCポリシーの作成]
+image:veeam-bp/tc_policy.png["TCポリシーの作成"]
 
 
 
@@ -141,15 +141,15 @@ image::veeam-bp/tc_policy.png[TCポリシーの作成]
 
 StorageGRIDアプライアンスのモデルと数によっては、バケットで同時に実行できる処理数の制限を選択して設定する必要があります。
 
-image::veeam-bp/veeam_concur_limit.png[Veeamの同時タスクの制限]
+image:veeam-bp/veeam_concur_limit.png["Veeamの同時タスクの制限"]
 
 Veeamコンソールのバックアップジョブ設定に関するVeeamのドキュメントに従って、ウィザードを開始します。VMを追加したら、SOBRリポジトリを選択します。
 
-image::veeam-bp/veeam_1.png[バックアップジョブ]
+image:veeam-bp/veeam_1.png["バックアップジョブ"]
 
 [詳細設定]をクリックし、ストレージ最適化設定を4 MB以上に変更します。圧縮機能と重複排除機能を有効にします。要件に応じてゲスト設定を変更し、バックアップジョブのスケジュールを設定します。
 
-image::veeam-bp/veeam_blk_sz.png[概要が自動的に生成されたコンピュータのスクリーンショット,320,375]
+image:veeam-bp/veeam_blk_sz.png["自動生成されたコンピュータ概要のスクリーンショット（幅= 320、高さ= 375）"]
 
 
 
@@ -160,25 +160,25 @@ VeeamとStorageGRIDの連携によるパフォーマンスの全体像を把握�
 StorageGRIDには、[Support]タブの[Metrics]ページにあるシステムの動作を監視するための便利なチャートが用意されています。主にS3の[Overview]、[ILM]、[Traffic Classification Policy]（ポリシーが作成されている場合）の各ダッシュボードを確認します。S3の[Overview]ダッシュボードには、S3の処理率、レイテンシ、要求応答に関する情報が表示されます。
 
 S3の速度とアクティブな要求を確認すると、各ノードで処理されている負荷の量と、タイプ別の要求の総数を確認できます。
-image：：veeam-bp/s3_over_rates.png [S3 Overview rates]
+image:veeam-bp/s3_over_rates.png["S3の概要の料金"]
 
 [Average Duration]チャートには、各ノードの要求タイプごとの平均所要時間が表示されます。これはリクエストの平均遅延で、追加の調整が必要か、StorageGRIDシステムがより多くの負荷を引き受ける余地があることを示しているかもしれません。
 
-image::veeam-bp/s3_over_duration.png[S3の概要期間]
+image:veeam-bp/s3_over_duration.png["S3の概要期間"]
 
 [Total Completed Requests]チャートでは、リクエストをタイプコードと応答コード別に表示できます。応答に200（OK）以外の応答が表示された場合、これは、StorageGRIDシステムのような問題が503（スローダウン）応答を送信しており、追加の調整が必要になるか、負荷が増加するためにシステムを拡張する時間が来たことを示している可能性があります。
 
-image::veeam-bp/s3_over_requests.png[S3概要要求]
+image:veeam-bp/s3_over_requests.png["S3概要要求"]
 
 [ILM]ダッシュボードでは、StorageGRIDシステムの削除のパフォーマンスを監視できます。StorageGRIDでは、各ノードで同期削除と非同期削除を組み合わせて使用し、すべての要求の全体的なパフォーマンスを最適化しようとします。
 
-image::veeam-bp/ilm_delete.png[ILMによる削除]
+image:veeam-bp/ilm_delete.png["ILMによる削除"]
 
 トラフィック分類ポリシーを使用すると、ロードバランサ要求のスループット、レート、期間、およびVeeamが送受信するオブジェクトサイズに関するメトリックを表示できます。
 
-image::veeam-bp/tc_1.png[トラフィック分類ポリシーのメトリック]
+image:veeam-bp/tc_1.png["トラフィック分類ポリシーのメトリック"]
 
-image::veeam-bp/tc_2.png[トラフィック分類ポリシーのメトリック]
+image:veeam-bp/tc_2.png["トラフィック分類ポリシーのメトリック"]
 
 
 

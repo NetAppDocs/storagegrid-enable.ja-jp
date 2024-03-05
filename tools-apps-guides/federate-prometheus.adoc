@@ -40,11 +40,11 @@ StorageGRID IDに格納されているPrometheus指標にアクセスするに�
 . [証明書]ページで[クライアント]タブを選択し、[追加]ボタンをクリックします。
 . アクセスを許可するクライアントの名前を指定し、この証明書を使用します。「Allow Prometheus」の前の「Permissions」のボックスをクリックし、「Continue」ボタンをクリックします。
 +
-image::prometheus/cert_name.png[証明書の名前]
+image:prometheus/cert_name.png["証明書の名前"]
 
 . CA署名証明書がある場合は、[証明書のアップロード]のラジオボタンを選択できますが、この場合は、[証明書の生成]のラジオボタンを選択して、StorageGRID がクライアント証明書を生成できるようにします。入力する必須フィールドが表示されます。クライアントサーバのFQDN、サーバのIP、件名、有効日数を入力します。「生成」ボタンをクリックします。
 +
-image::prometheus/cert_detail.png[証明書の詳細]
+image:prometheus/cert_detail.png["証明書の詳細"]
 
 
 
@@ -54,7 +54,7 @@ image::prometheus/cert_detail.png[証明書の詳細]
 ====
 . 証明書のPEMファイルと秘密鍵のPEMファイルをダウンロードします。
 +
-image::prometheus/cert_download.png[証明書のダウンロード]
+image:prometheus/cert_download.png["証明書のダウンロード"]
 
 
 
@@ -254,18 +254,18 @@ Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z call
 ----
 . PrometheusサーバのUIにアクセスできるようになります http://Prometheus-server:9090[] およびUIを参照してください
 +
-image::prometheus/prometheus_ui.png[PrometheusのUIページ]
+image:prometheus/prometheus_ui.png["PrometheusのUIページ"]
 
 . 「Status」ターゲットのPrometheusで設定したStorageGRID エンドポイントのステータスを確認できます
 +
-image::prometheus/prometheus_targets.png[Prometheusのステータスメニュー]
+image:prometheus/prometheus_targets.png["Prometheusのステータスメニュー"]
 
 +
-image::prometheus/prometheus_target_status.png[Prometheusターゲットページ]
+image:prometheus/prometheus_target_status.png["Prometheusターゲットページ"]
 
 . [グラフ]ページで、テストクエリを実行し、データが正常にスクレイピングされていることを確認できます。たとえば、クエリバーに「storagegrid_node_name utilization _percentage」と入力し、実行ボタンをクリックします。
 +
-image::prometheus/prometheus_execute.png[Prometheusクエリが実行される]
+image:prometheus/prometheus_execute.png["Prometheusクエリが実行される"]
 
 
 
@@ -322,14 +322,14 @@ GrafanaとPrometheusがインストールされて実行されている状態で
 . Prometheusは、最も人気のあるデータソースの1つです。検出されていない場合は、検索バーで「Prometheus」を特定します。
 . PrometheusインスタンスのURLとスクラビング間隔をPrometheusの間隔と一致するように入力して、Prometheusソースを設定します。Prometheusでアラートマネージャを設定しなかったため、アラートセクションも無効にしました。
 +
-image::prometheus/grafana_prometheus_conf.png[grafana Prometheus設定]
+image:prometheus/grafana_prometheus_conf.png["grafana Prometheus設定"]
 
 . 目的の設定を入力したら、下にスクロールして[保存してテスト]をクリックします。
 . 設定テストが正常に完了したら、[EXPLOR]ボタンをクリックします。
 +
 .. 「調査」ウィンドウで、Prometheusで「storagegrid_node_name」に対してテストしたものと同じ指標を使用し、「Run query」ボタンをクリックします
 +
-image::prometheus/grafana_source_explore.png[Graafana Prometheus指標の詳細を確認する]
+image:prometheus/grafana_source_explore.png["Graafana Prometheus指標の詳細を確認する"]
 
 
 
@@ -339,7 +339,7 @@ image::prometheus/grafana_source_explore.png[Graafana Prometheus指標の詳細�
 .. 「新規パネルを追加」を選択します。
 .. メトリックを選択して新しいパネルを設定します。もう一度「storagegrid_node_name」を使用し、パネルのタイトルを入力し、下部に「Options」を展開して凡例をカスタムに変更し、「｛｛instance｝｝」と入力してノード名を定義します。右側のペインの「Standard options」set "Unit」を「Misc-100%」に設定します。[適用]をクリックして、パネルをダッシュボードに保存します。
 +
-image::prometheus/grafana_panel_conf.png[グラファナパネルを設定します]
+image:prometheus/grafana_panel_conf.png["グラファナパネルを設定します"]
 
 
 
@@ -348,31 +348,31 @@ image::prometheus/grafana_panel_conf.png[グラファナパネルを設定しま
 .. StorageGRID 管理インターフェイスの左側のペインで、[サポート]を選択し、[ツール]列の下部にある[指標]をクリックします。
 .. 指標内で、中央の列の上部にある「グリッド」リンクを選択します。
 +
-image::prometheus/storagegrid_metrics.png[StorageGRID 指標]
+image:prometheus/storagegrid_metrics.png["StorageGRID 指標"]
 
 .. グリッドダッシュボードで、「Storage Used - Object Metadata」パネルを選択します。メニューをドロップダウンするには、パネルタイトルの小さな下向き矢印と末尾をクリックします。このメニューから「Inspect」と「Panel JSON」を選択します。
 +
-image::prometheus/storagegrid_dashboard_insp.png[StorageGRID ダッシュボード]
+image:prometheus/storagegrid_dashboard_insp.png["StorageGRID ダッシュボード"]
 
 .. JSONコードをコピーしてウィンドウを閉じます。
 +
-image::prometheus/storagegrid_panel_inspect.png[StorageGRID JSON]
+image:prometheus/storagegrid_panel_inspect.png["StorageGRID JSON"]
 
 .. 新しいダッシュボードで、アイコンをクリックして新しいパネルを追加します。
 +
-image::prometheus/grafana_add_panel.png[グラファナ追加パネル]
+image:prometheus/grafana_add_panel.png["グラファナ追加パネル"]
 
 .. 変更を加えずに新しいパネルを適用します
 .. StorageGRID パネルと同様に、JSONを確認します。JSONコードをすべて削除し、StorageGRID パネルからコピーしたコードに置き換えます。
 +
-image::prometheus/grafana_panel_inspect.png[グラファナ検査パネル]
+image:prometheus/grafana_panel_inspect.png["グラファナ検査パネル"]
 
 .. 新しいパネルを編集すると、右側に「移行」ボタンを含む移行メッセージが表示されます。ボタンをクリックして、[適用]ボタンをクリックします。
 +
-image::prometheus/grafana_panel_edit_menu.png[グラファナ編集パネルメニュー]
+image:prometheus/grafana_panel_edit_menu.png["グラファナ編集パネルメニュー"]
 
 +
-image::prometheus/grafana_panel_edit.png[Graafana編集パネル]
+image:prometheus/grafana_panel_edit.png["Graafana編集パネル"]
 
 
 

@@ -141,11 +141,11 @@ FS.s3a.path.style.access
 *サンプルスクリーンショット*
 
 +
-image::hadoop-s3a/hadoop-s3a-configuration.png[S3A構成]
+image:hadoop-s3a/hadoop-s3a-configuration.png["S3A構成"]
 
 . [Save Changes]ボタンをクリックします。HDFSメニューバーからStale Configurationアイコンを選択し、次のページでRestart Stale Servicesを選択して、Restart Nowを選択します。
 +
-image::hadoop-s3a/hadoop-restart-stale-service-icon.png[Hadoopの古いサービスアイコンを再起動します]
+image:hadoop-s3a/hadoop-restart-stale-service-icon.png["Hadoopの古いサービスアイコンを再起動します"]
 
 
 
