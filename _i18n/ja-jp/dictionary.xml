@@ -1342,4 +1342,190 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="29271d5d57f8d6e8670b7fc88d53d6e8" category="paragraph"><block ref="29271d5d57f8d6e8670b7fc88d53d6e8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cef940a89117c81a10863795c4ddd30e" category="paragraph"><block ref="cef940a89117c81a10863795c4ddd30e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="db42e15c186d3f7b8ba7a666052fc779" category="paragraph"><block ref="db42e15c186d3f7b8ba7a666052fc779" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9ad8a7a7798500b5e52f25607ed3485" category="list-text">Collibra（Collibra Data Qualityの最小バージョン2024.02）</block>
+  <block id="f56cff2f7966f4ffe98e416084bb7e95" category="list-text">ターゲットストレージアプライアンスのボリューム数は、ソースノードのボリューム数以上である必要があります。16個のオブジェクトストアボリューム（rangedb）を含むソースノードを、12個のオブジェクトストアボリュームを含むターゲットストレージアプライアンスにクローニングすることはできません。これは、ターゲットアプライアンスの容量がソースノードよりも大きい場合でも同様です。ほとんどのストレージアプライアンスにはオブジェクトストアボリュームが16個ありますが、オブジェクトストアボリュームが12個しかないSGF6112ストレージアプライアンスは除きます。たとえば、SG5760からSGF6112にクローニングすることはできません。</block>
+  <block id="301ed7b461a16811c00829d5bd1c6624" category="summary">このガイドでは、GitLabでStorageGRIDを構成する方法について説明します。</block>
+  <block id="ef012cefa8ad7693b5c808fa1ce94bbd" category="doc">NetApp StorageGRIDとGitLab</block>
+  <block id="75049db1e349683b35a7dca115f7b290" category="inline-link">GitLabオブジェクトストレージ構成ガイド</block>
+  <block id="830a8857ba237b976f92dcbaa5cdec26" category="paragraph">NetAppはStorageGRIDをGitLabでテストしました。以下のGitLabの設定例を参照してください。  を参照してください<block ref="1fbed9049876aa2874e9bb4887a0f320" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="dc74db24a8e5e1f23203fff3257066b1" category="section-title">オブジェクトストレージの接続例</block>
+  <block id="4e2805091f9d6d4c2bf36af3331432cc" category="paragraph">Linuxパッケージのインストールの場合は、次の例を参照してください。<block ref="4717d53ebfdfea8477f780ec66151dcb" prefix=" " category="inline-code"></block> 統合フォームでの設定。編集<block ref="371d9aee577f2cef4df0163cf7dc8a0c" prefix=" " category="inline-code"></block> 次の行を追加し、必要な値を置き換えます。</block>
+  <block id="38ffd8c22488922588812e688de792ac" category="summary">このレポートでは、StorageGRIDのS3Aのチューニングについて説明します。</block>
+  <block id="c422c82e21b1ef6485ec6d88beb6b06c" category="doc">Hadoop S3Aの調整</block>
+  <block id="1b40687ad18cfd6efdf4810ebb337b1a" category="paragraph">Hadoop S3Aコネクタは、HadoopベースのアプリケーションとS3オブジェクトストレージ間のシームレスなやり取りを容易にします。S3オブジェクトストレージを使用する際のパフォーマンスを最適化するには、Hadoop S3Aコネクタの調整が不可欠です。調整の詳細に進む前に、Hadoopとそのコンポーネントの基本を理解しておきましょう。</block>
+  <block id="e41757b122e008baee063abf23c19c8e" category="section-title">Hadoopとは</block>
+  <block id="b654c608145226171f0898ccbae5cec7" category="paragraph">* Hadoop * は、大規模なデータ処理とストレージを処理するために設計された強力なオープンソース・フレームワークです。これにより、コンピュータのクラスタ間で分散ストレージと並列処理が可能になります。</block>
+  <block id="286bb4752ab8cc6c9ab926108e89ff74" category="paragraph">Hadoopの3つのコアコンポーネントは次のとおりです。</block>
+  <block id="b27a1acd006213b6e473f4749269fd71" category="list-text">* Hadoop HDFS（Hadoop分散ファイルシステム）*：ストレージを処理し、データをブロックに分割してノード間で分散します。</block>
+  <block id="88d3606426a43318176abdbbccebd0bf" category="list-text">* Hadoop MapReduce *：タスクを小さなチャンクに分割し、並行して実行することでデータを処理します。</block>
+  <block id="4e3559b639014f651bda365ff91a1be1" category="inline-link">リソースの管理とタスクのスケジュール設定を効率的に行う</block>
+  <block id="27a5b1eb9e47fddd3fa124843d505156" category="list-text">* Hadoop YARN（Yet Another Resource Negotiator）：*<block ref="0a2f651ef2ec562f49ee6f3ee518be8b" category="inline-link-rx"></block></block>
+  <block id="d00c5d3d4637dd8d67672efd5e9370a7" category="section-title">Hadoop HDFSおよびS3Aコネクタ</block>
+  <block id="a3d3b46a8ca353af62834cbd44407f28" category="paragraph">HDFSはHadoopエコシステムの重要なコンポーネントであり、効率的なビッグデータ処理において重要な役割を果たします。HDFSは信頼性の高いストレージと管理を実現します。並列処理と最適化されたデータストレージを実現し、データアクセスと分析を高速化します。</block>
+  <block id="7cba2f74e0ab52b47dc032ae00b28539" category="paragraph">ビッグデータ処理では、HDFSは大規模データセットにフォールトトレラントなストレージを提供することに優れています。これは、データレプリケーションによって実現されます。IT部門は、データウェアハウス環境に大量の構造化データと非構造化データを格納して管理できます。さらに、Apache Spark、Hive、Pig、Flinkなどの主要なビッグデータ処理フレームワークとシームレスに統合し、スケーラブルで効率的なデータ処理を可能にします。UNIXベース(Linux)オペレーティングシステムと互換性があり、ビッグデータ処理にLinuxベースの環境を使用することを好む組織にとって理想的な選択肢です。</block>
+  <block id="19db330c0bad5316cc12c5dfd0667649" category="paragraph">時間の経過とともにデータ量が増大するにつれて、独自のコンピューティングとストレージを使用してHadoopクラスタに新しいマシンを追加するアプローチは非効率的になります。リニアに拡張すると、リソースの効率的な使用やインフラの管理が難しくなります。</block>
+  <block id="22e7bb54fa5c10b5b025b5533a88999d" category="paragraph">これらの課題に対処するために、Hadoop S3AコネクタはS3オブジェクトストレージに対するハイパフォーマンスI/Oを提供します。S3Aを使用してHadoopワークフローを実装することで、オブジェクトストレージをデータリポジトリとして活用でき、コンピューティングとストレージを分離することができます。これにより、コンピューティングとストレージを別々に拡張できます。コンピューティングとストレージを分離することで、コンピューティングジョブ専用のリソースを確保し、データセットのサイズに基づいて容量を提供することもできます。そのため、Hadoopワークフローの総所有コストを削減することができます。</block>
+  <block id="bea7f21895dd503dbb2c3260b3af74b5" category="section-title">Hadoop S3Aコネクタの調整</block>
+  <block id="53fa8f489fea78504f2a690e70f6624d" category="paragraph">S3の動作はHDFSとは異なり、ファイルシステムの外観を維持しようとすると積極的に最適化されません。S3リソースを最も効率的に使用するには、慎重な調整、テスト、実験が必要です。</block>
+  <block id="485a45d91872aeb5af4b8a55fa265c39" category="inline-link">Hadoop 3.3.5 core-site.xml</block>
+  <block id="413d791e09959ec487ff70f6a5fa8f5f" category="paragraph">本ドキュメントのHadoopオプションはHadoop 3.3.5に基づいています。を参照してください。<block ref="ff5a0a931f8a3b6af413721cf09c3790" category="inline-link-rx"></block> 使用可能なすべてのオプションについて。</block>
+  <block id="18e3e9625172b950f27bfa276bc9bac2" category="paragraph">注–一部のHadoop fs.s3a設定のデフォルト値は、Hadoopのバージョンによって異なります。現在のHadoopバージョンに固有のデフォルト値を確認してください。これらの設定がHadoop core-site.xmlに指定されていない場合は、デフォルト値が使用されます。SparkまたはHive構成オプションを使用して、実行時に値を上書きできます。</block>
+  <block id="85745090e2519b4e232f691071d9b425" category="inline-link">Apache Hadoopページ</block>
+  <block id="78c46ef71aa9afef44c6367560cca566" category="paragraph">これに行く必要があります。<block ref="abad591e30e327768342ad907b293959" category="inline-link-rx"></block> 各fs.s3aオプションを理解するため。可能であれば、非本番環境のHadoopクラスタでテストして最適な値を特定します。</block>
+  <block id="85d6e5d0078a84fc29dd42a208f9629b" category="inline-link">S3Aコネクタでの作業時のパフォーマンスの最大化</block>
+  <block id="dcab9d5d9c10d726c90c6c4d3ac65fe0" category="paragraph">お読みください<block ref="bd3cc6effa7ab467cddf323c1824c302" category="inline-link-rx"></block> その他のチューニングの推奨事項については、</block>
+  <block id="d909d5361378ec585bfd069b0711a66f" category="paragraph">主な考慮事項をいくつか見ていきましょう。</block>
+  <block id="245a20d95f90b2748cffdfc73cbffb3f" category="paragraph">* 1 。データ圧縮*</block>
+  <block id="77223f8255f1260a06b0735cd6f7cfe8" category="paragraph">StorageGRID圧縮を有効にしないでください。ほとんどのビッグデータシステムでは、オブジェクト全体を読み出す代わりにバイト範囲GETを使用します。圧縮オブジェクトにbyte range getを使用すると、GETのパフォーマンスが大幅に低下します。</block>
+  <block id="4dd2bed9c1980f32df795815ba1bc2c9" category="paragraph">※ 2S3Aコミッタ*</block>
+  <block id="d478615245634189a8210b6069fb0383" category="inline-link">共通のS3Aコミッタオプションページ</block>
+  <block id="7ac30a4c19c86427129a4848b169de86" category="paragraph">一般的には、マジックs3aコミッターをお勧めします。これを参照してください<block ref="7bd5d7726ff15eb3278019d14d9791ad" category="inline-link-rx"></block> マジックコミッタとそれに関連するs3a設定をよりよく理解するため。</block>
+  <block id="1c90757eed18fc6bd4eb8aba8421533f" category="paragraph">マジックコミッター：</block>
+  <block id="5fd47885b78e7fc30d2f24ef46be983b" category="paragraph">Magic Committerは、特にS3Guardを使用して、S3オブジェクトストアで一貫したディレクトリリストを提供します。</block>
+  <block id="1299ce4463815e5b17364f972f897e66" category="paragraph">整合性のあるS3（現在はそうなっています）を使用すると、Magic Committerは任意のS3バケットで安全に使用できます。</block>
+  <block id="83f0ca20cfa52e6400b17cab93a1cf17" category="paragraph">選択と実験：</block>
+  <block id="fb9962c4a0d3937d268fc2deb23bea85" category="paragraph">ユースケースに応じて、Staging Committer（クラスタHDFSファイルシステムに依存）とMagic Committerのどちらかを選択できます。</block>
+  <block id="bcdd4afe5d0cbdf8cc04de0c92ddc7df" category="paragraph">両方を試して、ワークロードと要件に最適なものを判断してください。</block>
+  <block id="b2272f16c45a7fc4af509338bc22504e" category="paragraph">要約すると、S3Aコミッタは、S3への一貫した、高性能で信頼性の高い出力コミットメントという基本的な課題に対する解決策を提供します。内部設計により、データの整合性を維持しながら効率的なデータ転送を実現します。</block>
+  <block id="81501235b286178b5df292f16c6e8b47" category="inline-image-macro">S3Aオプションテーブル</block>
+  <block id="749d1c1d8a18506e442bfbbaec54f349" category="paragraph"><block ref="749d1c1d8a18506e442bfbbaec54f349" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dc1717f3744878e6dbb68b8a22974e06" category="paragraph">*3.スレッド、接続プールサイズ、ブロックサイズ*</block>
+  <block id="b35c467aea8fb0e4ad9d636d48d0b8db" category="list-text">1つのバケットとやり取りする各* S3A *クライアントには、アップロードおよびコピー処理用のオープンHTTP 1.1接続とスレッドの専用プールがあります。</block>
+  <block id="4b7fc1639229d7f089f2e8c85436106e" category="inline-link">これらのプールサイズを調整して、パフォーマンスとメモリ/スレッド使用量のバランスをとることができます。</block>
+  <block id="901a6addd359ee8998a8f1e41f45789f" category="list-text"><block ref="801a4dc74c7b120220c9c416fd446c6b" category="inline-link-rx"></block>。</block>
+  <block id="10fbe332f21fbd575e849cde38283e2e" category="list-text">S3にデータをアップロードする場合、データはブロックに分割されます。デフォルトのブロックサイズは32MBです。この値をカスタマイズするには、fs.s3a.block.sizeプロパティを設定します。</block>
+  <block id="ffa0e6a713cabf752ba8055eaaede5fc" category="list-text">ブロックサイズを大きくすると、アップロード中にマルチパートパートパートを管理するオーバーヘッドが軽減されるため、大規模なデータアップロードのパフォーマンスが向上します。大規模なデータセットの場合、推奨値は256 MB以上です。</block>
+  <block id="06227b83b2c17941a4d807e7d9b74710" category="paragraph"><block ref="06227b83b2c17941a4d807e7d9b74710" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f40f5a29dd719649854707ad2ed54faa" category="paragraph">*4.マルチパートアップロード*</block>
+  <block id="289795451e85a0a16d75e7868c7480d0" category="paragraph">s3aコミッタ*常に* MPU（マルチパートアップロード）を使用してデータをs3バケットにアップロードします。これは、タスクの失敗、タスクの投機的な実行、およびコミット前のジョブの中止を可能にするために必要です。マルチパートアップロードに関連する主な仕様を次に示します。</block>
+  <block id="a9da1ffc95aa8035dfd68dae308c2231" category="list-text">最大オブジェクトサイズ：5TiB（テラバイト）。</block>
+  <block id="d0fb74e477b55b97737f386acec3b84e" category="list-text">アップロードあたりの最大パーツ数：10、000</block>
+  <block id="83b29781f2e067cdc992c431a51a9935" category="list-text">パーツ番号：1～10,000（含む）。</block>
+  <block id="7345af9128ab03965deea092bbcd2202" category="list-text">パーツサイズ：5MiB~5GiB。特に、マルチパートアップロードの最後のパートには最小サイズの制限はありません。</block>
+  <block id="f9064148ac19ecdf76f9ddca593dbddb" category="paragraph">S3マルチパートアップロードに小さいパートサイズを使用すると、メリットとデメリットの両方があります。</block>
+  <block id="1ef80274ba7e199b46d885662e8e2e9f" category="paragraph">*利点*：</block>
+  <block id="e4461ace39f3509a41ff3e20c71902cf" category="list-text">ネットワークの問題からのクイックリカバリ:小さなパーツをアップロードすると、ネットワークエラーによるアップロードの再開による影響が最小限に抑えられます。パーツに障害が発生した場合は、オブジェクト全体ではなく、その特定のパーツのみを再アップロードする必要があります。</block>
+  <block id="df3a8de4dd7f4c840c5cd07e596cb5de" category="list-text">並列化の向上:マルチスレッディングまたは同時接続を利用して、より多くのパーツを並行してアップロードできます。この並列化により、特に大きなファイルを処理する場合のパフォーマンスが向上します。</block>
+  <block id="c44c778d63d4fd51a252f196604c2ec6" category="paragraph">*欠点*：</block>
+  <block id="5c62a121681103dd6392f0859e18473a" category="list-text">ネットワークオーバーヘッド:部品サイズが小さいほど、アップロードする部品が増えます。各部品には独自のHTTPリクエストが必要です。HTTP要求が増えると、個 々 の要求の開始と完了のオーバーヘッドが増加します。多数の小さなパーツを管理すると、パフォーマンスに影響を与える可能性があります。</block>
+  <block id="748b6dc8bff1881d38cec5375d3045a7" category="list-text">複雑さ：注文の管理、パーツの追跡、アップロードの成功の確認は面倒です。アップロードを中止する必要がある場合は、すでにアップロードされているすべてのパーツを追跡してパージする必要があります。</block>
+  <block id="f3983123dcac058e305af36c45c988e8" category="paragraph">Hadoopの場合、fs.s3a.multipart.sizeには256MB以上のパーツサイズを推奨します。fs.s3a.mutlipart.threshold値は常に2 x fs.s3a.multipart.size値に設定します。たとえば、fs.s3a.multipart.size=256Mの場合、fs.s3a.mutlipart.thresholdは512Mにする必要があります。</block>
+  <block id="4251dd2508268d84d780950cfa957f88" category="paragraph">大きなデータセットには大きなパーツサイズを使用してください。特定のユースケースとネットワーク条件に基づいて、これらの要因のバランスを取る部品サイズを選択することが重要です。</block>
+  <block id="56d98abf32151f1e7a60c6cdad4b995e" category="inline-link">3段階のプロセス</block>
+  <block id="40a26596045288b6e31e0524da1e78d4" category="paragraph">マルチパートアップロードは<block ref="119a74f2526c1f8ee38f113c37745d3a" category="inline-link-rx"></block>：</block>
+  <block id="e77511b5a47e9ce5242b5e2707d34871" category="list-text">アップロードが開始され、StorageGRIDはupload-idを返します。</block>
+  <block id="465c4cf2408ae7723d681a9c8607de37" category="list-text">オブジェクトパーツはupload-idを使用してアップロードされます。</block>
+  <block id="265f70ced2325f215340985c129b8fff" category="list-text">すべてのオブジェクトパートがアップロードされると、は、upload-idを指定して完全なマルチパートアップロード要求を送信します。StorageGRIDは、アップロードされたパーツからオブジェクトを構築し、クライアントがオブジェクトにアクセスできるようにします。</block>
+  <block id="65638a5ddb2ddbd00963cc5b84f206d1" category="paragraph">Complete multipart upload要求が正常に送信されなかった場合、パーツはStorageGRIDに残り、オブジェクトは作成されません。これは、ジョブが中断、失敗、または中止された場合に発生します。マルチパートアップロードが完了するか中止されるか、アップロードが開始されてから15日が経過するとStorageGRIDがそれらのパートをパージするまで、パートはグリッドに残ります。バケット内で実行中のマルチパートアップロードが多数（数十万から数百万）ある場合、Hadoopが「list-multipart-uploads」を送信すると（この要求はアップロードIDでフィルタリングされません）、要求の完了に時間がかかるか、最終的にタイムアウトになることがあります。fs.s3a.mutlipart.purgeをtrueに設定し、適切なfs.s3a.multipart.purge.ageの値を設定することを検討してください（例：5～7日、デフォルト値の86400、つまり1日は使用しないでください）。または、NetAppサポートに状況を調査してください。</block>
+  <block id="caf1551badab24f35930164061cff3dd" category="paragraph"><block ref="caf1551badab24f35930164061cff3dd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9703f8bc6fb70abb3d253a5ded96197" category="paragraph">*5.メモリ内のバッファ書き込みデータ*</block>
+  <block id="36a89ed4836d3b5b5f59193e28776e5c" category="paragraph">パフォーマンスを向上させるには、書き込みデータをS3にアップロードする前にメモリにバッファします。これにより、少量の書き込み数が削減され、効率が向上します。</block>
+  <block id="f26f197ffec0d3e726569f182287a9a8" category="paragraph"><block ref="f26f197ffec0d3e726569f182287a9a8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="63d5657772886960693d8740023cf233" category="paragraph">S3とHDFSは別 々 の方法で機能することに注意してください。S3リソースを最も効率的に使用するには、慎重な調整/テスト/実験が必要です。</block>
+  <block id="38a5cc39717b20b4cde7ce17adfaf8c7" category="summary">このレポートでは、StorageGRIDでのビッグデータ分析について説明します。</block>
+  <block id="5d272a32f1e2287537ac7e73dbde5d69" category="doc">NetApp StorageGRIDとビッグデータ分析</block>
+  <block id="f5787e6402b1cee555a3442483bd6327" category="section-title">NetApp StorageGRIDのユースケース</block>
+  <block id="92f1edc36d1985b5746e924fb88bb19b" category="paragraph">NetApp StorageGRIDオブジェクトストレージ解決策は、拡張性、データ可用性、セキュリティ、ハイパフォーマンスを提供します。StorageGRID S3は、あらゆる規模のさまざまな業界の組織で幅広いユースケースに使用されています。典型的なシナリオをいくつか見てみましょう。</block>
+  <block id="27f32b3f9512c62dc40543d9cc892611" category="paragraph">*ビッグデータ分析：* StorageGRID S3はデータレイクとしてよく使用されています。企業は、Apache Spark、Splunk Smartstore、Dremioなどのツールを使用して、分析用に大量の構造化データと非構造化データを保存します。</block>
+  <block id="e77b3574759aea5c11a8d04312bc2cbe" category="paragraph">*データ階層化：* NetAppのお客様は、ONTAPのFabricPool機能を使用して、ハイパフォーマンスなローカル階層間でStorageGRIDにデータを自動的に移動します。階層化することで、高価なフラッシュストレージをホットデータ用に解放し、コールドデータを低コストのオブジェクトストレージでいつでも利用できる状態に維持できます。これにより、パフォーマンスとコスト削減が最大化されます。</block>
+  <block id="4dc7ef59b422ad6beec0dcf560a3fdf9" category="paragraph">*データのバックアップとディザスタリカバリ：*企業は、StorageGRID S3を信頼性とコスト効率に優れた解決策として使用して、重要なデータのバックアップと災害時のリカバリを実行できます。</block>
+  <block id="b05954e05454ab56e0d356cb4ad49d95" category="paragraph">*アプリケーション用のデータストレージ：* StorageGRID S3はアプリケーションのストレージバックエンドとして使用できるため、開発者はファイル、画像、ビデオ、その他の種類のデータを簡単に保存および取得できます。</block>
+  <block id="5623c900b98e0e5e17c60c75ded947b1" category="paragraph">*コンテンツ配信：* StorageGRID S3を使用すると、静的なWebサイトコンテンツ、メディアファイル、ソフトウェアダウンロードを世界中のユーザに保存して配信できます。StorageGRIDの地理的な配信とグローバルネームスペースを活用して、高速で信頼性の高いコンテンツ配信を実現できます。</block>
+  <block id="60b72d1ecbd87ac726a3dbb733456c59" category="paragraph">*データ階層化：* NetAppのお客様は、ONTAP FabricPool機能を使用して、ハイパフォーマンスなローカル階層間でStorageGRIDにデータを自動的に移動します。階層化することで、高価なフラッシュストレージをホットデータ用に解放し、コールドデータを低コストのオブジェクトストレージからいつでも利用できる状態に保ちます。これにより、パフォーマンスとコスト削減が最大化されます。</block>
+  <block id="454845c7ca306686c28f96a59487d70c" category="paragraph">*データアーカイブ：* StorageGRIDは、さまざまな種類のストレージを提供し、パブリックな長期低コストストレージオプションへの階層化をサポートします。コンプライアンスや履歴目的で保持する必要があるデータのアーカイブや長期保存に最適な解決策です。</block>
+  <block id="a324e6c3bb7d6684738c923e7b52ea98" category="paragraph">*オブジェクトストレージのユースケース*</block>
+  <block id="9f79f86c9a539a911125a876ef6a3c2e" category="inline-image-macro">StorageGRIDのユースケース図、幅= 396、高さ= 394</block>
+  <block id="2ae53f7687415e47352b3c8fdf11602c" category="paragraph"><block ref="2ae53f7687415e47352b3c8fdf11602c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c9e24c78b995a9f99006f7b470383259" category="paragraph">上記の中で、ビッグデータ分析は最も多くのユースケースの1つであり、その使用量は増加傾向にあります。</block>
+  <block id="d9adadb4a0063dcb9fae0a43c0073259" category="section-title">データレイクにStorageGRIDを選ぶ理由</block>
+  <block id="20ee9cfabde8b905c9a64689a84b0921" category="list-text">コラボレーションの強化-業界標準のAPIアクセスによる大規模な共有マルチサイト、マルチテナンシー</block>
+  <block id="884ee76830efc6a2368841cf8e70b390" category="list-text">運用コストの削減-単一の自己回復型自動スケールアウトアーキテクチャによる運用の簡易化</block>
+  <block id="abdafbcb8273ebb7d3d1776426912eea" category="list-text">拡張性-従来のHadoopやデータウェアハウスソリューションとは異なり、StorageGRID S3オブジェクトストレージはコンピューティングやデータからストレージを切り離し、ビジネスの成長に合わせてストレージニーズを拡張できます。</block>
+  <block id="94756ff0a241ceb246fb4e92f9e8b5db" category="list-text">耐久性と信頼性- StorageGRIDは99.999999999%の耐久性を提供し、保存されたデータはデータ損失に対して非常に耐性があります。また、高可用性を提供し、データへの常時アクセスを保証します。</block>
+  <block id="6d5424acc89d68777ded882e67fba989" category="list-text">セキュリティ- StorageGRIDは、暗号化、アクセス制御ポリシー、データライフサイクル管理、オブジェクトロック、S3バケットに格納されたデータを保護するバージョン管理など、さまざまなセキュリティ機能を提供します。</block>
+  <block id="9ed95e053e569a8027874c20fc968fa0" category="paragraph">* StorageGRID S3データレイク*</block>
+  <block id="16440189dc2ac5b52ea041615f4e3502" category="inline-image-macro">StorageGRIDデータレイクの例、幅= 614、高さ= 345</block>
+  <block id="8c6ce2dc10841da36e2b55063b73a29e" category="paragraph"><block ref="8c6ce2dc10841da36e2b55063b73a29e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bcf6df0d4fc301b73dfb0f84c2b25fca" category="section-title">S3オブジェクトストレージに最も適したデータウェアハウスまたはデータレイク</block>
+  <block id="f5fb5a608581154f9f31a7efeaf26b22" category="inline-link">『Apache Iceberg: The Definitive Guide』</block>
+  <block id="961898fd5ba4fc2d612d1c831953550a" category="paragraph">NetAppは、Hive、Delta Lake、Dremioの3つのデータウェアハウス/レイクハウスエコシステムでStorageGRIDをベンチマークしました。<block ref="ea7970154750f3c7264130a8bd2b3dc5" category="inline-link-rx"></block> データウェアハウスとデータレイクハウスの簡単な紹介と、これら2つのアーキテクチャの長所と短所が含まれています。</block>
+  <block id="d74100f8d86dca0577d39ba1e04a17a6" category="list-text">ベンチマークツール- TPC-DS-<block ref="d703b8825e30c09e87a04e77b042a1a8" category="inline-link-rx"></block></block>
+  <block id="d30ec88779257c0b31627ba4c551888a" category="list-text">ビッグデータエコシステム</block>
+  <block id="3d8fdb479ba6a1b9cecf651f9b7eea26" category="list-text">5台のVMで構成されるクラスタ。各VMに128G RAM、24個のvCPU、システムディスク用SSDストレージが搭載されています。</block>
+  <block id="a7bc6add825dafcb28d8468de2244c0e" category="list-text">Hadoop 3.3.5とHive 3.1.3（1つのネームノード+ 4つのデータノード）</block>
+  <block id="6b3b732f04270b0bc61c4e04a2f39184" category="list-text">Delta LakeとSpark 3.2.0（1マスター+ 4ワーカー）およびHadoop 3.3.5</block>
+  <block id="6b18ec7d77a4e9e064cbf7907da0f995" category="list-text">Dremio v23（マスター1名+エグゼキューター4名）</block>
+  <block id="670aaecb1a526fbed439dad3ec353a96" category="list-text">オブジェクトストレージ</block>
+  <block id="2d9b029355e87294061ae6f1de033209" category="list-text">SG6060を3台+ SG1000ロードバランサを1台搭載した場合、NetApp ^ StorageGRID®^SG^®^11.6</block>
+  <block id="3e02059b0b44d7c31aea68d26d910c82" category="list-text">オブジェクトの保護-コピー×2</block>
+  <block id="3cf72a217876a6502e40c6bc45a93c60" category="list-text">データベースサイズ1000GB</block>
+  <block id="8db25bfcdb041c33cb3750cd355e2821" category="list-text">クエリテストごとに一貫した結果を得るために、3つのエコシステムすべてでキャッシュが無効になりました。</block>
+  <block id="4775694e0c94905d9a80366e4fa7f65a" category="paragraph">TPC-DSには、クエリベンチマーク用に99の複雑なSQLクエリが付属しています。99個のクエリをすべて完了するまでの合計時間を分単位で測定し、結果を分析するためにS3要求のタイプと数を細かく分析しました。次の表は、全99件のクエリの合計期間を示しています。2番目の表は、各エコシステムがStorageGRIDに送信するS3要求の数とタイプを示しています。</block>
+  <block id="6d250f65ee48829b160dce910ccf0190" category="paragraph">* TPC-DSクエリ結果*</block>
+  <block id="47e3170ffb3d6c316975632968933646" category="cell">エコシステム</block>
+  <block id="c05def664dae0985e5984993db2b69a0" category="cell">ハイブ</block>
+  <block id="e51fc2a250a74f84b11010c0f9316c46" category="cell">デルタレイク"</block>
+  <block id="6f632a1f063dc14df220da8c1d176f38" category="cell">ストレージレイヤ</block>
+  <block id="49519cec4f69d00412deaceb05c68eb8" category="cell">NetApp ^®^ StorageGRID ^®^</block>
+  <block id="ce1dc110e77caccbe12e51dce2d1c9b7" category="cell">ドライブタイプ</block>
+  <block id="9c2dc227590d4220750b52b21b0aeb99" category="cell">HDD</block>
+  <block id="5128c40e9b4875ff6b6f9b08e8d0a03f" category="cell">表形式</block>
+  <block id="ace780da4816e1e457db8c57d60b5d66" category="cell">寄木細工</block>
+  <block id="f49606530a9567c51e160fcce34b8f71" category="cell">寄木細工^1^</block>
+  <block id="6267eaec7dcff27c3dc9e28ff41252d0" category="cell">データベースサイズ</block>
+  <block id="a0b2fbadd5b3ebfe64b31483a2ac8886" category="cell">1000 g</block>
+  <block id="35b5589d5690d7ef32acf311beb9bbea" category="cell">TPCDS 99クエリ+
+合計分数</block>
+  <block id="d06520689ef9c6002c5ceab8146281f6" category="cell">1084^2^</block>
+  <block id="b53b3a3d6ab90ce0268229151c9bde11" category="cell">55</block>
+  <block id="67c6a1e7ce56d3d6fa748ab6d9af3fd7" category="cell">47です</block>
+  <block id="fb9fcf59d7e277fffe7705ce2be3777a" category="paragraph">^1^寄木細工と氷山の両方のテーブル形式をテストしましたが、結果は似ています。</block>
+  <block id="673b0197afb5ff5d157542553d103217" category="paragraph">^2^Hiveクエリー番号72を完了できません。</block>
+  <block id="95f1998726f8cd4be0aff86865fa8eae" category="paragraph">* TPC-DSクエリ- S3要求の内訳*</block>
+  <block id="3e197ca7a19378fad3e5581cbd39fb4b" category="cell">S3要求</block>
+  <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">取得</block>
+  <block id="8db7bb1512ff25e1db67c5b9a53f897d" category="cell">一、一一七、一八四</block>
+  <block id="2569e54b8230d5c2746fa85c61dcf512" category="cell">2、074、610</block>
+  <block id="7cea2b87e7eb0c4d67994a7b9fa4f3d3" category="cell">四、四一四、二二二七</block>
+  <block id="6f53c4f40f0a0d7fefdb89564ac1c713" category="cell">観察：+
+すべての範囲GET</block>
+  <block id="a9d41bf59f53e6160f0b13f571ea418a" category="cell">80%のGET：32MBオブジェクトから2KB～2MB、50~100要求/秒</block>
+  <block id="e0b8bceb4cded5e4c1e2d73d9331f0f7" category="cell">73%の範囲は、32MBオブジェクトから100KB未満、1、000~1400要求/秒</block>
+  <block id="bfe0f96dc7eb9140699f8fdd7568c553" category="cell">90% 1Mバイト範囲は256MBのオブジェクトから取得、2000~2300の要求/秒</block>
+  <block id="0f220d208874b104e26e73ec94b0e690" category="cell">オブジェクトをリスト表示</block>
+  <block id="bfc2dfc2cb23058c08a7d12b5c3abb19" category="cell">三一二、〇 五三</block>
+  <block id="0e706da47bd945de88f06af5c56e1e6a" category="cell">二四、一五八</block>
+  <block id="335f5352088d7d9bf74191e006d8e24c" category="cell">240</block>
+  <block id="c03e2ac569e5aac15b52493eef30e9e7" category="cell">頭部+
+（存在しないオブジェクト）</block>
+  <block id="b920dc6d7f4f2319e93bdcc850be6166" category="cell">156、027</block>
+  <block id="8e43c25a28a92db67de364324cbdf9dd" category="cell">一二、一 〇 三</block>
+  <block id="58a2fc6ed39fd083f55d4182bf88826d" category="cell">192年</block>
+  <block id="d241bb72f8484e8c12847a1c342893cc" category="cell">頭部+
+（既存のオブジェクト）</block>
+  <block id="791138a3078a87a630b0ddcc779f5365" category="cell">982、126</block>
+  <block id="41157fd52202414d46b193aa0dc0e7ed" category="cell">922、732</block>
+  <block id="4a12caac680acef61b9d5542d0bdd153" category="cell">一、八四五</block>
+  <block id="645d67b4eb5a0d06bf14fe7a682ced76" category="cell">リクエスト総数</block>
+  <block id="a56d0d38d9846ac044442ecabae19902" category="cell">二、五六七、三九 〇</block>
+  <block id="6dfffbda5aeba01126df9439ffbc82a3" category="cell">3、033、603</block>
+  <block id="b0f186b9ad3639a900dc289160a9505b" category="cell">4、416、504</block>
+  <block id="15dc52463e414693d28f722fd4d402db" category="paragraph">最初のテーブルから、デルタ湖とDremioがHiveよりもはるかに速いことがわかります。2つ目の表から、Hiveが大量のS3リストオブジェクト要求を送信していることがわかります。この要求は、すべてのオブジェクトストレージプラットフォーム（特に多数のオブジェクトを含むバケットを扱う場合）では通常低速です。これにより、全体的なクエリ時間が大幅に長くなります。もう1つの観測点は、Dremioが大量のGET要求を並行して送信することができたことで、Hiveでは毎秒50~100件の要求に対して、毎秒2,000～2300件の要求が送信されたことです。HiveとHadoop S3AのMimic standard filesystemは、S3オブジェクトストレージのHiveの低速化に貢献しています。</block>
+  <block id="5fd92565468cb3e9de156c317d9d5f07" category="paragraph">Hadoop（HDFSまたはS3オブジェクトストレージ上）をHiveまたはSparkで使用するには、HadoopとHive/Sparkの広範な知識と、各サービスの設定の相互作用に関する知識が必要です。これらの設定の合計数は1000以上です。多くの場合、設定は相互に関連しており、単独で変更することはできません。使用する設定と値の最適な組み合わせを見つけるには、膨大な時間と労力がかかります。</block>
+  <block id="8a96077dd21be324029bd1c265c53313" category="paragraph">Dremioは、エンドツーエンドのApache Arrowを使用してクエリのパフォーマンスを劇的に向上させるデータレイクエンジンです。Apache Arrowは、効率的なデータ共有と高速分析のために標準化されたカラムナメモリフォーマットを提供します。Arrowは、言語に依存しないアプローチを採用しており、データのシリアライゼーションとデシリアライゼーションの必要性を排除し、複雑なデータプロセスとシステム間のパフォーマンスと相互運用性を向上させるように設計されています。</block>
+  <block id="dec1fbcbe442f11c3d728feb8041cb00" category="paragraph">Dremioの性能は主にDremioクラスター上の計算能力によって駆動される。DremioはS3オブジェクトストレージ接続にHadoopのS3Aコネクタを使用しますが、Hadoopは必須ではなく、Hadoopのfs.s3a設定のほとんどはDremioでは使用されません。これにより、さまざまなHadoop s3a設定の学習とテストに時間を費やすことなく、Dremioのパフォーマンスを簡単に調整できます。</block>
+  <block id="71860c77c6745379b0d44304d66b6a13" category="inline-link">ページ</block>
+  <block id="5db9c9da095f8d74e0628dbbdfdfb825" category="paragraph">このベンチマーク結果から、S3ベースのワークロード向けに最適化されたビッグデータ分析システムがパフォーマンスの大きな要因であることがわかります。Dremioはクエリの実行を最適化し、メタデータを効率的に利用し、S3データへのシームレスなアクセスを提供するため、S3ストレージを使用する場合にHiveと比較してパフォーマンスが向上します。これを参照してください<block ref="e4ec3c3ef03861ef67845dfb086c7b17" category="inline-link-rx"></block> StorageGRIDでDremio S3データソースを設定するには、次の手順を実行します。</block>
+  <block id="c0c37f88f031a9b491d9a8bbea81dda7" category="paragraph">StorageGRIDとDremioが連携して最新の効率的なデータレイクインフラを提供する方法や、NetAppがHive + HDFSからDremio + StorageGRIDに移行してビッグデータ分析の効率を劇的に向上させる方法については、以下のリンクをご覧ください。</block>
+  <block id="79304bd05c48f486a8924e2c45f39311" category="inline-link">NetApp StorageGRIDでビッグデータのパフォーマンスを向上</block>
+  <block id="9f6a1ff945eb33fcb8e19e5c7f4d3562" category="list-text"><block ref="9f6a1ff945eb33fcb8e19e5c7f4d3562" category="inline-link-rx"></block></block>
+  <block id="5683e5844e7df088ba30c5038415b393" category="inline-link">StorageGRIDとDremioによる、パワフルで効率性に優れた最新のデータレイクインフラ</block>
+  <block id="90db912c71e3eeae0631168476c49b1d" category="list-text"><block ref="90db912c71e3eeae0631168476c49b1d" category="inline-link-rx"></block></block>
+  <block id="1f3f85a45cc94830ad50d8dcc85d553a" category="inline-link">NetAppが製品分析でカスタマーエクスペリエンスを再定義する方法</block>
+  <block id="7014c893b79b05f09938975b394e0ca5" category="list-text"><block ref="7014c893b79b05f09938975b394e0ca5" category="inline-link-rx"></block></block>
+  <block id="06b48b444551989a8bbf76e3cb86a3d2" category="sidebar">StorageGRIDを使用したGitLabの構成</block>
+  <block id="00f36bd2b4cd1d9e59ff895b5e131be2" category="sidebar">テクニカルレポート</block>
+  <block id="0ad1cadfe97c5910e1b3ce75c8b0ff1f" category="sidebar">NetApp StorageGRIDとビッグデータ分析</block>
+  <block id="6407baffaf35e5f51c2e06e83659fcae" category="sidebar">Hadoop S3Aチューニングのベストプラクティス</block>
+  <block id="34d8c979f20e6e946fc25898c9b703b0" category="sidebar">Hadoop S3Aチューニング</block>
 </blocks>

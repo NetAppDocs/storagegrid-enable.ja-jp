@@ -58,6 +58,14 @@ indexpage:
       url: "/tools-apps-guides/veeam-br.html"
     - title: StorageGRIDを使用したDremioの設定
       url: "/tools-apps-guides/configure-dremio-storagegrid.html"
+    - title: StorageGRIDを使用したGitLabの構成
+      url: "/tools-apps-guides/integrate-gitlab.html"
+  - title: テクニカルレポート
+    links:
+    - title: NetApp StorageGRIDとビッグデータ分析
+      url: "/technical-reports/datalake-analytics.html"
+    - title: Hadoop S3Aチューニングのベストプラクティス
+      url: "/technical-reports/s3a-tuning.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証

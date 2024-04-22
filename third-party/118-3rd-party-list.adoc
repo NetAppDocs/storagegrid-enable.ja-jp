@@ -28,6 +28,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 * ブリッジストール
 * カンテモ
 * Citrixコンテンツコラボレーション
+* Collibra（Collibra Data Qualityの最小バージョン2024.02）
 * Commvault 11.
 * CTERAポータル6.
 * ダレト

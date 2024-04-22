@@ -17,6 +17,7 @@ sidebar:
   - section: product-feature-guides
   - section: tools-apps-guides
   - section: examples
+  - section: technical-reports
   - title: ブログの投稿
     url: "/blogs.html"
   - title: StorageGRID のドキュメント
