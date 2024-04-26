@@ -1,0 +1,92 @@
+---
+permalink: product-feature-guides/site-relocation-and-network-change.html 
+sidebar: sidebar 
+keywords: relocation move network change 
+summary: このガイドでは、マルチサイトグリッドでのStorageGRIDサイトの再配置の準備と手順について説明します。 
+---
+= グリッドサイトの再配置とサイト全体のネットワーク変更手順
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+このガイドでは、マルチサイトグリッドでのStorageGRIDサイトの再配置の準備と手順について説明します。この手順を完全に理解し、スムーズなプロセスを実現し、クライアントの中断を最小限に抑えるために事前に計画しておく必要があります。
+
+グリッド全体のグリッドネットワークを変更する必要がある場合は、を参照してください。
+link:https://docs.netapp.com/us-en/storagegrid-118/maintain/changing-nodes-network-configuration.html["グリッド内のすべてのノードの IP アドレスを変更します"]。
+
+
+
+== サイトの再配置前の考慮事項
+
+* Cassandraデータベースの再構築を回避するには、サイトの移動を完了し、すべてのノードを15日以内にオンラインにします。
+link:https://docs.netapp.com/us-en/storagegrid-118/maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html["ストレージノードを 15 日以上停止した状態にリカバリします"^]
+* アクティブポリシー内のいずれかのILMルールで厳密な取り込み動作が使用されている場合は、サイトの再配置中にオブジェクトを引き続きグリッドに配置する必要がある場合は、負荷分散またはデュアルコミットに変更することを検討してください。
+* ストレージアプライアンスに60本以上のドライブが搭載されている場合は、ディスクドライブが取り付けられているシェルフを移動しないでください。  パック/移動の前に、各ディスクドライブにラベルを付け、ストレージエンクロージャから取り外します。
+* StorageGRIDアプライアンスの変更グリッドネットワークVLANは、管理ネットワークまたはクライアントネットワーク経由でリモートで実行できます。  または、勤務地変更の前後にオンサイトで変更を実施する予定です。
+* PUTの前に、お客様のアプリケーションがHEADを使用しているか、存在しないオブジェクトを取得しているかを確認「はい」の場合は、HTTP 500エラーを回避するためにバケットの整合性をstrong-siteに変更します。  不明な場合は、S3の概要Grafanaグラフ*[Grid manager]>[Support]>[Metrics]*を確認し、[Total Completed Request]グラフにカーソルを合わせます。  404 GET Objectまたは404 HEADオブジェクトの数が非常に多い場合は、1つ以上のアプリケーションがHEADまたはGET Non-existenceオブジェクトを使用している可能性があります。カウントは累積値です。異なるタイムライン上にマウスを移動すると、その差が表示されます。
++
+image:site-relocation/s3-completed-request.png["S3の概要のGrafanaグラフのサンプル"]
+
+
+
+
+
+=== サイトの再配置前に手順でGrid IPアドレスを変更
+
+.手順
+. 新しいグリッドネットワークサブネットが新しい場所で使用される場合は、
+link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-grid-network.htmll["グリッドネットワークサブネットリストにサブネットを追加します。"^]
+. プライマリ管理ノードにログインし、change-ipを使用してグリッドIPを変更します。再配置用にノードをシャットダウンする前に、変更をステージングする必要があります*。
++
+.. [Grid IP]で[2]、[1]を選択します。
++
+image:site-relocation/ip-change-1.png[""]
+
+.. 5を選択して変更を表示
++
+image:site-relocation/ip-change-2.png[""]
+
+.. [10]を選択して確定し、変更を適用します。
++
+image:site-relocation/ip-change-3.png[""]
+
+.. このステップで* stage *を選択する必要があります。
++
+image:site-relocation/ip-change-4.png[""]
+
+.. 上記の変更にプライマリ管理ノードが含まれている場合は、*「a」と入力して手動でプライマリ管理ノードを再起動します*
++
+image:site-relocation/ip-change-5.png[""]
+
+.. Enterキーを押して前のメニューに戻り、IPインターフェイスの変更を終了します。
++
+image:site-relocation/ip-change-6.png[""]
+
+
+
+. Grid Managerから、新しいリカバリパッケージをダウンロードします。* Grid Manager *>*メンテナンス*>*リカバリパッケージ*
+. StorageGRIDアプライアンスでVLANの変更が必要な場合は、を参照してください。 <<アプライアンスVLANの変更>>。
+. サイトのすべてのノードおよびアプライアンスをシャットダウンし、必要に応じてディスクドライブにラベルを付けて取り外し、ラックを開梱して梱包して移動します。
+. 管理ネットワークのIP、クライアントのVLAN、IPアドレスを変更する場合は、再配置後に変更を実行できます。
+
+
+
+
+=== アプライアンスVLANの変更
+
+以下の手順は、リモートから変更を実行するために、StorageGRIDアプライアンスの管理ネットワークまたはクライアントネットワークにリモートアクセスできることを前提としています。
+
+.手順
+. アプライアンスをシャットダウンする前に、
+link:https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]。
+. ブラウザを使用したStorageGRIDアプライアンスインストーラGUIへのアクセス https://<admin-or-client-network-ip>:8443[]。  アプライアンスをメンテナンスモードでブートすると、すでに使用されている新しいグリッドIPとしてグリッドIPを使用することはできません。
+. グリッドネットワークのVLANを変更します。  クライアント・ネットワーク経由でアプライアンスにアクセスする場合、現時点ではクライアントVLANは変更できません。移動後に変更できます。
+. アプライアンスにSSH接続し、「shutdown -h now」を使用してノードをシャットダウン
+. 新しいサイトでアプライアンスの準備が完了したら、を使用してStorageGRIDアプライアンスインストーラのGUIにアクセスします。 https://<grid-network-ip>:8443[]。  GUIでping / nmapツールを使用して、ストレージが最適な状態であり、他のグリッドノードへのネットワーク接続が確立されていることを確認します。
+. クライアントネットワークIPの変更を計画している場合は、この段階でクライアントVLANを変更できます。  クライアントネットワークは、このあとの手順でIP変更ツールを使用してクライアントネットワークIPを更新するまで準備ができていません。
+. メンテナンスモードを終了します。StorageGRID アプライアンス・インストーラから、 *Advanced*>* Reboot Controller* を選択し、 * Reboot into StorageGRID * を選択します。
+. すべてのノードが稼働し、[Grid]に接続問題が表示されなくなったら、必要に応じてchange-IPを使用してアプライアンスの管理ネットワークとクライアントネットワークを更新します。
+

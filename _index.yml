@@ -38,6 +38,8 @@ indexpage:
       url: "/product-feature-guides/node-clone.html"
     - title: ポート再マッピングの使用方法
       url: "/product-feature-guides/port-remap.html"
+    - title: サイトを再配置してネットワークを変更する方法
+      url: "/product-feature-guides/site-relocation-and-network-change.html"
   - title: ツールおよびアプリケーションガイド
     links:
     - title: Cloudera Hadoop S3Aコネクタを使用します
