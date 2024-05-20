@@ -5,7 +5,10 @@ keywords: data lake, on-premises, analytics, storagegrid, object
 summary: このレポートでは、StorageGRIDでのビッグデータ分析について説明します。 
 ---
 = NetApp StorageGRIDとビッグデータ分析
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 
@@ -30,7 +33,7 @@ NetApp StorageGRIDオブジェクトストレージ解決策は、拡張性、�
 
 *オブジェクトストレージのユースケース*
 
-image:../media/datalake-analytics/image1.png["StorageGRIDのユースケース図、幅= 396、高さ= 394"]
+image:datalake-analytics/image1.png["StorageGRIDのユースケース図、幅= 396、高さ= 394"]
 
 上記の中で、ビッグデータ分析は最も多くのユースケースの1つであり、その使用量は増加傾向にあります。
 
@@ -47,7 +50,7 @@ image:../media/datalake-analytics/image1.png["StorageGRIDのユースケース�
 
 * StorageGRID S3データレイク*
 
-image:../media/datalake-analytics/image2.png["StorageGRIDデータレイクの例、幅= 614、高さ= 345"]
+image:datalake-analytics/image2.png["StorageGRIDデータレイクの例、幅= 614、高さ= 345"]
 
 
 

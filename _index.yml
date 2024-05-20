@@ -68,6 +68,8 @@ indexpage:
       url: "/technical-reports/datalake-analytics.html"
     - title: Hadoop S3Aチューニングのベストプラクティス
       url: "/technical-reports/s3a-tuning.html"
+    - title: TR-4871：『Commvault Complete Backup and Recovery and NetApp StorageGRID』
+      url: "/technical-reports/tr-4871-commvault.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証
