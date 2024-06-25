@@ -926,7 +926,6 @@
   <block id="639a958d74ef218710689b55aa4ef73e" category="list-text">SG5660またはSG5760アプライアンスからSG6060アプライアンスに移行する場合、SG5x60には容量ドライブが60本搭載されていますが、SG6060には58本しか搭載されていません。</block>
   <block id="4d1c46cee1bdcec65653b2e2163398e0" category="list-text">ノードのクローニングプロセスでは、クローニングプロセスの実行中はソースノードがグリッドに対してオフラインになっている必要があります。この間に追加のノードがオフラインになると、クライアントサービスに影響する可能性があります。</block>
   <block id="83d1a0f23bb258b2a270a1d6f7ff51d7" category="list-text">ストレージノードをオフラインにできるのは15日間だけです。クローニングプロセスの推定日数が15日に近い場合、または15日を超える場合は、拡張と運用停止の手順を使用します。</block>
-  <block id="efde8725bd1e96e2479c137c19099fae" category="list-text">拡張シェルフを搭載したSG6060では、正しいシェルフドライブサイズの時間をベースアプライアンスの時間に追加して、フルクローン期間を取得する必要があります。</block>
   <block id="fec00ca7ab315b679cc642c66a770bd8" category="section-title">ノードクローンのパフォーマンスを見積もります</block>
   <block id="517e3359377bb6a7ea9488482299838f" category="paragraph">次の表に、ノードクローンの所要時間の推定値を示します。条件は状況によって異なるため、*太字*で示されたエントリは、ノードが停止した場合に15日を超えるリスクがあります。</block>
   <block id="39ab52e8aaafa95380d3f56ccd8095d9" category="section-title">DDP8</block>
@@ -946,15 +945,12 @@
   <block id="6c32f983ee38ad5089298aa659cd011c" category="paragraph">4日</block>
   <block id="a5dffc518be58d2936a993ee100d71b6" category="paragraph">4.5日</block>
   <block id="e5d3435cf14793a49310fa8d85bcc4a1" category="paragraph">25GB</block>
-  <block id="885e215d2d15d2ac1b34e5b8d416f86a" category="section-title">SG5712 -&gt;任意</block>
-  <block id="97fce1ba98948ee51fbf31978af80696" category="section-title">SG5660 -&gt; SG5760を選択してください</block>
   <block id="9958432b6417f293cb0d15128b08e42f" category="paragraph">3日間</block>
   <block id="366adabd6f1babc8138db3063adaf869" category="paragraph">6日</block>
   <block id="374616a0b786e9bffadc7f28e68d6c59" category="paragraph">7 日</block>
   <block id="51ab732b98b519b5e54ce60864cc8d69" category="paragraph">8.5日</block>
   <block id="b00a84012a03b35beb30466d8baa4a1c" category="paragraph">11.5日</block>
   <block id="194ae66ddb8567ab63da3b82c925fa03" category="paragraph">* 13日*</block>
-  <block id="85c75ace300325f8e407a841eb055d37" category="section-title">SG5660 -&gt; SG6060</block>
   <block id="61cab577ce1bed82e1b5d7caacb7456b" category="paragraph">2.5日</block>
   <block id="bf30897fe2ce34b7e9f89291e20d9eae" category="paragraph">5.5日</block>
   <block id="e5fd76b3288061d2c2638ccc41688416" category="paragraph">6.5日</block>
@@ -963,11 +959,8 @@
   <block id="e727fed489e8b7eecf1901196ec3ede9" category="paragraph">2日間</block>
   <block id="6383598717ae8ac458dc988dff77c800" category="paragraph">5日</block>
   <block id="79e241fd6b320cbb41d67b028ec6f1c0" category="paragraph">8日間</block>
-  <block id="c6a6ab48074fa03db6df437c1f27b415" category="section-title">SG5760 -&gt; SG5760</block>
-  <block id="4c0768167e7e249808ed4bd4ad28b2ed" category="section-title">SG5760 -&gt; SG6060</block>
   <block id="2a8a1b5738432b51afcd4dcbbbfe1434" category="paragraph">1.5日</block>
   <block id="9e6b8df1cd23e71938af979057e5144a" category="paragraph">3.5日</block>
-  <block id="bf0581629b559d1033e12e37f31bb0d7" category="section-title">SG6060 -&gt; SG6060</block>
   <block id="7da42b5478786d91e64cb31ec52e2511" category="paragraph">9.5日</block>
   <block id="d2bfdb3de60e1c2f154e5f9fa5a1dfc1" category="section-title">DDP16</block>
   <block id="00471150fc4d84adcd57392d7a47a3cb" category="paragraph">3.5日</block>
@@ -976,7 +969,6 @@
   <block id="383aea8468a529b339b755e27b1d4668" category="paragraph">7.5日</block>
   <block id="9ff416b798a88ec4bfb30f4f045aada5" category="paragraph">11日だ</block>
   <block id="ed01ec12331788a408398b059da47a39" category="paragraph">10.5日</block>
-  <block id="ec3751d915801591991ca3553c2fa5a7" category="section-title">拡張シェルフ（ソースアプライアンスの各シェルフについて、上記のSG6060に追加）</block>
   <block id="fc1e2d26b4330f83ecfffe3439410229" category="summary">バケットポリシーとグループポリシー（IAMポリシー）の例を次に示します。</block>
   <block id="3f2327c90ede247dca9387ef500bf746" category="doc">バケットポリシーとグループポリシー（IAM）の例</block>
   <block id="640ca9533a2fd150e7d3ed390e2aae66" category="section-title">グループポリシー（IAM）</block>
@@ -1134,7 +1126,6 @@
   <block id="a4bd669931c15a4828a4c38a495d7ff3" category="section-title">StorageGRID構成</block>
   <block id="b85a187b18cf0ecaff36c27f7e5e7500" category="paragraph">Veeam環境に推奨されるバージョンは、最新のホットフィックスが適用されたNetApp StorageGRID 11.6または11.7です。StorageGRID 11.6.0.11および11.7.0.4では、Veeamのワークロードに役立つ最適化機能が多数導入されました。常に最新の状態に保ち、StorageGRIDシステムに最新のホットフィックスを適用することを推奨します。</block>
   <block id="8215067184a09c074108be8e3fbbe725" category="section-title">ロードバランサとS3エンドポイントの設定</block>
-  <block id="923dc06db89bcd66cca887f28c0733c5" category="paragraph">Veeamでは、エンドポイントの接続にHTTPSのみを使用する必要があります。暗号化されていない接続はVeeamではサポートされていません。SSL証明書には、自己署名証明書、信頼されたプライベート認証局、または信頼されたパブリック認証局を使用できます。S3リポジトリへの継続的なアクセスを確保するために、HA構成で少なくとも2つのロードバランサを使用することを推奨します。ロードバランサには、すべての管理ノードとゲートウェイノードに配置されるStorageGRID提供の統合ロードバランササービス、またはF5、Kemp、HAProxy、Loadbalanacer.orgなどのサードパーティの解決策を使用できます。 StorageGRIDロードバランサを使用すると、Veeamのワークロードに優先順位を付けたり、StorageGRIDシステムの優先順位の高いワークロードに影響しないようにVeeamを制限したりできるトラフィック分類機能（QoSルール）を設定できます。</block>
   <block id="84ace9fb8e132c96d1dfcd31447efedc" category="section-title">S3 バケット</block>
   <block id="55876228853abf632dec9346a4f372ec" category="inline-link">ドキュメント</block>
   <block id="69e163f50758f77f10618e8e4b89f0cb" category="paragraph">StorageGRIDは、セキュアなマルチテナントストレージシステムです。Veeamワークロード専用のテナントを作成することを推奨します。ストレージクォータはオプションで割り当てることができます。ベストプラクティスとして、「独自のアイデンティティソースを使用する」を有効にします。テナントのroot管理ユーザを適切なパスワードで保護します。Veeam Backup 12では、S3バケットに対して強い整合性が必要です。StorageGRIDには、バケットレベルで設定できる複数の整合性オプションが用意されています。Veeamが複数の場所のデータにアクセスするマルチサイト環境の場合は、[strong-global]を選択します。Veeamのバックアップとリストアを単一サイトでのみ実行する場合は、整合性レベルを「strong-site」に設定する必要があります。バケットの整合性レベルの詳細については、<block ref="782397d2a33ccd7da9c1580a84d10f9d" category="inline-link-rx"></block>。Veeamの書き換え不可のバックアップにStorageGRIDを使用するには、S3オブジェクトロックをグローバルに有効にし、バケットの作成時にバケットで設定する必要があります。</block>
@@ -1816,4 +1807,13 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
 <block ref="fa4af55c3fdbce23e96d2cf73261fa5b" category="inline-link-rx"></block></block>
   <block id="748e9574a05efa0e0738de58c2ff670b" category="list-text">Commvaultのドキュメント+
 <block ref="27eb3a3d6ca60f8dbf05e2df1f7e4644" category="inline-link-rx"></block></block>
+  <block id="c4d7e990537b5cabb7c53ef27e8240d3" category="paragraph">Veeamでは、エンドポイントの接続にHTTPSのみを使用する必要があります。暗号化されていない接続はVeeamではサポートされていません。SSL証明書には、自己署名証明書、信頼されたプライベート認証局、または信頼されたパブリック認証局を使用できます。S3リポジトリへの継続的なアクセスを確保するために、HA構成で少なくとも2つのロードバランサを使用することを推奨します。ロードバランサには、すべての管理ノードとゲートウェイノードに配置されるStorageGRID提供の統合ロードバランササービス、またはF5、Kemp、HAProxy、Loadbalancer.orgなどのサードパーティの解決策を使用できます。 StorageGRIDロードバランサを使用すると、Veeamのワークロードに優先順位を付けたり、StorageGRIDシステムの優先順位の高いワークロードに影響しないようにVeeamを制限したりできるトラフィック分類機能（QoSルール）を設定できます。</block>
+  <block id="2adef84f9348cc9769b8c3e1982c3cb1" category="list-text">拡張シェルフを使用するSG6060またはSG6160では、正しいシェルフドライブサイズの時間をベースアプライアンスの時間に追加して、フルクローン期間を取得する必要があります。</block>
+  <block id="77ffe904133c5c2e3ab960ef54b7be2d" category="section-title">SG5712 / SG5812 -&gt;任意</block>
+  <block id="2060afee4c8201b859d447131ee1434a" category="section-title">SG5660 -&gt; SG5760 / SG5860</block>
+  <block id="85b9faf406d03aaecca5e119294ceb1a" category="section-title">SG5660 -&gt; SG6060 / SG6160</block>
+  <block id="7d9a95e91e60865aaa29da1eb0f75121" category="section-title">SG5760 / SG5860 -&gt; SG5760 / SG5860</block>
+  <block id="ab7ccd4f66da0de459e420e05417e0dd" category="section-title">SG5760 / SG5860 -&gt; SG6060 / SG6160</block>
+  <block id="25b15e92a1710d10f6bca458e130baaa" category="section-title">SG6060 / SG6160 -&gt; SG6060 / SG6160</block>
+  <block id="6219d1d3d5ac2385dfb8d391122edd3e" category="section-title">拡張シェルフ（ソースアプライアンスのシェルフごとに上記のSG6060 / SG6160に追加）</block>
 </blocks>
