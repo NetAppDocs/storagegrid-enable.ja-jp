@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/ntp-server-storagegrid.html 
+keywords: ntp server , storagegrid 
+summary: 別 々 のサーバで実行された処理の同期を維持できるように、StorageGRIDシステムのNTP設定情報を指定する方法について説明します。 
+---
+= StorageGRIDのNTPサーバの詳細の指定
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+別 々 のサーバで実行された処理の同期を維持できるように、StorageGRIDシステムのNTP設定情報を指定する方法について説明します。
+
+時間のずれに関する問題を回避するには、Stratum 3以上の外部NTPサーバ参照を4つ指定する必要があります。
+
+
+NOTE: 本番レベルの StorageGRID インストール環境で外部 NTP ソースを指定する場合は、 Windows Server 2016 より前のバージョンの Windows で Windows Time （ W32Time ）サービスを使用しないでください。以前のバージョンのWindowsのタイムサービスは十分に正確ではなく、StorageGRIDのような要求の厳しい環境での使用にはMicrosoftでサポートされていません。
+
+外部NTPサーバは、以前にプライマリNTPロールを割り当てたノードで使用されます。
+
+
+CAUTION: クライアントネットワークをインストールプロセスの早い段階で有効にしないと、NTPサーバの唯一のソースになりません。少なくとも1つのNTPサーバにグリッドネットワークまたは管理ネットワーク経由でアクセスできることを確認してください。
+
+NTPサーバ情報を指定するには、次の手順を実行します。
+
+.手順
+. [Server 1 to Server 4]テキストボックスで、少なくとも4つのNTPサーバのIPアドレスを指定します。
+. 必要に応じて、最後のエントリの横にあるプラス記号をクリックして、サーバエントリをさらに追加します。
++
+image:bare-metal-add-server-entries.png["bare-metal-add-server-entries"]
+
+. [Next]をクリックします。
+

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/storagegrid-license.html 
+keywords: license, storagegrid 
+summary: StorageGRIDライセンスファイルをアップロードする方法について説明します。 
+---
+= StorageGRIDライセンスの詳細を追加
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+StorageGRIDライセンスファイルをアップロードする方法について説明します。
+
+StorageGRID システムの名前を指定し、ネットアップから提供されたライセンスファイルをアップロードする必要があります。
+
+StorageGRIDライセンス情報を指定するには、次の手順を実行します。
+
+.手順
+. [License]ページの[Grid Name]フィールドに、StorageGRIDシステムの名前を入力します。インストール後、その名前がグリッドトポロジツリーの最上位レベルとして表示されます。
+. [Browse]をクリックし、NetAppライセンスファイルを検索し (`NLF-_unique-id_.txt`ます）、[Open]をクリックします。ライセンスファイルが検証され、シリアル番号とライセンスされたストレージ容量が表示されます。
++
+
+NOTE: StorageGRID インストールアーカイブには、製品サポートのない無償ライセンスが含まれています。インストール後に、サポートを提供するライセンスに更新できます。
+
++
+image:bare-metal-update-license.png["bare-metal-update-license"]
+
+. [Next]をクリックします。
+

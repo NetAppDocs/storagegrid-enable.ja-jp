@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault/data-protection-jobs.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。 
+---
+= データ保護ジョブを実行する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+Commvault Complete Backup and Recovery for NetAppを使用してStorageGRIDを設定するには、次の手順を実行してStorageGRIDをCommvaultソフトウェア内のクラウドライブラリとして追加しました。
+
+
+
+== ステップ1：CommvaultとStorageGRIDを設定する
+
+.手順
+. CommVault Command Centerにログインします。左側のパネルで、[Storage]>[Cloud]>[Add]をクリックし、[Add Cloud]ダイアログボックスを確認して応答します。
++
+image:commvault/add-cloud.png["クラウドの追加"]
+
+. タイプ（Type）で、NetApp StorageGRIDを選択します。
+. MediaAgentの場合は、クラウドライブラリに関連付けられているものをすべて選択します。
+. [Server Host]に、StorageGRIDエンドポイントのIPアドレスまたはホスト名とポート番号を入力します。
++
+StorageGRIDのドキュメントに記載されている手順に従います。 https://docs.netapp.com/sgws-113/topic/com.netapp.doc.sg-admin/GUID-54FCAB84-143C-4A5D-B078-A837886BB242.html["ロードバランサエンドポイント（ポート）の設定方法"]。自己署名証明書とStorageGRIDエンドポイントのIPアドレスまたはドメイン名を含むHTTPSポートがあることを確認します。
+
+. 重複排除を使用する場合は、このオプションをオンにして、重複排除データベースの場所へのパスを指定します。
+. [ 保存 ] をクリックします .
+
+
+
+
+== 手順2：StorageGRIDをプライマリターゲットとしてバックアップ計画を作成する
+
+.手順
+. 左側のパネルで、[Manage]>[Plans]を選択し、[Create Server Backup Plan]ダイアログボックスを表示して応答します。
++
+image:commvault/create-server.png["サーババックアップ計画の作成"]
+
+. 計画名を入力します。
+. 前の手順で作成したStorageGRID Simple Storage Service（S3）ストレージのバックアップ先を選択します。
+. バックアップの保持期間と目標復旧時点（RPO）を入力します。
+. [ 保存 ] をクリックします .
+
+
+
+
+== ステップ3：バックアップジョブを開始してワークロードを保護する
+
+.手順
+. CommVault Command Centerで、[Protect]>[Virtualization]の順に選択します。
+. VMware vCenter Serverハイパーバイザーを追加します。
+. 追加したハイパーバイザーをクリックします。
+. [Add VM group]をクリックして[Add VM Group]ダイアログボックスに応答し、保護するvCenter環境を確認します。
++
+image:commvault/add-vm-group.png["VMグループの追加"]
+
+. データストア、VM、またはVMの集合を選択し、名前を入力します。
+. 前のタスクで作成したバックアップ計画を選択します。
+. [Save]をクリックして、作成したVMグループを確認します。
+. [VM group]ウィンドウの右上にある[Backup]を選択します。
++
+image:commvault/vm-group.png["VMグループ"]
+
+. バックアップ・レベルとして[Full]を選択し、バックアップが完了したら（オプションで）Eメールを要求し、[OK]をクリックしてバックアップ・ジョブを開始します。
++
+image:commvault/backup-level.png["バックアップレベル"]
+
+. ジョブの概要ページに移動して、ジョブの指標を確認します。
++
+image:commvault/job-summary.png["ジョブの概要"]
+
+

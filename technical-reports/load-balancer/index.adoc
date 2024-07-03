@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer/index.html 
+keywords: object storage, load balancer 
+summary: StorageGRIDなどのオブジェクトストレージシステムにおける、サードパーティおよびグローバルロードバランサの役割について説明します。 
+---
+= StorageGRIDで他社製ロードバランサを使用する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+StorageGRIDなどのオブジェクトストレージシステムにおける、サードパーティおよびグローバルロードバランサの役割について説明します。
+
+サードパーティ製ロードバランサを使用してNetApp®StorageGRID®を実装するための一般的なガイダンス。
+
+オブジェクトストレージはクラウドストレージと同義です。クラウドストレージを利用するアプリケーションは、予想どおりURLを介してストレージに対応します。StorageGRIDは、このシンプルなURLを使用して、単一サイトまたは地理的に分散したサイト全体で容量、パフォーマンス、データ保持性を拡張できます。この簡易性を実現するコンポーネントは、ロードバランサです。
+
+このドキュメントの目的は、StorageGRIDのお客様にロードバランサのオプションについて説明し、サードパーティ製ロードバランサの設定に関する一般的なガイダンスを提供することです。
+
+
+
+== ロードバランサの基本
+
+ロードバランサは、StorageGRIDなどのエンタープライズクラスのオブジェクトストレージシステムに欠かせないコンポーネントです。StorageGRIDは複数のストレージノードで構成され、各ストレージノードは特定のStorageGRIDインスタンスのSimple Storage Service（S3）ネームスペース全体を提供できます。ロードバランサは可用性の高いエンドポイントを作成し、その背後にStorageGRIDノードを配置します。StorageGRIDは、S3互換オブジェクトストレージシステムの中で独自のロードバランサを提供するだけでなく、F5、Citrix NetScaler、HAプロキシ、NGINXなどのサードパーティまたは汎用のロードバランサもサポートしています。
+
+次の図では、例としてURL/完全修飾ドメイン名（FQDN）「s3.company.com”」を使用しています。ロードバランサは、DNSを介してFQDNに解決される仮想IP（VIP）を作成し、アプリケーションからの要求をすべてStorageGRIDノードのプールに転送します。ロードバランサは各ノードで健全性チェックを実行し、正常なノードへの接続のみを確立します。
+
+image:load-balancer-local-traffic-manager-load-balancer.png["ローカルトラフィックマネージャロードバランサ"]
+
+次の図はStorageGRIDが提供するロードバランサを示していますが、概念はサードパーティのロードバランサでも同じです。アプリケーションはロードバランサのVIPを使用してHTTPセッションを確立し、トラフィックはロードバランサを経由してストレージノードに送信されます。デフォルトでは、アプリケーションからロードバランサ、およびロードバランサからストレージノードへのすべてのトラフィックがHTTPSを介して暗号化されます。HTTPはサポートされているオプションです。
+
+
+
+=== ローカルおよびグローバルのロードバランサ
+
+ロードバランサには次の2種類があります。
+
+* *ローカルトラフィックマネージャ（LTM）*。単一サイト内のノードのプール全体に接続を分散します。
+* *グローバルサービスロードバランサ（GSLB）*。複数のサイトに接続を分散し、LTMロードバランサを効果的にロードバランシングします。GSLBは、インテリジェントDNSサーバと考えてください。クライアントがStorageGRIDエンドポイントURLを要求すると、GSLBは可用性またはその他の要因（アプリケーションの遅延を低減できるサイトなど）に基づいて、そのURLをLTMのVIPに解決します。LTMは常に必要ですが、StorageGRIDサイトの数とアプリケーションの要件に応じて、GSLBはオプションです。
+
+
+
+
+=== StorageGRIDゲートウェイノードロードバランサと他社製ロードバランサの比較
+
+StorageGRIDは、S3と互換性のあるオブジェクトストレージベンダーの中で唯一、専用のアプライアンス、VM、コンテナとして使用できる標準のロードバランサを提供します。StorageGRIDが提供するロードバランサは、ゲートウェイノードとも呼ばれます。
+
+F5やCitrixなどのロードバランサをまだ所有していないお客様の場合、サードパーティのロードバランサの実装は非常に複雑になる可能性があります。StorageGRIDロードバランサは、ロードバランサの処理を大幅に簡易化します。
+
+ゲートウェイノードは、可用性とパフォーマンスに優れたエンタープライズクラスのロードバランサです。ゲートウェイノード、サードパーティ製ロードバランサ、またはその両方を同じグリッドに実装することもできます。ゲートウェイノードはローカルトラフィックマネージャであり、GSLBではありません。
+
+StorageGRIDロードバランサには、次の利点があります。
+
+* *簡易性*。リソースプール、健全性チェック、パッチ適用、メンテナンスの自動構成をすべてStorageGRIDで管理
+* *パフォーマンス*。StorageGRIDロードバランサはStorageGRID専用です。帯域幅に関して他のアプリケーションと競合することはありません。
+* *コスト*。仮想マシン（VM）とコンテナのバージョンは追加コストなしで提供されます。
+* *トラフィック分類*。高度なトラフィック分類機能を使用すると、StorageGRID固有のQoSルールとワークロード分析を実行できます。
+* *今後のStorageGRID固有の機能*。StorageGRIDは、今後のリリースで引き続き最適化を行い、ロードバランサに革新的な機能を追加していきます。
+
+
+StorageGRIDゲートウェイノードの導入の詳細については、を参照して https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID のドキュメント"^]ください。
+
+
+
+== 追加情報の参照先
+
+このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
+
+* NetApp StorageGRIDドキュメントセンター https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRIDイネーブルメント https://docs.netapp.com/us-en/storagegrid-enable/[]
+* StorageGRID F5ロードバランサの設計に関する考慮事項 https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/[]
+* Loadbalancer.org—Load Balancing NetApp StorageGRID https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/[]
+* Kemp：ロードバランシングNetApp StorageGRID https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID[]
+

@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/dns-server-storagegrid.html 
+keywords: dns server, storagegrid 
+summary: StorageGRID用にDNSサーバを設定する方法について説明します。 
+---
+= StorageGRIDのDNSサーバの詳細の指定
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+StorageGRID用にDNSサーバを設定する方法について説明します。
+
+IPアドレスの代わりにホスト名を使用して外部サーバにアクセスできるように、StorageGRIDシステムのDNS情報を指定する必要があります。
+
+DNSサーバ情報を指定すると、Eメール通知やNetApp AutoSupport®メッセージに、IPアドレスではなく完全修飾ドメイン名（FQDN）ホスト名を使用できます。NetAppでは、少なくとも2つのDNSサーバを指定することを推奨します。
+
+
+CAUTION: ネットワーク分離が発生した場合に各サイトがローカルにアクセスできる DNS サーバを選択する必要があります。
+
+DNSサーバ情報を指定するには、次の手順を実行します。
+
+.手順
+. [Server 1]テキストボックスで、DNSサーバのIPアドレスを指定します。
+. 必要に応じて、最後のエントリの横にあるプラス記号をクリックしてサーバを追加します。
++
+image:bare-metal-add-more-servers-2.png["bare-metal-add-more-servers-2"]
+
+. [Next]をクリックします。
+

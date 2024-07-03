@@ -1,0 +1,25 @@
+---
+permalink: technical-reports/monitor/alerts-monitoring.html 
+sidebar: sidebar 
+keywords: alerts, storagegrid 
+summary: StorageGRIDのアラートシステムを使用して、問題の監視、カスタムアラートの管理、SNMPやEメールによるアラート通知の拡張を行う方法について説明します。 
+---
+= アラートを使用したStorageGRIDの監視
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../../media/
+
+
+[role="lead"]
+StorageGRIDのアラートシステムを使用して、問題の監視、カスタムアラートの管理、SNMPやEメールを使用したアラート通知の拡張を行う方法について説明します。
+
+アラートは、StorageGRIDシステム内のさまざまなイベントや状態を監視するための重要な情報を提供します。
+
+アラートシステムは、StorageGRIDシステムで発生する可能性のある問題を監視するための主要なツールとして設計されています。アラートシステムは、システム内の実行可能な問題に焦点を当て、使いやすいインターフェイスを提供します。
+
+システムの監視とトラブルシューティングに役立つさまざまなデフォルトアラートルールを提供しています。カスタムアラートの作成、デフォルトアラートの編集または無効化、アラート通知のサイレント化により、アラートの詳細な管理を行うことができます。
+
+アラートは、SNMPまたはEメール通知を通じて拡張することもできます。
+
+アラートの詳細については、オンラインでPDF形式のを参照してください https://docs.netapp.com/us-en/storagegrid-118/monitor/managing-alerts-and-alarms.html["製品ドキュメント"^] 。

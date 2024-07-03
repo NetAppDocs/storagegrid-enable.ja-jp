@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/index.html 
+keywords: install, storagegrid, deploy, bare metal 
+summary: ベアメタルグリッドにStorageGRIDをインストールする方法について説明します。 
+---
+= StorageGRIDノインストールノガイヨウ
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+ベアメタルホストにStorageGRIDをインストールする方法について説明します。
+
+TR-4882には、NetApp StorageGRIDの実際的なインストール手順が記載されています。ベアメタルまたはRed Hat Enterprise Linux（RHEL）で実行されている仮想マシン（VM）にインストールできます。このアプローチでは、StorageGRIDコンテナ化された6つのサービスを、推奨されるレイアウトとストレージ構成で、3台の物理（または仮想）マシンに「独自の」インストールを実行します。お客様によっては、このTRに記載されている導入例に従うことで、導入プロセスを理解しやすくなる場合があります。
+
+StorageGRIDとインストールプロセスの詳細については、製品ドキュメントの[Install、upgrade、and hotfix（インストール、アップグレード、およびホットフィックスのStorageGRID）]を参照して https://docs.netapp.com/us-en/storagegrid-118/landing-install-upgrade/index.html[] ください。
+
+導入を開始する前に、NetApp StorageGRIDソフトウェアのコンピューティング、ストレージ、ネットワークの要件を確認してみましょう。StorageGRIDは、PodmanまたはDocker内でコンテナ化されたサービスとして実行されます。このモデルでは、一部の要件はホストオペレーティングシステム（StorageGRIDソフトウェアを実行しているDockerをホストするOS）を参照しています。また、リソースの一部は、各ホスト内で実行されているDockerコンテナに直接割り当てられます。この導入では、ハードウェアの使用率を最大化するために、物理ホストごとに2つのサービスを導入します。詳細については、次のセクションに進んでください link:prerequisites-install-storagegrid.html["StorageGRIDをインストールするための前提条件"]。
+
+このTRで説明した手順を実行すると、6台のベアメタルホストにStorageGRIDのインストールが完了します。これでグリッドネットワークとクライアントネットワークが正常に機能し、ほとんどのテストシナリオで役立ちます。
+
+
+
+== 追加情報の参照先
+
+このTRに記載されている情報の詳細については、次のドキュメントリソースを参照してください。
+
+* NetApp StorageGRIDドキュメントセンター https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRIDイネーブルメント https://docs.netapp.com/us-en/storagegrid-enable/[]
+* StorageGRIDドキュメントリソースページ https://www.netapp.com/data-storage/storagegrid/documentation/[]
+* NetApp製品ドキュメント https://www.netapp.com/support-and-training/documentation/[]
+

@@ -64,12 +64,22 @@ indexpage:
       url: "/tools-apps-guides/integrate-gitlab.html"
   - title: テクニカルレポート
     links:
-    - title: NetApp StorageGRIDとビッグデータ分析
-      url: "/technical-reports/datalake-analytics.html"
-    - title: Hadoop S3Aチューニングのベストプラクティス
-      url: "/technical-reports/s3a-tuning.html"
+    - title: TR-4993：『NetApp StorageGRID and Big Data Analytics』
+      url: "/technical-reports/technical-reports/datalake-analytics.html"
+    - title: TR-4994：『Hadoop S3A Tuning Best Practices』
+      url: "/technical-reports/technical-reports/s3a-tuning.html"
     - title: TR-4871：『Commvault Complete Backup and Recovery and NetApp StorageGRID』
-      url: "/technical-reports/tr-4871-commvault.html"
+      url: "/technical-reports/technical-reports/tr-4871-commvault.html"
+    - title: TR-4645：『Security features』
+      url: "/technical-reports/data-security/index.html"
+    - title: TR-4921：『Ransomware Defense』
+      url: "/technical-reports/ransomware-protection/index.html"
+    - title: TR-4765：『Monitor StorageGRID』
+      url: "/technical-reports/monitor/index.html"
+    - title: TR-4882：『Install a StorageGRID bare metal grid』
+      url: "/technical-reports/bare-metal/index.html"
+    - title: TR-4907：『Configure StorageGRID with Veritas Enterprise Vault』
+      url: "/technical-reports/veritas/index.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証

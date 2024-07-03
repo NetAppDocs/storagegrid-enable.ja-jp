@@ -1,0 +1,73 @@
+---
+permalink: technical-reports/veritas/configure-storagegrid-site-failover.html 
+sidebar: sidebar 
+keywords: site failover, configure, storagegrid 
+summary: ディザスタリカバリシナリオでStorageGRIDサイトのフェイルオーバーを設定する方法について説明します。 
+---
+= ディザスタリカバリ用のStorageGRIDサイトフェイルオーバーの設定
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../../media/
+
+
+[role="lead"]
+ディザスタリカバリシナリオでStorageGRIDサイトのフェイルオーバーを設定する方法について説明します。
+
+StorageGRIDアーキテクチャをマルチサイトに導入するのは一般的です。サイトは、DRのアクティブ/アクティブまたはアクティブ/パッシブにすることができます。DRシナリオでは、Veritas Enterprise Vaultがプライマリストレージ（StorageGRID）への接続を維持し、サイト障害が発生してもデータの取り込みと読み出しを継続できることを確認します。この項では、2サイトのアクティブ/パッシブ配置の概要を説明します。 これらのガイドラインの詳細については、ページを参照する link:https://docs.netapp.com/us-en/storagegrid-118/["StorageGRID のドキュメント"] か、StorageGRIDの専門家にお問い合わせください。
+
+
+
+== Veritas Enterprise VaultでStorageGRIDを設定するための前提条件
+
+StorageGRIDサイトのフェイルオーバーを設定する前に、次の前提条件を確認してください。
+
+* 2サイトのStorageGRID環境（たとえば、Site1とSite2）があります。
+* ロードバランササービスを実行する管理ノード、またはロードバランシングのためのゲートウェイノードが各サイトに作成されている。
+* StorageGRIDロードバランサエンドポイントが作成されている。
+
+
+
+
+== StorageGRIDサイトのフェイルオーバーの設定
+
+StorageGRIDサイトのフェールオーバーを設定するには、次の手順を実行します。
+
+.手順
+. サイト障害時にStorageGRIDへの接続を確保するには、ハイアベイラビリティ（HA）グループを設定します。StorageGRIDのGrid Managerインターフェイス（GMI）で、[Configuration]、[High Availability Groups]、[+Create]の順にクリックします。
++
+image:third-party-create-high-availability-group.png["third-party-create-high-availability-group"]
+
+. 必要な情報を入力します。[Select Interfaces]をクリックし、Site1（プライマリサイト）が優先マスターであるSite2のネットワークインターフェイスを含めます。同じサブネット内の仮想IPアドレスを割り当てます。保存をクリックします。
++
+image:third-party-edit-high-availability-group.png["third-party-edit-high-availability-group"]
+
+. この仮想IP（VIP）アドレスは、Veritas Enterprise Vaultのパーティション設定時に使用されるS3ホスト名に関連付ける必要があります。VIPアドレスはトラフィックをSite1に解決します。Site1に障害が発生すると、VIPアドレスはトラフィックをSite2に透過的に再ルーティングします。
+. データがSite1とSite2の両方にレプリケートされていることを確認します。これにより、Site1に障害が発生しても、Site2からオブジェクトデータを引き続き使用できます。そのためには、まずストレージプールを構成します。
++
+StorageGRID GMIで、[ILM]、[Storage Pools]の順にクリックし、[+Create]をクリックします。ウィザードに従って、Site1用とSite2用の2つのストレージプールを作成します。
+
++
+ストレージプールは、オブジェクトの配置を定義するために使用されるノードを論理的にグループ化したもの
+
++
+image:third-party-storage-pool-details-site-1.png["third-party-storage-pool-details-site-1"]
+
++
+image:third-party-storage-pool-details-site-2.png["third-party-storage-pool-details-site-2"]
+
+. StorageGRID GMIで、[ILM]、[Rules]、[+Create]の順にクリックします。ウィザードの指示に従って、サイトごとに1つのコピーを格納し、取り込み動作はBalancedでILMルールを作成します。
++
+image:third-party-storage-pool-details-site-3.png["third-party-storage-pool-details-site-3"]
+
+. ILMポリシーにILMルールを追加し、ポリシーをアクティブ化します。
+
+
+この構成では、次の結果が得られます。
+
+* 仮想S3エンドポイントIP。Site1がプライマリエンドポイント、Site2がセカンダリエンドポイントです。Site1に障害が発生すると、VIPはSite2にフェイルオーバーします。
+* アーカイブデータがVeritas Enterprise Vaultから送信されると、StorageGRIDは1つのコピーがサイト1に格納され、もう1つのDRコピーがサイト2に格納されることを確認します。Site1に障害が発生した場合、Enterprise VaultはSite2からの取り込みと読み出しを続行します。
+
+
+
+NOTE: これらの構成はどちらもVeritas Enterprise Vaultでは透過的です。S3エンドポイント、バケット名、アクセスキーなどは同じです。Veritas Enterprise VaultパーティションでS3接続設定を再設定する必要はありません。

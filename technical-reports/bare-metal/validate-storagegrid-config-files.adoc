@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/bare-metal/validate-storagegrid-config-files.html 
+keywords: config files, storagegrid 
+summary: StorageGRIDの構成ファイルの内容を検証する方法について説明します。 
+---
+= StorageGRID構成ファイルの検証
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+StorageGRIDの構成ファイルの内容を検証する方法について説明します。
+
+各StorageGRIDノードのに構成ファイルを作成したら `/etc/storagegrid/nodes` 、それらのファイルの内容を検証する必要があります。
+
+構成ファイルの内容を検証するには、各ホストで次のコマンドを実行します。
+
+[listing]
+----
+sudo storagegrid node validate all
+----
+ファイルが正しい場合は、各構成ファイルについてPASSEDと表示されます。
+
+image:bare-metal-output-shows-passed.png["base-metal-output-shows-passed"]
+
+構成ファイルが正しくない場合は、警告およびエラーとして問題が表示されます。構成エラーが見つかった場合は、インストールを続行する前に修正する必要があります。
+
+image:bare-metal-output-shows-warning-error.png["base-metal-output-shows-warning-error"]

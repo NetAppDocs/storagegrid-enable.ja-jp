@@ -1,0 +1,17 @@
+---
+permalink: technical-reports/index.html 
+sidebar: sidebar 
+keywords: intro, technical, reports, storagegrid 
+summary: StorageGRIDテクニカルレポートの紹介ページです。 
+---
+= StorageGRIDテクニカルレポートの概要
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp StorageGRID は、ソフトウェアで定義されるオブジェクトストレージスイートで、パブリック、プライベート、ハイブリッドのマルチクラウド環境での幅広いユースケースに対応します。StorageGRID はAmazon S3 APIをネイティブでサポートし、自動化されたライフサイクル管理などの業界をリードする革新的なテクノロジを提供して、非構造化データを長期にわたってコスト効率よく格納、保護、保持します。
+
+StorageGRIDには、StorageGRIDのいくつかの機能と統合に関するベストプラクティスと推奨事項が記載されたドキュメントが用意されています。

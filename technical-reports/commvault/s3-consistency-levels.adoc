@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault/s3-consistency-levels.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。 
+---
+= バケット整合性レベルの推奨事項
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+NetApp StorageGRIDを使用すると、エンドユーザは、Simple Storage Service（S3）バケット内のオブジェクトに対して実行される処理の整合性レベルを選択できます。
+
+CommVault MediaAgentは、CommVault環境のデータムーバーです。ほとんどの場合、MediaAgentはプライマリStorageGRIDサイトにローカルで書き込むように設定されています。そのため、ローカルのプライマリサイト内で高い整合性レベルを維持することを推奨します。StorageGRIDで作成したCommvaultバケットに整合性レベルを設定する場合は、次のガイドラインに従ってください。
+
+[NOTE]
+====
+11.0.0-Service Pack 16より前のバージョンのCommVaultを使用している場合は、CommVaultを最新バージョンにアップグレードすることを検討してください。これがオプションでない場合は、使用しているバージョンのガイドラインに従ってください。
+
+====
+* 11.0.0より前のバージョンのCommVault - Service Pack 16。* 11.0.0より前のバージョンのService Pack 16では、CommVaultはリストアおよび削除処理の一環として、存在しないオブジェクトに対してS3 HEADおよびGET処理を実行します。バケットの整合性レベルをstrong-siteに設定して、StorageGRIDへのCommvaultバックアップに最適な整合性レベルを実現します。
+* CommVaultバージョン11.0.0 - Service Pack 16以降。*バージョン11.0.0 - Service Pack 16以降では、存在しないオブジェクトに対して実行されるS3 HEAD処理とGET処理の数が最小限に抑えられます。CommvaultおよびStorageGRID環境で高い整合性レベルを確保するには、バケットのdefault整合性レベルをRead-after-new-writeに設定します。
+

@@ -1,0 +1,64 @@
+---
+permalink: technical-reports/veritas/configure-storagegrid-s3-object-lock.html 
+sidebar: sidebar 
+keywords: object lock, s3, configure, storagegrid 
+summary: S3オブジェクトロックを使用してWORMストレージ用にStorageGRIDを設定する方法について説明します。 
+---
+= WORMストレージ用のStorageGRID S3オブジェクトロックの設定
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../../media/
+
+
+[role="lead"]
+S3オブジェクトロックを使用してWORMストレージ用にStorageGRIDを設定する方法について説明します。
+
+
+
+== WORMストレージ用にStorageGRIDを設定するための前提条件
+
+WORMストレージでは、StorageGRIDはS3オブジェクトロックを使用してオブジェクトを保持し、コンプライアンスを確保します。これには、S3オブジェクトロックのデフォルトバケット保持機能が導入されたStorageGRID 11.6以降が必要です。Enterprise Vaultにはバージョン14.2.2以降も必要です。
+
+
+
+== StorageGRID S3オブジェクトロックのデフォルトバケット保持の設定
+
+StorageGRID S3オブジェクトロックのデフォルトバケット保持を設定するには、次の手順を実行します。
+
+.手順
+. StorageGRIDテナントマネージャでバケットを作成し、[Continue]をクリックします。
++
+image:third-party-create-bucket.png["third-party-create-bucket.png"]
+
+. [Enable S3 Object Lock]オプションを選択し、[Create Bucket]をクリックします。
++
+image:third-party-create-bucket-2.png["third-party-create-bucket-2.png"]
+
+. バケットの作成後、バケットを選択してバケットのオプションを表示します。[S3 Object Lock]ドロップダウンオプションを展開します。
++
+image:third-party-overview.png["third-party-overview.png"]
+
+. [Default Retention]で[Enable]を選択し、デフォルトの保持期間を1日に設定します。[Save Changes]をクリックします。
++
+image:third-party-s3-object-lock.png["third-party-s3-object-lock"]
+
++
+これで、バケットをEnterprise VaultでWORMデータの格納に使用できるようになりました。
+
+
+
+
+
+== Enterprise Vaultの設定
+
+Enterprise Vaultを設定するには、次の手順を実行します。
+
+.手順
+. セクションの手順1~3を繰り返し link:configure-storagegrid-s3-object-lock.html#configure-storagegrid-s3-object-lock-default-bucket-retention["キホンセツ"] ますが、今回は[Store data in WORM Mode using S3 Object Lock]オプションを選択します。[Next]をクリックします。
++
+image:third-party-new-partition-8.png["third-party-new-partition-8"]
+
+. S3バケット接続設定を入力するときは、S3オブジェクトロックのデフォルトの保持が有効になっているS3バケットの名前を入力します。
+. 接続をテストして設定を確認します。
+

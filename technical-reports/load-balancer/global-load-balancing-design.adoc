@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer/global-load-balancing-design.html 
+keywords: global load balancing, storagegrid 
+summary: StorageGRIDでのグローバルロードバランシングの設計上の考慮事項と要件を確認します。 
+---
+= StorageGRIDのグローバルロードバランシング要件を理解する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../../media/
+
+
+[role="lead"]
+StorageGRIDでのグローバルロードバランシングの設計上の考慮事項と要件を確認します。
+
+グローバルなロードバランシングでは、複数のStorageGRIDサイトにインテリジェントなルーティングを提供するために、DNSと統合する必要があります。この機能はStorageGRIDドメインの外部にあり、前述のロードバランサ製品などのサードパーティのソリューションや、InfobloxなどのDNSトラフィック制御ソリューションによって提供される必要があります。このトップレベルのロードバランシングは、ネームスペース内の最も近い宛先サイトへのスマートルーティング、および停止の検出とネームスペース内の次のサイトへのリダイレクションを提供します。一般的なGSLBの実装は、サイトローカルのロードバランサを含むサイトプールを含むトップレベルのGSLBで構成されます。サイトロードバランサには、ローカルサイトのストレージノードのプールが含まれています。これには、GSLB機能用のサードパーティ製ロードバランサとサイトローカルロードバランシングを提供するStorageGRIDの組み合わせ、またはサードパーティの組み合わせが含まれます。または、前述したサードパーティの多くが、GSLBとサイトローカルロードバランシングの両方を提供できます。
+
+image:load-balancer-generic-gslb.png["汎用- gslb"]

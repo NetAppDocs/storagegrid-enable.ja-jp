@@ -1477,9 +1477,6 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="7014c893b79b05f09938975b394e0ca5" category="list-text"><block ref="7014c893b79b05f09938975b394e0ca5" category="inline-link-rx"></block></block>
   <block id="06b48b444551989a8bbf76e3cb86a3d2" category="sidebar">StorageGRIDを使用したGitLabの構成</block>
   <block id="00f36bd2b4cd1d9e59ff895b5e131be2" category="sidebar">テクニカルレポート</block>
-  <block id="0ad1cadfe97c5910e1b3ce75c8b0ff1f" category="sidebar">NetApp StorageGRIDとビッグデータ分析</block>
-  <block id="6407baffaf35e5f51c2e06e83659fcae" category="sidebar">Hadoop S3Aチューニングのベストプラクティス</block>
-  <block id="34d8c979f20e6e946fc25898c9b703b0" category="sidebar">Hadoop S3Aチューニング</block>
   <block id="23e421cbf9f56a23426fd9d29746a636" category="summary">このガイドでは、マルチサイトグリッドでのStorageGRIDサイトの再配置の準備と手順について説明します。</block>
   <block id="8295ab4dfd6c34f8b3da70a8bfaaada3" category="doc">グリッドサイトの再配置とサイト全体のネットワーク変更手順</block>
   <block id="a7b0b12fd572901946be0ed19cb6a438" category="paragraph">このガイドでは、マルチサイトグリッドでのStorageGRIDサイトの再配置の準備と手順について説明します。この手順を完全に理解し、スムーズなプロセスを実現し、クライアントの中断を最小限に抑えるために事前に計画しておく必要があります。</block>
@@ -1816,4 +1813,1081 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="ab7ccd4f66da0de459e420e05417e0dd" category="section-title">SG5760 / SG5860 -&gt; SG6060 / SG6160</block>
   <block id="25b15e92a1710d10f6bca458e130baaa" category="section-title">SG6060 / SG6160 -&gt; SG6060 / SG6160</block>
   <block id="6219d1d3d5ac2385dfb8d391122edd3e" category="section-title">拡張シェルフ（ソースアプライアンスのシェルフごとに上記のSG6060 / SG6160に追加）</block>
+  <block id="1205e091df9e90556815e815df78ccdc" category="summary">StorageGRIDにサイトを追加して信頼性とストレージ容量を向上させる方法について説明します。</block>
+  <block id="6a9714b250b5ba368a7e2748ba67961e" category="doc">StorageGRIDへのサイトの追加</block>
+  <block id="c33142e487188ddf418851462b9f7330" category="paragraph">StorageGRIDをインストールする場合は、サイトを少なくとも1つ作成する必要があります。StorageGRID システムの信頼性を高め、ストレージ容量を増やすために、追加のサイトを作成することができます。</block>
+  <block id="ac8fd5f9577e4ae4eb4a8fe620216de9" category="paragraph">サイトを追加するには、次の手順を実行します。</block>
+  <block id="130e1538b9d47c6356996089d17dcc9d" category="list-text">[サイト]ページで、サイト名を入力します。</block>
+  <block id="c197e60a49f72b1ab7f60e3562193354" category="list-text">サイトを追加するには、最後のサイトエントリの横にあるプラス記号をクリックし、新しい[サイト名]テキストボックスに名前を入力します。グリッドトポロジに必要な数のサイトを追加します。サイトは最大 16 個まで追加できます。</block>
+  <block id="1d194d439e614fd5af6d6e0ca435ee48" category="inline-image-macro">ベアメタルアドサイト</block>
+  <block id="d8557d40121efd6d540e80f5c9cced74" category="paragraph"><block ref="d8557d40121efd6d540e80f5c9cced74" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dcae96231bba4c35e94accf7724b8cea" category="list-text">[Next]をクリックします。</block>
+  <block id="6e260d6df26abe1d47f9156c30667329" category="summary">StorageGRIDシステムに追加されている保留中のグリッドノードを確認して承認する方法について説明します。</block>
+  <block id="20d84da7bdca5a26838fe674351adfa6" category="doc">StorageGRIDのグリッドノードの承認</block>
+  <block id="dd27eb140b9362b077584e80378fc256" category="paragraph">各グリッドノードは、StorageGRIDシステムに追加する前に承認する必要があります。</block>
+  <block id="f5d442b2eb0fdc6127dc4d1f7426db6c" category="admonition">作業を開始する前に、仮想アプライアンスとStorageGRIDアプライアンスのグリッドノードをすべて導入しておく必要があります。</block>
+  <block id="9567945951ddee485986404c191a7470" category="paragraph">保留中のグリッドノードを承認するには、次の手順を実行します。</block>
+  <block id="c6db0f071446a3ac0ac082729f6b76c9" category="list-text">[Pending Nodes]リストで、導入したグリッドノードがすべて表示されていることを確認します。</block>
+  <block id="c17a11a7bd7c8fb88cf892fc290c2512" category="admonition">見つからないグリッドノードがある場合は、正常に導入されたことを確認します。</block>
+  <block id="d575f8832e003888f4562052cfb3a6f6" category="list-text">承認する保留中のノードの横にあるラジオボタンをクリックします。</block>
+  <block id="e7b101119399fe8adb08d34996866226" category="inline-image-macro">media / bare-metal-approvale-configure-grid-nodes</block>
+  <block id="f4bbad5fb8d8da659a2ea7831b3202dd" category="paragraph"><block ref="f4bbad5fb8d8da659a2ea7831b3202dd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="06b143508ebbc3dd17cd58c38e7e99d5" category="list-text">[承認]をクリックします。</block>
+  <block id="ae401da0d59e062e16119c35b5533f00" category="list-text">[一般設定]で、必要に応じて次のプロパティの設定を変更します。</block>
+  <block id="cf7d82d0beb2aacccbdaf21cf0de1733" category="inline-image-macro">ベアメタル管理ノード構成</block>
+  <block id="1ad0e50ba23bf98c71b9cd2012fba1a4" category="paragraph"><block ref="1ad0e50ba23bf98c71b9cd2012fba1a4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ccb01f3ef7de333bbde0913e8a09b32" category="paragraph">-* Site *：このグリッドノードのサイトのシステム名。</block>
+  <block id="22af84ec92b59f976dcfa953d21b6629" category="paragraph">-* Name *：ノードに割り当てられるホスト名とGrid Managerに表示される名前。デフォルトでは、ノード導入時に指定した名前が使用されますが、必要に応じて名前を変更できます。</block>
+  <block id="779cbaa6d822c0c104a91d0cf0c9ca90" category="paragraph">-* NTP role *：グリッドノードのNTPロール。オプションは、[Automatic]、[Primary]、および[Client]です。[Automatic]オプションを選択すると、管理ノード、Administrative Domain Controller（ADC）サービスを使用するストレージノード、ゲートウェイノード、および非静的IPアドレスが設定されたグリッドノードにPrimaryロールが割り当てられます。他のすべてのグリッドノードにはクライアントロールが割り当てられます。</block>
+  <block id="bc5ff630b986d70c3d01149085ed9603" category="admonition">各サイトの少なくとも 2 つのノードが、少なくとも 4 つの外部 NTP ソースにアクセスできることを確認します。NTP ソースにアクセスできるノードがサイトに 1 つしかないと、そのノードがダウンした場合にタイミングの問題が生じます。また、各サイトで 2 つのノードをプライマリ NTP ソースとして指定することにより、サイトがグリッドの他の部分から分離されても、正確なタイミングが保証されます。</block>
+  <block id="0a8135e977a0513c3548aea5bcf1b951" category="paragraph">-* ADC service（ストレージノードのみ）*：このノードにADCサービスが必要かどうかをシステムで自動的に判断するには、[Automatic]を選択します。ADC サービスは、グリッドサービスの場所と可用性を追跡します。各サイトで少なくとも3つのストレージノードにADCサービスが含まれている必要があります。導入後のノードに ADC サービスを追加することはできません。</block>
+  <block id="7f980d815a2719358c59773710a366f4" category="list-text">[Grid Network]で、次のプロパティの設定を必要に応じて変更します。</block>
+  <block id="c5cd323d1d4f455b9e99799f2b0048f5" category="paragraph">-* IPv4 address（CIDR）*：グリッドネットワークインターフェイスのCIDRネットワークアドレス（コンテナ内のeth0）。たとえば、<block ref="65147a8c806fca06582c6d5826cb4e49" prefix=" " category="inline-code"></block>です。</block>
+  <block id="0ca8ce1cf76529cdb03f67906817aa79" category="paragraph">--*ゲートウェイ*：グリッドネットワークゲートウェイ。たとえば、<block ref="f0fdb4c3f58e3e3f8e77162d893d3055" prefix=" " category="inline-code"></block>です。</block>
+  <block id="9f51c379666a4a504fcfd6175307356e" category="admonition">グリッドサブネットが複数ある場合は、ゲートウェイが必要です。</block>
+  <block id="e6f60f524b38760bab86eaae458b9b87" category="admonition">グリッドネットワーク設定でDHCPを選択した場合は、ここで値を変更すると、新しい値がノード上の静的アドレスとして設定されます。作成されたIPアドレスがDHCPアドレスプールに含まれていないことを確認します。</block>
+  <block id="7da83073ca3366bcfd9ff767bc303403" category="list-text">グリッドノードの管理ネットワークを設定するには、[Admin Network]セクションで必要に応じて設定を追加または更新します。</block>
+  <block id="6a313c105ff057aa11b5e2bace5a2e64" category="paragraph">このインターフェイスの外部にあるルートのデスティネーションサブネットを、[Subnets（CIDR）]テキストボックスに入力します。管理サブネットが複数ある場合は、管理ゲートウェイが必要です。</block>
+  <block id="ff811969461bf06029675329dc4d1e5f" category="admonition">管理ネットワーク設定でDHCPを選択した場合は、ここで値を変更すると、新しい値がノード上の静的アドレスとして設定されます。作成されたIPアドレスがDHCPアドレスプールに含まれていないことを確認します。</block>
+  <block id="984f31616a2c8448cc4fc25afa870f21" category="paragraph">*アプライアンス*：StorageGRIDアプライアンスの場合、StorageGRIDアプライアンスインストーラを使用した初回インストール時に管理ネットワークが設定されていないと、この[Grid Manager]ダイアログボックスで設定できません。代わりに、次の手順を実行する必要があります。</block>
+  <block id="7ba430671fce8ec7a952ff3772059894" category="list-text">アプライアンスをリブートします。アプライアンスインストーラで、メニューから[Advanced][Reboot]を選択します。リブートには数分かかることがあります。</block>
+  <block id="b7265a5a6b75478c9fcb7115dbaa58fc" category="list-text">メニュー：[Configure Networking][Link Configuration]を選択し、適切なネットワークを有効にします。</block>
+  <block id="e562883faa25e506e7173c73efdde0aa" category="list-text">メニューから[Configure Networking][IP Configuration]を選択し、有効なネットワークを設定します。</block>
+  <block id="e42906d1b424c1722806b18564feba0a" category="list-text">のホームページに戻り、[Start Installation]をクリックします。</block>
+  <block id="52f7826cbd175d67e87c6a9dd73fbe7a" category="list-text">Grid Manager：ノードが[Approved Nodes]テーブルに表示されている場合は、ノードをリセットします。</block>
+  <block id="3d2c59ec12887cdc97b00750aeeaabb6" category="list-text">Pending Nodes テーブルからノードを削除します。</block>
+  <block id="027e46cb168820f106f0f136bf234c26" category="list-text">ノードが Pending Nodes リストに再表示されるまで待ちます。</block>
+  <block id="308f58c095522b8df78a1cc967460539" category="list-text">適切なネットワークを設定できることを確認します。IP Configuration ページで指定した情報があらかじめ入力されている必要があります。追加情報 の場合は、使用しているアプライアンスモデルのインストールとメンテナンスの手順を参照してください。</block>
+  <block id="1c65647ba3735d34d6610a116f92e3bf" category="list-text">グリッドノードのクライアントネットワークを設定する場合は、必要に応じてクライアントネットワークセクションで設定を追加または更新します。クライアントネットワークを設定する場合はゲートウェイが必要になります。これは、インストール後にノードのデフォルトゲートウェイになります。</block>
+  <block id="115984083ff31641a45c3002607a3747" category="paragraph">*アプライアンス*：StorageGRIDアプライアンスの場合、StorageGRIDアプライアンスインストーラを使用した初回インストール時にクライアントネットワークが設定されていないと、この[Grid Manager]ダイアログボックスで設定できません。代わりに、次の手順を実行する必要があります。</block>
+  <block id="af45cd5e2e4530880561b6d95e4074a6" category="list-text">適切なネットワークを設定できることを確認します。IP Configuration ページで指定した情報があらかじめ入力されている必要があります。追加情報 の場合は、使用しているアプライアンスのインストールとメンテナンスの手順を参照してください。</block>
+  <block id="a002eae85e873c5268c60fe47bfc6b3f" category="list-text">保存をクリックします。グリッドノードエントリが [ 承認済みノード（ Approved Nodes ） ] リストに移動します。</block>
+  <block id="3a23bcc886bcfcabab3e26790811b8c7" category="inline-image-macro">bare-metal-approved-node-list</block>
+  <block id="a7b727de0a5f163ad18832a8d6cd3ea9" category="paragraph"><block ref="a7b727de0a5f163ad18832a8d6cd3ea9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bfa84570af44d35c7c04b3b0ae0b4894" category="list-text">承認する保留中のグリッドノードごとに、手順1~8を繰り返します。</block>
+  <block id="2550c5730e39cc55c59fc87a8a1666bd" category="paragraph">グリッドに必要なすべてのノードを承認する必要があります。ただし、[Summary]ページで[Install]をクリックする前に、いつでもこのページに戻ることができます。承認したグリッドノードのプロパティを変更するには、ノードのラジオボタンをクリックし、[Edit]をクリックします。</block>
+  <block id="8e60bae5c8b1499a18c917452cad6320" category="list-text">グリッドノードの承認が完了したら、[Next]をクリックします。</block>
+  <block id="a530b03d96fc151b549eed4cff10416b" category="summary">プライマリ管理ノードのStorageGRIDでグリッドマネージャを設定する方法について説明します。</block>
+  <block id="39b0bc05bcc35bf92d266c04709c9fbe" category="doc">StorageGRIDでのGrid Managerの設定</block>
+  <block id="9e91eaf30c823ff55b46f05449e63fc7" category="paragraph">プライマリ管理ノードのGrid ManagerユーザインターフェイスからStorageGRIDシステムを設定して、インストールを完了します。</block>
+  <block id="0ba40ecb813b20bd8c3277c4afcbd451" category="section-title">手順の概要</block>
+  <block id="bbe6f3db45c1fda11072f0bdaf823ba8" category="paragraph">グリッドを設定してインストールを完了するには、次のタスクを実行します。</block>
+  <block id="65fab22305d638277fe08fef3e3b4d40" category="list-text"><block ref="4843c82971df81e97aef3855873b7087" category="inline-xref-macro-rx"></block></block>
+  <block id="b2d5dc59664ac0d21bcbd5dded69a0fb" category="inline-link-macro">StorageGRID ライセンス情報を指定します</block>
+  <block id="dc62a6bae0942d98774fbcedfe04d566" category="list-text"><block ref="dc62a6bae0942d98774fbcedfe04d566" category="inline-link-macro-rx"></block></block>
+  <block id="1a5870eb36e857189f184d5f320d0181" category="list-text"><block ref="1a5870eb36e857189f184d5f320d0181" category="inline-link-macro-rx"></block></block>
+  <block id="abe15e0952653cec6327bae5b3790c92" category="inline-link-macro">グリッドネットワークサブネットの指定</block>
+  <block id="3071b864ee51f7743885151b146d1382" category="list-text"><block ref="3071b864ee51f7743885151b146d1382" category="inline-link-macro-rx"></block></block>
+  <block id="f0f514dbb09f4d2c0f2f9870207e96c6" category="inline-link-macro">保留中のグリッドノードを承認します</block>
+  <block id="445d704adaa37eeca0880c16cf11c040" category="list-text"><block ref="445d704adaa37eeca0880c16cf11c040" category="inline-link-macro-rx"></block></block>
+  <block id="346b0f799d5824e6ef646274dd79d1fb" category="inline-link-macro">NTPサーバ情報の指定</block>
+  <block id="92aab28741bfbfe48d3fc128eec45691" category="list-text"><block ref="92aab28741bfbfe48d3fc128eec45691" category="inline-link-macro-rx"></block></block>
+  <block id="40f40c958ca771e7e2179dfe775df77a" category="inline-link-macro">ドメインネームシステムサーバ情報の指定</block>
+  <block id="32461cb1ffaecdbafa915e26f11613aa" category="list-text"><block ref="32461cb1ffaecdbafa915e26f11613aa" category="inline-link-macro-rx"></block></block>
+  <block id="b681141cbe056ed6a1df3d88efd6f872" category="inline-link-macro">StorageGRID システムのパスワードを指定します</block>
+  <block id="a4f57a2832f1ed9a4d6b154ee41a87c7" category="list-text"><block ref="a4f57a2832f1ed9a4d6b154ee41a87c7" category="inline-link-macro-rx"></block></block>
+  <block id="9d6fe38c7ad959d5754500d24c1a8ecc" category="inline-link-macro">構成を確認し、インストールを完了します</block>
+  <block id="6ddb52602061bc71bd9227b0e708c9a3" category="list-text"><block ref="6ddb52602061bc71bd9227b0e708c9a3" category="inline-link-macro-rx"></block></block>
+  <block id="b9b271fd480a768b1af9a1c33cd4a85b" category="section-title">Grid Managerに移動</block>
+  <block id="42b1b6d90a33a9440dc019fd997cd7b4" category="paragraph">グリッドマネージャを使用して、StorageGRIDシステムの設定に必要なすべての情報を定義します。</block>
+  <block id="9fade4bc71a9b26db45e715f017d00c2" category="paragraph">作業を開始する前に、プライマリ管理ノードを導入し、最初の起動シーケンスを完了しておく必要があります。</block>
+  <block id="bbd3e0b8f59be2dc1bb047e3344f6e9c" category="paragraph">Grid Managerを使用して情報を定義するには、次の手順を実行します。</block>
+  <block id="5436addaab73b51e2a0989c8ba3cdd5b" category="list-text">次のアドレスでGrid Managerにアクセスします。</block>
+  <block id="f2655180d4e4913e2de9f899abe36fd2" category="paragraph">または、ポート8443でGrid Managerにアクセスできます。</block>
+  <block id="9b80f8ce4c56dd2fb8430fb78a4d153e" category="list-text">[Install a StorageGRID System]をクリックします。StorageGRIDグリッドの設定に使用するページが表示されます。</block>
+  <block id="93589fdf9fa5ce84e893e5b7d77ef9d6" category="inline-image-macro">bare-metal-configure-storagegrid-grid</block>
+  <block id="b7721b1954bb575aecd8f861f0cd039d" category="paragraph"><block ref="b7721b1954bb575aecd8f861f0cd039d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1f332cbeda33342c070d2097c128d368" category="summary">StorageGRID用にDNSサーバを設定する方法について説明します。</block>
+  <block id="f8496bcc083f3532921fda775f0a9e82" category="doc">StorageGRIDのDNSサーバの詳細の指定</block>
+  <block id="a3bb8e71a8afb062831a38f0e2de59a5" category="paragraph">IPアドレスの代わりにホスト名を使用して外部サーバにアクセスできるように、StorageGRIDシステムのDNS情報を指定する必要があります。</block>
+  <block id="f45822e440c5fabed2e879af169a5277" category="paragraph">DNSサーバ情報を指定すると、Eメール通知やNetApp AutoSupport®メッセージに、IPアドレスではなく完全修飾ドメイン名（FQDN）ホスト名を使用できます。NetAppでは、少なくとも2つのDNSサーバを指定することを推奨します。</block>
+  <block id="bcf991825bcd4dc50372a5f00d52a872" category="admonition">ネットワーク分離が発生した場合に各サイトがローカルにアクセスできる DNS サーバを選択する必要があります。</block>
+  <block id="7faf3782d237867e49977ffde67f9c63" category="paragraph">DNSサーバ情報を指定するには、次の手順を実行します。</block>
+  <block id="d0ab55cd4d26d417d0f97408bcc5f697" category="list-text">[Server 1]テキストボックスで、DNSサーバのIPアドレスを指定します。</block>
+  <block id="1e61bc64ca343d74b34847dd5000dccb" category="list-text">必要に応じて、最後のエントリの横にあるプラス記号をクリックしてサーバを追加します。</block>
+  <block id="e2cb07bb2e5da2cf8d592a0018e4b5e7" category="inline-image-macro">bare-metal-add-more-servers-2</block>
+  <block id="ba3aa3377e98498b9b01ba24a802fd7a" category="paragraph"><block ref="ba3aa3377e98498b9b01ba24a802fd7a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3c597fd2b68a32b7f20e77aa59568bbe" category="summary">StorageGRID用のグリッドネットワークサブネットの設定方法について説明します。</block>
+  <block id="b96754e4e112b889e3b65f9796c4feab" category="doc">StorageGRIDのグリッドネットワークサブネットの指定</block>
+  <block id="6092d6c95dc9345e9fc2f9393637366f" category="paragraph">グリッドネットワークで使用されるサブネットを指定する必要があります。</block>
+  <block id="b096cdba7bbccc754886e4b23b4d565c" category="paragraph">サブネットエントリには、StorageGRIDシステム内の各サイトのグリッドネットワークのサブネット、およびグリッドネットワーク経由で到達できる必要があるサブネット（NTPサーバをホストするサブネットなど）が含まれます。</block>
+  <block id="98b89faf2e01f50b0551ad95781dd35f" category="paragraph">グリッドサブネットが複数ある場合は、グリッドネットワークゲートウェイが必要です。指定するすべてのグリッドサブネットが、このゲートウェイ経由でアクセス可能であることが必要です。</block>
+  <block id="ff670efa4a84f39d12897a686ef98841" category="paragraph">グリッドネットワークのサブネットを指定するには、次の手順を実行します。</block>
+  <block id="901ad78229e56f3cfe4923cb2fb91cf4" category="list-text">[Subnet 1]テキストボックスで、少なくとも1つのグリッドネットワークのCIDRネットワークアドレスを指定します。</block>
+  <block id="5b2e07d1148d69347b968600f2027092" category="list-text">最後のエントリの横にあるプラス記号をクリックして、追加のネットワークエントリを追加します。少なくとも1つのノードをすでに導入している場合は、[Discover Grid Networks Subnets]をクリックして、Grid Managerに登録されているグリッドノードから報告されるサブネットをグリッドネットワークサブネットリストに自動的に追加します。</block>
+  <block id="4b988fcce569f5f8ae3f7bf260e946e2" category="inline-image-macro">ベアメタルサブネット-グリッドネットワーク</block>
+  <block id="6b348cb4599b5ceaa81c936234485125" category="paragraph"><block ref="6b348cb4599b5ceaa81c936234485125" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="48f6c9d6fba1611dc98c2669925c1099" category="summary">ベアメタルグリッドにStorageGRIDをインストールする方法について説明します。</block>
+  <block id="273f15cc5d5a9b82b3ed937c075f0165" category="doc">StorageGRIDノインストールノガイヨウ</block>
+  <block id="4bf8c31681edafd88d86ee89bb157c9f" category="paragraph">ベアメタルホストにStorageGRIDをインストールする方法について説明します。</block>
+  <block id="dbf88cfc0b0d656a966a6413296090cd" category="paragraph">TR-4882には、NetApp StorageGRIDの実際的なインストール手順が記載されています。ベアメタルまたはRed Hat Enterprise Linux（RHEL）で実行されている仮想マシン（VM）にインストールできます。このアプローチでは、StorageGRIDコンテナ化された6つのサービスを、推奨されるレイアウトとストレージ構成で、3台の物理（または仮想）マシンに「独自の」インストールを実行します。お客様によっては、このTRに記載されている導入例に従うことで、導入プロセスを理解しやすくなる場合があります。</block>
+  <block id="53721259d4f70a6e22df4cf50cb6a007" category="paragraph">StorageGRIDとインストールプロセスの詳細については、製品ドキュメントの[Install、upgrade、and hotfix（インストール、アップグレード、およびホットフィックスのStorageGRID）]を参照して<block ref="138cb63445270d21525dcce6de5e7942" category="inline-link-rx"></block> ください。</block>
+  <block id="a65c073029a2585f51e608ca137bdfa6" category="inline-link-macro">StorageGRIDをインストールするための前提条件</block>
+  <block id="ee6027960e010f4085d66014d7765ecd" category="paragraph">導入を開始する前に、NetApp StorageGRIDソフトウェアのコンピューティング、ストレージ、ネットワークの要件を確認してみましょう。StorageGRIDは、PodmanまたはDocker内でコンテナ化されたサービスとして実行されます。このモデルでは、一部の要件はホストオペレーティングシステム（StorageGRIDソフトウェアを実行しているDockerをホストするOS）を参照しています。また、リソースの一部は、各ホスト内で実行されているDockerコンテナに直接割り当てられます。この導入では、ハードウェアの使用率を最大化するために、物理ホストごとに2つのサービスを導入します。詳細については、次のセクションに進んでください <block ref="dbd241ef02e4fbb756d3e4613e476d0c" category="inline-link-macro-rx"></block>。</block>
+  <block id="ce29edc154956369d79ff8276cf747b1" category="paragraph">このTRで説明した手順を実行すると、6台のベアメタルホストにStorageGRIDのインストールが完了します。これでグリッドネットワークとクライアントネットワークが正常に機能し、ほとんどのテストシナリオで役立ちます。</block>
+  <block id="e3581082ba2aa18febff247afdaf6344" category="paragraph">このTRに記載されている情報の詳細については、次のドキュメントリソースを参照してください。</block>
+  <block id="d794ca6edf18a97bedb2ad1af37d0c71" category="list-text">NetApp StorageGRIDドキュメントセンター <block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
+  <block id="f26db73036faf2fd4369e53f7b67c6e7" category="list-text">NetApp StorageGRIDイネーブルメント <block ref="4d58579ecd86e7d907ec63f13f2199dd" category="inline-link-rx"></block></block>
+  <block id="a3fd6da95928caff4c3eee3c06fd7ad8" category="list-text">StorageGRIDドキュメントリソースページ <block ref="68d4d5362a15088f2ac3fa494c971af5" category="inline-link-rx"></block></block>
+  <block id="8b8bc5296c7be638754abb2f408d2099" category="list-text">NetApp製品ドキュメント <block ref="3cd8b5fe5ca94a9fdb5caaf96875ef7e" category="inline-link-rx"></block></block>
+  <block id="fb0cb3928e42fcd12b5e4d384c0b36e1" category="summary">Docker for StorageGRIDのインストール方法について説明します。</block>
+  <block id="4794aa13334c3a67cb956b8bb0b717cc" category="doc">Docker for StorageGRIDのインストール</block>
+  <block id="c411a2ac40844c1231d957775a64722d" category="paragraph">Dockerをインストールするには、次の手順を実行します。</block>
+  <block id="28797c756cc3b531ebc808137254c863" category="list-text">Docker用のyumリポジトリを設定します。</block>
+  <block id="a55e65a59807a07ed700dfaa18135965" category="list-text">必要なパッケージをインストールします。</block>
+  <block id="388ac7e55d7a29e60f0f34508abf8659" category="list-text">Dockerを起動します。</block>
+  <block id="36d5897ce670ceac1415b9974a6af5a2" category="list-text">Dockerをテストします。</block>
+  <block id="eb010319657e027ec1e22bf845704378" category="list-text">Dockerがシステム起動時に実行されていることを確認します。</block>
+  <block id="a35aaa99aee9ee41d444a5de3983e400" category="summary">StorageGRIDの依存関係とパッケージをインストールする方法について説明します。</block>
+  <block id="235992e2681e5ebf739b2749c087e907" category="doc">StorageGRIDの依存関係とパッケージのインストール</block>
+  <block id="a4a1bdc97b6deb2ecbfd5c6f2f05db8c" category="paragraph">StorageGRIDの依存関係とパッケージをインストールするには、次のコマンドを実行します。</block>
+  <block id="6ef045491be09dfac9e36f2f37b4c4ed" category="summary">StorageGRID用のノード構成ファイルを準備する方法を確認します。</block>
+  <block id="3a02f9f770473e94a2c5462278a048d4" category="doc">StorageGRIDのノード構成ファイルを準備</block>
+  <block id="1343e23127fc49a20324fb3d78b4473d" category="paragraph">StorageGRID用のノード構成ファイルを準備する方法について説明します。</block>
+  <block id="7b47d84a33982b36f4cbfb623f0a1050" category="paragraph">ノード設定プロセスの大まかな手順は次のとおりです。</block>
+  <block id="cde8b6ddad7a3759ad08e7c434fcc714" category="list-text">すべてのホストにディレクトリを作成し<block ref="edca9b547a27d6695f01e9e392e45783" prefix=" " category="inline-code"></block> ます。</block>
+  <block id="5e274809c4a7cb2d1cbd804630e0483e" category="list-text">コンテナ/ノードタイプのレイアウトに合わせて、物理ホストごとに必要なファイルを作成します。この例では、各ホストマシンの物理ホストごとに2つのファイルを作成しました。</block>
+  <block id="7e6488ac34f370a0f85579eb830a419f" category="admonition">ファイルの名前は、インストールの実際のノード名を定義します。たとえば、は<block ref="a9544009b3c44145c6b1db3b64fcb357" prefix=" " category="inline-code"></block> という名前のノードになり<block ref="a468b3905cece02bad9c64fe5794ba18" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="fdfe223ed38149015f823fb7868e18d5" category="paragraph">--ホスト1：<block ref="a9544009b3c44145c6b1db3b64fcb357" prefix=" " category="inline-code"></block><block ref="742abc63e42891d5268831dd2f8134cc" prefix=" " category="inline-code"></block></block>
+  <block id="af040f5ae1df9ca75718266e039c85d1" category="paragraph">--ホスト2:<block ref="38e5bd6028d6987bcd32d325143dd7f7" prefix=" " category="inline-code"></block><block ref="9541080e4df5e58006bce54f876e9e42" prefix=" " category="inline-code"></block></block>
+  <block id="f316a63ba76df82db79c8bc6f4f1e0cf" category="paragraph">--ホスト3:<block ref="1d8c11731baba95a999e50a44e6b2240" prefix=" " category="inline-code"></block><block ref="4ece8d01432102ba9cdf99c305c05c79" prefix=" " category="inline-code"></block></block>
+  <block id="eb4456c9e23dff5366f92ed1e89879df" category="section-title">ノード構成ファイルの準備</block>
+  <block id="2cf046d44edc64f0af6d74dd8e0e4dfd" category="paragraph">次の例では、という形式を使用し<block ref="c3f30fd512a0d9dd70b8028ed1cc6994" prefix=" " category="inline-code"></block> ます。次のコマンドを実行して、正しいパスを確認できます。</block>
+  <block id="933194e0510283a6d05cc4c3d4cca053" category="paragraph">コマンドは次のとおりです。</block>
+  <block id="7c275602a08732abf91e350f11452e06" category="section-title">プライマリ管理ノードの例</block>
+  <block id="b89155325811ce43c368c0182b207f56" category="paragraph">ファイル名の例：</block>
+  <block id="8ae66bdfd8c1959b6deb73ad07303b65" category="paragraph">ファイルの内容の例：</block>
+  <block id="3940fe7127b5c33a341df47bcde67bdf" category="admonition">ディスクパスの例を次に示します。または、形式の名前を使用できます<block ref="e3cff95c13f96c388b7d6c6b15ba1e95" prefix=" " category="inline-code"></block> 。などのブロックデバイス名は使用しないでください。ブロックデバイス名は<block ref="bf20f6a37aac19afbbbc2e9364f522c3" prefix=" " category="inline-code"></block> リブート時に変更され、グリッドに大きな損傷を与える可能性があります。</block>
+  <block id="c93beaa6470d0316c3f7069cceab8638" category="section-title">ストレージノードの例</block>
+  <block id="e21aa9066b5020310dd1a649d78cf958" category="section-title">ゲートウェイノードの例</block>
+  <block id="bedf7ff9ba850fa9d1aee9038a594897" category="summary">別 々 のサーバで実行された処理の同期を維持できるように、StorageGRIDシステムのNTP設定情報を指定する方法について説明します。</block>
+  <block id="015d358e34f2ad07f88d489ad1e31e30" category="doc">StorageGRIDのNTPサーバの詳細の指定</block>
+  <block id="238e13ad8f1a771af737fb7054cc6288" category="paragraph">時間のずれに関する問題を回避するには、Stratum 3以上の外部NTPサーバ参照を4つ指定する必要があります。</block>
+  <block id="1868bcdaed76946b66e5b6a72181367e" category="admonition">本番レベルの StorageGRID インストール環境で外部 NTP ソースを指定する場合は、 Windows Server 2016 より前のバージョンの Windows で Windows Time （ W32Time ）サービスを使用しないでください。以前のバージョンのWindowsのタイムサービスは十分に正確ではなく、StorageGRIDのような要求の厳しい環境での使用にはMicrosoftでサポートされていません。</block>
+  <block id="cc04d4f3a95621cd31b1329da77a761f" category="paragraph">外部NTPサーバは、以前にプライマリNTPロールを割り当てたノードで使用されます。</block>
+  <block id="32745e943bca7c9a42a1f6c287144f49" category="admonition">クライアントネットワークをインストールプロセスの早い段階で有効にしないと、NTPサーバの唯一のソースになりません。少なくとも1つのNTPサーバにグリッドネットワークまたは管理ネットワーク経由でアクセスできることを確認してください。</block>
+  <block id="ebc7cc4c1b9f2a55e75f2c971bf008aa" category="paragraph">NTPサーバ情報を指定するには、次の手順を実行します。</block>
+  <block id="00821ee7fcf45bcd3beba61903d8bb8b" category="list-text">[Server 1 to Server 4]テキストボックスで、少なくとも4つのNTPサーバのIPアドレスを指定します。</block>
+  <block id="f9d565da6115b4f886b1206c3cf163bd" category="list-text">必要に応じて、最後のエントリの横にあるプラス記号をクリックして、サーバエントリをさらに追加します。</block>
+  <block id="87647ffe3f4052667a65d48489aa1861" category="inline-image-macro">bare-metal-add-server-entries</block>
+  <block id="9a9b4b2d213e216ec4f66ef07141c9fe" category="paragraph"><block ref="9a9b4b2d213e216ec4f66ef07141c9fe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1818d7bb505eb0a9356019133c103083" category="summary">StorageGRIDを導入するためのコンピューティング、ストレージ、ネットワーク、Docker、ノードの要件について説明します。</block>
+  <block id="793650804c23880df1a414e076d87de6" category="section-title">コンピューティング要件</block>
+  <block id="6a2a458810293d5e417a1af6a7ec96c9" category="paragraph">次の表に、StorageGRIDノードのタイプごとにサポートされる最小リソース要件を示します。これらは、StorageGRIDノードに必要な最小限のリソースです。</block>
+  <block id="84d574e626c9caf84d8e3949bd7a2dac" category="cell">ノードのタイプ</block>
+  <block id="3498e0560fa8448ff0a0f15cd1b168f7" category="cell">CPUコア数</block>
+  <block id="e3afed0047b08059d0fada10f400c1e5" category="cell">管理者</block>
+  <block id="926dec9494209cb088b4962509df1a91" category="cell">ゲートウェイ</block>
+  <block id="7f23bd5b9e8af3893c26d04d60493ee5" category="paragraph">また、適切に動作するためには、各物理Dockerホストに16GB以上のRAMを割り当てる必要があります。たとえば、表に記載されている2つのサービスを1つの物理Dockerホストで一緒にホストするには、次の計算を行います。</block>
+  <block id="01ce852738fb02f0af9973314919d2f5" category="paragraph">24 + 24 + 16 = 64GB RAM、8 + 8 = 16コア</block>
+  <block id="1e4b750e724ab3a949dbdcb5c26a4249" category="paragraph">最新のサーバの多くはこれらの要件を超えているため、6つのサービス（StorageGRIDコンテナ）を3台の物理サーバに統合しました。</block>
+  <block id="9251700e586dc1a410f2e755a8643751" category="section-title">ネットワーク要件</block>
+  <block id="32c6e5f658485eda79e0b43678e07a12" category="paragraph">StorageGRIDトラフィックには、次の3種類があります。</block>
+  <block id="03b8d62997b82b021f1cce460f811bd9" category="list-text">*グリッドトラフィック（必須）。*グリッド内のすべてのノードの間で伝送される、内部 StorageGRID トラフィック。</block>
+  <block id="8c0713aca13d942a760d1df87e3ada36" category="list-text">*管理トラフィック（オプション）。*システムの管理とメンテナンスに使用されるトラフィック。</block>
+  <block id="d58bf009263dbca3ff838266dcd57c0e" category="list-text">*クライアントトラフィック（オプション）。*S3 および Swift クライアントからのオブジェクトストレージ要求をすべて含む、外部のクライアントアプリケーションとグリッドの間で伝送されるトラフィック。</block>
+  <block id="f168a9ca9ebe1aaabeb2520ad716a0f1" category="paragraph">StorageGRIDシステムで使用するネットワークを3つまで設定できます。各ネットワークタイプは、重複のない別 々 のサブネット上に存在する必要があります。すべてのノードが同じサブネット上にある場合、ゲートウェイアドレスは必要ありません。</block>
+  <block id="58d33d08692021c276a56aa4f34be5ac" category="paragraph">この評価では、グリッドトラフィックとクライアントトラフィックを含む2つのネットワークにを導入します。あとで管理ネットワークを追加して、その機能を利用することもできます。</block>
+  <block id="e7ff37e2b77f00466b1e9cced5b037f9" category="paragraph">すべてのホストのインターフェイスにネットワークを一貫してマッピングすることが非常に重要です。たとえば、各ノードにens192とens224の2つのインターフェイスがある場合は、すべてのホストで同じネットワークまたはVLANにマッピングする必要があります。このインストールでは、インストーラはこれらをeth0@if2およびeth2@if3としてDockerコンテナにマッピングします（ループバックはコンテナ内のIf1であるため）。したがって、一貫したモデルが非常に重要です。</block>
+  <block id="0518b9b910962684e668c4fbda55cf8c" category="section-title">Dockerネットワークに関する注意事項</block>
+  <block id="adf63b9293aa7bacbc176db0a9317ee3" category="paragraph">StorageGRIDでは、一部のDockerコンテナ実装とは異なるネットワークを使用します。Docker（Kubernetes、Swarm）が提供するネットワークは使用しません。代わりに、StorageGRIDは実際には-- net=noneとしてコンテナを生成し、Dockerはコンテナのネットワーク化に何もしないようにします。StorageGRIDサービスによってコンテナが生成されると、ノード構成ファイルに定義されているインターフェイスから新しいmacvlanデバイスが作成されます。このデバイスは新しいMACアドレスを持ち、物理インターフェイスからパケットを受信できる別個のネットワークデバイスとして機能します。macvlanデバイスはコンテナネームスペースに移動され、コンテナ内のeth0、eth1、またはeth2のいずれかに名前が変更されます。この時点で、ネットワークデバイスはホストOSに表示されなくなります。この例では、Dockerコンテナ内のグリッドネットワークデバイスはeth0で、クライアントネットワークはeth2です。管理ネットワークがある場合、デバイスはコンテナ内のeth1になります。</block>
+  <block id="6e75cec843fc88e5853e35c0cd6b8a00" category="admonition">コンテナネットワークデバイスの新しいMACアドレスでは、一部のネットワーク環境および仮想環境で無差別モードを有効にする必要がある場合があります。このモードでは、物理デバイスは既知の物理MACアドレスとは異なるMACアドレスのパケットを送受信できます。++ VMware vSphereで実行している場合は、RHELの実行時にStorageGRIDトラフィックを処理するポートグループで、プロミスキャスモード、MACアドレスの変更、および偽装送信を受け入れる必要があります。UbuntuまたはDebianはほとんどの状況でこれらの変更なしに動作します。+++++</block>
+  <block id="41b36522e1e1020bad35b072e2f4caeb" category="section-title">ストレージ要件</block>
+  <block id="caf25f834fd33813cb804fde9406ddf4" category="paragraph">各ノードには、次の表に示すサイズのSANベースまたはローカルディスクデバイスが必要です。</block>
+  <block id="4491ed1f1284f730663a34bc001e9d82" category="inline-link-macro">物理ホストのレイアウトと要件</block>
+  <block id="755122cb8b85d1b9d1d35543370e43b4" category="admonition">表内の数値はStorageGRIDサービスタイプごとのものであり、グリッド全体や物理ホストごとの数値ではありません。導入の選択肢に基づいて、このドキュメントで後述するでの各物理ホストの数を計算します <block ref="010aeaa454c3e87113c61b2c557145c0" category="inline-link-macro-rx"></block>。++アスタリスクが付いているパスまたはファイルシステムは、インストーラによってStorageGRIDコンテナ自体に作成されます。管理者による手動での設定やファイルシステムの作成は必要ありませんが、これらの要件を満たすためにはホストにブロックデバイスが必要です。つまり、ブロックデバイスはコマンドを使用して表示され<block ref="9d3de2981a7628c02076a5a69f0d0007" prefix=" " category="inline-code"></block> ますが、ホストOS内でフォーマットまたはマウントされていません。+++++</block>
+  <block id="553ce76e41b15044745c302f9ec38760" category="cell">LUNの用途</block>
+  <block id="0af38a14209cc9bc1b292891a3e005da" category="cell">LUN数</block>
+  <block id="33979902172af2154a44822727bfd415" category="cell">LUNの最小サイズ</block>
+  <block id="83fb8e06fccf8784d7de54416fa4f10e" category="cell">手動ファイルシステムが必要</block>
+  <block id="04c4f6a3d439ac588e9b26e497a5ae31" category="cell">推奨されるノード設定エントリ</block>
+  <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="cell">すべて</block>
+  <block id="c7232c95509afc90ff3b9b965d54d0ee" category="cell">管理ノードのシステムスペース<block ref="37e24b696a51b5760142fb37b5fb713f" prefix=" " category="inline-code"></block> （SSDが有用）</block>
+  <block id="96f71542917bb5841b7afc1220a17bb7" category="cell">管理ノードごとに1つ</block>
+  <block id="5c87990b5782555a01d6ca8ddd0d5f63" category="cell">90GB</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">いいえ</block>
+  <block id="43799a9c52c418811a96c66e3ed37a9b" category="cell"><block ref="4133d291885f9a83c0565e77583f763a" prefix="" category="inline-code"></block></block>
+  <block id="8e904560a3c56737b02e33efac1b72b5" category="cell">すべてのノード</block>
+  <block id="4c69bf4d5ec8c95a9d472133a445da16" category="cell">Dockerストレージプール：<block ref="fd8e3ef9a1113451077d22f9276ddcdc" prefix=" " category="inline-code"></block></block>
+  <block id="93010090d5095ea979bb68afaa1c27f9" category="cell">ホスト（物理またはVM）ごとに1つ</block>
+  <block id="f9e27493dd82660b22ff5302108907c8" category="cell">コンテナあたり100GB</block>
+  <block id="288bf87b9bc94736c0106e80d7c349e1" category="cell">○–etx4</block>
+  <block id="7bfcd905aec11ae85f0671ab8790afb2" category="cell">NA–フォーマットしてホストファイルシステムとしてマウント（コンテナにマッピングされていない）</block>
+  <block id="a9f342a5d794c36d666e6fcfa44a3b70" category="cell">管理ノードの監査ログ（管理コンテナ内のシステムデータ）<block ref="e93b971522dbbf8a5b9f5ec855913e2d" prefix=" " category="inline-code"></block></block>
+  <block id="f5064b0ffb7a5c0f9ea634aa8516d04c" category="cell">200GB</block>
+  <block id="750948c6586298990195f6589ae13db6" category="cell"><block ref="6b07f0e0541841a204b16aad47943783" prefix="" category="inline-code"></block></block>
+  <block id="1caadc9924e870acee97ae323bd838c8" category="cell">管理ノードのテーブル（管理コンテナ内のシステムデータ）<block ref="2e8bcff599e9b0a2f335c2e6667411e2" prefix=" " category="inline-code"></block></block>
+  <block id="386fd6a89b034ea2160cdefabae3b8be" category="cell"><block ref="bc04444ea9a96e7296bf9ea84011cbf3" prefix="" category="inline-code"></block></block>
+  <block id="136c07ee64e1881b929de11861c01b0f" category="cell">ストレージノード</block>
+  <block id="f3fe6f8f0e0f6591e4560eabe5fadadf" category="cell">オブジェクトストレージ（ブロックデバイス） <block ref="93fab8f2410cc2a100007dcee116cd90" prefix=" " category="inline-code"></block> （SSDが役立つ） <block ref="faac84775904ee38721272e26794e990" prefix=" " category="inline-code"></block> <block ref="601c2e64e9cb282a5e20a3b4f5427e79" prefix=" " category="inline-code"></block></block>
+  <block id="9cdde8629f3f819484f7c5b58e83930b" category="cell">ストレージコンテナごとに3つ</block>
+  <block id="357015f8d2535e72e491b099c91834f8" category="cell">4000GB</block>
+  <block id="950e2aab71ade2dc91b16bb393adcc5f" category="cell"><block ref="d0974677d2a5b3fe1667da308c12469e" prefix="" category="inline-code"></block></block>
+  <block id="171a11a3a2ace52e1a9680ec72263a41" category="paragraph">この例では、コンテナタイプごとに必要なディスクサイズを次の表に示します。物理ホストごとの要件については、このドキュメントの後半で説明し <block ref="010aeaa454c3e87113c61b2c557145c0" category="inline-link-macro-rx"></block>ます。</block>
+  <block id="6f4a8f20fa0947e6bb3d27cc47c04327" category="section-title">コンテナタイプ別のディスクサイズ</block>
+  <block id="97deb65a12dea6a246eb4c828e56f81f" category="section-title">Adminコンテナ</block>
+  <block id="edbef67b0ae5d71ef92b4e5942caef7a" category="cell">サイズ（GiB）</block>
+  <block id="0ec85b02f8abe0d9900159bd43332f9b" category="cell">Dockerストア</block>
+  <block id="e9ca87b36a0a6d6a2983077e94dad2d6" category="cell">100（コンテナあたり）</block>
+  <block id="ed69d276def8ad71180a9e6858c8b533" category="cell">ADM-OS</block>
+  <block id="8613985ec49eb8f757ae6439e879bb2a" category="cell">90</block>
+  <block id="9b942bb5a023d18ec9d2a67e02170f0d" category="cell">ADM -監査</block>
+  <block id="c510d89ae511ceadf219747940eed7b6" category="cell">ADM - MySQL</block>
+  <block id="364336eaff830c257770b6917726a630" category="section-title">ストレージコンテナ</block>
+  <block id="eda76b4bb6805bf01ca46b27319312cc" category="cell">SN-OS</block>
+  <block id="6d8c1697c5bbe9285e5b3e019d7711d1" category="cell">Rangedb-0</block>
+  <block id="f7efa4f864ae9b88d43527f4b14f750f" category="cell">4096</block>
+  <block id="9c2d18c9365880b4258d03e1d600c7e2" category="cell">Rangedb-1</block>
+  <block id="c0390e32847783ce81bef86565d40dec" category="cell">Rangedb-2</block>
+  <block id="f6b310da68321e1b8c02a23b2d38793a" category="section-title">ゲートウェイコンテナ</block>
+  <block id="37e24b696a51b5760142fb37b5fb713f" category="cell">/var/local</block>
+  <block id="7b86d858ba88988d38a0a7691de46189" category="paragraph">上記の表に示すコンピューティング要件とネットワーク要件を組み合わせることで、16コア、64GBのRAM、2つのネットワークインターフェイスを備えた3台の物理（または仮想）サーバに必要な基本的なハードウェアセットを入手できます。より高いスループットが必要な場合は、グリッドネットワークまたはクライアントネットワーク上の複数のインターフェイスをボンディングし、ノード構成ファイルでbond0.520などのVLANタグ付きインターフェイスを使用できます。負荷の高いワークロードが必要な場合は、ホストとコンテナの両方のメモリを増やす方が効果的です。</block>
+  <block id="14aa6453547abb65e147f9a63bd00ce5" category="paragraph">次の図に示すように、これらのサーバは6つのDockerコンテナ（ホストごとに2つ）をホストします。RAMはコンテナあたり24GB、ホストOS自体に16GBを提供することで計算されます。</block>
+  <block id="fdff05307e339d6ad229d46bf6d02b81" category="inline-image-macro">3台のホストのレイアウト例</block>
+  <block id="93a1c77903ba2b044742253261962120" category="paragraph"><block ref="93a1c77903ba2b044742253261962120" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9dac9fe9f0bf4e5e3c4e4745d1641723" category="paragraph">物理ホスト（VM）あたりに必要な合計RAMは、24 x 2 + 16 = 64GBです。次の表に、ホスト1、2、3に必要なディスクストレージを示します。</block>
+  <block id="c0cca200fe11cde38a6792401808bf45" category="cell">ホスト1</block>
+  <block id="bd7aece585ea4045bd93f81c08edca47" category="paragraph">* Dockerストア*</block>
+  <block id="b804e3c3d905d9bb36198cfb444a93dd" category="cell"><block ref="2e1a4e3f55001820560b237188c70bc3" prefix="" category="inline-code"></block> （ファイルシステム）</block>
+  <block id="706906be5856eaaed7da4e22f657ef92" category="cell">200（100 x 2）</block>
+  <block id="eac28d7cce23757bfa93571aa8afaae2" category="paragraph">*管理コンテナ*</block>
+  <block id="1a7727aa1be87a5ae945f922dbf62dd0" category="cell"><block ref="75452846fc4694e8dd77c42c1832beeb" prefix="" category="inline-code"></block></block>
+  <block id="b7825416881c7fb97e5ae2b693ff21b8" category="cell"><block ref="af4ce7036b04c96874c762dd87978e03" prefix="" category="inline-code"></block></block>
+  <block id="2f63ed377bd31cc673e0805da76143df" category="cell"><block ref="7d1de44774290edc24aef96956195f2b" prefix="" category="inline-code"></block></block>
+  <block id="46491398ee87a38fe56773b7bdfcaa27" category="paragraph">*ストレージコンテナ*</block>
+  <block id="d6caffa5530089f80d391a102679c52e" category="cell">SN-OS<block ref="37e24b696a51b5760142fb37b5fb713f" prefix=" " category="inline-code"></block> （デバイス）</block>
+  <block id="1d3037b2893b403589196b9af71e6904" category="cell">Rangedb-0（デバイス）</block>
+  <block id="d35a9936d7161fe6977f7b721f870f29" category="cell">Rangedb-1（デバイス）</block>
+  <block id="4cf99a5f8c6cf7638f8303c9028e9c47" category="cell">Rangedb-2（デバイス）</block>
+  <block id="6f79df86eb7294a56163138420d9279c" category="cell">ホスト2</block>
+  <block id="10c1057603ff286b9b5bc62075b51c8d" category="cell"><block ref="2e1a4e3f55001820560b237188c70bc3" prefix="" category="inline-code"></block> （共有）</block>
+  <block id="195dbe8d761af1317e88491ce21cb787" category="paragraph">*ゲートウェイコンテナ*</block>
+  <block id="98d9fbcdf0bdd9524f6667f56efe8d8c" category="cell">GW-OS <block ref="37e24b696a51b5760142fb37b5fb713f" prefix="*" category="inline-code"></block></block>
+  <block id="f899139df5e1059396431415e770c6dd" category="cell">100</block>
+  <block id="a9854072c608a9912405013d0368211c" category="cell"><block ref="37e24b696a51b5760142fb37b5fb713f" prefix="*" category="inline-code"></block></block>
+  <block id="b924ddb878a803f19e6d6790654f3bff" category="cell">ホスト3</block>
+  <block id="96bdd0cf3fb34ac9b972083beaaed91f" category="paragraph">Docker Storeの計算では、/var/localあたり100GB（コンテナあたり）x 2つのコンテナが200GBであるとしました。</block>
+  <block id="04d1311df0844ba0cb676b70e2c768e6" category="section-title">ノードの準備</block>
+  <block id="ba93eaff9438fae5ed252ac4056f3d57" category="paragraph">StorageGRIDの初期インストールの準備として、まずRHELバージョン9.2をインストールし、SSHを有効にします。ベストプラクティスに従って、ネットワークインターフェイス、ネットワークタイムプロトコル（NTP）、DNS、およびホスト名を設定します。グリッドネットワークでとクライアントネットワーク用に少なくとも1つのネットワークインターフェイスが有効になっている必要があります。VLANタグ付きインターフェイスを使用している場合は、次の例に従って設定します。それ以外の場合は、シンプルな標準ネットワークインターフェイス設定で十分です。</block>
+  <block id="9b27d9e9f79842f85553a61769a1a94f" category="paragraph">グリッドネットワークインターフェイスでVLANタグを使用する必要がある場合は、次の形式の2つのファイルが構成に含まれている必要があります<block ref="c2cf612c92facc5f4b080c83ed51c2bf" prefix=" " category="inline-code"></block> 。</block>
+  <block id="d1b8b08b5c4160c1393cad2570dee70f" category="paragraph">この例では、グリッドネットワークの物理ネットワークデバイスがenp67s0であると想定しています。また、bond0などの結合デバイスにすることもできます。ネットワークポートにデフォルトのVLANがない場合やデフォルトのVLANがグリッドネットワークに関連付けられていない場合は、ボンディングを使用するか標準のネットワークインターフェイスを使用する必要があります。StorageGRIDコンテナ自体はイーサネットフレームのタグを解除しないため、親OSで処理する必要があります。</block>
+  <block id="82c43a9353f8eb3d67bb2fa843431d9c" category="section-title">iSCSIを使用したストレージセットアップ（オプション）</block>
+  <block id="e14b9c03f9cc5e502bd12475b5f4271c" category="paragraph">iSCSIストレージを使用しない場合は、host1、host2、およびhost3に、要件を満たす十分なサイズのブロックデバイスが含まれていることを確認する必要があります。host1、host2、およびhost3のストレージ要件については、を参照してください <block ref="3ee5a0cacaa11ad486947ccabaf35f08" category="inline-link-macro-rx"></block> 。</block>
+  <block id="b39c8876d75a7ff82cd7d801fc50615a" category="paragraph">iSCSIを使用してストレージをセットアップするには、次の手順を実行します。</block>
+  <block id="a22fa689c8174cfc9a1ca77de9134e9e" category="list-text">NetApp EシリーズやNetApp ONTAP®データ管理ソフトウェアなどの外部iSCSIストレージを使用する場合は、次のパッケージをインストールします。</block>
+  <block id="befe75f3c360b54481aaca87a16ea6b1" category="list-text">各ホストでイニシエータIDを確認します。</block>
+  <block id="70ffd3788b6da8ce47eff9a3038a3669" category="list-text">手順2のイニシエータ名を使用して、ストレージデバイス上のLUN（表に示されている数とサイズ）を各ストレージノードにマッピングし <block ref="b931fdace7da701b108de4525e5832b6" category="inline-link-macro-rx"></block> ます。</block>
+  <block id="19279b693608729771b2f460a14af491" category="list-text">で新しく作成したLUNを検出し<block ref="f88921f58beaaae5bcb9dffac54bf5ad" prefix=" " category="inline-code"></block> 、ログインします。</block>
+  <block id="c0ee487fb85ee9bf09fcbe0e0d7e2337" category="inline-link">iSCSIイニシエータの作成</block>
+  <block id="e296dadeb4bfa1168294b7371b696946" category="admonition">詳細については、Red Hatカスタマーポータルのを参照してください<block ref="7faa6525557fc7fd919d1d5540c263b0" category="inline-link-rx"></block> 。</block>
+  <block id="60c1b9cd18ee1b2fd2a4b2dc134902d2" category="list-text">マルチパスデバイスとそれに関連付けられたLUN WWIDを表示するには、次のコマンドを実行します。</block>
+  <block id="542f96dda02c7e10ca9aafa03fbc1fab" category="paragraph">iSCSIをマルチパスデバイスで使用していない場合は、一意のパス名を使用してデバイスをマウントするだけで、デバイスの変更やリブートが同じように維持されます。</block>
+  <block id="2b192e8d251786682cfcb43bf83d86f5" category="admonition">デバイス名を使用するだけで、<block ref="8e0253115e3884baabf09ffd7d63d3d4" prefix=" " category="inline-code"></block> デバイスが削除または追加された場合に問題が発生する可能性があります。++マルチパスデバイスを使用している場合は、次のようにエイリアスを使用するようにファイルを変更します<block ref="dd5ff67ba72768d33f75e645aa2b8e56" prefix=" " category="inline-code"></block> 。+++++</block>
+  <block id="ade8c53e941f41b4e616710fb584545f" category="admonition">レイアウトによっては、これらのデバイスがすべてのノードに存在する場合とない場合があります。</block>
+  <block id="105bcc4e24a9d88a4b0c0f664b95a746" category="paragraph">ホストOSにDockerをインストールする前に、LUNまたはディスクのバッキングをフォーマットしてマウントし<block ref="2e1a4e3f55001820560b237188c70bc3" prefix=" " category="inline-code"></block>ます。他のLUNはノード構成ファイルに定義され、StorageGRIDコンテナによって直接使用されます。つまり、これらのファイルシステムはホストOSには表示されず、コンテナ自体に表示され、インストーラによって処理されます。</block>
+  <block id="05c7593a6814f75f0b7038a37ff3e6e2" category="paragraph">iSCSIベースのLUNを使用している場合は、fstabファイルに次のような行を追加します。前述のように、他のLUNはホストOSにマウントする必要はありませんが、使用可能なブロックデバイスとして表示される必要があります。</block>
+  <block id="39efa96a1b1e9d0a3925114b426fefdf" category="section-title">Dockerのインストールの準備</block>
+  <block id="4707519a116b57c16ea90d2a9f6e8143" category="paragraph">Dockerのインストールを準備するには、次の手順を実行します。</block>
+  <block id="9989b8e6d714dc3005d3f1ebc592f516" category="list-text">3つのホストすべてのDockerストレージボリュームにファイルシステムを作成します。</block>
+  <block id="2076f0161b9a4f3618e744d9f624e7b6" category="paragraph">iSCSIデバイスをマルチパスで使用している場合は、を使用し<block ref="8fc4a976039678d328cec3fc93e06dc8" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="5fef24e0dc05bdab911b98bc8a95094f" category="list-text">Dockerストレージボリュームマウントポイントを作成します。</block>
+  <block id="730db0bba09e92fd7d5458637879ac8a" category="list-text">同様のエントリをdocker-storage-volume-deviceに追加します<block ref="816a3ef77b62ade41c3f936c958aa555" prefix=" " category="inline-code"></block>。</block>
+  <block id="fbf2845836eb73f2319a30d651c8860b" category="paragraph">次の<block ref="cc359d06801619ee1eea3721321c35a9" prefix=" " category="inline-code"></block> オプションは、iSCSIデバイスを使用している場合にのみ推奨されます。ローカルのブロックデバイスを使用する場合は<block ref="cc359d06801619ee1eea3721321c35a9" prefix=" " category="inline-code"></block> 必要ないため、を推奨します。<block ref="a4a918a45181164207929d52aec36aec" prefix=" " category="inline-code"></block></block>
+  <block id="e942f6acf8bd3a00c0fbbd90f551547e" category="list-text">新しいファイルシステムをマウントし、ディスクの使用状況を表示します。</block>
+  <block id="8f8f2336ad1f3a46caa9cb2437bbb264" category="list-text">パフォーマンス上の理由から、スワップをオフにして無効にします。</block>
+  <block id="ba4b643a6c9eb93fd94187f357176ea3" category="list-text">設定を維持するには、次のようなすべてのスワップエントリを/etc/fstabから削除します。</block>
+  <block id="2522e8159c562bc548e18205bb912878" category="admonition">スワップを完全に無効にできないと、パフォーマンスが大幅に低下する可能性があります</block>
+  <block id="259191cf7922ecf85e4d73c28a86f750" category="list-text">ノードのテストリブートを実行して、ボリュームが永続的であり、すべてのディスクデバイスが戻ってくることを確認し<block ref="2e1a4e3f55001820560b237188c70bc3" prefix=" " category="inline-code"></block> ます。</block>
+  <block id="17e4ff05b492bd90ce69633f7f85fdbc" category="summary">グリッド設定情報を検証し、StorageGRIDのインストールプロセスを完了する方法について説明します。</block>
+  <block id="c6ae1843b71b6ae53c2de37d4ddc43df" category="doc">設定を確認してStorageGRIDのインストールを完了</block>
+  <block id="04796c10cece5394a89b36c322312d79" category="paragraph">インストールが正常に完了したことを確認するには、入力した設定情報をよく確認してください。次の手順を実行します。</block>
+  <block id="f189abc23cbec9c12167097fbc0853c3" category="list-text">[Summary]ページを表示します。</block>
+  <block id="ca47c9063377504722d3477106fd35ae" category="inline-image-macro">ベアメタルの概要ページ</block>
+  <block id="4d359c03c30d23d92dd7b1f2fb862f4a" category="paragraph"><block ref="4d359c03c30d23d92dd7b1f2fb862f4a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="08000e8c53acc4995c5cdb96bd31ada5" category="list-text">グリッドの設定情報がすべて正しいことを確認します。Summary （サマリ）ページの Modify （変更）リンクを使用して、戻ってエラーを修正します。</block>
+  <block id="bbd6e51dda18896691e705ef7cb6c0e0" category="list-text">インストールをクリックします。</block>
+  <block id="f62afe8922852d8719ba26a61eadfa3f" category="admonition">クライアントネットワークを使用するようにノードが設定されている場合は、[Install]をクリックすると、そのノードのデフォルトゲートウェイがグリッドネットワークからクライアントネットワークに切り替わります。接続が失われた場合は、アクセス可能なサブネットを介してプライマリ管理ノードにアクセスしていることを確認してください。詳細については、「ネットワークのインストールとプロビジョニング」を参照してください。</block>
+  <block id="7a38502b21e6c071e5f9ea4561734b32" category="list-text">[リカバリパッケージのダウンロード]をクリックします。</block>
+  <block id="3dd9ec88831f32da6c10dae779e728f9" category="paragraph">グリッドトポロジを定義するポイントまでインストールが進むと、リカバリパッケージファイルをダウンロードするように求められます）、このファイルの内容にアクセスできることを確認するメッセージが表示され <block ref="daf4de58883c030f033f07e61debf025" prefix="(" category="inline-code"></block>ます。リカバリパッケージファイルのダウンロードが必要になるのは、グリッドノードで障害が発生した場合にStorageGRIDシステムをリカバリできるようにするためです。</block>
+  <block id="c45c37ee019c29f21027b6d3ce89ee5b" category="paragraph">ファイルの内容を展開できることを確認し<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block> 、安全で安全な別 々 の場所に保存します。</block>
+  <block id="f4d8ae80d397e410789e20f2792f3323" category="admonition">リカバリパッケージファイルには StorageGRID システムからデータを取得するための暗号キーとパスワードが含まれているため、安全に保管する必要があります。</block>
+  <block id="0ac3f2812dab16d76fa371e221cefe6f" category="list-text">[I have successfully downloaded and verified the Recovery Package File]オプションを選択し、[Next]をクリックします。</block>
+  <block id="0a9b7a08c95bf1a8fbcd52964f597bbb" category="inline-image-macro">bare-metal-download-recovery-package</block>
+  <block id="7044d8e51310d80b057f54874177f61a" category="paragraph"><block ref="7044d8e51310d80b057f54874177f61a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e02e133dd983517013e337df1e193b4f" category="paragraph">インストールがまだ進行中の場合は、[Installation Status]ページが開きます。このページには、グリッドノードごとのインストールの進捗状況が表示されます。</block>
+  <block id="eddfe200de58c486f7de9d38ebd8b9b1" category="inline-image-macro">bare-metal-installation-status</block>
+  <block id="d4dea791d2998901dbbe06b84d11a728" category="paragraph"><block ref="d4dea791d2998901dbbe06b84d11a728" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d5e898aea811e02df68dafac2216b3b4" category="paragraph">すべてのグリッドノードがCompleteステージに達すると、Grid Managerのサインインページが開きます。</block>
+  <block id="e7263461f81beaf38395b626bd9228df" category="list-text">インストール時に指定したパスワードを使用して、Grid Managerにrootユーザとしてサインインします。</block>
+  <block id="f6075f705fc7db161a3aee43896cccaa" category="summary">StorageGRIDホストサービスを開始する方法について説明します。</block>
+  <block id="305ba923e73a73db21932cf8f5d5c002" category="doc">StorageGRID ホストサービスを開始します</block>
+  <block id="8fb078d4ecd2057d8461bdcaf76f17cc" category="paragraph">StorageGRIDノードを開始し、ホストのリブート後にノードが再起動されるようにするには、StorageGRIDホストサービスを有効にして開始する必要があります。</block>
+  <block id="b8a5b8237cd95fe783239c682c95935d" category="paragraph">StorageGRIDホストサービスを開始するには、次の手順を実行します。</block>
+  <block id="f446727b85625cf3f064e226c434a768" category="list-text">各ホストで次のコマンドを実行します。</block>
+  <block id="3c525ad09a30bd47baf1ff2095b4285c" category="admonition">最初の実行では、開始プロセスに時間がかかることがあります。</block>
+  <block id="baf5d21ed19b5dc989bc0b2ad06a3c93" category="list-text">次のコマンドを実行して、導入の進行状況を確認します。</block>
+  <block id="a83a21ad0ba97d35e74969db2d4ca559" category="list-text">またはのステータスを返すノードに対して、<block ref="7f67ae1e2fa9559d4de2c02b6614dc6b" prefix=" " category="inline-code"></block><block ref="c23e2b09ebe6bf4cb5e2a9abe85c0be2" prefix=" " category="inline-code"></block>次のコマンドを実行します。</block>
+  <block id="799c444c1e46ade5c2662830d6b1a32a" category="paragraph">たとえば、次の出力からノードを起動するとし<block ref="a468b3905cece02bad9c64fe5794ba18" prefix=" " category="inline-code"></block> ます。</block>
+  <block id="49f39fa01cd02432e3201ae8d3d923e8" category="list-text">StorageGRIDホストサービスを以前に有効にして開始したことがある場合（またはサービスが有効になって開始されたかどうかが不明な場合）は、次のコマンドも実行します。</block>
+  <block id="7fe36568a01bf7c87afb035e05192052" category="summary">StorageGRIDライセンスファイルをアップロードする方法について説明します。</block>
+  <block id="f537319dd07c38f32de8e7eaf2ab5996" category="doc">StorageGRIDライセンスの詳細を追加</block>
+  <block id="f47ea024bde42c8ebabc9ef87ddd126b" category="paragraph">StorageGRID システムの名前を指定し、ネットアップから提供されたライセンスファイルをアップロードする必要があります。</block>
+  <block id="3d9287781608b160fdc88edfc657216c" category="paragraph">StorageGRIDライセンス情報を指定するには、次の手順を実行します。</block>
+  <block id="20bffa19ed6078d3c9c16b9d2333f4a1" category="list-text">[License]ページの[Grid Name]フィールドに、StorageGRIDシステムの名前を入力します。インストール後、その名前がグリッドトポロジツリーの最上位レベルとして表示されます。</block>
+  <block id="138667ce7b68146ab9ef5c9a1fefe55f" category="list-text">[Browse]をクリックし、NetAppライセンスファイルを検索し <block ref="e6d7d9c1b2548b21ac2921378485020b" prefix="(" category="inline-code"></block>ます）、[Open]をクリックします。ライセンスファイルが検証され、シリアル番号とライセンスされたストレージ容量が表示されます。</block>
+  <block id="f085047056aeaf0d4f4296e89bc8d874" category="admonition">StorageGRID インストールアーカイブには、製品サポートのない無償ライセンスが含まれています。インストール後に、サポートを提供するライセンスに更新できます。</block>
+  <block id="069650fe3bf49e5264dd21815df31d3e" category="inline-image-macro">bare-metal-update-license</block>
+  <block id="35f7a36819e7e86963f64c47182ac313" category="paragraph"><block ref="35f7a36819e7e86963f64c47182ac313" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="503ada1cc373e8bb723ff1843faea66e" category="summary">プロビジョニングパスフレーズとグリッド管理rootユーザパスワードを設定して、StorageGRIDシステムを保護する方法について説明します。</block>
+  <block id="d75b856b08ec8f2f3d651a18a40a2ea6" category="doc">StorageGRIDのシステムパスワードの指定</block>
+  <block id="27f78ad3a95a795c62c63deddf4ee70d" category="paragraph">StorageGRIDシステムを保護するために使用するパスワードを入力する手順は、次のとおりです。</block>
+  <block id="dd96edfd7fde8d9ceb88859ec43f5087" category="list-text">[Provisioning Passphrase]に、StorageGRIDシステムのグリッドトポロジを変更するために必要なプロビジョニングパスフレーズを入力します。このパスワードは安全な場所に記録してください。</block>
+  <block id="1989d6fb32e83d739318bb21b7ec752a" category="list-text">[Confirm Provisioning Passphrase]にプロビジョニングパスフレーズを再入力します。</block>
+  <block id="e3f9ae4173fd7a392b7aec45609983bf" category="list-text">[Grid Management Root User Password]に、rootユーザとしてGrid Managerにアクセスする際に使用するパスワードを入力します。</block>
+  <block id="92327bac1659a24cea944d48fd3baea6" category="list-text">[Confirm Root User Password]に、Grid Managerのパスワードを再入力します。</block>
+  <block id="f134973c593ceddee8a64f9c163e99f4" category="inline-image-macro">ベアメタルグリッドマネージャパスワード</block>
+  <block id="84e0135b591263bbf8d6398ebef6e56d" category="paragraph"><block ref="84e0135b591263bbf8d6398ebef6e56d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d67e0d50bf955151686170db4b2a685e" category="list-text">コンセプトの実証またはデモ用にグリッドをインストールする場合は、[Create Random Command Line Passwords]オプションの選択を解除します。</block>
+  <block id="faf54f5c7808a17a3058501f34c61183" category="paragraph">本番環境では、セキュリティ上の理由から常にランダムパスワードを使用する必要があります。rootまたはadminアカウントを使用してコマンドラインからグリッドノードにアクセスする際にデフォルトのパスワードを使用する場合は、デモ用のグリッドでのみ[Create Random Command Line Passwords]オプションの選択を解除します。</block>
+  <block id="51bd4683761cb1bb8d85278613715f1e" category="admonition">[Summary]ページで[Install]をクリックすると、リカバリパッケージファイルをダウンロードするように求められ <block ref="473178645502a5ab705476a4d961c39b" prefix="(" category="inline-code"></block>ます）。インストールを完了するには、このファイルをダウンロードする必要があります。システムにアクセスするためのパスワードは、リカバリパッケージファイルに含まれているファイルに格納され<block ref="28325afa13c532a62489ef0d7bee3061" prefix=" " category="inline-code"></block> ています。</block>
+  <block id="ebc063740ea0c84ef8aa213e248e493f" category="summary">StorageGRIDでのベアメタルノードのアップグレードプロセスについて説明します。</block>
+  <block id="3f33930b5ea2e47e9b23c46d2d1a313e" category="doc">StorageGRIDでベアメタルノードをアップグレード</block>
+  <block id="84f8a977eb1fb845f3354010047efa06" category="paragraph">ベアメタルノードのアップグレードプロセスは、アプライアンスまたはVMwareノードのアップグレードプロセスとは異なります。ベアメタルノードのアップグレードを実行する前に、GUIを使用してアップグレードを実行する前に、まずすべてのホストでRPMファイルをアップグレードする必要があります。</block>
+  <block id="8d62278193a033fd8d40312c70b2cbeb" category="paragraph">これで、GUIを使用してソフトウェアのアップグレードに進むことができます。</block>
+  <block id="5a4b77bedbf0b2a5a3c1243b7abd94b2" category="summary">StorageGRIDの構成ファイルの内容を検証する方法について説明します。</block>
+  <block id="4e72b006a6c1258371f937dc58a28562" category="doc">StorageGRID構成ファイルの検証</block>
+  <block id="89a3ace61abf5587d364ed74077b7487" category="paragraph">各StorageGRIDノードのに構成ファイルを作成したら<block ref="edca9b547a27d6695f01e9e392e45783" prefix=" " category="inline-code"></block> 、それらのファイルの内容を検証する必要があります。</block>
+  <block id="7af406a1a11ca43d1f4d41e02bec23aa" category="paragraph">構成ファイルの内容を検証するには、各ホストで次のコマンドを実行します。</block>
+  <block id="c44d5e58056ae33c255438929de34ea7" category="paragraph">ファイルが正しい場合は、各構成ファイルについてPASSEDと表示されます。</block>
+  <block id="d9c356a8c2546acdeea9b8b1c15f40d5" category="inline-image-macro">base-metal-output-shows-passed</block>
+  <block id="2548287ab1648893be76c3ddc6917550" category="paragraph"><block ref="2548287ab1648893be76c3ddc6917550" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="90ee582a3c5d5a39be505cb53ef79288" category="paragraph">構成ファイルが正しくない場合は、警告およびエラーとして問題が表示されます。構成エラーが見つかった場合は、インストールを続行する前に修正する必要があります。</block>
+  <block id="4354560354d8408d1c18e9c0b355e09d" category="inline-image-macro">base-metal-output-shows-warning-error</block>
+  <block id="1a1aaa85d1268fe69ba0efc9cd23b71e" category="paragraph"><block ref="1a1aaa85d1268fe69ba0efc9cd23b71e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="040c89d37bea72830f915c730c54a323" category="summary">お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。</block>
+  <block id="6b3cea9a64792ec5d7e688de3ba29ba0" category="doc">ベースラインパフォーマンステストのレビュー</block>
+  <block id="d49b79b5786df5b1f9fed49f0ba0061f" category="paragraph">Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> ください。</block>
+  <block id="56e8d1153024dce00f7f403984ee3961" category="paragraph">このテストは、100台のVMと1、000台のVMを使用して実施しました。どちらのテストも、Windows VMとCentOS VMが50対50で混在した環境で実施しました。次の表に、ベースラインパフォーマンステストの結果を示します。</block>
+  <block id="416a13b2b42415edb291a65945b1bb85" category="paragraph-title">図1：250万（80TB）のオブジェクトを3時間未満で削除</block>
+  <block id="de5b3f7c60647bd68a8d18a9a017432e" category="paragraph-title">図2：80TBのストレージを3時間未満で解放</block>
+  <block id="81078bc0df32babf2ff8f3b64aef9fee" category="doc">データ保護ジョブを実行する</block>
+  <block id="192dcaa465d88af514c6921f1e1d40ab" category="paragraph">Commvault Complete Backup and Recovery for NetAppを使用してStorageGRIDを設定するには、次の手順を実行してStorageGRIDをCommvaultソフトウェア内のクラウドライブラリとして追加しました。</block>
+  <block id="bc50a12fdcb65bde15935c8a7e2b1428" category="section-title">ステップ1：CommvaultとStorageGRIDを設定する</block>
+  <block id="0a6dac3bb1f0fb019741566820decf08" category="section-title">手順2：StorageGRIDをプライマリターゲットとしてバックアップ計画を作成する</block>
+  <block id="5919e2d014c71a9ea1cb5865fa258fba" category="section-title">ステップ3：バックアップジョブを開始してワークロードを保護する</block>
+  <block id="dfe7c088f9cb984c175d4bab539f49b3" category="doc">StorageGRIDとCommvaultを使用したデータのバックアップとリカバリ</block>
+  <block id="ffe78245b07181e6bb16ef7751f1a370" category="paragraph">CommvaultとNetAppは提携して、Commvault Complete Backup and Recovery for NetAppソフトウェアとクラウドストレージ向けのNetApp StorageGRIDソフトウェアを組み合わせた共同データ保護解決策を作成しました。Commvault Complete Backup and RecoveryとNetApp StorageGRIDは、相互に連携して機能する独自の使いやすいソリューションを提供し、急速なデータ量の増大や世界各地の規制への対応を支援します。</block>
+  <block id="2a44ac46dbbddcee9c4721e0d51c5c71" category="paragraph">多くの組織は、ストレージをクラウドに移行し、システムを拡張し、データの長期保持に関するポリシーを自動化したいと考えています。クラウドベースのオブジェクトストレージは、耐障害性、拡張性、運用効率とコスト効率に優れていることで知られており、バックアップのターゲットとして最適です。CommvaultとNetAppは、2014年に解決策の統合を共同で認定し、それ以来、両社のソリューション間の緊密な統合を設計してきました。世界中のあらゆるタイプのお客様が、Commvault Complete Backup and RecoveryとStorageGRID Combined解決策を採用しています。</block>
+  <block id="80cbefe3de0bdce70bc4f4315fa0b166" category="section-title">CommvaultとStorageGRIDについて</block>
+  <block id="be01a357ae2c9752875b5385c732b017" category="section-title">主な特長</block>
+  <block id="33d02071d5daf16d46adb3c86985564a" category="inline-link">Commvaultがサポートするテクノロジ</block>
+  <block id="efd769ba600222207d2ad3d73b6e4787" category="paragraph">サポートされるワークロードの詳細については、を参照してください<block ref="4c6704a82e4c73d6cf928d19d89974ed" category="inline-link-rx"></block>。</block>
+  <block id="30c210e0173f2ff607cc84dc01ffc1f0" category="section-title">バックアップオプション</block>
+  <block id="2ce3b2adb5cc8944bbb4c626e4dc565e" category="paragraph">次の表に、StorageGRIDを使用した各バックアップオプションの利点を示します。</block>
+  <block id="e8fd0bdde5a4bfaf79b96c31ae019951" category="doc">バケット整合性レベルの推奨事項</block>
+  <block id="eb0223896e9bfd618eb298de0ad026d8" category="paragraph">11.0.0-Service Pack 16より前のバージョンのCommVaultを使用している場合は、CommVaultを最新バージョンにアップグレードすることを検討してください。これがオプションでない場合は、使用しているバージョンのガイドラインに従ってください。</block>
+  <block id="0c0ae78122b0f343ea25bef5f2c0f55e" category="doc">StorageGRIDのサイジングガイダンス</block>
+  <block id="dd3b1d5d8791ef51287680775e87cce3" category="section-title">Commvaultのサイジング情報</block>
+  <block id="1a0adfe145dbf2b37759bb98826087c9" category="paragraph">次の表に、バックアップタイプ別の平均オブジェクトサイズと、リストアプロセスでオブジェクトストアから読み取られる内容を示します。</block>
+  <block id="0694d153506368640733821297f39291" category="doc">テスト済みソリューションの概要</block>
+  <block id="5ace00d58e334797dd5e45b5bf7c59af" category="section-title">ソリューションのセットアップ</block>
+  <block id="2be15e39561fa84b25d0eba23d56166d" category="paragraph">StorageGRIDのデータ保護ポリシーでは、統合ライフサイクル管理（ILM）ポリシーを使用してデータを管理および保護します。ILMルールはポリシー内で上から下に評価されます。次の表に示すILMポリシーを実装しました。</block>
+  <block id="fabdad0ed11dbcf22ebcc439b13c8b39" category="section-title">StorageGRIDハードウェア</block>
+  <block id="9b937818d08afa5201fb28d96b471ef4" category="paragraph">次の表に、このテストで使用したNetApp StorageGRIDハードウェアを示します。10Gbpsネットワークを備えたStorageGRID SG5712アプライアンスはエントリレベルのオプションで、ベースライン構成です。必要に応じて、25Gbpsネットワーク用にSG5712を設定できます。</block>
+  <block id="504f6d3f951c7f8eedbdd452f719fd08" category="section-title">CommvaultとStorageGRIDのソフトウェア要件</block>
+  <block id="b301ee4b9911f0f8321c64e6c4bee15b" category="paragraph">次の表に、テスト用にVMwareソフトウェアにインストールしたCommvaultおよびNetApp StorageGRIDソフトウェアのソフトウェア要件を示します。4つのMediaAgentデータ転送マネージャと1つのCommServeサーバがインストールされました。このテストでは、VMwareインフラ用に10Gbpsネットワークを実装しました。次の表</block>
+  <block id="0f0740e8993dbdec76dca742beba6153" category="paragraph">次の表に、Commvaultソフトウェアの総システム要件を示します。</block>
+  <block id="50206f2358d7c5fce774f80e114e73f4" category="paragraph">このテスト環境では、NetApp EシリーズE2812ストレージアレイ上のVMwareに、1つの仮想プライマリ管理ノードと1つの仮想ゲートウェイノードを導入しました。各ノードを別 々 のサーバに配置し、本番環境の最小要件を次の表に示します。</block>
+  <block id="85e7d98a8f11e7daca0801c35ec37b71" category="paragraph">次の表に、StorageGRIDの仮想管理ノードとゲートウェイノードの要件を示します。</block>
+  <block id="02a8b3b83eb008ecdcb701c8575e79b3" category="summary">StorageGRIDの管理セキュリティ機能を確認します。</block>
+  <block id="7c850e41b876cefed53e05371dd22fcc" category="doc">管理セキュリティ機能</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">機能</block>
+  <block id="86408593c34af77fdd90df932f8b5261" category="cell">機能</block>
+  <block id="21f59b54f62b5b8b4bc0f63f0f617fc1" category="cell">影響</block>
+  <block id="040c0509161cfcd55da966beb37921b1" category="cell">コンプライアンス</block>
+  <block id="05906ffba5e034944a71a9111afdf705" category="cell">サーバ証明書（Grid管理インターフェイス）</block>
+  <block id="d20513b4fca5ffa77f89a968771c8ce1" category="paragraph">グリッド管理者は、組織の信頼されたCAによって署名されたサーバ証明書を使用するようにグリッド管理インターフェイスを設定できます。</block>
+  <block id="2d5347081a9c22a52251558c61faac47" category="cell">標準の信頼されたCAによって署名されたデジタル証明書を使用して、管理クライアントとグリッドの間の管理UIおよびAPIアクセスを認証できます。</block>
+  <block id="cfab1ba8c67c7c838db98d666f02a132" category="cell">--</block>
+  <block id="54d935076ee0d20093493f2324a28699" category="cell">管理ユーザ認証</block>
+  <block id="40d07925f107ab33cd0ddba20ec40969" category="paragraph">管理ユーザは、ユーザ名とパスワードを使用して認証されます。管理ユーザと管理グループは、ローカルまたはフェデレーテッド、お客様のActive DirectoryまたはLDAPからインポートできます。ローカルアカウントパスワードはbcryptで保護された形式で保存され、コマンドラインパスワードはSHA-2で保護された形式で保存されます。</block>
+  <block id="7b082c671c2106fa6151564ce6fe217a" category="cell">管理UIおよびAPIへの管理アクセスを認証します。</block>
+  <block id="f466077897b4a7562ce25271de69eee4" category="cell">SAMLノサホオト</block>
+  <block id="5f8e6baa5d9eb34aa5a0ac0f6ed99e37" category="paragraph">StorageGRIDは、Security Assertion Markup Language 2.0（SAML 2.0）標準を使用したシングルサインオン（SSO）をサポートしています。SSO が有効な場合は、 Grid Manager 、 Tenant Manager 、 Grid 管理 API 、またはテナント管理 API にアクセスするすべてのユーザを外部のアイデンティティプロバイダによって認証する必要があります。ローカルユーザは StorageGRID にサインインできません。</block>
+  <block id="0188b6cf538a1e80a2d71dbc8cf5e370" category="cell">グリッド管理者やテナント管理者向けに、SSOや多要素認証（MFA）などのセキュリティレベルを強化できます。</block>
+  <block id="5be3843c5bd0709d26440921c859d8df" category="cell">NIST SP800-63</block>
+  <block id="88dc3f73e7ea5ab818c5af642ed9da03" category="cell">権限のきめ細かな制御</block>
+  <block id="3f56ceac01eb4c28a51a2f770a4f9f83" category="paragraph">グリッド管理者は、ロールに権限を割り当てたり、管理ユーザグループにロールを割り当てたりできます。これにより、管理クライアントが管理UIとAPIの両方を使用して実行できるタスクを適用できます。</block>
+  <block id="9942fce998f0b0d862b20be8a42ff934" category="cell">Grid管理者が管理者ユーザと管理者グループのアクセス制御を管理できるようにします。</block>
+  <block id="4cad14bededdb563df770bfc3c540115" category="cell">分散監査ログ</block>
+  <block id="7ade29c578c3d1571a9a046883efe0ed" category="paragraph">StorageGRIDは、組み込みの分散監査ログインフラを提供し、最大16のサイトにまたがる数百のノードに拡張できます。StorageGRIDソフトウェアノードは監査メッセージを生成します。このメッセージは冗長な監査リレーシステムを介して送信され、最終的に1つ以上の監査ログリポジトリにキャプチャされます。監査メッセージには、クライアントが開始したS3 API処理、ILM別のオブジェクトライフサイクルイベント、バックグラウンドのオブジェクト健全性チェック、管理UIまたはAPIからの設定変更など、オブジェクトレベルのきめ細かなイベントが記録されます。</block>
+  <block id="5501b37af5f22aca0fe768f97426e4c3" category="paragraph">監査ログは、CIFSまたはNFS経由で管理ノードからエクスポートできるため、SplunkやELKなどのツールを使用して監査メッセージをマイニングできます。監査メッセージには次の4種類があります。</block>
+  <block id="7483d9bdb3975c2dc4c182437bb694a4" category="list-text">システム監査メッセージ</block>
+  <block id="0f4511940e0cd310266a29e9b461e173" category="list-text">オブジェクトストレージ監査メッセージ</block>
+  <block id="34088c40fc8a2267586c38cbb1723388" category="list-text">HTTPプロトコル監査メッセージ</block>
+  <block id="4497c363c0905834ab08fc50f6a44e4f" category="list-text">管理監査メッセージ</block>
+  <block id="5f7e72c509668ff8f7b6390c907882e6" category="cell">Grid管理者は、実績と拡張性に優れた監査サービスを利用して、さまざまな目的の監査データをマイニングできます。その目的には、トラブルシューティング、SLAパフォーマンスの監査、クライアントデータアクセスAPI処理、管理設定の変更などがあります。</block>
+  <block id="f61ec047fca58fcd75291639c4a048aa" category="cell">システム監査</block>
+  <block id="7dc8a2105ca4483253ebb1735958d5e1" category="paragraph">システム監査メッセージには、グリッドノードの状態、破損オブジェクトの検出、ILMルールで指定されたすべての場所でコミットされたオブジェクト、システム全体のメンテナンスタスク（グリッドタスク）の進捗状況など、システム関連のイベントが記録されます。</block>
+  <block id="29e217ab754b4fea887419607503f4ab" category="cell">システムの問題のトラブルシューティングを支援し、オブジェクトがSLAに従って格納されていることを証明します。SLAはStorageGRIDのILMルールによって実装され、整合性が保護されます。</block>
+  <block id="cc3eee76f9480cae7c73a9bef870bf2a" category="cell">オブジェクトストレージの監査</block>
+  <block id="c86a6e3b8f35e0d928600dbd3d62655c" category="paragraph">オブジェクトストレージ監査メッセージには、オブジェクトAPIトランザクションとライフサイクル関連のイベントがキャプチャされます。これらのイベントには、オブジェクトの格納と読み出し、グリッドノードからグリッドノードへの転送、および検証が含まれます。</block>
+  <block id="34b562523826be37b4ac7af2277aebde" category="cell">システム内のデータの進捗状況と、StorageGRID ILMとして指定されたSLAが提供されているかどうかをお客様が監査できるようにします。</block>
+  <block id="7eff4e44bda32d2cd250072cda727a89" category="cell">HTTPプロトコルの監査</block>
+  <block id="5eccf85b677f8dd922606ceeaf3c3a46" category="paragraph">HTTPプロトコル監査メッセージには、クライアントアプリケーションとStorageGRIDノードに関連するHTTPプロトコルのやり取りがキャプチャされます。さらに、特定のHTTP要求ヘッダー（X-Forwarded-Forやユーザメタデータ[x-amz-meta-*]など）を監査に取り込むこともできます。</block>
+  <block id="e9117279901146f8d98dc2a9bcdac878" category="cell">クライアントとStorageGRIDの間のデータアクセスAPI処理を監査し、個 々 のユーザアカウントとアクセスキーまでのアクションをトレースできるようにします。ユーザメタデータを監査に記録し、SplunkやELKなどのログマイニングツールを使用してオブジェクトメタデータで検索することもできます。</block>
+  <block id="070c51a140518b977c218a0344ba4f3b" category="cell">管理監査</block>
+  <block id="aa84a8490e3e4d04c17f36adbdfb7a54" category="paragraph">管理監査メッセージには、管理UI（Grid管理インターフェイス）またはAPIへの管理ユーザ要求が記録されます。API に対する GET または HEAD 以外のすべての要求は、応答に加えて要求のユーザ名、 IP 、およびタイプをログに記録します。</block>
+  <block id="d2d7093b62e22872a973457ebe5f99fd" category="cell">グリッド管理者は、どのユーザがどのソースIPから、どのデスティネーションIPから何時に行ったシステム設定変更の記録を作成できるようになります。</block>
+  <block id="075a3baae0c7e9cedf3c414c981271e5" category="cell">管理UIおよびAPIアクセスでのTLS 1.3のサポート</block>
+  <block id="bb9d766506884c6e2d909aefb1f43742" category="paragraph">TLSは、管理クライアントとStorageGRID管理ノードの間の通信用にハンドシェイクプロトコルを確立します。</block>
+  <block id="cdcd74524dc8a54814dd948fce79920d" category="cell">管理クライアントとStorageGRIDが相互に識別および認証し、機密性とデータ整合性を維持して通信できるようにします。</block>
+  <block id="fd563bed1019fdd16506badf8de0be7c" category="cell">SNMPv3によるStorageGRID監視</block>
+  <block id="f810112d0f21af5ebe92b9c3de73fb10" category="paragraph">SNMPv3は、プライバシーのために強力な認証とデータ暗号化の両方を提供することでセキュリティを提供します。v3では、プロトコルデータユニットは暗号化プロトコルにCBC-DESを使用して暗号化されます。</block>
+  <block id="d308a8644bac0549e4eebc4e204dbdaa" category="paragraph">プロトコルデータユニットを送信したユーザ認証は、HMAC-SHAまたはHMAC-MD5認証プロトコルによって提供されます。</block>
+  <block id="d861d9fe22241f4954ffbc5f714c6b3e" category="paragraph">SNMPv2とv1は引き続きサポートされます。</block>
+  <block id="3908989ae44796e246abf64ca846e596" category="cell">管理ノードでSNMPエージェントを有効にすることで、グリッド管理者がStorageGRIDシステムを監視できるようにします。</block>
+  <block id="2f74ef948c0cbd60a355bf0ce31ac523" category="cell">Prometheus指標エクスポート用のクライアント証明書</block>
+  <block id="6ed40b41149d6e8329e87c6439140f27" category="paragraph">グリッド管理者は、クライアント証明書をアップロードまたは生成して、StorageGRID Prometheusデータベースへのセキュアな認証されたアクセスを提供できます。</block>
+  <block id="9eb7a3058a62bcc550379f9a7c96d31d" category="cell">グリッド管理者は、クライアント証明書を使用して、Grafanaなどのアプリケーションを使用してStorageGRIDを外部から監視できます。</block>
+  <block id="42312419fa3cca4ceb6815611aeab842" category="summary">StorageGRIDとクラウドサービスの統合方法をご紹介します。</block>
+  <block id="a439aea26c6a48deab5b0e5352cad240" category="doc">クラウドとの統合</block>
+  <block id="a2460242ec10f87bbe298af92d244102" category="cell">通知ベースのウィルススキャン</block>
+  <block id="5be6ecc0e84ecdf8358641cde4ac3a75" category="cell">StorageGRIDプラットフォームサービスでは、イベント通知がサポートされます。外部のクラウドコンピューティングサービスでイベント通知を使用すると、データに対してウィルススキャンワークフローをトリガーできます。</block>
+  <block id="c0ece86af9ac026421b58625b1dbbfae" category="cell">テナント管理者は、外部のクラウドコンピューティングサービスを使用してデータのウィルススキャンをトリガーできます。</block>
+  <block id="c1f98ba9144b5c4acba3f552bd0212de" category="summary">StorageGRIDのデータアクセスセキュリティ機能について説明します。</block>
+  <block id="b457b3583adf5d2d24a86f3257c09ef6" category="doc">データアクセスセキュリティ機能</block>
+  <block id="753a6f803446796fbbff04dfd88f5473" category="cell">設定可能なTransport Layer Security（TLS）</block>
+  <block id="d828d68f264d2c7fea84e99793c324f5" category="paragraph">TLSは、クライアントとStorageGRIDゲートウェイノード、ストレージノード、またはロードバランサエンドポイント間の通信用にハンドシェイクプロトコルを確立します。</block>
+  <block id="781a8dad9c44f94841562f732a7396f3" category="paragraph">StorageGRIDでは、TLSで次の暗号スイートがサポートされています。</block>
+  <block id="3399189c01a6f55e6ddbbeb65514d504" category="list-text">TLS_AES_256_GCM_SHA384</block>
+  <block id="8a3c1b321499beacc45a33fd42758929" category="list-text">TLS_AES_128_GCM _SHA256</block>
+  <block id="e5173d80a1a420882d32605cd379c5ef" category="list-text">ECDHE-ECDSA-AES256-GCM-SHA384</block>
+  <block id="4e7ea026ea32e79687f764f49b78e129" category="list-text">ECDHE-RSA-AES256-GCM-SHA384</block>
+  <block id="e5de54f78f46d20e5acab91f76f34ee7" category="list-text">ECDHE-ECDSA-AES128-GCM-SHA256</block>
+  <block id="ef944609110b8bf159fbc8e5f67a401b" category="list-text">ECDHE-RSA-AES128-GCM-SHA256</block>
+  <block id="31937404cd5649d58e878d229fb4dada" category="list-text">DHE-RSA-AES128-GCM-SHA256</block>
+  <block id="c1bc421fc57b754da1ecbe38d180d23f" category="list-text">DHE-RSA-AES256-GCM-SHA384</block>
+  <block id="1eb7995937b2aa2df86eee93757c88cf" category="list-text">AES256-GCM-SHA384</block>
+  <block id="6402f76731704b7c964fa74df1baec24" category="list-text">AES128-GCM-SHA256</block>
+  <block id="7f56ad966fda13e8563f6faf577e85d7" category="list-text">TLS_CHACHA20_POLY1305_SHA256</block>
+  <block id="fbca494608a7316d7e4aa6c4683cfc68" category="list-text">ECDHE-ECDSA-CHACHA20-POLY1305</block>
+  <block id="a6d6322eb07cc3c297ac472e6fcf4c27" category="list-text">ECDHE-RSA-CHACHA20-POLY1305</block>
+  <block id="6e32c1287aa4f229067eaef76ad63327" category="paragraph">TLS v1.2および1.3をサポート。</block>
+  <block id="be74196f2c234809a4947513f55a8af5" category="paragraph">SSLv3、TLS v1.1以前はサポートされなくなりました。</block>
+  <block id="c7b07a7ebdf337ae1378b0072987f991" category="cell">クライアントとStorageGRIDがお互いを識別して認証し、機密性とデータ整合性を維持して通信できるようにします。最新のTLSバージョンを確実に使用します。[設定/セキュリティ]設定で暗号を設定できるようになりました。</block>
+  <block id="6c4306aab65ea68e521b0cde733e6f58" category="cell">設定可能なサーバ証明書（ロードバランサエンドポイント）</block>
+  <block id="c0ac81f384caa4ceb7f9e336f5fd60f3" category="paragraph">グリッド管理者は、サーバ証明書を生成または使用するようにロードバランサエンドポイントを設定できます。</block>
+  <block id="82cef1e3b85ce70fb048e22855c8a00f" category="cell">標準の信頼された認証局（CA）によって署名されたデジタル証明書を使用して、ロードバランサエンドポイントごとにグリッドとクライアント間のオブジェクトAPI処理を認証できるようにします。</block>
+  <block id="128ac3932acf146ee4e1b6833bcd45cd" category="cell">設定可能なサーバ証明書（APIエンドポイント）</block>
+  <block id="805178806185d9cd7f41e6ad8a3c8ee9" category="paragraph">グリッド管理者は、組織の信頼されたCAによって署名されたサーバ証明書を使用するように、すべてのStorageGRID APIエンドポイントを一元的に設定できます。</block>
+  <block id="6f18c4ddefc0542d80dfedd38275d8f1" category="cell">標準の信頼されたCAによって署名されたデジタル証明書を使用して、クライアントとグリッドの間のオブジェクトAPI処理を認証できます。</block>
+  <block id="e95bb6f1e85d1ffe0eb983fd5e0fbde8" category="cell">マルチテナンシー</block>
+  <block id="d21e77b5ca3af7b22ebee2ea0c3c24cc" category="paragraph">StorageGRIDでは、グリッドごとに複数のテナントがサポートされ、各テナントに独自のネームスペースがあります。テナントはS3プロトコルを提供します。デフォルトでは、バケット/コンテナおよびオブジェクトへのアクセスはアカウント内のユーザに制限されます。テナントには、1人のユーザ（各ユーザが独自のアカウントを持つエンタープライズ環境など）または複数のユーザ（サービスプロバイダ環境など、各アカウントがサービスプロバイダの企業および顧客であるサービスプロバイダ環境など）を設定できます。ユーザはローカルまたはフェデレーテッドにすることができます。フェデレーテッドユーザは、Active DirectoryまたはLightweight Directory Access Protocol（LDAP）によって定義されます。StorageGRIDには、ユーザがローカルまたはフェデレーテッドアカウントのクレデンシャルを使用してログインするテナントごとのダッシュボードが用意されています。ユーザは、バケットに格納されているデータ内の使用状況やオブジェクトの使用状況など、グリッド管理者によって割り当てられたクォータに対するテナント使用状況に関する可視化されたレポートにアクセスできます。管理権限を持つユーザは、ユーザ、グループ、アクセスキーの管理など、テナントレベルのシステム管理タスクを実行できます。</block>
+  <block id="ab6bfa1f9926f9adbcfedc6a50f480dc" category="cell">StorageGRID管理者は、テナントアクセスを分離しながら複数のテナントのデータをホストできます。また、Active DirectoryやLDAPなどの外部のアイデンティティプロバイダとユーザをフェデレーションすることでユーザIDを確立できます。</block>
+  <block id="f590255bdd37625b95d709d82cdf8336" category="cell">SECルール17a-4（f）CTFC 1.31（c）-（d）（FINRA）ルール4511（c）</block>
+  <block id="6290eab0ededf87492453d290ed5254b" category="cell">アクセスクレデンシャルの否認防止</block>
+  <block id="39475094fd770a9dc772b22b71bd411a" category="paragraph">すべてのS3処理は、一意のテナントアカウント、ユーザ、およびアクセスキーで識別され、ログに記録されます。</block>
+  <block id="3bc4682897671540e2902f202a464db2" category="cell">Grid管理者は、どのAPIアクションをどのユーザが実行するかを設定できます。</block>
+  <block id="9195569ffa63f28844da022d973a997c" category="cell">匿名アクセスの無効化</block>
+  <block id="2dee4bc8afe592bcf0b9153ba2002e3d" category="paragraph">デフォルトでは、S3アカウントに対して匿名アクセスは無効になっています。テナントアカウント内のバケット、コンテナ、またはオブジェクトにアクセスするには、要求者がテナントアカウント内の有効なユーザの有効なアクセスクレデンシャルを持っている必要があります。明示的なIAMポリシーを使用して、S3バケットまたはオブジェクトへの匿名アクセスを有効にできます。</block>
+  <block id="0b5e9a10290c11d44c8cfb3d77535e46" category="cell">グリッド管理者がバケット/コンテナおよびオブジェクトへの匿名アクセスを無効化または制御できるようにします。</block>
+  <block id="752fcf14a8b9daa186c583a7d4158452" category="cell">コンプライアンスWORM</block>
+  <block id="f691779f675395e50c6284f6ad6cce98" category="paragraph">SEC Rule 17a-4（f）の要件を満たすように設計され、Cohassetによって検証されています。バケットレベルでの準拠を有効にできます。保持期間は延長できますが、短縮することはできません。 情報ライフサイクル管理（ILM）ルールでは、最小限のデータ保護レベルが適用されます。</block>
+  <block id="10d40b9f13b0422b8e7c6c40d93f9daa" category="cell">規制上のデータ保持要件があるテナントで、格納オブジェクトとオブジェクトメタデータのWORM保護を実現できます。</block>
+  <block id="3a695db79c78b1c967cee48fc2a237d5" category="cell">WORM</block>
+  <block id="1ff830aee80a46441059414d7211db16" category="paragraph">グリッド管理者は、[Disable Client Modify]オプションを有効にすることで、グリッド全体のWORMを有効にできます。これにより、クライアントがすべてのテナントアカウントのオブジェクトまたはオブジェクトメタデータを上書きまたは削除できなくなります。</block>
+  <block id="0cf860f19fe64063998ee1f67a85e4d6" category="paragraph">S3テナント管理者は、IAMポリシーを指定して、テナント、バケット、またはオブジェクトプレフィックスでWORMを有効にすることもできます。このポリシーには、オブジェクトおよびメタデータの上書きに関するカスタムのS3：PutOverwriteObject権限が含まれています。</block>
+  <block id="7e5f2815798564dd590d71e02f238580" category="cell">グリッド管理者とテナント管理者は、格納オブジェクトとオブジェクトメタデータに対するWORM保護を制御できます。</block>
+  <block id="2e0e9e5d2e03839455cd9eb2f37adfca" category="cell">KMSホストサーバ暗号化キー管理</block>
+  <block id="a3f0233f685ab81bfbe239c4973c7e5b" category="paragraph">グリッド管理者は、Grid Managerで1つ以上の外部キー管理サーバ（KMS）を設定して、StorageGRIDサービスとストレージアプライアンスに暗号化キーを提供できます。各KMSホストサーバまたはKMSホストサーバクラスタは、Key Management Interoperability Protocol（KMIP）を使用して、関連付けられたStorageGRIDサイトのアプライアンスノードに暗号化キーを提供します。</block>
+  <block id="584f69c6ee257399bb645ec40c34f8b8" category="cell">保存データの暗号化が実現されます。アプライアンスボリュームが暗号化されると、ノードがKMSホストサーバと通信できる場合を除き、アプライアンス上のデータにアクセスすることはできません。</block>
+  <block id="016980f5fee5180da7eb37d92bbe93a3" category="cell">自動フェイルオーバー</block>
+  <block id="91a64541fc56f20595a65a15961c9333" category="paragraph">StorageGRIDは、あらかじめ組み込まれた冗長性と自動フェイルオーバー機能を提供します。ディスクまたはノードからサイト全体に至るまで、複数の障害が発生しても、テナントアカウント、バケット、オブジェクトへのアクセスを継続できます。StorageGRIDはリソースを認識し、使用可能なノードとデータの場所に要求を自動的にリダイレクトします。StorageGRIDサイトは、孤立モードでも動作できます。WANが停止してサイトがシステムの残りの部分から切断された場合、ローカルリソースで読み取りと書き込みを続行でき、WANがリストアされるとレプリケーションが自動的に再開されます。</block>
+  <block id="492984e9588af59fedc2e2fdc5d9e682" category="cell">グリッド管理者は、アップタイムやSLAなどの契約上の義務に対処し、ビジネス継続性計画を実装できます。</block>
+  <block id="12dd703379c8ba7977dc02d77fec0735" category="paragraph">* S3固有のデータアクセスセキュリティ機能*</block>
+  <block id="edfdb91a1964d9ed68062f44a8ff1fc3" category="cell">AWS署名バージョン2およびバージョン4</block>
+  <block id="0d6a3121917332d81937482e5e2c6990" category="paragraph">API要求の署名は、S3 API処理の認証を提供します。AmazonはSignature Version 2とVersion 4の2つのバージョンをサポートしている。署名プロセスは、要求者の身元を確認し、転送中のデータを保護し、潜在的なリプレイ攻撃から保護します。</block>
+  <block id="111c639740042f3b86ec52ab04d9fd4d" category="cell">シグネチャバージョン4に関するAWSの推奨事項に準拠し、シグネチャバージョン2を使用する古いアプリケーションとの下位互換性を有効にします。</block>
+  <block id="0946e55b3c87b085798341e597961c44" category="cell">S3 オブジェクトのロック</block>
+  <block id="8b33f7b914b813e19849abc6adea4818" category="paragraph">StorageGRIDのS3オブジェクトロック機能は、Amazon S3のS3オブジェクトロックに相当するオブジェクト保護ソリューションです。</block>
+  <block id="cd73e50fff336569a69254a44006a8fa" category="cell">テナントは、特定のオブジェクトを一定期間または無期限に保持することを求める規制に準拠するために、S3オブジェクトロックを有効にしたバケットを作成できます。</block>
+  <block id="e750fe837d77b3393407dd5684f0ccd5" category="cell">S3クレデンシャルのセキュアなストレージ</block>
+  <block id="e73d8e355eec640db89792c3ce5edc01" category="paragraph">S3アクセスキーは、パスワードハッシュ関数（SHA-2）で保護された形式で格納されます。</block>
+  <block id="57a523e42059eb10514d9881ec7dc8ab" category="cell">キーの長さ（10^31^ランダムに生成された数字）とパスワードハッシュアルゴリズムを組み合わせて、アクセスキーのセキュアな格納をイネーブルにします。</block>
+  <block id="a6e0d5acc075fc9f4132416b26a4cacf" category="cell">タイムバウンドのS3アクセスキー</block>
+  <block id="b486946a20421048a31cdc9591a91a81" category="paragraph">ユーザのS3アクセスキーを作成するときに、アクセスキーに有効期限の日時を設定できます。</block>
+  <block id="e9bf875ba15eec7c176eec55a4ac3b8f" category="cell">グリッド管理者は、一時的なS3アクセスキーをプロビジョニングできます。</block>
+  <block id="13cebe025d2b87a87a0032d00eb06d92" category="cell">ユーザアカウントごとに複数のアクセスキー</block>
+  <block id="2f163680a65a2f40b6738ba05007c096" category="paragraph">StorageGRIDを使用すると、1つのユーザアカウントに対して複数のアクセスキーを作成し、同時にアクティブにすることができます。各APIアクションはテナントユーザアカウントとアクセスキーを使用してログに記録されるため、複数のキーがアクティブであっても拒否されません。</block>
+  <block id="65b03ad2f8066caf4748e305bc92b8e4" category="cell">クライアントがアクセスキーを無停止でローテーションできるようにします。また、各クライアントに独自のキーを割り当てることができるため、クライアント間でのキー共有が不要になります。</block>
+  <block id="18e203212c9ad7c5d1d1e9b064631e1c" category="cell">S3 IAMアクセスポリシー</block>
+  <block id="45d73bb890cb4cb9d36e0c13b1efcf64" category="paragraph">StorageGRIDはS3 IAMポリシーをサポートしているため、グリッド管理者はテナント、バケット、またはオブジェクトプレフィックスごとに詳細なアクセス制御を指定できます。StorageGRIDでは、IAMポリシーの条件と変数もサポートしているため、より動的なアクセス制御ポリシーを使用できます。</block>
+  <block id="664f0391925837168f5b4a8cbdc1e4a3" category="cell">グリッド管理者がテナント全体に対してユーザグループ別にアクセス制御を指定できるようにします。また、テナントユーザが自身のバケットとオブジェクトに対してアクセス制御を指定できるようにします。</block>
+  <block id="37fab3c44e5755f8e5bccbd6918d849c" category="cell">StorageGRIDで管理されるキー（SSE）によるサーバ側の暗号化</block>
+  <block id="3563e31ddbe412705277d2ecbf461e02" category="paragraph">StorageGRIDはSSEをサポートしているため、StorageGRIDで管理される暗号化キーを使用して保管データをマルチテナントで保護できます。</block>
+  <block id="9bd8463667e55d77a93812c9e30cdb6f" category="cell">テナントでオブジェクトを暗号化できます。これらのオブジェクトの書き込みと読み出しには暗号化キーが必要です。</block>
+  <block id="b0e6ca251ef8eb40f5140358803620f0" category="cell">ユーザ指定の暗号化キーによるサーバ側の暗号化（SSE-C）</block>
+  <block id="a51ff0bc3dd94bb08fc3e0135c03df0a" category="paragraph">StorageGRIDはSSE-Cをサポートしており、クライアントが管理する暗号化キーを使用して保管データをマルチテナントで保護できます。</block>
+  <block id="788d14dbf950f69d110d594ea3e0ccc4" category="paragraph">StorageGRIDはすべてのオブジェクトの暗号化および復号化処理を管理しますが、SSE-Cを使用する場合、クライアントは暗号化キーを自身で管理する必要があります。</block>
+  <block id="8fcaac261a43456ba5d28692ad76f1a7" category="cell">クライアントが制御するキーを使用してオブジェクトを暗号化できます。これらのオブジェクトの書き込みと読み出しには暗号化キーが必要です。</block>
+  <block id="731de27084d8604a1d6b2d4f3db3e813" category="summary">StorageGRIDオブジェクトストレージソリューションに組み込まれているセキュリティ機能をご確認ください。</block>
+  <block id="1258e6ff8b374b8ea1a0bd0ab918bd2b" category="doc">オブジェクトストア内のStorageGRIDデータとメタデータを保護</block>
+  <block id="37555cad129f87a5d0dbe66af2e608f5" category="paragraph">ここでは、データアクセス、オブジェクトとメタデータ、管理アクセス、プラットフォームセキュリティなど、NetApp®StorageGRID®の多数のセキュリティ機能の概要を説明します。StorageGRID 11.8でリリースされた最新機能を含むように更新されています。</block>
+  <block id="6a26fac444f2fa8249e58b9e1ad5f1f5" category="paragraph">セキュリティは、NetApp StorageGRIDオブジェクトストレージソリューションに不可欠な要素です。オブジェクトストレージに適した多くのタイプのリッチコンテンツデータも機密性が高く、規制やコンプライアンスの対象となるため、セキュリティは特に重要です。StorageGRIDの機能が進化し続ける中で、このソフトウェアは、組織のセキュリティ体制を保護し、業界のベストプラクティスに準拠するのに役立つ多くのセキュリティ機能を利用できるようにします。</block>
+  <block id="4a4dabde11a077d631a0208b03dfdd6a" category="paragraph">このホワイトペーパーでは、StorageGRID 11.8のさまざまなセキュリティ機能の概要を5つのカテゴリに分けて説明します。</block>
+  <block id="bc9171df5cd05800ed1cfc0f1e57ee3c" category="list-text">オブジェクトとメタデータのセキュリティ機能</block>
+  <block id="4c09768521a2b8d071ec184101026f0b" category="list-text">プラットフォームのセキュリティ機能</block>
+  <block id="bd3813fae65cb7c59dcb2440c1767ac0" category="inline-link">StorageGRIDセキュリティガイド</block>
+  <block id="a0a2b190d72ee4645ce0b2c9bb0daaac" category="inline-link">StorageGRID のドキュメント</block>
+  <block id="0f07f6589b07549f758f58cff19d1ae8" category="paragraph">このホワイトペーパーはセキュリティデータシートを目的としています。デフォルトでは設定されていない、に列挙されたセキュリティ機能をサポートするようにシステムを構成する方法については詳しく説明していません。は<block ref="a8889d4963e33bc8feee06ac02912ffa" category="inline-link-rx"></block> 公式ページから入手でき<block ref="8d80aa7c37bec53b7171a35567fec311" category="inline-link-rx"></block> ます。</block>
+  <block id="0c39f21f8929ee8b7354d8a05b4f2494" category="inline-link">NetApp製品セキュリティ脆弱性対応および通知ポリシー</block>
+  <block id="e49b7c4182308a3c27dbec32987e8e67" category="paragraph">このレポートで説明する機能に加えて、StorageGRIDはにも準拠して<block ref="304cf4448819c099eaccd4f8123ab72d" category="inline-link-rx"></block>います。報告された脆弱性は、製品のセキュリティインシデント対応プロセスに従って検証され、対応されます。</block>
+  <block id="23e21fdb0716a632da9ef25685dbc487" category="paragraph">NetApp StorageGRIDは、要件の厳しいエンタープライズオブジェクトストレージのユースケースに対応する高度なセキュリティ機能を提供します。</block>
+  <block id="3bdba8537a031ec25e6ed46ff2e22424" category="list-text">NetApp StorageGRID：SEC 17a-4（f）、FINRA 4511（c）、CFTC 1.31（c）-（d）コンプライアンス評価 <block ref="dc6d251ee495c96de57ac351b8ca3a6f" category="inline-link-rx"></block></block>
+  <block id="2cbf7b84b091bb76f9e653d971faa3e6" category="list-text">StorageGRID 11.8ドキュメントページ <block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
+  <block id="682026a33ae6dd46be9dad491b716b01" category="section-title">用語と略語</block>
+  <block id="5b66d86127a2b0a925034cfcc284c687" category="paragraph">このセクションでは、ドキュメントで使用される用語の定義について説明します。</block>
+  <block id="2a2006e5a6b22cc16fc0894555912667" category="cell">用語または頭字語</block>
+  <block id="0b890b1926b90387673882e6ccae7fdc" category="cell">定義</block>
+  <block id="e2ab7c65b21ed8cc1c3b642b5e36429e" category="cell">S3</block>
+  <block id="a2cbadb148c35ae20844166a4049827a" category="cell">Simple Storage Serviceの略。</block>
+  <block id="577d7068826de925ea2aec01dbadf5e4" category="cell">クライアント</block>
+  <block id="c42c95a84762e5df51b8c0379213294d" category="cell">データアクセス用にS3プロトコルを使用するか、管理用にHTTPプロトコルを使用してStorageGRIDと連携できるアプリケーション。</block>
+  <block id="3a134231e12853479bb60ef7e0bb508f" category="cell">テナント管理者</block>
+  <block id="dd286a26ffb682c09950bb5a79fe2b38" category="cell">StorageGRIDテナントアカウントの管理者</block>
+  <block id="bacfdd208895f840b8bbcbe548dcb465" category="cell">テナントユーザ</block>
+  <block id="595d59df4898995cdade3ec2e019fe1f" category="cell">StorageGRIDテナントアカウント内のユーザ</block>
+  <block id="099d7d04319e5191b7473e016c55e320" category="cell">TLS</block>
+  <block id="14a55e8a26db2705a0ffd20ba0427338" category="cell">トランスポート層セキュリティ</block>
+  <block id="45a63ab8cbf11a8d14e5315e7199fcbd" category="cell">ILM</block>
+  <block id="9e69bc9ab0f818cb5a3334e140c5f4c2" category="cell">情報ライフサイクル管理</block>
+  <block id="1d59b567d57ca91246c45d7d8bcfbc28" category="cell">LAN</block>
+  <block id="7f2e9b596a9563029595ca880522bcf8" category="cell">ローカルエリアネットワーク</block>
+  <block id="96dd8ce9bf6a448d9f61d43d8d265801" category="cell">グリッド管理者</block>
+  <block id="638148630ddd9851f81f1bb079fb8496" category="cell">StorageGRIDシステムの管理者</block>
+  <block id="5174d1309f275ba6f275db3af9eb3e18" category="cell">グリッド</block>
+  <block id="4c91f2d56b8af2d77096a2a65babc675" category="cell">StorageGRIDシステム</block>
+  <block id="30edf70db68aa84f05d3e72326807b0c" category="cell">バケット</block>
+  <block id="9fd8560ef55eb33e96cb901223b3d97c" category="cell">S3に格納されたオブジェクトのコンテナ</block>
+  <block id="2363dee608bcd9f6ce7f980bfdad5789" category="cell">LDAP</block>
+  <block id="5fd76d09b267aef5e26007a419170512" category="cell">Lightweight Directory Access Protocolの略</block>
+  <block id="cde50a071fd29ce8ebf9813061a2db77" category="cell">秒</block>
+  <block id="8064a0440a7efca9781a6658cddd1c99" category="cell">証券取引委員会（取引所メンバー、ブローカー、ディーラーを規制）</block>
+  <block id="9b473842f8e582b9346c43fc0350da81" category="cell">フィンラ</block>
+  <block id="e44fc3a2f3510a05e6ec779e46284a8a" category="cell">金融業界規制当局（SEC Rule 17a-4（f）のフォーマットおよびメディア要件を延期）</block>
+  <block id="b7856518010c77e5e4b1d0e85318986b" category="cell">CFTC</block>
+  <block id="2933610d8d4145b6eef46b5561549528" category="cell">商品先物取引委員会、商品先物取引の規制</block>
+  <block id="a44b6b00e5eebd7494e1fd00658685e2" category="cell">NIST</block>
+  <block id="cc6ebf303b2b8456032b2686a57bb371" category="cell">米国標準技術研究所</block>
+  <block id="09934e3832ffb0b4c9e66c5c04bc0be2" category="summary">StorageGRIDのオブジェクトとメタデータのセキュリティ機能を確認します。</block>
+  <block id="4c51cf831c927dc141f320ac2843e74e" category="doc">オブジェクトとメタデータのセキュリティ</block>
+  <block id="97f766fafb1834cf5b37cdfef913fd4a" category="cell">Advanced Encryption Standard（AES）サーバ側オブジェクト暗号化</block>
+  <block id="faa9044a24e1de3aa29ee8f9cd98f417" category="paragraph">StorageGRIDは、AES 128およびAES 256ベースのサーバ側オブジェクト暗号化を提供します。グリッド管理者は、暗号化をグローバルなデフォルト設定として有効にすることができます。StorageGRIDはS3のx-amz-server-side-encryptionヘッダーもサポートしており、オブジェクト単位で暗号化を有効または無効にできます。有効にすると、グリッドノード間で格納または転送中のオブジェクトが暗号化されます。</block>
+  <block id="65f1110f71267ce7e4fda5853630c698" category="cell">基盤となるストレージハードウェアに依存せずに、ストレージやオブジェクトの転送を保護します。</block>
+  <block id="306ac6be0dc74c6c913817c118194a57" category="cell">組み込みのキー管理機能</block>
+  <block id="d64aa93292b065628260e9509c89afae" category="paragraph">暗号化を有効にすると、各オブジェクトがランダムに生成された一意の対称キーで暗号化され、外部アクセスなしでStorageGRID内に格納されます。</block>
+  <block id="c3830d20240c4ba204beb61af4e9bd4e" category="cell">外部キー管理を必要とせずにオブジェクトを暗号化できます。</block>
+  <block id="26217ba08b7324d30253fffae8ed7ec7" category="cell">Federal Information Processing Standard（FIPS）140-2準拠の暗号化ディスク</block>
+  <block id="476d9a8f1d131333f205e6793dd28254" category="paragraph">SG5712、SG5760、SG6060、およびSGF6024 StorageGRIDアプライアンスには、FIPS 140-2準拠の暗号化ディスクをオプションで選択できます。必要に応じて、外部KMIPサーバでディスクの暗号化キーを管理できます。</block>
+  <block id="fdf3619a8a241ec7b5e5a8d0110b4225" category="cell">システムデータ、メタデータ、オブジェクトのセキュアなストレージを実現します。また、StorageGRIDソフトウェアベースのオブジェクト暗号化を提供し、オブジェクトのストレージと転送を保護します。</block>
+  <block id="b56b27275ea9fc75a7ac4dda9b49b749" category="cell">バックグラウンド整合性スキャンと自己回復</block>
+  <block id="2e6b4c580a8bcff25b5a47d60fcac9d0" category="paragraph">StorageGRIDでは、オブジェクトレベルとサブオブジェクトレベルでハッシュ、チェックサム、巡回冗長検査（CRC）のインターロックメカニズムを使用して、オブジェクトが格納中と転送中の両方でデータの不整合、改ざん、変更から保護します。StorageGRIDは、破損したオブジェクトや改ざんされたオブジェクトを自動的に検出して置換し、変更されたデータを隔離して管理者に警告します。</block>
+  <block id="57a6d6612c0b7ac339111e38393db55f" category="cell">グリッド管理者は、SLA、規制、データ保持に関するその他の義務を満たすことができます。データの暗号化、改ざん、変更を試みるランサムウェアやウイルスの検出を支援します。</block>
+  <block id="ab3d0bc476ac2aa0ca7007f4d8618e58" category="cell">ポリシーベースのオブジェクトの配置と保持</block>
+  <block id="45154f53b7a3a50bb733581c179d72a2" category="paragraph">StorageGRIDを使用すると、グリッド管理者はILMルールを設定して、オブジェクトの保持、配置、保護、移行、有効期限を指定できます。グリッド管理者はStorageGRID、メタデータでオブジェクトをフィルタリングし、グリッド全体、テナント、バケット、キープレフィックス、 およびユーザ定義のメタデータのキーと値のペア。StorageGRIDを使用すると、クライアントによって明示的に削除されないかぎり、ライフサイクル全体を通じてオブジェクトがILMルールに従って格納されるようになります。</block>
+  <block id="d0ee1df697b7f408e9089d24fcaec8be" category="cell">データの配置、保護、保持を徹底データ保持性、可用性、パフォーマンスに関するSLAの達成を支援</block>
+  <block id="6700d1634a0e19cab516f3a4d03a2817" category="cell">バックグラウンドメタデータスキャン</block>
+  <block id="3a14d699423ed46f9bab55635c106b01" category="paragraph">StorageGRIDは、オブジェクトメタデータをバックグラウンドで定期的にスキャンし、オブジェクトデータの配置または保護の変更をILMの指定に従って適用します。</block>
+  <block id="8f797656852da4a84368d8850bf557ea" category="cell">破損したオブジェクトの検出に役立ちます。</block>
+  <block id="0c0ee82e6c4aeb0920d436a9efbab494" category="cell">調整可能な整合性</block>
+  <block id="7f47a281f3a192a34a395c932aa34f62" category="paragraph">テナントはバケットレベルで整合性レベルを選択して、マルチサイト接続などのリソースを利用できるようにすることができます。</block>
+  <block id="0184cc4eb8ec1ebf5b5b6475bc7ae93c" category="cell">必要な数のサイトまたはリソースが使用可能な場合にのみ、グリッドへの書き込みをコミットするオプションを提供します。</block>
+  <block id="d8fe39539c6c456faa1024868073f000" category="summary">StorageGRIDのプラットフォームセキュリティ機能について説明します。</block>
+  <block id="d59438575cef862c3bc97b4eba4702d1" category="cell">内部公開鍵インフラ（PKI）、ノード証明書、TLS</block>
+  <block id="cef4b2f928b6a73e809b14c345e4c29f" category="paragraph">StorageGRIDは、内部PKIおよびノード証明書を使用して、ノード間通信を認証および暗号化します。ノード間通信はTLSで保護されます。</block>
+  <block id="b29238986a3e915d8670efd789dcfaba" category="cell">特にマルチサイト展開では、LANまたはWAN経由のシステムトラフィックの保護に役立ちます。</block>
+  <block id="e609a089cd067fd74c91545a318d23a2" category="cell">ノードのファイアウォール</block>
+  <block id="0a93b0586c28f127fc8c6e010a1dfe33" category="paragraph">StorageGRIDは、IPテーブルとファイアウォールルールを自動的に設定して、送受信ネットワークトラフィックを制御し、未使用のポートを閉じます。</block>
+  <block id="8240359e87e4305d13d50024e6951f23" category="cell">StorageGRIDシステム、データ、メタデータを未承諾のネットワークトラフィックから保護します。</block>
+  <block id="9e4d99173a03dafd5cb8f0ffc67d9f78" category="cell">OSのセキュリティ強化</block>
+  <block id="8816421215ef153ab783d72eb7cd9002" category="paragraph">StorageGRID物理アプライアンスと仮想ノードのベースオペレーティングシステムが強化され、関連のないソフトウェアパッケージが削除されます。</block>
+  <block id="e7db23c0da6ccf0de96e36b3131daf9f" category="cell">潜在的な攻撃対象領域を最小限に抑えます。</block>
+  <block id="e5e10592566afb713af791145bb4392d" category="cell">プラットフォームとソフトウェアの定期的な更新</block>
+  <block id="90a365cfa6334747b05f0b52c4b08021" category="paragraph">StorageGRIDでは、オペレーティングシステム、アプリケーションバイナリ、ソフトウェアアップデートなどのソフトウェアリリースを定期的に提供しています。</block>
+  <block id="6f3cc3b9dee697e471e3bba31093dbae" category="cell">StorageGRIDシステムを最新のソフトウェアとアプリケーションバイナリで更新するのに役立ちます。</block>
+  <block id="5a1d0b414c220379a049ebe65853938e" category="cell">Secure Shell（SSH）を使用したルートログインの無効化</block>
+  <block id="1ddde9e67ac5cc8e61b89ce0d43ac0b6" category="paragraph">SSH経由のrootログインは、すべてのStorageGRIDノードで無効になっています。SSHアクセスでは証明書認証が使用されます。</block>
+  <block id="af4f815a408351dab1556dd0f8b12b6b" category="cell">rootログインの潜在的なリモートパスワードクラックからお客様を保護するのに役立ちます。</block>
+  <block id="9eb7eec004a2eb766b0f57cef5236954" category="cell">自動時刻同期</block>
+  <block id="6cff87b0c09df640d5253bc25e8d498c" category="paragraph">StorageGRIDは、各ノードのシステムクロックを複数の外部タイムネットワークタイムプロトコル（NTP）サーバと自動的に同期します。Stratum 3以降のNTPサーバが少なくとも4台必要です。</block>
+  <block id="bee14ec49046822fecf5839d35c01049" category="cell">すべてのノードで時刻参照が同じになるようにします。</block>
+  <block id="a8527058dbd158380d69088d151c128f" category="cell">クライアント、管理者、内部のグリッドトラフィック用に別 々 のネットワークを使用</block>
+  <block id="938b9f24dd23108e0608ac27003a8977" category="paragraph">StorageGRIDソフトウェアノードとハードウェアアプライアンスは、複数の仮想ネットワークインターフェイスと物理ネットワークインターフェイスをサポートしているため、クライアントトラフィック、管理トラフィック、内部グリッドトラフィックを別 々 のネットワーク経由で分離できます。</block>
+  <block id="f777260864051786b269b2ef5c60a95f" category="cell">グリッド管理者は、内部と外部のネットワークトラフィックを分離して、SLAの異なるネットワーク経由でトラフィックを配信できます。</block>
+  <block id="cef805f717d8d34ca2cd9fa1d0556ec1" category="cell">複数の仮想LAN（VLAN）インターフェイス</block>
+  <block id="3b98e97486d2b14be6f93cfbaada26f6" category="paragraph">StorageGRIDでは、StorageGRIDクライアントネットワークおよびグリッドネットワークにVLANインターフェイスを設定できます。</block>
+  <block id="d7ad4db946d899fffddd4489759f0fac" category="cell">グリッド管理者はアプリケーショントラフィックをパーティショニングして分離し、セキュリティ、柔軟性、パフォーマンスを確保できます。</block>
+  <block id="0aabc95acf5f661325f376501ce3bc42" category="cell">Untrusted Client Networkの略</block>
+  <block id="5e6626b2ac43f3672327fc052e31b7dc" category="paragraph">信頼されていないクライアントネットワークインターフェイスは、ロードバランサエンドポイントとして明示的に設定されたポートでのみインバウンド接続を受け入れます。</block>
+  <block id="ad5adf22258fe15684493fa8e3041106" category="cell">信頼されていないネットワークに公開されているインターフェイスのセキュリティが確保されます。</block>
+  <block id="738d14d12529b97de8983b0ad1514552" category="cell">設定可能なファイアウォール</block>
+  <block id="77d3a2aa3ace89769c7000c9ff0fbc33" category="paragraph">管理、グリッド、クライアントの各ネットワークの開いているポートと閉じているポートを管理します。</block>
+  <block id="76057cb1a942a10a1c814ef26644d04a" category="cell">グリッド管理者がポートでのアクセスを制御し、ポートへの承認済みデバイスアクセスを管理できるようにします。</block>
+  <block id="d4988ead674101baad112a63743a2a90" category="cell">SSH動作の強化</block>
+  <block id="cd5528ec1d42717a5a54ed1ec3c7235b" category="paragraph">ノードをStorageGRID 11.5にアップグレードすると、新しいSSHホスト証明書とホストキーが生成されます。</block>
+  <block id="11b82c0c383478059e3312f6a2c9d4c4" category="cell">中間者攻撃からの保護を強化します。</block>
+  <block id="e1a64d42ff187e4fae5c35973efe7842" category="cell">ノード暗号化</block>
+  <block id="44e5f619c850028058ea9f33d77d3189" category="paragraph">新しいKMSホストサーバ暗号化機能の一部として、StorageGRIDアプライアンスインストーラに新しいノード暗号化設定が追加されます。</block>
+  <block id="bb4fa26d9532e5da4f8e902beb9711c3" category="cell">この設定は、アプライアンスの設置のハードウェア構成段階で有効にする必要があります。</block>
+  <block id="d1d4aaa210b3b6cacaf0000f0aebb381" category="summary">StorageGRIDテクニカルレポートの紹介ページです。</block>
+  <block id="7ce86dc69f6c4f549fbbada4c776c93f" category="doc">StorageGRIDテクニカルレポートの概要</block>
+  <block id="8727881150b0ace8b598a648cdfcd4e1" category="paragraph">NetApp StorageGRID は、ソフトウェアで定義されるオブジェクトストレージスイートで、パブリック、プライベート、ハイブリッドのマルチクラウド環境での幅広いユースケースに対応します。StorageGRID はAmazon S3 APIをネイティブでサポートし、自動化されたライフサイクル管理などの業界をリードする革新的なテクノロジを提供して、非構造化データを長期にわたってコスト効率よく格納、保護、保持します。</block>
+  <block id="cf32db28f5310610ef2ec4f200f4bb88" category="paragraph">StorageGRIDには、StorageGRIDのいくつかの機能と統合に関するベストプラクティスと推奨事項が記載されたドキュメントが用意されています。</block>
+  <block id="7ff15a408c1c333b121632bc18877f9d" category="doc">StorageGRID構成のユースケースをご紹介します</block>
+  <block id="0e84c9d3a7eff27f8e3423b1eedd1879" category="paragraph">次の例は、StorageGRIDのお客様（NetApp ITを含む）が実装した構成を示しています。</block>
+  <block id="8365f1d55086260e6b4280883ebc86af" category="section-title">S3バケット用のF5 BIG-IP Local Traffic Manager健全性チェックモニタ</block>
+  <block id="69f04f21bfc3a8fe46dc750163ab8524" category="paragraph">F5 BIG-IPローカルトラフィックマネージャヘルスチェックモニタを設定する手順は、次のとおりです。</block>
+  <block id="2174ae3c011dd873d4828a40887bbf88" category="list-text">新しいモニタを作成します。</block>
+  <block id="7dd36e4004b883e56033959afc6c72f7" category="list-text">[Type]フィールドにと入力します<block ref="0e8433f9a404f1f3ba601c14b026d321" prefix=" " category="inline-code"></block>。</block>
+  <block id="dd21ebb285037d96102dacb19cbb91f4" category="list-text">必要に応じて、間隔とタイムアウトを設定します。</block>
+  <block id="bd181fa499b4297ca0f96b237f19b965" category="list-text">Send Stringフィールドに、<block ref="97f7892b24df272e50350757ceb43b37" prefix=" " category="inline-code"></block> \r\nはキャリッジリターンです。異なるバージョンのBIG-IPソフトウェアでは、0、1、または2セットの\r\nシーケンスが必要です。詳細については、を参照してください<block ref="4852b727b6bde26d63d1e5b08662c2e2" category="inline-link-rx"></block>。</block>
+  <block id="902b77afbc5629cc8ee652e06adcac1b" category="list-text">[Receive String]フィールドに、次のように入力します。<block ref="26c1e7b2e4b9c3ad6ee704fe983ca1d9" prefix=" " category="inline-code"></block></block>
+  <block id="1334477fa01ccc253171d26254c84e05" category="inline-image-macro">[Monitor]設定ページ</block>
+  <block id="e772a0718360d9094e93dafa7d802964" category="paragraph"><block ref="e772a0718360d9094e93dafa7d802964" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f520303aafcd791ddca69170ea616ff7" category="list-text">[Create Pool]で、必要なポートごとにプールを1つ作成します。</block>
+  <block id="bca66e85df16d449451771c1dfaa0e04" category="list-text">前の手順で作成したヘルスモニタを割り当てます。</block>
+  <block id="61ca2f0cf79f8dd539c0ade05c7afc1b" category="list-text">ロードバランシング方式を選択します。</block>
+  <block id="3e62e147cce7e19b5cdfdddcad829e3e" category="list-text">サービスポート18082（S3）を選択します。</block>
+  <block id="319c86754c5300da22dc054d5ce5f176" category="list-text">ノードを追加します。</block>
+  <block id="53862fa374ea6d558ed8c96310f005f8" category="section-title">Citrix NetScaler</block>
+  <block id="e2b1b2da185af550ff7fc51267e83b11" category="paragraph">Citrix NetScalerは、ストレージエンドポイント用の仮想サーバーを作成し、StorageGRIDストレージノードをアプリケーションサーバーとして参照してから、サービスにグループ化します。</block>
+  <block id="b6f68780a83a8ae1e60d74d7fdbc1cf1" category="paragraph">HTTPS-ECV健全性チェックモニタを使用してカスタムモニタを作成し、OPTIONS要求と受信を使用して推奨される健全性チェックを実行し<block ref="3644a684f98ea8fe223c713b77189a77" prefix=" " category="inline-code"></block>ます。HTTP-ECVは送信文字列を使用して設定され、受信文字列を検証します。</block>
+  <block id="b6e45c53457b3e5a3fb4ff9901c40d5b" category="inline-link">HTTP-ECVヘルスチェックモニタの設定例</block>
+  <block id="b32f00d1e6048938e59a0b57c3b8d0f6" category="paragraph">詳細については、Citrixのドキュメントを参照してください<block ref="9c02ec018ed76228b267d66ae485d4da" category="inline-link-rx"></block>。</block>
+  <block id="880796fcaaa4d949a777ed4943c18341" category="inline-image-macro">Citrix NetScaler Monitorの構成ページ</block>
+  <block id="d5c4b12d1277c9232b4cf6998ad6d5ac" category="paragraph"><block ref="d5c4b12d1277c9232b4cf6998ad6d5ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f1a019d81ace49ae05c637e3b257bb30" category="inline-image-macro">Configure-monitor.png</block>
+  <block id="984962d4b4fe1cf099e96cb9325e11a6" category="paragraph"><block ref="984962d4b4fe1cf099e96cb9325e11a6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="713be778c8d38f91dc492a2180ad5e93" category="section-title">Loadbalancer.org</block>
+  <block id="c804c2ec3b0c9faa88da01d5d7557790" category="paragraph">Loadbalancer.orgは、独自のStorageGRIDとの統合テストを実施し、広範な構成ガイドを用意しています。<block ref="03a0be03bae2b471b941b5ca6dcd6c59" category="inline-link-rx"></block></block>
+  <block id="d46ddb287552508c0c54b94c7dec1628" category="section-title">ケンプ</block>
+  <block id="e55f30cfbe2a50cb0af0ce68bcf66c43" category="paragraph">KempはStorageGRIDとの統合テストを独自に実施し、広範な構成ガイドを用意しています。<block ref="23f639141c9bfe961e734bf8d30af119" category="inline-link-rx"></block></block>
+  <block id="6a812150273423f1f875479281529d1a" category="section-title">HAProxy</block>
+  <block id="a776aae0af1b740523926cda64b17852" category="paragraph">OPTIONS要求を使用するようにHAProxyを設定し、haproxy.cfgでヘルスチェックの200ステータス応答を確認します。フロントエンドのバインドポートを別のポート（443など）に変更できます。</block>
+  <block id="701ed7fe70971c02f2164caf627e882b" category="paragraph">次に、HAProxyでのSSL終端の例を示します。</block>
+  <block id="aa176ccc5951b5ded67b3f8906094b9e" category="paragraph">次に、SSLパススルーの例を示します。</block>
+  <block id="2f318c9fdc19b60bf0979ddd49ca78ac" category="inline-link">HAProxy設定の例</block>
+  <block id="4a81f64fbb9c95c931964885623a00c7" category="paragraph">StorageGRIDの設定の完全な例については、GitHubのを参照してください<block ref="3a5a97c84ef2199b00eb391e62fdbb8e" category="inline-link-rx"></block> 。</block>
+  <block id="9643a935a5078eb74226f0a1020ee7a1" category="summary">StorageGRIDでのグローバルロードバランシングの設計上の考慮事項と要件を確認します。</block>
+  <block id="6dc3d5f61c3a6c9b229ed85a045b5e5d" category="doc">StorageGRIDのグローバルロードバランシング要件を理解する</block>
+  <block id="34f6a9aeab830b6ab672e2d23cb23df0" category="paragraph">グローバルなロードバランシングでは、複数のStorageGRIDサイトにインテリジェントなルーティングを提供するために、DNSと統合する必要があります。この機能はStorageGRIDドメインの外部にあり、前述のロードバランサ製品などのサードパーティのソリューションや、InfobloxなどのDNSトラフィック制御ソリューションによって提供される必要があります。このトップレベルのロードバランシングは、ネームスペース内の最も近い宛先サイトへのスマートルーティング、および停止の検出とネームスペース内の次のサイトへのリダイレクションを提供します。一般的なGSLBの実装は、サイトローカルのロードバランサを含むサイトプールを含むトップレベルのGSLBで構成されます。サイトロードバランサには、ローカルサイトのストレージノードのプールが含まれています。これには、GSLB機能用のサードパーティ製ロードバランサとサイトローカルロードバランシングを提供するStorageGRIDの組み合わせ、またはサードパーティの組み合わせが含まれます。または、前述したサードパーティの多くが、GSLBとサイトローカルロードバランシングの両方を提供できます。</block>
+  <block id="598e19149cea7c839958d9b5ebe55aa2" category="inline-image-macro">汎用- gslb</block>
+  <block id="0cfead2968793dee7be1ab3f93752ea5" category="paragraph"><block ref="0cfead2968793dee7be1ab3f93752ea5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8544d9ff7415a439150dd5b56d854dc3" category="summary">StorageGRIDなどのオブジェクトストレージシステムにおける、サードパーティおよびグローバルロードバランサの役割について説明します。</block>
+  <block id="7c37f16e9cbf7999830f6d447e5139cc" category="doc">StorageGRIDで他社製ロードバランサを使用する</block>
+  <block id="3edd1c33d7ef33f3f2d4bd6d83866d6a" category="paragraph">サードパーティ製ロードバランサを使用してNetApp®StorageGRID®を実装するための一般的なガイダンス。</block>
+  <block id="36b135b4163edadebf01fc4fe5ce9908" category="paragraph">オブジェクトストレージはクラウドストレージと同義です。クラウドストレージを利用するアプリケーションは、予想どおりURLを介してストレージに対応します。StorageGRIDは、このシンプルなURLを使用して、単一サイトまたは地理的に分散したサイト全体で容量、パフォーマンス、データ保持性を拡張できます。この簡易性を実現するコンポーネントは、ロードバランサです。</block>
+  <block id="c13ea3656f9ac47ed9e02fcd68d33302" category="paragraph">このドキュメントの目的は、StorageGRIDのお客様にロードバランサのオプションについて説明し、サードパーティ製ロードバランサの設定に関する一般的なガイダンスを提供することです。</block>
+  <block id="3af5d994a44a191598417f7e5984e350" category="section-title">ロードバランサの基本</block>
+  <block id="ced6da2d844a75b99ad7de81dfc4b594" category="paragraph">ロードバランサは、StorageGRIDなどのエンタープライズクラスのオブジェクトストレージシステムに欠かせないコンポーネントです。StorageGRIDは複数のストレージノードで構成され、各ストレージノードは特定のStorageGRIDインスタンスのSimple Storage Service（S3）ネームスペース全体を提供できます。ロードバランサは可用性の高いエンドポイントを作成し、その背後にStorageGRIDノードを配置します。StorageGRIDは、S3互換オブジェクトストレージシステムの中で独自のロードバランサを提供するだけでなく、F5、Citrix NetScaler、HAプロキシ、NGINXなどのサードパーティまたは汎用のロードバランサもサポートしています。</block>
+  <block id="34c95b85eab9d149c0654c4541686dfe" category="paragraph">次の図では、例としてURL/完全修飾ドメイン名（FQDN）「s3.company.com”」を使用しています。ロードバランサは、DNSを介してFQDNに解決される仮想IP（VIP）を作成し、アプリケーションからの要求をすべてStorageGRIDノードのプールに転送します。ロードバランサは各ノードで健全性チェックを実行し、正常なノードへの接続のみを確立します。</block>
+  <block id="4941784a59eb11e9e82511a31694404a" category="inline-image-macro">ローカルトラフィックマネージャロードバランサ</block>
+  <block id="4f53fca9881058e8f3fcb7a71c4930f2" category="paragraph"><block ref="4f53fca9881058e8f3fcb7a71c4930f2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1ef102b3c8ff2a21a3fcb109669d2c4b" category="paragraph">次の図はStorageGRIDが提供するロードバランサを示していますが、概念はサードパーティのロードバランサでも同じです。アプリケーションはロードバランサのVIPを使用してHTTPセッションを確立し、トラフィックはロードバランサを経由してストレージノードに送信されます。デフォルトでは、アプリケーションからロードバランサ、およびロードバランサからストレージノードへのすべてのトラフィックがHTTPSを介して暗号化されます。HTTPはサポートされているオプションです。</block>
+  <block id="d24d04f6bb41a4779a65a52fbb1b6dd6" category="section-title">ローカルおよびグローバルのロードバランサ</block>
+  <block id="7929df38aedb7ea6e0c08ca19bba1388" category="paragraph">ロードバランサには次の2種類があります。</block>
+  <block id="ebb9b96ddb8b66c0457c63e673aaa46e" category="list-text">*ローカルトラフィックマネージャ（LTM）*。単一サイト内のノードのプール全体に接続を分散します。</block>
+  <block id="4d736f50f71244acbc9879b3832aba87" category="list-text">*グローバルサービスロードバランサ（GSLB）*。複数のサイトに接続を分散し、LTMロードバランサを効果的にロードバランシングします。GSLBは、インテリジェントDNSサーバと考えてください。クライアントがStorageGRIDエンドポイントURLを要求すると、GSLBは可用性またはその他の要因（アプリケーションの遅延を低減できるサイトなど）に基づいて、そのURLをLTMのVIPに解決します。LTMは常に必要ですが、StorageGRIDサイトの数とアプリケーションの要件に応じて、GSLBはオプションです。</block>
+  <block id="6e5719150c17b7187b56efe10910488a" category="section-title">StorageGRIDゲートウェイノードロードバランサと他社製ロードバランサの比較</block>
+  <block id="985cddaf031056a0e7f9c7846573f5a5" category="paragraph">StorageGRIDは、S3と互換性のあるオブジェクトストレージベンダーの中で唯一、専用のアプライアンス、VM、コンテナとして使用できる標準のロードバランサを提供します。StorageGRIDが提供するロードバランサは、ゲートウェイノードとも呼ばれます。</block>
+  <block id="d7fedc6af143d4726f5c7ad4e510dd9d" category="paragraph">F5やCitrixなどのロードバランサをまだ所有していないお客様の場合、サードパーティのロードバランサの実装は非常に複雑になる可能性があります。StorageGRIDロードバランサは、ロードバランサの処理を大幅に簡易化します。</block>
+  <block id="237e90320edbf098bc62e0161517b6da" category="paragraph">ゲートウェイノードは、可用性とパフォーマンスに優れたエンタープライズクラスのロードバランサです。ゲートウェイノード、サードパーティ製ロードバランサ、またはその両方を同じグリッドに実装することもできます。ゲートウェイノードはローカルトラフィックマネージャであり、GSLBではありません。</block>
+  <block id="36685bb356ea7da456ace20502e454bb" category="paragraph">StorageGRIDロードバランサには、次の利点があります。</block>
+  <block id="9bc8bba0abbc122de22d748ff08b19f6" category="list-text">*簡易性*。リソースプール、健全性チェック、パッチ適用、メンテナンスの自動構成をすべてStorageGRIDで管理</block>
+  <block id="5de0527bb678c4839b7a7514acd707e1" category="list-text">*パフォーマンス*。StorageGRIDロードバランサはStorageGRID専用です。帯域幅に関して他のアプリケーションと競合することはありません。</block>
+  <block id="692af6e70011627635f367e5950c9f9b" category="list-text">*コスト*。仮想マシン（VM）とコンテナのバージョンは追加コストなしで提供されます。</block>
+  <block id="9c3101f6b24804233b40ae6450fa1503" category="list-text">*トラフィック分類*。高度なトラフィック分類機能を使用すると、StorageGRID固有のQoSルールとワークロード分析を実行できます。</block>
+  <block id="38c8ceefadaf4e89ae919f5a807ea085" category="list-text">*今後のStorageGRID固有の機能*。StorageGRIDは、今後のリリースで引き続き最適化を行い、ロードバランサに革新的な機能を追加していきます。</block>
+  <block id="7302dd9b1eb0aec4bf1250e7f29bf191" category="paragraph">StorageGRIDゲートウェイノードの導入の詳細については、を参照して<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block>ください。</block>
+  <block id="84005d607f0a93e852033c0b519062be" category="list-text">StorageGRID F5ロードバランサの設計に関する考慮事項 <block ref="d95e85e5d4376a35e480ee8024e749b5" category="inline-link-rx"></block></block>
+  <block id="5846f1f21b96d1c9adc26d24e614abde" category="list-text">Loadbalancer.org—Load Balancing NetApp StorageGRID <block ref="dd7f3d493284188c8c1493c8c18338b0" category="inline-link-rx"></block></block>
+  <block id="af8fdca32c51642ca8690dcf5f1416f5" category="list-text">Kemp：ロードバランシングNetApp StorageGRID <block ref="fb965c799555a65bc346633ea438a59b" category="inline-link-rx"></block></block>
+  <block id="c8516ee2c182bb804cdaf1cef683a7c5" category="summary">ローカルトラフィックマネージャロードバランサのガイダンスを確認し、最適な設定を決定します。</block>
+  <block id="5cb57a8e98262e7f15746e1841dbbae5" category="doc">ローカルトラフィックマネージャロードバランサの詳細</block>
+  <block id="d8a97edac0dc83276ee1f6b51c7e6807" category="paragraph">以下は、サードパーティ製ロードバランサの設定に関する一般的なガイダンスです。お使いの環境に最適な構成を決定するには、ロードバランサ管理者にお問い合わせください。</block>
+  <block id="0953ff2a02bf56fd006a43f9b371bf3a" category="section-title">ストレージノードのリソースグループを作成</block>
+  <block id="d5d3fac451b37a0efe3d4ff345fdf2af" category="paragraph">StorageGRIDストレージノードをリソースプールまたはサービスグループにグループ化します（用語は特定のロードバランサによって異なる場合があります）。StorageGRIDストレージノードは次のポートにS3 APIを提供します。</block>
+  <block id="1da429ce7afc680b03de98de9cd43757" category="list-text">S3 HTTPS：18082</block>
+  <block id="2fd8946bb1879d9df03f27cc4efde186" category="list-text">S3 HTTP：18084</block>
+  <block id="72b9d3dd7ddc37e412bb8e4c9d1834df" category="paragraph">ほとんどのお客様は、標準のHTTPSポートとHTTPポート（443および80）を使用してAPIを仮想サーバに提供することを選択しています。</block>
+  <block id="f96949b535b1fd2ee5eb12ac3e290226" category="admonition">各StorageGRIDサイトにはデフォルトで3つのストレージノードが必要で、そのうち2つは正常な状態である必要があります。</block>
+  <block id="327e0eb0a2fbc6bd06b0d709850dd5d1" category="section-title">健全性チェック</block>
+  <block id="f616bf082e1c35a92080ad8a5ff48cbe" category="paragraph">サードパーティのロードバランサには、各ノードの健常性とトラフィックを受信できるかどうかを確認する方法が必要です。NetAppでは、健全性チェックの実行にHTTP方式を使用することを推奨しています<block ref="164dd62adb30ca051b5289672a572f9b" prefix=" " category="inline-code"></block> 。ロードバランサは個 々 のストレージノードにHTTP要求を発行し<block ref="164dd62adb30ca051b5289672a572f9b" prefix=" " category="inline-code"></block> 、ステータス応答を期待します。<block ref="3644a684f98ea8fe223c713b77189a77" prefix=" " category="inline-code"></block></block>
+  <block id="1309129181bc088d6d4efafa6bc2459d" category="paragraph">応答を返さないストレージノードがあると<block ref="3644a684f98ea8fe223c713b77189a77" prefix=" " category="inline-code"></block> 、そのノードはストレージ要求を処理できません。アプリケーションとビジネスの要件によって、これらのチェックのタイムアウトと、ロードバランサが実行するアクションを決定する必要があります。</block>
+  <block id="30337b2a9652b78efd47d8fdfabc94dc" category="paragraph">たとえば、データセンター1の4つのストレージノードのうち3つが停止している場合は、すべてのトラフィックをデータセンター2に転送できます。</block>
+  <block id="14259d0853f5bc991cccbd611ac804a4" category="paragraph">推奨されるポーリング間隔は1秒に1回で、チェックに3回失敗したあとにノードをオフラインにします。</block>
+  <block id="857c943885e7f0f60957c2c221b0e2d6" category="section-title">S3の健全性チェックの例</block>
+  <block id="ebefb6168a42a33ed09d5fc28e45c30d" category="paragraph">次の例では、を送信し<block ref="164dd62adb30ca051b5289672a572f9b" prefix=" " category="inline-code"></block> て確認し<block ref="3c3f2943d4337318cf737f45d5b564cd" prefix=" " category="inline-code"></block>ます。Amazon S3が許可されていない要求をサポートしていないため、を使用して<block ref="164dd62adb30ca051b5289672a572f9b" prefix=" " category="inline-code"></block> います。</block>
+  <block id="944e650545f586c2533698f54ae046e4" category="section-title">ファイルベースまたはコンテンツベースの健全性チェック</block>
+  <block id="8d74fb21e11e609ac1408447dcf42911" category="paragraph">一般に、NetAppではファイルベースの健全性チェックは推奨されません。通常、読み取り専用ポリシーが設定されたバケットには、たとえば小さなファイル <block ref="f7c59f9a077a48a22df9b4a5c860de80" prefix="—" category="inline-code"></block>が作成されます。このファイルがフェッチされ、ロードバランサによって評価されます。この方法にはいくつかの欠点があります。</block>
+  <block id="6e08d9e43b67aeb9663b45d8cf895ecc" category="list-text">* 1つのアカウントに依存します。*ファイルを所有するアカウントが無効になると、健全性チェックは失敗し、ストレージ要求は処理されません。</block>
+  <block id="30fdf01ddc135514f5f090d7f79cd1d6" category="list-text">*データ保護ルール。*デフォルトのデータ保護方式は2コピー方式です。このシナリオでは、健全性チェックファイルをホストしている2つのストレージノードを使用できない場合、健全性チェックは失敗し、ストレージ要求が正常なストレージノードに送信されず、グリッドがオフラインになります。</block>
+  <block id="af772eef8069ad2b5877b4187c2a0a03" category="list-text">*監査ログの肥大化。*ロードバランサは各ストレージノードからファイルをX分ごとにフェッチし、多数の監査ログエントリを作成します。</block>
+  <block id="b95466f89b6c9d28afd5ab1a42d0b63f" category="list-text">*大量のリソースを必要とします。*健全性チェックファイルをすべてのノードから数秒おきにフェッチすると、グリッドリソースとネットワークリソースが消費されます。</block>
+  <block id="302356df7844b71c527033f2c351c2f5" category="paragraph">コンテンツベースの健全性チェックが必要な場合は、専用のS3バケットで専用テナントを使用します。</block>
+  <block id="4b447f7f6bb5fd884f8399908b64502a" category="section-title">セッションの永続性</block>
+  <block id="d570e08156a1a75c83a0373836d9ecea" category="paragraph">セッションの持続性（スティッキ性）とは、特定のHTTPセッションの持続が許可される時間のことです。デフォルトでは、ストレージノードは10分後にセッションを破棄します。持続性が長くなると、すべてのアクションでアプリケーションがセッションを再確立する必要がなくなるため、パフォーマンスが向上しますが、セッションを開いたままにするとリソースが消費されます。ワークロードにメリットがあると判断した場合は、サードパーティのロードバランサでのセッションの永続性を減らすことができます。</block>
+  <block id="b5241d8b4b26299e8408f118c96613fd" category="section-title">仮想ホスト形式のアドレス指定</block>
+  <block id="f7f1495ae157a19526e43b7ca9a78cfd" category="paragraph">AWS S3のデフォルトの方法が仮想ホスト形式になりました。StorageGRIDや多くのアプリケーションでは引き続きパス形式がサポートされますが、仮想ホスト形式のサポートを実装することを推奨します。仮想ホスト形式の要求では、ホスト名の一部にバケットが含まれます。</block>
+  <block id="f8e10d294bca3db5877bb05838f21c7c" category="paragraph">仮想ホスト形式をサポートするには、次の手順を実行します。</block>
+  <block id="db9f2738a572be271325c13d85d29eba" category="list-text">サポートされるワイルドカードDNSルックアップ：*.s3.company.com</block>
+  <block id="98d80b620ac6c8a6c571a93b081c2303" category="list-text">ワイルドカードをサポートするには、サブジェクトalt名を含むSSL証明書を使用してください。*.s3.company.com一部のお客様から、ワイルドカード証明書の使用に関するセキュリティ上の懸念が表明されています。StorageGRIDは、FabricPoolなどの主要なアプリケーションと同様に、パス形式のアクセスを引き続きサポートします。とはいえ、仮想ホストがサポートされていないと、一部のS3 API呼び出しが失敗したり、正常に動作しなくなったりします。</block>
+  <block id="d9a94fedb0d33e7dcf8c150a123252ed" category="section-title">SSLターミネーション</block>
+  <block id="1de64f0562630d746156fa7eeeb16186" category="paragraph">サードパーティのロードバランサでのSSLターミネーションには、セキュリティ上の利点があります。ロードバランサが危険にさらされると、グリッドは分離されます。</block>
+  <block id="4ed24736a515100c8d6950f6ff3ed62f" category="paragraph">サポートされる構成は次の3つです。</block>
+  <block id="d6e4c3b29ae0c77be00db314da9e1331" category="list-text">* SSLパススルー*SSL証明書は、カスタムサーバ証明書としてStorageGRIDにインストールされます。</block>
+  <block id="b116ed212c0ba853803f9e6088a72995" category="list-text">* SSLターミネーションと再暗号化（推奨）*これは、SSL証明書をStorageGRIDにインストールするのではなく、ロードバランサでSSL証明書管理をすでに実行している場合に便利です。この構成では、攻撃対象をロードバランサに限定することで、セキュリティ上のメリットが追加されます。</block>
+  <block id="36a514a78b88994ea1264f5b091f3e77" category="list-text">* HTTPによるSSL終了*この構成では、SSLはサードパーティのロードバランサで終端され、ロードバランサからStorageGRIDへの通信はSSLオフロードを利用するために非暗号化されます（最新のプロセッサに組み込まれたSSLライブラリを使用すると、メリットは限られています）。</block>
+  <block id="b0ce6d41556d237705f880fb1cbc58e2" category="section-title">パススルー構成</block>
+  <block id="c666f44b35b6f5bae6eb186d8a5f50cd" category="paragraph">ロードバランサをパススルー用に設定する場合は、StorageGRIDに証明書をインストールする必要があります。メニューの[Configuration][Server Certificates]&gt;[Object Storage API Service Endpoints Server Certificate]に移動します。</block>
+  <block id="00b3073e4bde9143ed448a64de50fe0d" category="section-title">ソースクライアントのIP可視性</block>
+  <block id="da94e46e17307ba49c38eddee784cb7f" category="inline-link">サードパーティのレイヤ7ロードバランサと連携するようにStorageGRIDを設定する方法。</block>
+  <block id="6486655584a024f5a235e284c4cad86c" category="paragraph">StorageGRID 11.4では、信頼できるサードパーティ製ロードバランサの概念が導入されました。クライアントアプリケーションIPをStorageGRIDに転送するには、この機能を設定する必要があります。詳細については、を参照してください。 <block ref="32acef5d2ab544fec627bc88853f8c78" category="inline-link-rx"></block></block>
+  <block id="c0400e41ca55c346979620ec8e555156" category="paragraph">XFFヘッダーを使用してクライアントアプリケーションのIPを表示できるようにするには、次の手順を実行します。</block>
+  <block id="4fa0b415b79ede3b9e2b64dd5517c3bc" category="list-text">監査ログにクライアントIPを記録します。</block>
+  <block id="1459641ad60f57ac22b593639cdbd6a7" category="list-text">S3バケットまたはグループポリシーを使用する<block ref="24d92e955dfcd833caf78794ad6c4b4b" prefix=" " category="inline-code"></block> 。</block>
+  <block id="8d9e209680fe6291e6e0093cc70c1d8d" category="section-title">ロードバランシング戦略</block>
+  <block id="82c813398ff8179fe57ed6f84185788e" category="paragraph">ほとんどのロードバランシングソリューションには、ロードバランシングに関する複数の戦略が用意されています。一般的な戦略は次のとおりです。</block>
+  <block id="a36c5a01c6f56865d8d943d708a8a079" category="list-text">*ラウンドロビン*ユニバーサルフィットですが、少数のノードと大規模な転送で単一のノードを詰まらせることに苦しんでいます。</block>
+  <block id="5eac1fa5d7d3794b7df31fa40fb64b0c" category="list-text">*最小接続。*すべてのノードへの接続が均等に分散される、小規模なオブジェクトワークロードや混在オブジェクトワークロードに適しています。</block>
+  <block id="e16f59112984a5105de82065c78eb39e" category="paragraph">選択するストレージノードの数が増えるにつれて、アルゴリズムの選択はそれほど重要ではありません。</block>
+  <block id="58aeb1821a5a54ad4f38db0809197926" category="section-title">データパス</block>
+  <block id="53664b9c2e935bd322645067435c564d" category="paragraph">すべてのデータは、ローカルトラフィックマネージャロードバランサを経由します。StorageGRIDは、Direct Server Routing（DSR；直接サーバールーティング）をサポートしていません。</block>
+  <block id="5925ef6606510afb41d51d1fb0afc45b" category="section-title">セツソクノフンサンノカクニン</block>
+  <block id="2a96b8364aea60ce0e324422c2ac6b92" category="paragraph">負荷を複数のストレージノードに均等に分散していることを確認するには、特定のサイトの各ノードで確立されたセッションを確認します。</block>
+  <block id="f1f12929a6298f4153ad32e9eb434de6" category="list-text">* UIメソッド。*メニューの[Support][Metrics]&gt;[S3][Overview]&gt;[LDR HTTP Sessions]に移動します。</block>
+  <block id="53a6d2eb05162bd509099a7097d7cc0f" category="list-text">*メトリクスAPI。*使用<block ref="50ffff513c166e8d2dd4800339157da9" prefix=" " category="inline-code"></block></block>
+  <block id="25df6dbb9f782398d628902e353a6290" category="summary">StorageGRIDにSSL証明書を実装するための重要性と手順を理解します。</block>
+  <block id="c987ff2e46c0fe0315a334a6e7d16a45" category="doc">HTTPS用のSSL証明書をStorageGRIDに実装する方法</block>
+  <block id="26d477d6a3ca9e01b2839b4b5460b686" category="paragraph">HTTPSを使用する場合は、Secure Sockets Layer（SSL）証明書が必要です。SSLプロトコルはクライアントとエンドポイントを識別し、信頼できるものとして検証します。SSLは、トラフィックの暗号化も提供します。SSL証明書はクライアントから信頼されている必要があります。これを実現するには、DigiCertなどのグローバルに信頼された認証局（CA）からのSSL証明書、インフラストラクチャで実行されているプライベートCA、またはホストによって生成された自己署名証明書を使用します。</block>
+  <block id="afe23f7f1e2db42e42b9827fa945ca33" category="paragraph">クライアント側での追加のアクションが不要なため、グローバルに信頼されたCA証明書の使用が推奨されます。証明書がロードバランサまたはStorageGRIDにロードされ、クライアントはエンドポイントを信頼して接続します。</block>
+  <block id="c9c63c7d8960b36b40cd611a70f57eaa" category="paragraph">プライベートCAを使用するには、ルート証明書とすべての下位証明書をクライアントに追加する必要があります。プライベートCA証明書を信頼するプロセスは、クライアントのオペレーティングシステムとアプリケーションによって異なります。たとえば、ONTAP for FabricPoolでは、チェーン内の各証明書（ルート証明書、下位証明書、エンドポイント証明書）をONTAPクラスタに個別にアップロードする必要があります。</block>
+  <block id="f99f5ec7c8468db8426b435e16ded574" category="paragraph">自己署名証明書を使用するには、クライアントがCAなしで提供された証明書を信頼して信頼性を検証する必要があります。一部のアプリケーションでは、自己署名証明書が受け入れられず、検証を無視できない場合があります。</block>
+  <block id="38a5b90f9a7bf320916ff566cf67a564" category="paragraph">クライアントロードバランサのStorageGRIDパスへのSSL証明書の配置は、SSLターミネーションが必要な場所によって異なります。ロードバランサをクライアントの終端エンドポイントとして設定し、ロードバランサからStorageGRIDへの接続用の新しいSSL証明書を使用して再暗号化またはホット暗号化することができます。または、トラフィックを通過させ、StorageGRIDをSSL終端エンドポイントにすることもできます。ロードバランサがSSLターミネーションエンドポイントの場合、証明書はロードバランサにインストールされ、DNS名/URLのサブジェクト名、およびロードバランサを介してStorageGRIDターゲットに接続するようにクライアントが設定されている代替URL/DNS名が含まれています。 ワイルドカード名を含む。ロードバランサがパススルー用に設定されている場合は、StorageGRIDにSSL証明書をインストールする必要があります。証明書には、DNS名/URLのサブジェクト名と、ロードバランサを介してStorageGRIDターゲットに接続するようにクライアントが設定されている代替URL/DNS名（ワイルドカード名を含む）が含まれている必要があります。個 々 のストレージノード名を証明書に含める必要はなく、エンドポイントのURLのみを含める必要があります。</block>
+  <block id="16bb68daba73384a82c256705fe23940" category="inline-image-macro">StorageGRIDにロードされた証明書の例</block>
+  <block id="a1829adab5057aab36e7dd7287060a71" category="paragraph"><block ref="a1829adab5057aab36e7dd7287060a71" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a04db2c21d01462f1cae1d4b38f98d8d" category="summary">StorageGRIDで信頼できるサードパーティ製ロードバランサを設定する方法について説明します。</block>
+  <block id="2c7c333a0f0c1ab6f715438b601fd166" category="doc">StorageGRIDでの信頼できるサードパーティ製ロードバランサの設定</block>
+  <block id="c6bbdb189be1d0f0a2fa1a1499673e59" category="inline-link">サードパーティのレイヤ7ロードバランサと連携するようにStorageGRIDを設定する方法</block>
+  <block id="aba026bf015b573afdc24d49b090b44a" category="paragraph">1つ以上の外部レイヤ7ロードバランサと、IPベースのS3バケットまたはグループポリシーを使用している場合、StorageGRIDは実際の送信者のIPアドレスを特定する必要があります。これは、ロードバランサによって要求に挿入されるX-Forwarded-For（XFF）ヘッダーを調べることによって行われます。ストレージノードに直接送信された要求でXFFヘッダーが簡単にスプーフィングされる可能性があるため、StorageGRIDでは、各要求が信頼されたレイヤ7ロードバランサによってルーティングされていることを確認する必要があります。StorageGRIDがリクエストの送信元を信頼できない場合は、XFFヘッダを無視します。グリッド管理APIを使用して、信頼された外部レイヤ7ロードバランサのリストを設定できます。この新しいAPIはプライベートAPIであり、今後のStorageGRIDリリースで変更される可能性があります。最新の情報については、技術情報アーティクルを参照してください<block ref="7ce3cc811407230a3b69ca449290d572" category="inline-link-rx"></block>。</block>
+  <block id="809fea3850e388a22c3b797ab2dfa619" category="summary">StorageGRIDでSSL接続を検証する方法について説明します。</block>
+  <block id="d2df1b921459d014b27414ae6e72f3ee" category="doc">StorageGRIDでのSSL接続の検証</block>
+  <block id="a8d9f8b6913236d31d5914fba558b66d" category="paragraph">ロードバランサを設定したら、OpenSSLやAWS CLIなどのツールを使用して接続を検証する必要があります。S3 Browserなどの他のアプリケーションでは、SSLの設定ミスが無視される可能性があります。</block>
+  <block id="668e52d3e720e48e2f9f1ea3fa20d2ad" category="summary">NetApp StorageGRIDのcURLと認証トークンを使用してCLIからメトリックにアクセスし、データを効率的に取得する方法について説明します。</block>
+  <block id="7eb79121551f1e3005513aa949a80511" category="doc">StorageGRIDでcURLを使用してメトリクスにアクセスする</block>
+  <block id="aa512d6acafe8a51fe84289eaf3a41cb" category="paragraph">cURLを使用してCLIから指標にアクセスする方法について説明します。</block>
+  <block id="24f5aae2ddab353694b1206be3e4889b" category="paragraph">この操作を実行するには、最初に認証トークンを取得する必要があります。トークンを要求するには、次の手順を実行します。</block>
+  <block id="26cc51752576fff1f28165235ec5a4a3" category="list-text">GMIで、[Help][API Documentation]の順に選択します。</block>
+  <block id="582d423c7a52fa2fe26a0d9a1509065f" category="list-text">[Auth]まで下にスクロールして、許可に関する操作を検索します。次のスクリーンショットは、POSTメソッドのパラメータを示しています。</block>
+  <block id="732b4622672af9b45ee02ccc42e301ac" category="inline-image-macro">モニタ-ポスト-方式</block>
+  <block id="9e886c1a5434bd9d0e71271df4c2b2e7" category="paragraph"><block ref="9e886c1a5434bd9d0e71271df4c2b2e7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aa72021339b76cb303ef4aaaa760841d" category="list-text">[Try it out]をクリックし、GMIのユーザー名とパスワードで本文を編集します。</block>
+  <block id="e3ee8218b1f6b4812ec9cd6f6f55e5bc" category="list-text">Executeをクリックします。</block>
+  <block id="3b4593aa2662753fd8b1b1e2c2138bc6" category="list-text">cURLセクションにあるcURLコマンドをコピーし、ターミナルウィンドウに貼り付けます。コマンドは次のようになります。</block>
+  <block id="a2050b63d73bc4aa8080dc5a78e9df9e" category="admonition">GMIパスワードに特殊文字が含まれている場合は、必ず\を使用して特殊文字をエスケープしてください。たとえば、置き換えます。</block>
+  <block id="d0091ffabd8a5951ade89029dee45269" category="list-text">上記のcURLコマンドを実行すると、次の例のような認証トークンが出力に表示されます。</block>
+  <block id="c4c0bac50c4fd5e17677cabb1fe78a5b" category="inline-link-macro">StorageGRIDの高度な監視</block>
+  <block id="a6b1960b13e563d852f0a623a6a4b50e" category="paragraph">これで、認証トークン文字列を使用して、cURLを介してメトリックにアクセスできるようになりました。指標にアクセスするプロセスは、セクションの手順と似てい <block ref="e252bc019813f3e66a7ae7f9c0ce4e99" category="inline-link-macro-rx"></block>ます。ただし、デモ用として、[Metrics]カテゴリで[GET /grid/metric-labels/｛label｝/values]を選択した例を示します。</block>
+  <block id="cdc100e5f716cb082e925903180eaafe" category="list-text">たとえば、次のcURLコマンドに先行する認証トークンを指定すると、StorageGRID内のサイト名が一覧表示されます。</block>
+  <block id="6100a428d2b7ee39cb431e0e5ea5306f" category="paragraph">cURLコマンドは、次の出力を生成します。</block>
+  <block id="5204e8903c6bcc04b3dd578223392ce0" category="summary">指標APIを使用してStorageGRIDを監視する方法について説明します。</block>
+  <block id="878fa4b98d38eb1c08345ff577008ec4" category="paragraph">問題のトラブルシューティングに役立つ指標にアクセスしてエクスポートする方法について説明します。</block>
+  <block id="d78cb05ef4141e30f21311d8a0ad4d7c" category="section-title">Prometheusクエリを使用した指標APIの表示</block>
+  <block id="5777f62f583151ef7c49b156e0aef90f" category="paragraph">Prometheusは指標を収集するためのオープンソースソフトウェアです。GMIを使用してStorageGRIDに組み込まれているPrometheusにアクセスするには、メニューの[Support][Metrics]に移動します。</block>
+  <block id="0bea5c98ba2eef48d7bd8a847691d237" category="inline-image-macro">monitor-metrics -ページ</block>
+  <block id="24e9f8195d01ba2d175fb896fad23899" category="paragraph"><block ref="24e9f8195d01ba2d175fb896fad23899" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cf4b35655f5bc5daf680006f1b1ce15e" category="paragraph">または、リンクに直接移動することもできます。</block>
+  <block id="833bcd82b8ef62520e5be8f2701347ac" category="inline-image-macro">monitor-prometheus-interface</block>
+  <block id="627f995f4bf72b5dbdf164692192d5d6" category="paragraph"><block ref="627f995f4bf72b5dbdf164692192d5d6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c7f89929fc543735065ba8d00b6e18c3" category="paragraph">このビューからPrometheusインターフェイスにアクセスできます。そこから、利用可能な指標を検索したり、クエリを試したりすることができます。</block>
+  <block id="f0f563ade1da817bd8a439292d0e8d3c" category="paragraph">Prometheus URLクエリを作成するには、次の手順を実行します。</block>
+  <block id="164f408beb950c8617e791861fda776a" category="list-text">クエリテキストボックスに入力を開始します。入力すると、指標が表示されます。ここで重要なのは、StorageGRIDとNodeで始まる指標だけです。</block>
+  <block id="053386f0d5445d6121c8baab8583296f" category="list-text">各ノードのHTTPセッションの数を確認するには、と入力し<block ref="81395af7a720741ca394c882a197c66b" prefix=" " category="inline-code"></block> て選択します<block ref="50ffff513c166e8d2dd4800339157da9" prefix=" " category="inline-code"></block>。[Execute]をクリックし、グラフ形式またはコンソール形式で情報を表示します。</block>
+  <block id="23575e1dc3cfb15deb18275e322e553c" category="inline-image-macro">monitor-http-sessions</block>
+  <block id="27a68e50a17f186a6bf586c4ab2cbaa5" category="paragraph"><block ref="27a68e50a17f186a6bf586c4ab2cbaa5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="007cc7fa2832e8f022af5678d4379431" category="admonition">このURLを使用して作成したクエリとグラフは維持されません。複雑なクエリは管理ノードのリソースを消費します。NetAppでは、このビューを使用して使用可能な指標を確認することをお勧めします。</block>
+  <block id="114d8b9251665a84a3c3949c46b6b3a1" category="admonition">追加のポートを開く必要があるため、Prometheusインスタンスに直接接続することは推奨されません。APIを介して指標にアクセスすることは、推奨される安全な方法です。</block>
+  <block id="7d70779a6347af3f7b93052d4e5bd3f0" category="section-title">APIを使用した指標のエクスポート</block>
+  <block id="f4f39f3b6524de963876bde3e46f650a" category="paragraph">StorageGRID管理APIを使用して同じデータにアクセスすることもできます。</block>
+  <block id="e161a976d6ab825ed87cd37d3e7f790b" category="paragraph">APIを使用して指標をエクスポートするには、次の手順を実行します。</block>
+  <block id="1e5da00c579a9d593a4dc8fdeebbf0ae" category="list-text">[Metrics]まで下にスクロールし、[GET /grid/metric-query]を選択します。</block>
+  <block id="ffe2d973e52165efa20480acbec18814" category="inline-image-macro">monitor-metrics-query</block>
+  <block id="45cb0edb43543240b242bdc0560611a4" category="paragraph"><block ref="45cb0edb43543240b242bdc0560611a4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6f0f95818bbc67704d1047ffb6d723f" category="paragraph">応答には、Prometheus URLクエリで取得できる情報と同じ情報が含まれます。各ストレージノードで現在確立されているHTTPセッションの数をもう一度確認できます。応答をJSON形式でダウンロードして読みやすくすることもできます。次の図は、Prometheusクエリ応答の例を示しています。</block>
+  <block id="a0508d80e9851dbd1352c1dbe4cac298" category="inline-image-macro">monitor-sample-prometheus-query-responses</block>
+  <block id="4a3b615092a2d9d5b12a664763ddb41f" category="paragraph"><block ref="4a3b615092a2d9d5b12a664763ddb41f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8b406d1ef5b4e8a5bdd44a92dfd742db" category="admonition">APIを使用する利点は、認証されたクエリを実行できることです。</block>
+  <block id="14624ae0105638df9429a5c0a3b15261" category="summary">StorageGRIDのアラートシステムを使用して、問題の監視、カスタムアラートの管理、SNMPやEメールによるアラート通知の拡張を行う方法について説明します。</block>
+  <block id="2e75e86d5ab1f43204d531b899ed8692" category="doc">アラートを使用したStorageGRIDの監視</block>
+  <block id="86b6821a8140c3a123e4da536fc2d434" category="paragraph">StorageGRIDのアラートシステムを使用して、問題の監視、カスタムアラートの管理、SNMPやEメールを使用したアラート通知の拡張を行う方法について説明します。</block>
+  <block id="46a52e7d5776f0aa7882af2f177a9ec3" category="paragraph">アラートは、StorageGRIDシステム内のさまざまなイベントや状態を監視するための重要な情報を提供します。</block>
+  <block id="da96e8b1e5121f0b4f9ecd27598c5664" category="paragraph">アラートシステムは、StorageGRIDシステムで発生する可能性のある問題を監視するための主要なツールとして設計されています。アラートシステムは、システム内の実行可能な問題に焦点を当て、使いやすいインターフェイスを提供します。</block>
+  <block id="f5adcd28854de4372b5a783ff6ba8e13" category="paragraph">システムの監視とトラブルシューティングに役立つさまざまなデフォルトアラートルールを提供しています。カスタムアラートの作成、デフォルトアラートの編集または無効化、アラート通知のサイレント化により、アラートの詳細な管理を行うことができます。</block>
+  <block id="8d368b940b80393acec92024695dfea6" category="paragraph">アラートは、SNMPまたはEメール通知を通じて拡張することもできます。</block>
+  <block id="c8e7df2a2380c318fe11cb3712f83906" category="paragraph">アラートの詳細については、オンラインでPDF形式のを参照してください<block ref="63d022ce0a9d09ca6b2f8a1572ff8d9a" category="inline-link-rx"></block> 。</block>
+  <block id="8f3f7af47397a0f4e4e9024290b90272" category="summary">StorageGRID監査ログを使用してテナントやグリッドのアクティビティを詳細に分析する方法や、Splunkなどのツールをログ分析に活用する方法をご紹介します。</block>
+  <block id="e9139dba94839b12cdf1426ab7ae209a" category="doc">監査ログを使用したStorageGRIDの監視</block>
+  <block id="318d17ce8f6159e7929a8c9312dac57e" category="paragraph">StorageGRID監査ログを使用してテナントやグリッドのアクティビティを詳細に分析する方法や、Splunkなどのツールをログ分析に活用する方法について説明します。</block>
+  <block id="579fbddbda80cf085b53241b07c71853" category="paragraph">StorageGRID監査ログを使用して、テナントとグリッドのアクティビティに関する詳細情報を収集できます。監査ログは、NFS経由で分析用に公開できます。監査ログのエクスポート方法の詳細については、『管理者ガイド』を参照してください。</block>
+  <block id="11168d7973493bbd0624e5ae6fc9529a" category="paragraph">監査がエクスポートされたら、SplunkやLogstash+Elasticsearchなどのログ分析ツールを使用してテナントのアクティビティを把握したり、詳細な課金レポートやチャージバックレポートを作成したりできます。</block>
+  <block id="f553cd67933721b76f9ccab00ac4a892" category="inline-link">監査メッセージ</block>
+  <block id="bef3821fd4c3cdb3b1f511cae1c0502f" category="paragraph">監査メッセージの詳細については、StorageGRIDのドキュメントを参照してください。を参照して<block ref="79d0e733fb384d792eb7077ddcd7a09e" category="inline-link-rx"></block></block>
+  <block id="31f5a51bea763eab7f0c7cb206d000af" category="summary">GMIダッシュボードでNetApp StorageGRIDの監視を開始し、グリッドとそのコアコンポーネントの概要を確認します。</block>
+  <block id="1a1efc70f6fd2e0a0d5f78f987a7b225" category="doc">GMIダッシュボードを使用してStorageGRIDを監視する</block>
+  <block id="39b81327c86d279ca5a4de77b6a927a7" category="paragraph">StorageGRIDのグリッド管理インターフェイス（GMI）ダッシュボードでは、StorageGRIDインフラを一元的に表示して、グリッド全体の健全性、パフォーマンス、容量を監視できます。</block>
+  <block id="59eb9298b03ce6ca974397e8e2898877" category="paragraph">GMIダッシュボードを使用して、グリッドの各コアコンポーネントを確認します。</block>
+  <block id="e10bb47bce8369170055e6153c06dd7b" category="inline-image-macro">monitor-storagegrid-gmi-dashboard</block>
+  <block id="38374ecc0508697aaa429bb6c71636ed" category="paragraph"><block ref="38374ecc0508697aaa429bb6c71636ed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e84df7ca41541e6bf514f7b1469d1fc9" category="section-title">定期的に監視する必要がある情報</block>
+  <block id="a936f4db17b50337c719059ebf9bd705" category="inline-link">監視およびトラブルシューティングガイド</block>
+  <block id="38118fa7d20262a8aee8b9506304a278" category="paragraph">このテクニカルレポートの以前のバージョンでは、定期的に確認する指標と傾向が表示されていました。この情報がに含まれるようになりまし<block ref="9cfbf35549c931909cca159205c8231f" category="inline-link-rx"></block>た。</block>
+  <block id="397ff519378919ad01f5ff6493abc78d" category="section-title">ストレージの監視</block>
+  <block id="d3a62c045e68aeaf1e92ed0e727d6b36" category="paragraph">このテクニカルレポートの以前のバージョンでは、オブジェクトストレージスペース、メタデータスペース、ネットワークリソースなどの重要な指標の監視場所が記載されていました。この情報がに含まれるようになりまし<block ref="9cfbf35549c931909cca159205c8231f" category="inline-link-rx"></block>た。</block>
+  <block id="fc83432423f389dfeb4486d21dfba0e3" category="summary">監視やトラブルシューティングのために事前構成されたダッシュボードにアクセスするなど、NetApp StorageGRIDで指標を視覚化するためにGrafanaを使用する方法をご紹介します。</block>
+  <block id="1072efb14859f3ef534685b2fc04356b" category="doc">StorageGRIDのGrafanaダッシュボードを使用した指標の表示</block>
+  <block id="741125291f423eed65b9a02a21f9b48a" category="paragraph">Grafanaインターフェイスを使用してStorageGRIDデータを可視化および監視する方法について説明します。</block>
+  <block id="3931760e45121760ff7b13e1c2e9ee24" category="paragraph">Grafanaは、メートル法を視覚化するためのオープンソースソフトウェアです。デフォルトでは、StorageGRIDシステムに関する有用で強力な情報を提供するダッシュボードが事前に構築されています。</block>
+  <block id="cb49c0279f62347065a9ead80bc2a741" category="paragraph">事前構築されたダッシュボードは、監視だけでなく、問題のトラブルシューティングにも役立ちます。一部はテクニカルサポートが使用することを目的としています。たとえば、ストレージノードの指標を表示するには、次の手順を実行します。</block>
+  <block id="598dcdb07778ee7be35cb70f33132df4" category="list-text">GMIのメニューから、[Support][Metrics]を選択します。</block>
+  <block id="8dc71bbaf46676b033897ad3ee641092" category="list-text">[Grafana]セクションで、[Node]ダッシュボードを選択します。</block>
+  <block id="6f03fa78a12197917356dfcd4afbd9ab" category="inline-image-macro">監視-ノード-ダッシュボード</block>
+  <block id="865492da633ad2b3014bd31bc828b965" category="paragraph"><block ref="865492da633ad2b3014bd31bc828b965" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fcd3fcf32cd8b9433cdf7272580e9eb2" category="list-text">Grafanaで、指標を表示するノードにホストを設定します。この例では、ストレージノードが選択されています。以下のスクリーンショットよりも詳細な情報が表示されます。</block>
+  <block id="6f9b566bf84106070754272dc0b149dc" category="inline-image-macro">monitor-grafana-metrics</block>
+  <block id="db926601176de8e277e24308ea9e8610" category="paragraph"><block ref="db926601176de8e277e24308ea9e8610" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca268a6974bf87ebc32af9f071cc48cb" category="summary">NetApp StorageGRIDとそのエラー状態、Splunkなどの外部アプリケーションを使用して効果的に監視する方法について説明します。</block>
+  <block id="a0c0cdc4f328b27bd17c7ba7acb3b816" category="doc">StorageGRID監視の概要</block>
+  <block id="ee525877dfb65d89a979b93b5bf5836f" category="paragraph">Splunkなどの外部アプリケーションを使用してStorageGRIDシステムを監視する方法について説明します。</block>
+  <block id="e48b9c153423cfa1671419b36f322597" category="paragraph">NetApp StorageGRIDオブジェクトベースストレージを効果的に監視することで、管理者は緊急の問題に迅速に対応し、リソースをプロアクティブに追加してワークロードの増大に対処できます。このレポートでは、主要な指標を監視する方法と、外部の監視アプリケーションを活用する方法について、一般的なガイダンスを提供します。これは、既存の『Monitoring and Troubleshooting Guide』を補足することを目的としています。</block>
+  <block id="ac772831aac5287b38325bb5a1d92383" category="paragraph">通常、NetApp StorageGRID環境は、分散型のフォールトトレランスに優れたオブジェクトストレージシステムを構築するために複数のサイトと多数のノードで構成されます。StorageGRIDのような分散型で耐障害性に優れたストレージシステムでは、エラー状態が発生してもグリッドは正常に動作し続けます。管理者にとっての課題は、エラー状態（ノードの停止など）ですぐに対処する必要のある問題が発生し、分析する必要のある情報が発生するしきい値を把握することです。StorageGRIDが提供するデータを分析することで、ワークロードを把握し、リソースをいつ追加すべきかなど、十分な情報に基づく意思決定を行うことができます。</block>
+  <block id="1f64141901489e1aee1cff91cf4ba60c" category="paragraph">StorageGRIDは、監視の主題を深く掘り下げる優れたドキュメントを提供します。本レポートは、に関する十分な知識があり、StorageGRIDに関するドキュメントを確認済みであることを前提としています。この情報を繰り返すのではなく、このガイド全体を通して製品ドキュメントを参照しています。StorageGRID製品マニュアルは、オンラインでPDF形式で入手できます。</block>
+  <block id="7982a7b57d5440ac99532630181000d5" category="paragraph">本ドキュメントの目的は、製品ドキュメントを補完し、Splunkなどの外部アプリケーションを使用してStorageGRIDシステムを監視する方法について説明することです。</block>
+  <block id="d1107e5839e1db0f331201116234fc6d" category="section-title">データソース</block>
+  <block id="86881ac89f4fffdb5b47f5f21ee4e81b" category="paragraph">NetApp StorageGRIDを正常に監視するには、StorageGRIDシステムの健全性と運用に関するデータを収集する場所を把握することが重要です。</block>
+  <block id="9d8365fd1a5e73f5dda75b47d0c39019" category="list-text">* Web UIとダッシュボード*StorageGRIDグリッドマネージャには、管理者が論理プレゼンテーションで確認する必要がある情報の最上位レベルのビューが表示されます。管理者は、トラブルシューティングやログ収集のためにサービスレベル情報をさらに掘り下げることもできます。</block>
+  <block id="ad4fe8515196f4b996458ea2d3e76025" category="list-text">*監査ログ。*StorageGRIDは、PUT、GET、DELETEなどのテナント操作の詳細な監査ログを保持します。また、オブジェクトの取り込みからデータ管理ルールの適用までのライフサイクルをトレースすることもできます。</block>
+  <block id="130db5b54e5cf2479bd883be21a31cef" category="list-text">*メトリクスAPI。*StorageGRID GMIの基盤となるのは、APIベースのUIであるため、オープンAPIです。このアプローチでは、外部の監視ツールや分析ツールを使用してデータを抽出できます。</block>
+  <block id="60bdd67b75f07dde5258c5206655c465" category="list-text">Splunk向けNetApp StorageGRIDアプリケーション <block ref="0d95a78a88fa8d96d947b6305a27d13a" category="inline-link-rx"></block></block>
+  <block id="a132518a088435a24e855ec1f6dce02a" category="summary">StorageGRIDからデータをインポートおよびエンリッチ化し、強力な検索および分析機能を提供するNetApp StorageGRID for Splunkの詳細をご覧ください。</block>
+  <block id="4fc8dfff282c98107b486a03ba8fc2e6" category="doc">Splunk向けStorageGRIDアプリケーションを使用</block>
+  <block id="9619f1b60561ca2194f45765711107fe" category="paragraph">SplunkプラットフォームでStorageGRID環境を監視、分析できるNetApp StorageGRID for Splunkの詳細をご確認ください。</block>
+  <block id="7af103cdaa9cc3f91fa8b96e99ccf811" category="paragraph">Splunkは、マシンデータのインポートとインデックス付けを行うソフトウェアプラットフォームで、強力な検索と分析機能を提供します。NetApp StorageGRIDアプリは、StorageGRIDから活用されるデータをインポートしてエンリッチ化するSplunk向けのアドオンです。</block>
+  <block id="2852851a403e844956bb4c52551c2703" category="paragraph">StorageGRIDアドオンのインストール、アップグレード、および設定の方法については、次のサイトを参照してください。<block ref="e0c796f34df445d3b49ee787aa5586d3" category="inline-link-rx"></block></block>
+  <block id="2e94a477efe02c34bac4f12e2fb601f9" category="summary">StorageGRID 11.4でトラフィック分類ポリシーを設定および監視して、効率的なトラフィック管理とネットワーク帯域幅の最適化を行う方法について説明します。</block>
+  <block id="c52660cfce0be7ba160d637b65b97317" category="doc">StorageGRIDでトラフィック分類ポリシーを使用する</block>
+  <block id="afa2c3ef109418519c4a5c27a826be50" category="paragraph">StorageGRIDでネットワークトラフィックを管理および最適化するためのトラフィック分類ポリシーをセットアップおよび設定する方法について説明します。</block>
+  <block id="b7d6fd77b9044510fed0d36a2b6bc166" category="paragraph">トラフィック分類ポリシーは、特定のテナント、バケット、IPサブネット、またはロードバランサエンドポイントに基づいてトラフィックを監視または制限する方法を提供します。ネットワーク接続と帯域幅は、StorageGRIDにとって特に重要な指標です。</block>
+  <block id="df4fe1b471bcd8a12e037d89e7a98172" category="paragraph">トラフィック分類ポリシーを設定する手順は、次のとおりです。</block>
+  <block id="38ce066577bda9af2221e4085ecc61b4" category="list-text">GMIで、メニュー[Configuration][System Settings]&gt;[Traffic Classification]に移動します。</block>
+  <block id="1c22793d32081864b48f6d5da3630499" category="list-text">[Create]をクリック+</block>
+  <block id="29c37d543374c10557413e6541903743" category="list-text">ポリシーの名前と説明を入力します。</block>
+  <block id="bb1373c782eeaa4a75814ecc4d060720" category="list-text">一致ルールを作成します。</block>
+  <block id="d1f77d643e48713d15284108e2d2892d" category="inline-image-macro">monitor-matching-rule</block>
+  <block id="a23490256eb63f668d09ae908b564c1e" category="paragraph"><block ref="a23490256eb63f668d09ae908b564c1e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8a9e39209ee3ce8078d159a32779c53f" category="list-text">制限を設定します（オプション）。</block>
+  <block id="7912061336d88a40313f1f8ada5bfcc1" category="inline-image-macro">監視-制限</block>
+  <block id="dbdb1ea278c900fd78cbddc33af57b57" category="paragraph"><block ref="dbdb1ea278c900fd78cbddc33af57b57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3b727c8c658892fe06eeaaf4bf43735f" category="list-text">ポリシーを保存する</block>
+  <block id="80d191ed333edf4462cdac0a5abcf6c0" category="inline-image-macro">monitor-traffic-policy</block>
+  <block id="03190c047637b3d5f55617fc1d78d10f" category="paragraph"><block ref="03190c047637b3d5f55617fc1d78d10f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="568bfe018800e0496038cca7115baecb" category="paragraph">トラフィック分類ポリシーに関連付けられているメトリックを表示するには、ポリシーを選択して[Metrics]をクリックします。ロードバランサ要求トラフィックや平均要求期間などの情報を表示するGrafanaダッシュボードが生成されます。</block>
+  <block id="ae911ae935b9eff49beadfdf25b5afe6" category="inline-image-macro">監視-ダッシュボード-表示-指標</block>
+  <block id="ed2021e9cf9187b97df3b07f79f5b3ab" category="paragraph"><block ref="ed2021e9cf9187b97df3b07f79f5b3ab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4654119eb3a8fb68470adc28025fd4b3" category="summary">ランサムウェア攻撃と、StorageGRIDのセキュリティに関するベストプラクティスでデータを保護する方法をご紹介します。</block>
+  <block id="73784bce4aa908b9919866212fd51853" category="doc">StorageGRID S3オブジェクトをランサムウェアから保護</block>
+  <block id="f784ee965f00ba2af19faeea46ccbae6" category="paragraph">ランサムウェア攻撃が増加しています。このドキュメントでは、StorageGRIDでオブジェクトデータを保護する方法について、いくつかの推奨事項を示します。</block>
+  <block id="bcd229d01aac228dbc2b27950e02ea91" category="paragraph">ランサムウェアは今日、データセンターに常に存在する危険です。ランサムウェアは、データを暗号化し、データに依存するユーザやアプリケーションがデータを使用できないようにするように設計されています。保護は、強化されたネットワーキングと強固なユーザーセキュリティプラクティスの通常の防御から始まります。そして、データアクセスセキュリティプラクティスに従う必要があります。</block>
+  <block id="46a4cfb5088318360438846a3d0c0f4a" category="paragraph">ランサムウェアは、今日の最大級のセキュリティ脅威の1つです。NetApp StorageGRIDチームは、これらの脅威に先手を打つためにお客様と協力しています。オブジェクトロックとバージョン管理を使用すると、不要な変更から保護し、悪意のある攻撃からリカバリできます。データセキュリティは多層的な取り組みであり、オブジェクトストレージはデータセンターの一部にすぎません。</block>
+  <block id="dad105bf47838f7f255d1754fdaaac0d" category="section-title">StorageGRIDのベストプラクティス</block>
+  <block id="7639d37e78d550fdbd6b7b7b123aec76" category="paragraph">StorageGRIDのセキュリティのベストプラクティスとして、管理アクセスとオブジェクトアクセスの両方に、署名済み証明書を使用したHTTPSの使用を推奨します。アプリケーションと個人用に専用のユーザアカウントを作成し、アプリケーションアクセスやユーザデータアクセスにテナントrootアカウントを使用しないでください。言い換えれば、最小特権の原則に従ってください。IDおよびアクセス管理（IAM）ポリシーが定義されたセキュリティグループを使用して、ユーザ権限を管理し、アプリケーションおよびユーザに固有のアカウントにアクセスします。これらの対策を実施した場合でも、データを確実に保護する必要があります。Simple Storage Service（S3）では、オブジェクトが暗号化するように変更されると、元のオブジェクトが上書きされます。</block>
+  <block id="8b02df0d6350b8ab5f74dd9d85f45102" category="section-title">防御方法</block>
+  <block id="ffa205d96ea7d1648422fa1cf5e284be" category="paragraph">S3 APIの主なランサムウェア対策メカニズムは、オブジェクトロックの実装です。すべてのアプリケーションがオブジェクトロックと互換性があるわけではありません。そのため、このレポートでは、バージョン管理が有効な別のバケットへのレプリケーションと、IAMポリシーによるバージョン管理の2つのオプションについて説明します。</block>
+  <block id="ed76a757e8880e5a565be3b003d83f36" category="summary">StorageGRID CloudMirrorを使用してセカンダリバケットにオブジェクトをレプリケートする方法について説明します。</block>
+  <block id="7140addf2e260dae673005b904fc64d8" category="doc">レプリケートされたバケットを使用したバージョン管理によるランサムウェア対策</block>
+  <block id="a81ea98a29cd5048dff2c3835d4390a3" category="paragraph">すべてのアプリケーションとワークロードがオブジェクトロックと互換性があるわけではありません。もう1つの方法は、同じグリッド内（アクセスが制限された別のテナントを推奨）、またはStorageGRIDプラットフォームサービスCloudMirrorを使用する他のS3エンドポイントのいずれかのセカンダリバケットにオブジェクトをレプリケートする方法です。</block>
+  <block id="cb1408a510a08465c011262c363f3ed1" category="paragraph">StorageGRID CloudMirrorはStorageGRIDのコンポーネントです。定義されたデスティネーションにバケットのオブジェクトがソースバケットに取り込まれたときにレプリケートされ、削除はレプリケートされません。CloudMirrorはStorageGRIDに統合されたコンポーネントであるため、S3 APIベースの攻撃によって無効にしたり操作したりすることはできません。このレプリケートされたバケットは、バージョン管理を有効にして設定できます。このシナリオでは、レプリケートされたバケットの古いバージョンを破棄しても安全な自動クリーンアップが必要です。そのためには、StorageGRID ILMポリシーエンジンを使用できます。最新でない時間に基づいてオブジェクトの配置を管理するルールを作成し、攻撃を特定してリカバリします。</block>
+  <block id="29dad7f198588ca155dd54b4b817d848" category="paragraph">このアプローチの欠点は、バケットの完全な2つ目のコピーを作成し、オブジェクトの複数のバージョンをしばらくの間保持することで、より多くのストレージを消費することです。また、プライマリバケットから意図的に削除されたオブジェクトは、レプリケートされたバケットから手動で削除する必要があります。NetApp CloudSyncなど、製品以外にも、同様のソリューションで削除をレプリケートできるレプリケーションオプションがあります。セカンダリバケットのバージョン管理が有効でオブジェクトロックが有効でない場合のもう1つの欠点は、セカンダリの場所に損傷を与える可能性がある特権アカウントが多数存在することです。長所は、そのエンドポイントまたはテナントバケットに対して一意のアカウントである必要があり、プライマリロケーションのアカウントへのアクセスやプライマリロケーションのアカウントへのアクセスが侵害されない可能性があることです。</block>
+  <block id="a16563897828d821edf628dd82945758" category="paragraph">ソースバケットとデスティネーションバケットが作成され、デスティネーションでバージョン管理が設定されたら、次のようにレプリケーションを設定して有効にすることができます。</block>
+  <block id="be9daa31583599df724c8df59a503c9d" category="list-text">CloudMirrorを設定するには、S3デスティネーション用のプラットフォームサービスエンドポイントを作成します。</block>
+  <block id="611b96ea17eadbd463eab3da4b006a08" category="inline-image-macro">ransomware-protection-create-endpoint</block>
+  <block id="c88d84e75901b97f34db1d63d33cfdd9" category="paragraph"><block ref="c88d84e75901b97f34db1d63d33cfdd9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c510dab2c8ac5ee4b4411e8a49d4b5d3" category="list-text">ソースバケットで、設定されているエンドポイントを使用するようにレプリケーションを設定します。</block>
+  <block id="805bfc00046708ebf1a16ab68b556a21" category="list-text">ストレージの配置とバージョンのストレージ期間を管理するILMルールを作成します。この例では、格納するオブジェクトの最新でないバージョンが設定されています。</block>
+  <block id="e0a4f9c43eaf312a13fbe59879babc68" category="inline-image-macro">ransoms-protection-create-ilm-rule</block>
+  <block id="be86a18865c9f883dd0a13ce9a55be31" category="paragraph"><block ref="be86a18865c9f883dd0a13ce9a55be31" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7a24b133e2a2c80e8e545596903ecba1" category="inline-image-macro">ransomware-protection-create-ilm-rule-step-2</block>
+  <block id="01e57cabe95641a2cfe70c17de67640e" category="paragraph"><block ref="01e57cabe95641a2cfe70c17de67640e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="933502478320f8d29965512cb963bbee" category="paragraph">サイト1にコピーが2つあり、30日間保持されます。また、ILMルールの取り込み時間をソースバケットのストレージ期間に一致させるための参照時間として使用することに基づいて、オブジェクトの現在のバージョンのルールを設定します。オブジェクトバージョンのストレージ配置は、イレイジャーコーディングまたはレプリケートが可能です。</block>
+  <block id="e07a8c072ea1ca6e4d3dcdbd6c83dcef" category="summary">StorageGRIDのオブジェクトロックがWORMモデルを提供してデータの削除や上書きを防止する方法や、それが規制要件をどのように満たしているかをご紹介します。</block>
+  <block id="2d3bfc77a9312b4c20c2c11de2543112" category="doc">オブジェクトロックを使用したランサムウェア対策</block>
+  <block id="8e8b850c50836368da6868cf55982b1a" category="inline-link">Cohasset評価済み</block>
+  <block id="b63f442fe306001a7f6efc0b06fbf90b" category="paragraph">オブジェクトロックは、オブジェクトが削除または上書きされないようにするWORMモデルを提供します。StorageGRIDではオブジェクトロックを実装すること<block ref="d1d72b3d24daa0e79e5e3016d3af2f63" category="inline-link-rx"></block> で、規制要件への対応を支援し、オブジェクト保持のリーガルホールド、コンプライアンスモード、ガバナンスモード、およびデフォルトのバケット保持ポリシーをサポートします。オブジェクトロックは、バケットの作成およびバージョン管理の一環として有効にする必要があります。オブジェクトの特定のバージョンがロックされ'バージョンIDが定義されていない場合は'オブジェクトの現在のバージョンに保持が適用されます現在のバージョンに保持が設定されていて、オブジェクトを削除、変更、または上書きしようとすると、削除マーカーまたはオブジェクトの新しいリビジョンを現在のバージョンとして使用して新しいバージョンが作成されます。 ロックされたバージョンは、最新でないバージョンとして保持されます。まだ互換性がないアプリケーションでは、オブジェクトロックとバケットに配置されたデフォルトの保持設定を使用できます。設定の定義が完了すると、バケットに追加される新しいオブジェクトごとにオブジェクト保持期間が適用されます。これは、保持期間が経過する前にオブジェクトを削除または上書きしないようにアプリケーションが設定されているかぎり機能します。</block>
+  <block id="7f3a7e051943fe9cb2537a82f23c79d6" category="paragraph">オブジェクトロックAPIの使用例を次に示します。</block>
+  <block id="3e4044f6be4e5b510163848a3b8bcc49" category="paragraph">オブジェクトロックリーガルホールドは、オブジェクトに適用される単純なオン/オフステータスです。</block>
+  <block id="6753b18d5535d38f5d3281852fcf2849" category="paragraph">リーガルホールドステータスを設定しても値は返されないため、GET処理で確認できます。</block>
+  <block id="81df85e12b9a4097495ca429a55e411f" category="paragraph">リーガルホールドをオフにするには、オフステータスを適用します。</block>
+  <block id="706de121c73bc01dbe50f1b91d52dd8c" category="paragraph">オブジェクトの保持期間の設定には、タイムスタンプまで保持が適用されます。</block>
+  <block id="1dae5744ff4dde14bc9594bcba3a8ddf" category="paragraph">繰り返しになりますが、成功した場合も戻り値はありません。そのため、GET呼び出しを使用して保持ステータスを同様に確認できます。</block>
+  <block id="dcd62b77f4d8492dd7080f57725bddd9" category="paragraph">オブジェクトロックが有効なバケットにデフォルトの保持期間を設定すると、保持期間（日と年）が使用されます。</block>
+  <block id="032d36d2167b2e38e51791d5247a34c6" category="paragraph">これらの処理のほとんどと同様に、成功した場合も応答が返されないため、設定を検証するGETを実行できます。</block>
+  <block id="33348857d8d05a0aa7f501b37973fff8" category="paragraph">次に、保持設定を適用した状態でバケットにオブジェクトを配置します。</block>
+  <block id="db092c9920edfde56339bc59ae8ffe95" category="paragraph">PUT処理で応答が返されます。</block>
+  <block id="267af08682121916a5a400445ee13e8e" category="paragraph">保持オブジェクトでは、上記の例でバケットに設定されている保持期間がオブジェクトの保持タイムスタンプに変換されます。</block>
+  <block id="342e456d8956d624a6bc2bd15db54a7a" category="summary">バケットのバージョン管理を有効にし、StorageGRIDのユーザセキュリティグループにIAMポリシーを実装して、データを保護する方法について説明します。</block>
+  <block id="c3c2efe1bc77ac368b03118b030e960b" category="doc">保護IAMポリシーを使用したバージョン管理を使用したランサムウェア防御</block>
+  <block id="865383bbbfa775e3d6b22d489517f4bb" category="paragraph">オブジェクトロックやレプリケーションを使用せずにデータを保護するには、バケットでバージョン管理を有効にし、ユーザセキュリティグループにIAMポリシーを実装して、ユーザによるオブジェクトのバージョン管理を制限します。攻撃が発生した場合、データの新しい不正なバージョンが現在のバージョンとして作成され、最新でないバージョンが安全なクリーンデータになります。データにアクセスするために侵害されたアカウントは、削除したり、最新でないバージョンを変更したりすることができず、以降のリストア処理のために保護されています。前のシナリオと同様に、最新でないバージョンの保持期間を選択してILMルールによって管理されます。欠点は、不正なアクター攻撃のために特権アカウントが存在する可能性がまだあることですが、すべてのアプリケーションサービスアカウントとユーザーは、より制限的なアクセスを設定する必要があります。制限付きグループポリシーでは、ユーザまたはアプリケーションに許可する各アクションを明示的に許可し、許可しないアクションを明示的に拒否する必要があります。NetAppでは、今後新しいアクションが導入される可能性があり、許可するか拒否するかを制御する必要があるため、ワイルドカードAllowの使用は推奨されていません。このソリューションでは、ユーザによる変更やプログラムによる変更からバケットとオブジェクトのバージョン設定を保護するために、拒否リストにDeleteObjectVersion、PutBucketPolicy、DeleteBucketPolicy、PutLifecycleConfiguration、およびPutBucketVersioningを含める必要があります。</block>
+  <block id="14721ed09b53cff866a4251ecf8be9ad" category="paragraph">StorageGRID 11.7では、このソリューションの実装を容易にするために、新しいS3グループポリシーオプション「Ransomware Mitigation」が導入されました。テナントでユーザグループを作成するときに、グループ権限を選択すると、この新しいオプションのポリシーが表示されます。</block>
+  <block id="45e24bd145ccdb664274ea3753a3feb3" category="inline-image-macro">ransoms-protection-create-group</block>
+  <block id="f45e4134d3abb1d61c6013218d4457b5" category="paragraph"><block ref="f45e4134d3abb1d61c6013218d4457b5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5f1cf2bf2a76a7221d167793f6f1d80f" category="paragraph">次に、グループポリシーの内容を示します。このグループポリシーには、明示的に許可された処理と、最低限必要な処理が含まれています。</block>
+  <block id="e5d9ed669a875ccabd1e8a8c7c04f770" category="summary">StorageGRID 11.5およびVeritas Enterprise Vault 14.1の基本構成を実装する方法について説明します。</block>
+  <block id="7e8829dd017cc9404c7f25866b3e86a4" category="doc">StorageGRIDとVeritas Enterprise Vaultの設定</block>
+  <block id="15f91c60892410037aae4a3942b89ef3" category="paragraph">StorageGRID 11.5以降およびVeritas Enterprise Vault 14.1以降の基本構成を実装する方法について説明します。</block>
+  <block id="1b46922bca2761ea0a6c327c6ff7fb97" category="paragraph">この構成ガイドは、StorageGRID 11.5およびEnterprise Vault 14.1に基づいています。Write Onceには、S3 Object Lock、StorageGRID 11.6、Enterprise Vault 14.2.2を使用したRead Many（WORM）モードのストレージを使用しました。これらのガイドラインの詳細については、ページを参照する<block ref="8d80aa7c37bec53b7171a35567fec311" category="inline-link-rx"></block> か、StorageGRIDの専門家にお問い合わせください。</block>
+  <block id="410b2b2292a95771f2937cbe775c0c8c" category="section-title">StorageGRIDとVeritas Enterprise Vaultを設定するための前提条件</block>
+  <block id="6bfb62af2f92669cbb0dceb633cff716" category="list-text">Veritas Enterprise VaultでStorageGRIDを設定する前に、次の前提条件を確認してください。</block>
+  <block id="1dd36541ff76792b9a1f4286f706f550" category="admonition">WORMストレージ（オブジェクトロック）には、StorageGRID 11.6以降が必要です。</block>
+  <block id="5dbdaad1c225f81d0b6cccd828811ba5" category="list-text">Veritas Enterprise Vault 14.1以降がインストールされている。</block>
+  <block id="d713154cf1f274827caf27a31f82cb45" category="admonition">WORMストレージ（オブジェクトロック）の場合は、Enterprise Vaultバージョン14.2.2以降が必要です。</block>
+  <block id="975881ace9bb68192f0b3671cfc08194" category="list-text">ボールトストアグループとボールトストアが作成されました。詳細については、『Veritas Enterprise Vault Administration Guide』を参照してください。</block>
+  <block id="03c9d88cda3782913d26a1a7bc26f136" category="list-text">StorageGRIDテナント、アクセスキー、シークレットキー、およびバケットが作成されている。</block>
+  <block id="e0824b7fe5042443d6867a035cbc059d" category="list-text">StorageGRIDロードバランサエンドポイント（HTTPまたはHTTPS）が作成されている。</block>
+  <block id="1b227bc738dba312c115b2a798da234c" category="inline-link">Veritasナレッジベースの記事</block>
+  <block id="ce87bfd676c54deb8bb2ad274315afd0" category="list-text">自己署名証明書を使用する場合は、StorageGRID自己署名CA証明書をEnterprise Vaultサーバーに追加します。詳細については、こちらを参照して<block ref="76ad7647a9a7e6994e89c39886d1900d" category="inline-link-rx"></block>ください。</block>
+  <block id="588a5d1dc60b0aa2f4fcb2454ef96929" category="list-text">最新のEnterprise Vault構成ファイルを更新して適用し、NetApp StorageGRIDなどのサポートされているストレージソリューションを有効にします。詳細については、こちらを参照して<block ref="f0d9a24c875b4e67e4e5822ce9d331e4" category="inline-link-rx"></block>ください。</block>
+  <block id="e7b058735f0528a37fa7e3d72c81105b" category="section-title">Veritas Enterprise Vaultを使用したStorageGRIDの設定</block>
+  <block id="2c6b4643bba0ee960cb64248e63df632" category="paragraph">Veritas Enterprise Vaultを使用してStorageGRIDを設定するには、次の手順を実行します。</block>
+  <block id="ccfce46e320ba5260f1ee1d4082cf063" category="list-text">Enterprise Vault管理コンソールを起動します。</block>
+  <block id="b1b7957222336d707a5a9888fc91e7aa" category="inline-image-macro">メディア/サードパーティ-エンタープライズ-ヴォールト</block>
+  <block id="a5496aaf34f086c2383c3cff608af8d0" category="paragraph"><block ref="a5496aaf34f086c2383c3cff608af8d0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="12b199291b692b06fcee61cbd72a4fe4" category="list-text">適切なボールトストアに新しいボールトストアパーティションを作成します。ボールトストアグループ（Vault Store Groups）フォルダを展開し、適切なボールトストアを展開します。「パーティション」を右クリックし、メニュー「新規パーティション」を選択します。</block>
+  <block id="c07323bf747d0b9a9cb16714b753c529" category="inline-image-macro">メディア/サードパーティ-enterprise-vault-2</block>
+  <block id="7aa44332a8b6b7cf0ecb9a3b98a5ffc7" category="paragraph"><block ref="7aa44332a8b6b7cf0ecb9a3b98a5ffc7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e0e90cb563fd5221ff22be442b6bdc5c" category="list-text">新しいパーティションの作成ウィザードに従います。[Storage Type]ドロップダウンメニューから、NetApp StorageGRID（S3）を選択します。[Next]をクリックします。</block>
+  <block id="7159f8faf189acce365f122f5c505481" category="inline-image-macro">third-party-new-partition</block>
+  <block id="dc11d4b85c13dfaa0225db7b97165007" category="paragraph"><block ref="dc11d4b85c13dfaa0225db7b97165007" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="507de6a31abd8f6192d0bad8a99c7fa4" category="list-text">[Store Data in WORM Mode using S3 Object Lock]オプションはオフのままにします。[Next]をクリックします。</block>
+  <block id="5d3e3c1b796ba78fc738d21c5b20c300" category="inline-image-macro">third-party-new-partition-2</block>
+  <block id="fbdcc01e2f73fd88dac7bf330989cc43" category="paragraph"><block ref="fbdcc01e2f73fd88dac7bf330989cc43" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="27297a1fb14386d9429c63e79efd9d13" category="list-text">接続設定ページで、次の情報を入力します。</block>
+  <block id="d407ce3c6418b602c5e62d17e75153e2" category="list-text">アクセスキーID</block>
+  <block id="864021d1cb190319b62722e58e59a8bf" category="list-text">シークレットアクセスキー</block>
+  <block id="32795074a39344590d17540d2b201838" category="list-text">サービスホスト名：StorageGRIDで設定されたロードバランサエンドポイント（LBE）ポート（\https：//&lt;hostname&gt;：&lt;LBE_port&gt;など）を含めるようにしてください。</block>
+  <block id="668418c943e8a93e8a5e8e778b12d84c" category="list-text">Bucket name：事前に作成されたターゲットバケットの名前。Veritas Enterprise Vaultはバケットを作成しません。</block>
+  <block id="dc0c9174fafe0994fbdccfb9e7717229" category="list-text">Bucket region：<block ref="c800b6d9163b0db7d28f86c1470a9542" prefix=" " category="inline-code"></block> デフォルト値。</block>
+  <block id="4ed9838862c15fad65155eb7ac3489cf" category="inline-image-macro">third-party-new-partition-3</block>
+  <block id="e85f5d4123f657beca9e8bc0cb177e05" category="paragraph"><block ref="e85f5d4123f657beca9e8bc0cb177e05" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c25b4f67628ba5b52c9f09be180c1934" category="list-text">StorageGRIDバケットへの接続を確認するには、[Test]をクリックします。接続テストが成功したことを確認します。[OK]をクリックし、[Next]をクリックします。</block>
+  <block id="c4ec4fc9005ebf6a7950942bf7e8c42c" category="inline-image-macro">third-party-new-partition-4</block>
+  <block id="969bc32aee8e2e5998bf61e42e3c7b20" category="paragraph"><block ref="969bc32aee8e2e5998bf61e42e3c7b20" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5e28a4c450ff551f8cb9499edeacde68" category="list-text">StorageGRIDでは、S3レプリケーションパラメータがサポートされません。StorageGRIDでは、オブジェクトを保護するために、情報ライフサイクル管理（ILM）ルールを使用してデータ保護スキーム（複数のコピーまたはイレイジャーコーディング）を指定します。[When Archived Files Exist on the Storage]オプションを選択し、[Next]をクリックします。</block>
+  <block id="067ceb72f9fd41d7203f015a8b1ce92d" category="inline-image-macro">third-party-new-partition-5</block>
+  <block id="a06db09bdc6f9f91ebf17ed357dac611" category="paragraph"><block ref="a06db09bdc6f9f91ebf17ed357dac611" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7749207f8271fb7f649b1f3ef39fbf5d" category="list-text">概要ページの情報を確認し、[Finish]をクリックします。</block>
+  <block id="e494862f16ab010d80d0e60b27fff9f9" category="inline-image-macro">third-party-new-partition-6</block>
+  <block id="deb1cd22744249d20777daf6b9cc577e" category="paragraph"><block ref="deb1cd22744249d20777daf6b9cc577e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f9bacafb1759e46379558a1bd77251a0" category="list-text">新しいヴォールトストアパーティションが正常に作成されたら、StorageGRIDをプライマリストレージとして使用するEnterprise Vaultでデータをアーカイブ、リストア、および検索できます。</block>
+  <block id="c887b40b05aa8614bba35df5ca0bd0b2" category="inline-image-macro">third-party-new-partition-7</block>
+  <block id="637be4bbe93314a50e97cb40180259d4" category="paragraph"><block ref="637be4bbe93314a50e97cb40180259d4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ba40de2abbe8f22c1ddefaf0652eb8c0" category="summary">S3オブジェクトロックを使用してWORMストレージ用にStorageGRIDを設定する方法について説明します。</block>
+  <block id="316bb55238f2402b36fc9a4ad643a5ad" category="doc">WORMストレージ用のStorageGRID S3オブジェクトロックの設定</block>
+  <block id="bb4d69716f1ec83dcb07464a3fd52211" category="section-title">WORMストレージ用にStorageGRIDを設定するための前提条件</block>
+  <block id="729b65fd2c5c356ea31a180bb37c2025" category="paragraph">WORMストレージでは、StorageGRIDはS3オブジェクトロックを使用してオブジェクトを保持し、コンプライアンスを確保します。これには、S3オブジェクトロックのデフォルトバケット保持機能が導入されたStorageGRID 11.6以降が必要です。Enterprise Vaultにはバージョン14.2.2以降も必要です。</block>
+  <block id="8c870accaec595079cdf496f1793a55e" category="section-title">StorageGRID S3オブジェクトロックのデフォルトバケット保持の設定</block>
+  <block id="30db1e0d890f9510d7b8712976fcb137" category="paragraph">StorageGRID S3オブジェクトロックのデフォルトバケット保持を設定するには、次の手順を実行します。</block>
+  <block id="d24937db40b8a84dc942039cba3a9100" category="list-text">StorageGRIDテナントマネージャでバケットを作成し、[Continue]をクリックします。</block>
+  <block id="84c6936e36a936d29129d62aa3e022a2" category="inline-image-macro">third-party-create-bucket.png</block>
+  <block id="542e27c3a746dfbecd63aeddb8a575ba" category="paragraph"><block ref="542e27c3a746dfbecd63aeddb8a575ba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a626ce66e7eaf62b35b215d06cb11fcd" category="list-text">[Enable S3 Object Lock]オプションを選択し、[Create Bucket]をクリックします。</block>
+  <block id="544c4f3a42530afc7a5c657981fdd948" category="inline-image-macro">third-party-create-bucket-2.png</block>
+  <block id="e687d2c87374f8512f0be61fdee6dd4b" category="paragraph"><block ref="e687d2c87374f8512f0be61fdee6dd4b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6caf33ef1cee8f3afaaf1c820d8f1299" category="list-text">バケットの作成後、バケットを選択してバケットのオプションを表示します。[S3 Object Lock]ドロップダウンオプションを展開します。</block>
+  <block id="16d90fc1bab16e5f829ed834262c353a" category="inline-image-macro">third-party-overview.png</block>
+  <block id="3de7e2f78fe41f95567e757b3982bb9f" category="paragraph"><block ref="3de7e2f78fe41f95567e757b3982bb9f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6e2728e25476dcd5ed065f06fa9da3a9" category="list-text">[Default Retention]で[Enable]を選択し、デフォルトの保持期間を1日に設定します。[Save Changes]をクリックします。</block>
+  <block id="d822d6d9d36c3f31678339005766cfa9" category="inline-image-macro">third-party-s3-object-lock</block>
+  <block id="ad26ce7807792552af53f85b99e59c6b" category="paragraph"><block ref="ad26ce7807792552af53f85b99e59c6b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7d3ee9eb31d48b068ee9afc974c6688e" category="paragraph">これで、バケットをEnterprise VaultでWORMデータの格納に使用できるようになりました。</block>
+  <block id="cdf294cdb11d58c4a1cf6c6b989f7ac0" category="section-title">Enterprise Vaultの設定</block>
+  <block id="2b8482f3259b54a252e32e6c77841bea" category="paragraph">Enterprise Vaultを設定するには、次の手順を実行します。</block>
+  <block id="416206518e27ed2ec8b8e0876078af35" category="inline-link-macro">キホンセツ</block>
+  <block id="0fdd01b1b915af6ef0310b3ded5842a9" category="list-text">セクションの手順1~3を繰り返し <block ref="b0733c8485b73f6326917495c59e375f" category="inline-link-macro-rx"></block> ますが、今回は[Store data in WORM Mode using S3 Object Lock]オプションを選択します。[Next]をクリックします。</block>
+  <block id="4f7eaaac29722f070bace92a996eb2cc" category="inline-image-macro">third-party-new-partition-8</block>
+  <block id="1d9465d61e1899aa06f61b050e9ee630" category="paragraph"><block ref="1d9465d61e1899aa06f61b050e9ee630" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0b5abcc8070dd573f1f60f2342e139a1" category="list-text">S3バケット接続設定を入力するときは、S3オブジェクトロックのデフォルトの保持が有効になっているS3バケットの名前を入力します。</block>
+  <block id="9a5b0fcd0b1275de30e89b6c94f15569" category="list-text">接続をテストして設定を確認します。</block>
+  <block id="b37ab6844ec455af7b65aaae53986022" category="summary">ディザスタリカバリシナリオでStorageGRIDサイトのフェイルオーバーを設定する方法について説明します。</block>
+  <block id="6b27dcb8002b0f1590dd7594cf75a822" category="doc">ディザスタリカバリ用のStorageGRIDサイトフェイルオーバーの設定</block>
+  <block id="be18f5fb99f18a9ae61b9d96e174a4ed" category="paragraph">StorageGRIDアーキテクチャをマルチサイトに導入するのは一般的です。サイトは、DRのアクティブ/アクティブまたはアクティブ/パッシブにすることができます。DRシナリオでは、Veritas Enterprise Vaultがプライマリストレージ（StorageGRID）への接続を維持し、サイト障害が発生してもデータの取り込みと読み出しを継続できることを確認します。この項では、2サイトのアクティブ/パッシブ配置の概要を説明します。 これらのガイドラインの詳細については、ページを参照する <block ref="8efc367b31c66b8aa3b87a5daa8b07fa" category="inline-link-macro-rx"></block> か、StorageGRIDの専門家にお問い合わせください。</block>
+  <block id="525ed0d0c5aabc142d13bc73aca13d33" category="section-title">Veritas Enterprise VaultでStorageGRIDを設定するための前提条件</block>
+  <block id="0bfe801b13cf3e81901c3410c8570e2e" category="paragraph">StorageGRIDサイトのフェイルオーバーを設定する前に、次の前提条件を確認してください。</block>
+  <block id="60ae5f0a3dc3e41cb1a8d17ca4ae3cc4" category="list-text">2サイトのStorageGRID環境（たとえば、Site1とSite2）があります。</block>
+  <block id="c216325d17aa822764283030cb5baddc" category="list-text">ロードバランササービスを実行する管理ノード、またはロードバランシングのためのゲートウェイノードが各サイトに作成されている。</block>
+  <block id="0862790262d5b3e1ee94cd33347dfc2f" category="list-text">StorageGRIDロードバランサエンドポイントが作成されている。</block>
+  <block id="6e7ba5fe6520e0b407ab10ee11b1d696" category="section-title">StorageGRIDサイトのフェイルオーバーの設定</block>
+  <block id="308d28d08b7f81ec7b11883d6d4f9102" category="paragraph">StorageGRIDサイトのフェールオーバーを設定するには、次の手順を実行します。</block>
+  <block id="921a4d863daf068a5f614c53c331ed7a" category="list-text">サイト障害時にStorageGRIDへの接続を確保するには、ハイアベイラビリティ（HA）グループを設定します。StorageGRIDのGrid Managerインターフェイス（GMI）で、[Configuration]、[High Availability Groups]、[+Create]の順にクリックします。</block>
+  <block id="ce4a66c5cd1b4d6821c00e75bd4f4451" category="inline-image-macro">third-party-create-high-availability-group</block>
+  <block id="1c3411ea44ec266135b09b550ce9ea7a" category="paragraph"><block ref="1c3411ea44ec266135b09b550ce9ea7a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bf2e77e2f5492ada5768dcb61171ca77" category="list-text">必要な情報を入力します。[Select Interfaces]をクリックし、Site1（プライマリサイト）が優先マスターであるSite2のネットワークインターフェイスを含めます。同じサブネット内の仮想IPアドレスを割り当てます。保存をクリックします。</block>
+  <block id="7512ccfcc59360e598f9e84d29033e83" category="inline-image-macro">third-party-edit-high-availability-group</block>
+  <block id="36b9b9bbb5d9c5aeb291101b9a30856e" category="paragraph"><block ref="36b9b9bbb5d9c5aeb291101b9a30856e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="65f4937b641d97a80cf0952a5576fa15" category="list-text">この仮想IP（VIP）アドレスは、Veritas Enterprise Vaultのパーティション設定時に使用されるS3ホスト名に関連付ける必要があります。VIPアドレスはトラフィックをSite1に解決します。Site1に障害が発生すると、VIPアドレスはトラフィックをSite2に透過的に再ルーティングします。</block>
+  <block id="b7f012b6955d2acff12a09570fab346e" category="list-text">データがSite1とSite2の両方にレプリケートされていることを確認します。これにより、Site1に障害が発生しても、Site2からオブジェクトデータを引き続き使用できます。そのためには、まずストレージプールを構成します。</block>
+  <block id="2f8cd206e8f11440f6d566a145683d88" category="paragraph">StorageGRID GMIで、[ILM]、[Storage Pools]の順にクリックし、[+Create]をクリックします。ウィザードに従って、Site1用とSite2用の2つのストレージプールを作成します。</block>
+  <block id="569b553d1a29238d3f49a97309bb7e7f" category="paragraph">ストレージプールは、オブジェクトの配置を定義するために使用されるノードを論理的にグループ化したもの</block>
+  <block id="9b540f3416a321be61e365aa13b34abb" category="inline-image-macro">third-party-storage-pool-details-site-1</block>
+  <block id="bb9603d456449340931de70080e1e697" category="paragraph"><block ref="bb9603d456449340931de70080e1e697" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5c4e94d14a1c112c4a2f1a7e5597d241" category="inline-image-macro">third-party-storage-pool-details-site-2</block>
+  <block id="507391a9f10e21dc963c661728c2b3c1" category="paragraph"><block ref="507391a9f10e21dc963c661728c2b3c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="08576c5d4b4ca78ca9766ffe2b9fa81f" category="list-text">StorageGRID GMIで、[ILM]、[Rules]、[+Create]の順にクリックします。ウィザードの指示に従って、サイトごとに1つのコピーを格納し、取り込み動作はBalancedでILMルールを作成します。</block>
+  <block id="00edc6a391750ee9d5516a6c4fdca617" category="inline-image-macro">third-party-storage-pool-details-site-3</block>
+  <block id="b0472505c0e5cb9c5557e82d3a91d8c8" category="paragraph"><block ref="b0472505c0e5cb9c5557e82d3a91d8c8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="457cde276ecbe36449d34f4da631a90d" category="list-text">ILMポリシーにILMルールを追加し、ポリシーをアクティブ化します。</block>
+  <block id="f2633f86de73d147465e5df7ca640192" category="paragraph">この構成では、次の結果が得られます。</block>
+  <block id="457068c4a125d38f71a7790879029a8f" category="list-text">仮想S3エンドポイントIP。Site1がプライマリエンドポイント、Site2がセカンダリエンドポイントです。Site1に障害が発生すると、VIPはSite2にフェイルオーバーします。</block>
+  <block id="b6e1077aef7634269ecd810ef2e145fb" category="list-text">アーカイブデータがVeritas Enterprise Vaultから送信されると、StorageGRIDは1つのコピーがサイト1に格納され、もう1つのDRコピーがサイト2に格納されることを確認します。Site1に障害が発生した場合、Enterprise VaultはSite2からの取り込みと読み出しを続行します。</block>
+  <block id="2717ca8ac1b3b4eb08fdbb363b353437" category="admonition">これらの構成はどちらもVeritas Enterprise Vaultでは透過的です。S3エンドポイント、バケット名、アクセスキーなどは同じです。Veritas Enterprise VaultパーティションでS3接続設定を再設定する必要はありません。</block>
+  <block id="6af634f34cbaa9c21ffa52b0fc2e2571" category="summary">Veritas Enterprise Vaultでは、ディザスタリカバリのプライマリストレージターゲットとしてStorageGRIDを使用しています。</block>
+  <block id="f23ea2f2d2e408d14ea72e7895f24a9b" category="doc">サイトフェイルオーバーのためのStorageGRIDの設定の概要</block>
+  <block id="ae1fc32a84d371102898372a310cee7e" category="paragraph">この構成ガイドでは、NetApp®StorageGRID®をVeritas Enterprise Vaultのプライマリストレージターゲットとして設定する手順を説明します。また、ディザスタリカバリ（DR）シナリオでサイトフェイルオーバー用にStorageGRIDを設定する方法についても説明します。</block>
+  <block id="b240db17f82e985f3d0d364567a003be" category="section-title">リファレンスアーキテクチャ</block>
+  <block id="38b9dc2e7ce28edb104e987ce311dfbc" category="paragraph">StorageGRIDは、Veritas Enterprise Vault向けにオンプレミスのS3互換クラウドバックアップターゲットを提供します。次の図は、Veritas Enterprise VaultとStorageGRIDのアーキテクチャを示しています。</block>
+  <block id="55a3f9272ed73338bb14bc797ee9e53e" category="inline-image-macro">third-party-veritas-enterprise-vault-and-storagegrid-architecture</block>
+  <block id="b0c40e63486719b6a10c52db8bedaa98" category="paragraph"><block ref="b0c40e63486719b6a10c52db8bedaa98" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="632423b5da71d682caee956a05b4fd2b" category="sidebar">TR-4993：『NetApp StorageGRID and Big Data Analytics』</block>
+  <block id="73b0d6bd4229ce34d5668acb219b4052" category="sidebar">TR-4994：『Hadoop S3A Tuning Best Practices』</block>
+  <block id="f3bee8cc791d63235a8d1d05244f54b7" category="sidebar">TR-4871：『Commvault Complete Backup and Recovery and NetApp StorageGRID』</block>
+  <block id="d04cca1c9316b8465b2731c191305549" category="sidebar">TR-4645：『Security features』</block>
+  <block id="398ab7fa1cdf69da3a866bb409f80421" category="sidebar">TR-4921：『Ransomware Defense』</block>
+  <block id="1cfe9266fd97efe523e3b7ce11ebb1f1" category="sidebar">TR-4765：『Monitor StorageGRID』</block>
+  <block id="7f3e8b5f38d9b9937162a27e3c86aa63" category="sidebar">TR-4882：『Install a StorageGRID bare metal grid』</block>
+  <block id="bc667d10ae74e8b726987909cf554a5b" category="sidebar">TR-4907：『Configure StorageGRID with Veritas Enterprise Vault』</block>
+  <block id="f3035506aa0c64c91592bc491a349515" category="sidebar">StorageGRIDテクニカルレポートの概要</block>
+  <block id="7879c124051e0d93a93b1bfe6ea06158" category="sidebar">TR-4993：『NetApp StorageGRID and big data analytics』</block>
+  <block id="4f6534c0c689f1866062f2d4e37a0485" category="sidebar">TR-4994：Hadoop S3Aのチューニング</block>
+  <block id="76bfb2ad6cb61e79089f6e267e7d75f4" category="sidebar">TR-4871：『Configure StorageGRID for backup and recovery with Commvault』</block>
+  <block id="bce176eca00db60493e95c59f7b3f0e4" category="sidebar">StorageGRIDのバックアップとリカバリ- Commvaultを使用したデータの格納とリカバリ</block>
+  <block id="ef4f50cfdab78eaa027ccf2feec613db" category="sidebar">TR-4626：ロードバランサ</block>
+  <block id="9353b972c4e72ec79456feca60f654bd" category="sidebar">StorageGRIDロードバランサ-サードパーティ製およびグローバルロードバランサ</block>
+  <block id="9d652cf4eda8c8ac6073f606de32d361" category="sidebar">StorageGRID 11.7のセキュリティ機能-オブジェクトストア内のデータとメタデータを保護</block>
+  <block id="03a7b4c156470d8fc2b690c3a1de4583" category="sidebar">StorageGRIDによるランサムウェア対策- S3オブジェクトの保護</block>
+  <block id="5d2c0bd1227536451d2080f49e26d77a" category="sidebar">外部アプリケーションを使用したStorageGRIDの監視</block>
+  <block id="70ca7442b81ada7ae57803224dad0c83" category="sidebar">StorageGRIDでGrafanaを使用して指標を表示</block>
+  <block id="57e828039531aa32aed96923380fee16" category="sidebar">ベアメタルホストへのStorageGRIDのインストール</block>
+  <block id="1d9276cf0fbeb5d3c213ee2bed5d0046" category="sidebar">StorageGRIDのNTPサーバの詳細の指定</block>
+  <block id="5e9cbbff6e37b7d1a9a0579bcce90f0d" category="sidebar">StorageGRIDディザスタリカバリ–Veritas Enterprise Vaultを使用したサイトフェイルオーバー用のStorageGRIDの設定</block>
+  <block id="ae52e3c45bd713b4082b98c518149807" category="sidebar">WORMストレージ用のStorageGRIDの設定</block>
+  <block id="654021875452c0979ec25d167125283d" category="sidebar">ディザスタリカバリ用のStorageGRIDの設定</block>
 </blocks>

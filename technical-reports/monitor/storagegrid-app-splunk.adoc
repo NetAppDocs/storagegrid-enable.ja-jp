@@ -1,0 +1,19 @@
+---
+permalink: technical-reports/monitor/storagegrid-app-splunk.html 
+sidebar: sidebar 
+keywords: storagegrid app, splunk 
+summary: StorageGRIDからデータをインポートおよびエンリッチ化し、強力な検索および分析機能を提供するNetApp StorageGRID for Splunkの詳細をご覧ください。 
+---
+= Splunk向けStorageGRIDアプリケーションを使用
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../../media/
+
+
+[role="lead"]
+SplunkプラットフォームでStorageGRID環境を監視、分析できるNetApp StorageGRID for Splunkの詳細をご確認ください。
+
+Splunkは、マシンデータのインポートとインデックス付けを行うソフトウェアプラットフォームで、強力な検索と分析機能を提供します。NetApp StorageGRIDアプリは、StorageGRIDから活用されるデータをインポートしてエンリッチ化するSplunk向けのアドオンです。
+
+StorageGRIDアドオンのインストール、アップグレード、および設定の方法については、次のサイトを参照してください。 https://splunkbase.splunk.com/app/3895/#/details[]
