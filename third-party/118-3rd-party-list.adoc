@@ -118,3 +118,25 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 * QSTAR
 * ベラシア
 
+
+
+
+== StorageGRIDでサポートされるキー管理ツール
+
+これらのソリューションはテスト済みです。
+
+* Entrust KeyControl 10.2
+* Hashicorp Vault 1.15.0
+* タレスCipherTrust Manager 2.0
+* タレスCipherTrust Manager 2.1
+* タレスCipherTrust Manager 2.2
+* タレスCipherTrust Manager 2.3
+* タレスCipherTrust Manager 2.4
+* タレスCipherTrust Manager 2.8
+* タレスCipherTrust Manager 2.9
+* タレスCipherTrust Manager 2.10
+* タレスCipherTrust Manager 2.11
+* タレスCipherTrust Manager 2.12
+* タレスCipherTrust Manager 2.13
+* タレスCipherTrust Manager 2.14
+

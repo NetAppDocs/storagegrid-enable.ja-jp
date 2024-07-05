@@ -117,3 +117,18 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * QSTAR
 * ベラシア
 
+
+
+
+== StorageGRIDでサポートされるキー管理ツール
+
+これらのソリューションはテスト済みです。
+
+* タレスCipherTrust Manager 2.0
+* タレスCipherTrust Manager 2.1
+* タレスCipherTrust Manager 2.2
+* タレスCipherTrust Manager 2.3
+* タレスCipherTrust Manager 2.4
+* タレスCipherTrust Manager 2.8
+* タレスCipherTrust Manager 2.9
+
