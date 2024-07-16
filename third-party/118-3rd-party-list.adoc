@@ -88,6 +88,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 * CommVault 11 Feature Release 26
 * IBM FileNetの順にクリックします
 * OpenText Documentum 21.4
+* Rubrik
 * Veeam 12
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1以降

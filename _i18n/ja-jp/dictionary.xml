@@ -2905,4 +2905,5 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="be89a903679bdf28679c22b4ed6c9806" category="list-text"><block ref="be89a903679bdf28679c22b4ed6c9806" category="inline-link-rx"></block></block>
   <block id="79007772b99cbebaceca4f4abdc9236b" category="paragraph">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。</block>
   <block id="31b606c7f1c871f0b8ba92c74d0c9480" category="list-text">StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。詳細については、を参照して<block ref="2216f063c2431b11fee834376e17fce1" category="inline-link-rx"></block> ください。</block>
+  <block id="4ecf6b273d67f2120caae7734e1fcf14" category="list-text">Rubrik</block>
 </blocks>
