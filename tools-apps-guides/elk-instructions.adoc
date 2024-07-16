@@ -12,7 +12,7 @@ summary: StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ロ
 
 
 [role="lead"]
-StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください https://www.netapp.tv/details/29396["エルク・ビデオを使用したStorageGRID ログ解析"] サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
+StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["エルク・ビデオを使用したStorageGRID ログ解析"^] ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
 
 
 
@@ -88,7 +88,7 @@ config.reload.interval: 5s
 netstat -ntpa | grep 5000
 tcp6       0      0 :::5000                 :::*                    LISTEN      25744/java
 ----
-. StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。を参照してください https://www.netapp.tv/details/29396["デモビデオ"] を参照してください。
+. StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。詳細については、を参照して https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["デモビデオ"^] ください。
 . 定義されたTCPポートへのStorageGRID ノード接続を許可するには、Logstashサーバ上でファイアウォールを設定または無効にする必要があります。
 . Kibana GUIから、[Management]->[Dev Tools]を選択します。Consoleページで、次のgetコマンドを実行して、Elasticsearch上に新しいインデックスが作成されていることを確認します。
 +

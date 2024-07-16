@@ -144,7 +144,7 @@ Dremioの性能は主にDremioクラスター上の計算能力によって駆�
 
 StorageGRIDとDremioが連携して最新の効率的なデータレイクインフラを提供する方法や、NetAppがHive + HDFSからDremio + StorageGRIDに移行してビッグデータ分析の効率を劇的に向上させる方法については、以下のリンクをご覧ください。
 
-* https://www.netapp.tv/details/31426?mcid=02148179640195118863901007338453703701["NetApp StorageGRIDでビッグデータのパフォーマンスを向上"]
-* https://www.netapp.com/media/80932-SB-4236-StorageGRID-Dremio.pdf["StorageGRIDとDremioによる、パワフルで効率性に優れた最新のデータレイクインフラ"]
-* https://youtu.be/Y57Gyj4De2I?si=nwVG5ohCj93TggKS["NetAppが製品分析でカスタマーエクスペリエンスを再定義する方法"]
+* https://media.netapp.com/video-detail/de55c7b1-eb5e-5b70-8790-1241039209e2/boost-performance-for-your-big-data-with-netapp-storagegrid-1600-1["NetApp StorageGRIDでビッグデータのパフォーマンスを向上"^]
+* https://www.netapp.com/media/80932-SB-4236-StorageGRID-Dremio.pdf["StorageGRIDとDremioによる、パワフルで効率性に優れた最新のデータレイクインフラ"^]
+* https://youtu.be/Y57Gyj4De2I?si=nwVG5ohCj93TggKS["NetAppが製品分析でカスタマーエクスペリエンスを再定義する方法"^]
 

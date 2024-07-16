@@ -622,7 +622,6 @@
   <block id="51e1f53c9c33ce7f260e99f66853181d" category="summary">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ここでは、ログメッセージパターン、Kibanaクエリ、グラフ、およびダッシュボードサンプルをフィルタリングして定義するLogstashの設定例を紹介します。このサンプルを使用すると、StorageGRID のログ管理と分析をすばやく開始できます。</block>
   <block id="ba8b98c81be3d04d10309b1945f41b3c" category="doc">エルクスタックを使用したStorageGRID ログ分析</block>
   <block id="febdad8f949c4133d32f6ec0e8b0ca1c" category="inline-link">エルク・ビデオを使用したStorageGRID ログ解析</block>
-  <block id="b165bee40a44e630afb8a902059ed458" category="paragraph">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。をご覧ください<block ref="1c3903c549bd0599ac0ebb1c424871aa" category="inline-link-rx"></block> サンプルのエルク設定を表示し、失敗したS3要求を特定してトラブルシューティングするためにどのように使用できるかを確認する。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">要件</block>
   <block id="b30496f397e70350f3c0324082c41741" category="list-text">StorageGRID 11.6.0.2以降</block>
   <block id="b8dc02d4e6fb27304a65c0d58fbdf121" category="list-text">Elk（Elasticsearch、Logstash、Kibana）7.1x以降がインストールされており、動作中です</block>
@@ -646,7 +645,6 @@
   <block id="1e2849b34515b73b14e350b3cfc6a222" category="list-text">/var/log/logstash/logstash-plain.logを確認し、Logstashを新しい設定ファイルで起動する際にエラーがないことを確認します。</block>
   <block id="25b182c5b3173c341b5471a371174d7d" category="list-text">TCPポートが開始され、リスンしていることを確認する。+この例では、TCPポート5000が使用されています。</block>
   <block id="225e60e541052bd49fdac4b77ffecbc9" category="inline-link">デモビデオ</block>
-  <block id="fa1074da41258119adddd6a31eb40641" category="list-text">StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。を参照してください<block ref="144d48037e96a9804672c6dc7123d436" category="inline-link-rx"></block> を参照してください。</block>
   <block id="defe6f8b45f596c620301bef8fdfbee9" category="list-text">定義されたTCPポートへのStorageGRID ノード接続を許可するには、Logstashサーバ上でファイアウォールを設定または無効にする必要があります。</block>
   <block id="9391523be65dad63e7fad8e0d28ee818" category="list-text">Kibana GUIから、[Management]-&gt;[Dev Tools]を選択します。Consoleページで、次のgetコマンドを実行して、Elasticsearch上に新しいインデックスが作成されていることを確認します。</block>
   <block id="30d46e8002bdd5c520a62523d772ebca" category="list-text">Kibana GUIから、索引パターン（Elk 7.x）またはデータビュー（Elk 8.x）を作成します。</block>
@@ -1470,11 +1468,8 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="5db9c9da095f8d74e0628dbbdfdfb825" category="paragraph">このベンチマーク結果から、S3ベースのワークロード向けに最適化されたビッグデータ分析システムがパフォーマンスの大きな要因であることがわかります。Dremioはクエリの実行を最適化し、メタデータを効率的に利用し、S3データへのシームレスなアクセスを提供するため、S3ストレージを使用する場合にHiveと比較してパフォーマンスが向上します。これを参照してください<block ref="e4ec3c3ef03861ef67845dfb086c7b17" category="inline-link-rx"></block> StorageGRIDでDremio S3データソースを設定するには、次の手順を実行します。</block>
   <block id="c0c37f88f031a9b491d9a8bbea81dda7" category="paragraph">StorageGRIDとDremioが連携して最新の効率的なデータレイクインフラを提供する方法や、NetAppがHive + HDFSからDremio + StorageGRIDに移行してビッグデータ分析の効率を劇的に向上させる方法については、以下のリンクをご覧ください。</block>
   <block id="79304bd05c48f486a8924e2c45f39311" category="inline-link">NetApp StorageGRIDでビッグデータのパフォーマンスを向上</block>
-  <block id="9f6a1ff945eb33fcb8e19e5c7f4d3562" category="list-text"><block ref="9f6a1ff945eb33fcb8e19e5c7f4d3562" category="inline-link-rx"></block></block>
   <block id="5683e5844e7df088ba30c5038415b393" category="inline-link">StorageGRIDとDremioによる、パワフルで効率性に優れた最新のデータレイクインフラ</block>
-  <block id="90db912c71e3eeae0631168476c49b1d" category="list-text"><block ref="90db912c71e3eeae0631168476c49b1d" category="inline-link-rx"></block></block>
   <block id="1f3f85a45cc94830ad50d8dcc85d553a" category="inline-link">NetAppが製品分析でカスタマーエクスペリエンスを再定義する方法</block>
-  <block id="7014c893b79b05f09938975b394e0ca5" category="list-text"><block ref="7014c893b79b05f09938975b394e0ca5" category="inline-link-rx"></block></block>
   <block id="06b48b444551989a8bbf76e3cb86a3d2" category="sidebar">StorageGRIDを使用したGitLabの構成</block>
   <block id="00f36bd2b4cd1d9e59ff895b5e131be2" category="sidebar">テクニカルレポート</block>
   <block id="23e421cbf9f56a23426fd9d29746a636" category="summary">このガイドでは、マルチサイトグリッドでのStorageGRIDサイトの再配置の準備と手順について説明します。</block>
@@ -2905,4 +2900,9 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="5f4d89602a81547894d41dd65645b683" category="list-text">タレスCipherTrust Manager 2.12</block>
   <block id="46fad314fdbc03f6e06527dc5732d12d" category="list-text">タレスCipherTrust Manager 2.13</block>
   <block id="3447b7450cb0c3a342ab8a5c8c53086e" category="list-text">タレスCipherTrust Manager 2.14</block>
+  <block id="2118853f538fca485356f21c05a7d4f8" category="list-text"><block ref="2118853f538fca485356f21c05a7d4f8" category="inline-link-rx"></block></block>
+  <block id="22e833c8d6d091d576273597a887e60e" category="list-text"><block ref="22e833c8d6d091d576273597a887e60e" category="inline-link-rx"></block></block>
+  <block id="be89a903679bdf28679c22b4ed6c9806" category="list-text"><block ref="be89a903679bdf28679c22b4ed6c9806" category="inline-link-rx"></block></block>
+  <block id="79007772b99cbebaceca4f4abdc9236b" category="paragraph">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。</block>
+  <block id="31b606c7f1c871f0b8ba92c74d0c9480" category="list-text">StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。詳細については、を参照して<block ref="2216f063c2431b11fee834376e17fce1" category="inline-link-rx"></block> ください。</block>
 </blocks>
