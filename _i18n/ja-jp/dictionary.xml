@@ -2906,4 +2906,26 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="79007772b99cbebaceca4f4abdc9236b" category="paragraph">StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。</block>
   <block id="31b606c7f1c871f0b8ba92c74d0c9480" category="list-text">StorageGRID マネージャGUIから、ログメッセージをLogstashに送信するように外部syslogサーバを設定します。詳細については、を参照して<block ref="2216f063c2431b11fee834376e17fce1" category="inline-link-rx"></block> ください。</block>
   <block id="4ecf6b273d67f2120caae7734e1fcf14" category="list-text">Rubrik</block>
+  <block id="c2d8fc700534345077a260fb9791fba1" category="summary">見込みのあるお客様のためにStorageGRID評価ソフトウェアにアクセスする手順。</block>
+  <block id="bc47929a96a58ef3444da8ba390888bc" category="doc">StorageGRID評価ソフトウェアへのアクセス手順</block>
+  <block id="0984c1edd8b74672c83f621be7c2371d" category="paragraph">この手順は、NetAppと連携しているNetAppの営業担当者、パートナー様、見込み客を対象としています。</block>
+  <block id="d45294caa04dc2a59a6a9779ecb261e1" category="section-title">アカウントに登録します</block>
+  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link">NetAppサポートサイト</block>
+  <block id="6b2e1d4820e2c64094628af51b07c4ae" category="list-text">お勤め先のEメールアドレスを使用して、でアカウントを登録し<block ref="a49f41675f7c48eedf0647a0a62c5043" category="inline-link-rx"></block> ます。</block>
+  <block id="c3864a0d9e7266b854aa1d673036710a" category="list-text">すでにアカウントをお持ちの場合は、次の手順に進みます。</block>
+  <block id="0fedb2e26434d49a94f9450ce477c3cc" category="list-text">作成したアカウントでログインします。</block>
+  <block id="0c6d9ab23098fd3e876c216fe1ca7ffc" category="inline-link">問題を報告する</block>
+  <block id="8751d140672b36b77b265c8fe793befc" category="list-text">テクニカル以外のサポートケースを作成して、アクセスレベルを「見込み客」に引き上げます。これを行うには、Webサイトのフッターにある「リンク」をクリックして <block ref="94c9ec214c60b057a12eaba547e0acae" category="inline-link-rx"></block>ください。</block>
+  <block id="940ab06ee98cba17f3c21dea0e603eb5" category="list-text">フィードバックカテゴリとして「登録の問題」を選択します。</block>
+  <block id="c1d4a23af565c411cff6271ce577104f" category="list-text">コメント欄に、「見込み顧客にStorageGRID評価ソフトウェアをダウンロードしてもらいたい」と記入します。</block>
+  <block id="ea7ab0148c9999f65837f6a1483f42ee" category="list-text">見込み客へのアクセスリクエストを提案したNetApp社内担当者の名前を記入します。</block>
+  <block id="ed721060d54c51e35da28db6ea8337ef" category="section-title">StorageGRIDのダウンロード</block>
+  <block id="aed8ceb0f85821c90dc49c2c3bf1e494" category="list-text">サポートケースの確認と承認が完了すると、NetAppサポートからお客様のアカウントに見込み客へのアクセス権が付与されたことがEメールで通知されます。</block>
+  <block id="6b387b831a4d44d44954a7effb99b5a1" category="inline-link">StorageGRID評価用ソフトウェア</block>
+  <block id="ad33c2b21ecd662fa9473920d4d724a3" category="list-text">をダウンロードします<block ref="5b76293412a08db37d60e839e13bbf32" category="inline-link-rx"></block>。</block>
+  <block id="9149b5be5a51932ba9646a6a3707055b" category="paragraph">Evalライセンスファイルはzipファイル内にあります。解凍した時点では、StorageGRID Webscale -&lt;version&gt;\ vsphere \ NLF000000.txtです。</block>
+  <block id="51b1dd6c5fdbd0546171ebae104eca57" category="paragraph">ソフトウェアのダウンロードは、法的要件を遵守するための貿易コンプライアンス措置を含むプロセスです。コンプライアンスを確保するには、アクセスする前にアカウントを作成し、サポートケースをオープンする必要があります。このプロセスは、適切な管理と文書化を維持しながら、見込み客に必要な本番環境対応ソフトウェアを提供するのに役立ちます。</block>
+  <block id="c4adfd76b7112414ec7a702816418613" category="paragraph">StorageGRIDの「本番環境対応」バージョンを提供しています。これは、オープンソースまたは代替バージョンではありません。お客様が本番環境のライセンスにアップグレードしない限り、*サポートは提供されません*。</block>
+  <block id="f20e94f5bb986812208034209609d5f1" category="paragraph">上記の手順で問題が発生した場合は、StorageGRID.Feedback@netapp.comまでお問い合わせください。</block>
+  <block id="2988dc07d3c7f2675b337739e6a81ff7" category="sidebar">StorageGRIDを試用</block>
 </blocks>

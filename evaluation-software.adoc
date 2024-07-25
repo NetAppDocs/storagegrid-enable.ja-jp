@@ -1,0 +1,57 @@
+---
+permalink: evaluation-software.html 
+sidebar: sidebar 
+keywords: eval, StorageGRID, S3, software, download 
+summary: 見込みのあるお客様のためにStorageGRID評価ソフトウェアにアクセスする手順。 
+---
+= StorageGRID評価ソフトウェアへのアクセス手順
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+この手順は、NetAppと連携しているNetAppの営業担当者、パートナー様、見込み客を対象としています。
+
+
+
+== アカウントに登録します
+
+. お勤め先のEメールアドレスを使用して、でアカウントを登録し https://mysupport.netapp.com/site/user/registration["NetAppサポートサイト"] ます。
++
+.. すでにアカウントをお持ちの場合は、次の手順に進みます。
+
+
+. 作成したアカウントでログインします。
+. テクニカル以外のサポートケースを作成して、アクセスレベルを「見込み客」に引き上げます。これを行うには、Webサイトのフッターにある「リンク」をクリックして "https://mysupport.netapp.com/site/help?relevanturl=%2Fuser%2Fregistration["問題を報告する"]ください。
+. フィードバックカテゴリとして「登録の問題」を選択します。
+. コメント欄に、「見込み顧客にStorageGRID評価ソフトウェアをダウンロードしてもらいたい」と記入します。
++
+.. 見込み客へのアクセスリクエストを提案したNetApp社内担当者の名前を記入します。
+
+
+
+
+
+
+== StorageGRIDのダウンロード
+
+. サポートケースの確認と承認が完了すると、NetAppサポートからお客様のアカウントに見込み客へのアクセス権が付与されたことがEメールで通知されます。
+. をダウンロードします https://mysupport.netapp.com/site/downloads/evaluation/storagegrid["StorageGRID評価用ソフトウェア"]。
+
+
+[NOTE]
+====
+Evalライセンスファイルはzipファイル内にあります。解凍した時点では、StorageGRID Webscale -<version>\ vsphere \ NLF000000.txtです。
+
+====
+[NOTE]
+====
+ソフトウェアのダウンロードは、法的要件を遵守するための貿易コンプライアンス措置を含むプロセスです。コンプライアンスを確保するには、アクセスする前にアカウントを作成し、サポートケースをオープンする必要があります。このプロセスは、適切な管理と文書化を維持しながら、見込み客に必要な本番環境対応ソフトウェアを提供するのに役立ちます。
+
+StorageGRIDの「本番環境対応」バージョンを提供しています。これは、オープンソースまたは代替バージョンではありません。お客様が本番環境のライセンスにアップグレードしない限り、*サポートは提供されません*。
+
+上記の手順で問題が発生した場合は、StorageGRID.Feedback@netapp.comまでお問い合わせください。
+
+====

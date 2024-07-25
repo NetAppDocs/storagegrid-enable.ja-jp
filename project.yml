@@ -13,11 +13,15 @@ sidebar:
   entries:
   - title: StorageGRID を有効にする方法
     url: "/index.html"
+  - title: StorageGRIDを試用
+    url: "/evaluation-software.html"
   - section: third-party
   - section: product-feature-guides
   - section: tools-apps-guides
   - section: examples
   - section: technical-reports
+  - title: StorageGRIDを試用
+    url: "/evaluation-software.html"
   - title: ブログの投稿
     url: "/blogs.html"
   - title: StorageGRID のドキュメント
