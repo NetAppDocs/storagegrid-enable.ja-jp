@@ -1768,7 +1768,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="bc2966582cc91a73dfce86d847e8e569" category="inline-image-macro">ジョブの概要</block>
   <block id="ce8f9b25ff69c679a10481c883fed679" category="paragraph"><block ref="ce8f9b25ff69c679a10481c883fed679" category="inline-image-macro-rx" type="image"></block></block>
   <block id="23571a6157715a68dbc83017094ddb4f" category="section-title">ベースラインパフォーマンステスト</block>
-  <block id="6e861ca3d49a3946d380c959a4a035f6" category="paragraph">表7に、ベースラインパフォーマンステストの結果を示します。Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については解決策、<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> テクニカルレポート：</block>
   <block id="225de55f95e8814ef869602a34589cd7" category="paragraph">このテストは、100台のVMと1、000台のVMを使用して実施しました。どちらのテストも、Windows VMとCentOS VMが50対50で混在した環境で実施しました。</block>
   <block id="229f4b7ae2ae04662d95b14f93a7ebe0" category="section-title">表7）ベースラインパフォーマンステスト</block>
   <block id="2a78ed76450c3cb42320882b3e055b31" category="cell">操作</block>
@@ -2928,4 +2927,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="c4adfd76b7112414ec7a702816418613" category="paragraph">StorageGRIDの「本番環境対応」バージョンを提供しています。これは、オープンソースまたは代替バージョンではありません。お客様が本番環境のライセンスにアップグレードしない限り、*サポートは提供されません*。</block>
   <block id="f20e94f5bb986812208034209609d5f1" category="paragraph">上記の手順で問題が発生した場合は、StorageGRID.Feedback@netapp.comまでお問い合わせください。</block>
   <block id="2988dc07d3c7f2675b337739e6a81ff7" category="sidebar">StorageGRIDを試用</block>
+  <block id="af628eae5a4bda33fe7f98b90dfd07ad" category="paragraph">このテスト環境の技術的な詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して<block ref="42208ea06469332a89cb87f688663202" category="inline-link-rx"></block> ください。</block>
+  <block id="d448077c68c161f782d3bf423a865381" category="paragraph">表7に、ベースラインパフォーマンステストの結果を示します。Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して<block ref="42208ea06469332a89cb87f688663202" category="inline-link-rx"></block> ください。</block>
 </blocks>

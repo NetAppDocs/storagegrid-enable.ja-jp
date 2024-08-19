@@ -140,7 +140,7 @@ StorageGRIDのデータ保護ポリシーでは、統合ライフサイクル管
 |===
 デフォルトルールはILM 2 Copyルールです。このテストでは、200KB以上のすべてのオブジェクトにイレイジャーコーディング2+1ルールを適用しました。デフォルトルールは200KB未満のオブジェクトに適用されました。このようにルールを適用することは、StorageGRIDのベストプラクティスです。
 
-このテスト環境の技術的な詳細については解決策、 https://www.netapp.com/us/media/tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"] テクニカルレポート：
+このテスト環境の技術的な詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して https://www.netapp.com/pdf.html?item=/media/19372-tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"^] ください。
 
 
 
@@ -511,7 +511,7 @@ image:commvault/job-summary.png["ジョブの概要"]
 
 === ベースラインパフォーマンステスト
 
-表7に、ベースラインパフォーマンステストの結果を示します。Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については解決策、 https://www.netapp.com/us/media/tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"] テクニカルレポート：
+表7に、ベースラインパフォーマンステストの結果を示します。Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して https://www.netapp.com/pdf.html?item=/media/19372-tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"^] ください。
 
 このテストは、100台のVMと1、000台のVMを使用して実施しました。どちらのテストも、Windows VMとCentOS VMが50対50で混在した環境で実施しました。
 
