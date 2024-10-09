@@ -28,7 +28,7 @@ StorageGRIDライセンス情報を指定するには、次の手順を実行し
 NOTE: StorageGRID インストールアーカイブには、製品サポートのない無償ライセンスが含まれています。インストール後に、サポートを提供するライセンスに更新できます。
 
 +
-image:bare-metal-update-license.png["bare-metal-update-license"]
+image:bare-metal/bare-metal-update-license.png["bare-metal-update-license"]
 
 . [Next]をクリックします。
 

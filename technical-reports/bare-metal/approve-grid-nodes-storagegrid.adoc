@@ -32,12 +32,12 @@ NOTE: 見つからないグリッドノードがある場合は、正常に導�
 
 . 承認する保留中のノードの横にあるラジオボタンをクリックします。
 +
-image:bare-metal-approve-configure-grid-nodes.png["media / bare-metal-approvale-configure-grid-nodes"]
+image:bare-metal/bare-metal-approve-configure-grid-nodes.png["media / bare-metal-approvale-configure-grid-nodes"]
 
 . [承認]をクリックします。
 . [一般設定]で、必要に応じて次のプロパティの設定を変更します。
 +
-image:bare-metal-admin-node-configuration.png["ベアメタル管理ノード構成"]
+image:bare-metal/bare-metal-admin-node-configuration.png["ベアメタル管理ノード構成"]
 
 +
 -* Site *：このグリッドノードのサイトのシステム名。
@@ -109,9 +109,9 @@ NOTE: 管理ネットワーク設定でDHCPを選択した場合は、ここで�
 
 . 保存をクリックします。グリッドノードエントリが [ 承認済みノード（ Approved Nodes ） ] リストに移動します。
 +
-image:bare-metal-approved-node-list.png["bare-metal-approved-node-list"]
+image:bare-metal/bare-metal-approved-node-list.png["bare-metal-approved-node-list"]
 
-. 承認する保留中のグリッドノードごとに、手順1~8を繰り返します。
+. 承認する保留中のグリッドノードごとに手順1 ~ 8を繰り返します。
 +
 グリッドに必要なすべてのノードを承認する必要があります。ただし、[Summary]ページで[Install]をクリックする前に、いつでもこのページに戻ることができます。承認したグリッドノードのプロパティを変更するには、ノードのラジオボタンをクリックし、[Edit]をクリックします。
 

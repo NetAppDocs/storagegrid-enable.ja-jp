@@ -68,7 +68,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * トリノ
 * ニスエンタープライズ6.0.4
 * Veeam 12
-* Veritas Enterprise Vault 14の略
+* Veritas Enterprise Vault 14
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * ビディズパイン

@@ -16,3 +16,16 @@ entries:
   url: "/product-feature-guides/port-remap.html"
 - title: サイトを再配置してネットワークを変更する方法
   url: "/product-feature-guides/site-relocation-and-network-change.html"
+- title: ONTAP S3からStorageGRIDへのオブジェクトベースストレージの移行
+  pdf-filename: ONTAP S3からStorageGRIDへのオブジェクトベースストレージの移行
+  entries:
+  - title: ONTAP S3からStorageGRIDへの移行
+    url: "/product-feature-guides/ontap-migrate/index.html"
+  - title: ONTAPの準備
+    url: "/product-feature-guides/ontap-migrate/preparing-ontap.html"
+  - title: StorageGRID を準備しています
+    url: "/product-feature-guides/ontap-migrate/preparing-sg.html"
+  - title: バケットへのデータの取り込みと複製
+    url: "/product-feature-guides/ontap-migrate/populate-replicate.html"
+  - title: ユーザとキーを移行してからカットオーバー
+    url: "/product-feature-guides/ontap-migrate/migrate-cutover.html"

@@ -16,7 +16,7 @@ StorageGRIDのグリッド管理インターフェイス（GMI）ダッシュボ
 
 GMIダッシュボードを使用して、グリッドの各コアコンポーネントを確認します。
 
-image:monitor-storagegrid-gmi-dashboard.png["monitor-storagegrid-gmi-dashboard"]
+image:monitor/monitor-storagegrid-gmi-dashboard.png["monitor-storagegrid-gmi-dashboard"]
 
 
 

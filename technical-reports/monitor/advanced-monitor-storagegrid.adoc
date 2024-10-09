@@ -21,11 +21,11 @@ summary: 指標APIを使用してStorageGRIDを監視する方法について説
 
 Prometheusは指標を収集するためのオープンソースソフトウェアです。GMIを使用してStorageGRIDに組み込まれているPrometheusにアクセスするには、メニューの[Support][Metrics]に移動します。
 
-image:monitor-metrics-page.png["monitor-metrics -ページ"]
+image:monitor/monitor-metrics-page.png["monitor-metrics -ページ"]
 
 または、リンクに直接移動することもできます。
 
-image:monitor-prometheus-interface.png["monitor-prometheus-interface"]
+image:monitor/monitor-prometheus-interface.png["monitor-prometheus-interface"]
 
 このビューからPrometheusインターフェイスにアクセスできます。そこから、利用可能な指標を検索したり、クエリを試したりすることができます。
 
@@ -35,7 +35,7 @@ Prometheus URLクエリを作成するには、次の手順を実行します。
 . クエリテキストボックスに入力を開始します。入力すると、指標が表示されます。ここで重要なのは、StorageGRIDとNodeで始まる指標だけです。
 . 各ノードのHTTPセッションの数を確認するには、と入力し `storagegrid_http` て選択します `storagegrid_http_sessions_incoming_currently_established`。[Execute]をクリックし、グラフ形式またはコンソール形式で情報を表示します。
 +
-image:monitor-http-sessions.png["monitor-http-sessions"]
+image:monitor/monitor-http-sessions.png["monitor-http-sessions"]
 
 
 
@@ -56,13 +56,13 @@ APIを使用して指標をエクスポートするには、次の手順を実�
 . GMIで、[Help][API Documentation]の順に選択します。
 . [Metrics]まで下にスクロールし、[GET /grid/metric-query]を選択します。
 +
-image:monitor-metrics-query.png["monitor-metrics-query"]
+image:monitor/monitor-metrics-query.png["monitor-metrics-query"]
 
 +
 応答には、Prometheus URLクエリで取得できる情報と同じ情報が含まれます。各ストレージノードで現在確立されているHTTPセッションの数をもう一度確認できます。応答をJSON形式でダウンロードして読みやすくすることもできます。次の図は、Prometheusクエリ応答の例を示しています。
 
 +
-image:monitor-sample-prometheus-query-responses.png["monitor-sample-prometheus-query-responses"]
+image:monitor/monitor-sample-prometheus-query-responses.png["monitor-sample-prometheus-query-responses"]
 
 
 

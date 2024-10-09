@@ -25,20 +25,20 @@ StorageGRIDでネットワークトラフィックを管理および最適化す
 . ポリシーの名前と説明を入力します。
 . 一致ルールを作成します。
 +
-image:monitor-matching-rule.png["monitor-matching-rule"]
+image:monitor/monitor-matching-rule.png["monitor-matching-rule"]
 
 . 制限を設定します（オプション）。
 +
-image:monitor-limit.png["監視-制限"]
+image:monitor/monitor-limit.png["監視-制限"]
 
 . ポリシーを保存する
 +
-image:monitor-traffic-policy.png["monitor-traffic-policy"]
+image:monitor/monitor-traffic-policy.png["monitor-traffic-policy"]
 
 +
 トラフィック分類ポリシーに関連付けられているメトリックを表示するには、ポリシーを選択して[Metrics]をクリックします。ロードバランサ要求トラフィックや平均要求期間などの情報を表示するGrafanaダッシュボードが生成されます。
 
 +
-image:monitor-dashboard-showing-metrics.png["監視-ダッシュボード-表示-指標"]
+image:monitor/monitor-dashboard-showing-metrics.png["監視-ダッシュボード-表示-指標"]
 
 

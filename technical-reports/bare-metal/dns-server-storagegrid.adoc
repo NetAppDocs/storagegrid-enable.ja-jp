@@ -29,7 +29,7 @@ DNSサーバ情報を指定するには、次の手順を実行します。
 . [Server 1]テキストボックスで、DNSサーバのIPアドレスを指定します。
 . 必要に応じて、最後のエントリの横にあるプラス記号をクリックしてサーバを追加します。
 +
-image:bare-metal-add-more-servers-2.png["bare-metal-add-more-servers-2"]
+image:bare-metal/bare-metal-add-more-servers-2.png["bare-metal-add-more-servers-2"]
 
 . [Next]をクリックします。
 

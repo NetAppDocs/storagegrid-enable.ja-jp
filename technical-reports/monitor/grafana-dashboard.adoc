@@ -23,10 +23,10 @@ Grafanaは、メートル法を視覚化するためのオープンソースソ�
 . GMIのメニューから、[Support][Metrics]を選択します。
 . [Grafana]セクションで、[Node]ダッシュボードを選択します。
 +
-image:monitor-node-dashboard.png["監視-ノード-ダッシュボード"]
+image:monitor/monitor-node-dashboard.png["監視-ノード-ダッシュボード"]
 
 . Grafanaで、指標を表示するノードにホストを設定します。この例では、ストレージノードが選択されています。以下のスクリーンショットよりも詳細な情報が表示されます。
 +
-image:monitor-grafana-metrics.png["monitor-grafana-metrics"]
+image:monitor/monitor-grafana-metrics.png["monitor-grafana-metrics"]
 
 

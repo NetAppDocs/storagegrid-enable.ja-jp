@@ -21,7 +21,7 @@ summary: グリッド設定情報を検証し、StorageGRIDのインストール
 .手順
 . [Summary]ページを表示します。
 +
-image:bare-metal-summary-page.png["ベアメタルの概要ページ"]
+image:bare-metal/bare-metal-summary-page.png["ベアメタルの概要ページ"]
 
 . グリッドの設定情報がすべて正しいことを確認します。Summary （サマリ）ページの Modify （変更）リンクを使用して、戻ってエラーを修正します。
 . インストールをクリックします。
@@ -42,13 +42,13 @@ CAUTION: リカバリパッケージファイルには StorageGRID システム�
 
 . [I have successfully downloaded and verified the Recovery Package File]オプションを選択し、[Next]をクリックします。
 +
-image:bare-metal-download-recovery-package.png["bare-metal-download-recovery-package"]
+image:bare-metal/bare-metal-download-recovery-package.png["bare-metal-download-recovery-package"]
 
 +
 インストールがまだ進行中の場合は、[Installation Status]ページが開きます。このページには、グリッドノードごとのインストールの進捗状況が表示されます。
 
 +
-image:bare-metal-installation-status.png["bare-metal-installation-status"]
+image:bare-metal/bare-metal-installation-status.png["bare-metal-installation-status"]
 
 +
 すべてのグリッドノードがCompleteステージに達すると、Grid Managerのサインインページが開きます。

@@ -49,46 +49,46 @@ Veritas Enterprise Vaultを使用してStorageGRIDを設定するには、次の
 .手順
 . Enterprise Vault管理コンソールを起動します。
 +
-image:third-party-enterprise-vault.png["メディア/サードパーティ-エンタープライズ-ヴォールト"]
+image:veritas/veritas-enterprise-vault.png["メディア/ Veritas / Veritas - enterprise-vault"]
 
 . 適切なボールトストアに新しいボールトストアパーティションを作成します。ボールトストアグループ（Vault Store Groups）フォルダを展開し、適切なボールトストアを展開します。「パーティション」を右クリックし、メニュー「新規パーティション」を選択します。
 +
-image:third-party-enterprise-vault-2.png["メディア/サードパーティ-enterprise-vault-2"]
+image:veritas/veritas-enterprise-vault-2.png["メディア/ Veritas / Veritas-enterprise-vault-2"]
 
 . 新しいパーティションの作成ウィザードに従います。[Storage Type]ドロップダウンメニューから、NetApp StorageGRID（S3）を選択します。[Next]をクリックします。
 +
-image:third-party-new-partition.png["third-party-new-partition"]
+image:veritas/veritas-new-partition.png["Veritas / Veritas-new-partition"]
 
 . [Store Data in WORM Mode using S3 Object Lock]オプションはオフのままにします。[Next]をクリックします。
 +
-image:third-party-new-partition-2.png["third-party-new-partition-2"]
+image:veritas/veritas-new-partition-2.png["Veritas / Veritas-new-partition-2"]
 
 . 接続設定ページで、次の情報を入力します。
 +
 ** アクセスキーID
 ** シークレットアクセスキー
 ** サービスホスト名：StorageGRIDで設定されたロードバランサエンドポイント（LBE）ポート（\https：//<hostname>：<LBE_port>など）を含めるようにしてください。
-** Bucket name：事前に作成されたターゲットバケットの名前。Veritas Enterprise Vaultはバケットを作成しません。
+** Bucket name：事前に作成されたターゲットバケットの名前。Veritas Enterprise Vaultではバケットは作成されません。
 ** Bucket region： `us-east-1` デフォルト値。
 +
-image:third-party-new-partition-3.png["third-party-new-partition-3"]
+image:veritas/veritas-new-partition-3.png["Veritas / Veritas-new-partition-3"]
 
 
 
 . StorageGRIDバケットへの接続を確認するには、[Test]をクリックします。接続テストが成功したことを確認します。[OK]をクリックし、[Next]をクリックします。
 +
-image:third-party-new-partition-4.png["third-party-new-partition-4"]
+image:veritas/veritas-new-partition-4.png["Veritas / Veritas-new-partition-4"]
 
 . StorageGRIDでは、S3レプリケーションパラメータがサポートされません。StorageGRIDでは、オブジェクトを保護するために、情報ライフサイクル管理（ILM）ルールを使用してデータ保護スキーム（複数のコピーまたはイレイジャーコーディング）を指定します。[When Archived Files Exist on the Storage]オプションを選択し、[Next]をクリックします。
 +
-image:third-party-new-partition-5.png["third-party-new-partition-5"]
+image:veritas/veritas-new-partition-5.png["Veritas / Veritas-new-partition-5"]
 
 . 概要ページの情報を確認し、[Finish]をクリックします。
 +
-image:third-party-new-partition-6.png["third-party-new-partition-6"]
+image:veritas/veritas-new-partition-6.png["Veritas / Veritas-new-partition-6"]
 
 . 新しいヴォールトストアパーティションが正常に作成されたら、StorageGRIDをプライマリストレージとして使用するEnterprise Vaultでデータをアーカイブ、リストア、および検索できます。
 +
-image:third-party-new-partition-7.png["third-party-new-partition-7"]
+image:veritas/veritas-new-partition-7.png["Veritas / Veritas-new-partition-7"]
 
 

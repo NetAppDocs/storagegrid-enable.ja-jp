@@ -26,8 +26,8 @@ sudo storagegrid node validate all
 ----
 ファイルが正しい場合は、各構成ファイルについてPASSEDと表示されます。
 
-image:bare-metal-output-shows-passed.png["base-metal-output-shows-passed"]
+image:bare-metal/bare-metal-output-shows-passed.png["base-metal-output-shows-passed"]
 
 構成ファイルが正しくない場合は、警告およびエラーとして問題が表示されます。構成エラーが見つかった場合は、インストールを続行する前に修正する必要があります。
 
-image:bare-metal-output-shows-warning-error.png["base-metal-output-shows-warning-error"]
+image:bare-metal/bare-metal-output-shows-warning-error.png["base-metal-output-shows-warning-error"]

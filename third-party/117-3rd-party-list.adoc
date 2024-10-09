@@ -36,6 +36,7 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * DefendX
 * Diskoverデータ
 * デレミオ
+* Elasticsearch Snapshot（フローズン階層を含む）
 * eMAM
 * FUJIFILMオブジェクトアーカイブ
 * GitHubエンタープライズサーバ
@@ -70,7 +71,7 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * トリノ
 * ニスエンタープライズ6.0.4
 * Veeam 12
-* Veritas Enterprise Vault 14の略
+* Veritas Enterprise Vault 14
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * ビディズパイン

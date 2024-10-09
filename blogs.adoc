@@ -28,7 +28,7 @@ summary: ネットアップのStorageGRID ブログをいくつかご紹介し�
 * 23年3月30日： https://www.netapp.com/blog/3-2-1-backup-bluexp-ontap-storagegrid-rest-apis/["BlueXPを使用して、3：2：1に準拠したバックアップポリシーでEpic EHRを保護"^]
 * 23年3月14日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/How-to-back-up-Epic-Systems-EHR-databases-with-one-command-in-a-3-2-1-compliant/ba-p/442426#M171["3：2：1準拠のアーキテクチャで1つのコマンドでEpic SystemsのEHRデータベースをバックアップする方法"^]
 * 23年2月14日： https://www.netapp.com/blog/bedag-storagegrid-story/["チョコレート、スキー、時計、メインフレームにはどのような共通点がありますか？"^]
-* 23年1月18日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-S3-Object-Lock-validated-for-Veritas-NetBackup/ba-p/440916["Veritas NetBackupでStorageGRID S3オブジェクトロックが検証されました"^]
+* 23年1月18日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-S3-Object-Lock-validated-for-veritas-NetBackup/ba-p/440916["Veritas NetBackupでStorageGRID S3オブジェクトロックが検証されました"^]
 * 23年1月16日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-renews-NF203-and-ISO-IEC-25051-compliance-certification/ba-p/440942["StorageGRID はNF203およびISO/IEC 25051準拠認定を更新します"^]
 * 22年12月6日： https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-achieves-KPMG-compliance-certification/ba-p/440343["StorageGRID はKPMGコンプライアンス認証を取得しています"^]
 * 22年11月23日： https://www.netapp.com/blog/explainable-AI-netapp-modzy/["ネットアップとModzyを基盤とするMLOpsによる説明可能なAI"^]

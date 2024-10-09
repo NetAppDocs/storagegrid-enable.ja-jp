@@ -29,19 +29,19 @@ StorageGRID S3オブジェクトロックのデフォルトバケット保持を
 .手順
 . StorageGRIDテナントマネージャでバケットを作成し、[Continue]をクリックします。
 +
-image:third-party-create-bucket.png["third-party-create-bucket.png"]
+image:veritas/veritas-create-bucket.png["Vertias / veritas-create-bucket.png"]
 
 . [Enable S3 Object Lock]オプションを選択し、[Create Bucket]をクリックします。
 +
-image:third-party-create-bucket-2.png["third-party-create-bucket-2.png"]
+image:veritas/veritas-create-bucket-2.png["Vertias / veritas-create-bucket-2.png"]
 
 . バケットの作成後、バケットを選択してバケットのオプションを表示します。[S3 Object Lock]ドロップダウンオプションを展開します。
 +
-image:third-party-overview.png["third-party-overview.png"]
+image:veritas/veritas-overview.png["Vertias / veritas-overview.png"]
 
 . [Default Retention]で[Enable]を選択し、デフォルトの保持期間を1日に設定します。[Save Changes]をクリックします。
 +
-image:third-party-s3-object-lock.png["third-party-s3-object-lock"]
+image:veritas/veritas-s3-object-lock.png["Vertias / Veritas-s3-object-lock"]
 
 +
 これで、バケットをEnterprise VaultでWORMデータの格納に使用できるようになりました。
@@ -57,7 +57,7 @@ Enterprise Vaultを設定するには、次の手順を実行します。
 .手順
 . セクションの手順1~3を繰り返し link:configure-storagegrid-s3-object-lock.html#configure-storagegrid-s3-object-lock-default-bucket-retention["キホンセツ"] ますが、今回は[Store data in WORM Mode using S3 Object Lock]オプションを選択します。[Next]をクリックします。
 +
-image:third-party-new-partition-8.png["third-party-new-partition-8"]
+image:veritas/veritas-new-partition-8.png["Vertias / Veritas-new-partition-8"]
 
 . S3バケット接続設定を入力するときは、S3オブジェクトロックのデフォルトの保持が有効になっているS3バケットの名前を入力します。
 . 接続をテストして設定を確認します。

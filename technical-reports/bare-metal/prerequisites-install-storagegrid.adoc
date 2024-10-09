@@ -172,7 +172,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 
 次の図に示すように、これらのサーバは6つのDockerコンテナ（ホストごとに2つ）をホストします。RAMはコンテナあたり24GB、ホストOS自体に16GBを提供することで計算されます。
 
-image:bare-metal-layout-for-three-hosts.png["3台のホストのレイアウト例"]
+image:bare-metal/bare-metal-layout-for-three-hosts.png["3台のホストのレイアウト例"]
 
 物理ホスト（VM）あたりに必要な合計RAMは、24 x 2 + 16 = 64GBです。次の表に、ホスト1、2、3に必要なディスクストレージを示します。
 

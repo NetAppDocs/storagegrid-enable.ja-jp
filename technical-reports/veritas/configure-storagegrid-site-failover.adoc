@@ -36,11 +36,11 @@ StorageGRIDサイトのフェールオーバーを設定するには、次の手
 .手順
 . サイト障害時にStorageGRIDへの接続を確保するには、ハイアベイラビリティ（HA）グループを設定します。StorageGRIDのGrid Managerインターフェイス（GMI）で、[Configuration]、[High Availability Groups]、[+Create]の順にクリックします。
 +
-image:third-party-create-high-availability-group.png["third-party-create-high-availability-group"]
+image:vertias/veritas-create-high-availability-group.png["Vertias / Veritas-create-high-availability-group"]
 
 . 必要な情報を入力します。[Select Interfaces]をクリックし、Site1（プライマリサイト）が優先マスターであるSite2のネットワークインターフェイスを含めます。同じサブネット内の仮想IPアドレスを割り当てます。保存をクリックします。
 +
-image:third-party-edit-high-availability-group.png["third-party-edit-high-availability-group"]
+image:veritas/veritas-edit-high-availability-group.png["Vertias / Veritas-edit-high-availability-group"]
 
 . この仮想IP（VIP）アドレスは、Veritas Enterprise Vaultのパーティション設定時に使用されるS3ホスト名に関連付ける必要があります。VIPアドレスはトラフィックをSite1に解決します。Site1に障害が発生すると、VIPアドレスはトラフィックをSite2に透過的に再ルーティングします。
 . データがSite1とSite2の両方にレプリケートされていることを確認します。これにより、Site1に障害が発生しても、Site2からオブジェクトデータを引き続き使用できます。そのためには、まずストレージプールを構成します。
@@ -51,14 +51,14 @@ StorageGRID GMIで、[ILM]、[Storage Pools]の順にクリックし、[+Create]
 ストレージプールは、オブジェクトの配置を定義するために使用されるノードを論理的にグループ化したもの
 
 +
-image:third-party-storage-pool-details-site-1.png["third-party-storage-pool-details-site-1"]
+image:veritas/veritas-storage-pool-details-site-1.png["Vertias / Veritas-storage-pool-details-site-1"]
 
 +
-image:third-party-storage-pool-details-site-2.png["third-party-storage-pool-details-site-2"]
+image:veritas/veritas-storage-pool-details-site-2.png["Vertias / Veritas-storage-pool-details-site-2"]
 
 . StorageGRID GMIで、[ILM]、[Rules]、[+Create]の順にクリックします。ウィザードの指示に従って、サイトごとに1つのコピーを格納し、取り込み動作はBalancedでILMルールを作成します。
 +
-image:third-party-storage-pool-details-site-3.png["third-party-storage-pool-details-site-3"]
+image:veritas/veritas-storage-pool-details-site-3.png["Vertias / Veritas-storage-pool-details-site-3"]
 
 . ILMポリシーにILMルールを追加し、ポリシーをアクティブ化します。
 

@@ -21,7 +21,7 @@ cURLを使用してCLIから指標にアクセスする方法について説明�
 . GMIで、[Help][API Documentation]の順に選択します。
 . [Auth]まで下にスクロールして、許可に関する操作を検索します。次のスクリーンショットは、POSTメソッドのパラメータを示しています。
 +
-image:monitor-post-method.png["モニタ-ポスト-方式"]
+image:monitor/monitor-post-method.png["モニタ-ポスト-方式"]
 
 . [Try it out]をクリックし、GMIのユーザー名とパスワードで本文を編集します。
 . Executeをクリックします。

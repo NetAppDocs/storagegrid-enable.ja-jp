@@ -32,7 +32,7 @@ F5 BIG-IPローカルトラフィックマネージャヘルスチェックモ�
 .. Send Stringフィールドに、 `OPTIONS / HTTP/1.1\r\n\r\n.` \r\nはキャリッジリターンです。異なるバージョンのBIG-IPソフトウェアでは、0、1、または2セットの\r\nシーケンスが必要です。詳細については、を参照してください https://support.f5.com/csp/article/K10655[]。
 .. [Receive String]フィールドに、次のように入力します。 `HTTP/1.1 200 OK`
 +
-image:load-balancer-monitor-configuration-page.png["[Monitor]設定ページ"]
+image:load-balancer/load-balancer-monitor-configuration-page.png["[Monitor]設定ページ"]
 
 
 
@@ -56,9 +56,9 @@ HTTPS-ECV健全性チェックモニタを使用してカスタムモニタを�
 
 詳細については、Citrixのドキュメントを参照してください https://docs.citrix.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-ssl-services.html#sample-configuration-for-https-ecv-health-check-monitor["HTTP-ECVヘルスチェックモニタの設定例"^]。
 
-image:load-balancer-citrix-netscaler-configuration-page.png["Citrix NetScaler Monitorの構成ページ"]
+image:load-balancer/load-balancer-citrix-netscaler-configuration-page.png["Citrix NetScaler Monitorの構成ページ"]
 
-image:load-balancer-configure-monitor.png["Configure-monitor.png"]
+image:load-balancer/load-balancer-configure-monitor.png["Configure-monitor.png"]
 
 
 

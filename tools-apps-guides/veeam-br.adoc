@@ -34,7 +34,7 @@ Veeamのオブジェクトワークロードによって、小規模オブジェ
 
 === 推奨バージョン
 
-常に最新の状態に保ち、Veeam Backup & Replication 12システムの最新のホットフィックスを適用することをお勧めします。現在、少なくともVeeamパッチP20230718のインストールを推奨しています。
+常に最新の状態に保ち、Veeam Backup & Replication 12または12.1システムの最新の修正プログラムを適用することをお勧めします。現在、少なくともVeeam 12パッチP20230718のインストールを推奨しています。
 
 
 
@@ -85,7 +85,7 @@ Veeamバックアップジョブでは、さまざまなブロックサイズオ
 
 === 推奨バージョン
 
-Veeam環境に推奨されるバージョンは、最新のホットフィックスが適用されたNetApp StorageGRID 11.6または11.7です。StorageGRID 11.6.0.11および11.7.0.4では、Veeamのワークロードに役立つ最適化機能が多数導入されました。常に最新の状態に保ち、StorageGRIDシステムに最新のホットフィックスを適用することを推奨します。
+Veeam環境に推奨されるバージョンは、最新のホットフィックスが適用されたNetApp StorageGRID 11.7または11.8です。常に最新の状態に保ち、StorageGRIDシステムに最新のホットフィックスを適用することを推奨します。
 
 
 
@@ -186,7 +186,7 @@ image:veeam-bp/tc_2.png["トラフィック分類ポリシーのメトリック"
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
 
-* link:https://docs.netapp.com/us-en/storagegrid-117/["NetApp StorageGRID 11.7製品ドキュメント"^]
+* link:https://docs.netapp.com/us-en/storagegrid-118/["NetApp StorageGRID 11.8製品ドキュメント"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam Backup  Replication"^]
 
 

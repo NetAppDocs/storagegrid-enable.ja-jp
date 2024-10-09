@@ -1,0 +1,126 @@
+---
+permalink: product-feature-guides/ontap-migrate/preparing-sg.html 
+sidebar: sidebar 
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration 
+summary: ONTAP S3からStorageGRIDへの移行 
+---
+= オブジェクトベースストレージをONTAP S3からStorageGRIDにシームレスに移行し、エンタープライズクラスのS3を実現
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../../media/
+
+
+[role="lead"]
+オブジェクトベースストレージをONTAP S3からStorageGRIDにシームレスに移行し、エンタープライズクラスのS3を実現
+
+
+
+== StorageGRID を準備しています
+
+このデモの設定では、引き続きテナント、ユーザ、セキュリティグループ、グループポリシー、バケットを作成します。
+
+
+
+==== テナントを作成
+
+[Tenants]タブに移動し、[Create]ボタンをクリックします。
+
+image:ontap-migrate/sg-tenant-create-01.png["[テナントの追加]ボタン"]
+
+テナント名を指定してテナントの詳細を入力し、クライアントタイプとして[S3]を選択します。クォータは必要ありません。プラットフォームサービスを選択する必要も、S3の選択を許可する必要もありません。必要に応じて、独自のアイデンティティソースを使用することもできます。rootパスワードを設定して[完了]ボタンをクリックします。
+
+テナント名をクリックすると、テナントの詳細が表示されます。*テナントIDは後で必要になりますので、コピーしてください*。[サインイン]ボタンをクリックします。テナントポータルログインが表示されます。あとで使用するためにURLを保存しておきます。
+
+image:ontap-migrate/sg-tenant-select.png["テナントを選択"]
+
+テナントポータルログインが表示されます。あとで使用できるようにURLを保存し、rootユーザクレデンシャルを入力します。
+
+image:ontap-migrate/sg-tenant-login.png["テナントロクイン"]
+
+
+
+==== ユーザの作成
+
+[Users]タブに移動し、新しいユーザを作成します。
+
+image:ontap-migrate/sg-user-create-01.png["ユーザへの移動"]
+
+image:ontap-migrate/sg-user-create-02.png["新規ユーザの作成"]
+
+新しいユーザが作成されたら、ユーザ名をクリックしてユーザの詳細を開きます。
+
+後で使用するURLからユーザIDをコピーします。
+
+image:ontap-migrate/sg-user-id.png["新しいIDをコピー"]
+
+S3キーを作成するには、ユーザ名をクリックします。
+
+image:ontap-migrate/sg-user-keys-create-01.png["S3キーの作成"]
+
+[アクセスキー]タブを選択し、[キーの作成]ボタンをクリックします。有効期限を設定する必要はありません。ウィンドウを閉じると再度取得できないため、S3キーをダウンロードしてください。
+
+image:ontap-migrate/sg-user-keys-create-02.png["キーのダウンロード"]
+
+
+
+==== セキュリティグループを作成する
+
+[グループ]ページに移動し、新しいグループを作成します。
+
+image:ontap-migrate/sg-group-create.png["新しいグループの作成"]
+
+グループ権限を読み取り専用に設定します。これはテナントUIの権限であり、S3の権限ではありません。
+
+image:ontap-migrate/sg-group-permissions.png["グループ権限の設定"]
+
+S3権限はグループポリシー（IAMポリシー）で制御されます。グループポリシーをcustomに設定し、JSONポリシーをボックスに貼り付けます。このポリシーを使用すると、このグループのユーザはテナントのバケットを一覧表示し、「bucket」という名前のバケットまたは「bucket」という名前のバケットのサブフォルダ内のS3処理を実行できます。
+
+[source, json]
+----
+{
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws:s3:::*"
+      },
+      {
+         "Effect": "Allow",
+        "Action": "s3:*",
+        "Resource": ["arn:aws:s3:::bucket","arn:aws:s3:::bucket/*"]
+      }
+    ]
+}
+----
+image:ontap-migrate/sg-group-policy.png["グループポリシーを定義"]
+
+最後に、ユーザをグループに追加して終了します。
+
+image:ontap-migrate/sg-group-add-user.png["グループへのユーザの追加"]
+
+
+
+==== 2つのバケットの作成
+
+[Buckets]タブに移動し、[Create bucket]ボタンをクリックします。
+
+image:ontap-migrate/sg-create-buckets.png["[Create Buckets]ページ"]
+
+バケット名とリージョンを定義します。
+
+image:ontap-migrate/sg-create-bucket1-01.png["[Create Buckets]ページ"]
+
+最初のバケットでバージョン管理を有効にします。
+
+image:ontap-migrate/sg-bucket1-vers.png["バージョン管理の設定"]
+
+次に、バージョン管理を有効にせずに2つ目のバケットを作成します。
+
+image:ontap-migrate/sg-create-bucket2.png["2つ目のバケットを作成"]
+
+この2つ目のバケットではバージョン管理を有効にしないでください。
+
+image:ontap-migrate/sg-create-bucket2-nver.png["バージョン管理を設定しない"]
+
+Rafael Guedes、Aron Klein著_

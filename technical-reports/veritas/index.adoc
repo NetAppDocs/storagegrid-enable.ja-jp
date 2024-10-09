@@ -22,7 +22,7 @@ Veritas Enterprise Vaultでは、ディザスタリカバリのプライマリ�
 
 StorageGRIDは、Veritas Enterprise Vault向けにオンプレミスのS3互換クラウドバックアップターゲットを提供します。次の図は、Veritas Enterprise VaultとStorageGRIDのアーキテクチャを示しています。
 
-image:third-party-veritas-enterprise-vault-and-storagegrid-architecture.png["third-party-veritas-enterprise-vault-and-storagegrid-architecture"]
+image:veritas/veritas-enterprise-vault-and-storagegrid-architecture.png["Vertias / Veritas / Veritas / enterprise-vault / StorageGRIDアーキテクチャ"]
 
 
 

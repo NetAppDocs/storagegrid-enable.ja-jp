@@ -28,7 +28,7 @@ StorageGRID用のグリッドネットワークサブネットの設定方法に
 . [Subnet 1]テキストボックスで、少なくとも1つのグリッドネットワークのCIDRネットワークアドレスを指定します。
 . 最後のエントリの横にあるプラス記号をクリックして、追加のネットワークエントリを追加します。少なくとも1つのノードをすでに導入している場合は、[Discover Grid Networks Subnets]をクリックして、Grid Managerに登録されているグリッドノードから報告されるサブネットをグリッドネットワークサブネットリストに自動的に追加します。
 +
-image:bare-metal-subnets-grid-network.png["ベアメタルサブネット-グリッドネットワーク"]
+image:bare-metal/bare-metal-subnets-grid-network.png["ベアメタルサブネット-グリッドネットワーク"]
 
 . [Next]をクリックします。
 

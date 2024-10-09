@@ -20,7 +20,7 @@ entries:
   - title: データ保護ジョブを実行する
     url: "/technical-reports/commvault/data-protection-jobs.html"
   - title: ベースラインパフォーマンステストのレビュー
-    url: "/commvault/baseline-performance-tests.html"
+    url: "/technical-reports/commvault/baseline-performance-tests.html"
   - title: バケット整合性レベルの推奨事項
     url: "/technical-reports/commvault/s3-consistency-levels.html"
 - title: TR-4626：ロードバランサ

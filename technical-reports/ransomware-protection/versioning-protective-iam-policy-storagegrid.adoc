@@ -20,7 +20,7 @@ summary: バケットのバージョン管理を有効にし、StorageGRIDのユ
 
 StorageGRID 11.7では、このソリューションの実装を容易にするために、新しいS3グループポリシーオプション「Ransomware Mitigation」が導入されました。テナントでユーザグループを作成するときに、グループ権限を選択すると、この新しいオプションのポリシーが表示されます。
 
-image:ransomware-protection-create-group.png["ransoms-protection-create-group"]
+image:ransomware/ransomware-protection-create-group.png["ransoms-protection-create-group"]
 
 次に、グループポリシーの内容を示します。このグループポリシーには、明示的に許可された処理と、最低限必要な処理が含まれています。
 

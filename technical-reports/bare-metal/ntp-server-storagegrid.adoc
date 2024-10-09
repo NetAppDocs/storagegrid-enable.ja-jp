@@ -32,7 +32,7 @@ NTPサーバ情報を指定するには、次の手順を実行します。
 . [Server 1 to Server 4]テキストボックスで、少なくとも4つのNTPサーバのIPアドレスを指定します。
 . 必要に応じて、最後のエントリの横にあるプラス記号をクリックして、サーバエントリをさらに追加します。
 +
-image:bare-metal-add-server-entries.png["bare-metal-add-server-entries"]
+image:bare-metal/bare-metal-add-server-entries.png["bare-metal-add-server-entries"]
 
 . [Next]をクリックします。
 
