@@ -46,8 +46,8 @@ summary: StorageGRID 11.2で検証済みのサードパーティ製ソリュー�
 * Splunk Smartstore
 * ニスエンタープライズ6.0.4
 * Veeam 9.5.4
-* Veritas Enterprise Vault 11
-* Veritas Enterprise Vault 12
+* Veritas Enterprise Vault 11.
+* Veritas Enterprise Vault 12.
 * Veritas NetBackup 8.0
 * ビディズパイン
 

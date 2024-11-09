@@ -71,7 +71,7 @@ summary: StorageGRID 11.7で検証済みの他社製ソリューション
 * トリノ
 * ニスエンタープライズ6.0.4
 * Veeam 12
-* Veritas Enterprise Vault 14
+* Veritas Enterprise Vault 14.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * ビディズパイン

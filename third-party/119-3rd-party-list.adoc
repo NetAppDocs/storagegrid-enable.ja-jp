@@ -1,10 +1,10 @@
 ---
-permalink: third-party/116-3rd-party-list.html 
+permalink: third-party/118-3rd-party-list.html 
 sidebar: sidebar 
-keywords: 11.6, third-party applications, storagegrid, ISV 
-summary: StorageGRID 11.6に対して検証済みのサードパーティソリューション 
+keywords: 11.9, third-party applications, storagegrid, ISV 
+summary: StorageGRID 11.9で検証済みの他社製ソリューション 
 ---
-= StorageGRID 11.6検証済みのサードパーティソリューション
+= StorageGRID 11.9検証済みのサードパーティソリューション
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: StorageGRID 11.6に対して検証済みのサードパーティソリ�
 
 
 [role="lead"]
-StorageGRID 11.6では、以下のサードパーティソリューションの使用が検証されています。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。
+以下のサードパーティソリューションは、StorageGRID 11.9での使用が検証済みです。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。
 
 
 
@@ -23,9 +23,11 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * Actifio
 * アルクシオ
 * Apache Kafka です
+* AWSマウントポイント
 * ブリッジストール
 * カンテモ
 * Citrixコンテンツコラボレーション
+* Collibra（Collibra Data Qualityの最小バージョン2024.02）
 * Commvault 11.
 * CTERAポータル6.
 * ダレト
@@ -34,6 +36,7 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * DefendX
 * Diskoverデータ
 * デレミオ
+* Elasticsearch Snapshot（フローズン階層を含む）
 * eMAM
 * FUJIFILMオブジェクトアーカイブ
 * GitHubエンタープライズサーバ
@@ -64,11 +67,12 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * 雪の結晶
 * Spectra Logic On-Prem Glacier
 * Splunk Smartstore
+* スターバースト
 * ストレージが簡単になりました
 * トリノ
 * ニスエンタープライズ6.0.4
 * Veeam 12
-* Veritas Enterprise Vault 14.
+* Veritas Enterprise Vault 15.1.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * ビディズパイン
@@ -85,8 +89,9 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * CommVault 11 Feature Release 26
 * IBM FileNetの順にクリックします
 * OpenText Documentum 21.4
+* Rubrik
 * Veeam 12
-* Veritas Enterprise Vault 14.2.2
+* Veritas Enterprise Vault 15.1.
 * Veritas NetBackup 10.1.1以降
 
 
@@ -114,4 +119,26 @@ StorageGRID 11.6では、以下のサードパーティソリューションの�
 * SoftNAS
 * QSTAR
 * ベラシア
+
+
+
+
+== StorageGRIDでサポートされるキー管理ツール
+
+これらのソリューションはテスト済みです。
+
+* Entrust KeyControl 10.2
+* Hashicorp Vault 1.15.0
+* タレスCipherTrust Manager 2.0
+* タレスCipherTrust Manager 2.1
+* タレスCipherTrust Manager 2.2
+* タレスCipherTrust Manager 2.3
+* タレスCipherTrust Manager 2.4
+* タレスCipherTrust Manager 2.8
+* タレスCipherTrust Manager 2.9
+* タレスCipherTrust Manager 2.10
+* タレスCipherTrust Manager 2.11
+* タレスCipherTrust Manager 2.12
+* タレスCipherTrust Manager 2.13
+* タレスCipherTrust Manager 2.14
 

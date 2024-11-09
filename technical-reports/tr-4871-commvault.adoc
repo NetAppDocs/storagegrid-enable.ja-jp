@@ -258,7 +258,7 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
 
 [NOTE]
 ====
-StorageGRIDシステムの拡張の詳細については、を参照してください。 https://docs.netapp.com/us-en/storagegrid-118/landing-expand/index.html["StorageGRID 11.8拡張ガイド"]。
+StorageGRIDシステムの拡張の詳細については、を参照してください https://docs.netapp.com/us-en/storagegrid-119/landing-expand/index.html["StorageGRID 11.9拡張ガイド"]。
 
 ====
 
@@ -577,8 +577,7 @@ CommVault MediaAgentは、CommVault環境のデータムーバーです。ほと
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
 
-* StorageGRID 11.8ドキュメントセンター+
-https://docs.netapp.com/us-en/storagegrid-118/[]
+* StorageGRID 11.9ドキュメントセンター+https://docs.netapp.com/us-en/storagegrid-119/[]
 * NetApp製品ドキュメント+
 https://docs.netapp.com[]
 * Commvaultのドキュメント+

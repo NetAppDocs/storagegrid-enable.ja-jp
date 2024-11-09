@@ -186,7 +186,7 @@ image:veeam-bp/tc_2.png["トラフィック分類ポリシーのメトリック"
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
 
-* link:https://docs.netapp.com/us-en/storagegrid-118/["NetApp StorageGRID 11.8製品ドキュメント"^]
+* link:https://docs.netapp.com/us-en/storagegrid-119/["NetApp StorageGRID 11.9製品ドキュメント"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam Backup  Replication"^]
 
 

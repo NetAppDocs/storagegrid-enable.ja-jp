@@ -122,6 +122,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
 
 [NOTE]
 ====
-StorageGRIDシステムの拡張の詳細については、を参照してください。 https://docs.netapp.com/us-en/storagegrid-118/landing-expand/index.html["StorageGRID 11.8拡張ガイド"]。
+StorageGRIDシステムの拡張の詳細については、を参照してください https://docs.netapp.com/us-en/storagegrid-119/landing-expand/index.html["StorageGRID 11.9拡張ガイド"]。
 
 ====
