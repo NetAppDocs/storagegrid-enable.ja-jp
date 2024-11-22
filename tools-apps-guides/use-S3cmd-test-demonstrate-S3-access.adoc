@@ -12,6 +12,8 @@ summary: S3cmdは、S3処理用の無償のコマンドラインツールおよ�
 
 
 [role="lead"]
+_アロンクライン著_
+
 S3cmdは、S3処理用の無償のコマンドラインツールおよびクライアントです。s3cmdを使用して、StorageGRID でのS3アクセスをテストして実証できます。
 
 
@@ -88,5 +90,3 @@ s3cmd get s3：//<バケット>/<オブジェクト><ファイル>--host=<endpoi
 s3cmd del s3：//<bucket>/<object>--host=<endpoint>：<port>：-no-check-certificate-`
 
 
-
-_アロンクライン著_

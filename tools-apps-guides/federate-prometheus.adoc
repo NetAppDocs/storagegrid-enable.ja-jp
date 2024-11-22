@@ -12,6 +12,8 @@ summary: このテクニカルレポートでは、外部のPrometheusサービ�
 
 
 [role="lead"]
+_アロンクライン著_
+
 このテクニカルレポートでは、外部のPrometheusサービスおよびGrafanaサービスでNetApp StorageGRID 11.6を設定する詳しい手順を説明します。
 
 
@@ -384,5 +386,3 @@ image:prometheus/grafana_panel_edit.png["Graafana編集パネル"]
 === まとめ
 
 カスタマイズ可能なデータ保持機能とストレージ容量を備えたPrometheusサーバを導入しました。そのため、運用に最も関連性の高い指標を使用して独自のダッシュボードを構築し続けることができます。で収集されたPrometheus指標の詳細を確認できます https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html["StorageGRID のドキュメント"^]。
-
-_アロンクライン著_

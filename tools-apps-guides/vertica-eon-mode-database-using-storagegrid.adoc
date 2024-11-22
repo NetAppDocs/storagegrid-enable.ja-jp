@@ -12,6 +12,8 @@ summary: このガイドでは、NetApp StorageGRID のパブリックストレ�
 
 
 [role="lead"]
+Angela Cheng著_
+
 このガイドでは、NetApp StorageGRID のパブリックストレージを使用してVertica Eon Modeデータベースを作成する手順 について説明します。
 
 

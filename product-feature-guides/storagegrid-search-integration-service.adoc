@@ -12,7 +12,7 @@ summary: このガイドでは、Amazon StorageGRID 11.6検索統合サービス
 
 
 [role="lead"]
-このガイドでは、Amazon StorageGRID 11.6検索統合サービスとオンプレミスのElasticsearchを使用するようにNetAppを設定する手順について詳しく説明します。
+このガイドでは、Amazon OpenSearchサービスまたはオンプレミスのElasticsearchとNetApp StorageGRID検索統合サービスを設定するための詳細な手順について説明します。
 
 
 

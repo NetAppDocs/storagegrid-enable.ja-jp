@@ -11,6 +11,9 @@ summary: このレポートでは、StorageGRIDでのビッグデータ分析に
 :imagesdir: ../media/
 
 
+[role="lead"]
+Angela Cheng著_
+
 
 
 == NetApp StorageGRIDのユースケース

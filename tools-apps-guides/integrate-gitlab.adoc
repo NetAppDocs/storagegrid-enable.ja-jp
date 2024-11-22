@@ -5,8 +5,14 @@ keywords: gitlab, on-premises, integration, storagegrid, object
 summary: このガイドでは、GitLabでStorageGRIDを構成する方法について説明します。 
 ---
 = NetApp StorageGRIDとGitLab
+:hardbreaks:
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
+
+[role="lead"]
+Angela Cheng著_
 
 NetAppはStorageGRIDをGitLabでテストしました。以下のGitLabの設定例を参照してください。  を参照してください https://docs.gitlab.com/ee/administration/object_storage.html["GitLabオブジェクトストレージ構成ガイド"] を参照してください。
 

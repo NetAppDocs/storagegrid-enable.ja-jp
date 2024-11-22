@@ -12,7 +12,9 @@ summary: StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ロ
 
 
 [role="lead"]
-StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["エルク・ビデオを使用したStorageGRID ログ解析"^] ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
+Angela Cheng著_
+
+StorageGRID syslog転送機能を使用すると、StorageGRIDログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack["エルク・ビデオを使用したStorageGRID ログ解析"^] ください。StorageGRID 11.9では、ロードバランサエンドポイントのアクセスログの外部syslogサーバへのエクスポートがサポートされています。この新機能の詳細については、こちらをご覧 https://youtu.be/hnnT0QqLSgA?si=tDMPc4bdbqumYzFz["YouTubeビデオ"^]ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。
 
 
 
@@ -28,6 +30,7 @@ StorageGRID 11.6 syslog転送機能を使用すると、StorageGRID ログメッ
 
 * link:../media/elk-config/elk7-sample.zip["Logstash 7.xサンプルファイルパッケージをダウンロードします"] +*MD5チェックサム*148c23d0021d9a4bb4a6c0287464deab +*SHA256チェックサム*f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8be3d522adf2d6
 * link:../media/elk-config/elk8-sample.zip["Logstash 8.xサンプルファイルパッケージをダウンロードします"] +*MD5チェックサム*e11bae3a662f87c310ef363d0fe06835+* SHA256チェックサム*5c670755742cfdfd5aa723a596ba087e0153a65bcaef3934afdb682f61cd278d
+* link:../media/elk-config/elk8-sample-for-sg119.zip["StorageGRID 11.9用のLogstash 8.xサンプルファイルパッケージのダウンロード"]+* MD5チェックサム* 41272857c4a54600f95995f6ed74800d +* SHA256チェックサム* 67048ee8661052719990851e1ad960d4902fe537a6e135e8600177188da677c9
 
 
 
@@ -108,7 +111,7 @@ elk <version>-query-chart-sample.ndjsonをインポートします。+競合を�
 image:elk-config/kibana-import-conflict.png["キバナ紛争"]
 
 +
-次のKibanaオブジェクトがインポートされます。 +*クエリ*+* audit-msg-s3rq -lm+* bycast log s3関連メッセージ+* loglevel warningまたはabove +* failed security event +* Chart *+* s3要求数bycast.log +* HTTP status code +* audit breakdown by type +* average s3応答 上記のグラフを使用した、時間+*ダッシュボード*+* S3要求ダッシュボード。
+次のKibanaオブジェクトがインポートされます。+* Query *+* audit-msg-s3rq-orlm +* bycastログs3関連メッセージ+* loglevel warning以上+* failed security event +* nginx-gwエンドポイントアクセスログ（elk8-sample-for-sg119.zipでのみbycast.log使用可能）+* Chart *+*+*リクエストタイプ別*+***+*+*ダッシュボードリクエストの平均応答時間*
 
 
 
@@ -126,5 +129,3 @@ image:elk-config/kibana-import-conflict.png["キバナ紛争"]
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibanaガイド–ドキュメントを参照してください"]
 * https://docs.netapp.com/us-en/storagegrid-116/audit/index.html["StorageGRID 監査ログメッセージリファレンスです"]
 
-
-Angela Cheng著_

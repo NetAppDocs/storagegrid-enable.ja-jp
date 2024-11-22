@@ -12,6 +12,8 @@ summary: StorageGRIDを使用したDremioデータソースの設定
 
 
 [role="lead"]
+Angela Cheng著_
+
 Dremioは、クラウドベースやオンプレミスのオブジェクトストレージなど、多様なデータソースをサポートしています。  StorageGRIDをオブジェクトストレージデータソースとして使用するようにDremioを設定できます。
 
 
@@ -88,5 +90,3 @@ image:dremio/dremio-add-source-advanced.png["新しいソース-詳細オプシ�
 image:dremio/dremio-source-added.png["新しいデータソースの追加"]
 
 
-
-Angela Cheng著_

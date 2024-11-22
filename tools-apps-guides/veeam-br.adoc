@@ -12,6 +12,8 @@ summary: このガイドでは、NetApp StorageGRIDの構成と、Veeam Backup &
 
 
 [role="lead"]
+_ Oliver HaenselとAron Klein著_
+
 このガイドでは、NetApp StorageGRIDの構成と、Veeam Backup & Replicationの一部を中心に説明します。本ドキュメントは、Linuxシステムに精通し、Veeam Backup & Replicationと組み合わせてNetApp StorageGRIDシステムの保守または実装を担当するストレージ管理者およびネットワーク管理者を対象としています。
 
 
@@ -189,5 +191,3 @@ image:veeam-bp/tc_2.png["トラフィック分類ポリシーのメトリック"
 * link:https://docs.netapp.com/us-en/storagegrid-119/["NetApp StorageGRID 11.9製品ドキュメント"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam Backup  Replication"^]
 
-
-_ Oliver HaenselとAron Klein著_
