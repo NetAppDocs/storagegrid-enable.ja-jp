@@ -1368,7 +1368,6 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="4dc7ef59b422ad6beec0dcf560a3fdf9" category="paragraph">*データのバックアップとディザスタリカバリ：*企業は、StorageGRID S3を信頼性とコスト効率に優れた解決策として使用して、重要なデータのバックアップと災害時のリカバリを実行できます。</block>
   <block id="b05954e05454ab56e0d356cb4ad49d95" category="paragraph">*アプリケーション用のデータストレージ：* StorageGRID S3はアプリケーションのストレージバックエンドとして使用できるため、開発者はファイル、画像、ビデオ、その他の種類のデータを簡単に保存および取得できます。</block>
   <block id="5623c900b98e0e5e17c60c75ded947b1" category="paragraph">*コンテンツ配信：* StorageGRID S3を使用すると、静的なWebサイトコンテンツ、メディアファイル、ソフトウェアダウンロードを世界中のユーザに保存して配信できます。StorageGRIDの地理的な配信とグローバルネームスペースを活用して、高速で信頼性の高いコンテンツ配信を実現できます。</block>
-  <block id="60b72d1ecbd87ac726a3dbb733456c59" category="paragraph">*データ階層化：* NetAppのお客様は、ONTAP FabricPool機能を使用して、ハイパフォーマンスなローカル階層間でStorageGRIDにデータを自動的に移動します。階層化することで、高価なフラッシュストレージをホットデータ用に解放し、コールドデータを低コストのオブジェクトストレージからいつでも利用できる状態に保ちます。これにより、パフォーマンスとコスト削減が最大化されます。</block>
   <block id="454845c7ca306686c28f96a59487d70c" category="paragraph">*データアーカイブ：* StorageGRIDは、さまざまな種類のストレージを提供し、パブリックな長期低コストストレージオプションへの階層化をサポートします。コンプライアンスや履歴目的で保持する必要があるデータのアーカイブや長期保存に最適な解決策です。</block>
   <block id="a324e6c3bb7d6684738c923e7b52ea98" category="paragraph">*オブジェクトストレージのユースケース*</block>
   <block id="9f79f86c9a539a911125a876ef6a3c2e" category="inline-image-macro">StorageGRIDのユースケース図、幅= 396、高さ= 394</block>
@@ -3011,7 +3010,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="077385462ac0cf8f7fe1ddb0b3983c42" category="cell">TPCDS 99クエリ+合計分（キャッシュ無効）</block>
   <block id="34173cb38f07f89ddbebc2ac9128303f" category="cell">30</block>
   <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="cell">22</block>
-  <block id="95df7e4eb2568a2c428c70b695f7cac2" category="cell">TPCDS 99クエリ+合計分（キャッシュ有効）</block>
   <block id="d81fdeb5a429e85d04118048e4b3485d" category="cell">21.5</block>
   <block id="b7ae258c3f8653133aa9c0c448f67516" category="cell">GET（キャッシュ無効）</block>
   <block id="3bb0dd7ec24af388f7e49723482fb553" category="cell">2,154,747</block>
@@ -3167,4 +3165,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="a3f1428e66932d96ff43f4bf4a938e38" category="inline-link-macro">StorageGRID 11.9用のLogstash 8.xサンプルファイルパッケージのダウンロード</block>
   <block id="92648c644fef59d092d8ebc7df369fd8" category="list-text"><block ref="69ef6b23b33f55d10cdea70d6bd19e3d" category="inline-link-macro-rx"></block>+* MD5チェックサム* 41272857c4a54600f95995f6ed74800d +* SHA256チェックサム* 67048ee8661052719990851e1ad960d4902fe537a6e135e8600177188da677c9</block>
   <block id="52f70839644ed308c4da8e45cf815a31" category="paragraph">次のKibanaオブジェクトがインポートされます。+* Query *+* audit-msg-s3rq-orlm +* bycastログs3関連メッセージ+* loglevel warning以上+* failed security event +* nginx-gwエンドポイントアクセスログ（elk8-sample-for-sg119.zipでのみbycast.log使用可能）+* Chart *+*+*リクエストタイプ別*+***+*+*ダッシュボードリクエストの平均応答時間*</block>
+  <block id="975915e0dc64af72667a293b87be5f66" category="cell">TPCDS 99クエリ+合計分^2^（キャッシュ有効）</block>
+  <block id="a447f0aa56d54d66cf89976cc810a113" category="paragraph">^2^トリノ/スターバーストのパフォーマンスは、コンピューティングリソースによってボトルネックになっています。クラスタにRAMを追加すると、合計クエリ時間が短縮されます。</block>
 </blocks>
