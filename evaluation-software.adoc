@@ -8,7 +8,7 @@ summary: 見込みのあるお客様のためにStorageGRID評価ソフトウェ
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

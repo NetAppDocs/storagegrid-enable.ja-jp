@@ -43,27 +43,27 @@ link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-g
 +
 .. [Grid IP]で[2]、[1]を選択します。
 +
-image:site-relocation/ip-change-1.png[""]
+image:site-relocation/ip-change-1.png["変更- IP編集"]
 
 .. 5を選択して変更を表示
 +
-image:site-relocation/ip-change-2.png[""]
+image:site-relocation/ip-change-2.png["認証する"]
 
 .. [10]を選択して確定し、変更を適用します。
 +
-image:site-relocation/ip-change-3.png[""]
+image:site-relocation/ip-change-3.png["ステージの変更"]
 
 .. このステップで* stage *を選択する必要があります。
 +
-image:site-relocation/ip-change-4.png[""]
+image:site-relocation/ip-change-4.png["管理者を手動で再起動"]
 
 .. 上記の変更にプライマリ管理ノードが含まれている場合は、*「a」と入力して手動でプライマリ管理ノードを再起動します*
 +
-image:site-relocation/ip-change-5.png[""]
+image:site-relocation/ip-change-5.png["前のメニュー"]
 
 .. Enterキーを押して前のメニューに戻り、IPインターフェイスの変更を終了します。
 +
-image:site-relocation/ip-change-6.png[""]
+image:site-relocation/ip-change-6.png["続行"]
 
 
 
