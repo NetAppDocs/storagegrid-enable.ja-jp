@@ -43,7 +43,6 @@ NetApp StorageGRIDは、要件の厳しいエンタープライズオブジェ�
 
 * NetApp StorageGRID：SEC 17a-4（f）、FINRA 4511（c）、CFTC 1.31（c）-（d）コンプライアンス評価 https://www.netapp.com/media/9041-ar-cohasset-netapp-storagegrid-sec-assessment.pdf[]
 * StorageGRID 11.9ドキュメントページ https://docs.netapp.com/us-en/storagegrid-119/[]
-* StorageGRIDドキュメントリソースページ https://www.netapp.com/data-storage/storagegrid/documentation/[]
 * NetApp製品ドキュメント https://www.netapp.com/support-and-training/documentation/[]
 
 

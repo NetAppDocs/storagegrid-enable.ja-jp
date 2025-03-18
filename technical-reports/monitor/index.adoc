@@ -41,7 +41,6 @@ NetApp StorageGRIDを正常に監視するには、StorageGRIDシステムの健
 
 * NetApp StorageGRIDドキュメントセンター https://docs.netapp.com/us-en/storagegrid-118/[]
 * NetApp StorageGRIDイネーブルメント https://docs.netapp.com/us-en/storagegrid-enable/[]
-* StorageGRIDドキュメントリソースページ https://www.netapp.com/data-storage/storagegrid/documentation/[]
 * NetApp製品ドキュメント https://www.netapp.com/support-and-training/documentation/[]
 * Splunk向けNetApp StorageGRIDアプリケーション https://splunkbase.splunk.com/app/3898/#/details[]
 

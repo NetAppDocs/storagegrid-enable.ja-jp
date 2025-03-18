@@ -42,6 +42,5 @@ S3 APIの主なランサムウェア対策メカニズムは、オブジェク�
 
 * NetApp StorageGRIDドキュメントセンター https://docs.netapp.com/us-en/storagegrid-118/[]
 * NetApp StorageGRIDイネーブルメント https://docs.netapp.com/us-en/storagegrid-enable/[]
-* StorageGRIDドキュメントリソースページ https://www.netapp.com/data-storage/storagegrid/documentation/[]
 * NetApp製品ドキュメント https://www.netapp.com/support-and-training/documentation/[]
 
