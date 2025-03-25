@@ -74,7 +74,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 * ニスエンタープライズ6.0.4
 * Veeam 12
 * Veritas Enterprise Vault 15.1.
-* Veritas NetBackup 8.0
+* Veritas NetBackup 10.1.1以降
 * Vertica 10.x
 * ビディズパイン
 * Virtalica StorageFabricの詳細を参照してください
