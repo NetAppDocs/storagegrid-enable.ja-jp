@@ -1850,7 +1850,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="e3581082ba2aa18febff247afdaf6344" category="paragraph">このTRに記載されている情報の詳細については、次のドキュメントリソースを参照してください。</block>
   <block id="d794ca6edf18a97bedb2ad1af37d0c71" category="list-text">NetApp StorageGRIDドキュメントセンター <block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
   <block id="f26db73036faf2fd4369e53f7b67c6e7" category="list-text">NetApp StorageGRIDイネーブルメント <block ref="4d58579ecd86e7d907ec63f13f2199dd" category="inline-link-rx"></block></block>
-  <block id="a3fd6da95928caff4c3eee3c06fd7ad8" category="list-text">StorageGRIDドキュメントリソースページ <block ref="68d4d5362a15088f2ac3fa494c971af5" category="inline-link-rx"></block></block>
   <block id="8b8bc5296c7be638754abb2f408d2099" category="list-text">NetApp製品ドキュメント <block ref="3cd8b5fe5ca94a9fdb5caaf96875ef7e" category="inline-link-rx"></block></block>
   <block id="fb0cb3928e42fcd12b5e4d384c0b36e1" category="summary">Docker for StorageGRIDのインストール方法について説明します。</block>
   <block id="4794aa13334c3a67cb956b8bb0b717cc" category="doc">Docker for StorageGRIDのインストール</block>
@@ -2739,12 +2738,9 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="d45294caa04dc2a59a6a9779ecb261e1" category="section-title">アカウントに登録します</block>
   <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link">NetAppサポートサイト</block>
   <block id="6b2e1d4820e2c64094628af51b07c4ae" category="list-text">お勤め先のEメールアドレスを使用して、でアカウントを登録し<block ref="a49f41675f7c48eedf0647a0a62c5043" category="inline-link-rx"></block> ます。</block>
-  <block id="c3864a0d9e7266b854aa1d673036710a" category="list-text">すでにアカウントをお持ちの場合は、次の手順に進みます。</block>
-  <block id="0fedb2e26434d49a94f9450ce477c3cc" category="list-text">作成したアカウントでログインします。</block>
   <block id="0c6d9ab23098fd3e876c216fe1ca7ffc" category="inline-link">問題を報告する</block>
   <block id="8751d140672b36b77b265c8fe793befc" category="list-text">テクニカル以外のサポートケースを作成して、アクセスレベルを「見込み客」に引き上げます。これを行うには、Webサイトのフッターにある「リンク」をクリックして <block ref="94c9ec214c60b057a12eaba547e0acae" category="inline-link-rx"></block>ください。</block>
   <block id="940ab06ee98cba17f3c21dea0e603eb5" category="list-text">フィードバックカテゴリとして「登録の問題」を選択します。</block>
-  <block id="c1d4a23af565c411cff6271ce577104f" category="list-text">コメント欄に、「見込み顧客にStorageGRID評価ソフトウェアをダウンロードしてもらいたい」と記入します。</block>
   <block id="ea7ab0148c9999f65837f6a1483f42ee" category="list-text">見込み客へのアクセスリクエストを提案したNetApp社内担当者の名前を記入します。</block>
   <block id="ed721060d54c51e35da28db6ea8337ef" category="section-title">StorageGRIDのダウンロード</block>
   <block id="aed8ceb0f85821c90dc49c2c3bf1e494" category="list-text">サポートケースの確認と承認が完了すると、NetAppサポートからお客様のアカウントに見込み客へのアクセス権が付与されたことがEメールで通知されます。</block>
@@ -3172,4 +3168,7 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="c913303f392ffc643f7240b180602652" category="cell">1464</block>
   <block id="6cd2cdb0fa97e6793df3667997292b8a" category="cell">3,702</block>
   <block id="93ee6d81759b8ae556ed02d6b52a3447" category="cell">1,992,553</block>
+  <block id="45d98cb0c4dacd6be68da4095e1fa5f2" category="list-text">新しく作成したアカウントでサインインしていないことを確認します。</block>
+  <block id="37ff5d731eafce0bad2c1bdfb0ed1f55" category="list-text">すでにアカウントをお持ちの場合は、サインインしていないことを確認し、次の手順に進みます。</block>
+  <block id="21c24fa624a44fa1b3fc1c27be1061d5" category="list-text">コメント欄に「私のアカウントのメールアドレスは_あなたの-メールアドレス_です。見込み顧客にStorageGRID評価ソフトウェアをダウンロードしてもらいたいのですが」</block>
 </blocks>
