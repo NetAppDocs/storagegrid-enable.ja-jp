@@ -2,6 +2,8 @@
 section: product-feature-guides
 title: 製品機能ガイド
 entries:
+- title: StorageGRIDでRPOゼロを達成
+  url: "/product-feature-guides/achieve-zero-rpo.html"
 - title: AWSまたはGoogle Cloud用のクラウドストレージプールを作成します
   url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"
 - title: Azure BLOBストレージ用のクラウドストレージプールを作成します

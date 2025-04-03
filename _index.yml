@@ -32,6 +32,8 @@ indexpage:
       url: "/third-party/112-3rd-party-list.html"
   - title: 製品機能ガイド
     links:
+    - title: StorageGRIDでRPOゼロを達成
+      url: "/product-feature-guides/achieve-zero-rpo.html"
     - title: AWSまたはGoogle向けのクラウドストレージプールを作成
       url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"
     - title: Azure BLOBストレージ用のクラウドストレージプールを作成します
