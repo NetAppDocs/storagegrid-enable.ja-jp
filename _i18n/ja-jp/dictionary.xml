@@ -3325,13 +3325,10 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="036aeedca40738e98fb9980b5c2675af" category="paragraph">Effect*はリクエストを許可するか拒否するかのどちらかになります。Principal *は、アビリティーを許可または拒否するアカウント/ユーザーです。バケットが配置されているテナント内のワイルドカード「++*++」、ローカルまたはフェデレーテッドユーザ/グループ、またはグリッド内の別のテナントとして定義できます。ユーザまたはグループは、名前またはID文字列で識別できます。Action *は、ユーザに許可または拒否される一連のS3処理です。</block>
   <block id="dba9490f360197ade1689ea1d2889b5c" category="admonition">ユーザがS3操作を実行するには、s3：ListBucket操作を実行する必要があります。</block>
   <block id="2dc7323af24c93e28f62e0e080730041" category="paragraph">Resource *は、プリンシパルに対してアクションの実行を許可または拒否するバケットです。必要に応じて、ポリシーアクションが有効な場合の*条件*を指定できます。</block>
-  <block id="36f00e8d3531c99084ca87022aa829d6" category="paragraph">JSONポリシーの形式は次のようになります。</block>
   <block id="98d8787db8134942993742f28e6e638e" category="section-title">AWSポリシージェネレータの使用</block>
   <block id="7fd5fa9d1e888f7d962c6930557d8e36" category="paragraph">AWSポリシージェネレータは、実装しようとしている正しい形式と情報でJSONコードを取得するのに役立つ優れたツールです。</block>
-  <block id="f6491726dbf898b732add834a307f43b" category="paragraph">StorageGRIDグループポリシーの権限を生成するには、次の手順を実行します。*ポリシーのタイプに応じたIAMポリシーを選択します。*希望する効果のボタンを選択します。「許可」または「拒否」です。ポリシーでdeny権限を指定して開始し、アクションドロップダウンにAllow権限*を追加することを推奨します。この権限または[すべての操作]ボックスに含めるS3操作の横にあるボックスをクリックします。*[Amazon Resource Name（ARN）]ボックスにバケットパスを入力します。バケット名の前に「arn：aws：s3：：：」を含めます。ex."arn：aws：s3：：：examplebucket"</block>
   <block id="718e062190ebd2d06af9dd8203ed28f4" category="inline-image-macro">グループポリシーを生成します。</block>
   <block id="64d59d8a48b54673b859830a17697b29" category="paragraph"><block ref="64d59d8a48b54673b859830a17697b29" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="256786720eb690c2f64e17c114bf17e5" category="paragraph">バケットポリシーの権限を生成するには：*ポリシーのタイプに[S3 Bucket Policy]を選択します。*希望する効果のボタンを選択します。「許可」または「拒否」です。ポリシーをdeny権限で開始し、Principalのユーザまたはグループ情報にAllow permissions * Typeを追加することを推奨します。*[Actions]ドロップダウンで、この権限または[All Actions]ボックスに含めるS3アクションの横にあるボックスをクリックします。*[Amazon Resource Name（ARN）]ボックスにバケットパスを入力します。バケット名の前に「arn：aws：s3：：：」を含めます。ex."arn：aws：s3：：：examplebucket"</block>
   <block id="14171660abb4a2ee309b0743823a5c7f" category="inline-image-macro">バケットポリシーを生成する</block>
   <block id="425e44ca1ca39707f142a937d323dae6" category="paragraph"><block ref="425e44ca1ca39707f142a937d323dae6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="29156a2c2150b23b84a632be436a5710" category="paragraph">たとえば、すべてのユーザにバケット内のすべてのオブジェクトに対するGetObject処理の実行を許可するバケットポリシーを生成し、指定したアカウントの「Marketing」グループに属するユーザにのみフルアクセスを許可するとします。</block>
@@ -3339,7 +3336,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="d7b02e0e049ce24df9a935a2940a00fd" category="list-text">「許可」エフェクトを選択します。</block>
   <block id="7d89c8a4838177ced1c356c2d37451e4" category="list-text">マーケティンググループの情報を入力します。arn：aws：iam：：95390887230002558202：federated-group/Marketing</block>
   <block id="5898b8b3214a7eda5ec51139381547ae" category="list-text">[すべてのアクション]のボックスをクリックします。</block>
-  <block id="ad2ad35634584410ebee3433637beb6c" category="list-text">バケット情報を入力します。arn：aws：s3：：：examplebucket、arn：aws：s3：：：examplebucket /*</block>
   <block id="0a7accd63ee4c870264f02f6421d9617" category="inline-image-macro">ポリシーの最初の権限を生成する</block>
   <block id="d4c1d59176aacf123e41161ce9410e96" category="paragraph"><block ref="d4c1d59176aacf123e41161ce9410e96" category="inline-image-macro-rx" type="image"></block></block>
   <block id="68fa75317bcfed78baa03e2f2b83ae57" category="list-text">[Add Statement]ボタンをクリックします。</block>
@@ -3353,7 +3349,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="e89c16f348ca85be6f05423c0774d4c3" category="inline-image-macro">ポリシーの2番目の権限を生成する</block>
   <block id="b7a8526776c5f81f21272d11b295af28" category="paragraph"><block ref="b7a8526776c5f81f21272d11b295af28" category="inline-image-macro-rx" type="image"></block></block>
   <block id="87903e3b9c79fad007dafe94eb14cb05" category="inline-image-macro">ポリシーの2番目の許可</block>
-  <block id="c88a8dc7af1013392a2653edd4bbca6d" category="paragraph"><block ref="c88a8dc7af1013392a2653edd4bbca6d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e246daeb2fe11601d2dbada8c86d9f38" category="list-text">「ポリシーの生成」ボタンをクリックすると、生成されたポリシーを含むポップアップウィンドウが表示されます。</block>
   <block id="a6172ef9c0c0d6ee2dd1c227d6eb5564" category="inline-image-macro">最終的な出力は</block>
   <block id="0bceb44ff1eb9e6a0e215b1553460c3a" category="paragraph"><block ref="0bceb44ff1eb9e6a0e215b1553460c3a" category="inline-image-macro-rx" type="image"></block></block>
@@ -3362,4 +3357,9 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例：</block>
   <block id="5a804d2999d40df9fee58c79e96c4bc6" category="section-title">バケットポリシー</block>
   <block id="1dcc79570a2b49254ef9f7976da24e4d" category="section-title">バケット内のバージョン管理オブジェクトのユーザによる削除を制限する</block>
+  <block id="264cca27da511b7e4d0a4b8cd5e962f1" category="paragraph">JSONポリシーの形式は次のようになります。</block>
+  <block id="14b11990a33e1248ae52a06f5174aba0" category="paragraph">StorageGRIDグループポリシーの権限を生成するには、次の手順を実行します。*ポリシーのタイプに応じたIAMポリシーを選択します。*希望する効果のボタンを選択します。「許可」または「拒否」です。ポリシーでdeny権限を指定して開始し、アクションドロップダウンにAllow権限*を追加することを推奨します。この権限または[すべての操作]ボックスに含めるS3操作の横にあるボックスをクリックします。*[Amazon Resource Name（ARN）]ボックスにバケットパスを入力します。バケット名の前に「arn：aws：s3：：：」を含めます。ex."arn：aws：s3：：：example_bucket"</block>
+  <block id="5e90956923e27ad94083a42655710d27" category="paragraph">バケットポリシーの権限を生成するには：*ポリシーのタイプに[S3 Bucket Policy]を選択します。*希望する効果のボタンを選択します。「許可」または「拒否」です。ポリシーをdeny権限で開始し、Principalのユーザまたはグループ情報にAllow permissions * Typeを追加することを推奨します。*[Actions]ドロップダウンで、この権限または[All Actions]ボックスに含めるS3アクションの横にあるボックスをクリックします。*[Amazon Resource Name（ARN）]ボックスにバケットパスを入力します。バケット名の前に「arn：aws：s3：：：」を含めます。ex."arn：aws：s3：：：example_bucket"</block>
+  <block id="6286b2654fd9f607da0c9a689ef54e7c" category="list-text">バケット情報を入力します。arn：aws：s3：：：example_bucket、arn：aws：s3：：：example_bucket /*</block>
+  <block id="8e42358c3df8a569be04cad92e8b7479" category="paragraph"><block ref="8e42358c3df8a569be04cad92e8b7479" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
