@@ -2,7 +2,7 @@
 permalink: examples/bucket-policy-examples.html 
 sidebar: sidebar 
 keywords: iam, bucket policy, group policy, policy 
-summary: バケットポリシーとグループポリシー（IAMポリシー）の例を次に示します。 
+summary: ここでは、StorageGRID S3のポリシーと権限の例を示します。 
 ---
 = バケットポリシーとグループポリシー（IAM）の例
 :hardbreaks:
@@ -12,8 +12,183 @@ summary: バケットポリシーとグループポリシー（IAMポリシー�
 
 
 [role="lead"]
-バケットポリシーとグループポリシー（IAMポリシー）の例を次に示します。
+ここでは、StorageGRID S3のポリシーと権限の例を示します。
 
+
+
+== ポリシーの構造
+
+StorageGRIDでは、グループポリシーはAWSユーザ（IAM）のS3サービスポリシーと同じです。
+
+StorageGRIDではグループポリシーが必要です。S3アクセスキーを持っていてユーザグループに割り当てられていないユーザや、一部の権限を許可するポリシーが設定されていないグループに割り当てられているユーザは、データにアクセスできません。
+
+バケットポリシーとグループポリシーは、ほとんどの要素を共有します。ポリシーはJSON形式で作成され、 https://awspolicygen.s3.amazonaws.com/policygen.html["AWSポリシージェネレータ"]
+
+すべてのポリシーで、効果、アクション、リソースが定義されます。バケットポリシーではプリンシパルも定義されます。
+
+Effect*はリクエストを許可するか拒否するかのどちらかになります。Principal *は、アビリティーを許可または拒否するアカウント/ユーザーです。バケットが配置されているテナント内のワイルドカード「++*++」、ローカルまたはフェデレーテッドユーザ/グループ、またはグリッド内の別のテナントとして定義できます。ユーザまたはグループは、名前またはID文字列で識別できます。Action *は、ユーザに許可または拒否される一連のS3処理です。
+
+
+NOTE: ユーザがS3操作を実行するには、s3：ListBucket操作を実行する必要があります。
+
+Resource *は、プリンシパルに対してアクションの実行を許可または拒否するバケットです。必要に応じて、ポリシーアクションが有効な場合の*条件*を指定できます。
+
+JSONポリシーの形式は次のようになります。
+
+[source, json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "Custom name for this permission",
+      "Effect": "Allow or Deny",
+      "Principal": {
+        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",
+        "AWS": "User_Name"
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:Other_Action"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Example_Bucket",
+        "arn:aws:s3:::Example_Bucket/*"
+      ],
+    }
+  ]
+}
+----
+
+
+== AWSポリシージェネレータの使用
+
+AWSポリシージェネレータは、実装しようとしている正しい形式と情報でJSONコードを取得するのに役立つ優れたツールです。
+
+StorageGRIDグループポリシーの権限を生成するには、次の手順を実行します。*ポリシーのタイプに応じたIAMポリシーを選択します。*希望する効果のボタンを選択します。「許可」または「拒否」です。ポリシーでdeny権限を指定して開始し、アクションドロップダウンにAllow権限*を追加することを推奨します。この権限または[すべての操作]ボックスに含めるS3操作の横にあるボックスをクリックします。*[Amazon Resource Name（ARN）]ボックスにバケットパスを入力します。バケット名の前に「arn：aws：s3：：：」を含めます。ex."arn：aws：s3：：：examplebucket"
+
+image:policy/group-generic.png["グループポリシーを生成します。"]
+
+バケットポリシーの権限を生成するには：*ポリシーのタイプに[S3 Bucket Policy]を選択します。*希望する効果のボタンを選択します。「許可」または「拒否」です。ポリシーをdeny権限で開始し、Principalのユーザまたはグループ情報にAllow permissions * Typeを追加することを推奨します。*[Actions]ドロップダウンで、この権限または[All Actions]ボックスに含めるS3アクションの横にあるボックスをクリックします。*[Amazon Resource Name（ARN）]ボックスにバケットパスを入力します。バケット名の前に「arn：aws：s3：：：」を含めます。ex."arn：aws：s3：：：examplebucket"
+
+image:policy/bucket-generic.png["バケットポリシーを生成する"]
+
+たとえば、すべてのユーザにバケット内のすべてのオブジェクトに対するGetObject処理の実行を許可するバケットポリシーを生成し、指定したアカウントの「Marketing」グループに属するユーザにのみフルアクセスを許可するとします。
+
+* ポリシータイプとして[S3][Bucket Policy]を選択します。
+* 「許可」エフェクトを選択します。
+* マーケティンググループの情報を入力します。arn：aws：iam：：95390887230002558202：federated-group/Marketing
+* [すべてのアクション]のボックスをクリックします。
+* バケット情報を入力します。arn：aws：s3：：：examplebucket、arn：aws：s3：：：examplebucket /*
+
+
+image:policy/example-bucket1.png["ポリシーの最初の権限を生成する"]
+
+* [Add Statement]ボタンをクリックします。
+
+
+image:policy/permission1.png["入力されたポリシーの最初の権限"]
+
+* 「許可」エフェクトを選択します。
+* すべてのユーザのアスタリスク「++*++」を入力します。
+* [GetObject actions]と[ListBucket actions]の横にあるボックスをクリックします。
+
+
+image:policy/getobject.png["GetObjectを選択"] image:policy/listbucket.png["ListBucketを選択"]
+
+* バケット情報を入力します。arn：aws：s3：：：examplebucket、arn：aws：s3：：：examplebucket /*
+
+
+image:policy/example-bucket2.png["ポリシーの2番目の権限を生成する"]
+
+* [Add Statement]ボタンをクリックします。
+
+
+image:policy/permission3.png["ポリシーの2番目の許可"]
+
+* 「ポリシーの生成」ボタンをクリックすると、生成されたポリシーを含むポップアップウィンドウが表示されます。
+
+
+image:policy/example-output.png["最終的な出力は"]
+
+* 次のような完全なJSONテキストをコピーします。
+
+
+[source, json]
+----
+{
+  "Id": "Policy1744399292233",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1744399152830",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "Stmt1744399280838",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
+このJSONはそのまま使用することも、"Statement"行の上にあるIDとバージョンの行を削除することもできます。また、アクセス許可ごとに、より意味のあるタイトルでSIDをカスタマイズしたり、削除したりすることもできます。
+
+例：
+
+[source, json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "MarketingAllowFull",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "EveryoneReadOnly",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
 
 
 == グループポリシー（IAM）
@@ -26,6 +201,7 @@ summary: バケットポリシーとグループポリシー（IAMポリシー�
 
 [source, json]
 ----
+{
 "Statement": [
     {
       "Sid": "AllowListBucketOfASpecificUserPrefix",
@@ -133,6 +309,14 @@ summary: バケットポリシーとグループポリシー（IAMポリシー�
     ]
 }
 ----
+
+
+== バケットポリシー
+
+
+
+=== バケット内のバージョン管理オブジェクトのユーザによる削除を制限する
+
 このバケットポリシーは、ユーザ（ユーザID「56622399308951294926」で識別）がversionIdでバージョン管理オブジェクトを削除することを制限します
 
 [source, json]
@@ -178,29 +362,29 @@ summary: バケットポリシーとグループポリシー（IAMポリシー�
             "Sid": "Deny non user1",
             "Effect": "Deny",
             "NotPrincipal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:*"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         },
         {
             "Sid": "Allow user1 read access to bucket bucket1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:GetObject",
                 "s3:ListBucket"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         }
     ]
