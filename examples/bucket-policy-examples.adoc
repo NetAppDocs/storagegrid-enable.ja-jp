@@ -2,9 +2,9 @@
 permalink: examples/bucket-policy-examples.html 
 sidebar: sidebar 
 keywords: iam, bucket policy, group policy, policy 
-summary: ここでは、StorageGRID S3のポリシーと権限の例を示します。 
+summary: StorageGRIDのポリシーと権限。 
 ---
-= バケットポリシーとグループポリシー（IAM）の例
+= StorageGRIDのポリシーと権限
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
