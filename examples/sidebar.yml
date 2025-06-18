@@ -8,3 +8,5 @@ entries:
   url: "/examples/test-demonstrate-S3-object-lock.html"
 - title: バケットポリシーとグループポリシーの例
   url: "/examples/bucket-policy-examples.html"
+- title: バケットライフサイクルポリシーの例
+  url: "/examples/bucket-lifecycle-examples.html"

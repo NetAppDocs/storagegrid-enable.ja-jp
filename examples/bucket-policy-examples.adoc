@@ -2,7 +2,7 @@
 permalink: examples/bucket-policy-examples.html 
 sidebar: sidebar 
 keywords: iam, bucket policy, group policy, policy 
-summary: StorageGRIDのポリシーと権限。 
+summary: StorageGRID のポリシーと権限。 
 ---
 = StorageGRIDのポリシーと権限
 :hardbreaks:

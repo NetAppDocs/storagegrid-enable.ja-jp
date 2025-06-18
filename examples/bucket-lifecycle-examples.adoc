@@ -1,0 +1,296 @@
+---
+permalink: examples/bucket-lifecycle-examples.html 
+sidebar: sidebar 
+keywords: iam, bucket policy, lifecycle policy, policy, bucket 
+summary: StorageGRID のバケットのライフサイクル。 
+---
+= StorageGRIDのバケットライフサイクル
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+S3 ライフサイクル設定を作成して、特定のオブジェクトが StorageGRID システムから削除されるタイミングを制御できます。
+
+
+
+== ライフサイクル構成とは
+
+ライフサイクル設定は、特定の S3 バケット内のオブジェクトに適用される一連のルールです。各ルールは、影響を受けるオブジェクトと、それらのオブジェクトの有効期限（特定の日付または日数後）を指定します。
+
+各オブジェクトは、S3バケットライフサイクルまたはILMポリシーの保持設定に従います。S3バケットライフサイクルが設定されている場合は、バケットライフサイクルフィルタに一致するオブジェクトのILMポリシーがライフサイクル有効期限のアクションで上書きされます。バケットライフサイクルフィルタに一致しないオブジェクトには、ILMポリシーの保持設定が使用されます。オブジェクトがバケットライフサイクルフィルタに一致し、有効期限の操作が明示的に指定されていない場合、ILMポリシーの保持設定は使用されず、オブジェクトのバージョンが無期限に保持されることが暗黙的に示されます。
+
+そのため、 ILM ルールの配置手順がオブジェクトに引き続き適用されていても、オブジェクトがグリッドから削除されることがあります。あるいは、オブジェクトに対するILM配置指示が失効した後でも、オブジェクトがグリッド上に保持される可能性がある。
+
+StorageGRID では、 1 つのライフサイクル設定で最大 1 、 000 個のライフサイクルルールがサポートされます。各ルールには、次の XML 要素を含めることができます。
+
+* Expiration ：指定した日付に達した場合、またはオブジェクトが取り込まれたときから指定した日数に達した場合にオブジェクトを削除します。
+* NoncurrentVersionExpiration ：指定した日数に達したオブジェクトを削除します。これは、オブジェクトが最新でなくなったときからです。
+* フィルタ（プレフィックス、タグ）
+* ステータス *ID
+
+
+StorageGRID では、次のバケット処理を使用してライフサイクル設定を管理できます。
+
+* DeleteBucketLifecycle
+* GetBucketLifecycleConfiguration
+* PutBucketLifecycleConfiguration
+
+
+
+
+== ライフサイクルポリシーの構造
+
+ライフサイクル設定を作成するための最初の手順として、 1 つ以上のルールを含む JSON ファイルを作成します。たとえば、この JSON ファイルには次の 3 つのルールが含まれています。
+
+. *ルール1*は、プレフィックス「category1/」に一致し、key2の値が「tag2」であるオブジェクトにのみ適用されます。Expirationパラメータは、フィルターに一致するオブジェクトが2020年8月22日の午前0時に期限切れになることを指定します。
+. *ルール2*は、プレフィックス「category2/」に一致するオブジェクトにのみ適用されます。Expirationパラメータは、フィルターに一致するオブジェクトが取り込まれてから100日後に有効期限切れになることを指定します。
++
+
+CAUTION: 日数を指定するルールは、オブジェクトが取り込まれた時点を基準とした相対的なルールです。現在の日付が取り込み日と日数を超えている場合は、ライフサイクル設定の適用後すぐに一部のオブジェクトがバケットから削除される可能性があります。
+
+. *ルール3*は、プレフィックス「category3/」に一致するオブジェクトにのみ適用されます。Expirationパラメータは、一致するオブジェクトの非現行バージョンが、非現行バージョンになってから50日後に期限切れになることを指定します。
+
+
+[source, json]
+----
+{
+	"Rules": [
+        {
+		    "ID": "rule1",
+			"Filter": {
+                "And": {
+                    "Prefix": "category1/",
+                    "Tags": [
+                        {
+                            "Key": "key2",
+							"Value": "tag2"
+                        }
+                    ]
+                }
+            },
+			"Expiration": {
+                "Date": "2020-08-22T00:00:00Z"
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule2",
+			"Filter": {
+                "Prefix": "category2/"
+            },
+			"Expiration": {
+                "Days": 100
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule3",
+			"Filter": {
+                "Prefix": "category3/"
+            },
+			"NoncurrentVersionExpiration": {
+                "NoncurrentDays": 50
+            },
+            "Status": "Enabled"
+        }
+    ]
+}
+----
+
+
+== バケットにライフサイクル設定を適用
+
+ライフサイクル設定ファイルを作成したら、PutBucketLifecycleConfiguration要求を発行してバケットに適用します。
+
+この要求は、サンプルファイルのライフサイクル設定をという名前のバケット内のオブジェクトに適用し `testbucket`ます。
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> put-bucket-lifecycle-configuration
+--bucket testbucket --lifecycle-configuration file://bktjson.json
+----
+ライフサイクル設定がバケットに正常に適用されたことを確認するには、GetBucketLifecycleConfiguration要求を問題します。例えば：
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configuration
+ --bucket testbucket
+----
+
+
+== 標準（バージョン管理されていない）バケットのライフサイクル ポリシーの例
+
+
+
+=== 90日後にオブジェクトを削除する
+
+ユースケース：このポリシーは、一時ファイル、ログ、中間処理データなど、限られた期間のみ関連するデータの管理に最適です。メリット：ストレージコストを削減し、バケットを整理整頓できます。
+
+[source, json]
+----
+{
+	"Rules": [
+	  {
+		"ID": "Delete after 90 day rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		  "Expiration": {
+			  "Days": 90
+	    }
+	  }
+	]
+}
+----
+
+
+== バージョン管理されたバケットのライフサイクル ポリシーの例
+
+
+
+=== 10日後に非最新版を削除する
+
+ユースケース：このポリシーは、時間の経過とともに蓄積され、大量のスペースを消費する可能性のある、最新バージョンではないオブジェクトのストレージ管理に役立ちます。メリット：最新バージョンのみを保持することで、ストレージ使用量を最適化します。
+
+[source, json]
+----
+{
+	"Rules": [
+	        {
+		"ID": "NoncurrentVersionExpiration 10 day rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		  "NoncurrentVersionExpiration": {
+			  "NoncurrentDays": 10
+	   	}
+    }
+	]
+}
+----
+
+
+=== 5つの非最新バージョンを保持する
+
+使用例: 回復または監査の目的で、限られた数の以前のバージョンを保持する場合に便利です。利点: 十分な履歴と回復ポイントを確保するために、十分な数の非最新バージョンを保持します。
+
+[source, json]
+----
+{
+	"Rules": [
+	  {
+		"ID": "NewerNoncurrentVersions 5 version rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		"NoncurrentVersionExpiration": {
+		  	"NewerNoncurrentVersions": 5
+	    }
+    }
+	]
+}
+----
+
+
+=== 他のバージョンが存在しない場合は削除マーカーを削除します
+
+ユースケース：このポリシーは、すべての非最新バージョンを削除した後に残る削除マーカーを管理するのに役立ちます。これらのマーカーは時間の経過とともに蓄積される可能性があります。メリット：不要な混乱を軽減します。
+
+[source, json]
+----
+{
+	"Rules": [
+    {
+		"ID": "Delete marker cleanup rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		"Expiration": {
+        "ExpiredObjectDeleteMarker": true
+	  	}
+    }
+	]
+}
+----
+
+
+=== 現在のバージョンは 30 日後に削除され、現在のバージョン以外のバージョンは 60 日後に削除され、他のバージョンが存在しなくなったら現在のバージョンの削除によって作成された削除マーカーが削除されます。
+
+ユースケース：削除マーカーを含む、現在のバージョンと非現在のバージョンの完全なライフサイクルを提供します。メリット：十分なリカバリポイントと履歴を保持しながら、ストレージコストを削減し、バケットを整理された状態に保ちます。
+
+[source, json]
+----
+{
+  "Rules": [
+    {
+      "ID": "Delete current version",
+      "Status": "Enabled",
+      "Expiration": {
+        "Days": 30
+      },
+    },
+    {
+      "ID": "noncurrent version retention",
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 60
+      }
+    },
+    {
+      "ID": "Markers",
+      "Status": "Enabled",
+      "Expiration": {
+        "ExpiredObjectDeleteMarker": true
+      }
+    }
+  ]
+}
+----
+
+
+=== 他のバージョンがなく、5 日間存在している削除マーカーを削除します。「accounts_ プレフィックス」を持つオブジェクトについては、4 つの非現在のバージョンと少なくとも 30 日分の履歴を保持し、他のすべてのオブジェクト バージョンについては、2 つのバージョンと少なくとも 10 日分の履歴を保持します。
+
+ユースケース：特定のオブジェクトと他のオブジェクトに固有のルールを適用し、削除マーカーを含む現在のバージョンと非現在のバージョンのライフサイクル全体を管理します。メリット：ストレージコストを削減し、バケットを整理しながら、十分なリカバリポイントと履歴を保持することで、多様なクライアント要件に対応できます。
+
+[source, json]
+----
+{
+  "Rules": [
+    {
+      "ID": "Markers",
+      "Status": "Enabled",
+      "Expiration": {
+        "Days": 5,
+        "ExpiredObjectDeleteMarker": true
+      },
+    },
+    {
+      "ID": "accounts version retention",
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NewerNoncurrentVersions": 4,
+        "NoncurrentDays": 30
+      },
+      "Filter": {
+          "Prefix":"account_"
+      }
+    },
+    {
+      "ID": "noncurrent version retention",
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NewerNoncurrentVersions": 2,
+        "NoncurrentDays": 10
+      }
+    }
+  ]
+}
+----
+
+
+== まとめ
+
+* ライフサイクル ポリシーを定期的に確認および更新し、ILM およびデータ管理の目標に合わせて調整します。
+* ポリシーを広範囲に適用する前に、非本番環境またはバケットでテストして、意図したとおりに機能することを確認します。
+* ロジック構造が複雑になる可能性があるため、ルールをより直感的にするために説明的なIDを使用します。
+* これらのバケット ライフサイクル ポリシーがストレージの使用状況とパフォーマンスに与える影響を監視し、必要な調整を行います。
+

@@ -3172,11 +3172,8 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="ea76d032379d2a88d28b72edd9e36564" category="paragraph">このテクニカルレポートでは、サイト障害が発生した場合に目標復旧時点（RPO）をゼロにするためのStorageGRIDレプリケーション戦略を実装するための包括的なガイドを提供します。このドキュメントでは、マルチサイトの同期レプリケーションやマルチグリッドの非同期レプリケーションなど、StorageGRIDのさまざまな導入オプションについて詳しく説明します。また、StorageGRIDの情報ライフサイクル管理（ILM）ポリシーを設定して、複数の場所にわたってデータの保持と可用性を確保する方法についても説明します。また、パフォーマンスに関する考慮事項、障害シナリオ、およびクライアント処理が中断されないように維持するためのリカバリプロセスについても説明します。このドキュメントの目的は、同期レプリケーションと非同期レプリケーションの両方の手法を活用して、サイト全体に障害が発生した場合でも、データへのアクセスと一貫性を維持するための情報を提供することです。</block>
   <block id="606eab719053286d71dc6722565f39cc" category="section-title">StorageGRIDの概要</block>
   <block id="c72cc4a7cc108f0e65b3b2234a5451f6" category="paragraph">NetApp StorageGRIDは、業界標準のAmazon Simple Storage Service（Amazon S3）APIをサポートするオブジェクトベースのストレージシステムです。</block>
-  <block id="cbec9834e0bafd7c4eeaff92edea7bb1" category="paragraph">StorageGRIDは、情報ライフサイクル管理ポリシー（ILM）に基づくさまざまなサービスレベルで、複数の場所にわたって単一のネームスペースを提供します。このライフサイクルポリシーを使用することで、データのライフサイクルを通じてデータの配置場所を最適化できます。</block>
-  <block id="92befe296d180941710b2c41a0009334" category="paragraph">StorageGRIDを使用すると、ローカルソリューションや地理的に分散したソリューションで、データの保持方法と可用性を設定できます。データがオンプレミスとパブリッククラウドのどちらにあっても、統合されたハイブリッドクラウドワークフローにより、Amazon Simple Notification Service（Amazon SNS）、Google Cloud、Microsoft Azure Blob、Amazon S3 Glacier、Elasticsearchなどのクラウドサービスを活用できます。</block>
   <block id="bbcde1e5e5d61a464205617230c533f9" category="section-title">StorageGRIDスケール</block>
   <block id="755c616499e794de29a6192f733ef343" category="paragraph">StorageGRIDは、わずか3つのストレージノードで導入でき、1つのグリッドを最大200ノードまで拡張できます。単一のグリッドは、単一サイトとして導入することも、16サイトまで拡張することもできます。最小のグリッドは、1つのサイトに管理ノード1つとストレージノード3つで構成されます。管理ノードには管理インターフェイスがあり、指標とロギングを一元管理し、StorageGRIDコンポーネントの設定を維持します。管理ノードには、S3 APIアクセス用の統合されたロードバランサも含まれています。StorageGRIDは、ソフトウェアのみ、VMware仮想マシンアプライアンス、または専用アプライアンスとして導入できます。</block>
-  <block id="32bb7324701636fba01565d26f666f9a" category="paragraph">StorageGRIDノードは、オブジェクト数を最大化するメタデータ専用ノード、オブジェクトスペースを最大化するオブジェクトストレージ専用ノード、またはメタデータとオブジェクトストレージを組み合わせてオブジェクト数とオブジェクトスペースの両方を追加するノードとして導入できます。各ストレージノードは、オブジェクトストレージ用に数ペタバイトの容量に拡張でき、数百ペタバイトの単一のネームスペースを使用できます。StorageGRIDには、ゲートウェイノードと呼ばれるS3 API処理用の統合ロードバランサも用意されています。</block>
   <block id="dd4a2f5270f8e48315da197dfb50c549" category="inline-image-macro">StorageGRIDの導入オプション</block>
   <block id="85bd86baa435866d317d93d290b94825" category="paragraph"><block ref="85bd86baa435866d317d93d290b94825" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0d98907e79de1d22666f11bfb3d2db3f" category="paragraph">StorageGRIDは、サイトトポロジに配置された一連のノードで構成されます。StorageGRID内のサイトは、一意の物理的な場所にすることも、論理構成要素としてグリッド内の他のサイトと同じ物理的な場所に配置することもできます。StorageGRIDサイトは複数の物理的な場所にまたがることはできません。サイトは、共有ローカルエリアネットワーク（LAN）インフラストラクチャを表します。</block>
@@ -3193,7 +3190,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="fe6177858a7ffc8599a9d9a1a4ea2f1f" category="list-text">オブジェクトメタデータは、オブジェクトについて記述された任意の情報です。</block>
   <block id="5744c4629d3afd78a5fdd52800e97f1c" category="paragraph">StorageGRID では、オブジェクトメタデータを使用してグリッド全体のすべてのオブジェクトの場所を追跡し、各オブジェクトのライフサイクルを継続的に管理します。</block>
   <block id="63079dc7d4ba0f0950865fd53b883a11" category="paragraph">オブジェクトメタデータには、次のような情報が含まれます。</block>
-  <block id="3d426a291fd747acbb0b7f735c152ca2" category="list-text">システムメタデータ（各オブジェクト（UUID）の一意のID、オブジェクト名、S3バケットの名前、テナントアカウントの名前またはID、オブジェクトの論理サイズ、オブジェクトの作成日時、オブジェクトの最終変更日時など）。</block>
   <block id="e5a918f437a7af27afdce3def49278bc" category="list-text">各オブジェクトレプリカまたはイレイジャーコーディングフラグメントの現在の格納場所。</block>
   <block id="91b08644ef3e50381478d7f42ab32f1d" category="list-text">オブジェクトに関連付けられているカスタムユーザメタデータのキーと値のペア。</block>
   <block id="23f54b9b547ce8f5c783a1d802cf64a9" category="list-text">S3オブジェクトの場合、オブジェクトに関連付けられているオブジェクトタグのキーと値のペア</block>
@@ -3368,8 +3364,62 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="1fb97d2f8d3ea337eb88de35459a8dfa" category="paragraph">Action *は、ユーザに許可または拒否される一連のS3処理です。</block>
   <block id="c4b3b18f1ab46adb439794c3e45b0a5a" category="admonition">グループポリシーの場合、S3操作を実行するには、許可されているs3：ListBucket操作が必要です。</block>
   <block id="21e1d6809aa3d238b83ad7b2536121ce" category="section-title">バケットを読み取り専用アクセス権を持つ少数のユーザに制限する。</block>
-  <block id="bbecdd1fb824778996b46ad8016ff963" category="summary">StorageGRIDのポリシーと権限。</block>
   <block id="0e2086a4669036b8a4cdc547c6b73dcf" category="doc">StorageGRIDのポリシーと権限</block>
   <block id="71c2cd8c732de893ca91cb987baa1b5c" category="paragraph">すべてのポリシーで、効果、アクション、リソースが定義されます。バケットポリシーではプリンシパルも定義されます。</block>
   <block id="4acae57d3119f0b81d2bfd14c9585f13" category="sidebar">StorageGRIDのソリューションとリソース</block>
+  <block id="4e7c8010ebf23d4fb2423e144be51038" category="summary">StorageGRID のバケットのライフサイクル。</block>
+  <block id="58160f35095d353b329570226a65de25" category="doc">StorageGRIDのバケットライフサイクル</block>
+  <block id="4aacbdad7d81cd4fe0ad188b4e33394a" category="paragraph">S3 ライフサイクル設定を作成して、特定のオブジェクトが StorageGRID システムから削除されるタイミングを制御できます。</block>
+  <block id="1dae0e04caca31248eebeab84347dae4" category="section-title">ライフサイクル構成とは</block>
+  <block id="7237dbaae1efaf45679f5983bf89ecdb" category="paragraph">ライフサイクル設定は、特定の S3 バケット内のオブジェクトに適用される一連のルールです。各ルールは、影響を受けるオブジェクトと、それらのオブジェクトの有効期限（特定の日付または日数後）を指定します。</block>
+  <block id="81808f9beff227e55b8eac9c911f81c1" category="paragraph">各オブジェクトは、S3バケットライフサイクルまたはILMポリシーの保持設定に従います。S3バケットライフサイクルが設定されている場合は、バケットライフサイクルフィルタに一致するオブジェクトのILMポリシーがライフサイクル有効期限のアクションで上書きされます。バケットライフサイクルフィルタに一致しないオブジェクトには、ILMポリシーの保持設定が使用されます。オブジェクトがバケットライフサイクルフィルタに一致し、有効期限の操作が明示的に指定されていない場合、ILMポリシーの保持設定は使用されず、オブジェクトのバージョンが無期限に保持されることが暗黙的に示されます。</block>
+  <block id="5abb5a8b4a6970cbd435389007814791" category="paragraph">そのため、 ILM ルールの配置手順がオブジェクトに引き続き適用されていても、オブジェクトがグリッドから削除されることがあります。あるいは、オブジェクトに対するILM配置指示が失効した後でも、オブジェクトがグリッド上に保持される可能性がある。</block>
+  <block id="f8ddf9feb35885470b54cc7bc6b0c913" category="paragraph">StorageGRID では、 1 つのライフサイクル設定で最大 1 、 000 個のライフサイクルルールがサポートされます。各ルールには、次の XML 要素を含めることができます。</block>
+  <block id="6778b95944fe51e4a619971577ef5ee9" category="list-text">Expiration ：指定した日付に達した場合、またはオブジェクトが取り込まれたときから指定した日数に達した場合にオブジェクトを削除します。</block>
+  <block id="78f9560991f2641b0e0f5ce11d361273" category="list-text">NoncurrentVersionExpiration ：指定した日数に達したオブジェクトを削除します。これは、オブジェクトが最新でなくなったときからです。</block>
+  <block id="0422ebe572a6bb9b7e6d689e7fd6f1b7" category="list-text">フィルタ（プレフィックス、タグ）</block>
+  <block id="1486479bc9924fe7efe63a3ddacb2a7b" category="list-text">ステータス *ID</block>
+  <block id="663ef94c78c892b73cc57c0ecf2b8bc6" category="paragraph">StorageGRID では、次のバケット処理を使用してライフサイクル設定を管理できます。</block>
+  <block id="3a176974b22a72a5a81d4903f38c355d" category="list-text">DeleteBucketLifecycle</block>
+  <block id="2f3274ee98c595939f0a90e3b51f7c0d" category="list-text">GetBucketLifecycleConfiguration</block>
+  <block id="f8a8897d1208664862c2552a11f250ca" category="list-text">PutBucketLifecycleConfiguration</block>
+  <block id="da9d09dc4302766fe82a494820ea3018" category="section-title">ライフサイクルポリシーの構造</block>
+  <block id="058711a626ab33171f020d2148a6ad18" category="paragraph">ライフサイクル設定を作成するための最初の手順として、 1 つ以上のルールを含む JSON ファイルを作成します。たとえば、この JSON ファイルには次の 3 つのルールが含まれています。</block>
+  <block id="9d3ce84a95c8d372e271b55abdeaf06d" category="list-text">*ルール1*は、プレフィックス「category1/」に一致し、key2の値が「tag2」であるオブジェクトにのみ適用されます。Expirationパラメータは、フィルターに一致するオブジェクトが2020年8月22日の午前0時に期限切れになることを指定します。</block>
+  <block id="791076664e2f3e1afea280f5a504f6dc" category="list-text">*ルール2*は、プレフィックス「category2/」に一致するオブジェクトにのみ適用されます。Expirationパラメータは、フィルターに一致するオブジェクトが取り込まれてから100日後に有効期限切れになることを指定します。</block>
+  <block id="f2c02934edec79173be5544f20f8e6ca" category="admonition">日数を指定するルールは、オブジェクトが取り込まれた時点を基準とした相対的なルールです。現在の日付が取り込み日と日数を超えている場合は、ライフサイクル設定の適用後すぐに一部のオブジェクトがバケットから削除される可能性があります。</block>
+  <block id="bf1abd41ac064b250b1363071b9a7195" category="list-text">*ルール3*は、プレフィックス「category3/」に一致するオブジェクトにのみ適用されます。Expirationパラメータは、一致するオブジェクトの非現行バージョンが、非現行バージョンになってから50日後に期限切れになることを指定します。</block>
+  <block id="896cd69eb75c862798f9e986f848f272" category="section-title">バケットにライフサイクル設定を適用</block>
+  <block id="991d6fd19e6b04aaab79f243f7231985" category="paragraph">ライフサイクル設定ファイルを作成したら、PutBucketLifecycleConfiguration要求を発行してバケットに適用します。</block>
+  <block id="7d231c64201330534bbc01fac1411591" category="paragraph">この要求は、サンプルファイルのライフサイクル設定をという名前のバケット内のオブジェクトに適用し<block ref="323221a74abb3997f4141e6d754bf8dd" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="ae6b965207cbb3195f9f18ff9567dac2" category="paragraph">ライフサイクル設定がバケットに正常に適用されたことを確認するには、GetBucketLifecycleConfiguration要求を問題します。例えば：</block>
+  <block id="f0a61bf28629288e5dd914027e78d330" category="section-title">標準（バージョン管理されていない）バケットのライフサイクル ポリシーの例</block>
+  <block id="9c839c4462147cd1a9a164b161c6df71" category="section-title">90日後にオブジェクトを削除する</block>
+  <block id="1c1edea5b5fb7017df6735caddb036c9" category="paragraph">ユースケース：このポリシーは、一時ファイル、ログ、中間処理データなど、限られた期間のみ関連するデータの管理に最適です。メリット：ストレージコストを削減し、バケットを整理整頓できます。</block>
+  <block id="a4a5cea738d6da6085c0db896d047001" category="section-title">バージョン管理されたバケットのライフサイクル ポリシーの例</block>
+  <block id="5808fc2734abb0c3a63ccb7a2efcb814" category="section-title">10日後に非最新版を削除する</block>
+  <block id="87fe92caedf00fb0d3b95bb0a8947552" category="paragraph">ユースケース：このポリシーは、時間の経過とともに蓄積され、大量のスペースを消費する可能性のある、最新バージョンではないオブジェクトのストレージ管理に役立ちます。メリット：最新バージョンのみを保持することで、ストレージ使用量を最適化します。</block>
+  <block id="01cd1b232ce05d49443051b40a2458d2" category="section-title">5つの非最新バージョンを保持する</block>
+  <block id="f48f877559a5ab472b0c8399aa53ae43" category="paragraph">使用例: 回復または監査の目的で、限られた数の以前のバージョンを保持する場合に便利です。利点: 十分な履歴と回復ポイントを確保するために、十分な数の非最新バージョンを保持します。</block>
+  <block id="b36f0366fc8b2a644db0d58b9aec47e6" category="section-title">他のバージョンが存在しない場合は削除マーカーを削除します</block>
+  <block id="5a07e328951f2e2665da45b3c8611e70" category="paragraph">ユースケース：このポリシーは、すべての非最新バージョンを削除した後に残る削除マーカーを管理するのに役立ちます。これらのマーカーは時間の経過とともに蓄積される可能性があります。メリット：不要な混乱を軽減します。</block>
+  <block id="e5c835f7c182458dbaf697d1620793b4" category="section-title">現在のバージョンは 30 日後に削除され、現在のバージョン以外のバージョンは 60 日後に削除され、他のバージョンが存在しなくなったら現在のバージョンの削除によって作成された削除マーカーが削除されます。</block>
+  <block id="d9b7c27b725dffa7cd5976689726fef1" category="paragraph">ユースケース：削除マーカーを含む、現在のバージョンと非現在のバージョンの完全なライフサイクルを提供します。メリット：十分なリカバリポイントと履歴を保持しながら、ストレージコストを削減し、バケットを整理された状態に保ちます。</block>
+  <block id="c9aa9a5dfb2480b364bb5845348ff940" category="section-title">他のバージョンがなく、5 日間存在している削除マーカーを削除します。「accounts_ プレフィックス」を持つオブジェクトについては、4 つの非現在のバージョンと少なくとも 30 日分の履歴を保持し、他のすべてのオブジェクト バージョンについては、2 つのバージョンと少なくとも 10 日分の履歴を保持します。</block>
+  <block id="2c4d4631c1767753478366b0115cd168" category="paragraph">ユースケース：特定のオブジェクトと他のオブジェクトに固有のルールを適用し、削除マーカーを含む現在のバージョンと非現在のバージョンのライフサイクル全体を管理します。メリット：ストレージコストを削減し、バケットを整理しながら、十分なリカバリポイントと履歴を保持することで、多様なクライアント要件に対応できます。</block>
+  <block id="c662e9fbc7c08f1bf374548d49a19c49" category="list-text">ライフサイクル ポリシーを定期的に確認および更新し、ILM およびデータ管理の目標に合わせて調整します。</block>
+  <block id="cc89ccf651eef2154a659615eba6bdf0" category="list-text">ポリシーを広範囲に適用する前に、非本番環境またはバケットでテストして、意図したとおりに機能することを確認します。</block>
+  <block id="1472c6bd5c48d6572cc5d6c6830a71cb" category="list-text">ロジック構造が複雑になる可能性があるため、ルールをより直感的にするために説明的なIDを使用します。</block>
+  <block id="9883679d6984fbcf5d5e1eb8a9841a7a" category="list-text">これらのバケット ライフサイクル ポリシーがストレージの使用状況とパフォーマンスに与える影響を監視し、必要な調整を行います。</block>
+  <block id="f69309997a74d84dd39f53923232f102" category="summary">StorageGRID のポリシーと権限。</block>
+  <block id="61e1800dd7d03bc7509039ca51abaa94" category="paragraph">StorageGRIDは、情報ライフサイクル管理ポリシー（ILM）に基づくさまざまなサービスレベルで、複数の場所にわたって単一のネームスペースを提供します。これらのライフサイクル ポリシーを使用すると、ライフサイクル全体にわたってデータが存在する場所を最適化できます。</block>
+  <block id="ee46b302eeb000f796002cd99f7fccca" category="paragraph">StorageGRIDを使用すると、ローカルソリューションや地理的に分散したソリューションで、データの保持方法と可用性を設定できます。データがオンプレミスにあるかパブリッククラウドにあるかに関係なく、統合ハイブリッドクラウドワークフローにより、Amazon Simple Notification Service (Amazon SNS)、Google Cloud、Microsoft Azure Blob、Amazon S3 Glacier、Elasticsearch などのクラウドサービスをビジネスで活用できます。</block>
+  <block id="639932e1f3f1e48c7c66a3c0d26d7c95" category="paragraph">StorageGRID ノードは次のように展開できます。</block>
+  <block id="2ef98a36e008b10819c92b90ab9fb134" category="list-text">オブジェクト数を最大化するメタデータのみのノード</block>
+  <block id="314be57ec0bf12b0f7b8fad48b9e7d0d" category="list-text">オブジェクトスペースを最大化するオブジェクトストレージ専用ノード</block>
+  <block id="b67abdd7987281e93fb88e16a9dede52" category="list-text">オブジェクト数とオブジェクトスペースの両方を追加するメタデータとオブジェクトストレージノードの組み合わせ</block>
+  <block id="c861ea75c2d08cb58cd0e94b6f5cb1d3" category="paragraph">各ストレージノードは、オブジェクトストレージ用に数ペタバイトの容量に拡張でき、数百ペタバイトの単一のネームスペースを使用できます。StorageGRIDには、ゲートウェイノードと呼ばれるS3 API処理用の統合ロードバランサも用意されています。</block>
+  <block id="aae45e5681608077797f9b54c9787cc9" category="list-text">システム メタデータには、各オブジェクトの一意の ID、オブジェクト名、S3 バケットの名前、テナント アカウント名または ID、オブジェクトの論理サイズ、オブジェクトが最初に作成された日時、オブジェクトが最後に変更された日時が含まれます。</block>
+  <block id="cab3529168145fa0611750088f6b9294" category="sidebar">バケットライフサイクルポリシーの例</block>
+  <block id="e506f81bec685a8d4212a723ed5e9d67" category="sidebar">バケットライフサイクルポリシーの例</block>
 </blocks>
