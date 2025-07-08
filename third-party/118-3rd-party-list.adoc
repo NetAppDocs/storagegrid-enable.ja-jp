@@ -42,7 +42,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 * FUJIFILMオブジェクトアーカイブ
 * GitHubエンタープライズサーバ
 * IBM FileNetの順にクリックします
-* IBM Spectrum Protect Plusのサポート
+* IBM ストレージ保護
 * Interica
 * Komprise
 * Microsoft SQL Server Big Data Clustersの略
@@ -89,6 +89,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 
 * CommVault 11 Feature Release 26
 * IBM FileNetの順にクリックします
+* IBM ストレージ保護
 * OpenText Documentum 21.4
 * Rubrik
 * Veeam 12
