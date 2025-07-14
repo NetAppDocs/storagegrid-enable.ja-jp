@@ -1,0 +1,46 @@
+---
+permalink: technical-reports/monitor-index.html 
+sidebar: sidebar 
+keywords: monitoring, storagegrid 
+summary: NetApp StorageGRIDとそのエラー状態、Splunkなどの外部アプリケーションを使用して効果的に監視する方法について説明します。 
+---
+= StorageGRID監視の概要
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Splunkなどの外部アプリケーションを使用してStorageGRIDシステムを監視する方法について説明します。
+
+NetApp StorageGRIDオブジェクトベースストレージを効果的に監視することで、管理者は緊急の問題に迅速に対応し、リソースをプロアクティブに追加してワークロードの増大に対処できます。このレポートでは、主要な指標を監視する方法と、外部の監視アプリケーションを活用する方法について、一般的なガイダンスを提供します。これは、既存の『Monitoring and Troubleshooting Guide』を補足することを目的としています。
+
+通常、NetApp StorageGRID環境は、分散型のフォールトトレランスに優れたオブジェクトストレージシステムを構築するために複数のサイトと多数のノードで構成されます。StorageGRIDのような分散型で耐障害性に優れたストレージシステムでは、エラー状態が発生してもグリッドは正常に動作し続けます。管理者にとっての課題は、エラー状態（ノードの停止など）ですぐに対処する必要のある問題が発生し、分析する必要のある情報が発生するしきい値を把握することです。StorageGRIDが提供するデータを分析することで、ワークロードを把握し、リソースをいつ追加すべきかなど、十分な情報に基づく意思決定を行うことができます。
+
+StorageGRIDは、監視の主題を深く掘り下げる優れたドキュメントを提供します。本レポートは、に関する十分な知識があり、StorageGRIDに関するドキュメントを確認済みであることを前提としています。この情報を繰り返すのではなく、このガイド全体を通して製品ドキュメントを参照しています。StorageGRID製品マニュアルは、オンラインでPDF形式で入手できます。
+
+本ドキュメントの目的は、製品ドキュメントを補完し、Splunkなどの外部アプリケーションを使用してStorageGRIDシステムを監視する方法について説明することです。
+
+
+
+== データソース
+
+NetApp StorageGRIDを正常に監視するには、StorageGRIDシステムの健全性と運用に関するデータを収集する場所を把握することが重要です。
+
+* * Web UIとダッシュボード*StorageGRIDグリッドマネージャには、管理者が論理プレゼンテーションで確認する必要がある情報の最上位レベルのビューが表示されます。管理者は、トラブルシューティングやログ収集のためにサービスレベル情報をさらに掘り下げることもできます。
+* *監査ログ。*StorageGRIDは、PUT、GET、DELETEなどのテナント操作の詳細な監査ログを保持します。また、オブジェクトの取り込みからデータ管理ルールの適用までのライフサイクルをトレースすることもできます。
+* *メトリクスAPI。*StorageGRID GMIの基盤となるのは、APIベースのUIであるため、オープンAPIです。このアプローチでは、外部の監視ツールや分析ツールを使用してデータを抽出できます。
+
+
+
+
+== 追加情報の参照先
+
+このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
+
+* NetApp StorageGRIDドキュメントセンター https://docs.netapp.com/us-en/storagegrid-118/[]
+* NetApp StorageGRIDイネーブルメント https://docs.netapp.com/us-en/storagegrid-enable/[]
+* NetApp製品ドキュメント https://www.netapp.com/support-and-training/documentation/[]
+* Splunk向けNetApp StorageGRIDアプリケーション https://splunkbase.splunk.com/app/3898/#/details[]
+

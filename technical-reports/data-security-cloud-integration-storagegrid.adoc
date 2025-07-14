@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/data-security-cloud-integration-storagegrid.html 
+keywords: cloud integration, storagegrid 
+summary: StorageGRIDとクラウドサービスの統合方法をご紹介します。 
+---
+= クラウドとの統合
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRIDとクラウドサービスの統合方法をご紹介します。
+
+[cols="30,35,35"]
+|===
+| 機能 | 機能 | 影響 
+
+
+| 通知ベースのウィルススキャン | StorageGRIDプラットフォームサービスでは、イベント通知がサポートされます。外部のクラウドコンピューティングサービスでイベント通知を使用すると、データに対してウィルススキャンワークフローをトリガーできます。 | テナント管理者は、外部のクラウドコンピューティングサービスを使用してデータのウィルススキャンをトリガーできます。 
+|===

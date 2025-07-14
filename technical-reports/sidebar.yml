@@ -12,126 +12,126 @@ entries:
   pdf-filename: StorageGRIDのバックアップとリカバリ- Commvaultを使用したデータの格納とリカバリ
   entries:
   - title: StorageGRIDとCommvaultを使用したデータのバックアップとリカバリ
-    url: "/technical-reports/commvault/index.html"
+    url: "/technical-reports/commvault-index.html"
   - title: テスト済みソリューションの概要
-    url: "/technical-reports/commvault/solution-overview.html"
+    url: "/technical-reports/commvault-solution-overview.html"
   - title: StorageGRIDのサイジングガイダンス
-    url: "/technical-reports/commvault/sizing.html"
+    url: "/technical-reports/commvault-sizing.html"
   - title: データ保護ジョブを実行する
-    url: "/technical-reports/commvault/data-protection-jobs.html"
+    url: "/technical-reports/commvault-data-protection-jobs.html"
   - title: ベースラインパフォーマンステストのレビュー
-    url: "/technical-reports/commvault/baseline-performance-tests.html"
+    url: "/technical-reports/commvault-baseline-performance-tests.html"
   - title: バケット整合性レベルの推奨事項
-    url: "/technical-reports/commvault/s3-consistency-levels.html"
+    url: "/technical-reports/commvault-s3-consistency-levels.html"
 - title: TR-4626：ロードバランサ
   pdf-filename: StorageGRIDロードバランサ-サードパーティ製およびグローバルロードバランサ
   entries:
   - title: StorageGRIDで他社製ロードバランサを使用する
-    url: "/technical-reports/load-balancer/index.html"
+    url: "/technical-reports/load-balancer-index.html"
   - title: HTTPS用のSSL証明書をStorageGRIDに実装する方法
-    url: "/technical-reports/load-balancer/ssl-certificates-storagegrid.html"
+    url: "/technical-reports/load-balancer-ssl-certificates-storagegrid.html"
   - title: StorageGRIDでの信頼できるサードパーティ製ロードバランサの設定
-    url: "/technical-reports/load-balancer/third-party-load-balancer-configuration.html"
+    url: "/technical-reports/load-balancer-third-party-load-balancer-configuration.html"
   - title: ローカルトラフィックマネージャロードバランサの詳細
-    url: "/technical-reports/load-balancer/local-traffic-manager-load-balancer.html"
+    url: "/technical-reports/load-balancer-local-traffic-manager-load-balancer.html"
   - title: StorageGRID構成のユースケースをご紹介します
-    url: "/technical-reports/load-balancer/example-configuration-storagegrid.html"
+    url: "/technical-reports/load-balancer-example-configuration-storagegrid.html"
   - title: StorageGRIDでのSSL接続の検証
-    url: "/technical-reports/load-balancer/validate-ssl-connection-storagegrid.html"
+    url: "/technical-reports/load-balancer-validate-ssl-connection-storagegrid.html"
   - title: StorageGRIDのグローバルロードバランシング要件を理解する
-    url: "/technical-reports/load-balancer/global-load-balancing-design.html"
+    url: "/technical-reports/load-balancer-global-load-balancing-design.html"
 - title: TR-4645：『Security features』
-  pdf-filename: StorageGRID 11.7のセキュリティ機能-オブジェクトストア内のデータとメタデータを保護
+  pdf-filename: StorageGRIDのセキュリティ機能 - オブジェクトストア内のデータとメタデータの保護
   entries:
   - title: オブジェクトストア内のStorageGRIDデータとメタデータを保護
-    url: "/technical-reports/data-security/index.html"
+    url: "/technical-reports/data-security-index.html"
   - title: データアクセスセキュリティ機能
-    url: "/technical-reports/data-security/data-access-security.html"
+    url: "/technical-reports/data-security-data-access-security.html"
   - title: オブジェクトとメタデータのセキュリティ
-    url: "/technical-reports/data-security/object-metadata-security.html"
+    url: "/technical-reports/data-security-object-metadata-security.html"
   - title: 管理セキュリティ機能
-    url: "/technical-reports/data-security/administration-security.html"
+    url: "/technical-reports/data-security-administration-security.html"
   - title: プラットフォームのセキュリティ機能
-    url: "/technical-reports/data-security/platform-security.html"
+    url: "/technical-reports/data-security-platform-security.html"
   - title: クラウドとの統合
-    url: "/technical-reports/data-security/cloud-integration-storagegrid.html"
+    url: "/technical-reports/data-security-cloud-integration-storagegrid.html"
 - title: TR-4921：『Ransomware Defense』
   pdf-filename: StorageGRIDによるランサムウェア対策- S3オブジェクトの保護
   entries:
   - title: StorageGRID S3オブジェクトをランサムウェアから保護
-    url: "/technical-reports/ransomware-protection/index.html"
+    url: "/technical-reports/ransomware-protection-index.html"
   - title: オブジェクトロックを使用したランサムウェア対策
-    url: "/technical-reports/ransomware-protection/understand-object-lock-storagegrid.html"
+    url: "/technical-reports/ransomware-protection-understand-object-lock-storagegrid.html"
   - title: レプリケートされたバケットを使用したバージョン管理によるランサムウェア対策
-    url: "/technical-reports/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
+    url: "/technical-reports/ransomware-protection-replicate-bucket-versioning-storagegrid.html"
   - title: 保護IAMポリシーを使用したバージョン管理を使用したランサムウェア防御
-    url: "/technical-reports/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
+    url: "/technical-reports/ransomware-protection-versioning-protective-iam-policy-storagegrid.html"
 - title: TR-4765：『Monitor StorageGRID』
   pdf-filename: 外部アプリケーションを使用したStorageGRIDの監視
   entries:
   - title: StorageGRID監視の概要
-    url: "/technical-reports/monitor/index.html"
+    url: "/technical-reports/monitor-index.html"
   - title: GMIダッシュボードを使用してStorageGRIDを監視する
-    url: "/technical-reports/monitor/getting-started.html"
+    url: "/technical-reports/monitor-getting-started.html"
   - title: アラートを使用したStorageGRIDの監視
-    url: "/technical-reports/monitor/alerts-monitoring.html"
+    url: "/technical-reports/monitor-alerts-monitoring.html"
   - title: StorageGRIDの高度な監視
-    url: "/technical-reports/monitor/advanced-monitor-storagegrid.html"
+    url: "/technical-reports/monitor-advanced-monitor-storagegrid.html"
   - title: StorageGRIDでcURLを使用してメトリクスにアクセスする
-    url: "/technical-reports/monitor/access-metrics-curl.html"
+    url: "/technical-reports/monitor-access-metrics-curl.html"
   - title: StorageGRIDでGrafanaを使用して指標を表示
-    url: "/technical-reports/monitor/grafana-dashboard.html"
+    url: "/technical-reports/monitor-grafana-dashboard.html"
   - title: StorageGRIDでトラフィック分類ポリシーを使用する
-    url: "/technical-reports/monitor/traffic-classification-policies.html"
+    url: "/technical-reports/monitor-traffic-classification-policies.html"
   - title: 監査ログを使用したStorageGRIDの監視
-    url: "/technical-reports/monitor/audit-log-monitoring.html"
+    url: "/technical-reports/monitor-audit-log-monitoring.html"
   - title: Splunk向けStorageGRIDアプリケーションを使用
-    url: "/technical-reports/monitor/storagegrid-app-splunk.html"
+    url: "/technical-reports/monitor-storagegrid-app-splunk.html"
 - title: TR-4882：『Install a StorageGRID bare metal grid』
   pdf-filename: ベアメタルホストへのStorageGRIDのインストール
   entries:
   - title: StorageGRIDノインストールノガイヨウ
-    url: "/technical-reports/bare-metal/index.html"
+    url: "/technical-reports/bare-metal-index.html"
   - title: StorageGRIDをインストールするための前提条件
-    url: "/technical-reports/bare-metal/prerequisites-install-storagegrid.html"
+    url: "/technical-reports/bare-metal-prerequisites-install-storagegrid.html"
   - title: Docker for StorageGRIDのインストール
-    url: "/technical-reports/bare-metal/install-docker-storagegrid.html"
+    url: "/technical-reports/bare-metal-install-docker-storagegrid.html"
   - title: StorageGRIDのノード構成ファイルを準備
-    url: "/technical-reports/bare-metal/node-config-file-storagegrid.html"
+    url: "/technical-reports/bare-metal-node-config-file-storagegrid.html"
   - title: StorageGRIDの依存関係とパッケージのインストール
-    url: "/technical-reports/bare-metal/install-storagegrid-dependencies.html"
+    url: "/technical-reports/bare-metal-install-storagegrid-dependencies.html"
   - title: StorageGRID構成ファイルの検証
-    url: "/technical-reports/bare-metal/validate-storagegrid-config-files.html"
+    url: "/technical-reports/bare-metal-validate-storagegrid-config-files.html"
   - title: StorageGRID ホストサービスを開始します
-    url: "/technical-reports/bare-metal/start-storagegrid-host-service.html"
+    url: "/technical-reports/bare-metal-start-storagegrid-host-service.html"
   - title: StorageGRIDでのGrid Managerの設定
-    url: "/technical-reports/bare-metal/configure-grid-manager-storagegrid.html"
+    url: "/technical-reports/bare-metal-configure-grid-manager-storagegrid.html"
   - title: StorageGRIDライセンスの詳細を追加
-    url: "/technical-reports/bare-metal/storagegrid-license.html"
+    url: "/technical-reports/bare-metal-storagegrid-license.html"
   - title: StorageGRIDへのサイトの追加
-    url: "/technical-reports/bare-metal/add-sites-storagegrid.html"
+    url: "/technical-reports/bare-metal-add-sites-storagegrid.html"
   - title: StorageGRIDのグリッドネットワークサブネットの指定
-    url: "/technical-reports/bare-metal/grid-network-subnets-storagegrid.html"
+    url: "/technical-reports/bare-metal-grid-network-subnets-storagegrid.html"
   - title: StorageGRIDのグリッドノードの承認
-    url: "/technical-reports/bare-metal/approve-grid-nodes-storagegrid.html"
+    url: "/technical-reports/bare-metal-approve-grid-nodes-storagegrid.html"
   - title: StorageGRIDのNTPサーバの詳細の指定
-    url: "/technical-reports/bare-metal/ntp-server-storagegrid.html"
+    url: "/technical-reports/bare-metal-ntp-server-storagegrid.html"
   - title: StorageGRIDのDNSサーバの詳細の指定
-    url: "/technical-reports/bare-metal/dns-server-storagegrid.html"
+    url: "/technical-reports/bare-metal-dns-server-storagegrid.html"
   - title: StorageGRIDのシステムパスワードの指定
-    url: "/technical-reports/bare-metal/system-passwords-storagegrid.html"
+    url: "/technical-reports/bare-metal-system-passwords-storagegrid.html"
   - title: 設定を確認してStorageGRIDのインストールを完了
-    url: "/technical-reports/bare-metal/review-config-complete-storagegrid-install.html"
+    url: "/technical-reports/bare-metal-review-config-complete-storagegrid-install.html"
   - title: StorageGRIDでベアメタルノードをアップグレード
-    url: "/technical-reports/bare-metal/upgrading-bare-metal-nodes-storagegrid.html"
+    url: "/technical-reports/bare-metal-upgrading-bare-metal-nodes-storagegrid.html"
 - title: TR-4907：『Configure StorageGRID with Veritas Enterprise Vault』
-  pdf-filename: StorageGRIDディザスタリカバリ–Veritas Enterprise Vaultを使用したサイトフェイルオーバー用のStorageGRIDの設定
+  pdf-filename: StorageGRID災害復旧 - Veritas Enterprise Vault を使用してサイト フェイルオーバー用にStorageGRIDを構成する
   entries:
   - title: サイトフェイルオーバーのためのStorageGRIDの設定の概要
-    url: "/technical-reports/veritas/index.html"
+    url: "/technical-reports/veritas-index.html"
   - title: StorageGRIDとVeritas Enterprise Vaultの設定
-    url: "/technical-reports/veritas/configure-storagegrid-enterprise-vault.html"
+    url: "/technical-reports/veritas-configure-storagegrid-enterprise-vault.html"
   - title: WORMストレージ用のStorageGRIDの設定
-    url: "/technical-reports/veritas/configure-storagegrid-s3-object-lock.html"
+    url: "/technical-reports/veritas-configure-storagegrid-s3-object-lock.html"
   - title: ディザスタリカバリ用のStorageGRIDの設定
-    url: "/technical-reports/veritas/configure-storagegrid-site-failover.html"
+    url: "/technical-reports/veritas-configure-storagegrid-site-failover.html"

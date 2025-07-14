@@ -1,0 +1,44 @@
+---
+permalink: technical-reports/monitor-traffic-classification-policies.html 
+sidebar: sidebar 
+keywords: traffic classification policies, storagegrid 
+summary: StorageGRID 11.4でトラフィック分類ポリシーを設定および監視して、効率的なトラフィック管理とネットワーク帯域幅の最適化を行う方法について説明します。 
+---
+= StorageGRIDでトラフィック分類ポリシーを使用する
+:hardbreaks:
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRIDでネットワークトラフィックを管理および最適化するためのトラフィック分類ポリシーをセットアップおよび設定する方法について説明します。
+
+トラフィック分類ポリシーは、特定のテナント、バケット、IPサブネット、またはロードバランサエンドポイントに基づいてトラフィックを監視または制限する方法を提供します。ネットワーク接続と帯域幅は、StorageGRIDにとって特に重要な指標です。
+
+トラフィック分類ポリシーを設定する手順は、次のとおりです。
+
+.手順
+. GMIで、メニュー[Configuration][System Settings]>[Traffic Classification]に移動します。
+. [Create]をクリック+
+. ポリシーの名前と説明を入力します。
+. 一致ルールを作成します。
++
+image:monitor/monitor-matching-rule.png["monitor-matching-rule"]
+
+. 制限を設定します（オプション）。
++
+image:monitor/monitor-limit.png["監視-制限"]
+
+. ポリシーを保存する
++
+image:monitor/monitor-traffic-policy.png["monitor-traffic-policy"]
+
++
+トラフィック分類ポリシーに関連付けられているメトリックを表示するには、ポリシーを選択して[Metrics]をクリックします。ロードバランサ要求トラフィックや平均要求期間などの情報を表示するGrafanaダッシュボードが生成されます。
+
++
+image:monitor/monitor-dashboard-showing-metrics.png["監視-ダッシュボード-表示-指標"]
+
+

@@ -1,0 +1,61 @@
+---
+permalink: product-feature-guides/ontap-migrate-cutover.html 
+sidebar: sidebar 
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration 
+summary: ONTAP S3からStorageGRIDへの移行 
+---
+= オブジェクトベースストレージをONTAP S3からStorageGRIDにシームレスに移行し、エンタープライズクラスのS3を実現
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オブジェクトベースストレージをONTAP S3からStorageGRIDにシームレスに移行し、エンタープライズクラスのS3を実現
+
+
+
+== S3キーの移行
+
+移行の場合、ほとんどの場合、移行先で新しいクレデンシャルを生成するのではなく、ユーザのクレデンシャルを移行する必要があります。StorageGRIDには、s3キーをユーザーにインポートできるAPIが用意されています。
+
+（テナントマネージャUIではなく）StorageGRID管理UIにログインすると、[API Documentation] swaggerページが開きます。
+
+image:ontap-migrate/sg-api-swagger-link.png["APIドキュメントを開く"]
+
+「accounts」セクションを展開し、「POST /grid/account-enable-s3-key-import」を選択し、「Try it out」ボタンをクリックしてから、実行ボタンをクリックします。
+
+image:ontap-migrate/sg-import-enable.png["S3キーインポートの有効化"]
+
+[accounts]の下にスクロールして[POST /grid/accounts/｛id｝/users/｛user_id｝/s3-access-keys]に移動します。
+
+ここでは、先ほど収集したテナントIDとユーザアカウントIDを入力します。JSONボックスにONTAPユーザのフィールドとキーを入力します。キーの有効期限を設定するか、「,"Expires":123456789」を削除して[実行]をクリックします。
+
+image:ontap-migrate/sg-import-key.png["S3キーのインポート"]
+
+すべてのユーザキーのインポートが完了したら、「accounts」POST /grid/account-disable-s3-key-importのキーインポート機能を無効にする必要があります。
+
+image:ontap-migrate/sg-import-disable.png["S3キーインポートの無効化"]
+
+テナントマネージャのUIでユーザアカウントを確認すると、新しいキーが追加されていることがわかります。
+
+image:ontap-migrate/sg-user-keys.png["ユーザキー"]
+
+
+
+=== 最終的なカットオーバー
+
+バケットをONTAPからStorageGRIDに永続的にレプリケートする場合は、ここで終了できます。ONTAP S3からStorageGRIDへの移行の場合は、移行を終了してカットオーバーします。
+
+ONTAPシステムマネージャでS3グループを編集し、「ReadOnlyAccess」に設定します。これにより、ユーザがONTAP S3バケットに書き込むことができなくなります。
+
+image:ontap-migrate/ontap-edit-group.png["ONTAPグループを読み取り専用に設定"]
+
+あとは、ONTAPクラスタからStorageGRIDエンドポイントを指すようにDNSを設定するだけです。エンドポイント証明書が正しいことを確認し、仮想ホスト形式の要求が必要な場合は、StorageGRIDでエンドポイントのドメイン名を追加します。
+
+image:ontap-migrate/sg-endpoint-domain.png["ONTAPグループを読み取り専用に設定"]
+
+クライアントはTTLが期限切れになるのを待つか、DNSをフラッシュして新しいシステムに解決し、すべてが機能していることをテストする必要があります。あとは、（インポートされたキーではなく）StorageGRIDデータアクセスのテストに使用した最初の一時的なS3キーをクリーンアップし、SnapMirror関係を削除し、ONTAPデータを削除するだけです。
+
+Rafael Guedes、Aron Klein著_

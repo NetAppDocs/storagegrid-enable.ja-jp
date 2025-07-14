@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer-example-configuration-storagegrid.html 
+keywords: example configuration, use cases, storagegrid 
+summary: お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。 
+---
+= StorageGRID構成のユースケースをご紹介します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。
+
+次の例は、StorageGRIDのお客様（NetApp ITを含む）が実装した構成を示しています。
+
+
+
+== S3バケット用のF5 BIG-IP Local Traffic Manager健全性チェックモニタ
+
+F5 BIG-IPローカルトラフィックマネージャヘルスチェックモニタを設定する手順は、次のとおりです。
+
+.手順
+. 新しいモニタを作成します。
++
+.. [Type]フィールドにと入力します `HTTPS`。
+.. 必要に応じて、間隔とタイムアウトを設定します。
+.. Send Stringフィールドに、 `OPTIONS / HTTP/1.1\r\n\r\n.` \r\nはキャリッジリターンです。異なるバージョンのBIG-IPソフトウェアでは、0、1、または2セットの\r\nシーケンスが必要です。詳細については、を参照してください https://support.f5.com/csp/article/K10655[]。
+.. [Receive String]フィールドに、次のように入力します。 `HTTP/1.1 200 OK`
++
+image:load-balancer/load-balancer-monitor-configuration-page.png["[Monitor]設定ページ"]
+
+
+
+. [Create Pool]で、必要なポートごとにプールを1つ作成します。
++
+.. 前の手順で作成したヘルスモニタを割り当てます。
+.. ロードバランシング方式を選択します。
+.. サービスポート18082（S3）を選択します。
+.. ノードを追加します。
+
+
+
+
+
+
+== Citrix NetScaler
+
+Citrix NetScalerは、ストレージエンドポイント用の仮想サーバーを作成し、StorageGRIDストレージノードをアプリケーションサーバーとして参照してから、サービスにグループ化します。
+
+HTTPS-ECV健全性チェックモニタを使用してカスタムモニタを作成し、OPTIONS要求と受信を使用して推奨される健全性チェックを実行し `200`ます。HTTP-ECVは送信文字列を使用して設定され、受信文字列を検証します。
+
+詳細については、Citrixのドキュメントを参照してください https://docs.citrix.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-ssl-services.html#sample-configuration-for-https-ecv-health-check-monitor["HTTP-ECVヘルスチェックモニタの設定例"^]。
+
+image:load-balancer/load-balancer-citrix-netscaler-configuration-page.png["Citrix NetScaler Monitorの構成ページ"]
+
+image:load-balancer/load-balancer-configure-monitor.png["Configure-monitor.png"]
+
+
+
+== Loadbalancer.org
+
+Loadbalancer.orgは、独自のStorageGRIDとの統合テストを実施し、広範な構成ガイドを用意しています。 https://pdfs.loadbalancer.org/NetApp_StorageGRID_Deployment_Guide.pdf[]
+
+
+
+== ケンプ
+
+KempはStorageGRIDとの統合テストを独自に実施し、広範な構成ガイドを用意しています。 https://kemptechnologies.com/solutions/netapp/[]
+
+
+
+== HAProxy
+
+OPTIONS要求を使用するようにHAProxyを設定し、haproxy.cfgでヘルスチェックの200ステータス応答を確認します。フロントエンドのバインドポートを別のポート（443など）に変更できます。
+
+次に、HAProxyでのSSL終端の例を示します。
+
+[listing]
+----
+frontend s3
+       bind *:443 crt /etc/ssl/server.pem ssl
+       default_backend s3-serve
+rs
+backend s3-servers
+       balance leastconn
+       option httpchk
+       http-check expect status 200
+       server dc1-s1 10.63.174.71:18082 ssl verify none check inter 3000
+       server dc1-s2 10.63.174.72:18082 ssl verify none check inter 3000
+       server dc1-s3 10.63.174.73:18082 ssl verify none check inter 3000
+----
+次に、SSLパススルーの例を示します。
+
+[listing]
+----
+frontend s3
+       mode tcp
+       bind *:443
+       default_backend s3-servers
+backend s3-servers
+       balance leastconn
+       option httpchk
+       http-check expect status 200
+       server dc1-s1 10.63.174.71:18082 check-ssl verify none inter 3000
+       server dc1-s2 10.63.174.72:18082 check-ssl verify none inter 3000
+       server dc1-s3 10.63.174.73:18082 check-ssl verify none inter 3000
+----
+StorageGRIDの設定の完全な例については、GitHubのを参照してください https://github.com/NetApp-StorageGRID/HAProxy-Configuration["HAProxy設定の例"^] 。

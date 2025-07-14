@@ -49,7 +49,7 @@ indexpage:
     - title: サイトを再配置してネットワークを変更する方法
       url: "/product-feature-guides/site-relocation-and-network-change.html"
     - title: ONTAP S3からStorageGRIDへのオブジェクトベースストレージの移行
-      url: "/product-feature-guides/ontap-migrate/index.html"
+      url: "/product-feature-guides/ontap-migrate-index.html"
   - title: ツールおよびアプリケーションガイド
     links:
     - title: Cloudera Hadoop S3Aコネクタを使用します
@@ -79,17 +79,19 @@ indexpage:
     - title: TR-4994：『Hadoop S3A Tuning Best Practices』
       url: "/technical-reports/s3a-tuning.html"
     - title: TR-4871：『Commvault Complete Backup and Recovery and NetApp StorageGRID』
-      url: "/technical-reports/tr-4871-commvault.html"
+      url: "/technical-reports/commvault-index.html"
+    - title: TR-4626：ロードバランサ
+      url: "/technical-reports/load-balancer-index.html"
     - title: TR-4645：『Security features』
-      url: "/technical-reports/data-security/index.html"
+      url: "/technical-reports/data-security-index.html"
     - title: TR-4921：『Ransomware Defense』
-      url: "/technical-reports/ransomware-protection/index.html"
+      url: "/technical-reports/ransomware-protection-index.html"
     - title: TR-4765：『Monitor StorageGRID』
-      url: "/technical-reports/monitor/index.html"
+      url: "/technical-reports/monitor-index.html"
     - title: TR-4882：『Install a StorageGRID bare metal grid』
-      url: "/technical-reports/bare-metal/index.html"
+      url: "/technical-reports/bare-metal-index.html"
     - title: TR-4907：『Configure StorageGRID with Veritas Enterprise Vault』
-      url: "/technical-reports/veritas/index.html"
+      url: "/technical-reports/veritas-index.html"
   - title: 手順とAPIの例
     links:
     - title: S3暗号化をテストして実証

@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/load-balancer-validate-ssl-connection-storagegrid.html 
+keywords: validating ssl connection, storagegrid 
+summary: StorageGRIDでSSL接続を検証する方法について説明します。 
+---
+= StorageGRIDでのSSL接続の検証
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRIDでSSL接続を検証する方法について説明します。
+
+ロードバランサを設定したら、OpenSSLやAWS CLIなどのツールを使用して接続を検証する必要があります。S3 Browserなどの他のアプリケーションでは、SSLの設定ミスが無視される可能性があります。

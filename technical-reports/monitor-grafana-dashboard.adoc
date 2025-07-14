@@ -1,0 +1,32 @@
+---
+permalink: technical-reports/monitor-grafana-dashboard.html 
+sidebar: sidebar 
+keywords: grafana dashboard, storagegrid 
+summary: 監視やトラブルシューティングのために事前構成されたダッシュボードにアクセスするなど、NetApp StorageGRIDで指標を視覚化するためにGrafanaを使用する方法をご紹介します。 
+---
+= StorageGRIDのGrafanaダッシュボードを使用した指標の表示
+:hardbreaks:
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Grafanaインターフェイスを使用してStorageGRIDデータを可視化および監視する方法について説明します。
+
+Grafanaは、メートル法を視覚化するためのオープンソースソフトウェアです。デフォルトでは、StorageGRIDシステムに関する有用で強力な情報を提供するダッシュボードが事前に構築されています。
+
+事前構築されたダッシュボードは、監視だけでなく、問題のトラブルシューティングにも役立ちます。一部はテクニカルサポートが使用することを目的としています。たとえば、ストレージノードの指標を表示するには、次の手順を実行します。
+
+.手順
+. GMIのメニューから、[Support][Metrics]を選択します。
+. [Grafana]セクションで、[Node]ダッシュボードを選択します。
++
+image:monitor/monitor-node-dashboard.png["監視-ノード-ダッシュボード"]
+
+. Grafanaで、指標を表示するノードにホストを設定します。この例では、ストレージノードが選択されています。以下のスクリーンショットよりも詳細な情報が表示されます。
++
+image:monitor/monitor-grafana-metrics.png["monitor-grafana-metrics"]
+
+

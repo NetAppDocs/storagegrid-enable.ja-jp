@@ -22,12 +22,12 @@ entries:
   pdf-filename: ONTAP S3からStorageGRIDへのオブジェクトベースストレージの移行
   entries:
   - title: ONTAP S3からStorageGRIDへの移行
-    url: "/product-feature-guides/ontap-migrate/index.html"
+    url: "/product-feature-guides/ontap-migrate-index.html"
   - title: ONTAPの準備
-    url: "/product-feature-guides/ontap-migrate/preparing-ontap.html"
+    url: "/product-feature-guides/ontap-migrate-preparing-ontap.html"
   - title: StorageGRID を準備しています
-    url: "/product-feature-guides/ontap-migrate/preparing-sg.html"
+    url: "/product-feature-guides/ontap-migrate-preparing-sg.html"
   - title: バケットへのデータの取り込みと複製
-    url: "/product-feature-guides/ontap-migrate/populate-replicate.html"
+    url: "/product-feature-guides/ontap-migrate-populate-replicate.html"
   - title: ユーザとキーを移行してからカットオーバー
-    url: "/product-feature-guides/ontap-migrate/migrate-cutover.html"
+    url: "/product-feature-guides/ontap-migrate-cutover.html"

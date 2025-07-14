@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault-baseline-performance-tests.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。 
+---
+= ベースラインパフォーマンステストのレビュー
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して https://www.netapp.com/us/media/tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"] ください。
+
+このテストは、100台のVMと1、000台のVMを使用して実施しました。どちらのテストも、Windows VMとCentOS VMが50対50で混在した環境で実施しました。次の表に、ベースラインパフォーマンステストの結果を示します。
+
+[cols="1a,1a,1a"]
+|===
+| 操作 | バックアップ速度 | リストア速度 
+
+
+ a| 
+AUXコピー
+ a| 
+2TB/時
+ a| 
+1.27TB/時間
+
+
+
+ a| 
+オブジェクトとの直接やり取り（重複排除オン）
+ a| 
+2.2 TB/時間
+ a| 
+1.22TB/時間
+
+|===
+エージングオフパフォーマンスをテストするために、250万個のオブジェクトが削除されました。図2と図3に示すように、削除の実行は3時間以内に完了し、80TB以上のスペースが解放されました。削除の実行は午前10時30分に開始されました。
+
+.図1：250万（80TB）のオブジェクトを3時間未満で削除
+image:commvault/obj-time.png["オブジェクトの経時的な変化"]
+
+.図2：80TBのストレージを3時間未満で解放
+image:commvault/storage-time.png["時間の経過に伴うストレージ"]

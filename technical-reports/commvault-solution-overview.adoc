@@ -1,0 +1,222 @@
+---
+sidebar: sidebar 
+permalink: technical-reports/commvault-solution-overview.html 
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM 
+summary: お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。 
+---
+= テスト済みソリューションの概要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+テスト済みの解決策は、CommvaultとNetAppのソリューションを組み合わせて、強力な共同解決策を構築しました。
+
+
+
+== ソリューションのセットアップ
+
+このラボStorageGRID環境は、4台のNetApp StorageGRID SG5712アプライアンス、1台の仮想プライマリ管理ノード、1台の仮想ゲートウェイノードで構成されています。SG5712アプライアンスは、ベースライン構成であるエントリレベルオプションです。NetApp StorageGRID SG5760やSG6060などの高パフォーマンスアプライアンスを選択すると、パフォーマンスが大幅に向上します。サイジングの支援については、NetApp StorageGRID 解決策 アーキテクトにお問い合わせください。
+
+StorageGRIDのデータ保護ポリシーでは、統合ライフサイクル管理（ILM）ポリシーを使用してデータを管理および保護します。ILMルールはポリシー内で上から下に評価されます。次の表に示すILMポリシーを実装しました。
+
+[cols="1a,1a,1a"]
+|===
+| ILMルール | 絞り込み | 取り込み動作 
+
+
+ a| 
+イレイジャーコーディング2+1
+ a| 
+200KBを超えるオブジェクト
+ a| 
+中間（ Balanced ）
+
+
+
+ a| 
+2コピー
+ a| 
+すべてのオブジェクト
+ a| 
+デュアルコミット
+
+|===
+デフォルトルールはILM 2 Copyルールです。このテストでは、200KB以上のすべてのオブジェクトにイレイジャーコーディング2+1ルールを適用しました。デフォルトルールは200KB未満のオブジェクトに適用されました。このようにルールを適用することは、StorageGRIDのベストプラクティスです。
+
+このテスト環境の技術的な詳細については解決策、 https://www.netapp.com/us/media/tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"] テクニカルレポート：
+
+
+
+== StorageGRIDハードウェア
+
+次の表に、このテストで使用したNetApp StorageGRIDハードウェアを示します。10Gbpsネットワークを備えたStorageGRID SG5712アプライアンスはエントリレベルのオプションで、ベースライン構成です。必要に応じて、25Gbpsネットワーク用にSG5712を設定できます。
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+| ハードウェア | 数量 | ディスク | 使用可能容量 | ネットワーク 
+
+
+ a| 
+StorageGRID SG5712アプライアンス
+ a| 
+4.
+ a| 
+4TB×48（ニアラインSAS HDD）
+ a| 
+136TB
+ a| 
+10Gbps
+
+|===
+NetApp StorageGRID SG5760、SG6060、オールフラッシュSGF6112アプライアンスなどのハイパフォーマンスアプライアンスオプションを選択すると、パフォーマンスが大幅に向上します。サイジングの支援については、NetApp StorageGRID 解決策 アーキテクトにお問い合わせください。
+
+
+
+== CommvaultとStorageGRIDのソフトウェア要件
+
+次の表に、テスト用にVMwareソフトウェアにインストールしたCommvaultおよびNetApp StorageGRIDソフトウェアのソフトウェア要件を示します。4つのMediaAgentデータ転送マネージャと1つのCommServeサーバがインストールされました。このテストでは、VMwareインフラ用に10Gbpsネットワークを実装しました。次の表
+
+次の表に、Commvaultソフトウェアの総システム要件を示します。
+
+[cols="1a,1a,1a,1a,1a,1a"]
+|===
+| コンポーネント | 数量 | データストア | サイズ | 合計 | 合計必要IOPS 
+
+
+ a| 
+CommServeサーバ
+ a| 
+1.
+ a| 
+OS
+ a| 
+500 GB
+ a| 
+500 GB
+ a| 
+n/a
+
+
+
+ a| 
+ a| 
+ a| 
+SQL>
+ a| 
+500 GB
+ a| 
+500 GB
+ a| 
+n/a
+
+
+
+ a| 
+MediaAgent
+ a| 
+4.
+ a| 
+仮想CPU（vCPU）
+ a| 
+16
+ a| 
+64歳
+ a| 
+n/a
+
+
+
+ a| 
+ a| 
+ a| 
+RAM
+ a| 
+128 GB
+ a| 
+512
+ a| 
+n/a
+
+
+
+ a| 
+ a| 
+ a| 
+OS
+ a| 
+500 GB
+ a| 
+2TB
+ a| 
+n/a
+
+
+
+ a| 
+ a| 
+ a| 
+インデックスキャッシュ
+ a| 
+2TB
+ a| 
+8TB
+ a| 
+200以上
+
+
+
+ a| 
+ a| 
+ a| 
+DDB
+ a| 
+2TB
+ a| 
+8TB
+ a| 
+200 ~ 80、000 K
+
+|===
+このテスト環境では、NetApp EシリーズE2812ストレージアレイ上のVMwareに、1つの仮想プライマリ管理ノードと1つの仮想ゲートウェイノードを導入しました。各ノードを別 々 のサーバに配置し、本番環境の最小要件を次の表に示します。
+
+次の表に、StorageGRIDの仮想管理ノードとゲートウェイノードの要件を示します。
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+| ノードタイプ | 数量 | vCPU | RAM | ストレージ 
+
+
+ a| 
+ゲートウェイノード
+ a| 
+1.
+ a| 
+8
+ a| 
+24 GB
+ a| 
+OS用に100GBのLUN
+
+
+
+ a| 
+管理ノード
+ a| 
+1.
+ a| 
+8
+ a| 
+24 GB
+ a| 
+OS用に100GBのLUN
+
+管理ノードのテーブル用に200GBのLUN
+
+管理ノードの監査ログ用に200GBのLUN
+
+|===
