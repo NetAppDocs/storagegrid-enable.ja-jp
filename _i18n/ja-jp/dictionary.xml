@@ -3382,4 +3382,39 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="0be6d03a29c17471b0414e9b31482b15" category="list-text">IBM ストレージ保護</block>
   <block id="0987bb97934aa3a8ea668bd0c91ce52d" category="sidebar">StorageGRIDのセキュリティ機能 - オブジェクトストア内のデータとメタデータの保護</block>
   <block id="243c98f4ed7a2d56d634e9cc955fda88" category="sidebar">StorageGRID災害復旧 - Veritas Enterprise Vault を使用してサイト フェイルオーバー用にStorageGRIDを構成する</block>
+  <block id="b12c5a1ea2cfdcd9e96af62ad1fff2c7" category="summary">StorageGRIDオブジェクト ストレージを使用するための Elasticsearch スナップショット リポジトリを作成する手順。</block>
+  <block id="4f466fb92f96dcdf64e32b3a68249a6a" category="doc">Elasticsearch スナップショットリポジトリの構成</block>
+  <block id="19c69b64ad875941da2ed25675b966b5" category="paragraph">Elasticsearch は、スナップショット リポジトリに AWS S3 互換オブジェクト ストレージの使用をサポートしています。この記事では、 StorageGRID をバックエンド オブジェクト ストレージとして使用して Elasticsearch S3 スナップショット リポジトリを作成する手順を段階的に説明します。</block>
+  <block id="593e0b72d2a3823ab9f1704dbeeea1c8" category="list-text">StorageGRID 11.8以降</block>
+  <block id="51065ec24ee246c3860e0580defca4c6" category="list-text">Elasticsearch 8.x 以上</block>
+  <block id="3212d51fa371e3cef1d789ecfe0afca6" category="paragraph">読者は、 StorageGRIDおよび Elasticsearch の用語と操作に精通しています。</block>
+  <block id="85c3fd6ac4074bb1ab06b16868d0c009" category="list-text">Elasticsearch スナップショット リポジトリに使用するStorageGRIDバケットを作成します。バケットのバージョン管理を有効にする必要があります。リポジトリごとに 1 つのバケットを使用します。複数のリポジトリまたは Elasticsearch クラスター間でバケットを共有しないでください。</block>
+  <block id="8ed3f9dd5d7290bd016b83485c0170a1" category="list-text">StorageGRIDテナント アクセス キーとシークレット キーを Elasticsearch キーストアに追加します。  Elasticsearchマスターノードにログインし、<block ref="1b2b598aea8f192d3794b0c30af92997" prefix=" " category="inline-code"></block>ディレクトリ、および使用<block ref="0bf694e981bb45a58aed7488327af4f3" prefix=" " category="inline-code"></block>アクセス キーとシークレット キーを追加します。</block>
+  <block id="5fd300737b7909532dc522634d75def5" category="paragraph">サンプルコマンド:</block>
+  <block id="08a6dcd3a697d0604f6f4b47807f6ca0" category="paragraph">キーを表示するには、「elasticsearch-keystore show &lt;key-name&gt;」コマンドを使用します。</block>
+  <block id="6806cdb70b916f3b6bb474b9328b08ca" category="list-text">マルチノード Elasticsearch クラスターの場合は、各ノードで手順 2 を繰り返すか、Elasticsearch のドキュメントを参照してください。</block>
+  <block id="621e717bf791d95428a170667a596197" category="list-text">KibanaのWeb GUIから、開発ツールコンソールページに移動し、<block ref="f6703ca746887e8ad69c184ef80e8ded" prefix=" " category="inline-code"></block>各ノードに変更を適用するための API。</block>
+  <block id="9b6e1b5bf3e12eb4e808e1b9701528f4" category="inline-image-macro">reload_secure_settings サンプルスクリーンショット</block>
+  <block id="c94eb203f327e8a870bff84bf0051606" category="paragraph"><block ref="c94eb203f327e8a870bff84bf0051606" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="59b63a4c7f8e78be87c3100ed37b264a" category="list-text">使用<block ref="14122a9963d2d5fd106baa062ba587b4" prefix=" " category="inline-code"></block>新しいスナップショット リポジトリを作成するための API。</block>
+  <block id="98679aa6d08189789aa0c65c691db370" category="paragraph">この例では、リポジトリ名は<block ref="be9022aec77b31961957096c13c23219" prefix=" " category="inline-code"></block>バッファ サイズは S3 マルチパートアップロード パート サイズに対応します。</block>
+  <block id="3c823bd21419d345a9d7d4276488edfb" category="paragraph">デフォルトのプロトコルは HTTPS です。  StorageGRID S3エンドポイントでHTTPを使用するには、<block ref="356f3d9b207a577071350c04e64206cb" prefix=" " category="inline-code"></block>設定に。</block>
+  <block id="e09538d2ae213ccd0a221584775b5ca5" category="paragraph">手順 1 で作成したバケット名と手順 2 で設定したクライアント名を使用します。</block>
+  <block id="4faca7afc4d2b0538a33d3192d453ad1" category="inline-image-macro">Elasticsearch API サンプルのスクリーンショット</block>
+  <block id="175e963c73089d05b73e4053f63b0a3a" category="paragraph"><block ref="175e963c73089d05b73e4053f63b0a3a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="09585352abb495a58301939509e2b605" category="list-text">Kibana Web GUI から、「スタック管理」&gt;「スナップショットと復元」ページに移動し、「リポジトリ」タブを選択します。</block>
+  <block id="73f00594e61a1e09208a849e16bedd7d" category="paragraph">リポジトリ名をクリックすると詳細が表示され、Elasticsearch ノードごとにデフォルトで 40 MB/秒に設定されている最大スナップショット バイト数などの設定を変更できます。</block>
+  <block id="fc2619b84c9b3173bc9c93dafbf91e8d" category="paragraph">このページに表示されない設定については、<block ref="14122a9963d2d5fd106baa062ba587b4" prefix=" " category="inline-code"></block>変更を加えるには、開発ツール コンソールの API を使用します。</block>
+  <block id="565feae94d4b22672a12be27e4f99c63" category="inline-image-macro">スナップショットリポジトリのサンプルスクリーンショット</block>
+  <block id="aac419a72b01b501d95dbe3debe250f2" category="paragraph"><block ref="aac419a72b01b501d95dbe3debe250f2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8d7340f8e7c758cdf4fd4e3455548757" category="list-text">スナップショット バケット内の現在のバージョン以外のオブジェクトを管理するためのバケット ライフサイクル ポリシーを設定します。たとえば、90 日後に最新ではないバージョンを削除します。</block>
+  <block id="5fe1a3050ef9538f4f00d7bf6e4d66b1" category="list-text">Elastic では、スナップショットを保存するために非 AWS S3 ストレージを使用する前に、クライアントがそれを検証する必要があります。</block>
+  <block id="56f4d43e66895a25e9c1e43ca43d69cc" category="paragraph">セットアップを検証するには、Elastic の指示に従ってください。</block>
+  <block id="0734208a8b40c0aab9c1218baedefbf1" category="paragraph"><block ref="0734208a8b40c0aab9c1218baedefbf1" category="inline-link-rx"></block></block>
+  <block id="1743c3ed2b99313c86b17e91ff8ae63b" category="list-text">検証後、Elasticsearch ガイドに従って、夜間スナップショットを保存するためのポリシーを作成します。</block>
+  <block id="1d605538b3de6fc7352ff1756867d1b9" category="inline-link">Elasticsearch s3リポジトリ</block>
+  <block id="755c869a02438bc9363beeea0e91da57" category="list-text"><block ref="755c869a02438bc9363beeea0e91da57" category="inline-link-rx"></block></block>
+  <block id="e226403172953bd7e5c34989260a72a8" category="inline-link">S3 バージョン管理オブジェクトの削除方法</block>
+  <block id="e35c2c56a508398c870b7b6e9e717abf" category="list-text"><block ref="e35c2c56a508398c870b7b6e9e717abf" category="inline-link-rx"></block></block>
+  <block id="29b6d470059c168ae42b0d8923792ea7" category="sidebar">Elasticsearch スナップショットリポジトリを作成する手順</block>
 </blocks>
