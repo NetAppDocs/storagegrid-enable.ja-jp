@@ -10,8 +10,6 @@ entries:
   url: "/tools-apps-guides/vertica-eon-mode-database-using-storagegrid.html"
 - title: ログ分析には、Elasticsearch、Logstash、Kibanaを使用します
   url: "/tools-apps-guides/elk-instructions.html"
-- title: Elasticsearch スナップショットリポジトリを作成する手順
-  url: "/tools-apps-guides/elasticsearch-snapshot-configuration.html"
 - title: PrometheusとGrafanaを使用して指標の保持を拡張します
   url: "/tools-apps-guides/federate-prometheus.html"
 - title: StorageGRID SNMPメトリクスとトラップを収集するようにDatadogを構成します
