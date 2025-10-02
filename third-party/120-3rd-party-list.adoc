@@ -2,9 +2,9 @@
 permalink: third-party/119-3rd-party-list.html 
 sidebar: sidebar 
 keywords: 11.9, third-party applications, storagegrid, ISV 
-summary: StorageGRID 11.9で検証済みの他社製ソリューション 
+summary: StorageGRID 12.0 で検証済みのサードパーティ ソリューション 
 ---
-= StorageGRID 11.9検証済みのサードパーティソリューション
+= StorageGRID 12.0 検証済みサードパーティソリューション
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: StorageGRID 11.9で検証済みの他社製ソリューション
 
 
 [role="lead"]
-以下のサードパーティソリューションは、StorageGRID 11.9での使用が検証済みです。+お探しの解決策 が表示されない場合は、ネットアップの担当者までお問い合わせください。
+次のサードパーティ ソリューションは、 StorageGRID 12.0 での使用が検証されています。  + 探しているソリューションがリストにない場合は、 NetApp のアカウント担当者にお問い合わせください。
 
 
 
@@ -131,20 +131,6 @@ summary: StorageGRID 11.9で検証済みの他社製ソリューション
 
 * Entrust 暗号化セキュリティ プラットフォーム v10.4.5
 * Entrust KeyControl 10.2
-* Hashicorp Vault 1.15.0
-* タレスCipherTrust Manager 2.0
-* タレスCipherTrust Manager 2.1
-* タレスCipherTrust Manager 2.2
-* タレスCipherTrust Manager 2.3
-* タレスCipherTrust Manager 2.4
-* タレスCipherTrust Manager 2.8
-* タレスCipherTrust Manager 2.9
-* タレスCipherTrust Manager 2.10
-* タレスCipherTrust Manager 2.11
-* タレスCipherTrust Manager 2.12
-* タレスCipherTrust Manager 2.13
-* タレスCipherTrust Manager 2.14
-* タレス CipherTrust マネージャー 2.15
-* タレス CipherTrust マネージャー 2.16
+* ハシコープ ボールト 1.20.2
 * タレス CipherTrust マネージャー 2.20
 

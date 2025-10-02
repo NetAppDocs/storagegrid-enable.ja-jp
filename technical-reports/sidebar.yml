@@ -28,6 +28,8 @@ entries:
   entries:
   - title: StorageGRIDで他社製ロードバランサを使用する
     url: "/technical-reports/load-balancer-index.html"
+  - title: StorageGRIDロードバランサーの役割について学ぶ
+    url: "/technical-reports/load-balancer-storagegrid.html"
   - title: HTTPS用のSSL証明書をStorageGRIDに実装する方法
     url: "/technical-reports/load-balancer-ssl-certificates-storagegrid.html"
   - title: StorageGRIDでの信頼できるサードパーティ製ロードバランサの設定
@@ -66,6 +68,8 @@ entries:
     url: "/technical-reports/ransomware-protection-replicate-bucket-versioning-storagegrid.html"
   - title: 保護IAMポリシーを使用したバージョン管理を使用したランサムウェア防御
     url: "/technical-reports/ransomware-protection-versioning-protective-iam-policy-storagegrid.html"
+  - title: ブランチバケットを使用したランサムウェア防御調査
+    url: "/technical-reports/ransomware-protection-investigate-branch-buckets.html"
 - title: TR-4765：『Monitor StorageGRID』
   pdf-filename: 外部アプリケーションを使用したStorageGRIDの監視
   entries:

@@ -223,13 +223,15 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
   "Rules": [
     {
       "ID": "Delete current version",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
         "Days": 30
-      },
+      }
     },
     {
       "ID": "noncurrent version retention",
+      "Filter": {},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NoncurrentDays": 60
@@ -237,6 +239,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
     },
     {
       "ID": "Markers",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
         "ExpiredObjectDeleteMarker": true
@@ -247,7 +250,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
-=== 他のバージョンがなく、5 日間存在している削除マーカーを削除します。「accounts_ プレフィックス」を持つオブジェクトについては、4 つの非現在のバージョンと少なくとも 30 日分の履歴を保持し、他のすべてのオブジェクト バージョンについては、2 つのバージョンと少なくとも 10 日分の履歴を保持します。
+=== 他のバージョンがない削除マーカーを削除し、「accounts_ プレフィックス」を持つオブジェクトについては 4 つの非最新バージョンと少なくとも 30 日分の履歴を保持し、他のすべてのオブジェクト バージョンについては 2 つのバージョンと少なくとも 10 日分の履歴を保持します。
 
 ユースケース：特定のオブジェクトと他のオブジェクトに固有のルールを適用し、削除マーカーを含む現在のバージョンと非現在のバージョンのライフサイクル全体を管理します。メリット：ストレージコストを削減し、バケットを整理しながら、十分なリカバリポイントと履歴を保持することで、多様なクライアント要件に対応できます。
 
@@ -257,25 +260,24 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
   "Rules": [
     {
       "ID": "Markers",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
-        "Days": 5,
         "ExpiredObjectDeleteMarker": true
-      },
+      }
     },
     {
       "ID": "accounts version retention",
+      "Filter": {"Prefix":"account_"},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NewerNoncurrentVersions": 4,
         "NoncurrentDays": 30
-      },
-      "Filter": {
-          "Prefix":"account_"
       }
     },
     {
       "ID": "noncurrent version retention",
+      "Filter": {},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NewerNoncurrentVersions": 2,

@@ -1,7 +1,7 @@
 ---
 permalink: tools-apps-guides/veeam-br.html 
 sidebar: sidebar 
-keywords: veeam,backup,veeam12,veeam11, 
+keywords: veeam,backup,veeam13,veeam12,veeam11 
 summary: このガイドでは、NetApp StorageGRIDの構成と、Veeam Backup & Replicationの一部を中心に説明します。本ドキュメントは、Linuxシステムに精通し、Veeam Backup & Replicationと組み合わせてNetApp StorageGRIDシステムの保守または実装を担当するストレージ管理者およびネットワーク管理者を対象としています。 
 ---
 = Veeam Backup & Replicationを使用した導入に関するStorageGRIDのベストプラクティス
@@ -26,7 +26,7 @@ VeeamとNetApp StorageGRIDが連携して動作する使いやすい解決策を
 
 Veeamのオブジェクトワークロードによって、小規模オブジェクトのPUT、DELETE、LIST処理が同時に多数作成されます。書き換えや削除の防止を有効にすると、保持期間の設定やバージョンの表示に関する要求がオブジェクトストアに追加されます。バックアップジョブのプロセスでは、日次変更のためにオブジェクトが書き込まれます。その後、新しい書き込みが完了すると、バックアップの保持ポリシーに基づいてオブジェクトが削除されます。バックアップジョブのスケジュールは、ほとんどの場合重複します。その結果、バックアップウィンドウの大部分がオブジェクトストアに50分の50のPUT / DELETEワークロードで構成されます。タスクスロットの設定を使用して同時処理数をVeeamで調整し、バックアップジョブのブロックサイズを増やしてオブジェクトサイズを増やし、複数オブジェクトの削除要求に含まれるオブジェクト数を減らします。 また、ジョブを完了する最大期間を選択することで、解決策のパフォーマンスとコストが最適化されます。
 
-次の製品ドキュメントを参照してください： https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam Backup  Replication"^] および https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID"^] 始める前に。Veeamには、StorageGRID 解決策 をサイジングする前に使用する必要があるVeeamインフラのサイジングと容量の要件を把握するための計算ツールが用意されています。Veeam Ready ProgramのWebサイトで、Veeamとネットアップによる検証済みの構成について https://www.veeam.com/alliance-partner-technical-programs.html?alliancePartner=netapp1&page=1["Veeam Readyのオブジェクト、オブジェクトの変更不可、リポジトリ"^]。
+必ず製品ドキュメントをお読みください https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam Backup  Replication"^]そして https://docs.netapp.com/us-en/storagegrid/["StorageGRID"^]始める前に。  Veeam は、 StorageGRIDソリューションのサイズを決定する前に使用する必要がある、Veeam インフラストラクチャのサイズと容量要件を理解するための計算ツールを提供しています。  Veeam Ready ProgramのWebサイトでVeeam- NetApp検証済み構成を常に確認してください。 https://www.veeam.com/alliance-partner-technical-programs.html?alliancePartner=netapp1&page=1["Veeam Readyのオブジェクト、オブジェクトの変更不可、リポジトリ"^] 。
 
 
 
@@ -87,7 +87,7 @@ Veeamバックアップジョブでは、さまざまなブロックサイズオ
 
 === 推奨バージョン
 
-Veeam環境に推奨されるバージョンは、最新のホットフィックスが適用されたNetApp StorageGRID 11.7または11.8です。常に最新の状態に保ち、StorageGRIDシステムに最新のホットフィックスを適用することを推奨します。
+Veeam の導入に推奨されるバージョンは、最新のホットフィックスを適用したNetApp StorageGRID 11.9 または 12.0 です。常に最新の状態を維持し、 StorageGRIDシステムに最新の修正プログラムを適用することをお勧めします。
 
 
 
@@ -99,13 +99,64 @@ Veeamでは、エンドポイントの接続にHTTPSのみを使用する必要�
 
 === S3 バケット
 
-StorageGRIDは、セキュアなマルチテナントストレージシステムです。Veeamワークロード専用のテナントを作成することを推奨します。ストレージクォータはオプションで割り当てることができます。ベストプラクティスとして、「独自のアイデンティティソースを使用する」を有効にします。テナントのroot管理ユーザを適切なパスワードで保護します。Veeam Backup 12では、S3バケットに対して強い整合性が必要です。StorageGRIDには、バケットレベルで設定できる複数の整合性オプションが用意されています。Veeamが複数の場所のデータにアクセスするマルチサイト環境の場合は、[strong-global]を選択します。Veeamのバックアップとリストアを単一サイトでのみ実行する場合は、整合性レベルを「strong-site」に設定する必要があります。バケットの整合性レベルの詳細については、 https://docs.netapp.com/us-en/storagegrid-117/s3/consistency-controls.html["ドキュメント"]。Veeamの書き換え不可のバックアップにStorageGRIDを使用するには、S3オブジェクトロックをグローバルに有効にし、バケットの作成時にバケットで設定する必要があります。
+StorageGRIDは、安全なマルチテナント ストレージ システムです。 Veeam ワークロード専用のテナントを作成することをお勧めします。オプションでストレージ クォータを割り当てることができます。ベストプラクティスとして、「独自の ID ソースを使用する」を有効にします。適切なパスワードを使用してテナント ルート管理ユーザーを保護します。  Veeam Backup 12 では、S3 バケットに強力な一貫性が必要です。  StorageGRID は、バケット レベルで構成された複数の整合性オプションを提供します。  Veeam が複数の場所からデータにアクセスするマルチサイト展開の場合は、「strong-global」を選択します。 Veeam のバックアップと復元が単一のサイトでのみ行われる場合、一貫性レベルは「strong-site」に設定する必要があります。バケットの一貫性レベルの詳細については、 https://docs.netapp.com/us-en/storagegrid/s3/consistency-controls.html["ドキュメント"] 。  Veeam 不変バックアップにStorageGRIDを使用するには、S3 オブジェクト ロックをグローバルに有効にして、バケットの作成時にバケット上で設定する必要があります。
 
 
 
 === ライフサイクル管理
 
 StorageGRIDは、レプリケーションとイレイジャーコーディングをサポートして、StorageGRIDのノードとサイト全体でオブジェクトレベルの保護を実現します。イレイジャーコーディングには、オブジェクトサイズが200KB以上必要です。Veeamのデフォルトのブロックサイズである1MBで作成されるオブジェクトサイズは、VeeamのStorage Efficiency機能と比較して、この200KBの推奨最小サイズよりも小さくなることがあります。解決策のパフォーマンスを高めるために、サイト間の接続が十分でない場合やStorageGRIDシステムの帯域幅が制限されない場合を除き、複数のサイトにまたがるイレイジャーコーディングプロファイルを使用することは推奨されません。マルチサイトStorageGRIDシステムでは、各サイトにコピーを1つ格納するようにILMルールを設定できます。データの保持性を最大限に高めるために、各サイトにイレイジャーコーディングコピーを格納するルールを設定できます。このワークロードには、Veeam Backupサーバのローカルコピーを2つ使用することを推奨します。
+
+
+
+=== パフォーマンスを削除
+
+Veeam は、削除要求レートの調整とバックアップ削除プロセスのスケジュール設定を提供します。削除のパフォーマンスをさらに調整するには、同期削除を無効にして、ILM スキャナーにオブジェクトの最終的な削除を管理させることができます。
+
+*同期削除を無効にする手順*
+
+. StorageGRIDグリッド マネージャーを開きます。
+. 右上隅で疑問符を選択し、次に API ドキュメントを選択します。
+. 右上隅にあるプライベート API ドキュメント ページ リンクをクリックします。
+. ilm-advancedを展開します。
+. GET ilm-advancedを選択します。
+. 「試してみる」を選択し、「実行」を選択します。
+. 応答結果を確認します。
++
+.. 値が null の場合、デフォルトの ilm-advanced 値が使用中であることを意味します。
+.. 値が null でない場合は、カスタム ILM の詳細値が使用中であることを意味します。  「data」: の後のすべての出力を、{ から最後から 2 番目の } までコピーします。
++
+... テキストエディタで保存します。
++
+応答例:
+
++
+image:veeam-bp/get_ilm_adv_before.png["ILM-Advanced出力の取得"]
+
+
+
+
+
+. PUT ilm-advancedを選択します。
+. 「試してみる」を選択して、API 本体の編集を開始します。
++
+.. デフォルトでは、API 本体にはデフォルト値が含まれ、以前に構成されたカスタム値は含まれません。これが、手順 5 ～ 7 を実行することが非常に重要である理由です。
+
+
+. 手順 5 ～ 7 でデフォルト以外の値が見つかった場合は、API 本体を手順 7 で保存した出力に置き換えます。 。それ以外の場合、手順 5 ～ 7 で値が null だった場合は、API 本体はそのままにしておきます。
+. API 本体ボックスで次のパラメータを調整します。
++
+.. 同期値を false に設定します。
++
+API 本文の例:
+
++
+image:veeam-bp/put_ilm_adv.png["PUT ILM-高度な入力"]
+
+
+
+. 完了したら、「実行」を選択します
+
 
 
 
@@ -188,6 +239,6 @@ image:veeam-bp/tc_2.png["トラフィック分類ポリシーのメトリック"
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
 
-* link:https://docs.netapp.com/us-en/storagegrid-119/["NetApp StorageGRID 11.9製品ドキュメント"^]
+* link:https://docs.netapp.com/us-en/storagegrid/["NetApp StorageGRID製品ドキュメント"^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221["Veeam Backup  Replication"^]
 
