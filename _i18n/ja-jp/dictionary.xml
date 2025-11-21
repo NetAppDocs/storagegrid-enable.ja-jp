@@ -381,15 +381,10 @@
   <block id="d55a0f29052225dac98466ee9b92f4a1" category="doc">NetApp StorageGRID のドキュメント</block>
   <block id="22c5de521c44ad2015e5ce711b46bebf" category="paragraph">NetApp StorageGRID の各リリースの完全なドキュメントは、次の場所にあります。</block>
   <block id="dc2c61abf0171b5abd61211f37552e18" category="inline-link">StorageGRID 11.6</block>
-  <block id="1f24789c68b06d446e0ebee3e2b81c66" category="list-text"><block ref="1f24789c68b06d446e0ebee3e2b81c66" category="inline-link-rx"></block></block>
   <block id="c7bb2251d54b13e3891aea37cdb54cd1" category="inline-link">StorageGRID 11.5</block>
-  <block id="1a433578de1b07641fbd7e4fa310d058" category="list-text"><block ref="1a433578de1b07641fbd7e4fa310d058" category="inline-link-rx"></block></block>
   <block id="32e750dc43168f85f193ec7b20f6e5c4" category="inline-link">StorageGRID 11.4</block>
-  <block id="ab11b93693987b00bd58948f5b72c34a" category="list-text"><block ref="ab11b93693987b00bd58948f5b72c34a" category="inline-link-rx"></block></block>
   <block id="37ef4cafeb8ccc9607db85cd3fab57f8" category="inline-link">StorageGRID 11.3</block>
-  <block id="c18e44cb0cb6bc2f462d1e006c443b06" category="list-text"><block ref="c18e44cb0cb6bc2f462d1e006c443b06" category="inline-link-rx"></block></block>
   <block id="13947b810d54d07e62ef2873b8620fe7" category="inline-link">StorageGRID 11.2</block>
-  <block id="fa96f2375d9c1354445489d7c5ab86dc" category="list-text"><block ref="fa96f2375d9c1354445489d7c5ab86dc" category="inline-link-rx"></block></block>
   <block id="7c9bea5c137c35be356406479a949aef" category="summary">Object Lockは、オブジェクトが削除または上書きされないようにWORMモデルを提供します。StorageGRID によるオブジェクトロックの実装では、規制要件を満たし、オブジェクト保持のリーガルホールドとコンプライアンスモードをサポートし、バケットのデフォルト保持ポリシーをサポートするように、Cohassetが評価されます。</block>
   <block id="33978f74a8897c3da7935e1ac3118552" category="doc">StorageGRID でS3オブジェクトロックをテストして実証</block>
   <block id="1d1d2f802d9cc6b6eb57739286faf4b3" category="paragraph">Object Lockは、オブジェクトが削除または上書きされないようにWORMモデルを提供します。StorageGRID によるオブジェクトロックの実装では、規制要件を満たし、オブジェクト保持のリーガルホールドとコンプライアンスモードをサポートし、バケットのデフォルト保持ポリシーをサポートするように、Cohassetが評価されます。</block>
@@ -1080,8 +1075,6 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="9283e244bcd98f1bdd350c1b4f2da148" category="inline-link">StorageGRIDアプライアンス</block>
   <block id="eff26b146dbf07b93a3af4954ea77c6d" category="list-text"><block ref="eff26b146dbf07b93a3af4954ea77c6d" category="inline-link-rx"></block></block>
   <block id="0c116dd1f4daf14c460a0c77a9e0e674" category="inline-link">StorageGRID 11.8</block>
-  <block id="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="list-text"><block ref="6a9dbde708e64ed0ece8a4d0b0dc1d32" category="inline-link-rx"></block></block>
-  <block id="fca3b43498fce810dfcc0f52e38e42a6" category="list-text"><block ref="fca3b43498fce810dfcc0f52e38e42a6" category="inline-link-rx"></block></block>
   <block id="e9868d7697657696cac82d1e0b5159e2" category="paragraph">_アロンクライン著_</block>
   <block id="f1b702f1ec8f237dcd7b5c954b6d27b8" category="paragraph">Angela Cheng著_</block>
   <block id="3ffee984625220881b57c95936a54d55" category="paragraph">ジークフリート・ヘップとアロン・クライン著_</block>
@@ -2945,7 +2938,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="1fd1f9584361048bdbc61a65caa8c999" category="paragraph">* 12日*</block>
   <block id="973aefb7cd4fa1181692b6c7dab8336d" category="paragraph">* 12.5日*</block>
   <block id="19c95a26acdda408cd23f4a3d3816d3a" category="paragraph">* 17日*</block>
-  <block id="83f15d0c42eec3db2e4b64cc94344c40" category="list-text"><block ref="83f15d0c42eec3db2e4b64cc94344c40" category="inline-link-rx"></block></block>
   <block id="79f8aaf5f753858807e5b593351a00c9" category="paragraph">このガイドでは、Amazon OpenSearchサービスまたはオンプレミスのElasticsearchとNetApp StorageGRID検索統合サービスを設定するための詳細な手順について説明します。</block>
   <block id="1ec648377638e043bfb89eccc1053188" category="inline-link">YouTubeビデオ</block>
   <block id="a5e3fa36313df10d074a9fd1034514d3" category="paragraph">StorageGRID syslog転送機能を使用すると、StorageGRIDログメッセージを収集および分析するように外部syslogサーバを設定できます。エルク（Elasticsearch、Logstash、Kibana）は、最も人気のあるログ分析ソリューションの1つになっています。ELK設定の例と、失敗したS3要求の特定とトラブルシューティングにELKを使用する方法については、を参照して<block ref="a42387db058ee8ea3a8dcc51c8812963" category="inline-link-rx"></block> ください。StorageGRID 11.9では、ロードバランサエンドポイントのアクセスログの外部syslogサーバへのエクスポートがサポートされています。この新機能の詳細については、こちらをご覧<block ref="76980d5900b8bc5b66d872ad50141cf3" category="inline-link-rx"></block>ください。この記事では、StorageGRID ログの管理と分析をすばやく開始できるように、Logstashの設定、Kibanaのクエリ、グラフ、およびダッシュボードのサンプルファイルを紹介します。</block>
@@ -2988,7 +2980,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="21c24fa624a44fa1b3fc1c27be1061d5" category="list-text">コメント欄に「私のアカウントのメールアドレスは_あなたの-メールアドレス_です。見込み顧客にStorageGRID評価ソフトウェアをダウンロードしてもらいたいのですが」</block>
   <block id="39d3f037c74b725c5adc98d16fbec2f8" category="summary">このテクニカルレポートでは、サイト障害が発生した場合に目標復旧時点（RPO）を0にするためのStorageGRIDレプリケーション戦略の実装について説明します。</block>
   <block id="810a30cfe50c0f270cee71b650ceffd6" category="doc">『Achieving zero RPO with StorageGRID - A Comprehensive Guide to Multi-Site Replication』</block>
-  <block id="ea76d032379d2a88d28b72edd9e36564" category="paragraph">このテクニカルレポートでは、サイト障害が発生した場合に目標復旧時点（RPO）をゼロにするためのStorageGRIDレプリケーション戦略を実装するための包括的なガイドを提供します。このドキュメントでは、マルチサイトの同期レプリケーションやマルチグリッドの非同期レプリケーションなど、StorageGRIDのさまざまな導入オプションについて詳しく説明します。また、StorageGRIDの情報ライフサイクル管理（ILM）ポリシーを設定して、複数の場所にわたってデータの保持と可用性を確保する方法についても説明します。また、パフォーマンスに関する考慮事項、障害シナリオ、およびクライアント処理が中断されないように維持するためのリカバリプロセスについても説明します。このドキュメントの目的は、同期レプリケーションと非同期レプリケーションの両方の手法を活用して、サイト全体に障害が発生した場合でも、データへのアクセスと一貫性を維持するための情報を提供することです。</block>
   <block id="606eab719053286d71dc6722565f39cc" category="section-title">StorageGRIDの概要</block>
   <block id="c72cc4a7cc108f0e65b3b2234a5451f6" category="paragraph">NetApp StorageGRIDは、業界標準のAmazon Simple Storage Service（Amazon S3）APIをサポートするオブジェクトベースのストレージシステムです。</block>
   <block id="bbcde1e5e5d61a464205617230c533f9" category="section-title">StorageGRIDスケール</block>
@@ -3003,14 +2994,11 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="9b5561f349b0418797ca7104c00c80b4" category="section-title">オブジェクトデータとメタデータ</block>
   <block id="fb56e39711fbf97f3cff481cefe05b4f" category="paragraph">オブジェクトストレージでは、ストレージの単位がファイルやブロックではなく、オブジェクトになります。ファイルシステムやブロックストレージのツリー階層とは異なり、オブジェクトストレージでは、フラットで非構造化されたレイアウトでデータが編成されます。オブジェクトストレージでは、データの物理的な場所と、データを格納および読み出す方法が切り離されています。</block>
   <block id="0f2657877abfd62c76270fc9fefa04e5" category="paragraph">オブジェクトベースのストレージシステムの各オブジェクトには、オブジェクトデータとオブジェクトメタデータという 2 つの要素があります。</block>
-  <block id="3e02806edf9cf9fe11e3ce2756d6b716" category="list-text">オブジェクトデータは、写真、映画、医療記録など、実際の基礎データを表します。</block>
   <block id="fe6177858a7ffc8599a9d9a1a4ea2f1f" category="list-text">オブジェクトメタデータは、オブジェクトについて記述された任意の情報です。</block>
   <block id="5744c4629d3afd78a5fdd52800e97f1c" category="paragraph">StorageGRID では、オブジェクトメタデータを使用してグリッド全体のすべてのオブジェクトの場所を追跡し、各オブジェクトのライフサイクルを継続的に管理します。</block>
   <block id="63079dc7d4ba0f0950865fd53b883a11" category="paragraph">オブジェクトメタデータには、次のような情報が含まれます。</block>
-  <block id="e5a918f437a7af27afdce3def49278bc" category="list-text">各オブジェクトレプリカまたはイレイジャーコーディングフラグメントの現在の格納場所。</block>
   <block id="91b08644ef3e50381478d7f42ab32f1d" category="list-text">オブジェクトに関連付けられているカスタムユーザメタデータのキーと値のペア。</block>
   <block id="23f54b9b547ce8f5c783a1d802cf64a9" category="list-text">S3オブジェクトの場合、オブジェクトに関連付けられているオブジェクトタグのキーと値のペア</block>
-  <block id="3dbdb43407d55e92a14a85f1d6388c70" category="list-text">セグメント化されたオブジェクトやマルチパートオブジェクトの場合、セグメント ID とデータサイズ。</block>
   <block id="e6ae6f0a4a18ef27ea21dbe9449108a4" category="inline-link">オブジェクトメタデータストレージを管理する</block>
   <block id="a60b56c4fc355f3dd23a1f66e3cc0b5f" category="paragraph">オブジェクトメタデータはカスタマイズと拡張が可能なため、アプリケーションに合わせて柔軟に設定できます。StorageGRIDがオブジェクトメタデータを格納する方法と場所の詳細については、を参照してください<block ref="7d35d2baf4d39208e4f52175d4b30104" category="inline-link-rx"></block>。</block>
   <block id="2fd9637c3fe0d3bb7ddefe22d29b5161" category="paragraph">StorageGRIDの情報ライフサイクル管理（ILM）システムは、StorageGRIDシステム内のすべてのオブジェクトデータの配置、期間、取り込み動作のオーケストレーションに使用されます。ILMルールは、オブジェクトのレプリカを使用したり、ノードやサイト間でオブジェクトをイレイジャーコーディングしたりして、StorageGRIDが時間の経過に伴ってオブジェクトを格納する方法を決定します。このILMシステムは、グリッド内のオブジェクトデータの整合性を維持します。</block>
@@ -3022,23 +3010,17 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="7f96c68c60ab5bbabacca964ae3b8ed1" category="paragraph">デフォルトの整合性は、グリッド全体のレベルで定義されます。整合性はバケットレベルでいつでも変更できます。</block>
   <block id="201f092d3f717ae191dd3f1a8fbfe160" category="paragraph">StorageGRIDで使用できるバケット整合性オプションは次のとおりです。</block>
   <block id="34d51dd8353a96472efa22d6a61f77ac" category="list-text">*all*:最高レベルの一貫性を提供します。グリッド内のすべてのノードがすぐにデータを受信しないと、要求は失敗します。</block>
-  <block id="23cf7178bab8a1e4584c67dbdc4d19df" category="list-text">* strong-global *：すべてのサイトのすべてのクライアント要求について、リードアフターライト整合性が保証されます。</block>
   <block id="9b2e1b371e348127ef43740bbc2f852d" category="list-text">*strong-site *：サイト内のすべてのクライアント要求に対してリードアフターライト整合性が保証されます。</block>
   <block id="75d41ce194701530c0861e0d0a3cd8f5" category="list-text">* Read-after-new-write *（デフォルト）：新規オブジェクトにはリードアフターライト整合性を提供し、オブジェクトの更新には結果整合性を提供します。高可用性が確保され、データ保護が保証されます。ほとんどの場合に推奨されます。</block>
   <block id="c0a48852ac050900e86f2edb977893ac" category="list-text">* available *：新しいオブジェクトとオブジェクトの更新の両方について、結果整合性を提供します。S3バケットの場合は、必要な場合にのみ使用します（読み取り頻度の低いログ値を含むバケットや、存在しないキーに対するHEAD処理やGET処理など）。S3 FabricPool バケットではサポートされません。</block>
   <block id="2656a89324be33e667f0895f0c93e2fb" category="section-title">オブジェクトデータの整合性</block>
   <block id="1f49fb5ccaeb19371716c5dcf6ebba64" category="paragraph">メタデータはサイト内およびサイト間で自動的にレプリケートされますが、オブジェクトデータのストレージ配置はユーザが決定します。オブジェクトデータは、サイト内およびサイト間のレプリカ、サイト内またはサイト間のイレイジャーコーディング、またはそれらの組み合わせまたはレプリカとイレイジャーコーディングされたストレージスキームに格納できます。ILMルールは、すべてのオブジェクトに適用することも、特定のオブジェクト、バケット、テナントにのみ適用するようにフィルタリングすることもできます。ILMルールは、オブジェクトの格納方法、レプリカやイレイジャーコーディング、それらの場所にオブジェクトを格納する期間、レプリカの数やイレイジャーコーディングスキームの変更、場所の変更などを定義します。</block>
   <block id="6f3609d6439df769d705e58886d0a612" category="paragraph">各ILMルールでは、オブジェクトを保護するための3つの取り込み動作（Dual commit、balanced、またはstrict）のいずれかを設定します。</block>
-  <block id="936750596dd5725d654d59c663df965a" category="paragraph">デュアルコミットオプションは、グリッド内の任意の2つの異なるストレージノードにただちに2つのコピーを作成し、要求が成功したことをクライアントに返します。ノード選択は要求のサイト内で試行されますが、状況によっては別のサイトのノードを使用する場合があります。オブジェクトがILMキューに追加され、ILMルールに従って評価および配置されます。</block>
-  <block id="1ab2be0a3696e2c2b0b8bd09470e4fd1" category="paragraph">balancedオプションは、ILMポリシーに照らしてオブジェクトをただちに評価し、クライアントに要求が成功する前にオブジェクトを同期的に配置します。停止や配置要件を満たすのに十分なストレージがないためにILMルールをすぐに満たすことができない場合は、代わりにデュアルコミットが使用されます。問題が解決すると、定義されたルールに基づいてオブジェクトが自動的に配置されます。</block>
-  <block id="2215555fc86a611cd3e2dd4bc4066aff" category="paragraph">strictオプションを指定すると、ILMポリシーに照らしてオブジェクトがただちに評価され、オブジェクトが同期的に配置されてからクライアントに要求が成功します。停止や配置要件を満たすのに十分なストレージがないためにILMルールをすぐに満たすことができない場合は、要求が失敗し、クライアントは再試行する必要があります。</block>
   <block id="1c72ef556b5fc669fadc14ae383d37cf" category="section-title">ロードバランシング</block>
   <block id="babc08c413a52242b7d338a9958eddf7" category="paragraph">StorageGRIDは、統合ゲートウェイノード、外部の3^rd^パーティロードバランサ、DNSラウンドロビンを介してクライアントアクセスを使用して導入することも、ストレージノードに直接導入することもできます。1つのサイトに複数のゲートウェイノードを導入し、ハイアベイラビリティグループに構成して、ゲートウェイノードに障害が発生した場合の自動フェイルオーバーとフェイルバックを実現できます。ソリューション内のロードバランシング方式を組み合わせて、ソリューション内のすべてのサイトに単一のアクセスポイントを提供できます。</block>
-  <block id="0c1ba34ce07cdb4dcf9dfb6117dce295" category="paragraph">デフォルトでは、ゲートウェイノードが配置されているサイトのストレージノード間で負荷が分散されます。StorageGRIDは、複数のサイトのノードを使用してゲートウェイノードが負荷を分散できるように設定できます。この構成では、これらのサイト間のレイテンシがクライアント要求への応答レイテンシに追加されます。これは、合計レイテンシがクライアントで許容可能な場合にのみ設定してください。</block>
   <block id="434ca8d9b2383ed26fb519f93dc2bb36" category="paragraph">オブジェクトストレージシステムで目標復旧時点（RPO）をゼロにするには、障害発生時に次のことを行うことが重要です。</block>
   <block id="e01ab96fbda93c5ece52f522eb9e97ee" category="list-text">メタデータとオブジェクトコンテンツの両方が同期され、整合性があるとみなされる</block>
   <block id="855d870be57ab487bc6c3c7dd6177ade" category="list-text">障害が発生しても、オブジェクトコンテンツには引き続きアクセスできます。</block>
-  <block id="3144181f53a9b5a1f7faaa68687ce053" category="paragraph">ストレージシステム内のオブジェクトは、情報ライフサイクル管理（ILM）ルールに基づいて格納されます。ILMルールは、ライフサイクル全体を通じてデータをどこにどのように格納するかを規定します。同期レプリケーションの場合は、Strict実行とBalanced Executionのどちらを使用するかを検討できます。</block>
   <block id="ba76eb24bf3904a1670b5bea1f9b483c" category="list-text">RPOをゼロにするには、これらのILMルールを厳密に実行する必要があります。これは、オブジェクトが定義された場所に配置される際に遅延やフォールバックが発生することなく、データの可用性と整合性が維持されるためです。</block>
   <block id="d30ec037efde149da7fc42696aac2a3a" category="list-text">StorageGRIDのILM Balanceの取り込み動作は、高可用性と耐障害性のバランスを実現し、サイト障害が発生した場合でもデータの取り込みを継続できるようにします。</block>
   <block id="3e1fd95f52676bdecea3672d3961028d" category="inline-link">StorageGRIDロードバランサのテクニカルレポート</block>
@@ -3049,16 +3031,12 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="b0ce1d579493e334271a3fd059b9fee8" category="list-text">グリッド内レプリケーションには同期レプリケーションと非同期レプリケーションの両方が含まれており、ILMの取り込み動作とメタデータの整合性制御を使用して設定できます。</block>
   <block id="1011324ed3564a620bc5485d84c2022b" category="list-text">グリッド間レプリケーションは非同期のみです。</block>
   <block id="3eb3b2b49a459eec5258a23b3937ec50" category="section-title">単一グリッドのマルチサイト環境</block>
-  <block id="18b742c71481166d728314dedbf8266d" category="paragraph">2サイトのStorageGRIDソリューションには、すべてのオブジェクトのレプリカが少なくとも2つ、つまりECチャンクが3つ、すべてのメタデータのレプリカが6つあります。障害からのリカバリ時には、停止からの更新がリカバリされたサイト/ノードに自動的に同期されます。サイトが2つしかない場合、サイト全体が失われても、障害シナリオでゼロRPOを達成することはほとんどありません。</block>
   <block id="ea45bf8dbcdbd39284bd9bf6e419d8c1" category="inline-image-macro">2サイトのStorageGRIDシステム</block>
   <block id="3d6a8c14b8eb946f5a4a31a10e28d011" category="paragraph"><block ref="3d6a8c14b8eb946f5a4a31a10e28d011" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f510bd2ad54651fe5fdf2ba313fa7e94" category="paragraph">3つ以上のサイトで構成されるStorageGRIDソリューションでは、各オブジェクトのレプリカが少なくとも3つまたはECチャンクが3つ、すべてのメタデータのレプリカが9つ存在します。障害からのリカバリ時には、停止からの更新がリカバリされたサイト/ノードに自動的に同期されます。サイトが3つ以上の場合は、RPOゼロを達成できます。</block>
   <block id="5fe817ef605904371e41e6113fe6648d" category="inline-image-macro">3サイトのStorageGRIDシステム</block>
   <block id="9a4f522f8b89c72d7c30c89d4a032d91" category="paragraph"><block ref="9a4f522f8b89c72d7c30c89d4a032d91" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a7037a59646209bbbc4c7d0db625f106" category="paragraph">複数サイトの障害のシナリオ</block>
   <block id="e139a585510a502bbf1841cf589f5086" category="cell">障害</block>
-  <block id="afd872554f9681235471a2c5883b0d6c" category="cell">2サイトの成果</block>
-  <block id="58dff619f0bd9804be1692a0d0966f7e" category="cell">3サイト以上の成果</block>
   <block id="64b99653800cfbabb38664b747ab2e15" category="cell">単一ノードドライブ障害</block>
   <block id="55e72c5da46cbe937d4e50af7f3af3fb" category="cell">各アプライアンスは複数のディスクグループを使用し、中断やデータ損失を発生させることなく、グループごとに少なくとも1本のドライブに障害が発生しても運用を継続できます。</block>
   <block id="dd83dd9b74267310c6c462ca4b20837d" category="cell">1つのサイトでの単一ノード障害</block>
@@ -3069,25 +3047,15 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="869217d84c1d082654dddf1286388adf" category="cell">処理は他のすべてのサイトに転送され、中断されず、データ損失も発生しません。</block>
   <block id="23d194cbaea547a93ca3ed3bf8ff8c2d" category="cell">複数サイトでの単一ノード障害</block>
   <block id="982425d0b8d4c79df7b4e61bc8f0908c" category="paragraph">次の場合、システムの停止やデータ損失はゼロ</block>
-  <block id="ec173baf3623010a67af1cb0befd6e44" category="list-text">グリッドに少なくとも1つのレプリカが存在する</block>
   <block id="9636cc5c20fef7cd2a97760c5bfb72e5" category="list-text">グリッドに十分な数のECチャンクが存在する</block>
   <block id="5fafe5331ccf1a9f240018258ab857f4" category="paragraph">次の場合には、運用が停止し、データ損失のリスクが発生します。</block>
-  <block id="8508c1de63d092545ea7ac8b64f188a3" category="list-text">レプリカが存在しません</block>
   <block id="d8d38aa1b3bfeb8de5a355a0e159518b" category="list-text">ECチャックが不十分</block>
   <block id="002796052352c300893e7cea45483eee" category="list-text">オブジェクトを読み出すための十分なECチャックが存在しません</block>
   <block id="197a78fa8f3bc319da86384db97d8b45" category="cell">単一サイト障害</block>
-  <block id="6502d7867cfa9f73685c72f1ab1a97f3" category="cell">クライアント処理は、障害が解決されるか、バケットの整合性が強力なサイト以下になるまで中断され、処理は成功しますがデータ損失はありません。</block>
   <block id="6dd78db15f76edcd689c5f34b1a044ac" category="cell">単一サイトと単一ノードの障害</block>
-  <block id="4ae6253dd23ad200eac56c1ae66c57ce" category="cell">クライアント処理は、障害が解決されるか、バケット整合性がread-after-new-write以下に低下して処理が成功してデータが失われる可能性があるまで中断されます。</block>
   <block id="d7daa36acb9042a724041fb6a618e414" category="cell">1つのサイトと残りの各サイトの1つのノード</block>
-  <block id="606a4088cd9679be9ab9565a53f94f98" category="cell">メタデータレプリカのクォーラムを達成できず、データが失われる可能性がある場合は、処理が中断されます。</block>
   <block id="f11f682e7973cb21186b5b560ca1ae7e" category="cell">複数サイト障害</block>
-  <block id="fce0d087275e60042477aa5199ce1011" category="cell">少なくとも1つのサイト全体をリカバリできない場合、データが失われます。</block>
-  <block id="4a80a85cf7dcccd203aa17cad8b32f61" category="cell">メタデータレプリカクォーラムを達成できないと、処理が中断されます。少なくとも1つのサイトが残っていれば、データ損失は発生しません。</block>
   <block id="a2fc7edce2b8d377a5db40f745cd186e" category="cell">サイトのネットワーク分離</block>
-  <block id="6ce70a008903356746c99f083916cf62" category="cell">クライアント処理は、障害が解決されるか、バケットの整合性が強力なサイト以下に低下して処理が成功するまで中断されますが、データの損失は発生しません。</block>
-  <block id="a832d31461ba76ddc892c57841a52f92" category="paragraph">分離されたサイトの処理は中断されるが、データ損失は発生しない</block>
-  <block id="7e285c7404a1098df2068ce3cd5b70db" category="paragraph">残りのサイトでは処理が中断されず、データ損失も発生しません。</block>
   <block id="15fd08e71edb235c1f3886027abe22b0" category="section-title">マルチサイトマルチグリッド環境</block>
   <block id="96045b1c0304cef753cc8d0ef8b0f5d4" category="paragraph">このソリューションでは、2つのリージョンに均等に分割された4つのロケーションを使用します。リージョン1には、リージョンのプライマリグリッドであるグリッド1の2つのストレージサイトと、グリッド2のメタデータサイトが含まれます。リージョン2には、リージョンのプライマリグリッドであるグリッド2の2つのストレージサイトと、グリッド1のメタデータサイトが含まれます。各リージョンでは、同じ場所にそのリージョンのプライマリグリッドのストレージサイトと、他のリージョンのメタデータ専用サイトを格納できます。メタデータのみのノードを3番目のサイトとして使用すると、メタデータに必要な整合性が確保され、その場所にあるオブジェクトのストレージが複製されることはありません。</block>
   <block id="54c747b99263ca48f4db2b58d9d3ecee" category="inline-image-macro">4サイトのマルチグリッドソリューション</block>
@@ -3221,7 +3189,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="f69309997a74d84dd39f53923232f102" category="summary">StorageGRID のポリシーと権限。</block>
   <block id="61e1800dd7d03bc7509039ca51abaa94" category="paragraph">StorageGRIDは、情報ライフサイクル管理ポリシー（ILM）に基づくさまざまなサービスレベルで、複数の場所にわたって単一のネームスペースを提供します。これらのライフサイクル ポリシーを使用すると、ライフサイクル全体にわたってデータが存在する場所を最適化できます。</block>
   <block id="ee46b302eeb000f796002cd99f7fccca" category="paragraph">StorageGRIDを使用すると、ローカルソリューションや地理的に分散したソリューションで、データの保持方法と可用性を設定できます。データがオンプレミスにあるかパブリッククラウドにあるかに関係なく、統合ハイブリッドクラウドワークフローにより、Amazon Simple Notification Service (Amazon SNS)、Google Cloud、Microsoft Azure Blob、Amazon S3 Glacier、Elasticsearch などのクラウドサービスをビジネスで活用できます。</block>
-  <block id="639932e1f3f1e48c7c66a3c0d26d7c95" category="paragraph">StorageGRID ノードは次のように展開できます。</block>
   <block id="2ef98a36e008b10819c92b90ab9fb134" category="list-text">オブジェクト数を最大化するメタデータのみのノード</block>
   <block id="314be57ec0bf12b0f7b8fad48b9e7d0d" category="list-text">オブジェクトスペースを最大化するオブジェクトストレージ専用ノード</block>
   <block id="b67abdd7987281e93fb88e16a9dede52" category="list-text">オブジェクト数とオブジェクトスペースの両方を追加するメタデータとオブジェクトストレージノードの組み合わせ</block>
@@ -3232,22 +3199,18 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="0987bb97934aa3a8ea668bd0c91ce52d" category="sidebar">StorageGRIDのセキュリティ機能 - オブジェクトストア内のデータとメタデータの保護</block>
   <block id="243c98f4ed7a2d56d634e9cc955fda88" category="sidebar">StorageGRID災害復旧 - Veritas Enterprise Vault を使用してサイト フェイルオーバー用にStorageGRIDを構成する</block>
   <block id="6296eecae5fd6a7ad4c379ebb94e6ecf" category="section-title">他のバージョンがない削除マーカーを削除し、「accounts_ プレフィックス」を持つオブジェクトについては 4 つの非最新バージョンと少なくとも 30 日分の履歴を保持し、他のすべてのオブジェクト バージョンについては 2 つのバージョンと少なくとも 10 日分の履歴を保持します。</block>
-  <block id="3c8cdd15a6a530650da7bd29f3a5558a" category="paragraph">最小限のStorageGRID展開は、単一サイト内の管理ノードと 3 つのストレージ ノードで構成されます。  1 つのグリッドは最大 220 ノードまで拡張できます。  StorageGRID は、単一のサイトとして展開することも、16 サイトに拡張することもできます。</block>
   <block id="fc7ef6488361c9c97f3d756ad91297b1" category="paragraph">管理ノードには、メトリックとログの中心点となる管理インターフェイスが含まれており、 StorageGRIDコンポーネントの構成を維持します。管理ノードには、S3 API アクセス用の統合ロードバランサーも含まれています。</block>
   <block id="e75c00df26f576c96bb2702f9c563c20" category="paragraph">StorageGRID は、ソフトウェアのみ、VMware 仮想マシン アプライアンス、または専用アプライアンスとして導入できます。</block>
   <block id="ef0ee1bddd52d01db041108f1228135e" category="paragraph">各ストレージ ノードは、オブジェクト ストレージ用に数ペタバイトの容量まで拡張でき、数百ペタバイトの単一の名前空間が可能になります。  StorageGRID は、ゲートウェイ ノードと呼ばれる S3 API 操作用の統合ロード バランサーも提供します。</block>
   <block id="c79c68e59ac4365a8f57819778c2d079" category="paragraph">StorageGRID は、サイト トポロジに配置されたノードのコレクションで構成されます。  StorageGRID内のサイトは、固有の物理的な場所に配置することも、論理構造としてグリッド内の他のサイトと同じ物理的な場所に配置することもできます。 StorageGRIDサイトは複数の物理的な場所にまたがってはなりません。サイトは、共有ローカル エリア ネットワーク (LAN) インフラストラクチャと障害ドメインを表します。</block>
   <block id="d0351f8bc75f9766fc04d15d94a8bd0b" category="paragraph">StorageGRID は、ノード レベルとドライブ レベルでデータを消去コード化する機能を提供します。 StorageGRIDアプライアンスでは、ノード内のすべてのドライブにわたって各ノードに保存されているデータを消去コード化し、データの損失や中断を引き起こす複数のディスク障害に対するローカル保護を提供します。ドライブ障害からの再構築はノードに対してローカルであり、ネットワーク経由でデータを複製する必要はありません。</block>
   <block id="111ff3048a18a746f2160bb022a17ec3" category="paragraph">さらに、 StorageGRIDアプライアンスは、消失訂正符号スキームを使用して、サイト内のノード全体またはStorageGRIDシステム内の 3 つ以上のサイトに分散されたオブジェクト データを保存し、StorageGRID の ILM ルールによってノード障害から保護します。</block>
-  <block id="6538e063b9a1941823d45adc0387aa3f" category="paragraph">イレージャー コーディングは、低いオーバーヘッドでノードおよびサイトの障害に耐性のあるストレージ レイアウトを提供しますが、レプリケーションではオーバーヘッドは大きくなりますが、同じことを行うことができます。データ チャンクを保存するために必要な最小数のノードが満たされていれば、すべてのStorageGRID消去コーディング スキームを単一のサイトに展開できます。つまり、4+2 の EC スキームでは、データを受信するために少なくとも 6 つのノードが必要になります。</block>
   <block id="9be7d4cba47d08188ba121bdcfbf06f8" category="list-text">*Quorum Strong-global*: すべてのサイトにわたるすべてのクライアント要求の書き込み後の読み取り一貫性を保証します。メタデータ レプリカ クォーラムが達成可能な場合は、複数のノードまたはサイト障害に対しても一貫性を提供します。</block>
   <block id="c56dabcab7c66e3a31beb8e5ec75bc45" category="list-text">QUORUM の一貫性は、ストレージ ノード メタデータ レプリカのクォーラムとして定義され、各サイトには 3 つのメタデータ レプリカがあります。これは次のように計算できる: 1+((N*3)/2) ここでNはサイトの総数である</block>
   <block id="d063e8f08673adc8df1fe6cec7b7a7bc" category="list-text">たとえば、サイト内のレプリカが最大 3 つである 3 つのサイト グリッドからは、最小 5 つのレプリカを作成する必要があります。</block>
-  <block id="f8dd54c357440b879a762147dcc0262d" category="paragraph">ローカル負荷分散とグローバル負荷分散を組み合わせることで、RTO ゼロを実現できます。中断のないクライアント アクセスを確保するには、クライアント要求の負荷分散が必要です。 StorageGRIDソリューションには、各サイトに多数のゲートウェイ ノードと高可用性グループを含めることができます。サイト障害が発生した場合でも、どのサイトのクライアントにも中断のないアクセスを提供するには、 StorageGRIDゲートウェイ ノードと組み合わせて外部負荷分散ソリューションを構成する必要があります。各サイト内の負荷を管理するゲートウェイ ノードの高可用性グループを構成し、外部ロード バランサを使用して高可用性グループ間で負荷を分散します。リクエストが稼働中のサイトにのみ送信されるように、ヘルス チェックを実行するように外部ロード バランサを構成する必要があります。  StorageGRIDによる負荷分散の詳細については、<block ref="587298665ed077e05405d60ca7617c92" category="inline-link-rx"></block> 。</block>
   <block id="08b7575fdd3926665d85a59b0d1eb1e5" category="section-title">StorageGRIDによるゼロRPOの要件</block>
   <block id="2cc7dacd3d9a578262f5166ed6f8429b" category="paragraph">マルチサイト展開の場合、Quorum Strong Global は、すべてのサイト間でメタデータが同期されることを保証するための推奨される一貫性モデルであり、ゼロ RPO 要件を満たすために不可欠です。</block>
   <block id="4340156e4c2f48db5faf8fe946b7b76c" category="paragraph">*マルチサイト ソリューション:* StorageGRID を使用すると、グリッド内の複数のサイト間でオブジェクトを同期的に複製できます。バランスや厳密な動作を伴う情報ライフサイクル管理 (ILM) ルールを設定すると、オブジェクトは指定された場所にすぐに配置されます。バケットの一貫性レベルを Quorum Strong Global に構成すると、同期メタデータのレプリケーションも保証されます。 StorageGRID は単一のグローバル名前空間を使用し、オブジェクトの配置場所をメタデータとして保存するため、すべてのノードはすべてのコピーまたは消去コード化された部分がどこにあるかを認識します。要求が行われたサイトからオブジェクトを取得できない場合は、フェイルオーバー手順を必要とせずにリモート サイトから自動的に取得されます。</block>
-  <block id="47c37215042d2824804cb9bd9bd0b409" category="paragraph">次のシナリオでは、 StorageGRIDソリューションは、統合ロード バランサーの高可用性グループへの要求を管理するオプションの外部ロード バランサーを使用して構成されています。これにより、RPO ゼロに加えて RTO ゼロも実現されます。 ILM は、同期配置用のバランスの取れた取り込み保護を使用して構成されています。各バケットは、3 つ以上のサイトのグリッドの場合はクォーラムの強力なグローバル整合性モデルで構成され、3 つ未満のサイトの場合は強力なグローバル整合性で構成されます。</block>
   <block id="8865f9fe613497bf0177e03d609c23d2" category="paragraph">冗長性をさらに高めるために、このシナリオでは 2 つのStorageGRIDクラスターを採用し、クロスグリッド レプリケーションを使用してそれらの同期を維持します。このソリューションでは、各StorageGRIDクラスターに 3 つのサイトが含まれます。 2 つのサイトはオブジェクト ストレージとメタデータに使用され、3 番目のサイトはメタデータ専用に使用されます。両方のシステムは、バランスのとれた ILM ルールを使用して構成され、2 つのデータ サイトのそれぞれで消去コーディングを使用してオブジェクトを同期的に保存します。バケットは、Quorum Strong Global 整合性モデルを使用して構成されます。各グリッドは、すべてのバケットで双方向のクロスグリッド レプリケーションが構成されるように構成されます。これにより、リージョン間の非同期レプリケーションが実現します。オプションで、グローバル ロード バランサを実装して、両方のStorageGRIDシステムの統合ロード バランサ高可用性グループへの要求を管理し、RPO ゼロを実現できます。</block>
   <block id="80f1c748a0e0ce55abcb6571bb430d38" category="paragraph">監査ログは syslog によってエクスポートできるため、Splunk や ELK などのツールで監査メッセージをマイニングできます。監査メッセージには次の 4 つの種類があります。</block>
   <block id="34da6679711f958e925f9b135997bbba" category="paragraph">監査ログは、長期保存とアプリケーション アクセスのために S3 バケットに保存できます。</block>
@@ -3344,4 +3307,43 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="f7dcf34d77dc4c11838f7765c7dcd650" category="sidebar">StorageGRIDロードバランサーの役割について学ぶ</block>
   <block id="afe2571f5b9a6df9bd38c515313c5337" category="sidebar">ブランチバケットを使用したランサムウェア防御調査</block>
   <block id="1b0f701303c9287515b1ad814889dfbb" category="sidebar">StorageGRID 12.0</block>
+  <block id="1477486e7b73a50110a7e1174a0a9e63" category="paragraph">この技術レポートでは、サイト障害発生時に復旧ポイント目標 (RPO) ゼロを達成するためのStorageGRIDレプリケーション戦略の実装に関する包括的なガイドを提供します。このドキュメントでは、マルチサイト同期レプリケーションやマルチグリッド非同期レプリケーションなど、 StorageGRIDのさまざまな展開オプションについて詳しく説明します。複数の場所にわたってデータの耐久性と可用性を確保するために、 StorageGRID情報ライフサイクル管理 (ILM) ポリシーを構成する方法について説明します。さらに、レポートでは、中断のないクライアント操作を維持するためのパフォーマンスに関する考慮事項、障害シナリオ、および回復プロセスについても説明します。このドキュメントの目的は、同期レプリケーション技術と非同期レプリケーション技術の両方を活用して、サイト全体の障害が発生した場合でも、データがアクセス可能で一貫性が保たれるようにするための情報を提供することです。</block>
+  <block id="beae719565120c3029e58b8cc07ab0bd" category="paragraph">最小限のStorageGRID展開は、単一サイト内の管理ノードと 3 つのストレージ ノードで構成されます。1 つのグリッドは最大 220 ノードまで拡張できます。StorageGRID は、単一のサイトとして展開することも、16 サイトに拡張することもできます。</block>
+  <block id="7cc586f564adeb8c0359665929373f00" category="paragraph">ストレージ ノードは次のように展開できます。</block>
+  <block id="ba32bedc804e7bb6a5923493262a3ade" category="list-text">オブジェクト データは、写真、動画、医療記録など、実際の基礎データを表します。</block>
+  <block id="5137a04d33fb42650e67ff12f6a52d8e" category="list-text">各オブジェクトの複製コピーまたは消失訂正符号化フラグメントの現在の保存場所。</block>
+  <block id="d0736e890c24259e81073f666695f227" category="list-text">セグメント化されたオブジェクトとマルチパート オブジェクトの場合、セグメント識別子とデータ サイズ。</block>
+  <block id="1bef005b9a6c5e01ff03054f34bc5beb" category="paragraph">イレージャー コーディングは、レプリケーションよりも低いオーバーヘッドで、ノードおよびサイトの障害に対して耐性のあるストレージ レイアウトを提供します。データ チャンクを保存するために必要な最小数のノードが満たされていれば、すべてのStorageGRID消去コーディング スキームを単一のサイトに展開できます。つまり、4+2 の EC スキームでは、データを受信するために少なくとも 6 つのノードが必要になります。</block>
+  <block id="d5766766c59e3d9af63d1473c5ce1b5f" category="list-text">*強力なグローバル*:</block>
+  <block id="6f4a5fbbb3a2d6cc42df99ed00253a1e" category="list-text">*レガシー ストロング グローバル*: すべてのサイトにわたるすべてのクライアント要求の書き込み後の読み取り一貫性を保証します。</block>
+  <block id="8190cb8fa846c6397a4098016aae607b" category="list-text">これは、新しい Quorum Strong Global に手動で変更せずに 11.9 以前から 12.0 にアップグレードされたすべてのシステムのデフォルトの動作です。</block>
+  <block id="333bd85e6baadc6b1c15e6e34746ceab" category="list-text">これは、12.0 以降で新しくインストールされたすべてのシステムのデフォルトの動作です。</block>
+  <block id="cef7f629c1a1cd896339f424fa22bb83" category="paragraph">デュアル コミット オプションは、グリッド内の任意の 2 つの異なるストレージ ノードに 2 つのコピーを直ちに作成し、要求が成功したことをクライアントに返します。ノードの選択はリクエストのサイト内で試行されますが、状況によっては別のサイトのノードが使用される場合があります。オブジェクトは ILM キューに追加され、ILM ルールに従って評価および配置されます。</block>
+  <block id="26c7ee8e48bb07eea6962a93bcc2320a" category="paragraph">バランス オプションは、オブジェクトを ILM ポリシーに対して直ちに評価し、要求が成功したことをクライアントに返す前にオブジェクトを同期的に配置します。停止または配置要件を満たすためのストレージ不足のために ILM ルールを直ちに満たすことができない場合、代わりにデュアル コミットが使用されます。問題が解決されると、ILM は定義されたルールに基づいてオブジェクトを自動的に配置します。</block>
+  <block id="0364e24f1eb145592ee0b598b8005735" category="paragraph">厳密なオプションは、オブジェクトを ILM ポリシーに対して直ちに評価し、要求が成功したことをクライアントに返す前にオブジェクトを同期的に配置します。停止または配置要件を満たすためのストレージ不足のために ILM ルールを直ちに満たすことができない場合、要求は失敗し、クライアントは再試行する必要があります。</block>
+  <block id="7eaf1a666369158296b99d1bae924fb9" category="paragraph">ゲートウェイ ノードは、デフォルトでゲートウェイ ノードが存在するサイト内のストレージ ノード間で負荷を分散します。StorageGRID は、ゲートウェイ ノードが複数のサイトのノードを使用して負荷を分散できるように構成できます。この構成により、クライアントの要求に対する応答の遅延に、これらのサイト間の遅延が追加されます。これは、合計遅延がクライアントにとって許容できる場合にのみ構成する必要があります。</block>
+  <block id="b88fa163d4922e884e42d91e1ba6ae64" category="paragraph">ローカル負荷分散とグローバル負荷分散を組み合わせることで、RTO ゼロを実現できます。中断のないクライアント アクセスを確保するには、クライアント要求の負荷分散が必要です。StorageGRIDソリューションには、各サイトに多数のゲートウェイ ノードと高可用性グループを含めることができます。サイト障害が発生した場合でも、どのサイトのクライアントにも中断のないアクセスを提供するには、 StorageGRID Gateway ノードと組み合わせて外部の負荷分散ソリューションを構成する必要があります。各サイト内の負荷を管理するゲートウェイ ノードの高可用性グループを構成し、外部ロード バランサを使用して高可用性グループ間で負荷を分散します。リクエストが稼働中のサイトにのみ送信されるように、ヘルス チェックを実行するように外部ロード バランサを構成する必要があります。StorageGRIDによる負荷分散の詳細については、<block ref="587298665ed077e05405d60ca7617c92" category="inline-link-rx"></block>。</block>
+  <block id="aeaea368f9c7df971b29e4e113b40910" category="paragraph">ストレージ システム内のオブジェクトは、ライフサイクル全体にわたってデータがどのようにどこに保存されるかを指示する情報ライフサイクル管理 (ILM) ルールに基づいて保存されます。同期レプリケーションの場合、厳密な実行とバランスの取れた実行のどちらかを検討できます。</block>
+  <block id="e90289fd7decc74e13e03b1552c30be4" category="paragraph">次のシナリオでは、 StorageGRIDソリューションは、統合ロード バランサーの高可用性グループへの要求を管理するオプションの外部ロード バランサーを使用して構成されています。これにより、RPO ゼロに加えて RTO ゼロも実現されます。ILM は、同期配置用のバランスの取れた取り込み保護を使用して構成されています。各バケットは、3 つ以上のサイトのグリッドの場合は強力なグローバル整合性モデルのクォーラム バージョンで構成され、2 つのサイトの場合は強力なグローバル整合性のレガシー バージョンで構成されます。</block>
+  <block id="3fa7a1aaa876241f03f99e54b9155fea" category="paragraph">*シナリオ1:*</block>
+  <block id="18a1bb675a43c43a3dfde79cc13f84b7" category="paragraph">2 サイトのStorageGRIDソリューションでは、すべてのオブジェクトのレプリカが少なくとも 2 つあり、すべてのメタデータのレプリカが 6 つあります。障害回復時に、停止からの更新は回復されたサイト/ノードに自動的に同期されます。サイトが 2 つしかない場合、サイト全体の損失を超える障害シナリオでゼロ RPO を達成することはほとんど不可能です。</block>
+  <block id="5ab17dee3d885984e1cdcd607277ac4e" category="paragraph">*シナリオ2:*</block>
+  <block id="cd26f9cc5a308ec85764b3e36bb2f272" category="paragraph">3 つ以上のサイトのStorageGRIDソリューションでは、すべてのオブジェクトのレプリカまたは EC チャンクが少なくとも 3 つあり、すべてのメタデータのレプリカが 9 つあります。障害回復時に、停止からの更新は回復されたサイト/ノードに自動的に同期されます。3 つ以上のサイトがあれば、RPO ゼロを実現できます。</block>
+  <block id="9ab046a736c89c63a7db90494ae7ec75" category="cell">2サイトの成果 + レガシーストロンググローバル</block>
+  <block id="26c449ea48832ca48a6548bc31d96fd0" category="cell">3つ以上のサイトの成果 + Quorum Strong Global</block>
+  <block id="1c78a7597bcf74fe02547feb0063affe" category="list-text">グリッド内に少なくとも 1 つの複製コピーが存在します</block>
+  <block id="00316d3bc04dc064cd3719dd912d32a4" category="list-text">複製コピーは存在しない</block>
+  <block id="452168b286824cfe8e53ad1f5dda59bd" category="list-text">グリッド内に少なくとも 1 つの複製コピーが存在する</block>
+  <block id="7d9747ca777716a4392358b7427ff5c6" category="cell">障害が解決されるまで、一部のクライアント操作は中断されます。GET および HEAD 操作は中断されることなく続行されます。この障害状態でも操作を中断せずに継続するには、バケットの一貫性を新規書き込み後の読み取り以下に下げます。</block>
+  <block id="36746a7eba38843cafcb9e3af5dea3db" category="cell">いずれかの障害が解決されるまで、一部のクライアント操作は中断されます。HEAD 操作は中断されることなく継続されます。複製コピーまたは十分な EC チャンクが存在する場合、GET 操作は中断されることなく続行されます。この障害状態でも操作を中断せずに継続するには、バケットの一貫性を新規書き込み後の読み取り以下に下げます。</block>
+  <block id="82ce0367a6b3a5de26a62e29a5365b42" category="cell">業務の中断やデータの損失はありません。複製コピーの数に応じてデータが失われる可能性があります。ローカル消去コーディングにより、データの損失を防ぐことができます。</block>
+  <block id="c28323ab18ce37f5ece09594b9447122" category="cell">存在するサイトは 2 つだけです。参照: 単一サイトと単一ノード。</block>
+  <block id="7b51ff758c223274f7c344f394bdeda8" category="cell">メタデータ レプリカ クォーラムを満たすことができない場合、操作は中断されます。この障害状態でも操作を中断せずに継続するには、バケットの一貫性を新規書き込み後の読み取り以下に下げます。複製コピーの数によっては、永続的な障害によりデータが失われる可能性があります。ローカル消去コーディングにより、データの損失を防ぐことができます。</block>
+  <block id="e94aef628672e9a1bcce72cde6e78e6a" category="cell">稼働中のサイトは残っていません。少なくとも 1 つのサイトを完全に回復できない場合は、データが失われます。</block>
+  <block id="27feead84299db9e58532f6d84c4af73" category="cell">メタデータ レプリカ クォーラムを満たすことができない場合、操作は中断されます。この障害状態でも操作を中断せずに継続するには、バケットの一貫性を新規書き込み後の読み取り以下に下げます。十分な消去コード化されたチャンクが残っていない場合、永続的な障害によりデータが失われる可能性があります。ローカル消去コーディングまたは複製コピーにより、データ損失を防ぐことができます。</block>
+  <block id="d7292a790103a969be501696ea11a6e3" category="cell">いずれかの障害が解決されるまで、クライアント操作は中断されます。この障害状態でも操作を中断せずに継続するには、バケットの一貫性を新規書き込み後の読み取り以下に下げます。データ損失なし</block>
+  <block id="ae95111240ddd68d1051a50fed4ad211" category="cell">分離されたサイトでは操作が中断されますが、データは失われません。この障害状態でも操作を中断せずに継続するには、バケットの一貫性を新規書き込み後の読み取り以下に下げます。残りのサイトでの業務は中断されず、データも失われません。</block>
+  <block id="fbca66120bd7d47e4ed9cae5a0bde635" category="inline-link">StorageGRIDソフトウェア 11.5 - 12.0</block>
+  <block id="5934c3c1836e9997b4dabf8595c341fc" category="list-text"><block ref="5934c3c1836e9997b4dabf8595c341fc" category="inline-link-rx"></block></block>
+  <block id="79770fd4c42ac1be271a3e3ea7399421" category="sidebar">StorageGRID11.5-12.0</block>
 </blocks>
