@@ -16,6 +16,7 @@ summary: ONTAP S3からStorageGRIDへの移行
 
 
 
+[[preparing-ontap]]
 == ONTAPの準備
 
 デモ用に、SVMオブジェクトストアサーバ、ユーザ、グループ、グループポリシー、およびバケットを作成します。

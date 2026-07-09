@@ -18,6 +18,7 @@ summary: お客様とNetApp ITによって実装されたStorageGRID構成のユ
 
 
 
+[[solution-setup]]
 == ソリューションのセットアップ
 
 このラボStorageGRID環境は、4台のNetApp StorageGRID SG5712アプライアンス、1台の仮想プライマリ管理ノード、1台の仮想ゲートウェイノードで構成されています。SG5712アプライアンスは、ベースライン構成であるエントリレベルオプションです。NetApp StorageGRID SG5760やSG6060などの高パフォーマンスアプライアンスを選択すると、パフォーマンスが大幅に向上します。サイジングの支援については、NetApp StorageGRID 解決策 アーキテクトにお問い合わせください。
@@ -48,10 +49,9 @@ StorageGRIDのデータ保護ポリシーでは、統合ライフサイクル管
 |===
 デフォルトルールはILM 2 Copyルールです。このテストでは、200KB以上のすべてのオブジェクトにイレイジャーコーディング2+1ルールを適用しました。デフォルトルールは200KB未満のオブジェクトに適用されました。このようにルールを適用することは、StorageGRIDのベストプラクティスです。
 
-このテスト環境の技術的な詳細については解決策、 https://www.netapp.com/us/media/tr-4831.pdf["CommvaultによるNetAppスケールアウトデータ保護"] テクニカルレポート：
 
 
-
+[[storagegrid-hardware-specifications]]
 == StorageGRIDハードウェア
 
 次の表に、このテストで使用したNetApp StorageGRIDハードウェアを示します。10Gbpsネットワークを備えたStorageGRID SG5712アプライアンスはエントリレベルのオプションで、ベースライン構成です。必要に応じて、25Gbpsネットワーク用にSG5712を設定できます。
@@ -77,6 +77,7 @@ NetApp StorageGRID SG5760、SG6060、オールフラッシュSGF6112アプライ
 
 
 
+[[commvault-and-storagegrid-software-requirements]]
 == CommvaultとStorageGRIDのソフトウェア要件
 
 次の表に、テスト用にVMwareソフトウェアにインストールしたCommvaultおよびNetApp StorageGRIDソフトウェアのソフトウェア要件を示します。4つのMediaAgentデータ転送マネージャと1つのCommServeサーバがインストールされました。このテストでは、VMwareインフラ用に10Gbpsネットワークを実装しました。次の表

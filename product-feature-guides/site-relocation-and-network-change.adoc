@@ -19,6 +19,7 @@ link:https://docs.netapp.com/us-en/storagegrid-118/maintain/changing-nodes-netwo
 
 
 
+[[considerations-before-site-relocation]]
 == サイトの再配置前の考慮事項
 
 * Cassandraデータベースの再構築を回避するには、サイトの移動を完了し、すべてのノードを15日以内にオンラインにします。
@@ -34,11 +35,11 @@ image:site-relocation/s3-completed-request.png["S3の概要のGrafanaグラフ�
 
 
 
+[[procedure-to-change-grid-ip-address-before-site-relocation]]
 === サイトの再配置前に手順でGrid IPアドレスを変更
 
 .手順
-. 新しいグリッドネットワークサブネットが新しい場所で使用される場合は、
-link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-grid-network.htmll["グリッドネットワークサブネットリストにサブネットを追加します。"^]
+. 新しい場所で新しいグリッドネットワークサブネットを使用する場合、link:https://docs.netapp.com/us-en/storagegrid/expand/updating-subnets-for-grid-network.html["グリッドネットワークサブネットリストにサブネットを追加します。"^]
 . プライマリ管理ノードにログインし、change-ipを使用してグリッドIPを変更します。再配置用にノードをシャットダウンする前に、変更をステージングする必要があります*。
 +
 .. [Grid IP]で[2]、[1]を選択します。
@@ -75,6 +76,7 @@ image:site-relocation/ip-change-6.png["続行"]
 
 
 
+[[appliance-vlan-change]]
 === アプライアンスVLANの変更
 
 以下の手順は、リモートから変更を実行するために、StorageGRIDアプライアンスの管理ネットワークまたはクライアントネットワークにリモートアクセスできることを前提としています。

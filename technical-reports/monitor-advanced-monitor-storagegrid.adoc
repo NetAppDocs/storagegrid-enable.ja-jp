@@ -17,6 +17,7 @@ summary: 指標APIを使用してStorageGRIDを監視する方法について説
 
 
 
+[[view-metrics-api-through-a-prometheus-query]]
 == Prometheusクエリを使用した指標APIの表示
 
 Prometheusは指標を収集するためのオープンソースソフトウェアです。GMIを使用してStorageGRIDに組み込まれているPrometheusにアクセスするには、メニューの[Support][Metrics]に移動します。
@@ -47,6 +48,7 @@ NOTE: 追加のポートを開く必要があるため、Prometheusインスタ�
 
 
 
+[[export-metrics-through-the-api]]
 == APIを使用した指標のエクスポート
 
 StorageGRID管理APIを使用して同じデータにアクセスすることもできます。

@@ -18,6 +18,7 @@ StorageGRID syslog転送機能を使用すると、StorageGRIDログメッセー
 
 
 
+[[requirements]]
 == 要件
 
 * StorageGRID 11.6.0.2以降
@@ -26,6 +27,7 @@ StorageGRID syslog転送機能を使用すると、StorageGRIDログメッセー
 
 
 
+[[sample-files]]
 == サンプルファイル
 
 * link:../media/elk-config/elk7-sample.zip["Logstash 7.xサンプルファイルパッケージをダウンロードします"] +*MD5チェックサム*148c23d0021d9a4bb4a6c0287464deab +*SHA256チェックサム*f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8be3d522adf2d6
@@ -35,12 +37,14 @@ StorageGRID syslog転送機能を使用すると、StorageGRIDログメッセー
 
 
 
+[[assumption]]
 == 前提条件
 
 読者はStorageGRID およびElkの用語および操作に精通しています。
 
 
 
+[[instruction]]
 == 指示
 
 grokパターンで定義される名前の違いにより、2つのサンプルバージョンが提供されます。+たとえば、Logstash設定ファイルのSYSLOGBASE grokパターンでは、インストールされているLogstashのバージョンによってフィールド名が異なります。
@@ -119,11 +123,12 @@ image:elk-config/kibana-import-conflict.png["キバナ紛争"]
 
 
 
+[[additional-resources]]
 == その他のリソース
 
 * https://coralogix.com/blog/syslog-101-everything-you-need-to-know-to-get-started/["syslog101"]
 * https://www.elastic.co/what-is/elk-stack["エルクスタックとは何ですか"]
-* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns["grokパターンリスト"]
+* https://github.com/hpcugent/logstash-patterns/["Grok パターン"]
 * https://logz.io/blog/logstash-grok/["初心者向けのLogstashガイド: Grok"]
 * https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/["ログスタシュの実践的なガイド：syslogの詳細"]
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html["Kibanaガイド–ドキュメントを参照してください"]

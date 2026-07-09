@@ -20,6 +20,7 @@ Object Lockは、オブジェクトが削除または上書きされないよう
 
 
 
+[[legal-hold]]
 == リーガルホールド
 
 * オブジェクトロックリーガルホールドは、オブジェクトに適用される単純なオン/オフステータスです。
@@ -68,6 +69,7 @@ aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url ht
 
 
 
+[[compliance-mode]]
 == Complianceモード
 
 * オブジェクトの保持には、タイムスタンプがretain untilを使用します。
@@ -97,6 +99,7 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 
 
 
+[[default-retention]]
 == デフォルトの保持
 
 * オブジェクト単位のAPIで定義された保持期限を日数と年数で設定します。
@@ -152,6 +155,7 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 
 
 
+[[test-deleting-an-object-with-a-defined-retention]]
 == 保持期間が定義されているオブジェクトの削除をテストします
 
 オブジェクトロックは、バージョン管理の上に構築されます。保持期間はオブジェクトのバージョンで定義されます。保持が定義されているオブジェクトを削除しようとしたときに、バージョンが指定されていない場合は、削除マーカーがオブジェクトの現在のバージョンとして作成されます。

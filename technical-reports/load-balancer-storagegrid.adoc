@@ -20,6 +20,7 @@ NetApp® StorageGRID® ゲートウェイ ノードを実装するための一�
 
 
 
+[[storagegrid-gateway-node-load-balancer-versus-third-party-load-balancer]]
 == StorageGRIDゲートウェイノードロードバランサと他社製ロードバランサの比較
 
 StorageGRIDは、S3と互換性のあるオブジェクトストレージベンダーの中で唯一、専用のアプライアンス、VM、コンテナとして使用できる標準のロードバランサを提供します。StorageGRIDが提供するロードバランサは、ゲートウェイノードとも呼ばれます。

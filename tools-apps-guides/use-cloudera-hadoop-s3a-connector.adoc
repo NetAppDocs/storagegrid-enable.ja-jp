@@ -18,6 +18,7 @@ Hadoopは、しばらくの間データサイエンティストのお気に入�
 
 
 
+[[why-use-s3a-for-hadoop-workflows]]
 == S3AをHadoopワークフローに使用する理由
 
 データ量の増加に伴い、新しいマシンにコンピューティングとストレージを個別に追加するアプローチは非効率的になっています。リニアに拡張すると、リソースの効率的な使用やインフラの管理が難しくなります。
@@ -26,10 +27,12 @@ Hadoopは、しばらくの間データサイエンティストのお気に入�
 
 
 
+[[configure-s3a-connector-to-use-storagegrid]]
 == StorageGRID を使用するようにS3Aコネクタを構成します
 
 
 
+[[prerequisites]]
 === 前提条件
 
 * StorageGRID S3エンドポイントのURL、テナントS3アクセスキー、およびHadoop S3A接続テスト用のシークレットキー。
@@ -40,9 +43,10 @@ Hadoopは、しばらくの間データサイエンティストのお気に入�
 
 
 
+[[install-java-package]]
 === Javaパッケージをインストールします
 
-. を確認します https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html["Clouderaサポートマトリックス"^] を参照してください。
+. サポートされている JDK バージョンについては、 https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/upgrade/topics/cdpdc-java-requirements.html["Clouderaサポートマトリックス"^]を確認してください。
 . をダウンロードします https://www.oracle.com/java/technologies/downloads/["Java 11.xパッケージ"^] Clouderaクラスタオペレーティングシステムと同じです。このパッケージをクラスタ内の各ホストにコピーします。この例では、CentOSにrpmパッケージを使用しています。
 . 各ホストにrootとしてログインするか、sudo権限を持つアカウントを使ってログインします。各ホストで次の手順を実行します。
 +
@@ -85,6 +89,7 @@ source /etc/profile
 
 
 
+[[cloudera-hdfs-s3a-configuration]]
 === Cloudera HDFS S3A構成
 
 * 手順 *
@@ -153,10 +158,12 @@ image:hadoop-s3a/hadoop-restart-stale-service-icon.png["Hadoopの古いサービ
 
 
 
+[[test-s3a-connection-to-storagegrid]]
 == StorageGRID へのS3A接続をテストします
 
 
 
+[[perform-basic-connection-test]]
 === 基本的な接続テストを実行します
 
 Clouderaクラスタのいずれかのホストにログインし、「hadoop fs s-ls s3a：//_<bucket-name>_/`」と入力します。
@@ -178,6 +185,7 @@ Found 1 items
 ----
 
 
+[[troubleshooting]]
 === トラブルシューティング
 
 

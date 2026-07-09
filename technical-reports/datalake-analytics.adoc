@@ -13,6 +13,7 @@ summary: このレポートでは、StorageGRIDでのビッグデータ分析に
 
 
 
+[[netapp-storagegrid-use-cases]]
 == NetApp StorageGRIDのユースケース
 
 NetApp StorageGRIDオブジェクトストレージ解決策は、拡張性、データ可用性、セキュリティ、ハイパフォーマンスを提供します。StorageGRID S3は、あらゆる規模のさまざまな業界の組織で幅広いユースケースに使用されています。典型的なシナリオをいくつか見てみましょう。
@@ -37,6 +38,7 @@ image:datalake-analytics/image1.png["StorageGRIDのユースケース図、幅= 
 
 
 
+[[why-storagegrid-for-data-lakes]]
 == データレイクにStorageGRIDを選ぶ理由
 
 * コラボレーションの強化-業界標準のAPIアクセスによる大規模な共有マルチサイト、マルチテナンシー
@@ -52,9 +54,10 @@ image:datalake-analytics/image2.png["StorageGRIDデータレイクの例、幅= 
 
 
 
+[[benchmarking-data-warehouses-and-lakehouses-with-s3-object-storage-a-comparative-study]]
 == S3オブジェクトストレージを使用したデータウェアハウスとレイクハウスのベンチマーク比較調査
 
-この記事では、NetApp StorageGRIDを使用したさまざまなデータウェアハウスとLakehouseエコシステムの包括的なベンチマークを紹介します。目的は、S3オブジェクトストレージでパフォーマンスが最も優れたシステムを特定することです。データウェアハウス/レイクハウスアーキテクチャとテーブルフォーマット(寄木細工と氷山)の詳細については、こちらを参照してhttps://www.dremio.com/wp-content/uploads/2023/02/apache-Iceberg-TDG_ER1.pdf?aliId=eyJpIjoieDRUYjFKN2ZMbXhTRnFRWCIsInQiOiJIUUw0djJsWnlJa21iNUsyQURRalNnPT0ifQ%253D%253D["『Apache Iceberg: The Definitive Guide』"]ください。
+この記事では、NetApp StorageGRID を使用したさまざまなデータ ウェアハウスおよびレイクハウス エコシステムの包括的なベンチマークを紹介します。目標は、S3 オブジェクト ストレージで最も優れたパフォーマンスを発揮するシステムを特定することです。データ ウェアハウス／レイクハウスのアーキテクチャとテーブル形式（Parquet および Iceberg）の詳細については、こちらのhttps://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html["『Apache Iceberg: The Definitive Guide』"]を参照してください。
 
 * ベンチマークツール- TPC-DS- https://www.tpc.org/tpcds/[]
 * ビッグデータエコシステム

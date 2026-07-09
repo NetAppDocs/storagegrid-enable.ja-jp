@@ -18,6 +18,7 @@ NetAppはStorageGRIDをGitLabでテストしました。以下のGitLabの設定
 
 
 
+[[object-storage-connection-example]]
 == オブジェクトストレージの接続例
 
 Linuxパッケージのインストールの場合は、次の例を参照してください。 `connection` 統合フォームでの設定。編集 `/etc/gitlab/gitlab.rb` 次の行を追加し、必要な値を置き換えます。

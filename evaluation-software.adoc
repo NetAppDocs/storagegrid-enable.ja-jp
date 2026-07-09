@@ -16,6 +16,7 @@ summary: 見込みのあるお客様のためにStorageGRID評価ソフトウェ
 
 
 
+[[register-for-an-account]]
 == アカウントに登録します
 
 . お勤め先のEメールアドレスを使用して、でアカウントを登録し https://mysupport.netapp.com/site/user/registration["NetAppサポートサイト"] ます。
@@ -35,6 +36,7 @@ summary: 見込みのあるお客様のためにStorageGRID評価ソフトウェ
 
 
 
+[[download-storagegrid]]
 == StorageGRIDのダウンロード
 
 . サポートケースの確認と承認が完了すると、NetAppサポートからお客様のアカウントに見込み客へのアクセス権が付与されたことがEメールで通知されます。

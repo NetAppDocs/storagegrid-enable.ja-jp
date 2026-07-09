@@ -16,6 +16,7 @@ summary: ONTAP S3からStorageGRIDへの移行
 
 
 
+[[preparing-storagegrid]]
 == StorageGRID を準備しています
 
 このデモの設定では、引き続きテナント、ユーザ、セキュリティグループ、グループポリシー、バケットを作成します。

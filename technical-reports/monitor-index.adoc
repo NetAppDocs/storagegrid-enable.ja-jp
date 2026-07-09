@@ -24,6 +24,7 @@ StorageGRIDは、監視の主題を深く掘り下げる優れたドキュメン
 
 
 
+[[data-sources]]
 == データソース
 
 NetApp StorageGRIDを正常に監視するには、StorageGRIDシステムの健全性と運用に関するデータを収集する場所を把握することが重要です。
@@ -35,6 +36,7 @@ NetApp StorageGRIDを正常に監視するには、StorageGRIDシステムの健
 
 
 
+[[where-to-find-additional-information]]
 == 追加情報の参照先
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。

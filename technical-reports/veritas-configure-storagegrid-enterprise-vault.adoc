@@ -19,6 +19,7 @@ StorageGRID 11.5以降およびVeritas Enterprise Vault 14.1以降の基本構�
 
 
 
+[[prerequisites-to-configure-storagegrid-and-veritas-enterprise-vault]]
 == StorageGRIDとVeritas Enterprise Vaultを設定するための前提条件
 
 * Veritas Enterprise VaultでStorageGRIDを設定する前に、次の前提条件を確認してください。
@@ -42,6 +43,7 @@ NOTE: WORMストレージ（オブジェクトロック）の場合は、Enterpr
 
 
 
+[[configure-storagegrid-with-veritas-enterprise-vault]]
 == Veritas Enterprise Vaultを使用したStorageGRIDの設定
 
 Veritas Enterprise Vaultを使用してStorageGRIDを設定するには、次の手順を実行します。

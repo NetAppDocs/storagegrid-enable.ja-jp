@@ -24,6 +24,7 @@ StorageGRIDなどのオブジェクトストレージシステムにおける、
 
 
 
+[[load-balancer-basics]]
 == ロードバランサの基本
 
 ロードバランサは、StorageGRIDなどのエンタープライズクラスのオブジェクトストレージシステムに欠かせないコンポーネントです。StorageGRIDは複数のストレージノードで構成され、各ストレージノードは特定のStorageGRIDインスタンスのSimple Storage Service（S3）ネームスペース全体を提供できます。ロードバランサは可用性の高いエンドポイントを作成し、その背後にStorageGRIDノードを配置します。StorageGRIDは、S3互換オブジェクトストレージシステムの中で独自のロードバランサを提供するだけでなく、F5、Citrix NetScaler、HAプロキシ、NGINXなどのサードパーティまたは汎用のロードバランサもサポートしています。
@@ -36,6 +37,7 @@ image:load-balancer/load-balancer-local-traffic-manager-load-balancer.png["ロ�
 
 
 
+[[local-and-global-load-balancers]]
 === ローカルおよびグローバルのロードバランサ
 
 ロードバランサには次の2種類があります。
@@ -46,6 +48,7 @@ image:load-balancer/load-balancer-local-traffic-manager-load-balancer.png["ロ�
 
 
 
+[[where-to-find-additional-information]]
 == 追加情報の参照先
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
@@ -53,6 +56,6 @@ image:load-balancer/load-balancer-local-traffic-manager-load-balancer.png["ロ�
 * NetApp StorageGRIDドキュメント センターhttps://docs.netapp.com/us-en/storagegrid/[]
 * NetApp StorageGRIDイネーブルメント https://docs.netapp.com/us-en/storagegrid-enable/[]
 * StorageGRID F5ロードバランサの設計に関する考慮事項 https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/[]
-* Loadbalancer.org—Load Balancing NetApp StorageGRID https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/[]
+* Loadbalancer.org—ロード バランシング NetApp StorageGRID https://www.loadbalancer.org/applications/netapp-storagegrid/[]
 * Kemp：ロードバランシングNetApp StorageGRID https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID[]
 

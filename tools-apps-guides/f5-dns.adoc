@@ -18,18 +18,21 @@ _スティーブ・ゴーマン（F5）_
 
 
 
+[[introduction]]
 == はじめに
 
 以前は BIG-IP GTM (Global Traffic Manager)、非公式には GSLB (Global Server Load Balancing) と呼ばれていた F5 BIG-IP DNS ソリューションは、複数のアクティブ/アクティブ HA グループおよびアクティブ/アクティブ マルチサイトStorageGRIDソリューション間でのシームレスなアクセスを効果的に実現します。
 
 
 
+[[f5-big-ip-multi-site-storagegrid-configuration]]
 == F5 BIG-IP マルチサイトStorageGRID構成
 
 サポートされるStorageGRIDサイトの数に関係なく、少なくとも 2 台の BIG-IP アプライアンス (物理または仮想) で BIG-IP DNS モジュールが有効になっていて、設定されている必要があります。DNS アプライアンスの数が増えるほど、企業が享受できる冗長性の度合いが高まります。
 
 
 
+[[big-ip-dns-first-steps-in-initial-set-up]]
 === BIG-IP DNS - 初期設定の最初の手順
 
 BIG-IP アプライアンスで少なくとも初期プロビジョニングが完了したら、Web ブラウザを使用して TMUI (BIG-IP GUI) インターフェイスにログインし、[システム] -> [リソース プロビジョニング] を選択します。強調表示されているように、「グローバル トラフィック (DNS)」モジュールにチェック マークが付いており、ライセンスが付与されていることを確認します。なお、画像のように、「ローカル トラフィック (LTM)」を同じアプライアンスでプロビジョニングできるのが一般的です。
@@ -38,6 +41,7 @@ image:f5-dns/global-traffic.png["グローバルトラフィック（DNS）サ�
 
 
 
+[[configure-dns-protocol-foundational-elements]]
 === DNSプロトコルの基本要素を構成する
 
 StorageGRIDサイトのグローバル トラフィック管理に向けた最初のステップは、ほぼすべてのグローバル トラフィック ステアリングが構成される DNS タブを選択し、[設定] -> [GLSB] を選択することです。2 つの同期オプションを有効にし、参加している BIG-IP アプライアンス間で共有される DNS グループ名を選択します。
@@ -68,6 +72,7 @@ image:f5-dns/listener-list2.png["リスナー情報を追加する"]
 
 
 
+[[setting-up-data-center-sites-and-establishing-inter-big-ip-communications-in-four-steps]]
 === 4つのステップでデータセンターサイトをセットアップし、BIG-IP間通信を確立する
 
 
@@ -130,6 +135,7 @@ image:f5-dns/big-ip-add.png["証明書の信頼性を確認する"]
 
 
 
+[[setting-up-data-center-sites-and-establishing-inter-big-ip-communications]]
 === データセンターサイトのセットアップとBIG-IP間通信の確立
 
 この時点で、基盤となる正常な BIG-IP DNS アプライアンス グループを作成するためのすべての手順が完了します。これで、各StorageGRIDデータセンターで公開されている分散 Web/S3 サービスを指す名前 (FQDN) の作成に進むことができます。
@@ -156,6 +162,7 @@ image:f5-dns/wip-config.png["WIPの設定"]
 
 
 
+[[adjust-dns-to-support-global-traffic-management]]
 === グローバルトラフィック管理をサポートするためにDNSを調整する
 
 この時点で、基盤となるすべての BIG-IP アプライアンスは GSLB (グローバル サーバー ロード バランシング) を実行する準備が整います。ソリューションを活用するには、S3 トラフィック フローに使用される名前を調整して割り当てるだけです。一般的なアプローチは、企業の既存の DNS ドメインの一部を BIG-IP DNS の制御に委任することです。つまり、名前空間の一部であるサブドメインを「切り分け」、このサブドメインの制御を BIG-IP DNS アプライアンスに委任することになります。技術的には、これは、BIG-IP DNS アプライアンスがエンタープライズ DNS に DNS リソース レコード (RR) を持っていることを確認し、これらの名前/アドレスを委任されたドメインのネーム サーバー (NS) DNS リソース レコードにすることによって行われます。
@@ -198,6 +205,7 @@ image:f5-dns/lb-method.png["負荷分散方法"]
 
 
 
+[[conclusion]]
 == まとめ
 
 F5 BIG-IP とNetApp StorageGRID を統合することで、複数のサイト間でのデータの可用性と一貫性、および S3 トランザクション ルーティングの最適化に関連する技術的な課題に対処します。このソリューションを導入すると、ストレージの復元力、パフォーマンス、信頼性が向上し、堅牢でスケーラブルかつ柔軟なストレージ インフラストラクチャを求める企業に最適です。

@@ -18,10 +18,12 @@ Dremioは、クラウドベースやオンプレミスのオブジェクトス�
 
 
 
+[[configure-dremio-data-source]]
 == Dremioデータソースの設定
 
 
 
+[[prerequisites]]
 === 前提条件
 
 * StorageGRID S3エンドポイントURL、テナントs3アクセスキーID、シークレットアクセスキー。
@@ -31,12 +33,14 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
 
 
 
+[[dremio-guide]]
 === Dremioガイド
 
 https://docs.dremio.com/current/sonar/data-sources/object/s3/["Amazon S3への接続- S3互換ストレージの設定"^]。
 
 
 
+[[instruction]]
 == 指示
 
 . [Dremio Datasets]ページで、[+]をクリックしてソースを追加し、[Amazon S3]を選択します。

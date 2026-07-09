@@ -323,7 +323,6 @@
   <block id="0f00c0e9578f0ff277a08d08ef376836" category="paragraph">2022年4月時点で、StorageGRID 11.0.14とCloudera 7.1.7のJava 11.0.14が、11.5および11.6に対してテストされました。ただし、Javaのバージョン番号は新規インストール時と異なる場合があります。</block>
   <block id="4064bf12468c8bc6d21b4c1c947f9ed1" category="section-title">Javaパッケージをインストールします</block>
   <block id="3408188787a55fb9708798cddbce37b0" category="inline-link">Clouderaサポートマトリックス</block>
-  <block id="e9be8954eba184e4880371339e422a20" category="list-text">を確認します<block ref="31da88a07df8e391e811822caa135aca" category="inline-link-rx"></block> を参照してください。</block>
   <block id="162479463df046cb4a74da2008354eed" category="inline-link">Java 11.xパッケージ</block>
   <block id="4c2d03bf2e98573fa9436705b37a57a1" category="list-text">をダウンロードします<block ref="60b96115cb33d167b5449475d0ab85e0" category="inline-link-rx"></block> Clouderaクラスタオペレーティングシステムと同じです。このパッケージをクラスタ内の各ホストにコピーします。この例では、CentOSにrpmパッケージを使用しています。</block>
   <block id="149f40ea9f9ffb02d7eeba792298fe1e" category="list-text">各ホストにrootとしてログインするか、sudo権限を持つアカウントを使ってログインします。各ホストで次の手順を実行します。</block>
@@ -645,8 +644,6 @@
   <block id="43b4ce193ce75a7c51a41a392da0e953" category="list-text"><block ref="43b4ce193ce75a7c51a41a392da0e953" category="inline-link-rx"></block></block>
   <block id="36df17c33644048e4c07c17be01b2524" category="inline-link">エルクスタックとは何ですか</block>
   <block id="2403480f61f37fce13a75f67d092ed18" category="list-text"><block ref="2403480f61f37fce13a75f67d092ed18" category="inline-link-rx"></block></block>
-  <block id="19d3c10a857b63064e06411baf1285b1" category="inline-link">grokパターンリスト</block>
-  <block id="7c6102b1302815b75a46740d436c93fc" category="list-text"><block ref="7c6102b1302815b75a46740d436c93fc" category="inline-link-rx"></block></block>
   <block id="13fc1087c795f112d8979eb5e2780e5c" category="inline-link">初心者向けのLogstashガイド: Grok</block>
   <block id="a39eed6135a0acdcad49fe799eb1bd27" category="list-text"><block ref="a39eed6135a0acdcad49fe799eb1bd27" category="inline-link-rx"></block></block>
   <block id="1482da3b9a25b116ee5827795ac8fbbd" category="inline-link">ログスタシュの実践的なガイド：syslogの詳細</block>
@@ -1303,8 +1300,6 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="c8d25296b6242f878bcc65b3463a9213" category="paragraph"><block ref="c8d25296b6242f878bcc65b3463a9213" category="inline-image-macro-rx" type="image"></block></block>
   <block id="91ecbe84c3a3b51ceb6c3c1c46fe828e" category="section-title">サイトの再配置前に手順でGrid IPアドレスを変更</block>
   <block id="7ce3d8dcf98150ca295b4e8b4a175d28" category="inline-link-macro">グリッドネットワークサブネットリストにサブネットを追加します。</block>
-  <block id="ef79c64bf374a8f7d8f11ddac8bac6ea" category="list-text">新しいグリッドネットワークサブネットが新しい場所で使用される場合は、
-<block ref="a48adf12485e7e1fabf51f229ceb57fd" category="inline-link-macro-rx"></block></block>
   <block id="a27c73113b9f8b1c8936231a5c6b72db" category="list-text">プライマリ管理ノードにログインし、change-ipを使用してグリッドIPを変更します。再配置用にノードをシャットダウンする前に、変更をステージングする必要があります*。</block>
   <block id="e8ebed2710314532bd7421c291775f7a" category="list-text">[Grid IP]で[2]、[1]を選択します。</block>
   <block id="0fc35f100f57d71f3d04d75f8e34db7a" category="list-text">5を選択して変更を表示</block>
@@ -1411,8 +1406,6 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
   <block id="3e6defd685231cdd12065add41996c89" category="paragraph">すべてのオブジェクト</block>
   <block id="dcd8a20c909a5d0bbf6f852d688309cb" category="paragraph">デュアルコミット</block>
   <block id="f2382f08b2b3ae5b16fd3e6a7f6fe40c" category="paragraph">デフォルトルールはILM 2 Copyルールです。このテストでは、200KB以上のすべてのオブジェクトにイレイジャーコーディング2+1ルールを適用しました。デフォルトルールは200KB未満のオブジェクトに適用されました。このようにルールを適用することは、StorageGRIDのベストプラクティスです。</block>
-  <block id="9fd2a44a56a109ab7ff40317cdd4cc9b" category="inline-link">CommvaultによるNetAppスケールアウトデータ保護</block>
-  <block id="f7d7cdf329bd5cf1893317ad3732d1f7" category="paragraph">このテスト環境の技術的な詳細については解決策、<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> テクニカルレポート：</block>
   <block id="de6340e74a7b4b37632d447d082a219e" category="paragraph">お客様の環境に合わせた具体的なサイジングについては、NetAppデータ保護のスペシャリストにお問い合わせください。NetAppのデータ保護スペシャリストは、Commvault Total Backup Storage Calculatorツールを使用して、バックアップインフラの要件を見積もることができます。このツールにはCommvaultパートナーポータルへのアクセスが必要です。必要に応じてアクセスにサインアップします。</block>
   <block id="e3b0761b4b3dd1b0a93403608c54ca50" category="paragraph">次のタスクを使用して、データ保護解決策のサイジングに関する検出を実行できます。</block>
   <block id="3cf303266a00ea5459dd889344aed185" category="list-text">保護が必要なシステムまたはアプリケーション/データベースのワークロードと、対応するフロントエンドの容量（テラバイト[TB]）を特定します。</block>
@@ -1558,8 +1551,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="9a76294cf4d43d5686590bb6c98a280b" category="list-text">CommVaultバージョン11.0.0 - Service Pack 16以降。*バージョン11.0.0 - Service Pack 16以降では、存在しないオブジェクトに対して実行されるS3 HEAD処理とGET処理の数が最小限に抑えられます。CommvaultおよびStorageGRID環境で高い整合性レベルを確保するには、バケットのdefault整合性レベルをRead-after-new-writeに設定します。</block>
   <block id="a1b241b7e61d12e641e864fa7e3c7a8e" category="list-text">NetApp製品ドキュメント+
 <block ref="fa4af55c3fdbce23e96d2cf73261fa5b" category="inline-link-rx"></block></block>
-  <block id="748e9574a05efa0e0738de58c2ff670b" category="list-text">Commvaultのドキュメント+
-<block ref="27eb3a3d6ca60f8dbf05e2df1f7e4644" category="inline-link-rx"></block></block>
   <block id="c4d7e990537b5cabb7c53ef27e8240d3" category="paragraph">Veeamでは、エンドポイントの接続にHTTPSのみを使用する必要があります。暗号化されていない接続はVeeamではサポートされていません。SSL証明書には、自己署名証明書、信頼されたプライベート認証局、または信頼されたパブリック認証局を使用できます。S3リポジトリへの継続的なアクセスを確保するために、HA構成で少なくとも2つのロードバランサを使用することを推奨します。ロードバランサには、すべての管理ノードとゲートウェイノードに配置されるStorageGRID提供の統合ロードバランササービス、またはF5、Kemp、HAProxy、Loadbalancer.orgなどのサードパーティの解決策を使用できます。 StorageGRIDロードバランサを使用すると、Veeamのワークロードに優先順位を付けたり、StorageGRIDシステムの優先順位の高いワークロードに影響しないようにVeeamを制限したりできるトラフィック分類機能（QoSルール）を設定できます。</block>
   <block id="2adef84f9348cc9769b8c3e1982c3cb1" category="list-text">拡張シェルフを使用するSG6060またはSG6160では、正しいシェルフドライブサイズの時間をベースアプライアンスの時間に追加して、フルクローン期間を取得する必要があります。</block>
   <block id="2060afee4c8201b859d447131ee1434a" category="section-title">SG5660 -&gt; SG5760 / SG5860</block>
@@ -1624,20 +1615,12 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="bbe6f3db45c1fda11072f0bdaf823ba8" category="paragraph">グリッドを設定してインストールを完了するには、次のタスクを実行します。</block>
   <block id="65fab22305d638277fe08fef3e3b4d40" category="list-text"><block ref="4843c82971df81e97aef3855873b7087" category="inline-xref-macro-rx"></block></block>
   <block id="b2d5dc59664ac0d21bcbd5dded69a0fb" category="inline-link-macro">StorageGRID ライセンス情報を指定します</block>
-  <block id="dc62a6bae0942d98774fbcedfe04d566" category="list-text"><block ref="dc62a6bae0942d98774fbcedfe04d566" category="inline-link-macro-rx"></block></block>
-  <block id="1a5870eb36e857189f184d5f320d0181" category="list-text"><block ref="1a5870eb36e857189f184d5f320d0181" category="inline-link-macro-rx"></block></block>
   <block id="abe15e0952653cec6327bae5b3790c92" category="inline-link-macro">グリッドネットワークサブネットの指定</block>
-  <block id="3071b864ee51f7743885151b146d1382" category="list-text"><block ref="3071b864ee51f7743885151b146d1382" category="inline-link-macro-rx"></block></block>
   <block id="f0f514dbb09f4d2c0f2f9870207e96c6" category="inline-link-macro">保留中のグリッドノードを承認します</block>
-  <block id="445d704adaa37eeca0880c16cf11c040" category="list-text"><block ref="445d704adaa37eeca0880c16cf11c040" category="inline-link-macro-rx"></block></block>
   <block id="346b0f799d5824e6ef646274dd79d1fb" category="inline-link-macro">NTPサーバ情報の指定</block>
-  <block id="92aab28741bfbfe48d3fc128eec45691" category="list-text"><block ref="92aab28741bfbfe48d3fc128eec45691" category="inline-link-macro-rx"></block></block>
   <block id="40f40c958ca771e7e2179dfe775df77a" category="inline-link-macro">ドメインネームシステムサーバ情報の指定</block>
-  <block id="32461cb1ffaecdbafa915e26f11613aa" category="list-text"><block ref="32461cb1ffaecdbafa915e26f11613aa" category="inline-link-macro-rx"></block></block>
   <block id="b681141cbe056ed6a1df3d88efd6f872" category="inline-link-macro">StorageGRID システムのパスワードを指定します</block>
-  <block id="a4f57a2832f1ed9a4d6b154ee41a87c7" category="list-text"><block ref="a4f57a2832f1ed9a4d6b154ee41a87c7" category="inline-link-macro-rx"></block></block>
   <block id="9d6fe38c7ad959d5754500d24c1a8ecc" category="inline-link-macro">構成を確認し、インストールを完了します</block>
-  <block id="6ddb52602061bc71bd9227b0e708c9a3" category="list-text"><block ref="6ddb52602061bc71bd9227b0e708c9a3" category="inline-link-macro-rx"></block></block>
   <block id="b9b271fd480a768b1af9a1c33cd4a85b" category="section-title">Grid Managerに移動</block>
   <block id="42b1b6d90a33a9440dc019fd997cd7b4" category="paragraph">グリッドマネージャを使用して、StorageGRIDシステムの設定に必要なすべての情報を定義します。</block>
   <block id="9fade4bc71a9b26db45e715f017d00c2" category="paragraph">作業を開始する前に、プライマリ管理ノードを導入し、最初の起動シーケンスを完了しておく必要があります。</block>
@@ -1670,7 +1653,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="dbf88cfc0b0d656a966a6413296090cd" category="paragraph">TR-4882には、NetApp StorageGRIDの実際的なインストール手順が記載されています。ベアメタルまたはRed Hat Enterprise Linux（RHEL）で実行されている仮想マシン（VM）にインストールできます。このアプローチでは、StorageGRIDコンテナ化された6つのサービスを、推奨されるレイアウトとストレージ構成で、3台の物理（または仮想）マシンに「独自の」インストールを実行します。お客様によっては、このTRに記載されている導入例に従うことで、導入プロセスを理解しやすくなる場合があります。</block>
   <block id="53721259d4f70a6e22df4cf50cb6a007" category="paragraph">StorageGRIDとインストールプロセスの詳細については、製品ドキュメントの[Install、upgrade、and hotfix（インストール、アップグレード、およびホットフィックスのStorageGRID）]を参照して<block ref="138cb63445270d21525dcce6de5e7942" category="inline-link-rx"></block> ください。</block>
   <block id="a65c073029a2585f51e608ca137bdfa6" category="inline-link-macro">StorageGRIDをインストールするための前提条件</block>
-  <block id="ee6027960e010f4085d66014d7765ecd" category="paragraph">導入を開始する前に、NetApp StorageGRIDソフトウェアのコンピューティング、ストレージ、ネットワークの要件を確認してみましょう。StorageGRIDは、PodmanまたはDocker内でコンテナ化されたサービスとして実行されます。このモデルでは、一部の要件はホストオペレーティングシステム（StorageGRIDソフトウェアを実行しているDockerをホストするOS）を参照しています。また、リソースの一部は、各ホスト内で実行されているDockerコンテナに直接割り当てられます。この導入では、ハードウェアの使用率を最大化するために、物理ホストごとに2つのサービスを導入します。詳細については、次のセクションに進んでください <block ref="dbd241ef02e4fbb756d3e4613e476d0c" category="inline-link-macro-rx"></block>。</block>
   <block id="ce29edc154956369d79ff8276cf747b1" category="paragraph">このTRで説明した手順を実行すると、6台のベアメタルホストにStorageGRIDのインストールが完了します。これでグリッドネットワークとクライアントネットワークが正常に機能し、ほとんどのテストシナリオで役立ちます。</block>
   <block id="e3581082ba2aa18febff247afdaf6344" category="paragraph">このTRに記載されている情報の詳細については、次のドキュメントリソースを参照してください。</block>
   <block id="d794ca6edf18a97bedb2ad1af37d0c71" category="list-text">NetApp StorageGRIDドキュメントセンター <block ref="47ea1c2d0f136bec8b3e66c2121bf70f" category="inline-link-rx"></block></block>
@@ -1740,7 +1722,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="41b36522e1e1020bad35b072e2f4caeb" category="section-title">ストレージ要件</block>
   <block id="caf25f834fd33813cb804fde9406ddf4" category="paragraph">各ノードには、次の表に示すサイズのSANベースまたはローカルディスクデバイスが必要です。</block>
   <block id="4491ed1f1284f730663a34bc001e9d82" category="inline-link-macro">物理ホストのレイアウトと要件</block>
-  <block id="755122cb8b85d1b9d1d35543370e43b4" category="admonition">表内の数値はStorageGRIDサービスタイプごとのものであり、グリッド全体や物理ホストごとの数値ではありません。導入の選択肢に基づいて、このドキュメントで後述するでの各物理ホストの数を計算します <block ref="010aeaa454c3e87113c61b2c557145c0" category="inline-link-macro-rx"></block>。++アスタリスクが付いているパスまたはファイルシステムは、インストーラによってStorageGRIDコンテナ自体に作成されます。管理者による手動での設定やファイルシステムの作成は必要ありませんが、これらの要件を満たすためにはホストにブロックデバイスが必要です。つまり、ブロックデバイスはコマンドを使用して表示され<block ref="9d3de2981a7628c02076a5a69f0d0007" prefix=" " category="inline-code"></block> ますが、ホストOS内でフォーマットまたはマウントされていません。+++++</block>
   <block id="553ce76e41b15044745c302f9ec38760" category="cell">LUNの用途</block>
   <block id="0af38a14209cc9bc1b292891a3e005da" category="cell">LUN数</block>
   <block id="33979902172af2154a44822727bfd415" category="cell">LUNの最小サイズ</block>
@@ -1768,7 +1749,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="9cdde8629f3f819484f7c5b58e83930b" category="cell">ストレージコンテナごとに3つ</block>
   <block id="357015f8d2535e72e491b099c91834f8" category="cell">4000GB</block>
   <block id="950e2aab71ade2dc91b16bb393adcc5f" category="cell"><block ref="d0974677d2a5b3fe1667da308c12469e" prefix="" category="inline-code"></block></block>
-  <block id="171a11a3a2ace52e1a9680ec72263a41" category="paragraph">この例では、コンテナタイプごとに必要なディスクサイズを次の表に示します。物理ホストごとの要件については、このドキュメントの後半で説明し <block ref="010aeaa454c3e87113c61b2c557145c0" category="inline-link-macro-rx"></block>ます。</block>
   <block id="6f4a8f20fa0947e6bb3d27cc47c04327" category="section-title">コンテナタイプ別のディスクサイズ</block>
   <block id="97deb65a12dea6a246eb4c828e56f81f" category="section-title">Adminコンテナ</block>
   <block id="edbef67b0ae5d71ef92b4e5942caef7a" category="cell">サイズ（GiB）</block>
@@ -1816,11 +1796,9 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="9b27d9e9f79842f85553a61769a1a94f" category="paragraph">グリッドネットワークインターフェイスでVLANタグを使用する必要がある場合は、次の形式の2つのファイルが構成に含まれている必要があります<block ref="c2cf612c92facc5f4b080c83ed51c2bf" prefix=" " category="inline-code"></block> 。</block>
   <block id="d1b8b08b5c4160c1393cad2570dee70f" category="paragraph">この例では、グリッドネットワークの物理ネットワークデバイスがenp67s0であると想定しています。また、bond0などの結合デバイスにすることもできます。ネットワークポートにデフォルトのVLANがない場合やデフォルトのVLANがグリッドネットワークに関連付けられていない場合は、ボンディングを使用するか標準のネットワークインターフェイスを使用する必要があります。StorageGRIDコンテナ自体はイーサネットフレームのタグを解除しないため、親OSで処理する必要があります。</block>
   <block id="82c43a9353f8eb3d67bb2fa843431d9c" category="section-title">iSCSIを使用したストレージセットアップ（オプション）</block>
-  <block id="e14b9c03f9cc5e502bd12475b5f4271c" category="paragraph">iSCSIストレージを使用しない場合は、host1、host2、およびhost3に、要件を満たす十分なサイズのブロックデバイスが含まれていることを確認する必要があります。host1、host2、およびhost3のストレージ要件については、を参照してください <block ref="3ee5a0cacaa11ad486947ccabaf35f08" category="inline-link-macro-rx"></block> 。</block>
   <block id="b39c8876d75a7ff82cd7d801fc50615a" category="paragraph">iSCSIを使用してストレージをセットアップするには、次の手順を実行します。</block>
   <block id="a22fa689c8174cfc9a1ca77de9134e9e" category="list-text">NetApp EシリーズやNetApp ONTAP®データ管理ソフトウェアなどの外部iSCSIストレージを使用する場合は、次のパッケージをインストールします。</block>
   <block id="befe75f3c360b54481aaca87a16ea6b1" category="list-text">各ホストでイニシエータIDを確認します。</block>
-  <block id="70ffd3788b6da8ce47eff9a3038a3669" category="list-text">手順2のイニシエータ名を使用して、ストレージデバイス上のLUN（表に示されている数とサイズ）を各ストレージノードにマッピングし <block ref="b931fdace7da701b108de4525e5832b6" category="inline-link-macro-rx"></block> ます。</block>
   <block id="19279b693608729771b2f460a14af491" category="list-text">で新しく作成したLUNを検出し<block ref="f88921f58beaaae5bcb9dffac54bf5ad" prefix=" " category="inline-code"></block> 、ログインします。</block>
   <block id="c0ee487fb85ee9bf09fcbe0e0d7e2337" category="inline-link">iSCSIイニシエータの作成</block>
   <block id="e296dadeb4bfa1168294b7371b696946" category="admonition">詳細については、Red Hatカスタマーポータルのを参照してください<block ref="7faa6525557fc7fd919d1d5540c263b0" category="inline-link-rx"></block> 。</block>
@@ -1903,7 +1881,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="4354560354d8408d1c18e9c0b355e09d" category="inline-image-macro">base-metal-output-shows-warning-error</block>
   <block id="040c89d37bea72830f915c730c54a323" category="summary">お客様とNetApp ITによって実装されたStorageGRID構成のユースケースをご紹介します。</block>
   <block id="6b3cea9a64792ec5d7e688de3ba29ba0" category="doc">ベースラインパフォーマンステストのレビュー</block>
-  <block id="d49b79b5786df5b1f9fed49f0ba0061f" category="paragraph">Aux Copy操作では、4つのCommvault MediaAgentがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRID上に補助コピーを作成しました。テストセットアップ環境の詳細については、テクニカルレポートの「ソリューションの設計とベストプラクティス」セクションを参照して<block ref="03ce17f8b5e1206a493f3bd56ef5953d" category="inline-link-rx"></block> ください。</block>
   <block id="56e8d1153024dce00f7f403984ee3961" category="paragraph">このテストは、100台のVMと1、000台のVMを使用して実施しました。どちらのテストも、Windows VMとCentOS VMが50対50で混在した環境で実施しました。次の表に、ベースラインパフォーマンステストの結果を示します。</block>
   <block id="416a13b2b42415edb291a65945b1bb85" category="paragraph-title">図1：250万（80TB）のオブジェクトを3時間未満で削除</block>
   <block id="de5b3f7c60647bd68a8d18a9a017432e" category="paragraph-title">図2：80TBのストレージを3時間未満で解放</block>
@@ -2232,7 +2209,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="9c3101f6b24804233b40ae6450fa1503" category="list-text">*トラフィック分類*。高度なトラフィック分類機能を使用すると、StorageGRID固有のQoSルールとワークロード分析を実行できます。</block>
   <block id="38c8ceefadaf4e89ae919f5a807ea085" category="list-text">*今後のStorageGRID固有の機能*。StorageGRIDは、今後のリリースで引き続き最適化を行い、ロードバランサに革新的な機能を追加していきます。</block>
   <block id="84005d607f0a93e852033c0b519062be" category="list-text">StorageGRID F5ロードバランサの設計に関する考慮事項 <block ref="d95e85e5d4376a35e480ee8024e749b5" category="inline-link-rx"></block></block>
-  <block id="5846f1f21b96d1c9adc26d24e614abde" category="list-text">Loadbalancer.org—Load Balancing NetApp StorageGRID <block ref="dd7f3d493284188c8c1493c8c18338b0" category="inline-link-rx"></block></block>
   <block id="af8fdca32c51642ca8690dcf5f1416f5" category="list-text">Kemp：ロードバランシングNetApp StorageGRID <block ref="fb965c799555a65bc346633ea438a59b" category="inline-link-rx"></block></block>
   <block id="c8516ee2c182bb804cdaf1cef683a7c5" category="summary">ローカルトラフィックマネージャロードバランサのガイダンスを確認し、最適な設定を決定します。</block>
   <block id="5cb57a8e98262e7f15746e1841dbbae5" category="doc">ローカルトラフィックマネージャロードバランサの詳細</block>
@@ -2317,7 +2293,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="a2050b63d73bc4aa8080dc5a78e9df9e" category="admonition">GMIパスワードに特殊文字が含まれている場合は、必ず\を使用して特殊文字をエスケープしてください。たとえば、置き換えます。</block>
   <block id="d0091ffabd8a5951ade89029dee45269" category="list-text">上記のcURLコマンドを実行すると、次の例のような認証トークンが出力に表示されます。</block>
   <block id="c4c0bac50c4fd5e17677cabb1fe78a5b" category="inline-link-macro">StorageGRIDの高度な監視</block>
-  <block id="a6b1960b13e563d852f0a623a6a4b50e" category="paragraph">これで、認証トークン文字列を使用して、cURLを介してメトリックにアクセスできるようになりました。指標にアクセスするプロセスは、セクションの手順と似てい <block ref="e252bc019813f3e66a7ae7f9c0ce4e99" category="inline-link-macro-rx"></block>ます。ただし、デモ用として、[Metrics]カテゴリで[GET /grid/metric-labels/｛label｝/values]を選択した例を示します。</block>
   <block id="cdc100e5f716cb082e925903180eaafe" category="list-text">たとえば、次のcURLコマンドに先行する認証トークンを指定すると、StorageGRID内のサイト名が一覧表示されます。</block>
   <block id="6100a428d2b7ee39cb431e0e5ea5306f" category="paragraph">cURLコマンドは、次の出力を生成します。</block>
   <block id="5204e8903c6bcc04b3dd578223392ce0" category="summary">指標APIを使用してStorageGRIDを監視する方法について説明します。</block>
@@ -2485,7 +2460,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="cdf294cdb11d58c4a1cf6c6b989f7ac0" category="section-title">Enterprise Vaultの設定</block>
   <block id="2b8482f3259b54a252e32e6c77841bea" category="paragraph">Enterprise Vaultを設定するには、次の手順を実行します。</block>
   <block id="416206518e27ed2ec8b8e0876078af35" category="inline-link-macro">キホンセツ</block>
-  <block id="0fdd01b1b915af6ef0310b3ded5842a9" category="list-text">セクションの手順1~3を繰り返し <block ref="b0733c8485b73f6326917495c59e375f" category="inline-link-macro-rx"></block> ますが、今回は[Store data in WORM Mode using S3 Object Lock]オプションを選択します。[Next]をクリックします。</block>
   <block id="0b5abcc8070dd573f1f60f2342e139a1" category="list-text">S3バケット接続設定を入力するときは、S3オブジェクトロックのデフォルトの保持が有効になっているS3バケットの名前を入力します。</block>
   <block id="9a5b0fcd0b1275de30e89b6c94f15569" category="list-text">接続をテストして設定を確認します。</block>
   <block id="b37ab6844ec455af7b65aaae53986022" category="summary">ディザスタリカバリシナリオでStorageGRIDサイトのフェイルオーバーを設定する方法について説明します。</block>
@@ -2779,7 +2753,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="230e927ef1cbcfb4706e2ca2fe79b068" category="paragraph"><block ref="230e927ef1cbcfb4706e2ca2fe79b068" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6cfd96f46e0c61db4b057de9b2f02787" category="paragraph"><block ref="6cfd96f46e0c61db4b057de9b2f02787" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7c648110d8b752889f98cd2d87517c0f" category="section-title">S3オブジェクトストレージを使用したデータウェアハウスとレイクハウスのベンチマーク比較調査</block>
-  <block id="3f7d606956bcb4f8b565d2799da4a4e3" category="paragraph">この記事では、NetApp StorageGRIDを使用したさまざまなデータウェアハウスとLakehouseエコシステムの包括的なベンチマークを紹介します。目的は、S3オブジェクトストレージでパフォーマンスが最も優れたシステムを特定することです。データウェアハウス/レイクハウスアーキテクチャとテーブルフォーマット(寄木細工と氷山)の詳細については、こちらを参照して<block ref="ca1f374596a7de7e13cf95753411f6e0" category="inline-link-rx"></block>ください。</block>
   <block id="39b5836a4532001dfbe7e05fb49461e4" category="list-text">VMのクラスタ（それぞれ128G RAM、24 vCPU、システムディスク用SSDストレージ）</block>
   <block id="e6626cf4bf50ce440a045708b2e1f1e5" category="list-text">SG6060を3台+ SG1000ロードバランサを1台搭載した場合、SG^®^SG^®^11.8 NetApp StorageGRID</block>
   <block id="b9d35717430d39eef24c76f0c1796c11" category="list-text">Parquet形式を使用したクエリテストごとに、すべてのエコシステムでキャッシュが無効になりました。Iceberg形式では、S3 GET要求の数と、キャッシュが無効なシナリオとキャッシュが有効なシナリオの間の合計クエリ時間を比較しました。</block>
@@ -2874,29 +2847,9 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="41ae360fa86c17098be8743d2d050c92" category="paragraph"><block ref="41ae360fa86c17098be8743d2d050c92" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b6fe3747f6c4d112310386474c670a3f" category="inline-image-macro">Veritas / Veritas-new-partition-7</block>
   <block id="22b735d20517887fa4f06cf49bd4d449" category="paragraph"><block ref="22b735d20517887fa4f06cf49bd4d449" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3eebf8254fde4e8d2c6a816c4320f21e" category="inline-image-macro">Vertias / veritas-create-bucket.png</block>
-  <block id="95291b4cdd19db828a0d045364518fbd" category="paragraph"><block ref="95291b4cdd19db828a0d045364518fbd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="094b5581d50a9ae9dfef7ab77a3db688" category="inline-image-macro">Vertias / veritas-create-bucket-2.png</block>
-  <block id="380edd7a9cba0915b0ad9309b0db539c" category="paragraph"><block ref="380edd7a9cba0915b0ad9309b0db539c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="dbfd501fb101bf802a7ee81a1fac837d" category="inline-image-macro">Vertias / veritas-overview.png</block>
-  <block id="df94ba3f30910a83d6bd5b670f112e3b" category="paragraph"><block ref="df94ba3f30910a83d6bd5b670f112e3b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c921c13e8cd3cb94aadeb8c25da58859" category="inline-image-macro">Vertias / Veritas-s3-object-lock</block>
-  <block id="2c5ae5790fe14e007a8ce6ef21272460" category="paragraph"><block ref="2c5ae5790fe14e007a8ce6ef21272460" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="305ed56e9cc761a6928f149d8a7fed68" category="inline-image-macro">Vertias / Veritas-new-partition-8</block>
-  <block id="d42aa79a11be13d3f0d5a09babb765cb" category="paragraph"><block ref="d42aa79a11be13d3f0d5a09babb765cb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="64b0c79c0081965bc7ce9c6cc6a3f774" category="paragraph">StorageGRIDアーキテクチャをマルチサイトに導入するのは一般的です。サイトは、DRのアクティブ/アクティブまたはアクティブ/パッシブにすることができます。DRシナリオでは、Veritas Enterprise Vaultがプライマリストレージ（StorageGRID）への接続を維持し、サイト障害が発生してもデータの取り込みと読み出しを継続できることを確認します。この項では、2サイトのアクティブ/パッシブ配置の概要を説明します。 これらのガイドラインの詳細については、ページを参照する <block ref="8efc367b31c66b8aa3b87a5daa8b07fa" category="inline-link-macro-rx"></block> か、StorageGRIDの専門家にお問い合わせください。</block>
   <block id="fc1d41b2ff28c31ef720aa29cbdb1625" category="section-title">Veritas Enterprise VaultでStorageGRIDを設定するための前提条件</block>
-  <block id="568f836336942515cf2ad370aa171e55" category="inline-image-macro">Vertias / Veritas-create-high-availability-group</block>
-  <block id="97b5b099aca023f024fd3ca7169b6e8e" category="paragraph"><block ref="97b5b099aca023f024fd3ca7169b6e8e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6a856baab30258bd4bf6b3c8e997af43" category="inline-image-macro">Vertias / Veritas-edit-high-availability-group</block>
-  <block id="d921e5624986d96c28deaf8b0b782be3" category="paragraph"><block ref="d921e5624986d96c28deaf8b0b782be3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e17fb1e3d997076f324b7246b7f7dff3" category="list-text">この仮想IP（VIP）アドレスは、Veritas Enterprise Vaultのパーティション設定時に使用されるS3ホスト名に関連付ける必要があります。VIPアドレスはトラフィックをSite1に解決します。Site1に障害が発生すると、VIPアドレスはトラフィックをSite2に透過的に再ルーティングします。</block>
-  <block id="0def3d0da889c0e13e06d8e1ff2af9dd" category="inline-image-macro">Vertias / Veritas-storage-pool-details-site-1</block>
-  <block id="43ad61add042d6d64a01afe1db28f05c" category="paragraph"><block ref="43ad61add042d6d64a01afe1db28f05c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1c4cb0eddc44a68196819920f522f16a" category="inline-image-macro">Vertias / Veritas-storage-pool-details-site-2</block>
-  <block id="f4d48050c229a4cd522d6ca91d710a64" category="paragraph"><block ref="f4d48050c229a4cd522d6ca91d710a64" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="75381ece1664fa46e0387e8b6436f7ea" category="inline-image-macro">Vertias / Veritas-storage-pool-details-site-3</block>
-  <block id="3e2cf841de27a979e1d058590ff5e98e" category="paragraph"><block ref="3e2cf841de27a979e1d058590ff5e98e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="419754dcc8bb78c19b08aef3cde80cfb" category="list-text">アーカイブデータがVeritas Enterprise Vaultから送信されると、StorageGRIDは1つのコピーがサイト1に格納され、もう1つのDRコピーがサイト2に格納されることを確認します。Site1に障害が発生した場合、Enterprise VaultはSite2からの取り込みと読み出しを続行します。</block>
   <block id="32b3440d0a295232731c116fa5442f36" category="admonition">これらの構成はどちらもVeritas Enterprise Vaultでは透過的です。S3エンドポイント、バケット名、アクセスキーなどは同じです。Veritas Enterprise VaultパーティションでS3接続設定を再設定する必要はありません。</block>
   <block id="f5ab4938048291a0a6cd674b47551852" category="summary">Veritas Enterprise Vaultでは、ディザスタリカバリのプライマリストレージターゲットとしてStorageGRIDを使用しています。</block>
@@ -2913,7 +2866,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="083e747ac97fd71c385f2c89f8eefdb7" category="sidebar">ユーザとキーを移行してからカットオーバー</block>
   <block id="454255deb718c7d2b26df2342f80d3d3" category="list-text">24年2月2日： <block ref="890e1ea9b3a6310b9da56310b581c035" category="inline-link-rx"></block></block>
   <block id="038f39e88db40cdb4f2702538c9f7cac" category="inline-link">StorageGRID 11.9</block>
-  <block id="c0ffd7598ab1538e87530f78e30ee7a5" category="list-text">StorageGRID 11.9ドキュメントセンター+<block ref="8cd5d43b808eac3380916fd8a7010bbf" category="inline-link-rx"></block></block>
   <block id="023074507079b61efa6f2839e5f70a91" category="inline-link">StorageGRID 11.9拡張ガイド</block>
   <block id="f4940e01170c039d45c3e66e940623ae" category="paragraph">StorageGRIDシステムの拡張の詳細については、を参照してください<block ref="383fbf920d7819c777fd14de7ab5c076" category="inline-link-rx"></block>。</block>
   <block id="7519ba71db8577a641b71a19274cb841" category="paragraph">SG5812、SG5860、SG6160、およびSGF6024 StorageGRIDアプライアンスには、FIPS 140-2準拠の暗号化ディスクをオプションで選択できます。必要に応じて、外部KMIPサーバでディスクの暗号化キーを管理できます。</block>
@@ -3453,4 +3405,48 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="61826214d6f329493990f2d79416585b" category="section-title">最新版以外のバージョンを5つ保持し、90日後に削除する</block>
   <block id="d05c8031e45ddabc741886852f07058f" category="admonition">*NoncurrentDays* を *NewerNoncurrentVersions* と併用する必要があります。</block>
   <block id="86d838f00c97c2ca905dc97a413d1ea7" category="list-text">IBM Storage Deep Archive 1.3</block>
+  <block id="c6bf43b8e3878138ca807f5a012a7f8f" category="list-text">新しい場所で新しいグリッドネットワークサブネットを使用する場合、<block ref="20625f7d4a19c0d62d7c0d2f15cb46ea" category="inline-link-macro-rx"></block></block>
+  <block id="709822c3fe8a896fbbbde856d4a8c511" category="list-text"><block ref="709822c3fe8a896fbbbde856d4a8c511" category="inline-link-macro-rx"></block></block>
+  <block id="0d3f7dd7ceb1738d8c6755cac25e6129" category="list-text"><block ref="0d3f7dd7ceb1738d8c6755cac25e6129" category="inline-link-macro-rx"></block></block>
+  <block id="edbb87ee4d966bfd0e53f7ee76a20edf" category="list-text"><block ref="edbb87ee4d966bfd0e53f7ee76a20edf" category="inline-link-macro-rx"></block></block>
+  <block id="c05d96eb8789000e6ee7e4a9af0b9ab8" category="list-text"><block ref="c05d96eb8789000e6ee7e4a9af0b9ab8" category="inline-link-macro-rx"></block></block>
+  <block id="d9a90afafa882a13b70649b568c6088d" category="list-text"><block ref="d9a90afafa882a13b70649b568c6088d" category="inline-link-macro-rx"></block></block>
+  <block id="87a729ea1697dbdb380b42e6f5486a48" category="list-text"><block ref="87a729ea1697dbdb380b42e6f5486a48" category="inline-link-macro-rx"></block></block>
+  <block id="b7266e1336a7e560f84b0e59cf34a708" category="list-text"><block ref="b7266e1336a7e560f84b0e59cf34a708" category="inline-link-macro-rx"></block></block>
+  <block id="6856cda392381358080a0cb4d3e0f99b" category="list-text"><block ref="6856cda392381358080a0cb4d3e0f99b" category="inline-link-macro-rx"></block></block>
+  <block id="d3b0d4c5bc1c075d95609a741d0d465a" category="paragraph">展開を開始する前に、NetApp StorageGRID ソフトウェアのコンピューティング、ストレージ、およびネットワークの要件を確認しましょう。StorageGRID は、Podman または Docker 内でコンテナ化されたサービスとして実行されます。このモデルでは、一部の要件はホスト オペレーティング システム（StorageGRID ソフトウェアを実行している Docker をホストする OS）を参照しています。また、リソースの一部は、各ホスト内で実行されている Docker コンテナに直接割り当てられます。今回の導入では、ハードウェアの使用効率を最大化するために、物理ホストごとに 2 つのサービスを導入します。詳細については、次のセクション <block ref="5df9866ae8d578b01efcbc8f3c8e96d4" category="inline-link-macro-rx"></block> に進んでください。</block>
+  <block id="705111bc6c853544ae6d9e2beaeeed7c" category="admonition">表中の数字は、StorageGRID の各サービスタイプに対するものであり、グリッド全体や各物理ホストに対するものではありません。展開の選択に基づいて、各物理ホストの数値を計算します（<block ref="4ddf418e2c006c7428da34b533dc1387" category="inline-link-macro-rx"></block>、このドキュメントの後半で説明します）。++ ++ アスタリスクが付いているパスまたはファイルシステムは、インストーラーによって StorageGRID コンテナ自体に作成されます。管理者による手動設定やファイルシステムの作成は不要ですが、ホストはこれらの要件を満たすためにブロックデバイスを必要とします。つまり、ブロックデバイスはコマンド <block ref="9d3de2981a7628c02076a5a69f0d0007" prefix=" " category="inline-code"></block> を使用して表示される必要がありますが、ホスト OS 内でフォーマットまたはマウントされていてはなりません。++ ++</block>
+  <block id="99e95c56ffec1a95040e8724ae1ce355" category="paragraph">この例では、コンテナの種類ごとに、以下の表に示すディスクサイズが必要となります。物理ホストごとの要件については、このドキュメントの後半の<block ref="4ddf418e2c006c7428da34b533dc1387" category="inline-link-macro-rx"></block>に記載されています。</block>
+  <block id="b1aef9fb23ab7bbf0adedd264d4d7fce" category="paragraph">iSCSIストレージを使用しない場合は、host1、host2、host3にそれぞれの要件を満たすのに十分なサイズのブロックデバイスが搭載されていることを確認する必要があります。host1、host2、host3のストレージ要件については、<block ref="cf0eb65dc73481fac8bfe3bbd069a721" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="ef6138cdfd088835ff40ee41b8e6ed37" category="list-text">ステップ 2 のイニシエータ名を使用して、ストレージ デバイスの LUN を（<block ref="7e4b187db3f6670860d98f3596b3fdcb" category="inline-link-macro-rx"></block> の表に示されている数とサイズの）各ストレージ ノードにマッピングします。</block>
+  <block id="8ead8a33d3bc467a3ea00b73b214f500" category="paragraph">Aux Copy操作では、4つのCommvault MediaAgentsがNetApp AFF A300システムにデータをバックアップし、NetApp StorageGRIDに補助コピーが作成されました。</block>
+  <block id="7b066a53382b883fd1eff6ef0b6ba8ed" category="list-text">StorageGRID 11.9 ドキュメンテーション センター + <block ref="6a57442f297e8ec0c1048139bce9d672" category="inline-link-rx"></block></block>
+  <block id="30002530dd9d601ecfd25a0f9db45aac" category="list-text">Commvault のドキュメント + <block ref="e95efabe50ab92e4e6c01005628c651c" category="inline-link-rx"></block></block>
+  <block id="c595219c0ed8ec59057d33c30bc5dc10" category="paragraph">この記事では、NetApp StorageGRID を使用したさまざまなデータ ウェアハウスおよびレイクハウス エコシステムの包括的なベンチマークを紹介します。目標は、S3 オブジェクト ストレージで最も優れたパフォーマンスを発揮するシステムを特定することです。データ ウェアハウス／レイクハウスのアーキテクチャとテーブル形式（Parquet および Iceberg）の詳細については、こちらの<block ref="c3c3137daa53bef038cd79c515f7a456" category="inline-link-rx"></block>を参照してください。</block>
+  <block id="895e351c0837e8e1603831896d6eff24" category="list-text">Loadbalancer.org—ロード バランシング NetApp StorageGRID <block ref="0daf5e2b69f614a44c5f349c4458af38" category="inline-link-rx"></block></block>
+  <block id="4e9aec4caf563076c3e5a362fb3ffa9c" category="paragraph">これで、認証トークン文字列を使用して cURL 経由でメトリクスにアクセスできるようになります。メトリクスにアクセスする手順は、セクション <block ref="370a8c788bfc0d36ebdde42d5a0e61ed" category="inline-link-macro-rx"></block> の手順と同様です。ただし、説明のために、メトリクスカテゴリで GET /grid/metric-labels/{label}/values を選択した例を示します。</block>
+  <block id="bba97812b5b364c799918082c0382688" category="inline-image-macro">veritas/veritas-create-bucket.png</block>
+  <block id="5478aec58cd50a76fe7b0ac2dc424663" category="paragraph"><block ref="5478aec58cd50a76fe7b0ac2dc424663" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3af07c1332ec0aab0ab6da0d4d2d723f" category="inline-image-macro">veritas/veritas-create-bucket-2.png</block>
+  <block id="f58437cdc1aaeca345f639ae65f7cb23" category="paragraph"><block ref="f58437cdc1aaeca345f639ae65f7cb23" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b47b12ef2b509779a75e657d45b63ea9" category="inline-image-macro">veritas/veritas-overview.png</block>
+  <block id="288a7d7e6e21cabf0543d55ccfbe1114" category="paragraph"><block ref="288a7d7e6e21cabf0543d55ccfbe1114" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3f0a3f283f988102d45aca2522cb89d1" category="inline-image-macro">veritas/veritas-s3-object-lock</block>
+  <block id="0583733b7d6246ae5d47ec1a2e4c1f31" category="paragraph"><block ref="0583733b7d6246ae5d47ec1a2e4c1f31" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad840a8e919810d635e77fa47810bd24" category="list-text"><block ref="f3b70564fd788b01ce68413d8d426d59" category="inline-link-macro-rx"></block>セクションのステップ1～3を繰り返しますが、今回は「S3オブジェクトロックを使用してWORMモードでデータを保存する」オプションを選択します。「次へ」をクリックします。</block>
+  <block id="a67cc23c648b2fb6f549d6e1045f865a" category="inline-image-macro">veritas/veritas-new-partition-8</block>
+  <block id="092d07a7856c1ea2f502eabe489c1f58" category="paragraph"><block ref="092d07a7856c1ea2f502eabe489c1f58" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="21ef9da97ba98f947cbe7aa2fbc41291" category="inline-image-macro">veritas/veritas-create-high-availability-group</block>
+  <block id="48f85c57c79af0f59e7ff051172c2e60" category="paragraph"><block ref="48f85c57c79af0f59e7ff051172c2e60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="603d4f6f10337aacf1c98717c87c8529" category="inline-image-macro">veritas/veritas-edit-high-availability-group</block>
+  <block id="50a1f4d0589db23fc3168f427581845f" category="paragraph"><block ref="50a1f4d0589db23fc3168f427581845f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="261c5485d002b582ff949d08a9b5bb78" category="inline-image-macro">veritas/veritas-storage-pool-details-site-1</block>
+  <block id="7fc86c8fe93a9509f0fb971e5f53850f" category="paragraph"><block ref="7fc86c8fe93a9509f0fb971e5f53850f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="80e28232182a336f895806a362b7e6c2" category="inline-image-macro">veritas/veritas-storage-pool-details-site-2</block>
+  <block id="fbb8ad7ecf708634cfcf4a975518dc2c" category="paragraph"><block ref="fbb8ad7ecf708634cfcf4a975518dc2c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aa9e51529c8ac5c2f32b35f355d26fd5" category="inline-image-macro">veritas/veritas-storage-pool-details-site-3</block>
+  <block id="d6a0fcf55dacc59635ca11a700f5260a" category="paragraph"><block ref="d6a0fcf55dacc59635ca11a700f5260a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="752f1428ccb77ac410289e9262b0f4bf" category="inline-link">Grok パターン</block>
+  <block id="dfa155e02e6c42536eddd788adeb1c4b" category="list-text"><block ref="dfa155e02e6c42536eddd788adeb1c4b" category="inline-link-rx"></block></block>
+  <block id="84a0efed1747839817563f400c91817f" category="list-text">サポートされている JDK バージョンについては、<block ref="fcf7e9838328c10505637416c290aabd" category="inline-link-rx"></block>を確認してください。</block>
 </blocks>

@@ -16,6 +16,7 @@ summary: ONTAP S3からStorageGRIDへの移行
 
 
 
+[[populate-the-source-bucket]]
 == ソースバケットへの入力
 
 ソースONTAPバケットにオブジェクトを追加しましょう。このデモではS3Browserを使用しますが、使い慣れた任意のツールを使用できます。
@@ -48,6 +49,7 @@ image:ontap-migrate/ontap-s3browser-versions.png["バージョンの表示"]
 
 
 
+[[establish-the-replication-relationship]]
 === レプリケーション関係を確立
 
 ONTAPからStorageGRIDへのデータ送信を開始します。
@@ -93,6 +95,7 @@ image:ontap-migrate/ontap-snapmirror-status.png["SnapMirror関係を確認して
 
 
 
+[[the-replication-details]]
 === レプリケーションの詳細
 
 これで、バケットをONTAPからStorageGRIDに正常にレプリケートできるようになりました。では実際に何を複製しているのでしょうか？ソースとデスティネーションはどちらもバージョン管理されたバケットです。以前のバージョンもデスティネーションにレプリケートされますか。S3Browserを使用してStorageGRIDバケットを確認すると、既存のバージョンがレプリケートされず、削除されたオブジェクトも存在せず、そのオブジェクトの削除マーカーもありません。複製されたオブジェクトのStorageGRIDバケットにはバージョンが1つしかありません。

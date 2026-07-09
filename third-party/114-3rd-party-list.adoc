@@ -16,6 +16,7 @@ summary: StorageGRID 11.4で検証済みのサードパーティソリューシ�
 
 
 
+[[third-party-solutions-validated-on-storagegrid]]
 == StorageGRID で検証済みのサードパーティソリューション
 
 これらのソリューションは、それぞれのパートナーと協力してテストされています。
@@ -56,6 +57,7 @@ summary: StorageGRID 11.4で検証済みのサードパーティソリューシ�
 
 
 
+[[third-party-solutions-supported-on-storagegrid]]
 == StorageGRIDでサポートされているサードパーティソリューション
 
 これらのソリューションはテスト済みです。

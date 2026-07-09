@@ -20,24 +20,26 @@ summary: プライマリ管理ノードのStorageGRIDでグリッドマネージ
 
 
 
+[[high-level-steps]]
 == 手順の概要
 
 グリッドを設定してインストールを完了するには、次のタスクを実行します。
 
 .手順
 . <<Grid Managerに移動>>
-. link:storagegrid-license.html["StorageGRID ライセンス情報を指定します"]
-. link:add-sites-storagegrid.html["StorageGRIDへのサイトの追加"]
-. link:grid-network-subnets-storagegrid.html["グリッドネットワークサブネットの指定"]
-. link:approve-grid-nodes-storagegrid.html["保留中のグリッドノードを承認します"]
-. link:ntp-server-storagegrid.html["NTPサーバ情報の指定"]
-. link:dns-server-storagegrid.html["ドメインネームシステムサーバ情報の指定"]
-. link:system-passwords-storagegrid.html["StorageGRID システムのパスワードを指定します"]
-. link:review-config-complete-storagegrid-install.html["構成を確認し、インストールを完了します"]
+. link:bare-metal-storagegrid-license.html["StorageGRID ライセンス情報を指定します"]
+. link:bare-metal-add-sites-storagegrid.html["StorageGRIDへのサイトの追加"]
+. link:bare-metal-grid-network-subnets-storagegrid.html["グリッドネットワークサブネットの指定"]
+. link:bare-metal-approve-grid-nodes-storagegrid.html["保留中のグリッドノードを承認します"]
+. link:bare-metal-ntp-server-storagegrid.html["NTPサーバ情報の指定"]
+. link:bare-metal-dns-server-storagegrid.html["ドメインネームシステムサーバ情報の指定"]
+. link:bare-metal-system-passwords-storagegrid.html["StorageGRID システムのパスワードを指定します"]
+. link:bare-metal-review-config-complete-storagegrid-install.html["構成を確認し、インストールを完了します"]
 
 
 
 
+[[navigate-to-grid-manager]]
 == Grid Managerに移動
 
 グリッドマネージャを使用して、StorageGRIDシステムの設定に必要なすべての情報を定義します。

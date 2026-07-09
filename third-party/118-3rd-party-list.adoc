@@ -17,6 +17,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 
 
 
+[[third-party-solutions-validated-on-storagegrid]]
 == StorageGRID で検証済みのサードパーティソリューション
 
 これらのソリューションは、それぞれのパートナーと協力してテストされています。
@@ -83,6 +84,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 
 
 
+[[third-party-solutions-validated-on-storagegrid-with-object-lock]]
 == StorageGRID で検証済みの、オブジェクトロック機能を備えたサードパーティ製ソリューション
 
 これらのソリューションは、それぞれのパートナーと協力してテストされています。
@@ -99,6 +101,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 
 
 
+[[third-party-solutions-supported-on-storagegrid]]
 == StorageGRIDでサポートされているサードパーティソリューション
 
 これらのソリューションはテスト済みです。
@@ -125,6 +128,7 @@ summary: StorageGRID 11.8で検証済みの他社製ソリューション
 
 
 
+[[key-managers-supported-on-storagegrid]]
 == StorageGRIDでサポートされるキー管理ツール
 
 これらのソリューションはテスト済みです。

@@ -16,6 +16,7 @@ S3 ライフサイクル設定を作成して、特定のオブジェクトが S
 
 
 
+[[what-is-a-lifecycle-configuration]]
 == ライフサイクル構成とは
 
 ライフサイクル設定は、特定の S3 バケット内のオブジェクトに適用される一連のルールです。各ルールは、影響を受けるオブジェクトと、それらのオブジェクトの有効期限（特定の日付または日数後）を指定します。
@@ -41,6 +42,7 @@ StorageGRID では、次のバケット処理を使用してライフサイク�
 
 
 
+[[structure-of-a-lifecycle-policy]]
 == ライフサイクルポリシーの構造
 
 ライフサイクル設定を作成するための最初の手順として、 1 つ以上のルールを含む JSON ファイルを作成します。たとえば、この JSON ファイルには次の 3 つのルールが含まれています。
@@ -101,6 +103,7 @@ CAUTION: 日数を指定するルールは、オブジェクトが取り込ま�
 ----
 
 
+[[apply-lifecycle-configuration-to-bucket]]
 == バケットにライフサイクル設定を適用
 
 ライフサイクル設定ファイルを作成したら、PutBucketLifecycleConfiguration要求を発行してバケットに適用します。
@@ -121,10 +124,12 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
+[[example-lifecycle-policies-for-standard-non-versioned-buckets]]
 == 標準（バージョン管理されていない）バケットのライフサイクル ポリシーの例
 
 
 
+[[delete-objects-after-90-days]]
 === 90日後にオブジェクトを削除する
 
 ユースケース：このポリシーは、一時ファイル、ログ、中間処理データなど、限られた期間のみ関連するデータの管理に最適です。メリット：ストレージコストを削減し、バケットを整理整頓できます。
@@ -146,10 +151,12 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
+[[example-lifecycle-policies-for-versioned-buckets]]
 == バージョン管理されたバケットのライフサイクル ポリシーの例
 
 
 
+[[delete-noncurrent-versions-after-10-days]]
 === 10日後に非最新版を削除する
 
 ユースケース：このポリシーは、時間の経過とともに蓄積され、大量のスペースを消費する可能性のある、最新バージョンではないオブジェクトのストレージ管理に役立ちます。メリット：最新バージョンのみを保持することで、ストレージ使用量を最適化します。
@@ -171,6 +178,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 
+[[keep-5-noncurrent-versions-and-delete-after-90-days]]
 === 最新版以外のバージョンを5つ保持し、90日後に削除する
 
 使用例: 回復または監査の目的で、限られた数の以前のバージョンを保持する場合に便利です。利点: 十分な履歴と回復ポイントを確保するために、十分な数の非最新バージョンを保持します。
@@ -196,6 +204,7 @@ NOTE: *NoncurrentDays* を *NewerNoncurrentVersions* と併用する必要があ
 
 
 
+[[remove-delete-markers-when-no-other-versions-exist]]
 === 他のバージョンが存在しない場合は削除マーカーを削除します
 
 ユースケース：このポリシーは、すべての非最新バージョンを削除した後に残る削除マーカーを管理するのに役立ちます。これらのマーカーは時間の経過とともに蓄積される可能性があります。メリット：不要な混乱を軽減します。
@@ -217,6 +226,7 @@ NOTE: *NoncurrentDays* を *NewerNoncurrentVersions* と併用する必要があ
 ----
 
 
+[[delete-current-versions-after-30-days-delete-non-current-versions-after-60-days-and-remove-the-delete-markers-created-by-the-current-version-delete-once-no-other-versions-exist]]
 === 現在のバージョンは 30 日後に削除され、現在のバージョン以外のバージョンは 60 日後に削除され、他のバージョンが存在しなくなったら現在のバージョンの削除によって作成された削除マーカーが削除されます。
 
 ユースケース：削除マーカーを含む、現在のバージョンと非現在のバージョンの完全なライフサイクルを提供します。メリット：十分なリカバリポイントと履歴を保持しながら、ストレージコストを削減し、バケットを整理された状態に保ちます。
@@ -254,6 +264,7 @@ NOTE: *NoncurrentDays* を *NewerNoncurrentVersions* と併用する必要があ
 ----
 
 
+[[remove-delete-markers-that-have-no-other-versions-retain-4-non-current-versions-and-at-least-30-days-worth-of-history-for-objects-with-the-accounts-prefix-and-keep-2-versions-and-at-least-10-days-worth-of-history-for-all-other-object-versions]]
 === 他のバージョンがない削除マーカーを削除し、「accounts_ プレフィックス」を持つオブジェクトについては 4 つの非最新バージョンと少なくとも 30 日分の履歴を保持し、他のすべてのオブジェクト バージョンについては 2 つのバージョンと少なくとも 10 日分の履歴を保持します。
 
 ユースケース：特定のオブジェクトと他のオブジェクトに固有のルールを適用し、削除マーカーを含む現在のバージョンと非現在のバージョンのライフサイクル全体を管理します。メリット：ストレージコストを削減し、バケットを整理しながら、十分なリカバリポイントと履歴を保持することで、多様なクライアント要件に対応できます。
@@ -293,6 +304,7 @@ NOTE: *NoncurrentDays* を *NewerNoncurrentVersions* と併用する必要があ
 ----
 
 
+[[conclusion]]
 == まとめ
 
 * ライフサイクル ポリシーを定期的に確認および更新し、ILM およびデータ管理の目標に合わせて調整します。

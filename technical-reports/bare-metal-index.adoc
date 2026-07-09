@@ -20,12 +20,13 @@ TR-4882には、NetApp StorageGRIDの実際的なインストール手順が記�
 
 StorageGRIDとインストールプロセスの詳細については、製品ドキュメントの[Install、upgrade、and hotfix（インストール、アップグレード、およびホットフィックスのStorageGRID）]を参照して https://docs.netapp.com/us-en/storagegrid-118/landing-install-upgrade/index.html[] ください。
 
-導入を開始する前に、NetApp StorageGRIDソフトウェアのコンピューティング、ストレージ、ネットワークの要件を確認してみましょう。StorageGRIDは、PodmanまたはDocker内でコンテナ化されたサービスとして実行されます。このモデルでは、一部の要件はホストオペレーティングシステム（StorageGRIDソフトウェアを実行しているDockerをホストするOS）を参照しています。また、リソースの一部は、各ホスト内で実行されているDockerコンテナに直接割り当てられます。この導入では、ハードウェアの使用率を最大化するために、物理ホストごとに2つのサービスを導入します。詳細については、次のセクションに進んでください link:prerequisites-install-storagegrid.html["StorageGRIDをインストールするための前提条件"]。
+展開を開始する前に、NetApp StorageGRID ソフトウェアのコンピューティング、ストレージ、およびネットワークの要件を確認しましょう。StorageGRID は、Podman または Docker 内でコンテナ化されたサービスとして実行されます。このモデルでは、一部の要件はホスト オペレーティング システム（StorageGRID ソフトウェアを実行している Docker をホストする OS）を参照しています。また、リソースの一部は、各ホスト内で実行されている Docker コンテナに直接割り当てられます。今回の導入では、ハードウェアの使用効率を最大化するために、物理ホストごとに 2 つのサービスを導入します。詳細については、次のセクション link:bare-metal-prerequisites-install-storagegrid.html["StorageGRIDをインストールするための前提条件"] に進んでください。
 
 このTRで説明した手順を実行すると、6台のベアメタルホストにStorageGRIDのインストールが完了します。これでグリッドネットワークとクライアントネットワークが正常に機能し、ほとんどのテストシナリオで役立ちます。
 
 
 
+[[where-to-find-additional-information]]
 == 追加情報の参照先
 
 このTRに記載されている情報の詳細については、次のドキュメントリソースを参照してください。

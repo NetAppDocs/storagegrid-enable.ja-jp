@@ -37,6 +37,7 @@ NetApp StorageGRIDは、要件の厳しいエンタープライズオブジェ�
 
 
 
+[[where-to-find-additional-information]]
 == 追加情報の参照先
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
@@ -51,6 +52,7 @@ NetApp StorageGRIDは、要件の厳しいエンタープライズオブジェ�
 
 
 
+[[terms-and-acronyms]]
 == 用語と略語
 
 このセクションでは、ドキュメントで使用される用語の定義について説明します。

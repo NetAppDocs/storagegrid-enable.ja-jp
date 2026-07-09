@@ -18,12 +18,14 @@ rcloneは、S3処理用の無料のコマンドラインツールでクライア
 
 
 
+[[install-and-configure-rclone]]
 == rcloneをインストールして設定します
 
 rcloneをワークステーションまたはサーバにインストールするには、からダウンロードします https://rclone.org/downloads/["rclone.org"^]。
 
 
 
+[[initial-configuration-steps]]
 === 初期設定手順
 
 . 設定スクリプトを実行するか、ファイルを手動で作成して、rclone構成ファイルを作成します。
@@ -315,6 +317,7 @@ e/n/d/r/c/s/q> q
 
 
 
+[[basic-command-examples]]
 == 基本的なコマンドの例
 
 * *バケットを作成：*

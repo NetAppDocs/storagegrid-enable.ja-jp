@@ -16,6 +16,7 @@ summary: ONTAP S3からStorageGRIDへの移行
 
 
 
+[[migration-demo]]
 == 移行のデモ
 
 このデモでは、ユーザとバケットをONTAP S3からStorageGRIDに移行する方法について説明します。

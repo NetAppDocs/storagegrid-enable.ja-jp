@@ -20,6 +20,7 @@ summary: お客様とNetApp ITによって実装されたStorageGRID構成のユ
 
 
 
+[[f5-big-ip-local-traffic-manager-health-check-monitor-for-s3-bucket]]
 == S3バケット用のF5 BIG-IP Local Traffic Manager健全性チェックモニタ
 
 F5 BIG-IPローカルトラフィックマネージャヘルスチェックモニタを設定する手順は、次のとおりです。
@@ -48,6 +49,7 @@ image:load-balancer/load-balancer-monitor-configuration-page.png["[Monitor]設�
 
 
 
+[[citrix-netscaler]]
 == Citrix NetScaler
 
 Citrix NetScalerは、ストレージエンドポイント用の仮想サーバーを作成し、StorageGRIDストレージノードをアプリケーションサーバーとして参照してから、サービスにグループ化します。
@@ -62,18 +64,21 @@ image:load-balancer/load-balancer-configure-monitor.png["Configure-monitor.png"]
 
 
 
+[[loadbalancer-org]]
 == Loadbalancer.org
 
 Loadbalancer.orgは、独自のStorageGRIDとの統合テストを実施し、広範な構成ガイドを用意しています。 https://pdfs.loadbalancer.org/NetApp_StorageGRID_Deployment_Guide.pdf[]
 
 
 
+[[kemp]]
 == ケンプ
 
 KempはStorageGRIDとの統合テストを独自に実施し、広範な構成ガイドを用意しています。 https://kemptechnologies.com/solutions/netapp/[]
 
 
 
+[[haproxy]]
 == HAProxy
 
 OPTIONS要求を使用するようにHAProxyを設定し、haproxy.cfgでヘルスチェックの200ステータス応答を確認します。フロントエンドのバインドポートを別のポート（443など）に変更できます。

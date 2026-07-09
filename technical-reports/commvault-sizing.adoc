@@ -18,6 +18,7 @@ summary: お客様とNetApp ITによって実装されたStorageGRID構成のユ
 
 
 
+[[commvault-sizing-inputs]]
 == Commvaultのサイジング情報
 
 次のタスクを使用して、データ保護解決策のサイジングに関する検出を実行できます。
@@ -34,6 +35,7 @@ summary: お客様とNetApp ITによって実装されたStorageGRID構成のユ
 
 
 
+[[storagegrid-sizing-guidance]]
 == StorageGRIDのサイジングガイダンス
 
 NetApp StorageGRIDサイジングを実行する前に、ワークロードについて次の点を考慮してください。
@@ -115,6 +117,7 @@ StorageGRIDは通常、ノードレベルやサイトレベルの障害から保
 
 
 
+[[scaling]]
 == 拡張性
 
 NetApp StorageGRIDシステムを拡張するには、ストレージノードにストレージを追加するか、既存のサイトに新しいグリッドノードを追加するか、新しいデータセンターサイトを追加します。拡張は現在のシステムの処理を中断せずに実行できます。

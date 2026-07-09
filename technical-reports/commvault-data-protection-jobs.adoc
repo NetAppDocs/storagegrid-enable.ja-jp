@@ -18,6 +18,7 @@ Commvault Complete Backup and Recovery for NetAppを使用してStorageGRIDを�
 
 
 
+[[step-1-configure-commvault-with-storagegrid]]
 == ステップ1：CommvaultとStorageGRIDを設定する
 
 .手順
@@ -37,6 +38,7 @@ StorageGRIDのドキュメントに記載されている手順に従います。
 
 
 
+[[step-2-create-a-backup-plan-with-storagegrid-as-the-primary-target]]
 == 手順2：StorageGRIDをプライマリターゲットとしてバックアップ計画を作成する
 
 .手順
@@ -52,6 +54,7 @@ image:commvault/create-server.png["サーババックアップ計画の作成"]
 
 
 
+[[step-3-start-a-backup-job-to-protect-your-workloads]]
 == ステップ3：バックアップジョブを開始してワークロードを保護する
 
 .手順

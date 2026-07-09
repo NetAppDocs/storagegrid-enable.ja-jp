@@ -20,12 +20,14 @@ StorageGRID とS3 APIには、保存データを暗号化するためのさま�
 
 
 
+[[server-side-encryption-sse]]
 == サーバー側の暗号化（SSE）
 
 SSEを使用すると、クライアントがオブジェクトを格納し、StorageGRID で管理される一意のキーで暗号化できます。オブジェクトが要求されると、StorageGRID に格納されたキーによってオブジェクトが復号化されます。
 
 
 
+[[sse-example]]
 === SSEの例
 
 * SSEを持つオブジェクトを配置します
@@ -63,12 +65,14 @@ aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https
 
 
 
+[[server-side-encryption-with-customer-provided-keys-sse-c]]
 == ユーザ指定のキーによるサーバ側の暗号化（SSE-C）
 
 SSEを使用すると、クライアントがオブジェクトを格納し、クライアントがオブジェクトで提供する一意のキーでオブジェクトを暗号化できます。オブジェクトが要求されたときに、オブジェクトを復号化して返すために同じキーを指定する必要があります。
 
 
 
+[[sse-c-example]]
 === SSE-Cの例
 
 * テストまたはデモ目的で暗号化キーを作成できます
@@ -132,12 +136,14 @@ NOTE: 暗号化キーを指定しないと、「An error occurred（InvalidReque
 
 
 
+[[bucket-server-side-encryption-sse-s3]]
 == バケットサーバ側の暗号化（SSE-C）
 
 SSE-Cを使用すると、バケットに格納されているすべてのオブジェクトのデフォルトの暗号化動作をクライアントで定義できます。オブジェクトはStorageGRID で管理される一意のキーで暗号化されます。オブジェクトが要求されると、StorageGRID に格納されているキーによってオブジェクトが復号化されます。
 
 
 
+[[bucket-sse-s3-example]]
 === バケットSSE-Cの例
 
 * 新しいバケットを作成し、デフォルトの暗号化ポリシーを設定

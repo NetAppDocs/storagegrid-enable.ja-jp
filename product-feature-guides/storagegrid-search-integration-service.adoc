@@ -16,6 +16,7 @@ summary: このガイドでは、Amazon StorageGRID 11.6検索統合サービス
 
 
 
+[[introduction]]
 == はじめに
 
 StorageGRID は、3種類のプラットフォームサービスをサポートしています。
@@ -33,6 +34,7 @@ StorageGRID は、3種類のプラットフォームサービスをサポート�
 
 
 
+[[create-tenant-and-enable-platform-services]]
 == テナントを作成し、プラットフォームサービスを有効にします
 
 . Grid Managerを使用してS3テナントを作成し、表示名を入力してS3プロトコルを選択する。
@@ -50,10 +52,12 @@ Tenant Managerのページが表示されます。
 
 
 
+[[search-integration-services-with-amazon-opensearch]]
 == Amazon OpenSearchとの検索統合サービス
 
 
 
+[[amazon-opensearch-formerly-elasticsearch-service-setup]]
 === Amazon OpenSearch（旧Elasticsearch）サービスのセットアップ
 
 この手順 は、テスト/デモ目的でのみOpenSearchサービスをすばやく簡単にセットアップするために使用します。検索統合サービスにオンプレミスのElasticsearchを使用している場合は、を参照してください xref:search-integration-services-with-on-premises-elasticsearch[検索統合サービスをオンプレミスのElasticsearchと利用できます]。
@@ -126,6 +130,7 @@ image:storagegrid-search-integration-service/sg-sis-verifying-the-index.png["Ver
 
 
 
+[[platform-services-endpoint-configuration]]
 == プラットフォームサービスエンドポイントの設定
 
 プラットフォームサービスエンドポイントを設定するには、次の手順を実行します。
@@ -156,10 +161,12 @@ image:storagegrid-search-integration-service/sg-sis-platform-service-endpoints.p
 
 
 
+[[search-integration-services-with-on-premises-elasticsearch]]
 == 検索統合サービスをオンプレミスのElasticsearchと利用できます
 
 
 
+[[on-premises-elasticsearch-setup]]
 === オンプレミスのElasticsearchセットアップ
 
 この手順 は、テスト目的でのみDockerを使用するElasticsearchとKibanaオンプレミスを迅速にセットアップするためのものです。ElasticsearchサーバとKibanaサーバがすでに存在する場合は、ステップ5に進みます。
@@ -211,6 +218,7 @@ image:storagegrid-search-integration-service/sg-sis-execute-put-command.png["PUT
 
 
 
+[[platform-services-endpoint-configuration]]
 == プラットフォームサービスエンドポイントの設定
 
 プラットフォームサービスのエンドポイントを設定するには、次の手順を実行します。
@@ -238,6 +246,7 @@ image:storagegrid-search-integration-service/sg-sis-successfully-verified-endpoi
 
 
 
+[[bucket-search-integration-service-configuration]]
 == バケット検索統合サービスの設定
 
 プラットフォームサービスエンドポイントの作成後、次の手順では、オブジェクトの作成、削除、またはそのメタデータ/タグの更新が行われるたびに定義済みのエンドポイントにオブジェクトメタデータを送信するように、このサービスをバケットレベルで設定します。
@@ -318,6 +327,7 @@ image:storagegrid-search-integration-service/sg-sis-query-two-sample.png["クエ
 
 
 
+[[where-to-find-additional-information]]
 == 追加情報の参照先
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。

@@ -18,6 +18,7 @@ Angela Cheng著_
 
 
 
+[[introduction]]
 == はじめに
 
 Verticaは分析データベース管理ソフトウェアです。大量のデータを処理するように設計されたカラム型ストレージ・プラットフォームであり'従来の負荷の高いシナリオでは非常に高速なクエリー・パフォーマンスを実現しますVerticaデータベースは、EonまたはEnterpriseのいずれかのモードで動作します。両方のモードをオンプレミスまたはクラウドに導入できます。
@@ -30,6 +31,7 @@ EonモードとEnterpriseモードは、主にデータの保存場所によっ�
 
 
 
+[[eon-mode-architecture]]
 === Eon Modeアーキテクチャ
 
 Eonモードでは、計算リソースがデータベースの共有ストレージレイヤから分離され、コンピューティングとストレージを別々に拡張できます。EonモードのVerticaは、さまざまなワークロードに対応し、コンピューティングリソースとストレージリソースを別々に使用してワークロードを分離するように最適化されています。
@@ -40,6 +42,7 @@ image:vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png["Vertica
 
 
 
+[[communal-storage]]
 === 共有ストレージ
 
 Eonモードでは、データをローカルに格納する代わりに、すべてのデータとカタログ（メタデータ）に単一の共有ストレージロケーションを使用します。共有ストレージとは、データベースの一元管理されたストレージの場所で、データベースノード間で共有されるものです。
@@ -54,12 +57,14 @@ Eonモードでは、データをローカルに格納する代わりに、す�
 
 
 
+[[the-depot]]
 === デポ
 
 共有ストレージの欠点の1つは速度です。共有クラウド上の場所からデータにアクセスする場合、ローカルディスクからデータを読み取る場合よりも時間がかかります。また、多数のノードが一度にデータを読み取っている場合、共有ストレージへの接続がボトルネックになる可能性があります。データアクセス速度を向上させるために、Eon Modeデータベース内のノードは、デポと呼ばれるデータのローカルディスクキャッシュを保持します。クエリを実行するとき、ノードはまず、必要なデータがデポにあるかどうかをチェックします。存在する場合は、データのローカルコピーを使用してクエリが完了します。データがデポにない場合、ノードは共有ストレージからデータを取得し、デポにコピーを保存します。
 
 
 
+[[netapp-storagegrid-recommendations]]
 == NetApp StorageGRID の推奨事項
 
 Verticaは、データベースのデータをオブジェクトストレージに何千（数百万）もの圧縮オブジェクトとして格納します（1オブジェクトあたり200～500MB）。ユーザーがデータベースクエリを実行すると、Verticaはバイト範囲GET呼び出しを使用して、圧縮されたオブジェクトから選択したデータ範囲を並列に取得します。バイト範囲GETはそれぞれ約8KBです。
@@ -86,6 +91,7 @@ Vertica構成に関する推奨事項は次のとおりです。
 
 
 
+[[installing-eon-mode-on-premises-with-communal-storage-on-storagegrid]]
 == StorageGRID 上の共有ストレージを使用してオンプレミスモードをインストールする
 
 以下のセクションでは、StorageGRID 上に共同ストレージを使用してオンプレミスにEonモードをインストールするための手順 について説明します。オンプレミスのSimple Storage Service（S3）互換オブジェクトストレージを設定する手順 は、Vertica guideの手順 に似ています。 link:https://www.vertica.com/docs/10.1.x/HTML/Content/Authoring/InstallationGuide/EonOnPrem/InstallingEonOnPremiseWithMinio.htm?tocpath=Installing%20Vertica%7CInstalling%20Vertica%20For%20Eon%20Mode%20on-Premises%7C_____2["オンプレミスにEonモードデータベースをインストールします"^]。
@@ -101,6 +107,7 @@ Vertica構成に関する推奨事項は次のとおりです。
 
 
 
+[[information-required-from-netapp-storagegrid]]
 === NetApp StorageGRID で必要な情報
 
 StorageGRID 上で共有ストレージを使用してオンプレミスにEonモードをインストールするには、次の前提条件情報が必要です。
@@ -112,6 +119,8 @@ StorageGRID 上で共有ストレージを使用してオンプレミスにEon�
 
 
 
+[[creating-an-authorization-file-to-access-the-s3-endpoint]]
+[[createauthorization]]
 === S3エンドポイントにアクセスするための認証ファイルを作成します
 
 S3エンドポイントにアクセスする許可ファイルを作成する際には、次の前提条件が適用されます。
@@ -159,6 +168,7 @@ NOTE: 本番環境では、一般に知られているCAによって署名され
 
 
 
+[[choosing-a-depot-path-on-all-vertica-nodes]]
 === すべてのVerticaノードのデポパスを選択します
 
 デポストレージパスの各ノードにディレクトリを選択または作成します。デポストレージパスパラメータに指定するディレクトリには、次のものが必要です。
@@ -176,6 +186,7 @@ NOTE: 本番環境では、一般に知られているCAによって署名され
 
 
 
+[[creating-the-eon-on-premises-database]]
 === オンプレミスデータベースの作成
 
 オンプレミスデータベースを作成するには、次の手順を実行します。
@@ -638,6 +649,8 @@ Database creation SQL tasks completed successfully. Database vmart created succe
 |===
 
 
+[[disabling-streaming-limitations]]
+[[Streamlimitations]]
 === ストリーミング制限を無効にしています
 
 この手順 は、他のオンプレミスオブジェクトストレージのVertica guideに基づいており、StorageGRID に適用する必要があります。
@@ -659,6 +672,7 @@ dbadmin=> \q
 ----
 
 
+[[verifying-depot-settings]]
 === デポの設定を確認してい
 
 Verticaデータベースのデフォルトデポ設定は、読み取りおよび書き込み操作に対して有効(値=1)です。パフォーマンスを向上させるために、これらのデポ設定を有効にしておくことを強く推奨します。
@@ -671,6 +685,7 @@ DATABASE | UseDepotForWrites | 1
 ----
 
 
+[[loading-sample-data-optional]]
 === サンプルデータのロード（オプション）
 
 このデータベースをテスト用に使用し、削除する場合は、サンプルデータをテスト用にこのデータベースにロードできます。Verticaには、各Verticaノードの「/opt/vertica/examples/VMart _Schema/」にあるサンプルデータセットVMartが付属しています。このサンプルデータセットの詳細については、を参照してください link:https://www.vertica.com/docs/10.1.x/HTML/Content/Authoring/GettingStartedGuide/IntroducingVMart/IntroducingVMart.htm?zoom_highlight=VMart["こちらをご覧ください"^]。
@@ -691,6 +706,7 @@ DATABASE | UseDepotForWrites | 1
 
 
 
+[[where-to-find-additional-information]]
 == 追加情報の参照先
 
 このドキュメントに記載されている情報の詳細については、以下のドキュメントや Web サイトを参照してください。
@@ -702,6 +718,7 @@ DATABASE | UseDepotForWrites | 1
 
 
 
+[[version-history]]
 == バージョン履歴
 
 [cols="1a,1a,2a"]

@@ -18,6 +18,7 @@ StorageGRIDを導入するためのコンピューティング、ストレージ
 
 
 
+[[compute-requirements]]
 == コンピューティング要件
 
 次の表に、StorageGRIDノードのタイプごとにサポートされる最小リソース要件を示します。これらは、StorageGRIDノードに必要な最小限のリソースです。
@@ -43,6 +44,7 @@ StorageGRIDを導入するためのコンピューティング、ストレージ
 
 
 
+[[networking-requirements]]
 == ネットワーク要件
 
 StorageGRIDトラフィックには、次の3種類があります。
@@ -60,6 +62,7 @@ StorageGRIDシステムで使用するネットワークを3つまで設定で�
 
 
 
+[[note-on-docker-networking]]
 === Dockerネットワークに関する注意事項
 
 StorageGRIDでは、一部のDockerコンテナ実装とは異なるネットワークを使用します。Docker（Kubernetes、Swarm）が提供するネットワークは使用しません。代わりに、StorageGRIDは実際には-- net=noneとしてコンテナを生成し、Dockerはコンテナのネットワーク化に何もしないようにします。StorageGRIDサービスによってコンテナが生成されると、ノード構成ファイルに定義されているインターフェイスから新しいmacvlanデバイスが作成されます。このデバイスは新しいMACアドレスを持ち、物理インターフェイスからパケットを受信できる別個のネットワークデバイスとして機能します。macvlanデバイスはコンテナネームスペースに移動され、コンテナ内のeth0、eth1、またはeth2のいずれかに名前が変更されます。この時点で、ネットワークデバイスはホストOSに表示されなくなります。この例では、Dockerコンテナ内のグリッドネットワークデバイスはeth0で、クライアントネットワークはeth2です。管理ネットワークがある場合、デバイスはコンテナ内のeth1になります。
@@ -69,12 +72,13 @@ NOTE: コンテナネットワークデバイスの新しいMACアドレスで�
 
 
 
+[[storage-requirements]]
 == ストレージ要件
 
 各ノードには、次の表に示すサイズのSANベースまたはローカルディスクデバイスが必要です。
 
 
-NOTE: 表内の数値はStorageGRIDサービスタイプごとのものであり、グリッド全体や物理ホストごとの数値ではありません。導入の選択肢に基づいて、このドキュメントで後述するでの各物理ホストの数を計算します link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["物理ホストのレイアウトと要件"]。++アスタリスクが付いているパスまたはファイルシステムは、インストーラによってStorageGRIDコンテナ自体に作成されます。管理者による手動での設定やファイルシステムの作成は必要ありませんが、これらの要件を満たすためにはホストにブロックデバイスが必要です。つまり、ブロックデバイスはコマンドを使用して表示され `lsblk` ますが、ホストOS内でフォーマットまたはマウントされていません。+++++
+NOTE: 表中の数字は、StorageGRID の各サービスタイプに対するものであり、グリッド全体や各物理ホストに対するものではありません。展開の選択に基づいて、各物理ホストの数値を計算します（link:bare-metal-prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["物理ホストのレイアウトと要件"]、このドキュメントの後半で説明します）。++ ++ アスタリスクが付いているパスまたはファイルシステムは、インストーラーによって StorageGRID コンテナ自体に作成されます。管理者による手動設定やファイルシステムの作成は不要ですが、ホストはこれらの要件を満たすためにブロックデバイスを必要とします。つまり、ブロックデバイスはコマンド  `lsblk` を使用して表示される必要がありますが、ホスト OS 内でフォーマットまたはマウントされていてはなりません。++ ++
 
 [cols="15,20,15,15,15,20"]
 |===
@@ -101,14 +105,16 @@ NOTE: 表内の数値はStorageGRIDサービスタイプごとのものであり
 BLOCK_DEVICE_RANGEDB_001 = /dev/mapper/SN-Db01
 BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02` 
 |===
-この例では、コンテナタイプごとに必要なディスクサイズを次の表に示します。物理ホストごとの要件については、このドキュメントの後半で説明し link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["物理ホストのレイアウトと要件"]ます。
+この例では、コンテナの種類ごとに、以下の表に示すディスクサイズが必要となります。物理ホストごとの要件については、このドキュメントの後半のlink:bare-metal-prerequisites-install-storagegrid.html#physical-host-layout-and-requirements["物理ホストのレイアウトと要件"]に記載されています。
 
 
 
+[[disk-sizes-per-container-type]]
 == コンテナタイプ別のディスクサイズ
 
 
 
+[[admin-container]]
 === Adminコンテナ
 
 [cols="50,50"]
@@ -129,6 +135,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
 
+[[storage-container]]
 === ストレージコンテナ
 
 [cols="50,50"]
@@ -152,6 +159,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
 
+[[gateway-container]]
 === ゲートウェイコンテナ
 
 [cols="50,50"]
@@ -166,6 +174,7 @@ BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
 
+[[physical-host-layout-and-requirements]]
 == 物理ホストのレイアウトと要件
 
 上記の表に示すコンピューティング要件とネットワーク要件を組み合わせることで、16コア、64GBのRAM、2つのネットワークインターフェイスを備えた3台の物理（または仮想）サーバに必要な基本的なハードウェアセットを入手できます。より高いスループットが必要な場合は、グリッドネットワークまたはクライアントネットワーク上の複数のインターフェイスをボンディングし、ノード構成ファイルでbond0.520などのVLANタグ付きインターフェイスを使用できます。負荷の高いワークロードが必要な場合は、ホストとコンテナの両方のメモリを増やす方が効果的です。
@@ -298,6 +307,7 @@ Docker Storeの計算では、/var/localあたり100GB（コンテナあたり�
 
 
 
+[[preparing-the-nodes]]
 == ノードの準備
 
 StorageGRIDの初期インストールの準備として、まずRHELバージョン9.2をインストールし、SSHを有効にします。ベストプラクティスに従って、ネットワークインターフェイス、ネットワークタイムプロトコル（NTP）、DNS、およびホスト名を設定します。グリッドネットワークでとクライアントネットワーク用に少なくとも1つのネットワークインターフェイスが有効になっている必要があります。VLANタグ付きインターフェイスを使用している場合は、次の例に従って設定します。それ以外の場合は、シンプルな標準ネットワークインターフェイス設定で十分です。
@@ -326,9 +336,10 @@ ONBOOT=yes
 
 
 
+[[optional-storage-setup-with-iscsi]]
 == iSCSIを使用したストレージセットアップ（オプション）
 
-iSCSIストレージを使用しない場合は、host1、host2、およびhost3に、要件を満たす十分なサイズのブロックデバイスが含まれていることを確認する必要があります。host1、host2、およびhost3のストレージ要件については、を参照してください link:prerequisites-install-storagegrid.html#disk-sizes-per-container-type["コンテナタイプ別のディスクサイズ"] 。
+iSCSIストレージを使用しない場合は、host1、host2、host3にそれぞれの要件を満たすのに十分なサイズのブロックデバイスが搭載されていることを確認する必要があります。host1、host2、host3のストレージ要件については、link:bare-metal-prerequisites-install-storagegrid.html#disk-sizes-per-container-type["コンテナタイプ別のディスクサイズ"]を参照してください。
 
 iSCSIを使用してストレージをセットアップするには、次の手順を実行します。
 
@@ -347,7 +358,7 @@ sudo yum install device-mapper-multipath
 # cat /etc/iscsi/initiatorname.iscsi
 InitiatorName=iqn.2006-04.com.example.node1
 ----
-. 手順2のイニシエータ名を使用して、ストレージデバイス上のLUN（表に示されている数とサイズ）を各ストレージノードにマッピングし link:prerequisites-install-storagegrid.html#storage-requirements["ストレージ要件"] ます。
+. ステップ 2 のイニシエータ名を使用して、ストレージ デバイスの LUN を（link:bare-metal-prerequisites-install-storagegrid.html#storage-requirements["ストレージ要件"] の表に示されている数とサイズの）各ストレージ ノードにマッピングします。
 . で新しく作成したLUNを検出し `iscsiadm` 、ログインします。
 +
 [listing]
@@ -437,6 +448,7 @@ iSCSIベースのLUNを使用している場合は、fstabファイルに次の�
 ----
 
 
+[[preparing-for-docker-installation]]
 == Dockerのインストールの準備
 
 Dockerのインストールを準備するには、次の手順を実行します。

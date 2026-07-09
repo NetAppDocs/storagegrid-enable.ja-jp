@@ -16,6 +16,7 @@ summary: ONTAP S3からStorageGRIDへの移行
 
 
 
+[[migrate-s3-keys]]
 == S3キーの移行
 
 移行の場合、ほとんどの場合、移行先で新しいクレデンシャルを生成するのではなく、ユーザのクレデンシャルを移行する必要があります。StorageGRIDには、s3キーをユーザーにインポートできるAPIが用意されています。
@@ -44,6 +45,7 @@ image:ontap-migrate/sg-user-keys.png["ユーザキー"]
 
 
 
+[[the-final-cut-over]]
 === 最終的なカットオーバー
 
 バケットをONTAPからStorageGRIDに永続的にレプリケートする場合は、ここで終了できます。ONTAP S3からStorageGRIDへの移行の場合は、移行を終了してカットオーバーします。

@@ -49,6 +49,7 @@ NOTE: ファイルの名前は、インストールの実際のノード名を�
 
 
 
+[[preparing-the-node-config-files]]
 == ノード構成ファイルの準備
 
 次の例では、という形式を使用し `/dev/disk/by-path` ます。次のコマンドを実行して、正しいパスを確認できます。
@@ -94,6 +95,7 @@ lrwxrwxrwx 1 root root 9 Dec 21 16:42 pci-0000:03:00.0-scsi-0:0:9:0 -> ../../sdi
 ----
 
 
+[[example-for-primary-admin-node]]
 == プライマリ管理ノードの例
 
 ファイル名の例：
@@ -127,6 +129,7 @@ CLIENT_NETWORK_GATEWAY = 10.193.205.1
 ----
 
 
+[[example-for-a-storage-node]]
 == ストレージノードの例
 
 ファイル名の例：
@@ -154,6 +157,7 @@ GRID_NETWORK_GATEWAY = 10.193.204.1
 ----
 
 
+[[example-for-gateway-node]]
 == ゲートウェイノードの例
 
 ファイル名の例：
