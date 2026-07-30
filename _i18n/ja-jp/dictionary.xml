@@ -1318,7 +1318,6 @@ Dremioは、Byte range GETを使用して、クエリ中に同じオブジェク
 <block ref="1d36a7361466de3adde00ce864c41474" category="inline-link-macro-rx"></block>。</block>
   <block id="24377316ae141b63c8170119bbfe4239" category="list-text">ブラウザを使用したStorageGRIDアプライアンスインストーラGUIへのアクセス<block ref="41c0f2506f64eaa17788753cf29de6aa" category="inline-link-rx"></block>。  アプライアンスをメンテナンスモードでブートすると、すでに使用されている新しいグリッドIPとしてグリッドIPを使用することはできません。</block>
   <block id="fe21d31242c56f4eee91182bd1268a5a" category="list-text">グリッドネットワークのVLANを変更します。  クライアント・ネットワーク経由でアプライアンスにアクセスする場合、現時点ではクライアントVLANは変更できません。移動後に変更できます。</block>
-  <block id="293c5807e9e9ab4b268fd617e8e5a56d" category="list-text">アプライアンスにSSH接続し、「shutdown -h now」を使用してノードをシャットダウン</block>
   <block id="1c33a8d84128bb59ae10a50b662e3a98" category="list-text">新しいサイトでアプライアンスの準備が完了したら、を使用してStorageGRIDアプライアンスインストーラのGUIにアクセスします。<block ref="fba5b5bfbff166288edb187e140418b2" category="inline-link-rx"></block>。  GUIでping / nmapツールを使用して、ストレージが最適な状態であり、他のグリッドノードへのネットワーク接続が確立されていることを確認します。</block>
   <block id="786f3a0a71ff6ad9513f86143e55c1ce" category="list-text">クライアントネットワークIPの変更を計画している場合は、この段階でクライアントVLANを変更できます。  クライアントネットワークは、このあとの手順でIP変更ツールを使用してクライアントネットワークIPを更新するまで準備ができていません。</block>
   <block id="fff8d22924e491405ba3026b24555fa6" category="list-text">メンテナンスモードを終了します。StorageGRID アプライアンス・インストーラから、 *Advanced*&gt;* Reboot Controller* を選択し、 * Reboot into StorageGRID * を選択します。</block>
@@ -3080,9 +3079,6 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="6286b2654fd9f607da0c9a689ef54e7c" category="list-text">バケット情報を入力します。arn：aws：s3：：：example_bucket、arn：aws：s3：：：example_bucket /*</block>
   <block id="8e42358c3df8a569be04cad92e8b7479" category="paragraph"><block ref="8e42358c3df8a569be04cad92e8b7479" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e73b44d49494e2ac6f4ce555878eacec" category="paragraph">Effect*はリクエストを許可するか拒否するかのどちらかになります。</block>
-  <block id="e3d361dfeb32442ba3887fb26cadd759" category="paragraph">*プリンシパル*</block>
-  <block id="7c8bff59dd5d9771fc52f17ce6414420" category="list-text">バケットポリシーにのみ適用されます。</block>
-  <block id="4a47dee52461b2ce5adaefbba5fc57b0" category="list-text">プリンシパルは、権限を付与または拒否するアカウント/ユーザです。</block>
   <block id="7b0fef71a6a5b6046a79dcb31b7991ec" category="list-text">次のように定義できます。</block>
   <block id="cdecd059c81b66125ab436ad5ba1f0db" category="list-text">ワイルドカード"++*+"</block>
   <block id="171a87df01e0c7aab0969853c4d63f99" category="list-text">テナント内のすべてのユーザのテナントID（AWSアカウントに相当）</block>
@@ -3449,4 +3445,14 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="752f1428ccb77ac410289e9262b0f4bf" category="inline-link">Grok パターン</block>
   <block id="dfa155e02e6c42536eddd788adeb1c4b" category="list-text"><block ref="dfa155e02e6c42536eddd788adeb1c4b" category="inline-link-rx"></block></block>
   <block id="84a0efed1747839817563f400c91817f" category="list-text">サポートされている JDK バージョンについては、<block ref="fcf7e9838328c10505637416c290aabd" category="inline-link-rx"></block>を確認してください。</block>
+  <block id="21dbdbd408dc522ecd721e90c94e9967" category="paragraph">プリンシパル：</block>
+  <block id="9acd284dbac66e7a5cc77ba3fa4c2c0e" category="list-text">バケットポリシーにのみ適用されます</block>
+  <block id="061ca9ee2cc478226335cb4781f7e748" category="list-text">プリンシパルとは、権限が付与または拒否されるアカウント/ユーザーのことです。</block>
+  <block id="c29108426bf99e785055bc2e1d798efd" category="paragraph"><block ref="6c9750b480cd2664d899f8d80fda410e" prefix="" category="inline-code"></block> 匿名（署名なし）リクエストを含む、すべてのユーザーに一致します</block>
+  <block id="a45bf7d8bfe94f3161df646dd349474b" category="paragraph"><block ref="2397070036b52932d72a0d05561ff357" prefix="" category="inline-code"></block>認証済みのIDまたはユーザーに一致する（匿名リクエストには一致しない）</block>
+  <block id="162795027699751a53c17a76654ff03a" category="list-text">アプライアンスにSSH接続し、'shutdown -h now'を使用してノードをシャットダウンします。</block>
+  <block id="524b3666d2b57a265288b4605c4f63dd" category="summary">StorageGRID 12.1 向けサードパーティソリューション検証済み一覧</block>
+  <block id="0abd84cfb134f23ccdf2dace5cdafdf0" category="paragraph">以下のサードパーティ製ソリューションは、StorageGRID 12.1での使用が検証されています。+ お探しのソリューションがリストにない場合は、NetAppの営業担当者までお問い合わせください。</block>
+  <block id="f480816d606925917374f2fbcc635e8f" category="list-text">Hashicorp Vault 1.21.1</block>
+  <block id="8f58f72ce7022a4fdfe329ca00a2e451" category="list-text">Thales CipherTrust Manager 2.21</block>
 </blocks>

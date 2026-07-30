@@ -1,0 +1,140 @@
+---
+permalink: third-party/120-3rd-party-list.html 
+sidebar: sidebar 
+keywords: 12.1, third-party applications, storagegrid, ISV 
+summary: StorageGRID 12.1 向けサードパーティソリューション検証済み一覧 
+---
+= StorageGRID 12.0 検証済みサードパーティソリューション
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下のサードパーティ製ソリューションは、StorageGRID 12.1での使用が検証されています。+ お探しのソリューションがリストにない場合は、NetAppの営業担当者までお問い合わせください。
+
+
+
+[[third-party-solutions-validated-on-storagegrid]]
+== StorageGRID で検証済みのサードパーティソリューション
+
+これらのソリューションは、それぞれのパートナーと協力してテストされています。
+
+* Actifio
+* アルクシオ
+* Apache Kafka です
+* AWSマウントポイント
+* ブリッジストール
+* カンテモ
+* Citrixコンテンツコラボレーション
+* Collibra（Collibra Data Qualityの最小バージョン2024.02）
+* Commvault 11.
+* カウチベース エンタープライズ アナリティクス 2.0
+* CTERAポータル6.
+* ダレト
+* ダタドビ
+* Data Dynamics StorageXのように入力します
+* DefendX
+* Diskoverデータ
+* デレミオ
+* Elasticsearch Snapshot（フローズン階層を含む）
+* eMAM
+* FUJIFILMオブジェクトアーカイブ
+* GitHubエンタープライズサーバ
+* IBM Storage Deep Archive 1.3
+* IBM FileNetの順にクリックします
+* IBM ストレージ保護
+* Interica
+* Komprise
+* Microsoft SQL Server Big Data Clustersの略
+* モデル9.
+* Modzy
+* Moonwalk Universalの略
+* 良いですね
+* Nasuni
+* OpenText Documentum 16.4
+* OpenText Documentum 21.4
+* OpenText InfoArchive 16 EP7
+* CyanGate Cloudを使用したOpenText Media Management 16.5
+* Panzura
+* PixitMedia ngenea.
+* Point Archival Gateway 2.0の場合
+* Point Storage Manager 6.4
+* プリミティブストリーム
+* Quantum StorNext 5.4.0.1
+* Reveille v10 build 220706以上
+* Rubrik CDMの略
+* s3a
+* シグニエント
+* 雪の結晶
+* Spectra Logic On-Prem Glacier
+* Splunk Smartstore
+* スターバースト
+* ストレージが簡単になりました
+* トリノ
+* ニスエンタープライズ6.0.4
+* Veeam 12
+* Veritas Enterprise Vault 15.1.
+* Veritas NetBackup 10.1.1以降
+* Vertica 10.x
+* ビディズパイン
+* Virtalica StorageFabricの詳細を参照してください
+* Weka v3.10以降
+
+
+
+
+[[third-party-solutions-validated-on-storagegrid-with-object-lock]]
+== StorageGRID で検証済みの、オブジェクトロック機能を備えたサードパーティ製ソリューション
+
+これらのソリューションは、それぞれのパートナーと協力してテストされています。
+
+* CommVault 11 Feature Release 26
+* IBM FileNetの順にクリックします
+* IBM ストレージ保護
+* OpenText Documentum 21.4
+* Rubrik
+* Veeam 12
+* Veritas Enterprise Vault 15.1.
+* Veritas NetBackup 10.1.1以降
+
+
+
+
+[[third-party-solutions-supported-on-storagegrid]]
+== StorageGRIDでサポートされているサードパーティソリューション
+
+これらのソリューションはテスト済みです。
+
+* アーチウェア
+* アクシスコミュニケーションズ
+* コングルーシティ360
+* DataFrameworksの略
+* EcoDigital DIVAプラットフォーム
+* Encoding.com
+* FUJIFILMオブジェクトアーカイブ
+* GE Centricity Enterprise Archiveの略
+* Gitlab
+* ハイランド・アクオ
+* IBM Aspera
+* マイルストーンシステム
+* ONSSI
+* REACHエンジン
+* SilverTrak
+* SoftNAS
+* QSTAR
+* ベラシア
+
+
+
+
+[[key-managers-supported-on-storagegrid]]
+== StorageGRIDでサポートされるキー管理ツール
+
+これらのソリューションはテスト済みです。
+
+* Entrust 暗号化セキュリティ プラットフォーム v10.4.5
+* Hashicorp Vault 1.21.1
+* Thales CipherTrust Manager 2.21
+

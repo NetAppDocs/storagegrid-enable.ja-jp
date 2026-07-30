@@ -86,7 +86,7 @@ image:site-relocation/ip-change-6.png["続行"]
 link:https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["アプライアンスをメンテナンスモードにします"]。
 . ブラウザを使用したStorageGRIDアプライアンスインストーラGUIへのアクセス https://<admin-or-client-network-ip>:8443[]。  アプライアンスをメンテナンスモードでブートすると、すでに使用されている新しいグリッドIPとしてグリッドIPを使用することはできません。
 . グリッドネットワークのVLANを変更します。  クライアント・ネットワーク経由でアプライアンスにアクセスする場合、現時点ではクライアントVLANは変更できません。移動後に変更できます。
-. アプライアンスにSSH接続し、「shutdown -h now」を使用してノードをシャットダウン
+. アプライアンスにSSH接続し、'shutdown -h now'を使用してノードをシャットダウンします。
 . 新しいサイトでアプライアンスの準備が完了したら、を使用してStorageGRIDアプライアンスインストーラのGUIにアクセスします。 https://<grid-network-ip>:8443[]。  GUIでping / nmapツールを使用して、ストレージが最適な状態であり、他のグリッドノードへのネットワーク接続が確立されていることを確認します。
 . クライアントネットワークIPの変更を計画している場合は、この段階でクライアントVLANを変更できます。  クライアントネットワークは、このあとの手順でIP変更ツールを使用してクライアントネットワークIPを更新するまで準備ができていません。
 . メンテナンスモードを終了します。StorageGRID アプライアンス・インストーラから、 *Advanced*>* Reboot Controller* を選択し、 * Reboot into StorageGRID * を選択します。
