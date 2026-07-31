@@ -3455,4 +3455,5 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="0abd84cfb134f23ccdf2dace5cdafdf0" category="paragraph">以下のサードパーティ製ソリューションは、StorageGRID 12.1での使用が検証されています。+ お探しのソリューションがリストにない場合は、NetAppの営業担当者までお問い合わせください。</block>
   <block id="f480816d606925917374f2fbcc635e8f" category="list-text">Hashicorp Vault 1.21.1</block>
   <block id="8f58f72ce7022a4fdfe329ca00a2e451" category="list-text">Thales CipherTrust Manager 2.21</block>
+  <block id="b0ff3f641f5c47519d662ddd7719ff87" category="sidebar">StorageGRID 12.1</block>
 </blocks>
