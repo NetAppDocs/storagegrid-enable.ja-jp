@@ -8,7 +8,7 @@ summary: このサイトに対する最近の変更点を以下に示します�
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

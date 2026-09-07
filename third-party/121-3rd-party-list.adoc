@@ -80,7 +80,7 @@ summary: StorageGRID 12.1 向けサードパーティソリューション検証
 * Vertica 10.x
 * ビディズパイン
 * Virtalica StorageFabricの詳細を参照してください
-* Weka v3.10以降
+* WEKA v3.10以降
 
 
 

@@ -8,7 +8,7 @@ summary: ここでは、NetApp StorageGRID の各リリースの完全なドキ�
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
