@@ -3457,4 +3457,5 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="8f58f72ce7022a4fdfe329ca00a2e451" category="list-text">Thales CipherTrust Manager 2.21</block>
   <block id="b0ff3f641f5c47519d662ddd7719ff87" category="sidebar">StorageGRID 12.1</block>
   <block id="147e111488eb55eac75032941f65577f" category="list-text">WEKA v3.10以降</block>
+  <block id="7408450fc527ea7cf95ee02a041a379b" category="paragraph">ビッグデータ分析は、オブジェクトストレージベースのデータレイクの最も一般的なユースケースの1つです。分析プラットフォームを選択する際には、データ ウェアハウスやレイクハウステクノロジーがS3オブジェクトストレージとどのように連携するかを理解することで、パフォーマンス、拡張性、および運用効率の最適化に役立ちます。StorageGRIDは、Apache Spark、Dremio、Trino、Starburstなどのプラットフォームを含む分析ワークロード向けに、S3互換のオブジェクトストレージを提供します。</block>
 </blocks>
