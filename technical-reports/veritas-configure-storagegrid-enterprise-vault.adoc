@@ -37,8 +37,8 @@ NOTE: WORMストレージ（オブジェクトロック）の場合は、Enterpr
 * ボールトストアグループとボールトストアが作成されました。詳細については、『Veritas Enterprise Vault Administration Guide』を参照してください。
 * StorageGRIDテナント、アクセスキー、シークレットキー、およびバケットが作成されている。
 * StorageGRIDロードバランサエンドポイント（HTTPまたはHTTPS）が作成されている。
-* 自己署名証明書を使用する場合は、StorageGRID自己署名CA証明書をEnterprise Vaultサーバーに追加します。詳細については、こちらを参照して https://www.veritas.com/support/en_US/article.100049744["Veritasナレッジベースの記事"^]ください。
-* 最新のEnterprise Vault構成ファイルを更新して適用し、NetApp StorageGRIDなどのサポートされているストレージソリューションを有効にします。詳細については、こちらを参照して https://www.veritas.com/content/support/en_US/article.100039174["Veritasナレッジベースの記事"^]ください。
+* 自己署名証明書を使用する場合は、StorageGRID の自己署名CA証明書をEnterprise Vault サーバーに追加してください。詳細については、こちら https://supportenterprisevault.cloud.com/support-home/kbsearch/article?articleNumber=100049744["Veritasナレッジベースの記事"^]をご覧ください。
+* サポートされているストレージソリューション（NetApp StorageGRID など）を有効にするには、最新の Enterprise Vault 構成ファイルを更新して適用します。詳細については、こちら https://supportenterprisevault.cloud.com/support-home/kbsearch/article?articleNumber=100039174["Veritasナレッジベースの記事"^]をご覧ください。
 
 
 

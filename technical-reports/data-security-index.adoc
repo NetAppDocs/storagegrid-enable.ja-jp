@@ -31,7 +31,7 @@ StorageGRIDオブジェクトストレージソリューションに組み込ま
 
 このホワイト ペーパーはセキュリティ データシートとして作成されており、デフォルトでは構成されていない、本書に記載されているセキュリティ機能をサポートするようにシステムを構成する方法については詳しく説明していません。その https://docs.netapp.com/us-en/storagegrid/harden/index.html["StorageGRIDセキュリティガイド"^]公式ウェブサイトで入手可能 https://docs.netapp.com/us-en/storagegrid/["StorageGRID のドキュメント"^]ページ。
 
-このレポートで説明する機能に加えて、StorageGRIDはにも準拠して https://www.netapp.com/us/legal/vulnerability-response.aspx["NetApp製品セキュリティ脆弱性対応および通知ポリシー"^]います。報告された脆弱性は、製品のセキュリティインシデント対応プロセスに従って検証され、対応されます。
+本レポートに記載されている機能に加えて、StorageGRID は以下に従っています。 https://security.netapp.com/policy/["NetApp製品セキュリティ脆弱性対応および通知ポリシー"^]報告された脆弱性は、製品セキュリティインシデント対応プロセスに従って検証され、対応されます。
 
 NetApp StorageGRIDは、要件の厳しいエンタープライズオブジェクトストレージのユースケースに対応する高度なセキュリティ機能を提供します。
 

@@ -42,7 +42,7 @@ NOTE: GMIパスワードに特殊文字が含まれている場合は、必ず\�
 {"responseTime":"2020-06-03T00:12:17.031Z","status":"success","apiVersion":"3.2","data":"8a1e528d-18a7-4283-9a5e-b2e6d731e0b2"}
 ----
 +
-これで、認証トークン文字列を使用して cURL 経由でメトリクスにアクセスできるようになります。メトリクスにアクセスする手順は、セクション link:monitoradvanced-monitor-storagegrid.html#export-metrics-through-the-api["StorageGRIDの高度な監視"] の手順と同様です。ただし、説明のために、メトリクスカテゴリで GET /grid/metric-labels/{label}/values を選択した例を示します。
+これで、認証トークン文字列を使用して cURL 経由でメトリクスにアクセスできるようになります。メトリクスにアクセスする手順は、セクション link:monitor-advanced-monitor-storagegrid.html#export-metrics-through-the-api["StorageGRIDの高度な監視"] の手順と同様です。ただし、説明のために、メトリクスカテゴリで GET /grid/metric-labels/{label}/values を選択した例を示します。
 
 . たとえば、次のcURLコマンドに先行する認証トークンを指定すると、StorageGRID内のサイト名が一覧表示されます。
 +
