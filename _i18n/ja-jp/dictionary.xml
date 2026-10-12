@@ -180,13 +180,7 @@
   <block id="6ed9ef1283f8a665ad7dbfe450f4616c" category="paragraph">オンプレミスデータベースを作成するには、次の手順を実行します。</block>
   <block id="c8fac0ae7f28a985c6f7041e704cb9e9" category="list-text">データベースを作成するには'admintools create-db'ツールを使用します</block>
   <block id="ba1f54172ea851b435ebad930979214e" category="paragraph">この例で使用されている引数の簡単な説明を次に示します。すべての必須引数とオプション引数の詳細については、Verticaのドキュメントを参照してください。</block>
-  <block id="d560ea5a8e684843d3e61026f97988ea" category="inline-xref">「S3エンドポイントにアクセスするための認証ファイルの作成」</block>
-  <block id="49231ccf7e1f2892d02e363b3996f6b1" category="list-text">-x &lt;で作成された認証ファイルのパス/ファイル名 <block ref="ff01d755c02cf9eac8acabe776f4ae31" category="inline-xref-macro-rx"></block> &gt;。</block>
   <block id="f405bc9fea0f983aec86bf3b39598931" category="paragraph">認証の詳細は、正常に作成された後、データベース内に保存されます。S3シークレットキーの公開を回避するために、このファイルを削除できます。</block>
-  <block id="8bb92892cb170f0a2e9faa38b08707d2" category="list-text">--son/storagegrid-sstorage -location &lt;s3：//storagegrid bucketname&gt;</block>
-  <block id="730286a138b893db744ec9b6d5eb53cc" category="list-text">-s &lt;このデータベースに使用するVerticaノードのカンマ区切りリスト&gt;</block>
-  <block id="ff3ce7ef8f8faa42ab218e0e6a952005" category="list-text">-d &lt;作成するデータベースの名前&gt;</block>
-  <block id="cbfebf618a39b6eebd458ebccb35811d" category="list-text">-p &lt;この新しいデータベースに設定するパスワード&gt;。たとえば、次のコマンド例を参照してください。</block>
   <block id="f0f9a3849fe5730a2c9d6f1fec222ca3" category="paragraph">データベースのノード数によっては、新しいデータベースの作成に数分かかることがあります。データベースを初めて作成するときに、ライセンス契約に同意するように求められます。</block>
   <block id="3b8065a08e54f4e0956f3b822ffb8a91" category="paragraph">たとえば'次のサンプル認証ファイルと'create db'コマンドを参照してください</block>
   <block id="011babd6bb6bec44f7f5c42f6c3e7a38" category="cell">オブジェクトのサイズ（バイト）</block>
@@ -3458,4 +3452,10 @@ StorageGRIDでは、ストレージノードのパフォーマンスが高いノ
   <block id="77a99c68d4a1bcc489efaedf2f81d8ac" category="list-text">サポートされているストレージソリューション（NetApp StorageGRID など）を有効にするには、最新の Enterprise Vault 構成ファイルを更新して適用します。詳細については、こちら<block ref="5906a7358f9e1d2351926b6621eb4acd" category="inline-link-rx"></block>をご覧ください。</block>
   <block id="00a090a871a0df6adc9219e75e6aed51" category="list-text">これで、PrometheusサーバーのUIにアクセスできるようになります。\http://&lt;prometheus-server-ip&gt;:9090 と入力してUIを確認してください</block>
   <block id="973ed7db4a25bc3f01fccde97b27c7a1" category="list-text">Grafanaのインストールが完了し、稼働を開始しました。ブラウザで \http://&lt;prometheus-server-ip&gt;:3000 を開くと、Grafana のログインページが表示されます。</block>
+  <block id="e64c46bb4ce9a526df258e7f1272a8bf" category="list-text"><block ref="6c54c99ba9534ff26f0be55aca43ba88" prefix="" category="inline-code"></block></block>
+  <block id="27e5401a5432522c4a59659b79949bda" category="paragraph">認証ファイルの詳細については、<block ref="5652bb278cd06b6326f440573e03522e" category="inline-xref-macro-rx"></block>を参照してください。</block>
+  <block id="deef0d341b8cf5253a456575b59ad3ce" category="list-text"><block ref="399fa6cc0d3e7718be729c48c6cbd287" prefix="" category="inline-code"></block></block>
+  <block id="9bcef99ac69179506104bc1a219370b4" category="list-text"><block ref="778e8289811af1130cb32a43d9f5bebf" prefix="" category="inline-code"></block></block>
+  <block id="85d18b76832b43fb6d1cbc2dbcbb077d" category="list-text"><block ref="b601ce715bcbacbaf5adf14ea523938a" prefix="" category="inline-code"></block></block>
+  <block id="1ea1e8a4588340cf0e25df3c8bc69bb7" category="list-text"><block ref="09f7639dfb26383ef118c948a1c0001b" prefix="" category="inline-code"></block>例えば、以下のコマンド例をご覧ください：</block>
 </blocks>

@@ -196,14 +196,17 @@ NOTE: 本番環境では、一般に知られているCAによって署名され
 この例で使用されている引数の簡単な説明を次に示します。すべての必須引数とオプション引数の詳細については、Verticaのドキュメントを参照してください。
 
 +
-** -x <で作成された認証ファイルのパス/ファイル名 <<createauthorization,「S3エンドポイントにアクセスするための認証ファイルの作成」>> >。
+** `-x <path/filename of authorization file>`
++
+認証ファイルの詳細については、<<createauthorization,S3エンドポイントにアクセスするための認証ファイルを作成します>>を参照してください。
+
 +
 認証の詳細は、正常に作成された後、データベース内に保存されます。S3シークレットキーの公開を回避するために、このファイルを削除できます。
 
-** --son/storagegrid-sstorage -location <s3：//storagegrid bucketname>
-** -s <このデータベースに使用するVerticaノードのカンマ区切りリスト>
-** -d <作成するデータベースの名前>
-** -p <この新しいデータベースに設定するパスワード>。たとえば、次のコマンド例を参照してください。
+** `--communal-storage-location <s3://storagegrid bucketname>`
+** `-s <comma-separated list of Vertica nodes to be used for this database>`
+** `-d <name of database to be created>`
+** `-p <password to be set for this new database>`例えば、以下のコマンド例をご覧ください：
 +
 [listing]
 ----
